@@ -472,11 +472,6 @@
         </url>
     
         <url>
-            <loc>/czc知识库/笔记/知识库搭建/1-obsidian笔记/obsidian/</loc>
-            <lastmod>2024-12-12T12:29:17.100Z</lastmod>
-        </url>
-    
-        <url>
             <loc>/czc知识库/笔记/知识库搭建/1-obsidian笔记/obsidian插件/</loc>
             <lastmod>2024-12-12T12:29:17.100Z</lastmod>
         </url>
@@ -507,11 +502,6 @@
         </url>
     
         <url>
-            <loc>/czc知识库/笔记/知识库搭建/Typora教程某up的/</loc>
-            <lastmod>2024-12-12T12:29:17.100Z</lastmod>
-        </url>
-    
-        <url>
             <loc>/czc知识库/笔记/知识库搭建/Zotero使用笔记/</loc>
             <lastmod>2024-12-12T12:29:17.100Z</lastmod>
         </url>
@@ -533,11 +523,6 @@
     
         <url>
             <loc>/czc知识库/笔记/知识库搭建/markdown/</loc>
-            <lastmod>2024-12-12T12:29:17.100Z</lastmod>
-        </url>
-    
-        <url>
-            <loc>/czc知识库/笔记/知识库搭建/typora使用笔记/</loc>
             <lastmod>2024-12-12T12:29:17.100Z</lastmod>
         </url>
     
@@ -597,17 +582,7 @@
         </url>
     
         <url>
-            <loc>/czc知识库/笔记/知识库搭建/数字花园/本地构建+云服务器部署数字花园plus/</loc>
-            <lastmod>2024-12-12T12:29:17.100Z</lastmod>
-        </url>
-    
-        <url>
             <loc>/czc知识库/笔记/知识库搭建/数字花园/本地部署数字花园/</loc>
-            <lastmod>2024-12-12T12:29:17.100Z</lastmod>
-        </url>
-    
-        <url>
-            <loc>/czc知识库/笔记/知识库搭建/知识库搭建/</loc>
             <lastmod>2024-12-12T12:29:17.100Z</lastmod>
         </url>
     
@@ -1737,8 +1712,33 @@
         </url>
     
         <url>
+            <loc>/czc知识库/笔记/知识库搭建/1-obsidian笔记/obsidian/</loc>
+            <lastmod>2024-12-12T14:31:14.851Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/笔记/知识库搭建/typora/Typora教程某up的/</loc>
+            <lastmod>2024-12-12T14:31:14.851Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/笔记/知识库搭建/typora/typora/</loc>
+            <lastmod>2024-12-12T14:31:14.851Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/笔记/知识库搭建/数字花园/本地构建+云服务器部署数字花园plus/</loc>
+            <lastmod>2024-12-12T14:31:14.851Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/笔记/知识库搭建/知识库搭建/</loc>
+            <lastmod>2024-12-12T14:31:14.851Z</lastmod>
+        </url>
+    
+        <url>
             <loc>/</loc>
-            <lastmod>2024-12-12T12:29:17.121Z</lastmod>
+            <lastmod>2024-12-12T14:31:14.851Z</lastmod>
         </url>
     
 </urlset>
