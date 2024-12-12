@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>304-面向对象三大特性-2.继承</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<script async type="module">import mermaid from"https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"</script>
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js" integrity="sha512-hpZ5pDCF2bRCweL5WoA0/N1elet1KYL5mx3LP555Eg/0ZguaHawxNvEjF6O3rufAChs16HVNhEc6blF/rZoowQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/plugins/autoloader/prism-autoloader.min.js" integrity="sha512-sv0slik/5O0JIPdLBCR2A3XDg/1U3WuDEheZfI/DI5n8Yqc3h5kjrnr46FGBNiUAJF7rE4LHKwQ/SoSLRKAxEA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script async src="https://cdn.jsdelivr.net/npm/lucide@0.115.0/dist/umd/lucide.min.js"></script>
+<script>window.addEventListener("load",(()=>{document.querySelectorAll(".callout").forEach((e=>{const t=getComputedStyle(e).getPropertyValue("--callout-icon"),l=t&&t.trim().replace(/^lucide-/,"");if(l){const t=e.querySelector(".callout-title");if(t){const e=document.createElement("div"),c=document.createElement("i");e.appendChild(c),c.setAttribute("icon-name",l),e.setAttribute("class","callout-icon"),t.insertBefore(e,t.firstChild)}}})),lucide.createIcons(),Array.from(document.querySelectorAll(".callout.is-collapsible")).forEach((e=>{e.querySelector(".callout-title").addEventListener("click",(t=>{e.classList.contains("is-collapsed")?e.classList.remove("is-collapsed"):e.classList.add("is-collapsed")}))}))}))</script>
+<script async src="https://fastly.jsdelivr.net/npm/force-graph@1.43.0/dist/force-graph.min.js"></script>
+<script async src="https://fastly.jsdelivr.net/npm/@alpinejs/persist@3.11.1/dist/cdn.min.js"></script>
+<script src="https://fastly.jsdelivr.net/npm/alpinejs@3.11.1/dist/cdn.min.js" async></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-okaidia.min.css" integrity="sha512-mIs9kKbaw6JZFfSuo+MovjU+Ntggfoj8RwAmJbVXQ5mkAX5LlgETQEweFPI18humSPHymTb5iikEOKWF7I8ncQ==" crossorigin="anonymous" referrerpolicy="no-referrer" async>
+<script src="https://fastly.jsdelivr.net/npm/whatwg-fetch@3.6.2/dist/fetch.umd.min.js" crossorigin="anonymous" referrerpolicy="no-referrer" async></script>
+<link href="/styles/digital-garden-base.css" rel="stylesheet">
+<link href="/styles/obsidian-base.css" rel="stylesheet">
+<link href="/styles/_theme.d92311c2.css" rel="stylesheet">
+<link href="/styles/custom-style.css" rel="stylesheet">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<style></style>
+</head>
+<body class="theme-dark markdown-preview-view markdown-rendered markdown-preview-section">
+<nav class="navbar">
+<div class="navbar-inner">
+<a href="/" style="text-decoration:none">
+<h1 style="margin:15px!important">Digital Garden</h1>
+</a>
+</div>
+</nav>
+<main class="content cm-s-obsidian">
+<header>
+<div class="header-meta">
+</div>
+</header>
+<h1 id="三种特性：" tabindex="-1">三种特性：</h1>
+<ul>
+<li><strong>封装性</strong>：
+<ul>
+<li>私有属性和私有方法</li>
+<li>把属性和方法隐藏起来，属性没有特殊要求都用私有属性</li>
+<li><strong>意义</strong>：
+<ul>
+<li>以面向对象的编程思想进行项目开发</li>
+<li>封装数据属性：明确的区分内外，控制外部对隐藏的属性的操作行为(保护数据、过滤掉异常数据)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>继承性</strong>：
+<ul>
+<li>单继承和多继承</li>
+</ul>
+</li>
+<li><strong>多态性</strong></li>
+</ul>
+<h1 id="2-python" tabindex="-1">2、python中的继承</h1>
+<h2 id="什么是继承" tabindex="-1">什么是继承</h2>
+<p>我们接下来来聊聊Python代码中的“继承”：类是用来描述现实世界中同一组事务的共有特性的抽象模型，但是类也有上下级和范围之分，比如：生物 =&gt; 动物</p>
+<h2 id="继承的基本语法" tabindex="-1">继承的基本语法</h2>
+<p>假设A类要继承B类中的所有属性和方法（<strong>私有属性和私有方法除外</strong>）</p>
+<pre><code class="language-python">class B(object):
+    pass
+
+class A(B):
+    pass
+
+a = A()
+a.B中的所有公共属性
+a.B中的所有公共方法
+</code></pre>
+<h3 id="相关名词解释" tabindex="-1">相关名词解释</h3>
+<p>继承：一个类从另一个已有的类获得其成员的相关特性，就叫作继承！</p>
+<p>派生：从一个已有的类产生一个新的类，称为派生！</p>
+<p>很显然，继承和派生其实就是从不同的方向来描述的相同的概念而已，本质上是一样的！</p>
+<p>父类：也叫作基类，就是指已有被继承的类！</p>
+<p>子类：也叫作派生类或扩展类</p>
+<p>扩展：在子类中增加一些自己特有的特性，就叫作扩展，<strong>没有扩展，继承也就没有意义了</strong>！</p>
+<p>单继承：一个类只能继承自一个其他的类，不能继承多个类，单继承也是<strong>大多数</strong>面向对象语言的特性！</p>
+<p>多继承：<strong>一个类同时继承了多个父类</strong>， （C++、<strong>Python</strong>等语言都支持多继承）</p>
+<h2 id="单继承" tabindex="-1">单继承</h2>
+<p>一个类只能继承自一个其他的类，不能同时继承多个类。这个类会有具有父类的属性和方法。</p>
+<p>基本语法：</p>
+<pre><code class="language-python"># 1、定义一个共性类（父类）
+class Person(object):
+    pass
+# 2、定义一个个性类（子类）
+class Student(Person):
+    pass
+</code></pre>
+<p>栗子：</p>
+<pre><code class="language-python"># 定义一个公共类
+class Person(object):
+	def speak(self):
+		print('i can speak')
+
+# 定义学生
+class Student(Person):
+	pass
+# 定义ikun
+class Ikun(Person):
+	pass
+
+ZhangSan = Student()
+ZhangSan.speak()
+</code></pre>
+<h2 id="单继承特性（多层继承）：传递性" tabindex="-1">单继承特性（多层继承）：传递性</h2>
+<p>在Python继承中，如A类继承了B类，B类又继承了C类。则根据继承的传递性，则A类也会自动继承C类中所有属性和方法（公共）</p>
+<pre><code class="language-python">class C(object):
+    def func(self):
+        print('我是C类中的相关方法func')
+
+class B(C):
+    pass
+
+class A(B):
+    pass
+
+a = A()
+a.func()
+</code></pre>
+<h2 id="多继承" tabindex="-1">多继承</h2>
+<p>Python语言是少数支持多继承的一门编程语言，所谓的多继承就是允许一个类同时继承自多个类的特性。</p>
+<p>基本语法：</p>
+<pre><code class="language-python">class B(object):
+    pass
+
+class C(object):
+    pass
+
+class A(B, C):
+    pass
+
+a = A()
+a.B中的所有属性和方法
+a.C中的所有属性和方法
+</code></pre>
+<p>栗子：</p>
+<pre><code class="language-python"># 定义黑子
+class HeiZi(object):
+	def speak(self):
+		print('我们家哥哥')
+# 定义ikun
+class Ikun(Person):
+	def speak(self):
+		print('你干嘛~嗨嗨哎呦')
+
+class ZhenAiFen(Ikun, Heizi):
+	pass
+
+ZhangSan = ZhenAiFen()
+ZhangSan.speak()
+</code></pre>
+<blockquote>
+<p>注意：虽然多继承允许我们同时继承自多个类，但是实际开发中，应尽量避免使用多继承，因为如果两个类中出现了相同的属性和方法就会产生命名冲突。</p>
+</blockquote>
+<p>上面代码中，继承的两个类中都有speak方法，但是子类只调用了<code>Ikun</code>的的speak方法，没有调用HeiZi的speak方法，这里就涉及到<strong>方法解析顺序</strong>，一般的优先级是：本类中定义的方法&gt;排在前面的父类中的方法</p>
+<h3 id="mro-mro" tabindex="-1">MRO属性或MRO方法：方法解析顺序</h3>
+<p>MRO(Method Resolution Order)：方法解析顺序，我们可以通过<code>类名.__mro__</code>或<code>类名.mro()</code>获得“类的层次结构”，方法解析顺序也是按照这个“类的层次结构”寻找到。</p>
+<pre><code class="language-python">class Car(object):
+    def __init__(self, brand, model, color):
+        self.brand = brand
+        self.model = model
+        self.color = color
+
+    def run(self):
+        print('i can run')
+
+
+class GasolineCar(Car):
+    def run(self):
+        print('i can run with gasoline')
+
+
+class ElectricCar(Car):
+    def __init__(self, brand, model, color, battery):
+        super().__init__(brand, model, color)
+        # 电池属性
+        self.battery = battery
+
+    def run(self):
+        print(f'i can run with electric，i has a {self.battery} + &quot;kwh battery&quot;')
+
+print(ElectricCar.__mro__)
+print(ElectricCar.mro())
+</code></pre>
+<p>代码的输出是：</p>
+<pre><code class="language-powershell">D:\Python\Python37\python.exe D:/PycharmProjects/pythonProject/07-Python中的MR0方法解析顺序.py
+(&lt;class '-_main-_.ElectricCar'&gt;, &lt;class '-_main__.Car'&gt;, &lt;class 'object'&gt;)
+[&lt;class '--main_-.Electriccar'&gt;, &lt;class '--main--.Car'&gt;, &lt;class 'object'&gt;]]
+</code></pre>
+<p>说明：有MRO方法解析顺序可知，在类的继承中，当某个类创建了一个对象时，调用属性或方法，首先在自身类中去寻找，如找到，则直接使用，停止后续的查找。如果未找到，继续向上一级继承的类中去寻找，如找到，则直接使用，没有找到则继续向上寻找...直到object类，这就是Python类继承中，其方法解析顺序。</p>
+<blockquote>
+<p>综上：object类还是所有类的基类（因为这个查找关系到object才终止）</p>
+</blockquote>
+<h2 id="常见问题" tabindex="-1">常见问题</h2>
+<p>问题1：在定义类时，其没有遵循类的命名规则</p>
+<p>答：在Python中，类理论上是区分大小写的（在Python中类可以全部大写也可以全部小写）。但是要遵循一定的命名规范：首字母必须是字母或下划线，其中可以包含字母、数字和下划线，而且要求其命名方式采用大驼峰。</p>
+<p>电动汽车：EletricCar</p>
+<p>父类：Father</p>
+<p>子类：Son</p>
+<p>问题2：父类一定要继承object么？Car(object)</p>
+<p>答：在Python面向对象代码中，建议在编写父类时，让其自动继承object类。但是其实不写也可以，因为默认情况下，Python中的所有类都继承自object。</p>
+<p>问题3：打印属性和方法时，不是只能使用print()函数输出，也可以使用return。</p>
+<p>在实际打印对象信息，还建议使用<code>__str__</code></p>
+<pre><code class="language-python">class Person():
+    def __init__(self, name):
+        self.name = name
+
+    def speak(self):
+        print('i can speak')
+
+# 创建对象，打印属性和方法
+p = Person('Tom')
+print(p.name)
+p.speak()
+</code></pre>
+<p>问题4：在定义魔术方法<code>__init__</code>而非<code>__int__</code></p>
+</main>
+<script>window.location.hash&&document.getElementById(window.location.hash.slice(1)).classList.add("referred"),window.addEventListener("hashchange",(e=>{const t=e.oldURL.split("#");t[1]&&document.getElementById(t[1]).classList.remove("referred");const n=e.newURL.split("#");n[1]&&document.getElementById(n[1]).classList.add("referred")}),!1);const url_parts=window.location.href.split("#"),url=url_parts[0],referrence=url_parts[1];document.querySelectorAll(".cm-s-obsidian > *[id]").forEach((function(e){e.ondblclick=function(e){const t=url+"#"+e.target.id;navigator.clipboard.writeText(t)}}))</script>
+<script src="https://fastly.jsdelivr.net/npm/luxon@3.2.1/build/global/luxon.min.js"></script>
+<script defer="defer">TIMESTAMP_FORMAT="MMM dd, yyyy h:mm a",document.querySelectorAll(".human-date").forEach((function(e){date=e.getAttribute("data-date")||e.innerText,parsed_date=luxon.DateTime.fromISO(date),null!=parsed_date.invalid&&(parsed_date=luxon.DateTime.fromSQL(date)),null!=parsed_date.invalid&&(parsed_date=luxon.DateTime.fromHTML(date)),e.innerHTML=parsed_date.toFormat(TIMESTAMP_FORMAT)}))</script>
+<script>lucide.createIcons({attrs:{class:["svg-icon"]}})</script>
+</body>
+</html>

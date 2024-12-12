@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>乱七八糟的东西</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<script async type="module">import mermaid from"https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"</script>
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js" integrity="sha512-hpZ5pDCF2bRCweL5WoA0/N1elet1KYL5mx3LP555Eg/0ZguaHawxNvEjF6O3rufAChs16HVNhEc6blF/rZoowQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/plugins/autoloader/prism-autoloader.min.js" integrity="sha512-sv0slik/5O0JIPdLBCR2A3XDg/1U3WuDEheZfI/DI5n8Yqc3h5kjrnr46FGBNiUAJF7rE4LHKwQ/SoSLRKAxEA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script async src="https://cdn.jsdelivr.net/npm/lucide@0.115.0/dist/umd/lucide.min.js"></script>
+<script>window.addEventListener("load",(()=>{document.querySelectorAll(".callout").forEach((e=>{const t=getComputedStyle(e).getPropertyValue("--callout-icon"),l=t&&t.trim().replace(/^lucide-/,"");if(l){const t=e.querySelector(".callout-title");if(t){const e=document.createElement("div"),c=document.createElement("i");e.appendChild(c),c.setAttribute("icon-name",l),e.setAttribute("class","callout-icon"),t.insertBefore(e,t.firstChild)}}})),lucide.createIcons(),Array.from(document.querySelectorAll(".callout.is-collapsible")).forEach((e=>{e.querySelector(".callout-title").addEventListener("click",(t=>{e.classList.contains("is-collapsed")?e.classList.remove("is-collapsed"):e.classList.add("is-collapsed")}))}))}))</script>
+<script async src="https://fastly.jsdelivr.net/npm/force-graph@1.43.0/dist/force-graph.min.js"></script>
+<script async src="https://fastly.jsdelivr.net/npm/@alpinejs/persist@3.11.1/dist/cdn.min.js"></script>
+<script src="https://fastly.jsdelivr.net/npm/alpinejs@3.11.1/dist/cdn.min.js" async></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-okaidia.min.css" integrity="sha512-mIs9kKbaw6JZFfSuo+MovjU+Ntggfoj8RwAmJbVXQ5mkAX5LlgETQEweFPI18humSPHymTb5iikEOKWF7I8ncQ==" crossorigin="anonymous" referrerpolicy="no-referrer" async>
+<script src="https://fastly.jsdelivr.net/npm/whatwg-fetch@3.6.2/dist/fetch.umd.min.js" crossorigin="anonymous" referrerpolicy="no-referrer" async></script>
+<link href="/styles/digital-garden-base.css" rel="stylesheet">
+<link href="/styles/obsidian-base.css" rel="stylesheet">
+<link href="/styles/_theme.d92311c2.css" rel="stylesheet">
+<link href="/styles/custom-style.css" rel="stylesheet">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<style></style>
+</head>
+<body class="theme-dark markdown-preview-view markdown-rendered markdown-preview-section">
+<nav class="navbar">
+<div class="navbar-inner">
+<a href="/" style="text-decoration:none">
+<h1 style="margin:15px!important">Digital Garden</h1>
+</a>
+</div>
+</nav>
+<main class="content cm-s-obsidian">
+<header>
+<div class="header-meta">
+</div>
+</header>
+<h1 id="2023-10-25-nature" tabindex="-1">2023.10.25-【人工智能研究的新里程碑】神经网络登上nature。被证明具有泛化能力，能像人类一样思考</h1>
+<p>通过元学习神经网络的类人系统泛化<br>
+论文pdf：<br>
+<a href="../Zotero/storage/Human-like%20systematic%20generalization%20through%20a%20meta-learning%20neural%20network_2023_Lake_Baroni.pdf" target="_blank" class="external-link">Human-like systematic generalization through a meta-learning neural network_2023_Lake_Baroni</a></p>
+<h1 id="2023-12-07-b-20-rsa" tabindex="-1">2023.12.07-b站视频-20世纪末的研究，量子计算机有破解rsa加密的可能性，互联网将变得不安全</h1>
+<p><a href="https://www.bilibili.com/video/BV1gN4y1a7st" target="_blank" class="external-link">https://www.bilibili.com/video/BV1gN4y1a7st</a><br>
+【互联网还安全吗？量子计算机是如何破解你的加密信息的？【量子计算系列2——shor算法】】<br>
+b站刷视频刷到的 （up主：新石器公园）</p>
+<details>
+<summary>视频简介：</summary>不对称加密是互联网安全的基础，但是在量子计算面前，形同虚设。传统计算机需要几万年才能完成的破解，对量子计算机来说，轻而易举就可以攻破。量子计算机是如何破解密码的？依赖于一种叫做肖尔算法(shor 算法)的神奇算法，它利用量子纠缠和量子干涉，就可以让正确答案干涉相长，坍缩出来。 这么神奇的事情到底是如何做到的呢？本视频通过非常深入浅出的介绍，带你走入量子计算的技术细节。这应该是你在全网能够找到的最硬核最深入的关于肖尔算法的科普视频了，通过它，你可以真正了解量子算法的本质。
+</details>
+<details>
+<summary>视频的评论</summary>
+<pre><code>给看不懂的朋友简化一下:
+1.量子计算机可以一次计算出所有结果
+2.但这些结果是叠加在一起的
+3.观测结果结果就会坍塌为其中一种，像抽奖一样，如有1亿种结果，那么抽中的概率就是一亿分之一。
+4.于是科学家设计了一个黑箱大逃杀游戏，游戏的规则是科学家经过精心设置的，在不观测的情况下，让这1亿个结果相互残杀，最终活下来的那个，就是正确答案。!<a class="internal-link is-unresolved" href="/404" target="">脱单doge</a>(https://i0.hdslb.com/bfs/emote/bf7e00ecab02171f8461ee8cf439c73db9797748.png@48w_48h.webp)
+---
+戴宗绝尘
+不，你错了，最终活下来的只能大概率是正确答案，而不是绝对，所以量子计算才需要纠错。这就跟买彩票一样，你买一次有可能中奖，但买1万次几乎不可能全中
+---
+费伦行脚商人
+回复 @戴宗绝尘 :嗯，不过科普其实不需要说的太仔细，大概其就行啦，大逃杀最后剩下几个，可以一个一个实验。
+---
+辍学汤家凤
+回复 @西瓜蹲完蘑菇蹲 : 平行世界只是强行解释了众多概率坍缩成唯一结果的原因，其他可能的结果瞬间分裂出众多平行宇宙继续演化，这只是一个解释，其实你想想，为了解释一个抛硬币的游戏世界重新在分裂一个是不是不太可能。他就是一个在当时没有办法的解释
+---
+此人可以不要昵称
+有没有可能量子计算最底层的基石“薛定谔的猫”本身就是因为我们的观测（测量）设备不够精确而造成的，就像是用一把格尺和秒表测量光速，然后得出光速不可测量的结论出来呢
+---
+费伦行脚商人
+回复 @此人可以不要昵称 :物理存在误差，数学不会，有问题是可以推演出问题哒。
+---
+矩矩
+我觉得基本正确，可是有些描述不对。他们不是在做大逃杀，而更像是一种因果律武器。确定了最后的结果，而前面其它数据会量子内部自动完善。这个看起来是自动完善，其实只是无数叠加态的量子坍缩出来的其中一个逻辑。或者说筛子，所有结果都有都未知，但是最后能通过筛子的就是对的。
+---
+费伦行脚商人
+回复 @矩矩 : 大逃杀比较方便理解，具体那个黑箱公式是怎么做到的，没有足够的基础知识的人，压根就看不明白，比如我，所以干脆就简化一下告诉自己，也别钻牛角尖啦~!
+</code></pre>
+</details>
+<h1 id="2023-12-7-google-gemini-ai-chat-gpt-4" tabindex="-1">2023.12.7-google gemini 谷歌新出AI多模态能力碾压chat-GPT4</h1>
+<p><a href="https://deepmind.google/technologies/gemini/" target="_blank" class="external-link">Gemini - Google DeepMind</a></p>
+<p>技术报告pdf：<br>
+<a href="../Zotero/storage/%E8%B0%B7%E6%AD%8C%E5%8F%8C%E5%AD%90%E5%BA%A7%E5%A4%A7%E6%A8%A1%E5%9E%8B%E6%8A%80%E6%9C%AF%E6%8A%A5%E5%91%8A%20google%20gemini_1_report_2023_Google.pdf" target="_blank" class="external-link">谷歌双子座大模型技术报告 google gemini_1_report_2023_Google</a></p>
+</main>
+<script>window.location.hash&&document.getElementById(window.location.hash.slice(1)).classList.add("referred"),window.addEventListener("hashchange",(e=>{const t=e.oldURL.split("#");t[1]&&document.getElementById(t[1]).classList.remove("referred");const n=e.newURL.split("#");n[1]&&document.getElementById(n[1]).classList.add("referred")}),!1);const url_parts=window.location.href.split("#"),url=url_parts[0],referrence=url_parts[1];document.querySelectorAll(".cm-s-obsidian > *[id]").forEach((function(e){e.ondblclick=function(e){const t=url+"#"+e.target.id;navigator.clipboard.writeText(t)}}))</script>
+<script src="https://fastly.jsdelivr.net/npm/luxon@3.2.1/build/global/luxon.min.js"></script>
+<script defer="defer">TIMESTAMP_FORMAT="MMM dd, yyyy h:mm a",document.querySelectorAll(".human-date").forEach((function(e){date=e.getAttribute("data-date")||e.innerText,parsed_date=luxon.DateTime.fromISO(date),null!=parsed_date.invalid&&(parsed_date=luxon.DateTime.fromSQL(date)),null!=parsed_date.invalid&&(parsed_date=luxon.DateTime.fromHTML(date)),e.innerHTML=parsed_date.toFormat(TIMESTAMP_FORMAT)}))</script>
+<script>lucide.createIcons({attrs:{class:["svg-icon"]}})</script>
+</body>
+</html>

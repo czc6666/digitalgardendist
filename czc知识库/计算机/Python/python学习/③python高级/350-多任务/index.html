@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>350-多任务</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<script async type="module">import mermaid from"https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"</script>
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js" integrity="sha512-hpZ5pDCF2bRCweL5WoA0/N1elet1KYL5mx3LP555Eg/0ZguaHawxNvEjF6O3rufAChs16HVNhEc6blF/rZoowQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/plugins/autoloader/prism-autoloader.min.js" integrity="sha512-sv0slik/5O0JIPdLBCR2A3XDg/1U3WuDEheZfI/DI5n8Yqc3h5kjrnr46FGBNiUAJF7rE4LHKwQ/SoSLRKAxEA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script async src="https://cdn.jsdelivr.net/npm/lucide@0.115.0/dist/umd/lucide.min.js"></script>
+<script>window.addEventListener("load",(()=>{document.querySelectorAll(".callout").forEach((e=>{const t=getComputedStyle(e).getPropertyValue("--callout-icon"),l=t&&t.trim().replace(/^lucide-/,"");if(l){const t=e.querySelector(".callout-title");if(t){const e=document.createElement("div"),c=document.createElement("i");e.appendChild(c),c.setAttribute("icon-name",l),e.setAttribute("class","callout-icon"),t.insertBefore(e,t.firstChild)}}})),lucide.createIcons(),Array.from(document.querySelectorAll(".callout.is-collapsible")).forEach((e=>{e.querySelector(".callout-title").addEventListener("click",(t=>{e.classList.contains("is-collapsed")?e.classList.remove("is-collapsed"):e.classList.add("is-collapsed")}))}))}))</script>
+<script async src="https://fastly.jsdelivr.net/npm/force-graph@1.43.0/dist/force-graph.min.js"></script>
+<script async src="https://fastly.jsdelivr.net/npm/@alpinejs/persist@3.11.1/dist/cdn.min.js"></script>
+<script src="https://fastly.jsdelivr.net/npm/alpinejs@3.11.1/dist/cdn.min.js" async></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-okaidia.min.css" integrity="sha512-mIs9kKbaw6JZFfSuo+MovjU+Ntggfoj8RwAmJbVXQ5mkAX5LlgETQEweFPI18humSPHymTb5iikEOKWF7I8ncQ==" crossorigin="anonymous" referrerpolicy="no-referrer" async>
+<script src="https://fastly.jsdelivr.net/npm/whatwg-fetch@3.6.2/dist/fetch.umd.min.js" crossorigin="anonymous" referrerpolicy="no-referrer" async></script>
+<link href="/styles/digital-garden-base.css" rel="stylesheet">
+<link href="/styles/obsidian-base.css" rel="stylesheet">
+<link href="/styles/_theme.d92311c2.css" rel="stylesheet">
+<link href="/styles/custom-style.css" rel="stylesheet">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<style></style>
+</head>
+<body class="theme-dark markdown-preview-view markdown-rendered markdown-preview-section">
+<nav class="navbar">
+<div class="navbar-inner">
+<a href="/" style="text-decoration:none">
+<h1 style="margin:15px!important">Digital Garden</h1>
+</a>
+</div>
+</nav>
+<main class="content cm-s-obsidian">
+<header>
+<div class="header-meta">
+</div>
+</header>
+<p>引入前面的问题，TCP服务器，一个服务器只能处理一个客户端的请求，如果想要同时处理多个客户端的请求，就需要使用多进程。</p>
+<h1 id="python" tabindex="-1">python中的多任务编程方法：</h1>
+<ul>
+<li>多进程</li>
+<li>多线程</li>
+<li>协程</li>
+</ul>
+<h1 id="多任务的概念" tabindex="-1">多任务的概念</h1>
+<p>多任务是指一个程序中包含多个子任务，这些子任务可以同时执行，也可以交替执行。</p>
+<p>多任务的优势：大大提高程序执行效率</p>
+<ul>
+<li>提升CPU的利用率</li>
+<li>提升程序的执行效率</li>
+<li>提升程序的响应速度</li>
+<li>提升程序的执行速度</li>
+</ul>
+<p>多任务的表现形式：</p>
+<ul>
+<li>并发</li>
+<li>并行</li>
+</ul>
+<h2 id="并发" tabindex="-1">并发</h2>
+<p>任务数大于cpu核心数</p>
+<p>在一段时间内交替去执行多个任务</p>
+<p>并发：在操作系统中，是指一个时间段中有几个程序都处于已启动运行到运行完毕之间，且这几个程序都是在同一个CPU上运行，但任一个时刻点上只有一个程序在CPU上运行。</p>
+<p>单核cpu是并发执行多任务，多核cpu是并行执行多任务</p>
+<h2 id="并行" tabindex="-1">并行</h2>
+<p>cpu核心数大于等于任务数</p>
+<p>在同一时刻点上多个任务同时执行<br>
+<strong>cpu的<a class="internal-link" target="" data-note-icon="undefined" href="/czc知识库/计算机/搞机/Hardware/超线程/">超线程</a>本质也是并发执行</strong>，不能真正算两个核心</p>
+<p>对于多核cpu处理多任务，操作系统会给cpu的每个内核安排一个执行的任务，多个内核是真正的一起同时执行多个任务。这里需要注意多核cpu是并行的执行多任务，始终有多个任务一起执行。</p>
+<hr>
+<hr>
+<h1 id="czc-python-python-python-351-351-czc-python-python-python-352-352" tabindex="-1">学完后面的<a class="internal-link" target="" data-note-icon="undefined" href="/czc知识库/计算机/Python/python学习/③python高级/351-进程/">351-进程</a>和<a class="internal-link" target="" data-note-icon="undefined" href="/czc知识库/计算机/Python/python学习/③python高级/352-线程/">352-线程</a>后的总结</h1>
+<h1 id="进程和线程的对比" tabindex="-1">进程和线程的对比</h1>
+<p>多进程实现多任务，cpu核心不够就是并发，cpu核心足够就是并行</p>
+<p>多线程一定是并发</p>
+<h2 id="关系对比（包含关系）" tabindex="-1">关系对比（包含关系）</h2>
+<ul>
+<li>进程是依附在进程里面的，没有进程就没有线程。</li>
+<li>一个进程默认提供一条线程，进程可以创建多个线程。</li>
+</ul>
+<h2 id="区别对比" tabindex="-1">区别对比</h2>
+<ul>
+<li>进程之间不共享全局变量</li>
+<li>线程之间共享全局变量</li>
+<li>创建进程的资源开销要比创建线程的资源开销要大</li>
+<li>进程是<strong>操作系统资源分配的基本单位</strong>，线程是<strong>CPU调度的基本单位</strong></li>
+<li>线程不能够独立执行，必须依存在进程中</li>
+</ul>
+<h2 id="优缺点对比" tabindex="-1">优缺点对比</h2>
+<ul>
+<li>进程：
+<ul>
+<li>优点：适合CPU密集型应用，因为其可以用多核</li>
+<li>缺点：资源开销大</li>
+</ul>
+</li>
+<li>线程：
+<ul>
+<li>优点：适合IO密集型应用（文件、网络），资源开销小，因为只需要进程中的一点点资源就可以运行</li>
+<li>缺点：<strong>不能使用多核</strong>，不能独立执行，必须依存在进程中</li>
+</ul>
+</li>
+</ul>
+<hr>
+<p>python中的多线程相比c++和java来说相当简单，因为当初python在设计的时候就将这些功能封装好了，但是例如java要实现多线程，需要手动创建线程对象，而python则不需要。</p>
+</main>
+<script>window.location.hash&&document.getElementById(window.location.hash.slice(1)).classList.add("referred"),window.addEventListener("hashchange",(e=>{const t=e.oldURL.split("#");t[1]&&document.getElementById(t[1]).classList.remove("referred");const n=e.newURL.split("#");n[1]&&document.getElementById(n[1]).classList.add("referred")}),!1);const url_parts=window.location.href.split("#"),url=url_parts[0],referrence=url_parts[1];document.querySelectorAll(".cm-s-obsidian > *[id]").forEach((function(e){e.ondblclick=function(e){const t=url+"#"+e.target.id;navigator.clipboard.writeText(t)}}))</script>
+<script src="https://fastly.jsdelivr.net/npm/luxon@3.2.1/build/global/luxon.min.js"></script>
+<script defer="defer">TIMESTAMP_FORMAT="MMM dd, yyyy h:mm a",document.querySelectorAll(".human-date").forEach((function(e){date=e.getAttribute("data-date")||e.innerText,parsed_date=luxon.DateTime.fromISO(date),null!=parsed_date.invalid&&(parsed_date=luxon.DateTime.fromSQL(date)),null!=parsed_date.invalid&&(parsed_date=luxon.DateTime.fromHTML(date)),e.innerHTML=parsed_date.toFormat(TIMESTAMP_FORMAT)}))</script>
+<script>lucide.createIcons({attrs:{class:["svg-icon"]}})</script>
+</body>
+</html>

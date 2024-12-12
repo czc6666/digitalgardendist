@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>GNN 图神经网络</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<script async type="module">import mermaid from"https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"</script>
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js" integrity="sha512-hpZ5pDCF2bRCweL5WoA0/N1elet1KYL5mx3LP555Eg/0ZguaHawxNvEjF6O3rufAChs16HVNhEc6blF/rZoowQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/plugins/autoloader/prism-autoloader.min.js" integrity="sha512-sv0slik/5O0JIPdLBCR2A3XDg/1U3WuDEheZfI/DI5n8Yqc3h5kjrnr46FGBNiUAJF7rE4LHKwQ/SoSLRKAxEA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script async src="https://cdn.jsdelivr.net/npm/lucide@0.115.0/dist/umd/lucide.min.js"></script>
+<script>window.addEventListener("load",(()=>{document.querySelectorAll(".callout").forEach((e=>{const t=getComputedStyle(e).getPropertyValue("--callout-icon"),l=t&&t.trim().replace(/^lucide-/,"");if(l){const t=e.querySelector(".callout-title");if(t){const e=document.createElement("div"),c=document.createElement("i");e.appendChild(c),c.setAttribute("icon-name",l),e.setAttribute("class","callout-icon"),t.insertBefore(e,t.firstChild)}}})),lucide.createIcons(),Array.from(document.querySelectorAll(".callout.is-collapsible")).forEach((e=>{e.querySelector(".callout-title").addEventListener("click",(t=>{e.classList.contains("is-collapsed")?e.classList.remove("is-collapsed"):e.classList.add("is-collapsed")}))}))}))</script>
+<script async src="https://fastly.jsdelivr.net/npm/force-graph@1.43.0/dist/force-graph.min.js"></script>
+<script async src="https://fastly.jsdelivr.net/npm/@alpinejs/persist@3.11.1/dist/cdn.min.js"></script>
+<script src="https://fastly.jsdelivr.net/npm/alpinejs@3.11.1/dist/cdn.min.js" async></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-okaidia.min.css" integrity="sha512-mIs9kKbaw6JZFfSuo+MovjU+Ntggfoj8RwAmJbVXQ5mkAX5LlgETQEweFPI18humSPHymTb5iikEOKWF7I8ncQ==" crossorigin="anonymous" referrerpolicy="no-referrer" async>
+<script src="https://fastly.jsdelivr.net/npm/whatwg-fetch@3.6.2/dist/fetch.umd.min.js" crossorigin="anonymous" referrerpolicy="no-referrer" async></script>
+<link href="/styles/digital-garden-base.css" rel="stylesheet">
+<link href="/styles/obsidian-base.css" rel="stylesheet">
+<link href="/styles/_theme.d92311c2.css" rel="stylesheet">
+<link href="/styles/custom-style.css" rel="stylesheet">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<style></style>
+</head>
+<body class="theme-dark markdown-preview-view markdown-rendered markdown-preview-section">
+<nav class="navbar">
+<div class="navbar-inner">
+<a href="/" style="text-decoration:none">
+<h1 style="margin:15px!important">Digital Garden</h1>
+</a>
+</div>
+</nav>
+<main class="content cm-s-obsidian">
+<header>
+<div class="header-meta">
+</div>
+</header>
+<p>学习网站：<br>
+-<a href="%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%AD%A6%E4%B9%A0%E7%BD%91%E7%AB%99%20%E4%BF%A1%E6%81%AF.md" target="_blank" class="external-link">深度学习学习网站 信息</a>)</p>
+<ul>
+<li><a href="https://www.bilibili.com/video/BV1184y1x71H" target="_blank" class="external-link">不愧是公认最好的【图神经网络GNN/GCN教程】，从基础到进阶再到实战，一个合集全部到位！-人工智能/神经网络/图神经网络/深度学习。_哔哩哔哩_bilibili</a></li>
+</ul>
+<h1 id="应用领域" tabindex="-1">应用领域</h1>
+<ul>
+<li>最大层面，芯片设计</li>
+<li>场景分析、问题推理</li>
+<li>系统推荐相关（个性化推荐）</li>
+<li>欺诈检查、风控相关</li>
+<li>知识图谱</li>
+<li>道路交通，动态流量预测（竞赛热门）</li>
+<li>自动驾驶，无人机等场景</li>
+<li>化学，医疗领域（未来趋势方向）</li>
+<li>物理模型相关：新能源电池设计，ai自动找分子组合方案做实验</li>
+</ul>
+<p>图的基本组成</p>
+<ul>
+<li><strong>V</strong> 顶点 Vertex (or node) attributes</li>
+<li><strong>E</strong> Edge (or link) attributes and directions</li>
+<li><strong>U</strong> Global (or master node) attributes</li>
+</ul>
+<p>图神经网络要做啥：无论事整的多么复杂，我们利用图神经网络的目的就是整合特征（整合点的、边的和全局的特征，全面）</p>
+<ul>
+<li>Vertex (or node) embedding</li>
+<li>Edge (or link) attributes and embedding</li>
+<li>Global (or master node) embedding</li>
+</ul>
+<p>embedding：词嵌入</p>
+<p>图的邻接矩阵<br>
+邻接矩阵：描述节点的邻居有哪一些<br>
+无向图的邻接矩阵是对称的</p>
+<p>为什么CV和NLP中应用GNN很少</p>
+<ul>
+<li>传统NN模型输入<strong>格式</strong>固定，</li>
+<li>因为图像和文本数据的<strong>格式都贼固定</strong>，想一想咱们的预处理</li>
+<li>有图像resize成固定大小，然后进行卷积操作得到特征，<strong>格式很固定</strong></li>
+<li>文本固定长度和词向量大小，然后也是这么个事，<strong>不需要特殊的邻接矩阵</strong></li>
+</ul>
+<p>GNN，输入数据不规则，不同数据结构完全不同<br>
+社交网络人物关系，这种邻接矩阵很庞大</p>
+<p>GNN三种级别的人物：<br>
+点：Node与Edge级别任务<br>
+边：<br>
+图：Graph级别任务</p>
+<p>邻接矩阵：一般邻接矩阵表达形式如下，并不是一个N*N的矩阵，而是保存source,target</p>
+<p>例如：</p>
+<pre><code>Nodes [0,1,1,0,0,1,1,1]
+Edges [2,1,1,1,2,1,1]
+Adjacency List [[1,0],[2,0],[4,3],[6,2],[7,3],[7,4],[7,5]]
+Global 0
+</code></pre>
+</main>
+<script>window.location.hash&&document.getElementById(window.location.hash.slice(1)).classList.add("referred"),window.addEventListener("hashchange",(e=>{const t=e.oldURL.split("#");t[1]&&document.getElementById(t[1]).classList.remove("referred");const n=e.newURL.split("#");n[1]&&document.getElementById(n[1]).classList.add("referred")}),!1);const url_parts=window.location.href.split("#"),url=url_parts[0],referrence=url_parts[1];document.querySelectorAll(".cm-s-obsidian > *[id]").forEach((function(e){e.ondblclick=function(e){const t=url+"#"+e.target.id;navigator.clipboard.writeText(t)}}))</script>
+<script src="https://fastly.jsdelivr.net/npm/luxon@3.2.1/build/global/luxon.min.js"></script>
+<script defer="defer">TIMESTAMP_FORMAT="MMM dd, yyyy h:mm a",document.querySelectorAll(".human-date").forEach((function(e){date=e.getAttribute("data-date")||e.innerText,parsed_date=luxon.DateTime.fromISO(date),null!=parsed_date.invalid&&(parsed_date=luxon.DateTime.fromSQL(date)),null!=parsed_date.invalid&&(parsed_date=luxon.DateTime.fromHTML(date)),e.innerHTML=parsed_date.toFormat(TIMESTAMP_FORMAT)}))</script>
+<script>lucide.createIcons({attrs:{class:["svg-icon"]}})</script>
+</body>
+</html>

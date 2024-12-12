@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>AOSP 安卓开放源代码项目</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<script async type="module">import mermaid from"https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"</script>
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js" integrity="sha512-hpZ5pDCF2bRCweL5WoA0/N1elet1KYL5mx3LP555Eg/0ZguaHawxNvEjF6O3rufAChs16HVNhEc6blF/rZoowQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/plugins/autoloader/prism-autoloader.min.js" integrity="sha512-sv0slik/5O0JIPdLBCR2A3XDg/1U3WuDEheZfI/DI5n8Yqc3h5kjrnr46FGBNiUAJF7rE4LHKwQ/SoSLRKAxEA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script async src="https://cdn.jsdelivr.net/npm/lucide@0.115.0/dist/umd/lucide.min.js"></script>
+<script>window.addEventListener("load",(()=>{document.querySelectorAll(".callout").forEach((e=>{const t=getComputedStyle(e).getPropertyValue("--callout-icon"),l=t&&t.trim().replace(/^lucide-/,"");if(l){const t=e.querySelector(".callout-title");if(t){const e=document.createElement("div"),c=document.createElement("i");e.appendChild(c),c.setAttribute("icon-name",l),e.setAttribute("class","callout-icon"),t.insertBefore(e,t.firstChild)}}})),lucide.createIcons(),Array.from(document.querySelectorAll(".callout.is-collapsible")).forEach((e=>{e.querySelector(".callout-title").addEventListener("click",(t=>{e.classList.contains("is-collapsed")?e.classList.remove("is-collapsed"):e.classList.add("is-collapsed")}))}))}))</script>
+<script async src="https://fastly.jsdelivr.net/npm/force-graph@1.43.0/dist/force-graph.min.js"></script>
+<script async src="https://fastly.jsdelivr.net/npm/@alpinejs/persist@3.11.1/dist/cdn.min.js"></script>
+<script src="https://fastly.jsdelivr.net/npm/alpinejs@3.11.1/dist/cdn.min.js" async></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-okaidia.min.css" integrity="sha512-mIs9kKbaw6JZFfSuo+MovjU+Ntggfoj8RwAmJbVXQ5mkAX5LlgETQEweFPI18humSPHymTb5iikEOKWF7I8ncQ==" crossorigin="anonymous" referrerpolicy="no-referrer" async>
+<script src="https://fastly.jsdelivr.net/npm/whatwg-fetch@3.6.2/dist/fetch.umd.min.js" crossorigin="anonymous" referrerpolicy="no-referrer" async></script>
+<link href="/styles/digital-garden-base.css" rel="stylesheet">
+<link href="/styles/obsidian-base.css" rel="stylesheet">
+<link href="/styles/_theme.d92311c2.css" rel="stylesheet">
+<link href="/styles/custom-style.css" rel="stylesheet">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<style></style>
+</head>
+<body class="theme-dark markdown-preview-view markdown-rendered markdown-preview-section">
+<nav class="navbar">
+<div class="navbar-inner">
+<a href="/" style="text-decoration:none">
+<h1 style="margin:15px!important">Digital Garden</h1>
+</a>
+</div>
+</nav>
+<main class="content cm-s-obsidian">
+<header>
+<div class="header-meta">
+</div>
+</header>
+<p>AOSP：Android Open Source Project<br>
+<a href="android%E7%AC%94%E8%AE%B0%20%E5%AE%89%E5%8D%93.md" target="_blank" class="external-link">android笔记 安卓</a></p>
+<h1 id="总结" tabindex="-1">总结</h1>
+<p>百度网盘下别人提取好的源码</p>
+<h3 id="aosp" tabindex="-1">AOSP 概述</h3>
+<p>AOSP 安卓开源项目（<strong>Android Open Source Project</strong>），是一项旨在指导Android移动平台开发的计划 。</p>
+<p>Android 是一个适用于移动设备的开源操作系统，也是由 Google 主导的对应开源项目。作为一个开源项目，Android 的目标是避免出现任何集中瓶颈，即没有任何行业参与者可一手限制或控制其他任何参与者的创新。为此，Android 被打造成了一个适用于消费类产品的完整高品质操作系统，并配有可自定义并运用到几乎所有设备的源代码，以及所有用户均可访问的公开文档（英文网址：<a href="https://link.juejin.cn?target=https%3A%2F%2Fsource.android.google.cn%2F%3Fhl%3Dzh-cn" title="https://source.android.google.cn/?hl=zh-cn" target="_blank" class="external-link">source.android.com</a>；简体中文网址：<a href="https://link.juejin.cn?target=https%3A%2F%2Fsource.android.google.cn%2F%3Fhl%3Dzh-cn" title="https://source.android.google.cn/?hl=zh-cn" target="_blank" class="external-link">source.android.google.cn</a>）。<br>
+<a href="https://juejin.cn/post/7202826051541532727" target="_blank" class="external-link">【视频文稿】车载Android应用开发与分析 - AOSP的下载与编译 - 掘金</a></p>
+<blockquote>
+<p>👆从这发现的可以在清华源里下源码tar压缩包</p>
+</blockquote>
+<h1 id="aosp-1" tabindex="-1">AOSP源码网站：</h1>
+<p><a href="https://source.android.google.cn/docs/setup/download/downloading" target="_blank" class="external-link">https://source.android.google.cn/docs/setup/download/downloading</a><br>
+<a href="https://github.com/aosp-mirror" target="_blank" class="external-link">https://github.com/aosp-mirror</a><br>
+<a href="https://cs.android.com" target="_blank" class="external-link">cs.android.com</a>👉这里可以快速搜索源代码里的代码和文件<br>
+<a href="http://aospxref.com" target="_blank" class="external-link">http://aospxref.com</a></p>
+<h1 id="下载方法" tabindex="-1">下载方法</h1>
+<ul>
+<li>
+<p>使用初始化压缩包<br>
+中科大和清华大学提供了AOSP源码的压缩包，现在的包大约有60GB左右，可以使用命令行或迅雷等下载工具下载。优点：下载速度快，支持断点续传。缺点：不贴近工作环境，实际项目中不使用这种方式。</p>
+</li>
+<li>
+<p>清华大学文档：<a href="https://mirrors.tuna.tsinghua.edu.cn/help/AOSP/" target="_blank" class="external-link">https://mirrors.tuna.tsinghua.edu.cn/help/AOSP/</a></p>
+</li>
+<li>
+<p>源码压缩包：<a href="https://mirrors.tuna.tsinghua.edu.cn/aosp-monthly/aosp-latest.tar" target="_blank" class="external-link">https://mirrors.tuna.tsinghua.edu.cn/aosp-monthly/aosp-latest.tar</a><br>
+中科大文档 : <a href="https://mirrors.ustc.edu.cn/help/aosp.html" target="_blank" class="external-link">https://mirrors.ustc.edu.cn/help/aosp.html</a></p>
+</li>
+<li>
+<p>使用repo 直接同步<br>
+使用repo直接同步源码，是Android官方文档中使用的方式。优点：更贴近工作环境。在实际项目中也是使用这种方式同步Android源码。缺点：源码太大，外网不稳定、速度很慢，容易同步失败（实际项目中，使用公司内网不会存在这个问题）。<br>
+官方文档：<br>
+<a href="https://source.android.google.cn/docs/setup/download/downloading" target="_blank" class="external-link">下载源代码  |  Android Open Source Project</a></p>
+</li>
+<li>
+<p>上面都是狗屁，太难了</p>
+</li>
+<li>
+<p>直接百度网盘下载： <a href="https://blog.csdn.net/zwc456baby/article/details/108594712" target="_blank" class="external-link">Android (包含1.6到14)AOSP源码下载(百度网盘)_android 10源码百度网盘-CSDN博客</a></p>
+</li>
+</ul>
+<h1 id="实际安装笔记" tabindex="-1">实际安装笔记</h1>
+<p>参考网站：<br>
+<a href="https://mirrors.tuna.tsinghua.edu.cn/help/git-repo/" target="_blank" class="external-link">git-repo | 镜像站使用帮助 | 清华大学开源软件镜像站 | Tsinghua Open Source Mirror</a><br>
+<a href="https://blog.csdn.net/xuanwolanxue/article/details/104678027" target="_blank" class="external-link">repo安装与简单使用</a><br>
+<a href="https://juejin.cn/post/7202826051541532727" target="_blank" class="external-link">【视频文稿】车载Android应用开发与分析 - AOSP的下载与编译 - 掘金</a></p>
+<p>清华源下载<code>aosp-latest.tar</code>，解压<code>tar xf aosp-latest.tar</code><br>
+安装<code>repo</code></p>
+<pre><code class="language-linux命令">mkdir ~/bin
+wget https://storage.googleapis.com/git-repo-downloads/repo -P ~/bin/
+chmod a+x ~/bin/repo export 
+PATH=~/bin:$PATH
+如第三步一样，在~/.bashrc 文件的最末尾添加如下内容： 
+export REPO_URL=https://mirrors.tuna.tsinghua.edu.cn/git/git-repo/
+这里使用的是清华大学的镜像源
+</code></pre>
+<p>重启shell<br>
+<code>repo init</code><br>
+<code>cd aosp</code><br>
+<code>repo sync</code><br>
+等待同步，输出进度：<code>Fetching: 9% (128/1402) 7:21 | 4 jobs | 0:49 platform/prebuilts/rust @ prebuilts/rust</code></p>
+</main>
+<script>window.location.hash&&document.getElementById(window.location.hash.slice(1)).classList.add("referred"),window.addEventListener("hashchange",(e=>{const t=e.oldURL.split("#");t[1]&&document.getElementById(t[1]).classList.remove("referred");const n=e.newURL.split("#");n[1]&&document.getElementById(n[1]).classList.add("referred")}),!1);const url_parts=window.location.href.split("#"),url=url_parts[0],referrence=url_parts[1];document.querySelectorAll(".cm-s-obsidian > *[id]").forEach((function(e){e.ondblclick=function(e){const t=url+"#"+e.target.id;navigator.clipboard.writeText(t)}}))</script>
+<script src="https://fastly.jsdelivr.net/npm/luxon@3.2.1/build/global/luxon.min.js"></script>
+<script defer="defer">TIMESTAMP_FORMAT="MMM dd, yyyy h:mm a",document.querySelectorAll(".human-date").forEach((function(e){date=e.getAttribute("data-date")||e.innerText,parsed_date=luxon.DateTime.fromISO(date),null!=parsed_date.invalid&&(parsed_date=luxon.DateTime.fromSQL(date)),null!=parsed_date.invalid&&(parsed_date=luxon.DateTime.fromHTML(date)),e.innerHTML=parsed_date.toFormat(TIMESTAMP_FORMAT)}))</script>
+<script>lucide.createIcons({attrs:{class:["svg-icon"]}})</script>
+</body>
+</html>

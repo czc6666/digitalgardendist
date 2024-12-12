@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>342-TCP服务器开发流程</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<script async type="module">import mermaid from"https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"</script>
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js" integrity="sha512-hpZ5pDCF2bRCweL5WoA0/N1elet1KYL5mx3LP555Eg/0ZguaHawxNvEjF6O3rufAChs16HVNhEc6blF/rZoowQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/plugins/autoloader/prism-autoloader.min.js" integrity="sha512-sv0slik/5O0JIPdLBCR2A3XDg/1U3WuDEheZfI/DI5n8Yqc3h5kjrnr46FGBNiUAJF7rE4LHKwQ/SoSLRKAxEA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script async src="https://cdn.jsdelivr.net/npm/lucide@0.115.0/dist/umd/lucide.min.js"></script>
+<script>window.addEventListener("load",(()=>{document.querySelectorAll(".callout").forEach((e=>{const t=getComputedStyle(e).getPropertyValue("--callout-icon"),l=t&&t.trim().replace(/^lucide-/,"");if(l){const t=e.querySelector(".callout-title");if(t){const e=document.createElement("div"),c=document.createElement("i");e.appendChild(c),c.setAttribute("icon-name",l),e.setAttribute("class","callout-icon"),t.insertBefore(e,t.firstChild)}}})),lucide.createIcons(),Array.from(document.querySelectorAll(".callout.is-collapsible")).forEach((e=>{e.querySelector(".callout-title").addEventListener("click",(t=>{e.classList.contains("is-collapsed")?e.classList.remove("is-collapsed"):e.classList.add("is-collapsed")}))}))}))</script>
+<script async src="https://fastly.jsdelivr.net/npm/force-graph@1.43.0/dist/force-graph.min.js"></script>
+<script async src="https://fastly.jsdelivr.net/npm/@alpinejs/persist@3.11.1/dist/cdn.min.js"></script>
+<script src="https://fastly.jsdelivr.net/npm/alpinejs@3.11.1/dist/cdn.min.js" async></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-okaidia.min.css" integrity="sha512-mIs9kKbaw6JZFfSuo+MovjU+Ntggfoj8RwAmJbVXQ5mkAX5LlgETQEweFPI18humSPHymTb5iikEOKWF7I8ncQ==" crossorigin="anonymous" referrerpolicy="no-referrer" async>
+<script src="https://fastly.jsdelivr.net/npm/whatwg-fetch@3.6.2/dist/fetch.umd.min.js" crossorigin="anonymous" referrerpolicy="no-referrer" async></script>
+<link href="/styles/digital-garden-base.css" rel="stylesheet">
+<link href="/styles/obsidian-base.css" rel="stylesheet">
+<link href="/styles/_theme.d92311c2.css" rel="stylesheet">
+<link href="/styles/custom-style.css" rel="stylesheet">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<style></style>
+</head>
+<body class="theme-dark markdown-preview-view markdown-rendered markdown-preview-section">
+<nav class="navbar">
+<div class="navbar-inner">
+<a href="/" style="text-decoration:none">
+<h1 style="margin:15px!important">Digital Garden</h1>
+</a>
+</div>
+</nav>
+<main class="content cm-s-obsidian">
+<header>
+<div class="header-meta">
+</div>
+</header>
+<p>CS模式：客户端-服务端模式</p>
+<p><picture src="/img/user/czc%E7%9F%A5%E8%AF%86%E5%BA%93/%E6%9D%82%E4%B8%83%E6%9D%82%E5%85%AB/9-%E9%99%84%E4%BB%B6/%E9%99%84%E4%BB%B6/342-TCP%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%BC%80%E5%8F%91%E6%B5%81%E7%A8%8B_image.png" alt="400"><source media="(max-width:480px)" srcset="/img/optimized/SXvb26sXVh-500.webp" type="image/webp">
+<source media="(max-width:480px)" srcset="/img/optimized/SXvb26sXVh-500.jpeg">
+<source media="(max-width:1920px)" srcset="/img/optimized/SXvb26sXVh-592.webp" type="image/webp"><source media="(max-width:1920px)" srcset="/img/optimized/SXvb26sXVh-592.jpeg"><img class="" src="/img/user/czc%E7%9F%A5%E8%AF%86%E5%BA%93/%E6%9D%82%E4%B8%83%E6%9D%82%E5%85%AB/9-%E9%99%84%E4%BB%B6/%E9%99%84%E4%BB%B6/342-TCP%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%BC%80%E5%8F%91%E6%B5%81%E7%A8%8B_image.png" alt="400" width=""></picture></p>
+<p>TCP客户端开发流程介绍（五步）（C端）<br>
+1.创建客户端套接字对象<br>
+2.和服务端套接字建立连接<br>
+3.发送数据<br>
+4.接收数据<br>
+5.关闭客户端套接字<br>
+TCP服务端开发流程（七步）（S端）<br>
+1.创建服务端端套接字对象<br>
+2.绑定端口号<br>
+3.设置监听<br>
+4.等待接受客户端的连接请求<br>
+5.接收数据<br>
+6.发送数据<br>
+7.关闭套接字</p>
+<h1 id="tcp" tabindex="-1">TCP客户端程序开发</h1>
+<pre><code class="language-python">import socket
+
+# 第一步：创建客户端套接字对象
+tcp_client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)  # socket.AF_INET表示IPV4，socket.SOCK_STREAM表示TCP协议
+
+# 第二步：创建连接
+tcp_client_socket.connect((&quot;127.0.0.1&quot;, 8000))  # 参数是个元组
+
+# 第三步：发送数据到服务器端
+tcp_client_socket.send(&quot;hello&quot;.encode(&quot;utf-8&quot;))  # 这里将字符串编码成二进制数据
+
+# 第四步：接收服务器端返回的数据
+recv_data = tcp_client_socket.recv(1024).decode(&quot;utf-8&quot;)  # 1024表示本次接收的最大字节数，decode解码
+print(f&quot;接收到的数据为：{recv_data}&quot;)  # 将二进制数据解码成字符串
+
+# 第五步：关闭套接字对象
+tcp_client_socket.close()
+</code></pre>
+<p>tip：发送和接受的都要是二进制数据，所以要用encode和decode方法将字符串转换成二进制数据</p>
+<ul>
+<li>encode()：将字符串转换成二进制数据</li>
+<li>decode()：将二进制数据转换成字符串</li>
+</ul>
+<h1 id="tcp-1" tabindex="-1">TCP服务端程序开发（重点）</h1>
+<p>开发的七步：<br>
+1.创建服务端套接字对象<br>
+2.绑定端口号<br>
+3.设置监听<br>
+4.等待接受客户端的连接请求：类似于input() → accept()阻塞<br>
+5.接收数据<br>
+6.发送数据<br>
+7.关闭套接字</p>
+<p>服务器如何判断是哪个客户端连接：<br>
+通过accept()方法返回的套接字对象来区分不同的客户端</p>
+<pre><code class="language-python">import socket
+
+# 1.创建服务端套接字对象
+tcp_server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)  # socket.AF_INET表示IPV4，socket.SOCK_STREAM表示TCP协议
+
+# 2.绑定端口号
+tcp_server_socket.bind((&quot;127.0.0.1&quot;, 8000))  # 如果是本机，可以不写ip地址
+
+# 3.设置监听
+tcp_server_socket.listen(128)  # 128表示最大连接数
+
+# 4.等待接受客户端的连接请求
+new_socket, ip_port = tcp_server_socket.accept()  # 阻塞状态，等待客户端连接
+# tcp_server_socket对象主要用于接收客户端连接：绑定端口、设置监听、接收连接
+# new_socket对象主要用于接收和发送数据
+print(f&quot;新连接的客户端地址为：{ip_port}&quot;)
+print(f&quot;新连接的客户端socket对象为：{new_socket}&quot;)
+
+# ================================================
+# 5.接收数据
+recv_data = new_socket.recv(1024).decode(&quot;utf-8&quot;)  # 1024表示本次接收的最大字节数，decode解码	
+print(f&quot;接收到的数据为：{recv_data}&quot;)
+
+# 6.发送数据
+new_socket.send(&quot;信息已收到&quot;.encode(&quot;utf-8&quot;))  # 将字符串编码成二进制数据
+
+# 7.关闭新套接字对象（关闭后不能收发消息）和服务端套接字对象（不能接收新连接）
+new_socket.close()
+tcp_server_socket.close()
+
+</code></pre>
+<p>当客户端发送信息后，接收到的data是一个元组，下面是个栗子，元组有两个元素，第一个元素是套接字对象，第二个元素是客户端的地址（也是元组）</p>
+<pre><code class="language-bash">(
+	&lt;socket.socket fd=432, family=AddressFamily.AF_INET, ttype=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 8000), raddr=('127.0.0.1', 60925)&gt;, 
+	('127.0.0.1', 60925)
+)
+</code></pre>
+<p>注意事项：</p>
+<ul>
+<li>明确自己开发的到底是客户端还是服务端
+<ul>
+<li>客户端：connect()、send()、recv()、close()</li>
+<li>服务端：socket()、bind()、listen()、accept()、recv()、send()、close()</li>
+</ul>
+</li>
+<li>两个对象要分清楚
+<ul>
+<li>tcp_server_socket：主要用于接收客户端连接
+<ul>
+<li>内部只有服务器本身的信息，可以绑定端口、设置监听、接收连接</li>
+</ul>
+</li>
+<li>new_socket：主要用于接收和发送数据
+<ul>
+<li>内部既有客户端又有服务器端信息，可以接收和发送数据</li>
+<li>只能通过这个新套接字来收发数据</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="服务器端面向对象版本" tabindex="-1">服务器端面向对象版本</h1>
+<p>都是七步，不变</p>
+<p>面向对象，先分析有哪些对象，创建类，属性和方法</p>
+<pre><code class="language-python">
+# 第一步：创建类
+class WebServer:
+	# 第四步：创建初始化方法，初始化套接字对象
+	def __init__(self):
+		# 1.创建套接字对象
+		self.tcp_server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)  # AF_INET表示IPV4，SOCK_STREAM表示TCP协议
+
+		# 2.绑定ip和端口号
+		self.tcp_server_socket.bind((&quot;127.0.0.1&quot;, 8000))  # 如果是本机，可以不写ip地址
+		# 这里的8000端口不会随着服务器关闭而释放，需要设置端口复用，端口复用在下一篇笔记
+
+		# 3.设置监听
+		self.tcp_server_socket.listen(128)  # 128表示最大连接数
+
+	# 第五步：定义一个start方法，启动服务器，接收客户端连接
+	def start(self):
+		while True:
+			# 4.等待接受客户端的连接请求
+			new_socket, ip_port = self.tcp_server_socket.accept()
+
+			# 5.接收数据
+			recv_data = new_socket.recv(1024).decode(&quot;utf-8&quot;)
+			print(f&quot;接收到的数据为：{recv_data}&quot;)
+
+			# 6.发送数据
+			new_socket.send(&quot;信息已收到&quot;.encode(&quot;utf-8&quot;))
+
+			# 7.关闭套接字（只能接收一次信息）
+			# 不能关闭tcp_server_socket，否则无法继续接收新连接
+			new_socket.close()
+
+			# 目前一次只能接收一个客户端，因为是单进程
+			# 如果希望服务器可以同时和多个客户端收发消息，需要多进程（多任务编程）
+
+# 第二步：实例化对象
+ws = WebServer()
+
+# 第三步：调用start方法，启动服务器，接收客户端连接
+ws.start()
+</code></pre>
+</main>
+<script>window.location.hash&&document.getElementById(window.location.hash.slice(1)).classList.add("referred"),window.addEventListener("hashchange",(e=>{const t=e.oldURL.split("#");t[1]&&document.getElementById(t[1]).classList.remove("referred");const n=e.newURL.split("#");n[1]&&document.getElementById(n[1]).classList.add("referred")}),!1);const url_parts=window.location.href.split("#"),url=url_parts[0],referrence=url_parts[1];document.querySelectorAll(".cm-s-obsidian > *[id]").forEach((function(e){e.ondblclick=function(e){const t=url+"#"+e.target.id;navigator.clipboard.writeText(t)}}))</script>
+<script src="https://fastly.jsdelivr.net/npm/luxon@3.2.1/build/global/luxon.min.js"></script>
+<script defer="defer">TIMESTAMP_FORMAT="MMM dd, yyyy h:mm a",document.querySelectorAll(".human-date").forEach((function(e){date=e.getAttribute("data-date")||e.innerText,parsed_date=luxon.DateTime.fromISO(date),null!=parsed_date.invalid&&(parsed_date=luxon.DateTime.fromSQL(date)),null!=parsed_date.invalid&&(parsed_date=luxon.DateTime.fromHTML(date)),e.innerHTML=parsed_date.toFormat(TIMESTAMP_FORMAT)}))</script>
+<script>lucide.createIcons({attrs:{class:["svg-icon"]}})</script>
+</body>
+</html>

@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>311-面向对象习题</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<script async type="module">import mermaid from"https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"</script>
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js" integrity="sha512-hpZ5pDCF2bRCweL5WoA0/N1elet1KYL5mx3LP555Eg/0ZguaHawxNvEjF6O3rufAChs16HVNhEc6blF/rZoowQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/plugins/autoloader/prism-autoloader.min.js" integrity="sha512-sv0slik/5O0JIPdLBCR2A3XDg/1U3WuDEheZfI/DI5n8Yqc3h5kjrnr46FGBNiUAJF7rE4LHKwQ/SoSLRKAxEA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script async src="https://cdn.jsdelivr.net/npm/lucide@0.115.0/dist/umd/lucide.min.js"></script>
+<script>window.addEventListener("load",(()=>{document.querySelectorAll(".callout").forEach((e=>{const t=getComputedStyle(e).getPropertyValue("--callout-icon"),l=t&&t.trim().replace(/^lucide-/,"");if(l){const t=e.querySelector(".callout-title");if(t){const e=document.createElement("div"),c=document.createElement("i");e.appendChild(c),c.setAttribute("icon-name",l),e.setAttribute("class","callout-icon"),t.insertBefore(e,t.firstChild)}}})),lucide.createIcons(),Array.from(document.querySelectorAll(".callout.is-collapsible")).forEach((e=>{e.querySelector(".callout-title").addEventListener("click",(t=>{e.classList.contains("is-collapsed")?e.classList.remove("is-collapsed"):e.classList.add("is-collapsed")}))}))}))</script>
+<script async src="https://fastly.jsdelivr.net/npm/force-graph@1.43.0/dist/force-graph.min.js"></script>
+<script async src="https://fastly.jsdelivr.net/npm/@alpinejs/persist@3.11.1/dist/cdn.min.js"></script>
+<script src="https://fastly.jsdelivr.net/npm/alpinejs@3.11.1/dist/cdn.min.js" async></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-okaidia.min.css" integrity="sha512-mIs9kKbaw6JZFfSuo+MovjU+Ntggfoj8RwAmJbVXQ5mkAX5LlgETQEweFPI18humSPHymTb5iikEOKWF7I8ncQ==" crossorigin="anonymous" referrerpolicy="no-referrer" async>
+<script src="https://fastly.jsdelivr.net/npm/whatwg-fetch@3.6.2/dist/fetch.umd.min.js" crossorigin="anonymous" referrerpolicy="no-referrer" async></script>
+<link href="/styles/digital-garden-base.css" rel="stylesheet">
+<link href="/styles/obsidian-base.css" rel="stylesheet">
+<link href="/styles/_theme.d92311c2.css" rel="stylesheet">
+<link href="/styles/custom-style.css" rel="stylesheet">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<style></style>
+</head>
+<body class="theme-dark markdown-preview-view markdown-rendered markdown-preview-section">
+<nav class="navbar">
+<div class="navbar-inner">
+<a href="/" style="text-decoration:none">
+<h1 style="margin:15px!important">Digital Garden</h1>
+</a>
+</div>
+</nav>
+<main class="content cm-s-obsidian">
+<header>
+<div class="header-meta">
+</div>
+</header>
+<h1 id="搬家具" tabindex="-1">搬家具</h1>
+<h2 id="题干" tabindex="-1">题干</h2>
+<p>搬家具规则：</p>
+<ol>
+<li>家具分不同的类型，并占用不同的面积</li>
+<li>输出家具信息时，显示家具的类型和家具占用的面积</li>
+<li>房子有自己的地址和占用的面积</li>
+<li>房子可以添加家具，如果房子的剩余面积可以容纳家具，则提示家具添加成功；否则提示添加失败</li>
+<li>输出房子信息时，可以显示房子的地址、占地面积、剩余面积</li>
+</ol>
+<p>运行效果：</p>
+<pre><code class="language-powershell">当前房间可用面积为:100
+床的面积为:20
+ok:已经存放到房间中
+当前房间可用面积为:80 
+容纳的物品有: 床
+床的面积为:30
+ok:已经存放到房间中
+当前房间可用面积为:50 
+容纳的物品有: 床, 席梦思 
+</code></pre>
+<h2 id="代码" tabindex="-1">代码</h2>
+<pre><code class="language-python"># 定义一个home类
+class Home:
+
+    def __init__(self, area):
+        self.area = area  <a class="tag" onclick="toggleTagSearch(this)" data-content="#房间剩余的可用面积">#房间剩余的可用面积</a>
+        self.containsItem = []
+
+    def __str__(self):
+        msg = &quot;当前房间可用面积为:&quot; + str(self.area)
+        if len(self.containsItem) &gt; 0:
+            msg = msg + &quot; 容纳的物品有: &quot;
+            for temp in self.containsItem:
+                msg = msg + temp.getName() + &quot;, &quot;
+            msg = msg.strip(&quot;, &quot;)
+        return msg
+
+    # 容纳物品
+    def accommodateItem(self,item):
+        # 如果可用面积大于物品的占用面积
+        needArea = item.getUsedArea()
+        if self.area &gt; needArea:
+            self.containsItem.append(item)
+            self.area -= needArea
+            print(&quot;ok:已经存放到房间中&quot;)
+        else:
+            print(&quot;err:房间可用面积为:%d,但是当前要存放的物品需要的面积为%d&quot;%(self.area, needArea))
+
+
+# 定义bed类
+class Bed:
+
+    def __init__(self,area,name = '床'):
+        self.name = name
+        self.area = area
+
+    def __str__(self):
+        msg = '床的面积为:' + str(self.area)
+        return msg
+
+    # 获取床的占用面积
+    def getUsedArea(self):
+        return self.area
+
+    def getName(self):
+        return self.name
+
+
+# 创建一个新家对象
+newHome = Home(100)#100平米
+print(newHome)
+
+# 创建一个床对象
+newBed = Bed(20)
+print(newBed)
+
+# 把床安放到家里
+newHome.accommodateItem(newBed)
+print(newHome)
+
+# 创建一个床对象
+newBed2 = Bed(30,'席梦思')
+print(newBed2)
+
+# 把床安放到家里
+newHome.accommodateItem(newBed2)
+print(newHome)
+</code></pre>
+</main>
+<script>window.location.hash&&document.getElementById(window.location.hash.slice(1)).classList.add("referred"),window.addEventListener("hashchange",(e=>{const t=e.oldURL.split("#");t[1]&&document.getElementById(t[1]).classList.remove("referred");const n=e.newURL.split("#");n[1]&&document.getElementById(n[1]).classList.add("referred")}),!1);const url_parts=window.location.href.split("#"),url=url_parts[0],referrence=url_parts[1];document.querySelectorAll(".cm-s-obsidian > *[id]").forEach((function(e){e.ondblclick=function(e){const t=url+"#"+e.target.id;navigator.clipboard.writeText(t)}}))</script>
+<script src="https://fastly.jsdelivr.net/npm/luxon@3.2.1/build/global/luxon.min.js"></script>
+<script defer="defer">TIMESTAMP_FORMAT="MMM dd, yyyy h:mm a",document.querySelectorAll(".human-date").forEach((function(e){date=e.getAttribute("data-date")||e.innerText,parsed_date=luxon.DateTime.fromISO(date),null!=parsed_date.invalid&&(parsed_date=luxon.DateTime.fromSQL(date)),null!=parsed_date.invalid&&(parsed_date=luxon.DateTime.fromHTML(date)),e.innerHTML=parsed_date.toFormat(TIMESTAMP_FORMAT)}))</script>
+<script>lucide.createIcons({attrs:{class:["svg-icon"]}})</script>
+</body>
+</html>

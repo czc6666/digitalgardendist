@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>typora使用笔记</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<script async type="module">import mermaid from"https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"</script>
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js" integrity="sha512-hpZ5pDCF2bRCweL5WoA0/N1elet1KYL5mx3LP555Eg/0ZguaHawxNvEjF6O3rufAChs16HVNhEc6blF/rZoowQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/plugins/autoloader/prism-autoloader.min.js" integrity="sha512-sv0slik/5O0JIPdLBCR2A3XDg/1U3WuDEheZfI/DI5n8Yqc3h5kjrnr46FGBNiUAJF7rE4LHKwQ/SoSLRKAxEA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script async src="https://cdn.jsdelivr.net/npm/lucide@0.115.0/dist/umd/lucide.min.js"></script>
+<script>window.addEventListener("load",(()=>{document.querySelectorAll(".callout").forEach((e=>{const t=getComputedStyle(e).getPropertyValue("--callout-icon"),l=t&&t.trim().replace(/^lucide-/,"");if(l){const t=e.querySelector(".callout-title");if(t){const e=document.createElement("div"),c=document.createElement("i");e.appendChild(c),c.setAttribute("icon-name",l),e.setAttribute("class","callout-icon"),t.insertBefore(e,t.firstChild)}}})),lucide.createIcons(),Array.from(document.querySelectorAll(".callout.is-collapsible")).forEach((e=>{e.querySelector(".callout-title").addEventListener("click",(t=>{e.classList.contains("is-collapsed")?e.classList.remove("is-collapsed"):e.classList.add("is-collapsed")}))}))}))</script>
+<script async src="https://fastly.jsdelivr.net/npm/force-graph@1.43.0/dist/force-graph.min.js"></script>
+<script async src="https://fastly.jsdelivr.net/npm/@alpinejs/persist@3.11.1/dist/cdn.min.js"></script>
+<script src="https://fastly.jsdelivr.net/npm/alpinejs@3.11.1/dist/cdn.min.js" async></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-okaidia.min.css" integrity="sha512-mIs9kKbaw6JZFfSuo+MovjU+Ntggfoj8RwAmJbVXQ5mkAX5LlgETQEweFPI18humSPHymTb5iikEOKWF7I8ncQ==" crossorigin="anonymous" referrerpolicy="no-referrer" async>
+<script src="https://fastly.jsdelivr.net/npm/whatwg-fetch@3.6.2/dist/fetch.umd.min.js" crossorigin="anonymous" referrerpolicy="no-referrer" async></script>
+<link href="/styles/digital-garden-base.css" rel="stylesheet">
+<link href="/styles/obsidian-base.css" rel="stylesheet">
+<link href="/styles/_theme.d92311c2.css" rel="stylesheet">
+<link href="/styles/custom-style.css" rel="stylesheet">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<style></style>
+</head>
+<body class="theme-dark markdown-preview-view markdown-rendered markdown-preview-section">
+<nav class="navbar">
+<div class="navbar-inner">
+<a href="/" style="text-decoration:none">
+<h1 style="margin:15px!important">Digital Garden</h1>
+</a>
+</div>
+</nav>
+<main class="content cm-s-obsidian">
+<header>
+<div class="header-meta">
+</div>
+</header>
+<h1 id="网上找的各种技巧" tabindex="-1">网上找的各种技巧</h1>
+<p><a href="%E6%94%B6%E8%97%8F-LaTeX%E5%85%AC%E5%BC%8F%E4%B9%A6%E5%86%99%20%E5%8F%B6%E7%A8%8B%E8%BD%B6%E5%8F%91%E7%9A%84.md" target="_blank" class="external-link">收藏-LaTeX公式书写 叶程轶发的</a><br>
+<a href="Typora%E6%95%99%E7%A8%8B%E6%9F%90up%E7%9A%84.md" target="_blank" class="external-link">Typora笔记教程 b站up主总结 markdown的使用说明 如何做笔记 + 习题</a><br>
+<a href="typora%E5%90%84%E7%A7%8D%E9%93%BE%E6%8E%A5%E8%B7%B3%E8%BD%AC%20%E5%81%9A%E7%AC%94%E8%AE%B0%20csdn%E5%A4%8D%E5%88%B6.md" target="_blank" class="external-link">typora各种链接跳转 做笔记 csdn复制</a></p>
+<h1 id="自己的总结" tabindex="-1">自己的总结</h1>
+<h2 id="在学习资料内全部使用相对路径，方便文件转移" tabindex="-1">在学习资料内全部使用相对路径，方便文件转移</h2>
+<ul>
+<li>当前目录：.\ 或者</li>
+<li>上一级目录：..\</li>
+</ul>
+<h2 id="搜索个人知识库的东西：" tabindex="-1">搜索个人知识库的东西：</h2>
+<ul>
+<li>小技巧直接用everything搜（小技巧用单独小文件记录）</li>
+<li>系统性的知识在学习资料根目录里用typora搜</li>
+</ul>
+<h2 id="typora" tabindex="-1">Typora如何折叠显示知识点内容</h2>
+<p>例子（点进去复制代码）：<strong>里面不能回车换行啊</strong></p>
+<details>
+<summary>这个不能换行啊：点击时的区域标题：点击查看详细内容</summary>=== ===```(删除括号) ===#define A B ===#endif ===void init(void) ===```(删除括号)
+</details>
+<details>
+<summary>视频的评论</summary>
+<pre><code>这个可以换行
+但是不能有空行
+</code></pre>
+</details>
+## 在typora如何链接其他md文件的某一段落
+<p>直接上例子，链接到详细介绍typora各种链接跳转技巧的文件的一级目录（注意使用#来跳转到文件内的标题）：<a href="typora%E5%90%84%E7%A7%8D%E9%93%BE%E6%8E%A5%E8%B7%B3%E8%BD%AC%20%E5%81%9A%E7%AC%94%E8%AE%B0%20csdn%E5%A4%8D%E5%88%B6.md" target="_blank" class="external-link">typora各种链接跳转 做笔记 csdn复制</a></p>
+<h2 id="文字加粗要加粗整个名词" tabindex="-1">文字加粗要加粗整个名词</h2>
+<p>不然搜索的时候有你好受</p>
+<h2 id="画流程图" tabindex="-1">画流程图</h2>
+<p><strong>mermaid 这玩意牛大逼</strong><br>
+官方教程：<a href="https://mermaid.nodejs.cn/intro/" target="_blank" class="external-link">关于 Mermaid | Mermaid 中文网</a><br>
+输入```mermaid然后敲回车，回生成一个空白图，然后可以开始敲代码<br>
+这个在obsidian中也支持<br>
+例如graph LR;A--&gt;B;A--&gt;C;C--&gt;D（分号可以不写，但是要回车换行） LR表示left-right从左到右，也可以TD（从上到下）</p>
+<pre class="mermaid">graph LR;
+A-->B;
+A-->C;
+C-->D</pre>
+</main>
+<script>window.location.hash&&document.getElementById(window.location.hash.slice(1)).classList.add("referred"),window.addEventListener("hashchange",(e=>{const t=e.oldURL.split("#");t[1]&&document.getElementById(t[1]).classList.remove("referred");const n=e.newURL.split("#");n[1]&&document.getElementById(n[1]).classList.add("referred")}),!1);const url_parts=window.location.href.split("#"),url=url_parts[0],referrence=url_parts[1];document.querySelectorAll(".cm-s-obsidian > *[id]").forEach((function(e){e.ondblclick=function(e){const t=url+"#"+e.target.id;navigator.clipboard.writeText(t)}}))</script>
+<script src="https://fastly.jsdelivr.net/npm/luxon@3.2.1/build/global/luxon.min.js"></script>
+<script defer="defer">TIMESTAMP_FORMAT="MMM dd, yyyy h:mm a",document.querySelectorAll(".human-date").forEach((function(e){date=e.getAttribute("data-date")||e.innerText,parsed_date=luxon.DateTime.fromISO(date),null!=parsed_date.invalid&&(parsed_date=luxon.DateTime.fromSQL(date)),null!=parsed_date.invalid&&(parsed_date=luxon.DateTime.fromHTML(date)),e.innerHTML=parsed_date.toFormat(TIMESTAMP_FORMAT)}))</script>
+<script>lucide.createIcons({attrs:{class:["svg-icon"]}})</script>
+</body>
+</html>

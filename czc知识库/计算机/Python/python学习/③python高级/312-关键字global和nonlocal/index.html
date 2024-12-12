@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>312-关键字global和nonlocal</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<script async type="module">import mermaid from"https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"</script>
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js" integrity="sha512-hpZ5pDCF2bRCweL5WoA0/N1elet1KYL5mx3LP555Eg/0ZguaHawxNvEjF6O3rufAChs16HVNhEc6blF/rZoowQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/plugins/autoloader/prism-autoloader.min.js" integrity="sha512-sv0slik/5O0JIPdLBCR2A3XDg/1U3WuDEheZfI/DI5n8Yqc3h5kjrnr46FGBNiUAJF7rE4LHKwQ/SoSLRKAxEA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script async src="https://cdn.jsdelivr.net/npm/lucide@0.115.0/dist/umd/lucide.min.js"></script>
+<script>window.addEventListener("load",(()=>{document.querySelectorAll(".callout").forEach((e=>{const t=getComputedStyle(e).getPropertyValue("--callout-icon"),l=t&&t.trim().replace(/^lucide-/,"");if(l){const t=e.querySelector(".callout-title");if(t){const e=document.createElement("div"),c=document.createElement("i");e.appendChild(c),c.setAttribute("icon-name",l),e.setAttribute("class","callout-icon"),t.insertBefore(e,t.firstChild)}}})),lucide.createIcons(),Array.from(document.querySelectorAll(".callout.is-collapsible")).forEach((e=>{e.querySelector(".callout-title").addEventListener("click",(t=>{e.classList.contains("is-collapsed")?e.classList.remove("is-collapsed"):e.classList.add("is-collapsed")}))}))}))</script>
+<script async src="https://fastly.jsdelivr.net/npm/force-graph@1.43.0/dist/force-graph.min.js"></script>
+<script async src="https://fastly.jsdelivr.net/npm/@alpinejs/persist@3.11.1/dist/cdn.min.js"></script>
+<script src="https://fastly.jsdelivr.net/npm/alpinejs@3.11.1/dist/cdn.min.js" async></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-okaidia.min.css" integrity="sha512-mIs9kKbaw6JZFfSuo+MovjU+Ntggfoj8RwAmJbVXQ5mkAX5LlgETQEweFPI18humSPHymTb5iikEOKWF7I8ncQ==" crossorigin="anonymous" referrerpolicy="no-referrer" async>
+<script src="https://fastly.jsdelivr.net/npm/whatwg-fetch@3.6.2/dist/fetch.umd.min.js" crossorigin="anonymous" referrerpolicy="no-referrer" async></script>
+<link href="/styles/digital-garden-base.css" rel="stylesheet">
+<link href="/styles/obsidian-base.css" rel="stylesheet">
+<link href="/styles/_theme.d92311c2.css" rel="stylesheet">
+<link href="/styles/custom-style.css" rel="stylesheet">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<style></style>
+</head>
+<body class="theme-dark markdown-preview-view markdown-rendered markdown-preview-section">
+<nav class="navbar">
+<div class="navbar-inner">
+<a href="/" style="text-decoration:none">
+<h1 style="margin:15px!important">Digital Garden</h1>
+</a>
+</div>
+</nav>
+<main class="content cm-s-obsidian">
+<header>
+<div class="header-meta">
+</div>
+</header>
+<p>global：全局变量，代表从这行代码开始，使用的变量都是全局中的变量<br>
+只能使用在函数里面</p>
+<pre><code class="language-python">num=10
+def func():
+	<a class="tag" onclick="toggleTagSearch(this)" data-content="#尝试在局部作用域中修改全局变量">#尝试在局部作用域中修改全局变量</a>
+	global num
+	num = 100
+func()
+print(num)
+</code></pre>
+<p>global只能修改全局变量</p>
+<pre><code class="language-python">num=1
+def outer():
+	<a class="tag" onclick="toggleTagSearch(this)" data-content="#局部变量">#局部变量</a>
+	num = 10
+	def inner():
+	global num
+		num = 100
+	inner()
+	print(num)  # 输出10
+outer()
+print(num)  # 输出100
+</code></pre>
+<p>nonlocal：离它最近的外层的局部变量<br>
+在内层函数里修改离他最近的外层<strong>局部变量</strong></p>
+<pre><code class="language-python">num=1
+def outer():
+	<a class="tag" onclick="toggleTagSearch(this)" data-content="#局部变量">#局部变量</a>
+	num = 10
+	def inner():
+	nonlocal num
+		num = 100
+	inner()
+	print(num)  # 输出100
+outer()
+print(num)  # 输出1
+</code></pre>
+<h1 id="应用的栗子" tabindex="-1">应用的栗子</h1>
+<pre><code class="language-python">&quot;&quot;&quot;
+假设你是一名网站开发者，你需要设计一个函数 login_counter()，用于统计用户登录的次数和最近一次登录的时间。
+
+要求：
+login_counter() 返回一个闭包 login()。
+每次调用 login()，它将累加用户登录的次数，并记录最近一次登录的时间。
+需要返回一个字典，包含累计的登录次数（total_count）和最近一次登录的时间（last_login_time）。
+设计思路：
+
+在 login_counter() 函数外部定义一个变量 count，用于记录累计的登录次数。
+在 login_counter() 函数内部定义一个变量 last_login，用于记录最近一次登录的时间戳。
+在 login() 函数内部更新 count 和 last_login 的值，并返回字典形式的结果。
+&quot;&quot;&quot;
+
+import time
+count = 0
+
+def login_counter():
+    last_login = None
+    def login():
+        nonlocal last_login
+        global count  # 这里count也可以写成nonlocal
+        count += 1
+        last_login = time.time()
+        return {&quot;total_count&quot;: count, &quot;last_login_time&quot;: last_login}
+    return login
+
+# 调用示例
+login_counter = login_counter()
+print(login_counter())  
+print(login_counter())  
+</code></pre>
+</main>
+<script>window.location.hash&&document.getElementById(window.location.hash.slice(1)).classList.add("referred"),window.addEventListener("hashchange",(e=>{const t=e.oldURL.split("#");t[1]&&document.getElementById(t[1]).classList.remove("referred");const n=e.newURL.split("#");n[1]&&document.getElementById(n[1]).classList.add("referred")}),!1);const url_parts=window.location.href.split("#"),url=url_parts[0],referrence=url_parts[1];document.querySelectorAll(".cm-s-obsidian > *[id]").forEach((function(e){e.ondblclick=function(e){const t=url+"#"+e.target.id;navigator.clipboard.writeText(t)}}))</script>
+<script src="https://fastly.jsdelivr.net/npm/luxon@3.2.1/build/global/luxon.min.js"></script>
+<script defer="defer">TIMESTAMP_FORMAT="MMM dd, yyyy h:mm a",document.querySelectorAll(".human-date").forEach((function(e){date=e.getAttribute("data-date")||e.innerText,parsed_date=luxon.DateTime.fromISO(date),null!=parsed_date.invalid&&(parsed_date=luxon.DateTime.fromSQL(date)),null!=parsed_date.invalid&&(parsed_date=luxon.DateTime.fromHTML(date)),e.innerHTML=parsed_date.toFormat(TIMESTAMP_FORMAT)}))</script>
+<script>lucide.createIcons({attrs:{class:["svg-icon"]}})</script>
+</body>
+</html>

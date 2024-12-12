@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>302-类</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<script async type="module">import mermaid from"https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"</script>
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js" integrity="sha512-hpZ5pDCF2bRCweL5WoA0/N1elet1KYL5mx3LP555Eg/0ZguaHawxNvEjF6O3rufAChs16HVNhEc6blF/rZoowQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/plugins/autoloader/prism-autoloader.min.js" integrity="sha512-sv0slik/5O0JIPdLBCR2A3XDg/1U3WuDEheZfI/DI5n8Yqc3h5kjrnr46FGBNiUAJF7rE4LHKwQ/SoSLRKAxEA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script async src="https://cdn.jsdelivr.net/npm/lucide@0.115.0/dist/umd/lucide.min.js"></script>
+<script>window.addEventListener("load",(()=>{document.querySelectorAll(".callout").forEach((e=>{const t=getComputedStyle(e).getPropertyValue("--callout-icon"),l=t&&t.trim().replace(/^lucide-/,"");if(l){const t=e.querySelector(".callout-title");if(t){const e=document.createElement("div"),c=document.createElement("i");e.appendChild(c),c.setAttribute("icon-name",l),e.setAttribute("class","callout-icon"),t.insertBefore(e,t.firstChild)}}})),lucide.createIcons(),Array.from(document.querySelectorAll(".callout.is-collapsible")).forEach((e=>{e.querySelector(".callout-title").addEventListener("click",(t=>{e.classList.contains("is-collapsed")?e.classList.remove("is-collapsed"):e.classList.add("is-collapsed")}))}))}))</script>
+<script async src="https://fastly.jsdelivr.net/npm/force-graph@1.43.0/dist/force-graph.min.js"></script>
+<script async src="https://fastly.jsdelivr.net/npm/@alpinejs/persist@3.11.1/dist/cdn.min.js"></script>
+<script src="https://fastly.jsdelivr.net/npm/alpinejs@3.11.1/dist/cdn.min.js" async></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-okaidia.min.css" integrity="sha512-mIs9kKbaw6JZFfSuo+MovjU+Ntggfoj8RwAmJbVXQ5mkAX5LlgETQEweFPI18humSPHymTb5iikEOKWF7I8ncQ==" crossorigin="anonymous" referrerpolicy="no-referrer" async>
+<script src="https://fastly.jsdelivr.net/npm/whatwg-fetch@3.6.2/dist/fetch.umd.min.js" crossorigin="anonymous" referrerpolicy="no-referrer" async></script>
+<link href="/styles/digital-garden-base.css" rel="stylesheet">
+<link href="/styles/obsidian-base.css" rel="stylesheet">
+<link href="/styles/_theme.d92311c2.css" rel="stylesheet">
+<link href="/styles/custom-style.css" rel="stylesheet">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<style></style>
+</head>
+<body class="theme-dark markdown-preview-view markdown-rendered markdown-preview-section">
+<nav class="navbar">
+<div class="navbar-inner">
+<a href="/" style="text-decoration:none">
+<h1 style="margin:15px!important">Digital Garden</h1>
+</a>
+</div>
+</nav>
+<main class="content cm-s-obsidian">
+<header>
+<div class="header-meta">
+</div>
+</header>
+<h1 id="面向对象基本概念" tabindex="-1">面向对象基本概念</h1>
+<p>OOA：面向对象分析analysis<br>
+OOD：面向对象设计design<br>
+OOP：面向对象编程programing（面向对象开发）</p>
+<h2 id="对象的概念" tabindex="-1">对象的概念</h2>
+<p>对象，object，业务逻辑的动作实体就对应着OOP编程中的一个对象</p>
+<p>对象：属性（就是变量）、方法（就是函数（未来完成某个功能））<br>
+对象保存数据，方法操作数据</p>
+<p>对象怎么来的？由类实例化产生</p>
+<h2 id="类的概念" tabindex="-1">类的概念</h2>
+<p>python采用类产生对象，用类规定对象的属性和方法</p>
+<p>为什么引入类<br>
+<strong>类是对现实世界的一种模拟，任何实体都有一个类别，类就是具有相同或相似属性和动作的一组实体的集合</strong></p>
+<p>class 人:<br>
+属性：name、age<br>
+方法：吃饭、跑、扯淡</p>
+<p>面向对象：类和对象</p>
+<ul>
+<li>类是一个抽象概念（具有相同或相似属性和动作的一组实体的集合）</li>
+<li>对象是类实例化产生的具体事物</li>
+<li>一个对象的所有应该具有特征特性信息，都是由其所属的类来决定的，但是每个对象又可以具有不同的特征特性信息</li>
+</ul>
+<p>比如，<br>
+我自己（人类）这个对象，名字叫老王，性别男，会写代码，会教书；<br>
+另一个对象（人类）可能叫赵薇，性别女，会演戏，会唱歌！</p>
+<h1 id="类的定义" tabindex="-1">类的定义</h1>
+<p>经典的类（python2）（很少使用了）：</p>
+<pre><code class="language-python">class 类名:
+	属性
+	方法
+</code></pre>
+<p>新的类（python3）：</p>
+<pre><code class="language-python">class 类名(object):
+	属性
+	方法
+</code></pre>
+<p>object：基类</p>
+<p>这就是一个类，只不过里面什么都没有！</p>
+<h2 id="类的创建（实例的模板）" tabindex="-1">类的创建（实例的模板）</h2>
+<p>类是相同或相似属性和方法的一组对象的集合，是一个<strong>抽象概念</strong>。</p>
+<pre><code class="language-python">class Person(object):
+	# 属性  # 属性是什么下下面再讲
+	# 方法
+	def run(self):  # self是啥玩意，后面讲
+		print('跑起来了👌')
+	def eat(self):
+		print('奥里给，干了！💩')
+	def speak(self):
+		print('随安不是同一时间，但是同一撤硕🚾')
+</code></pre>
+<ul>
+<li>其中，类名既可以大写也可以小写，遵守一般的标识符的命名规则（以字母数字和下划线构成，并且不能以数字开头），一般为了和方法名相区分，类名的首字母一般大写！(<strong>大驼峰法</strong>:单词首字母大写)</li>
+<li>类在定义构成中，只是描述了一下未来这个对象所拥有的属性和方法，但是其本身并没有并调用，只有在实例化对象时其才真正执行</li>
+</ul>
+<h2 id="类的实例化--获取对象" tabindex="-1">类的实例化--获取对象</h2>
+<ul>
+<li>类是具有相同或相似属性或方法的一组对象的集合，其是一个抽象概念。要想把其创建为具体的对象，需要经过实例化的过程</li>
+<li>类是一个抽象概念，可以同时产生多个对象</li>
+<li>创建的对象都会有类的属性和方法</li>
+</ul>
+<pre><code class="language-python"># 类的实例化
+p1 = Person()  # p1就是对象
+</code></pre>
+<ul>
+<li>对象的方法的调用<br>
+<code>对象名称.属性</code><br>
+<code>对象名称.方法()</code></li>
+</ul>
+<pre><code class="language-python">p1.eat()
+p1.speak()
+</code></pre>
+<blockquote>
+<p>类是一个抽象概念，在定义时，其并不会真正的占用计算机的内存空间。但是对象是一个具体的事务，所以其要占用计算机的内存空间。</p>
+</blockquote>
+<h2 id="self" tabindex="-1">对象方法中的self关键字</h2>
+<p>self的完整版解释在类的属性里讲</p>
+<p>self参数和实例化产生的对象内存地址一致，代表两者指向相同的内存空间</p>
+<p>self关键字就代表实例化对象本身</p>
+<pre><code class="language-python">class Person(object):
+	<a class="tag" onclick="toggleTagSearch(this)" data-content="#属性">#属性</a>
+	<a class="tag" onclick="toggleTagSearch(this)" data-content="#方法">#方法</a>
+	def speak(self):
+		print(self)
+<a class="tag" onclick="toggleTagSearch(this)" data-content="#实例化p1对象">#实例化p1对象</a>
+p1 = Person()
+print(p1)   # 0x000001CE9D8D2C88
+p1.speak()  # 0x000001CE9D8D2C88
+p2 = Person()
+print(p2)   # 0x00000209498CA448  # 打印的内容是内存地址
+p2.speak()  # 0x00000209498CA448  # 内存地址都是一样的
+</code></pre>
+<p>self是系统参数，调用方法的时候不需要传参</p>
+<h1 id="类的属性" tabindex="-1">类的属性</h1>
+<p>我们既可以在类的<strong>内部</strong>也可以在类的<strong>外部</strong>为其对象<strong>添加</strong>属性或<strong>获得</strong>属性</p>
+<p>添加和获取属性</p>
+<h2 id="类的外部动态添加属性" tabindex="-1">类的外部动态添加属性</h2>
+<p><code>对象名称.属性 = 属性值</code>，如果属性值是一个字符串类型，还需要使用引号引起来！</p>
+<pre><code class="language-python">class Person(object):
+	# 属性
+	# 方法
+	def eat(self):
+		print('chi')
+	def drink(self):
+		print('he')
+# 实例化产生对象
+p1 = Person()
+# 在类外添加属性
+p1.name = 'a'
+p1.age = 1
+# 获取属性
+print(p1.name)
+</code></pre>
+<h2 id="类的内部对外部添加的属性进行获取" tabindex="-1">类的内部对外部添加的属性进行获取</h2>
+<p>类的外部<strong>定义</strong>的属性在内部也是可以获取的</p>
+<pre><code class="language-python"># 定义一个类
+class Person(object):
+	# 定义属性
+	# 定义方法
+	def print_info(self):
+		print(f'name: {self.name}')
+
+# 实例化Person类产生对象
+p1 = Person()
+# 动态为对象添加属性
+p1.name = 'ZhangSan'
+
+p1.print_info()
+</code></pre>
+<blockquote>
+<p>关于上述代码，<code>{self.name}</code>中的<code>name</code>会有警告，因为在类中并没有声明这么一个属性，而是需要外部动态添加，如果在外部没有动态添加，那么这个方法将会无法执行。<br>
+内部声明属性相关内容在下一篇文章里写（魔法方法）</p>
+</blockquote>
+<h3 id="self-1" tabindex="-1">self关键字</h3>
+<p>self到底代表什么：<strong>代表实例化的对象本身</strong></p>
+<p>在类的内部，我们可以通过对象方法中的seLf关键字来实现对自身属性和方法的调用<br>
+①self指向谁？谁实例化这个类，seLf就指向谁（对象）<br>
+②self有何作用？可以通过<code>seLf.属性</code>或者<code>self.方法()</code>形式来实现对自身属性或方法的调用</p>
+<h1 id="目前的问题" tabindex="-1">目前的问题</h1>
+<pre><code class="language-python">class Person(object):
+	# 定义对象方法
+	def eat(self):
+		print('eat')
+	def drink(self):
+		print('drink')
+
+p1 = Person()
+p1.name = 'a'
+p1.age = 50
+
+p2 = Person()
+p2.name = 'b'
+p2.age = 80
+</code></pre>
+<p>对于上述代码，每次实例化一个新的对象，都要一个一个把属性手动添加进对象很麻烦（对象数量大以后，100个对象要添加200个属性，工程量相当大）</p>
+<p>所以需要在类的内部直接描述未来对象拥有的公共属性</p>
+<p>后来python中引入了<strong>魔术方法</strong>来解决这个臭毛病</p>
+<h1 id="面试题" tabindex="-1">面试题</h1>
+<h2 id="请描述什么是对象，什么是类。" tabindex="-1">请描述什么是对象，什么是类。</h2>
+<p>答案：<br>
+在面向对象编程中，类和对象是两个重要的概念，它们具有不同的含义和作用。</p>
+<p>类是一种抽象的概念，用于定义对象的属性和行为。类是一种自定义的数据类型，可以看作是对象的模板或蓝图。它描述了对象具有的共同特征和行为，定义了对象的属性和方法。</p>
+<p>类定义了对象的结构，包括数据成员（属性/实例变量）和函数成员（方法）。通过类，我们可以创建多个相似结构的对象，每个对象都具有相同的属性和方法。</p>
+<p>类通常具有以下特征：</p>
+<ul>
+<li>定义了对象的属性（变量）和方法（函数）。</li>
+<li>可以被实例化为一个或多个对象。</li>
+<li>可以通过继承机制派生出子类。</li>
+<li>提供了封装、继承和多态等面向对象的特性。</li>
+</ul>
+<p>对象是类的实例化结果，是类的具体实体。对象是在内存中分配的一块空间，用于存储数据和执行方法。当我们使用类创建对象时，我们可以访问和操作对象的属性和方法。</p>
+<p>对象具有以下特征：</p>
+<ul>
+<li>具有唯一的标识（在内存中的地址）。</li>
+<li>具有状态（属性值）。</li>
+<li>可以执行类定义的方法。</li>
+</ul>
+<p>简单来说，类是对对象的抽象描述，定义了对象的结构和行为。而对象是类的实例化结果，具体化了类的抽象概念，拥有自己的状态和行为。类是对象的模板，而对象是类的具体实例。</p>
+<p>通过创建不同的对象，我们可以利用面向对象编程的特性，实现代码的复用、封装数据和行为，并且更好地组织和管理程序的逻辑结构。</p>
+<h2 id="请观阅读如下代码，判断是否能正常运行，如果不能正常运行，错误点在哪？" tabindex="-1">请观阅读如下代码，判断是否能正常运行，如果不能正常运行，错误点在哪？</h2>
+<pre><code class="language-language">class Person():
+    def eat(self):
+        print('我喜欢吃零食')
+
+    def drink(this):
+        print('我喜欢喝果汁')
+
+
+p = Person()
+p.drink()
+Person.eat()
+</code></pre>
+<p>答案：<br>
+不可以正常运行，eat()方法的调用存在异常，应该用p对象进行调用，注意，drink(this)方法中写this用于替代self是可以的，不存在问题。</p>
+</main>
+<script>window.location.hash&&document.getElementById(window.location.hash.slice(1)).classList.add("referred"),window.addEventListener("hashchange",(e=>{const t=e.oldURL.split("#");t[1]&&document.getElementById(t[1]).classList.remove("referred");const n=e.newURL.split("#");n[1]&&document.getElementById(n[1]).classList.add("referred")}),!1);const url_parts=window.location.href.split("#"),url=url_parts[0],referrence=url_parts[1];document.querySelectorAll(".cm-s-obsidian > *[id]").forEach((function(e){e.ondblclick=function(e){const t=url+"#"+e.target.id;navigator.clipboard.writeText(t)}}))</script>
+<script src="https://fastly.jsdelivr.net/npm/luxon@3.2.1/build/global/luxon.min.js"></script>
+<script defer="defer">TIMESTAMP_FORMAT="MMM dd, yyyy h:mm a",document.querySelectorAll(".human-date").forEach((function(e){date=e.getAttribute("data-date")||e.innerText,parsed_date=luxon.DateTime.fromISO(date),null!=parsed_date.invalid&&(parsed_date=luxon.DateTime.fromSQL(date)),null!=parsed_date.invalid&&(parsed_date=luxon.DateTime.fromHTML(date)),e.innerHTML=parsed_date.toFormat(TIMESTAMP_FORMAT)}))</script>
+<script>lucide.createIcons({attrs:{class:["svg-icon"]}})</script>
+</body>
+</html>

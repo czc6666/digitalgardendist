@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>网安信息收集 威胁棱镜</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<script async type="module">import mermaid from"https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"</script>
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js" integrity="sha512-hpZ5pDCF2bRCweL5WoA0/N1elet1KYL5mx3LP555Eg/0ZguaHawxNvEjF6O3rufAChs16HVNhEc6blF/rZoowQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/plugins/autoloader/prism-autoloader.min.js" integrity="sha512-sv0slik/5O0JIPdLBCR2A3XDg/1U3WuDEheZfI/DI5n8Yqc3h5kjrnr46FGBNiUAJF7rE4LHKwQ/SoSLRKAxEA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script async src="https://cdn.jsdelivr.net/npm/lucide@0.115.0/dist/umd/lucide.min.js"></script>
+<script>window.addEventListener("load",(()=>{document.querySelectorAll(".callout").forEach((e=>{const t=getComputedStyle(e).getPropertyValue("--callout-icon"),l=t&&t.trim().replace(/^lucide-/,"");if(l){const t=e.querySelector(".callout-title");if(t){const e=document.createElement("div"),c=document.createElement("i");e.appendChild(c),c.setAttribute("icon-name",l),e.setAttribute("class","callout-icon"),t.insertBefore(e,t.firstChild)}}})),lucide.createIcons(),Array.from(document.querySelectorAll(".callout.is-collapsible")).forEach((e=>{e.querySelector(".callout-title").addEventListener("click",(t=>{e.classList.contains("is-collapsed")?e.classList.remove("is-collapsed"):e.classList.add("is-collapsed")}))}))}))</script>
+<script async src="https://fastly.jsdelivr.net/npm/force-graph@1.43.0/dist/force-graph.min.js"></script>
+<script async src="https://fastly.jsdelivr.net/npm/@alpinejs/persist@3.11.1/dist/cdn.min.js"></script>
+<script src="https://fastly.jsdelivr.net/npm/alpinejs@3.11.1/dist/cdn.min.js" async></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-okaidia.min.css" integrity="sha512-mIs9kKbaw6JZFfSuo+MovjU+Ntggfoj8RwAmJbVXQ5mkAX5LlgETQEweFPI18humSPHymTb5iikEOKWF7I8ncQ==" crossorigin="anonymous" referrerpolicy="no-referrer" async>
+<script src="https://fastly.jsdelivr.net/npm/whatwg-fetch@3.6.2/dist/fetch.umd.min.js" crossorigin="anonymous" referrerpolicy="no-referrer" async></script>
+<link href="/styles/digital-garden-base.css" rel="stylesheet">
+<link href="/styles/obsidian-base.css" rel="stylesheet">
+<link href="/styles/_theme.d92311c2.css" rel="stylesheet">
+<link href="/styles/custom-style.css" rel="stylesheet">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<style></style>
+</head>
+<body class="theme-dark markdown-preview-view markdown-rendered markdown-preview-section">
+<nav class="navbar">
+<div class="navbar-inner">
+<a href="/" style="text-decoration:none">
+<h1 style="margin:15px!important">Digital Garden</h1>
+</a>
+</div>
+</nav>
+<main class="content cm-s-obsidian">
+<header>
+<div class="header-meta">
+</div>
+</header>
+<h1 id="21-07-13-io-t" tabindex="-1">21.07.13-威胁棱镜 - IoT 恶意软件生命周期大规模研究</h1>
+<p><a href="https://mp.weixin.qq.com/s/abn1bDPEgwLKzjo5fABArg" target="_blank" class="external-link">IoT 恶意软件生命周期大规模研究</a></p>
+<h1 id="21-09-09-io-t" tabindex="-1">21.09.09-威胁棱镜 - IoT恶意软件进化谱系研究</h1>
+<p><a href="IoT%20%E6%81%B6%E6%84%8F%E8%BD%AF%E4%BB%B6%E8%BF%9B%E5%8C%96%E8%B0%B1%E7%B3%BB%E7%A0%94%E7%A9%B6%201.md" target="_blank" class="external-link">IoT 恶意软件进化谱系研究 1</a>)</p>
+<h1 id="22-01-24" tabindex="-1">22.01.24-威胁棱镜 - 狩猎样本的哈希游戏</h1>
+<p><a href="%E7%8B%A9%E7%8C%8E%E6%A0%B7%E6%9C%AC%E7%9A%84%E5%93%88%E5%B8%8C%E6%B8%B8%E6%88%8F.md" target="_blank" class="external-link">狩猎样本的哈希游戏</a>)</p>
+<h1 id="22-03-21" tabindex="-1">22.03.21-威胁棱镜 - 五十年跌宕起伏，恶意软件进化路</h1>
+<p><a href="%E4%BA%94%E5%8D%81%E5%B9%B4%E8%B7%8C%E5%AE%95%E8%B5%B7%E4%BC%8F%EF%BC%8C%E6%81%B6%E6%84%8F%E8%BD%AF%E4%BB%B6%E8%BF%9B%E5%8C%96%E8%B7%AF.md" target="_blank" class="external-link">五十年跌宕起伏，恶意软件进化路</a>)</p>
+<h1 id="22-09-09" tabindex="-1">22.09.09-威胁棱镜 - 国家级网络攻击能力象限漫谈</h1>
+<p><a href="https://mp.weixin.qq.com/s/l7QCBK01OCru1e3o4nL52w" target="_blank" class="external-link">国家级网络攻击能力象限漫谈</a></p>
+<h1 id="23-03-30-ai" tabindex="-1">23.03.30-威胁棱镜 - 以 AI 速度赋能防御</h1>
+<p><a href="https://mp.weixin.qq.com/s/e6W2Uy64i9cY7U7-3FnoxQ" target="_blank" class="external-link">以 AI 速度赋能防御</a></p>
+<h1 id="23-05-17-io-t" tabindex="-1">23.05.17-威胁棱镜 - 以文件为中心的 IoT 恶意软件网络分析</h1>
+<p><a href="https://mp.weixin.qq.com/s/XDP8WJLDVt6gJLC-fNFz2Q" target="_blank" class="external-link">以文件为中心的 IoT 恶意软件网络分析</a></p>
+<h1 id="23-06-19-io-t" tabindex="-1">23.06.19-威胁棱镜 - 用于检测IoT恶意软件变种自监督比较学习框架</h1>
+<p><a href="%E7%94%A8%E4%BA%8E%E6%A3%80%E6%B5%8B%20IoT%20%E6%81%B6%E6%84%8F%E8%BD%AF%E4%BB%B6%E5%8F%98%E7%A7%8D%E7%9A%84%E8%87%AA%E7%9B%91%E7%9D%A3%E6%AF%94%E8%BE%83%E5%AD%A6%E4%B9%A0%E6%A1%86%E6%9E%B6%201.md" target="_blank" class="external-link">用于检测 IoT 恶意软件变种的自监督比较学习框架 1</a>)</p>
+<h1 id="23-11-8-tor" tabindex="-1">23.11.8-威胁棱镜 - Tor 服务的大规模爬取与分析</h1>
+<p><a href="https://mp.weixin.qq.com/s/3VuSxgEBwdh_JCNBX0Vakg" target="_blank" class="external-link">Tor 服务的大规模爬取与分析</a></p>
+<h1 id="23-12-08-ai" tabindex="-1">23.12.08-威胁棱镜 - AI 如何赋能恶意软件分析</h1>
+<p><a href="AI%20%E5%A6%82%E4%BD%95%E8%B5%8B%E8%83%BD%E6%81%B6%E6%84%8F%E8%BD%AF%E4%BB%B6%E5%88%86%E6%9E%90%201.md" target="_blank" class="external-link">AI 如何赋能恶意软件分析 1</a>)</p>
+</main>
+<script>window.location.hash&&document.getElementById(window.location.hash.slice(1)).classList.add("referred"),window.addEventListener("hashchange",(e=>{const t=e.oldURL.split("#");t[1]&&document.getElementById(t[1]).classList.remove("referred");const n=e.newURL.split("#");n[1]&&document.getElementById(n[1]).classList.add("referred")}),!1);const url_parts=window.location.href.split("#"),url=url_parts[0],referrence=url_parts[1];document.querySelectorAll(".cm-s-obsidian > *[id]").forEach((function(e){e.ondblclick=function(e){const t=url+"#"+e.target.id;navigator.clipboard.writeText(t)}}))</script>
+<script src="https://fastly.jsdelivr.net/npm/luxon@3.2.1/build/global/luxon.min.js"></script>
+<script defer="defer">TIMESTAMP_FORMAT="MMM dd, yyyy h:mm a",document.querySelectorAll(".human-date").forEach((function(e){date=e.getAttribute("data-date")||e.innerText,parsed_date=luxon.DateTime.fromISO(date),null!=parsed_date.invalid&&(parsed_date=luxon.DateTime.fromSQL(date)),null!=parsed_date.invalid&&(parsed_date=luxon.DateTime.fromHTML(date)),e.innerHTML=parsed_date.toFormat(TIMESTAMP_FORMAT)}))</script>
+<script>lucide.createIcons({attrs:{class:["svg-icon"]}})</script>
+</body>
+</html>

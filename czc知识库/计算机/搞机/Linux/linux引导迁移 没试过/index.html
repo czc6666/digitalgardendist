@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>linux引导迁移 没试过</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<script async type="module">import mermaid from"https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"</script>
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js" integrity="sha512-hpZ5pDCF2bRCweL5WoA0/N1elet1KYL5mx3LP555Eg/0ZguaHawxNvEjF6O3rufAChs16HVNhEc6blF/rZoowQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/plugins/autoloader/prism-autoloader.min.js" integrity="sha512-sv0slik/5O0JIPdLBCR2A3XDg/1U3WuDEheZfI/DI5n8Yqc3h5kjrnr46FGBNiUAJF7rE4LHKwQ/SoSLRKAxEA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script async src="https://cdn.jsdelivr.net/npm/lucide@0.115.0/dist/umd/lucide.min.js"></script>
+<script>window.addEventListener("load",(()=>{document.querySelectorAll(".callout").forEach((e=>{const t=getComputedStyle(e).getPropertyValue("--callout-icon"),l=t&&t.trim().replace(/^lucide-/,"");if(l){const t=e.querySelector(".callout-title");if(t){const e=document.createElement("div"),c=document.createElement("i");e.appendChild(c),c.setAttribute("icon-name",l),e.setAttribute("class","callout-icon"),t.insertBefore(e,t.firstChild)}}})),lucide.createIcons(),Array.from(document.querySelectorAll(".callout.is-collapsible")).forEach((e=>{e.querySelector(".callout-title").addEventListener("click",(t=>{e.classList.contains("is-collapsed")?e.classList.remove("is-collapsed"):e.classList.add("is-collapsed")}))}))}))</script>
+<script async src="https://fastly.jsdelivr.net/npm/force-graph@1.43.0/dist/force-graph.min.js"></script>
+<script async src="https://fastly.jsdelivr.net/npm/@alpinejs/persist@3.11.1/dist/cdn.min.js"></script>
+<script src="https://fastly.jsdelivr.net/npm/alpinejs@3.11.1/dist/cdn.min.js" async></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-okaidia.min.css" integrity="sha512-mIs9kKbaw6JZFfSuo+MovjU+Ntggfoj8RwAmJbVXQ5mkAX5LlgETQEweFPI18humSPHymTb5iikEOKWF7I8ncQ==" crossorigin="anonymous" referrerpolicy="no-referrer" async>
+<script src="https://fastly.jsdelivr.net/npm/whatwg-fetch@3.6.2/dist/fetch.umd.min.js" crossorigin="anonymous" referrerpolicy="no-referrer" async></script>
+<link href="/styles/digital-garden-base.css" rel="stylesheet">
+<link href="/styles/obsidian-base.css" rel="stylesheet">
+<link href="/styles/_theme.d92311c2.css" rel="stylesheet">
+<link href="/styles/custom-style.css" rel="stylesheet">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<style></style>
+</head>
+<body class="theme-dark markdown-preview-view markdown-rendered markdown-preview-section">
+<nav class="navbar">
+<div class="navbar-inner">
+<a href="/" style="text-decoration:none">
+<h1 style="margin:15px!important">Digital Garden</h1>
+</a>
+</div>
+</nav>
+<main class="content cm-s-obsidian">
+<header>
+<div class="header-meta">
+</div>
+</header>
+<p>来源：<a href="https://blog.csdn.net/m0_64545111/article/details/136131918" target="_blank" class="external-link">【万字详细教程】Linux to go——装在移动硬盘里的Linux系统（Ubuntu22.04）制作流程；一口气解决系统安装/引导文件迁移/显卡驱动安装等问题-CSDN博客</a></p>
+<blockquote>
+<p>将系统启动引导程序迁移到移动硬盘上<br>
+现在我们切换回Windows系统，使用Disk Genius查看移动硬盘的ESP区（注意到硬盘上的一些分区是无法像C盘、D盘这样直接被电脑的文件管理器访问的，需要为它们设置卷标，还必须有管理员权限，才能在文件管理器中进行访问和更改；这里推荐直接在Disk Genius中进行操作，即点击左侧目录即可直接访问和更改），发现其仍然是空的，没有我们的系统启动引导程序；实际上系统启动引导程序会被默认安装到主硬盘上：</p>
+<p>如果你不想每次开机都要选择一个系统（即使你没插上移动硬盘），不想让Linux to go对你原来的Windows系统产生影响；又如果你还想让Linux to go在不同的电脑上都能工作，那么就要考虑将系统的启动引导程序迁移到到移动硬盘上。</p>
+<p>这一步有使用boot-repair工具和手动迁移两种方法，我两种都尝试过，只有前者成功，并且前者也更加容易实现；这里就介绍第一种方法。</p>
+<p>再把一开始的启动U盘和移动硬盘都插到电脑上，开机重启，按下F12进入启动项选择界面，此时应该能看到一个ubuntu和一个linpus lite，前者就是我们刚安装好的ubuntu系统，后者则还是原来引导ubuntu安装的程序。选择linpus lite，进入安装界面，但这次选择“试用Ubuntu”。</p>
+<p>进入Ubuntu系统后，连接网络，打开终端输入下面的指令安装boot-repair软件：</p>
+<p>sudo apt-add-repository ppa:yannubuntu/boot-repair<br>
+sudo apt update<br>
+sudo apt install boot-repair<br>
+1<br>
+2<br>
+3<br>
+安装完成后，输入命令运行该软件：</p>
+<p>boot-repair<br>
+1<br>
+选择“Recommended repair”，等待程序运行完成即可。</p>
+<p>将系统启动引导程序成功迁移到移动硬盘后，可以通过DiskGenius软件在移动硬盘的ESP分区下看到如下的目录结构：</p>
+<p>此时就可以在Disk Genius中将主硬盘中对应的与ubuntu相关的系统引导启动程序文件删除，这样每次启动电脑，只有在插入移动硬盘时才能看到Ubuntu系统的启动项，在不插入移动硬盘时，电脑上就只有Windows一个启动项可以选择（不考虑其他特殊启动项）。</p>
+<p>至此，基本大功告成！不过需要说明的是Linux to go对电脑上原来的Windows系统也并不是完全没影响，在我的电脑上，每次使用完Ubuntu系统再切换回Windows系统，系统时间都会错乱，需要到系统中手动校准时间。<br>
+————————————————<br>
+版权声明：本文为博主原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接和本声明。</p>
+<p>原文链接：<a href="https://blog.csdn.net/m0_64545111/article/details/136131918" target="_blank" class="external-link">https://blog.csdn.net/m0_64545111/article/details/136131918</a></p>
+</blockquote>
+</main>
+<script>window.location.hash&&document.getElementById(window.location.hash.slice(1)).classList.add("referred"),window.addEventListener("hashchange",(e=>{const t=e.oldURL.split("#");t[1]&&document.getElementById(t[1]).classList.remove("referred");const n=e.newURL.split("#");n[1]&&document.getElementById(n[1]).classList.add("referred")}),!1);const url_parts=window.location.href.split("#"),url=url_parts[0],referrence=url_parts[1];document.querySelectorAll(".cm-s-obsidian > *[id]").forEach((function(e){e.ondblclick=function(e){const t=url+"#"+e.target.id;navigator.clipboard.writeText(t)}}))</script>
+<script src="https://fastly.jsdelivr.net/npm/luxon@3.2.1/build/global/luxon.min.js"></script>
+<script defer="defer">TIMESTAMP_FORMAT="MMM dd, yyyy h:mm a",document.querySelectorAll(".human-date").forEach((function(e){date=e.getAttribute("data-date")||e.innerText,parsed_date=luxon.DateTime.fromISO(date),null!=parsed_date.invalid&&(parsed_date=luxon.DateTime.fromSQL(date)),null!=parsed_date.invalid&&(parsed_date=luxon.DateTime.fromHTML(date)),e.innerHTML=parsed_date.toFormat(TIMESTAMP_FORMAT)}))</script>
+<script>lucide.createIcons({attrs:{class:["svg-icon"]}})</script>
+</body>
+</html>

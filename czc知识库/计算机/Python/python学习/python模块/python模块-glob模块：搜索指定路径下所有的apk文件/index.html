@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>python模块-glob模块：搜索指定路径下所有的apk文件</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<script async type="module">import mermaid from"https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"</script>
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js" integrity="sha512-hpZ5pDCF2bRCweL5WoA0/N1elet1KYL5mx3LP555Eg/0ZguaHawxNvEjF6O3rufAChs16HVNhEc6blF/rZoowQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/plugins/autoloader/prism-autoloader.min.js" integrity="sha512-sv0slik/5O0JIPdLBCR2A3XDg/1U3WuDEheZfI/DI5n8Yqc3h5kjrnr46FGBNiUAJF7rE4LHKwQ/SoSLRKAxEA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script async src="https://cdn.jsdelivr.net/npm/lucide@0.115.0/dist/umd/lucide.min.js"></script>
+<script>window.addEventListener("load",(()=>{document.querySelectorAll(".callout").forEach((e=>{const t=getComputedStyle(e).getPropertyValue("--callout-icon"),l=t&&t.trim().replace(/^lucide-/,"");if(l){const t=e.querySelector(".callout-title");if(t){const e=document.createElement("div"),c=document.createElement("i");e.appendChild(c),c.setAttribute("icon-name",l),e.setAttribute("class","callout-icon"),t.insertBefore(e,t.firstChild)}}})),lucide.createIcons(),Array.from(document.querySelectorAll(".callout.is-collapsible")).forEach((e=>{e.querySelector(".callout-title").addEventListener("click",(t=>{e.classList.contains("is-collapsed")?e.classList.remove("is-collapsed"):e.classList.add("is-collapsed")}))}))}))</script>
+<script async src="https://fastly.jsdelivr.net/npm/force-graph@1.43.0/dist/force-graph.min.js"></script>
+<script async src="https://fastly.jsdelivr.net/npm/@alpinejs/persist@3.11.1/dist/cdn.min.js"></script>
+<script src="https://fastly.jsdelivr.net/npm/alpinejs@3.11.1/dist/cdn.min.js" async></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-okaidia.min.css" integrity="sha512-mIs9kKbaw6JZFfSuo+MovjU+Ntggfoj8RwAmJbVXQ5mkAX5LlgETQEweFPI18humSPHymTb5iikEOKWF7I8ncQ==" crossorigin="anonymous" referrerpolicy="no-referrer" async>
+<script src="https://fastly.jsdelivr.net/npm/whatwg-fetch@3.6.2/dist/fetch.umd.min.js" crossorigin="anonymous" referrerpolicy="no-referrer" async></script>
+<link href="/styles/digital-garden-base.css" rel="stylesheet">
+<link href="/styles/obsidian-base.css" rel="stylesheet">
+<link href="/styles/_theme.d92311c2.css" rel="stylesheet">
+<link href="/styles/custom-style.css" rel="stylesheet">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<style></style>
+</head>
+<body class="theme-dark markdown-preview-view markdown-rendered markdown-preview-section">
+<nav class="navbar">
+<div class="navbar-inner">
+<a href="/" style="text-decoration:none">
+<h1 style="margin:15px!important">Digital Garden</h1>
+</a>
+</div>
+</nav>
+<main class="content cm-s-obsidian">
+<header>
+<div class="header-meta">
+</div>
+</header>
+<p>ChatGPT介绍glob模块：</p>
+<blockquote>
+<p><code>glob</code> 是 Python 标准库中的一个模块，用于在文件系统中搜索匹配指定模式的文件路径。它提供了一个名为 <code>glob</code> 的函数，用于执行文件路径的模式匹配。</p>
+<p>具体来说，<code>glob.glob(pattern)</code> 函数接受一个字符串 <code>pattern</code> 作为参数，这个字符串是一个文件路径的模式，可以包含通配符 <code>*</code> 和 <code>**</code>。函数会根据这个模式在文件系统中搜索匹配的文件路径，并返回匹配到的文件路径列表。</p>
+<p>例如，<code>glob.glob('*.txt')</code> 会搜索当前目录下所有以 <code>.txt</code> 结尾的文件，并返回这些文件的路径列表；<code>glob.glob('**/*.txt', recursive=True)</code> 则会递归搜索当前目录及其所有子目录中的所有以 <code>.txt</code> 结尾的文件。</p>
+<p><code>glob</code> 模块通常用于文件查找、文件路径匹配等场景，非常方便用于处理文件系统中的大量文件。</p>
+</blockquote>
+<p>自己遇到的实例：</p>
+<pre><code class="language-python">import glob
+files = glob.glob(self._data_path + '/**/*.apk', recursive=True)  
+n_files = len(files)
+</code></pre>
+<p>ChatGPT:</p>
+<ul>
+<li><code>self._data_path</code> 是指定的数据路径，代码会在这个路径下搜索 APK 文件。</li>
+<li><code>'/**/*.apk'</code> 表示匹配任意深度的子目录（包括当前目录），并且文件名以 <code>.apk</code> 结尾。
+<ul>
+<li><code>'/'</code>：斜杠表示从当前目录开始匹配。</li>
+<li><code>**</code>：双星号表示递归匹配任意深度的子目录，即匹配当前目录及其所有子目录。
+<ul>
+<li>如果要限定只在二级目录下查找 APK 文件，可以使用类似这样的模式字符串：<code>'/*/*.apk'</code>。这样表示只匹配直接子目录（二级目录）下的 APK 文件。</li>
+</ul>
+</li>
+<li><code>*.apk</code>：星号和点号组合表示匹配任意文件名以 <code>.apk</code> 结尾的文件。</li>
+</ul>
+</li>
+<li><code>recursive=True</code> 参数告诉 <code>glob</code> 函数递归搜索子目录。<br>
+因此，这行代码的意思是在指定的数据路径 <code>self._data_path</code> 及其所有子目录中查找所有的 APK 文件</li>
+</ul>
+</main>
+<script>window.location.hash&&document.getElementById(window.location.hash.slice(1)).classList.add("referred"),window.addEventListener("hashchange",(e=>{const t=e.oldURL.split("#");t[1]&&document.getElementById(t[1]).classList.remove("referred");const n=e.newURL.split("#");n[1]&&document.getElementById(n[1]).classList.add("referred")}),!1);const url_parts=window.location.href.split("#"),url=url_parts[0],referrence=url_parts[1];document.querySelectorAll(".cm-s-obsidian > *[id]").forEach((function(e){e.ondblclick=function(e){const t=url+"#"+e.target.id;navigator.clipboard.writeText(t)}}))</script>
+<script src="https://fastly.jsdelivr.net/npm/luxon@3.2.1/build/global/luxon.min.js"></script>
+<script defer="defer">TIMESTAMP_FORMAT="MMM dd, yyyy h:mm a",document.querySelectorAll(".human-date").forEach((function(e){date=e.getAttribute("data-date")||e.innerText,parsed_date=luxon.DateTime.fromISO(date),null!=parsed_date.invalid&&(parsed_date=luxon.DateTime.fromSQL(date)),null!=parsed_date.invalid&&(parsed_date=luxon.DateTime.fromHTML(date)),e.innerHTML=parsed_date.toFormat(TIMESTAMP_FORMAT)}))</script>
+<script>lucide.createIcons({attrs:{class:["svg-icon"]}})</script>
+</body>
+</html>

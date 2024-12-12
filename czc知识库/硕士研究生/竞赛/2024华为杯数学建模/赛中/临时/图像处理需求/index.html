@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>图像处理需求</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<script async type="module">import mermaid from"https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"</script>
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js" integrity="sha512-hpZ5pDCF2bRCweL5WoA0/N1elet1KYL5mx3LP555Eg/0ZguaHawxNvEjF6O3rufAChs16HVNhEc6blF/rZoowQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/plugins/autoloader/prism-autoloader.min.js" integrity="sha512-sv0slik/5O0JIPdLBCR2A3XDg/1U3WuDEheZfI/DI5n8Yqc3h5kjrnr46FGBNiUAJF7rE4LHKwQ/SoSLRKAxEA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script async src="https://cdn.jsdelivr.net/npm/lucide@0.115.0/dist/umd/lucide.min.js"></script>
+<script>window.addEventListener("load",(()=>{document.querySelectorAll(".callout").forEach((e=>{const t=getComputedStyle(e).getPropertyValue("--callout-icon"),l=t&&t.trim().replace(/^lucide-/,"");if(l){const t=e.querySelector(".callout-title");if(t){const e=document.createElement("div"),c=document.createElement("i");e.appendChild(c),c.setAttribute("icon-name",l),e.setAttribute("class","callout-icon"),t.insertBefore(e,t.firstChild)}}})),lucide.createIcons(),Array.from(document.querySelectorAll(".callout.is-collapsible")).forEach((e=>{e.querySelector(".callout-title").addEventListener("click",(t=>{e.classList.contains("is-collapsed")?e.classList.remove("is-collapsed"):e.classList.add("is-collapsed")}))}))}))</script>
+<script async src="https://fastly.jsdelivr.net/npm/force-graph@1.43.0/dist/force-graph.min.js"></script>
+<script async src="https://fastly.jsdelivr.net/npm/@alpinejs/persist@3.11.1/dist/cdn.min.js"></script>
+<script src="https://fastly.jsdelivr.net/npm/alpinejs@3.11.1/dist/cdn.min.js" async></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-okaidia.min.css" integrity="sha512-mIs9kKbaw6JZFfSuo+MovjU+Ntggfoj8RwAmJbVXQ5mkAX5LlgETQEweFPI18humSPHymTb5iikEOKWF7I8ncQ==" crossorigin="anonymous" referrerpolicy="no-referrer" async>
+<script src="https://fastly.jsdelivr.net/npm/whatwg-fetch@3.6.2/dist/fetch.umd.min.js" crossorigin="anonymous" referrerpolicy="no-referrer" async></script>
+<link href="/styles/digital-garden-base.css" rel="stylesheet">
+<link href="/styles/obsidian-base.css" rel="stylesheet">
+<link href="/styles/_theme.d92311c2.css" rel="stylesheet">
+<link href="/styles/custom-style.css" rel="stylesheet">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<style></style>
+</head>
+<body class="theme-dark markdown-preview-view markdown-rendered markdown-preview-section">
+<nav class="navbar">
+<div class="navbar-inner">
+<a href="/" style="text-decoration:none">
+<h1 style="margin:15px!important">Digital Garden</h1>
+</a>
+</div>
+</nav>
+<main class="content cm-s-obsidian">
+<header>
+<div class="header-meta">
+</div>
+</header>
+<h2 id="我需要的数据（可以通过其他数据间接求得）：" tabindex="-1">我需要的数据（可以通过其他数据间接求得）：</h2>
+<ul>
+<li><strong>车流密度（Density）</strong>：
+<ul>
+<li>定义：单位长度道路上的车数（辆/km）。</li>
+<li>计算：车流密度 = 总车辆数 / 道路长度。</li>
+</ul>
+</li>
+<li><strong>流量（Flow）</strong>：
+<ul>
+<li>定义：单位时间内通过某一点的车辆数（辆/秒）。</li>
+<li>计算：流量 = 总车辆数 / 视频时长（秒）。</li>
+</ul>
+</li>
+<li><strong>速度（Speed）</strong>：
+<ul>
+<li>定义：车辆的平均行驶速度（km/h）。</li>
+<li>计算：速度 = 道路长度 / 行驶时间。</li>
+</ul>
+</li>
+</ul>
+<h2 id="4" tabindex="-1">4个监控视频（不同监控摄像头）</h2>
+<h2 id="具体如何提取（我的想法）：" tabindex="-1">具体如何提取（我的想法）：</h2>
+<ul>
+<li>视频中画一个线，检测通过这个线的所有车辆</li>
+<li>统计<strong>视频中每秒</strong>新入场的车辆，并记录车辆速度</li>
+</ul>
+<h2 id="我需要的交付数据是表格，例如下表：（一共四个视频，需要四个表格）" tabindex="-1">我需要的交付数据是表格，例如下表：（一共四个视频，需要四个表格）</h2>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>视频的秒数</th>
+<th>车辆数</th>
+<th>这几个车辆平均速度(KM/H)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1（视频的第一秒）</td>
+<td>5</td>
+<td>20</td>
+</tr>
+<tr>
+<td>2</td>
+<td>2</td>
+<td>29</td>
+</tr>
+<tr>
+<td>3</td>
+<td>2</td>
+<td>40</td>
+</tr>
+<tr>
+<td>4</td>
+<td>7</td>
+<td>60</td>
+</tr>
+<tr>
+<td>5</td>
+<td>1</td>
+<td>70</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+<p>yolov8：检测目标<br>
+bot-sort：做跟踪，跟踪检测同一个目标</p>
+<p>绘制<br>
+车辆数：存储这辆车的轨迹路线，。根据同一个id。</p>
+<p>中间丢失，id会变掉</p>
+<p>计数；判断过那条线，计数。</p>
+<p>测速：公式，单位时间的位移，</p>
+<p>会去计算两个点，存储轨迹的第一个点和当前的点，两点之间有位移，计算两点<strong>巴士距离</strong>，距离求出来，把像素距离转换成实际距离（<strong>缩放因子</strong>），近大远小，因子要变<br>
+比如小轿车宽度1.8米，看对应像素点长度。离得近有100到200像素长度。</p>
+</main>
+<script>window.location.hash&&document.getElementById(window.location.hash.slice(1)).classList.add("referred"),window.addEventListener("hashchange",(e=>{const t=e.oldURL.split("#");t[1]&&document.getElementById(t[1]).classList.remove("referred");const n=e.newURL.split("#");n[1]&&document.getElementById(n[1]).classList.add("referred")}),!1);const url_parts=window.location.href.split("#"),url=url_parts[0],referrence=url_parts[1];document.querySelectorAll(".cm-s-obsidian > *[id]").forEach((function(e){e.ondblclick=function(e){const t=url+"#"+e.target.id;navigator.clipboard.writeText(t)}}))</script>
+<script src="https://fastly.jsdelivr.net/npm/luxon@3.2.1/build/global/luxon.min.js"></script>
+<script defer="defer">TIMESTAMP_FORMAT="MMM dd, yyyy h:mm a",document.querySelectorAll(".human-date").forEach((function(e){date=e.getAttribute("data-date")||e.innerText,parsed_date=luxon.DateTime.fromISO(date),null!=parsed_date.invalid&&(parsed_date=luxon.DateTime.fromSQL(date)),null!=parsed_date.invalid&&(parsed_date=luxon.DateTime.fromHTML(date)),e.innerHTML=parsed_date.toFormat(TIMESTAMP_FORMAT)}))</script>
+<script>lucide.createIcons({attrs:{class:["svg-icon"]}})</script>
+</body>
+</html>

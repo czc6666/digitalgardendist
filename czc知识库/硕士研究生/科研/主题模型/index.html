@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>主题模型</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<script async type="module">import mermaid from"https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"</script>
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js" integrity="sha512-hpZ5pDCF2bRCweL5WoA0/N1elet1KYL5mx3LP555Eg/0ZguaHawxNvEjF6O3rufAChs16HVNhEc6blF/rZoowQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/plugins/autoloader/prism-autoloader.min.js" integrity="sha512-sv0slik/5O0JIPdLBCR2A3XDg/1U3WuDEheZfI/DI5n8Yqc3h5kjrnr46FGBNiUAJF7rE4LHKwQ/SoSLRKAxEA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script async src="https://cdn.jsdelivr.net/npm/lucide@0.115.0/dist/umd/lucide.min.js"></script>
+<script>window.addEventListener("load",(()=>{document.querySelectorAll(".callout").forEach((e=>{const t=getComputedStyle(e).getPropertyValue("--callout-icon"),l=t&&t.trim().replace(/^lucide-/,"");if(l){const t=e.querySelector(".callout-title");if(t){const e=document.createElement("div"),c=document.createElement("i");e.appendChild(c),c.setAttribute("icon-name",l),e.setAttribute("class","callout-icon"),t.insertBefore(e,t.firstChild)}}})),lucide.createIcons(),Array.from(document.querySelectorAll(".callout.is-collapsible")).forEach((e=>{e.querySelector(".callout-title").addEventListener("click",(t=>{e.classList.contains("is-collapsed")?e.classList.remove("is-collapsed"):e.classList.add("is-collapsed")}))}))}))</script>
+<script async src="https://fastly.jsdelivr.net/npm/force-graph@1.43.0/dist/force-graph.min.js"></script>
+<script async src="https://fastly.jsdelivr.net/npm/@alpinejs/persist@3.11.1/dist/cdn.min.js"></script>
+<script src="https://fastly.jsdelivr.net/npm/alpinejs@3.11.1/dist/cdn.min.js" async></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-okaidia.min.css" integrity="sha512-mIs9kKbaw6JZFfSuo+MovjU+Ntggfoj8RwAmJbVXQ5mkAX5LlgETQEweFPI18humSPHymTb5iikEOKWF7I8ncQ==" crossorigin="anonymous" referrerpolicy="no-referrer" async>
+<script src="https://fastly.jsdelivr.net/npm/whatwg-fetch@3.6.2/dist/fetch.umd.min.js" crossorigin="anonymous" referrerpolicy="no-referrer" async></script>
+<link href="/styles/digital-garden-base.css" rel="stylesheet">
+<link href="/styles/obsidian-base.css" rel="stylesheet">
+<link href="/styles/_theme.d92311c2.css" rel="stylesheet">
+<link href="/styles/custom-style.css" rel="stylesheet">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<style></style>
+</head>
+<body class="theme-dark markdown-preview-view markdown-rendered markdown-preview-section">
+<nav class="navbar">
+<div class="navbar-inner">
+<a href="/" style="text-decoration:none">
+<h1 style="margin:15px!important">Digital Garden</h1>
+</a>
+</div>
+</nav>
+<main class="content cm-s-obsidian">
+<header>
+<div class="header-meta">
+</div>
+</header>
+<p><a href="%E6%96%87%E6%9C%AC%E4%B8%BB%E9%A2%98%E6%A8%A1%E5%9E%8B%E4%B9%8B%E6%BD%9C%E5%9C%A8%E8%AF%AD%E4%B9%89%E5%88%86%E6%9E%90%EF%BC%88LSI%EF%BC%89.md" target="_blank" class="external-link">文本主题模型之潜在语义分析（LSI）</a></p>
+<div class="callout is-collapsible" data-callout="tip"><div class="callout-title"><div class="callout-title-inner"> 豆包对 topic model 和 topic modeling 的讲解<br></div><div class="callout-fold"><i icon-name="chevron-down"></i></div></div>
+<div class="callout-content">
+<p>
+<strong>一、Topic Model（主题模型）</strong></p>
+<p>Topic model 是一种用于从大量文本数据中自动发现主题的统计模型。它可以将文档表示为主题的混合，每个主题又可以用一组相关的词语来描述。</p>
+<p>例如，在新闻文章的集合中，可能会发现一些主题如 “体育新闻”“政治动态”“娱乐八卦” 等。对于一篇特定的新闻文章，它可能主要由 “体育新闻” 这个主题构成，同时也包含少量 “政治动态” 主题的元素。</p>
+<p>主要特点包括：</p>
+<ul>
+<li><strong>无监督学习</strong>：不需要人工标注的主题信息，仅依靠文本自身的内容进行主题的挖掘。</li>
+<li><strong>降维表示</strong>：将高维的文本数据转换为低维的主题空间表示，便于后续的分析和处理。</li>
+<li><strong>可解释性</strong>：通过主题和相关的词语，可以直观地理解文档的主要内容和主题分布。</li>
+</ul>
+<p><strong>二、Topic Modeling（主题建模）</strong></p>
+<p>Topic modeling 是指使用主题模型进行主题发现和分析的过程。</p>
+<p>这个过程通常包括以下步骤：</p>
+<ol>
+<li><strong>数据收集</strong>：收集大量的文本数据，这些数据可以来自各种来源，如新闻文章、博客、社交媒体等。</li>
+<li><strong>数据预处理</strong>：对文本进行清洗、分词、去除停用词等操作，以便更好地进行主题建模。</li>
+<li><strong>选择模型</strong>：根据具体的应用场景和数据特点，选择合适的主题模型，如潜在狄利克雷分配（Latent Dirichlet Allocation，LDA）、非负矩阵分解（Non-negative Matrix Factorization，NMF）等。</li>
+<li><strong>模型训练</strong>：使用预处理后的文本数据对选择的主题模型进行训练，调整模型的参数，以获得最佳的主题表示。</li>
+<li><strong>主题解释</strong>：分析训练得到的主题，解释每个主题的含义，并通过查看主题中的关键词来理解主题的内容。</li>
+<li><strong>应用与评估</strong>：将主题模型应用于实际问题中，如文档分类、信息检索、文本聚类等，并评估模型的性能和效果。</li>
+</ol>
+<p>总之，topic model 是一种具体的模型，而 topic modeling 是使用这种模型进行主题发现和分析的整个过程。</p>
+</div></div>
+</main>
+<script>window.location.hash&&document.getElementById(window.location.hash.slice(1)).classList.add("referred"),window.addEventListener("hashchange",(e=>{const t=e.oldURL.split("#");t[1]&&document.getElementById(t[1]).classList.remove("referred");const n=e.newURL.split("#");n[1]&&document.getElementById(n[1]).classList.add("referred")}),!1);const url_parts=window.location.href.split("#"),url=url_parts[0],referrence=url_parts[1];document.querySelectorAll(".cm-s-obsidian > *[id]").forEach((function(e){e.ondblclick=function(e){const t=url+"#"+e.target.id;navigator.clipboard.writeText(t)}}))</script>
+<script src="https://fastly.jsdelivr.net/npm/luxon@3.2.1/build/global/luxon.min.js"></script>
+<script defer="defer">TIMESTAMP_FORMAT="MMM dd, yyyy h:mm a",document.querySelectorAll(".human-date").forEach((function(e){date=e.getAttribute("data-date")||e.innerText,parsed_date=luxon.DateTime.fromISO(date),null!=parsed_date.invalid&&(parsed_date=luxon.DateTime.fromSQL(date)),null!=parsed_date.invalid&&(parsed_date=luxon.DateTime.fromHTML(date)),e.innerHTML=parsed_date.toFormat(TIMESTAMP_FORMAT)}))</script>
+<script>lucide.createIcons({attrs:{class:["svg-icon"]}})</script>
+</body>
+</html>

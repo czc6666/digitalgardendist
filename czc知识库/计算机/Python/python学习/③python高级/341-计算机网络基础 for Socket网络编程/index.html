@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>341-计算机网络基础 for Socket网络编程</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<script async type="module">import mermaid from"https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"</script>
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js" integrity="sha512-hpZ5pDCF2bRCweL5WoA0/N1elet1KYL5mx3LP555Eg/0ZguaHawxNvEjF6O3rufAChs16HVNhEc6blF/rZoowQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/plugins/autoloader/prism-autoloader.min.js" integrity="sha512-sv0slik/5O0JIPdLBCR2A3XDg/1U3WuDEheZfI/DI5n8Yqc3h5kjrnr46FGBNiUAJF7rE4LHKwQ/SoSLRKAxEA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script async src="https://cdn.jsdelivr.net/npm/lucide@0.115.0/dist/umd/lucide.min.js"></script>
+<script>window.addEventListener("load",(()=>{document.querySelectorAll(".callout").forEach((e=>{const t=getComputedStyle(e).getPropertyValue("--callout-icon"),l=t&&t.trim().replace(/^lucide-/,"");if(l){const t=e.querySelector(".callout-title");if(t){const e=document.createElement("div"),c=document.createElement("i");e.appendChild(c),c.setAttribute("icon-name",l),e.setAttribute("class","callout-icon"),t.insertBefore(e,t.firstChild)}}})),lucide.createIcons(),Array.from(document.querySelectorAll(".callout.is-collapsible")).forEach((e=>{e.querySelector(".callout-title").addEventListener("click",(t=>{e.classList.contains("is-collapsed")?e.classList.remove("is-collapsed"):e.classList.add("is-collapsed")}))}))}))</script>
+<script async src="https://fastly.jsdelivr.net/npm/force-graph@1.43.0/dist/force-graph.min.js"></script>
+<script async src="https://fastly.jsdelivr.net/npm/@alpinejs/persist@3.11.1/dist/cdn.min.js"></script>
+<script src="https://fastly.jsdelivr.net/npm/alpinejs@3.11.1/dist/cdn.min.js" async></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-okaidia.min.css" integrity="sha512-mIs9kKbaw6JZFfSuo+MovjU+Ntggfoj8RwAmJbVXQ5mkAX5LlgETQEweFPI18humSPHymTb5iikEOKWF7I8ncQ==" crossorigin="anonymous" referrerpolicy="no-referrer" async>
+<script src="https://fastly.jsdelivr.net/npm/whatwg-fetch@3.6.2/dist/fetch.umd.min.js" crossorigin="anonymous" referrerpolicy="no-referrer" async></script>
+<link href="/styles/digital-garden-base.css" rel="stylesheet">
+<link href="/styles/obsidian-base.css" rel="stylesheet">
+<link href="/styles/_theme.d92311c2.css" rel="stylesheet">
+<link href="/styles/custom-style.css" rel="stylesheet">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<style></style>
+</head>
+<body class="theme-dark markdown-preview-view markdown-rendered markdown-preview-section">
+<nav class="navbar">
+<div class="navbar-inner">
+<a href="/" style="text-decoration:none">
+<h1 style="margin:15px!important">Digital Garden</h1>
+</a>
+</div>
+</nav>
+<main class="content cm-s-obsidian">
+<header>
+<div class="header-meta">
+</div>
+</header>
+<h1 id="ip" tabindex="-1">ip地址</h1>
+<p>IP地址就是标识网络中设备的一个地址，好比现实生活中的家庭地址。</p>
+<p>ip地址分为ipv4(如：10.21.127.9)和ipv6(如：fe80:78a0:17e7:fef7:52dc%16)，主流用ipv4</p>
+<p>ipv4由点分十进制组成<br>
+ipv6由点分十六进制组成</p>
+<p>查看ip地址：</p>
+<ul>
+<li>windows：cmd：<code>ipconfig</code></li>
+<li>linux：bash：<code>ifconfig</code></li>
+</ul>
+<p>计算机中一般由两个IP地址：</p>
+<ol>
+<li>上网IP地址：<code>192.168.1.222</code></li>
+<li>本地回环IP：<code>127.0.0.1</code>（for 本地测试）</li>
+</ol>
+<p>检测网络是否能连通（连通性）：<br>
+cmd：<code>ping &lt;目标机器ip/网址&gt;</code></p>
+<h1 id="端口" tabindex="-1">端口</h1>
+<p>由ip只能找到计算机，通信需要通过端口</p>
+<blockquote>
+<p>每运行一个网络程序都会有一个端口，想要给对应的程序发送数据，找到对应的端口即可</p>
+</blockquote>
+<p>端口号分类</p>
+<ul>
+<li>知名端口号
+<ul>
+<li>知名端口号是指众所周知的端口号，范围从0到1023。</li>
+<li>这些端口号一般固定分配给一些服务，比如21端口分配给FTP(文件传输协议）服务，25端口分配给SMTP（简单邮件传输协议）服务，80端口分配给HTTP服务。</li>
+</ul>
+</li>
+<li>动态端口号
+<ul>
+<li>一般程序员开发应用程序使用端口号称为动态端口号，范围是从1024到65535</li>
+<li>如果程序员开发的程序没有设置端口号，操作系统会在动态端口号这个范围内随机生成一个给开发的应用程序使用。</li>
+</ul>
+</li>
+</ul>
+<p>注：当运行一个程序默认会有一个端口号，当这个程序退出时，所占用的这个端口号就会被释放。</p>
+<h1 id="传输控制协议" tabindex="-1">传输控制协议</h1>
+<p>数据传输要遵循<strong>数据传输协议</strong> -&gt; TCP/UDP</p>
+<h2 id="tcp" tabindex="-1">TCP概念</h2>
+<p>TCP的英文全拼(TransmissionControlProtocol)简称传输控制协议，它是一种<strong>面向连接的</strong>、<strong>可靠的</strong>、<strong>基于字节流</strong>的传输层通信协议。</p>
+<p>TCP通信步骤：①创建连接②传输数据③关闭连接</p>
+<h2 id="tcp-1" tabindex="-1">TCP特点</h2>
+<p>☆面向连接<br>
+通信双方必须先建立好连接才能进行数据的传输，数据传输完成后，双方必须断开此连接，以释放系统资源。<br>
+☆可靠传输<br>
+①TCP采用发送应答机制<br>
+②超时重传<br>
+③错误校验（md5、CRC值）<br>
+④流量控制和阻塞管理</p>
+<h2 id="udp" tabindex="-1">UDP协议（不可靠，速度快）</h2>
+<p>延迟低、速度快、不可靠：对数据质量要求不高，只对速度要求</p>
+<h1 id="socket" tabindex="-1">socket套接字工具</h1>
+<p>TCP网路编程也叫套接字编程</p>
+<p>到目前为止我们学习了IP地址和端口号还有TCP传输协议，为了保证数据的完整性和可靠性我们使用TCP传输协议进行数据的传输，为了能够找到对应设备我们需要使用IP地址，为了区别某个端口的应用程序接收数据我们需要使用端口号，那么通信数据是如何完成传输的呢？</p>
+<p>socket（简称套接字）是进程之间通信一个工具，好比现实生活中的插座，所有的家用电器要想工作都是基于插座进行进程之间想要进行网络通信需要基于这个socket。</p>
+<h2 id="socket-1" tabindex="-1">socket的作用与应用场景</h2>
+<p>socket的作用：负责进程之间的网络数据传输，好比数据的搬运工。</p>
+<p>socket使用场景：|<br>
+不夸张的说，只要跟网络相关的应用程序或者软件底层都使用到了socket。</p>
+</main>
+<script>window.location.hash&&document.getElementById(window.location.hash.slice(1)).classList.add("referred"),window.addEventListener("hashchange",(e=>{const t=e.oldURL.split("#");t[1]&&document.getElementById(t[1]).classList.remove("referred");const n=e.newURL.split("#");n[1]&&document.getElementById(n[1]).classList.add("referred")}),!1);const url_parts=window.location.href.split("#"),url=url_parts[0],referrence=url_parts[1];document.querySelectorAll(".cm-s-obsidian > *[id]").forEach((function(e){e.ondblclick=function(e){const t=url+"#"+e.target.id;navigator.clipboard.writeText(t)}}))</script>
+<script src="https://fastly.jsdelivr.net/npm/luxon@3.2.1/build/global/luxon.min.js"></script>
+<script defer="defer">TIMESTAMP_FORMAT="MMM dd, yyyy h:mm a",document.querySelectorAll(".human-date").forEach((function(e){date=e.getAttribute("data-date")||e.innerText,parsed_date=luxon.DateTime.fromISO(date),null!=parsed_date.invalid&&(parsed_date=luxon.DateTime.fromSQL(date)),null!=parsed_date.invalid&&(parsed_date=luxon.DateTime.fromHTML(date)),e.innerHTML=parsed_date.toFormat(TIMESTAMP_FORMAT)}))</script>
+<script>lucide.createIcons({attrs:{class:["svg-icon"]}})</script>
+</body>
+</html>

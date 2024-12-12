@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>联邦学习</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<script async type="module">import mermaid from"https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"</script>
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js" integrity="sha512-hpZ5pDCF2bRCweL5WoA0/N1elet1KYL5mx3LP555Eg/0ZguaHawxNvEjF6O3rufAChs16HVNhEc6blF/rZoowQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/plugins/autoloader/prism-autoloader.min.js" integrity="sha512-sv0slik/5O0JIPdLBCR2A3XDg/1U3WuDEheZfI/DI5n8Yqc3h5kjrnr46FGBNiUAJF7rE4LHKwQ/SoSLRKAxEA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script async src="https://cdn.jsdelivr.net/npm/lucide@0.115.0/dist/umd/lucide.min.js"></script>
+<script>window.addEventListener("load",(()=>{document.querySelectorAll(".callout").forEach((e=>{const t=getComputedStyle(e).getPropertyValue("--callout-icon"),l=t&&t.trim().replace(/^lucide-/,"");if(l){const t=e.querySelector(".callout-title");if(t){const e=document.createElement("div"),c=document.createElement("i");e.appendChild(c),c.setAttribute("icon-name",l),e.setAttribute("class","callout-icon"),t.insertBefore(e,t.firstChild)}}})),lucide.createIcons(),Array.from(document.querySelectorAll(".callout.is-collapsible")).forEach((e=>{e.querySelector(".callout-title").addEventListener("click",(t=>{e.classList.contains("is-collapsed")?e.classList.remove("is-collapsed"):e.classList.add("is-collapsed")}))}))}))</script>
+<script async src="https://fastly.jsdelivr.net/npm/force-graph@1.43.0/dist/force-graph.min.js"></script>
+<script async src="https://fastly.jsdelivr.net/npm/@alpinejs/persist@3.11.1/dist/cdn.min.js"></script>
+<script src="https://fastly.jsdelivr.net/npm/alpinejs@3.11.1/dist/cdn.min.js" async></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-okaidia.min.css" integrity="sha512-mIs9kKbaw6JZFfSuo+MovjU+Ntggfoj8RwAmJbVXQ5mkAX5LlgETQEweFPI18humSPHymTb5iikEOKWF7I8ncQ==" crossorigin="anonymous" referrerpolicy="no-referrer" async>
+<script src="https://fastly.jsdelivr.net/npm/whatwg-fetch@3.6.2/dist/fetch.umd.min.js" crossorigin="anonymous" referrerpolicy="no-referrer" async></script>
+<link href="/styles/digital-garden-base.css" rel="stylesheet">
+<link href="/styles/obsidian-base.css" rel="stylesheet">
+<link href="/styles/_theme.d92311c2.css" rel="stylesheet">
+<link href="/styles/custom-style.css" rel="stylesheet">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<style></style>
+</head>
+<body class="theme-dark markdown-preview-view markdown-rendered markdown-preview-section">
+<nav class="navbar">
+<div class="navbar-inner">
+<a href="/" style="text-decoration:none">
+<h1 style="margin:15px!important">Digital Garden</h1>
+</a>
+</div>
+</nav>
+<main class="content cm-s-obsidian">
+<header>
+<div class="header-meta">
+</div>
+</header>
+<h2 id="介绍" tabindex="-1">介绍</h2>
+<p>联邦学习是一种分散式机器学习方法，通过在本地设备上执行模型训练，避免将原始数据传输到中央服务器。每个设备使用本地数据进行训练，只有模型的参数被传输到中央服务器进行聚合，以更新全局模型。这种方法保护了数据隐私，降低了通信开销，并适用于分布式环境，为实时学习提供了可能，同时节省能源。</p>
+<p>联邦学习是机器学习领域的一个分支，更具体地说，它是分布式机器学习的一种形式。它的出现是为了解决在中央服务器上集中训练模型时涉及的隐私和安全性问题。因此，它通常涉及到机器学习和深度学习技术的应用。</p>
+<p>深度学习是机器学习的一个子集，主要关注使用深度神经网络进行学习和预测。在联邦学习中，可以使用深度学习模型，但也可以使用其他机器学习技术，具体取决于问题的性质和数据的特点。因此，联邦学习更像是一种方法论，可以与多种机器学习技术结合使用。</p>
+<h2 id="federated-learning" tabindex="-1">联邦学习过程（Federated Learning）：</h2>
+<ol>
+<li><strong>初始化：</strong> 一个全局模型在中央服务器上初始化。</li>
+<li><strong>本地训练：</strong> 每个本地设备使用本地数据执行模型的训练。训练过程在设备本地进行，不涉及将原始数据传输到中央服务器。</li>
+<li><strong>模型更新：</strong> 训练后，只有模型的参数（如权重、梯度等）被传输到中央服务器，而不是原始数据。</li>
+<li><strong>模型聚合：</strong> 中央服务器收到来自多个设备的模型参数，进行模型聚合，以整合这些更新，更新全局模型。</li>
+<li><strong>迭代：</strong> 上述步骤在多个轮次中迭代进行，逐步改进全局模型。</li>
+</ol>
+<h2 id="联邦学习关键优势：" tabindex="-1">联邦学习关键优势：</h2>
+<ol>
+<li><strong>隐私保护：</strong> 原始数据不离开设备，保护用户隐私。</li>
+<li><strong>降低通信开销：</strong> 只有模型参数被传输，减少通信开销。</li>
+<li><strong>分布式性：</strong> 适用于分布式环境，处理分布在不同设备上的数据。</li>
+<li><strong>实时学习：</strong> 模型可以在本地进行实时学习。</li>
+<li><strong>节省能源：</strong> 减少中央服务器的计算负担，降低能源消耗。</li>
+</ol>
+</main>
+<script>window.location.hash&&document.getElementById(window.location.hash.slice(1)).classList.add("referred"),window.addEventListener("hashchange",(e=>{const t=e.oldURL.split("#");t[1]&&document.getElementById(t[1]).classList.remove("referred");const n=e.newURL.split("#");n[1]&&document.getElementById(n[1]).classList.add("referred")}),!1);const url_parts=window.location.href.split("#"),url=url_parts[0],referrence=url_parts[1];document.querySelectorAll(".cm-s-obsidian > *[id]").forEach((function(e){e.ondblclick=function(e){const t=url+"#"+e.target.id;navigator.clipboard.writeText(t)}}))</script>
+<script src="https://fastly.jsdelivr.net/npm/luxon@3.2.1/build/global/luxon.min.js"></script>
+<script defer="defer">TIMESTAMP_FORMAT="MMM dd, yyyy h:mm a",document.querySelectorAll(".human-date").forEach((function(e){date=e.getAttribute("data-date")||e.innerText,parsed_date=luxon.DateTime.fromISO(date),null!=parsed_date.invalid&&(parsed_date=luxon.DateTime.fromSQL(date)),null!=parsed_date.invalid&&(parsed_date=luxon.DateTime.fromHTML(date)),e.innerHTML=parsed_date.toFormat(TIMESTAMP_FORMAT)}))</script>
+<script>lucide.createIcons({attrs:{class:["svg-icon"]}})</script>
+</body>
+</html>

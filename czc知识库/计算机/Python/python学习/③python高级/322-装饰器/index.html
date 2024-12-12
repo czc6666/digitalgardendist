@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>322-装饰器</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<script async type="module">import mermaid from"https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"</script>
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js" integrity="sha512-hpZ5pDCF2bRCweL5WoA0/N1elet1KYL5mx3LP555Eg/0ZguaHawxNvEjF6O3rufAChs16HVNhEc6blF/rZoowQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/plugins/autoloader/prism-autoloader.min.js" integrity="sha512-sv0slik/5O0JIPdLBCR2A3XDg/1U3WuDEheZfI/DI5n8Yqc3h5kjrnr46FGBNiUAJF7rE4LHKwQ/SoSLRKAxEA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script async src="https://cdn.jsdelivr.net/npm/lucide@0.115.0/dist/umd/lucide.min.js"></script>
+<script>window.addEventListener("load",(()=>{document.querySelectorAll(".callout").forEach((e=>{const t=getComputedStyle(e).getPropertyValue("--callout-icon"),l=t&&t.trim().replace(/^lucide-/,"");if(l){const t=e.querySelector(".callout-title");if(t){const e=document.createElement("div"),c=document.createElement("i");e.appendChild(c),c.setAttribute("icon-name",l),e.setAttribute("class","callout-icon"),t.insertBefore(e,t.firstChild)}}})),lucide.createIcons(),Array.from(document.querySelectorAll(".callout.is-collapsible")).forEach((e=>{e.querySelector(".callout-title").addEventListener("click",(t=>{e.classList.contains("is-collapsed")?e.classList.remove("is-collapsed"):e.classList.add("is-collapsed")}))}))}))</script>
+<script async src="https://fastly.jsdelivr.net/npm/force-graph@1.43.0/dist/force-graph.min.js"></script>
+<script async src="https://fastly.jsdelivr.net/npm/@alpinejs/persist@3.11.1/dist/cdn.min.js"></script>
+<script src="https://fastly.jsdelivr.net/npm/alpinejs@3.11.1/dist/cdn.min.js" async></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-okaidia.min.css" integrity="sha512-mIs9kKbaw6JZFfSuo+MovjU+Ntggfoj8RwAmJbVXQ5mkAX5LlgETQEweFPI18humSPHymTb5iikEOKWF7I8ncQ==" crossorigin="anonymous" referrerpolicy="no-referrer" async>
+<script src="https://fastly.jsdelivr.net/npm/whatwg-fetch@3.6.2/dist/fetch.umd.min.js" crossorigin="anonymous" referrerpolicy="no-referrer" async></script>
+<link href="/styles/digital-garden-base.css" rel="stylesheet">
+<link href="/styles/obsidian-base.css" rel="stylesheet">
+<link href="/styles/_theme.d92311c2.css" rel="stylesheet">
+<link href="/styles/custom-style.css" rel="stylesheet">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<style></style>
+</head>
+<body class="theme-dark markdown-preview-view markdown-rendered markdown-preview-section">
+<nav class="navbar">
+<div class="navbar-inner">
+<a href="/" style="text-decoration:none">
+<h1 style="margin:15px!important">Digital Garden</h1>
+</a>
+</div>
+</nav>
+<main class="content cm-s-obsidian">
+<header>
+<div class="header-meta">
+</div>
+</header>
+<p>闭包的作用就是为了编写装饰器<br>
+装饰器的本质就是一个闭包</p>
+<h1 id="装饰器定义" tabindex="-1">装饰器定义</h1>
+<p>就是给已有函数增加额外功能的函数，它本质上就是一个<strong>闭包函数</strong>。</p>
+<p>装饰器的功能特点：<br>
+①不修改已有函数的源代码<br>
+②不修改已有函数的调用方式<br>
+③给已有函数增加额外的功能</p>
+<p>闭包这么编程装饰器的？</p>
+<h1 id="装饰器的雏形（下面都是没有返回值的函数）" tabindex="-1">装饰器的雏形（下面都是没有返回值的函数）</h1>
+<p>栗子1：</p>
+<p>在发评论函数前加一个登录的功能</p>
+<p>提出需求：在不改变源函数以及源函数调用方式的前提下，为其添加一个权限验证（请先登录）<br>
+不改变源函数、不改变原有调用方式、需要增加权限验证（额外功能）</p>
+<p>定义一个装饰器：本质：闭包函数（①有嵌套②有引用③有返回），而且<strong>装饰器函数本身必须有一个fn参数，代表要装饰的函数名称，当我们调用装饰器的时候，系统会自动将要装饰函数的名称发给fn参数</strong></p>
+<pre><code class="language-python">def logging(fn):  # 一般都叫fn
+	def inner():
+		# 引用fn函数之前，增加额外功能
+		print('这里是登录操作')
+		# 引用局部变量fn
+		fn()
+	return inner
+
+@logging  # 语法糖🍭 
+def comment():
+	print('这里是发表评论操作')
+
+comment()  # 执行发表评论函数
+</code></pre>
+<p><strong>当调用语法糖的时候会自动把comment()作为参数传给fn</strong></p>
+<p>调试的代码执行顺序</p>
+<ol>
+<li>@语法糖首先被执行</li>
+<li>执行装饰器函数把要装饰的函数名称传递给fn参数</li>
+<li>执行装饰器内部的inner函数，表现为执行函数名称comment</li>
+<li>当装饰器执行fn()的时候，原函数真正被执行</li>
+</ol>
+<p><picture src="/img/user/czc%E7%9F%A5%E8%AF%86%E5%BA%93/%E6%9D%82%E4%B8%83%E6%9D%82%E5%85%AB/9-%E9%99%84%E4%BB%B6/%E9%99%84%E4%BB%B6/322-%E8%A3%85%E9%A5%B0%E5%99%A8_image.png" alt=""><source media="(max-width:480px)" srcset="/img/optimized/zvJ2NbZ688-500.webp" type="image/webp">
+<source media="(max-width:480px)" srcset="/img/optimized/zvJ2NbZ688-500.jpeg">
+<source media="(max-width:1920px)" srcset="/img/optimized/zvJ2NbZ688-700.webp" type="image/webp"><source media="(max-width:1920px)" srcset="/img/optimized/zvJ2NbZ688-700.jpeg"><img class="" src="/img/user/czc%E7%9F%A5%E8%AF%86%E5%BA%93/%E6%9D%82%E4%B8%83%E6%9D%82%E5%85%AB/9-%E9%99%84%E4%BB%B6/%E9%99%84%E4%BB%B6/322-%E8%A3%85%E9%A5%B0%E5%99%A8_image.png" alt="" width=""></picture></p>
+<p>comment()是最后一步执行的</p>
+<p>装饰器的原始实现：（现在都是用上面的语法糖来实现）</p>
+<div class="callout" data-callout="tip"><div class="callout-title"><div class="callout-title-inner">Tip</div></div>
+<div class="callout-content">
+<p>
+<strong>装饰器调用的本质↓：</strong><br>
+<strong>（<code>func= logging(comment)</code>）只不过把func写成comment就和装饰器完全一致了</strong><br>
+再调用comment()的时候本质就是调用inner()了<br>
+因为装饰器不能改变原来函数的代码和调用方式<br>
+所以用语法糖的格式来写</p>
+</div></div>
+<pre><code class="language-python"># 定义一个装饰器（①不能改变源代码②不能改变原有函数的调用方式）
+def logging(fn):
+	# fn = comment
+	def inner():
+		print('请先登录')
+		fn()
+	return inner
+def comment():
+	print('发表评论')
+	
+comment = logging(comment)  # 给comment添加装饰器,变量名称用同名，这样就不会改变原有调用方式
+# comment = Logging() 返回结果 =&gt; inner
+comment()  # 这里的comment已经不是原先的comment了
+# comment() =&gt; inner()
+</code></pre>
+<hr>
+<p><strong>栗子2：实际应用：求程序执行时间装饰器</strong>（装饰器带不定长参数（自己加 的））</p>
+<p>在不改变原函数代码和调用方式的前提下，为其添加统计执行时间的功能：可以使用装饰器 -&gt; 有嵌套、有引用、有返回<br>
+看这个例子足够了，这里涵盖很多知识点，<strong>包括下面的带参数的装饰器知识</strong></p>
+<pre><code class="language-python">import time
+def get_time(fn):
+	def inner(*args, **kwargs):  # 装饰器带任意参数
+		start = time.time()
+		fn(*args, **kwargs)
+		end = time.time()
+		print(f'{fn.__name__}函数执行时间：{end - start:.2f}')  # 获取函数名；格式化输出
+	return inner
+
+@get_time
+def ikun(b):
+	a = []
+	for i in range(b):
+		a.append(i * 'ikun')
+
+ikun(10000)
+</code></pre>
+<hr>
+<h1 id="for" tabindex="-1">装饰器装饰带有参数的函数for通用装饰器</h1>
+<p>栗子3：<strong>装饰器装饰带有参数的函数</strong>，函数几个参数，inner接收几个参数</p>
+<p>需求：①在不改变原有函数代码②不改变原有函数调用方式的前提下③为其新增一个输出日志功能<br>
+注：实际日志应该写入到日志文件，但是还没学，这里就用print代替<br>
+需求：在输出结果之前，添加一个打印日志的功能=&gt;<br>
+<code>print('--日志信息：正在努力进行计算--')</code></p>
+<pre><code class="language-python">def logging(fn):
+	def inner(a, b):
+	<a class="tag" onclick="toggleTagSearch(this)" data-content="#添加额外要增加的功能">#添加额外要增加的功能</a>
+	print('-----日志信息：正在努力进行计算-----')
+	fn(a, b)  <a class="tag" onclick="toggleTagSearch(this)" data-content="#实际执行sum_num函数">#实际执行sum_num函数</a>
+	return inner
+	
+<a class="tag" onclick="toggleTagSearch(this)" data-content="#定义一个函数sum_num（），针对参数求和">#定义一个函数sum_num（），针对参数求和</a>
+@logging
+def sum_num(num1, num2):
+	result = num1 + num2
+	print(result)
+	
+<a class="tag" onclick="toggleTagSearch(this)" data-content="#调用原函数">#调用原函数</a>
+sum_num(10, 20)  <a class="tag" onclick="toggleTagSearch(this)" data-content="#在装饰器的底层，相当于调用inner（）">#在装饰器的底层，相当于调用inner（）</a>
+</code></pre>
+<p>栗子4：进阶：不定长参数的装饰器</p>
+<pre><code class="language-python">def logging(fn):
+	def inner(*args, **kwargs):
+		<a class="tag" onclick="toggleTagSearch(this)" data-content="#输出日">#输出日</a> 志信息
+		print('-----输出日志：正在努力进行加法运算')
+		fn(*args, **kwargs)
+	return inner
+
+<a class="tag" onclick="toggleTagSearch(this)" data-content="#定义源函数">#定义源函数</a>
+@logging
+def sum_num(*args, **kwargs):
+	sum1 = 0
+	for i in args:
+		sum1 += i
+	for value in kwargs.values():
+		sum1 += value
+	print(sum1)
+##调用sum_num函数
+sum_num(10,20,30,a=40,b=50)
+</code></pre>
+<h1 id="for-1" tabindex="-1">装饰器-装饰带有返回值的函数for通用装饰器</h1>
+<p>原函数：</p>
+<pre><code class="language-python">def func(num1，num2):
+	result = num1+ num2
+	return result
+print(func(10，20))
+</code></pre>
+<p>需求：编写一个装饰器，在不改变原函数以及调用方式的基础上，为其添加一个日志功能</p>
+<pre><code class="language-python"># 定义装饰器名称
+def logging(fn);
+	# ①嵌套
+	def inner(num1, num2):
+		# 日志输出功能
+		print('这是日志信息')
+		# ② 引用
+		return fn(num1, num2)  # fn = func, fn() → func(10,20) → 30
+	# ③返回
+	return inner
+
+@logging
+def func(num1, num2):
+	result = num1 + num2
+	return result
+
+print(func(10, 20))  # func(10, 20) 调用inner(10, 20)
+</code></pre>
+<h1 id="通用装饰器（重点）" tabindex="-1">通用装饰器（重点）</h1>
+<p>重点：通用装饰器=&gt;既可以装饰器带有参数的函数，也可以用于装饰带有返回值的函数<br>
+总结口诀：通用装饰器五步走=&gt;①有嵌套②有引用③有不定长参数④有返回值⑤返回内层函数的地址</p>
+<p>以后都写通用装饰器</p>
+<pre><code class="language-python">def logging(fn):
+	def inner(*args, **kwargs):
+		print('日志')
+		return fn(*args, **kwargs)
+	return inner
+
+@logging
+def sub_num(num1, num2):
+	return num1 - num2
+
+print(sub_num(20, 10))
+</code></pre>
+<p>sum是加 sub是减</p>
+<h1 id="装饰器传参（带有参数的通用装饰器）" tabindex="-1">装饰器传参（带有参数的通用装饰器）</h1>
+<p>再加一层嵌套用于传参</p>
+<pre><code class="language-python"># 装饰器传参（带有参数的装饰器）
+def decoration(flag):
+    def logging(fn):
+        def inner(*args, **kwargs):
+            # 判断是加法还是减法运算
+            if flag == '+':
+                print('---正在努力加法运算---')
+            elif flag == '-':
+                print('---正在努力减法运算---')
+            return fn(*args, **kwargs)
+        return inner
+    return logging
+
+@decoration('+')
+def sum_num(a, b):
+    return a + b
+
+print(sum_num(1, 2))
+
+@decoration('-')
+def sub_num(a, b):
+    return a - b
+
+print(sub_num(1, 2))
+</code></pre>
+<h1 id="类装饰器" tabindex="-1">类装饰器</h1>
+<p>装饰器大多数都是通过函数来装饰函数，其实也可以通过一个类来装饰函数，这种装饰器就称之为”类装饰器”</p>
+<pre><code class="language-python"># 装饰器大多数都是通过函数来装饰函数，其实也可以通过一个类来装饰函数，这种装饰器就称之为”类装饰器”
+# 类装饰器规则：
+# 1、必须有一个__init__方法，用于接收要修饰的函数
+# 2、必须把这个类转换为可以调用的函数 → __call__方法
+
+# 定义一个类装饰器
+class Check():
+    def __init__(self, fn):
+        self.__fn = fn
+
+    def __call__(self, *args, **kwargs):
+        print('请先登录')
+        self.__fn()
+
+# 定义一个源函数
+@Check
+def comment():
+    print('发表评论')
+
+# 调用原函数
+comment()
+</code></pre>
+<h1 id="一个妙哉的装饰器例题" tabindex="-1">一个妙哉的装饰器例题</h1>
+<pre><code class="language-python">&quot;&quot;&quot;
+4. 题干
+根据如下说明，编写代码完成相关需求
+1、
+不带装饰器的基础功能：entry_grade
+可以完成『成绩录入功能』
+1.1可以重复录入成绩，默认所有输入都是合法的(1~100之间的数)
+1.2当录入成绩为0时，结束成绩的录入
+1.3将录入的成绩保存在列表中并返回给外界，例如：[90, 80, 50, 70]
+
+2、
+选择课程装饰器：choose_course
+为『成绩录入功能』新增选择课程的拓展功能，达到可以录入不同学科的成绩
+2.1可以重复输入要录入的学科名，然后就可以进入该门学科的『成绩录入功能』，录入结束后，可以进入下一门学科成绩录入
+2.2当输入学科名为q时，结束所有录入工作
+2.3将学科成绩保存在字典中并返回给外界，例如：{'math': [90, 80, 50, 70], 'english': [70, 50, 55, 90]}
+
+3、
+处理成绩装饰器：deal_fail
+可以将所有录入的成绩按60分为分水岭，转换为 &quot;通过&quot; | &quot;不通过&quot;进行存储
+3.1，如果只对原功能装饰，结果还为list返回给外界，例如：[&quot;通过&quot;, &quot;通过&quot;, &quot;不通过&quot;, &quot;通过&quot;]
+3.2，如果对已被选择课程装饰器装饰了的原功能再装饰，结果就为dict返回给外界，
+例如：{'math': [&quot;通过&quot;, &quot;通过&quot;, &quot;不通过&quot;, &quot;通过&quot;],'english': [&quot;通过&quot;, &quot;不通过&quot;, &quot;不通过&quot;, &quot;通过&quot;]}
+&quot;&quot;&quot;
+
+
+def choose_course(func):
+    def inner(*args, **kwargs):
+        course_dict = {}
+        while True:
+            course = input(&quot;请输入要录入的学科名：&quot;)
+            if course == &quot;q&quot;:
+                break
+            course_dict[course] = func(*args, **kwargs)
+        return course_dict
+    return inner
+
+def deal_fail(func):
+    def inner(*args, **kwargs):
+        result = func(*args, **kwargs)
+        return [&quot;通过&quot; if grade &gt;= 60 else &quot;不通过&quot; for grade in result]
+    return inner
+
+@choose_course
+@deal_fail
+def entry_grade():
+    result = []
+    while True:
+        grade = int(input(&quot;请输入成绩：&quot;))
+        if grade == 0:
+            break
+        result.append(grade)
+    return result
+
+print(entry_grade())
+
+</code></pre>
+</main>
+<script>window.location.hash&&document.getElementById(window.location.hash.slice(1)).classList.add("referred"),window.addEventListener("hashchange",(e=>{const t=e.oldURL.split("#");t[1]&&document.getElementById(t[1]).classList.remove("referred");const n=e.newURL.split("#");n[1]&&document.getElementById(n[1]).classList.add("referred")}),!1);const url_parts=window.location.href.split("#"),url=url_parts[0],referrence=url_parts[1];document.querySelectorAll(".cm-s-obsidian > *[id]").forEach((function(e){e.ondblclick=function(e){const t=url+"#"+e.target.id;navigator.clipboard.writeText(t)}}))</script>
+<script src="https://fastly.jsdelivr.net/npm/luxon@3.2.1/build/global/luxon.min.js"></script>
+<script defer="defer">TIMESTAMP_FORMAT="MMM dd, yyyy h:mm a",document.querySelectorAll(".human-date").forEach((function(e){date=e.getAttribute("data-date")||e.innerText,parsed_date=luxon.DateTime.fromISO(date),null!=parsed_date.invalid&&(parsed_date=luxon.DateTime.fromSQL(date)),null!=parsed_date.invalid&&(parsed_date=luxon.DateTime.fromHTML(date)),e.innerHTML=parsed_date.toFormat(TIMESTAMP_FORMAT)}))</script>
+<script>lucide.createIcons({attrs:{class:["svg-icon"]}})</script>
+</body>
+</html>

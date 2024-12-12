@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>①python基础</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<script async type="module">import mermaid from"https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"</script>
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js" integrity="sha512-hpZ5pDCF2bRCweL5WoA0/N1elet1KYL5mx3LP555Eg/0ZguaHawxNvEjF6O3rufAChs16HVNhEc6blF/rZoowQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/plugins/autoloader/prism-autoloader.min.js" integrity="sha512-sv0slik/5O0JIPdLBCR2A3XDg/1U3WuDEheZfI/DI5n8Yqc3h5kjrnr46FGBNiUAJF7rE4LHKwQ/SoSLRKAxEA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script async src="https://cdn.jsdelivr.net/npm/lucide@0.115.0/dist/umd/lucide.min.js"></script>
+<script>window.addEventListener("load",(()=>{document.querySelectorAll(".callout").forEach((e=>{const t=getComputedStyle(e).getPropertyValue("--callout-icon"),l=t&&t.trim().replace(/^lucide-/,"");if(l){const t=e.querySelector(".callout-title");if(t){const e=document.createElement("div"),c=document.createElement("i");e.appendChild(c),c.setAttribute("icon-name",l),e.setAttribute("class","callout-icon"),t.insertBefore(e,t.firstChild)}}})),lucide.createIcons(),Array.from(document.querySelectorAll(".callout.is-collapsible")).forEach((e=>{e.querySelector(".callout-title").addEventListener("click",(t=>{e.classList.contains("is-collapsed")?e.classList.remove("is-collapsed"):e.classList.add("is-collapsed")}))}))}))</script>
+<script async src="https://fastly.jsdelivr.net/npm/force-graph@1.43.0/dist/force-graph.min.js"></script>
+<script async src="https://fastly.jsdelivr.net/npm/@alpinejs/persist@3.11.1/dist/cdn.min.js"></script>
+<script src="https://fastly.jsdelivr.net/npm/alpinejs@3.11.1/dist/cdn.min.js" async></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-okaidia.min.css" integrity="sha512-mIs9kKbaw6JZFfSuo+MovjU+Ntggfoj8RwAmJbVXQ5mkAX5LlgETQEweFPI18humSPHymTb5iikEOKWF7I8ncQ==" crossorigin="anonymous" referrerpolicy="no-referrer" async>
+<script src="https://fastly.jsdelivr.net/npm/whatwg-fetch@3.6.2/dist/fetch.umd.min.js" crossorigin="anonymous" referrerpolicy="no-referrer" async></script>
+<link href="/styles/digital-garden-base.css" rel="stylesheet">
+<link href="/styles/obsidian-base.css" rel="stylesheet">
+<link href="/styles/_theme.d92311c2.css" rel="stylesheet">
+<link href="/styles/custom-style.css" rel="stylesheet">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<style></style>
+</head>
+<body class="theme-dark markdown-preview-view markdown-rendered markdown-preview-section">
+<nav class="navbar">
+<div class="navbar-inner">
+<a href="/" style="text-decoration:none">
+<h1 style="margin:15px!important">Digital Garden</h1>
+</a>
+</div>
+</nav>
+<main class="content cm-s-obsidian">
+<header>
+<div class="header-meta">
+</div>
+</header>
+<p>这是czc的python系统学习之python基础知识</p>
+<h1 id="基础阶段学啥" tabindex="-1">基础阶段学啥</h1>
+<ul>
+<li>基本概念</li>
+<li>输入输出</li>
+<li>基本关键字</li>
+<li>变量、运算符、优先级、数据类型</li>
+<li>循环、顺序结构</li>
+<li>数据容器操作：字符串、列表、元组、字典、集合</li>
+<li>推导式</li>
+<li>代码调试</li>
+<li>函数：定义、调用、嵌套、函数调用本质（底层）</li>
+<li>变量：实参形参、局部变量全局变量、变量作用域</li>
+<li>元组拆包</li>
+<li>文件操作：os、shutil模块</li>
+<li>异常</li>
+<li>模块和包</li>
+</ul>
+<h1 id="笔记" tabindex="-1">笔记</h1>
+<ul>
+<li><a class="internal-link" target="" data-note-icon="undefined" href="/czc知识库/计算机/Python/python学习/①python基础/001-基本概念/">001-基本概念</a></li>
+<li><a class="internal-link" target="" data-note-icon="undefined" href="/czc知识库/计算机/Python/python学习/①python基础/002-输入输出运算符等/">002-输入输出运算符等</a></li>
+<li><a class="internal-link" target="" data-note-icon="undefined" href="/czc知识库/计算机/Python/python学习/①python基础/003-循环/">003-循环</a></li>
+<li><a class="internal-link is-unresolved" href="/404" target="">009-文件基本操作</a></li>
+<li><a class="internal-link" target="" data-note-icon="undefined" href="/czc知识库/计算机/Python/python学习/①python基础/104-1-find()方法/">104-1-find()方法</a></li>
+<li><a class="internal-link" target="" data-note-icon="undefined" href="/czc知识库/计算机/Python/python学习/①python基础/104-字符串和列表（数据容器）/">104-字符串和列表（数据容器）</a></li>
+<li><a class="internal-link" target="" data-note-icon="undefined" href="/czc知识库/计算机/Python/python学习/①python基础/105-元组/">105-元组</a></li>
+<li><a class="internal-link" target="" data-note-icon="undefined" href="/czc知识库/计算机/Python/python学习/①python基础/106-字典 数据容器/">106-字典 数据容器</a></li>
+<li><a class="internal-link" target="" data-note-icon="undefined" href="/czc知识库/计算机/Python/python学习/①python基础/107-集合/">107-集合</a></li>
+<li><a class="internal-link" target="" data-note-icon="undefined" href="/czc知识库/计算机/Python/python学习/①python基础/108-数据容器的公共方法/">108-数据容器的公共方法</a></li>
+<li><a class="internal-link" target="" data-note-icon="undefined" href="/czc知识库/计算机/Python/python学习/①python基础/109-推导式（数据容器）/">109-推导式（数据容器）</a></li>
+<li><a class="internal-link" target="" data-note-icon="undefined" href="/czc知识库/计算机/Python/python学习/①python基础/110-代码调试 debug/">110-代码调试 debug</a></li>
+<li><a class="internal-link" target="" data-note-icon="undefined" href="/czc知识库/计算机/Python/python学习/①python基础/201-python函数/">201-python函数</a></li>
+<li><a class="internal-link" target="" data-note-icon="undefined" href="/czc知识库/计算机/Python/python学习/①python基础/202-函数的说明文档/">202-函数的说明文档</a></li>
+<li><a class="internal-link" target="" data-note-icon="undefined" href="/czc知识库/计算机/Python/python学习/①python基础/203-函数嵌套/">203-函数嵌套</a></li>
+<li><a class="internal-link" target="" data-note-icon="undefined" href="/czc知识库/计算机/Python/python学习/①python基础/204-函数例子/">204-函数例子</a></li>
+<li><a class="internal-link" target="" data-note-icon="undefined" href="/czc知识库/计算机/Python/python学习/①python基础/205-变量作用域/">205-变量作用域</a></li>
+<li><a class="internal-link" target="" data-note-icon="undefined" href="/czc知识库/计算机/Python/python学习/①python基础/206-函数的参数进阶/">206-函数的参数进阶</a></li>
+<li><a class="internal-link" target="" data-note-icon="undefined" href="/czc知识库/计算机/Python/python学习/①python基础/207-变量的可变、不可变类型/">207-变量的可变、不可变类型</a></li>
+<li><a class="internal-link" target="" data-note-icon="undefined" href="/czc知识库/计算机/Python/python学习/①python基础/208-元组拆包/">208-元组拆包</a></li>
+<li><a class="internal-link" target="" data-note-icon="undefined" href="/czc知识库/计算机/Python/python学习/①python基础/209-文件基本操作/">209-文件基本操作</a></li>
+<li><a class="internal-link" target="" data-note-icon="undefined" href="/czc知识库/计算机/Python/python学习/①python基础/210-文件和文件夹操作（os模块）/">210-文件和文件夹操作（os模块）</a></li>
+<li><a class="internal-link" target="" data-note-icon="undefined" href="/czc知识库/计算机/Python/python学习/①python基础/211-递归删除文件夹-shutil模块/">211-递归删除文件夹-shutil模块</a></li>
+<li><a class="internal-link" target="" data-note-icon="undefined" href="/czc知识库/计算机/Python/python学习/①python基础/212-异常/">212-异常</a></li>
+<li><a class="internal-link" target="" data-note-icon="undefined" href="/czc知识库/计算机/Python/python学习/①python基础/213-模块和包/">213-模块和包</a></li>
+<li><a class="internal-link" target="" data-note-icon="undefined" href="/czc知识库/计算机/Python/python学习/①python基础/215-学生管理系统（面向过程编程）/">215-学生管理系统（面向过程编程）</a></li>
+</ul>
+</main>
+<script>window.location.hash&&document.getElementById(window.location.hash.slice(1)).classList.add("referred"),window.addEventListener("hashchange",(e=>{const t=e.oldURL.split("#");t[1]&&document.getElementById(t[1]).classList.remove("referred");const n=e.newURL.split("#");n[1]&&document.getElementById(n[1]).classList.add("referred")}),!1);const url_parts=window.location.href.split("#"),url=url_parts[0],referrence=url_parts[1];document.querySelectorAll(".cm-s-obsidian > *[id]").forEach((function(e){e.ondblclick=function(e){const t=url+"#"+e.target.id;navigator.clipboard.writeText(t)}}))</script>
+<script src="https://fastly.jsdelivr.net/npm/luxon@3.2.1/build/global/luxon.min.js"></script>
+<script defer="defer">TIMESTAMP_FORMAT="MMM dd, yyyy h:mm a",document.querySelectorAll(".human-date").forEach((function(e){date=e.getAttribute("data-date")||e.innerText,parsed_date=luxon.DateTime.fromISO(date),null!=parsed_date.invalid&&(parsed_date=luxon.DateTime.fromSQL(date)),null!=parsed_date.invalid&&(parsed_date=luxon.DateTime.fromHTML(date)),e.innerHTML=parsed_date.toFormat(TIMESTAMP_FORMAT)}))</script>
+<script>lucide.createIcons({attrs:{class:["svg-icon"]}})</script>
+</body>
+</html>

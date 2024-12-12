@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>端口转发笔记 windows</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<script async type="module">import mermaid from"https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"</script>
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js" integrity="sha512-hpZ5pDCF2bRCweL5WoA0/N1elet1KYL5mx3LP555Eg/0ZguaHawxNvEjF6O3rufAChs16HVNhEc6blF/rZoowQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/plugins/autoloader/prism-autoloader.min.js" integrity="sha512-sv0slik/5O0JIPdLBCR2A3XDg/1U3WuDEheZfI/DI5n8Yqc3h5kjrnr46FGBNiUAJF7rE4LHKwQ/SoSLRKAxEA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script async src="https://cdn.jsdelivr.net/npm/lucide@0.115.0/dist/umd/lucide.min.js"></script>
+<script>window.addEventListener("load",(()=>{document.querySelectorAll(".callout").forEach((e=>{const t=getComputedStyle(e).getPropertyValue("--callout-icon"),l=t&&t.trim().replace(/^lucide-/,"");if(l){const t=e.querySelector(".callout-title");if(t){const e=document.createElement("div"),c=document.createElement("i");e.appendChild(c),c.setAttribute("icon-name",l),e.setAttribute("class","callout-icon"),t.insertBefore(e,t.firstChild)}}})),lucide.createIcons(),Array.from(document.querySelectorAll(".callout.is-collapsible")).forEach((e=>{e.querySelector(".callout-title").addEventListener("click",(t=>{e.classList.contains("is-collapsed")?e.classList.remove("is-collapsed"):e.classList.add("is-collapsed")}))}))}))</script>
+<script async src="https://fastly.jsdelivr.net/npm/force-graph@1.43.0/dist/force-graph.min.js"></script>
+<script async src="https://fastly.jsdelivr.net/npm/@alpinejs/persist@3.11.1/dist/cdn.min.js"></script>
+<script src="https://fastly.jsdelivr.net/npm/alpinejs@3.11.1/dist/cdn.min.js" async></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-okaidia.min.css" integrity="sha512-mIs9kKbaw6JZFfSuo+MovjU+Ntggfoj8RwAmJbVXQ5mkAX5LlgETQEweFPI18humSPHymTb5iikEOKWF7I8ncQ==" crossorigin="anonymous" referrerpolicy="no-referrer" async>
+<script src="https://fastly.jsdelivr.net/npm/whatwg-fetch@3.6.2/dist/fetch.umd.min.js" crossorigin="anonymous" referrerpolicy="no-referrer" async></script>
+<link href="/styles/digital-garden-base.css" rel="stylesheet">
+<link href="/styles/obsidian-base.css" rel="stylesheet">
+<link href="/styles/_theme.d92311c2.css" rel="stylesheet">
+<link href="/styles/custom-style.css" rel="stylesheet">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<style></style>
+</head>
+<body class="theme-dark markdown-preview-view markdown-rendered markdown-preview-section">
+<nav class="navbar">
+<div class="navbar-inner">
+<a href="/" style="text-decoration:none">
+<h1 style="margin:15px!important">Digital Garden</h1>
+</a>
+</div>
+</nav>
+<main class="content cm-s-obsidian">
+<header>
+<div class="header-meta">
+</div>
+</header>
+<h1 id="前置条件" tabindex="-1">前置条件</h1>
+<h3 id="注册表配置：" tabindex="-1">注册表配置：</h3>
+<p>导航到HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters。<br>
+找到或创建一个名为IPEnableRouter的DWORD值，并将其设置为1。</p>
+<h3 id="防火墙添加入站规则" tabindex="-1">防火墙添加入站规则</h3>
+<h1 id="配置端口转发" tabindex="-1">配置端口转发</h1>
+<p>netsh interface portproxy add v4tov4 listenaddress=192.168.25.25 listenport=8800 connectaddress=127.0.0.1 connectport=8800</p>
+<p><strong>记得防火墙放开端口</strong></p>
+<h3 id="查看当前所有的转发规则" tabindex="-1">查看当前所有的转发规则</h3>
+<p>netsh interface portproxy show all</p>
+<p>侦听 ipv4: 连接到 ipv4:</p>
+<p>地址 端口 地址 端口</p>
+<hr>
+<p>127.0.0.1 3332 192.168.137.25 3332 ×<br>
+10.21.127.9 3332 192.168.137.25 3332 √</p>
+<hr>
+<p>netsh interface portproxy add v4tov4 listenaddress=192.168.137.25 listenport=3332 connectaddress=127.0.0.1 connectport=3332</p>
+<p>↑配置ssh的端口转发、</p>
+<p>netsh interface portproxy add v4tov4 listenaddress=10.21.127.9 listenport=2200 connectaddress=192.168.137.25 connectport=2200</p>
+<p>netsh interface portproxy delete v4tov4 listenaddress=192.168.137.25 listenport=2200</p>
+<h1 id="大模型对话记录" tabindex="-1">大模型对话记录</h1>
+<p>我现在有两台windows电脑a和b，a通过无线网卡连接了无线网络（ip地址是10.21.127.9，这也是我的也是公网ip），使用无线网卡共享网络给了有线网的那个网口，a电脑的有线网的网口的ip地址是192.168.137.1，然后我的b电脑通过网线连接a电脑，ip地址是192.168.137.25，现在我在b电脑上开了一个http服务器，端口号是3332，我该如何通过外网通过a机器访问到b机器的这个http服务器，我想通过访问10.21.127.9:3332网址就能进入我的http服务器</p>
+<p>要通过外网访问位于B电脑上的HTTP服务器，您需要在A电脑上设置端口转发，将外部的HTTP请求从A电脑的公网IP地址（10.21.127.9）转发到B电脑的HTTP服务器（192.168.137.25:3332）。这可以通过使用Windows的netsh命令来实现端口转发。</p>
+<h3 id="1" tabindex="-1">步骤1: 设置端口转发</h3>
+<p>在A电脑上，您需要添加一个端口转发规则，使得所有发送到A电脑公网IP（10.21.127.9）上的3332端口的数据都会被转发到B电脑的3332端口。打开命令提示符（以管理员身份），然后输入以下命令：</p>
+<p>Bash</p>
+<p>Ask</p>
+<p>Copy</p>
+<p>Run</p>
+<p>netsh interface portproxy add v4tov4 listenaddress=10.21.127.9 listenport=3332 connectaddress=192.168.137.25 connectport=3332</p>
+<p>这个命令的参数解释如下：</p>
+<ul>
+<li>
+<p>listenaddress=10.21.127.9：A电脑的公网IP地址。</p>
+</li>
+<li>
+<p>listenport=3332：外部访问时使用的端口号。</p>
+</li>
+<li>
+<p>connectaddress=192.168.137.25：B电脑的内网IP地址。</p>
+</li>
+<li>
+<p>connectport=3332：B电脑上HTTP服务器的端口号。</p>
+</li>
+</ul>
+<h3 id="2" tabindex="-1">步骤2: 确保防火墙允许端口转发</h3>
+<p>您需要确保Windows防火墙允许从listenport（在本例中为3332）的流量。可以通过Windows防火墙的高级设置添加新的入站规则来允许此端口的流量。</p>
+<ol>
+<li>
+<p>打开“控制面板” -&gt; “系统和安全” -&gt; “Windows Defender 防火墙”。</p>
+</li>
+<li>
+<p>在左侧选择“高级设置”。</p>
+</li>
+<li>
+<p>在“Windows Defender 防火墙与高级安全”窗口中，选择“入站规则”。</p>
+</li>
+<li>
+<p>在右侧点击“新建规则”。</p>
+</li>
+</ol>
+<p>5. 选择“端口”，然后点击“下一步”。</p>
+<p>6. 选择“TCP”，指定“特定本地端口”，输入3332，然后点击“下一步”。</p>
+<p>7. 选择“允许连接”，然后继续。</p>
+<ul>
+<li>选择适用的配置文件（通常选择“域”，“私有”，“公共”），然后点击“下一步”。</li>
+</ul>
+<ol start="9">
+<li>给规则命名，例如“HTTP Server Forwarding”，然后点击“完成”。</li>
+</ol>
+<h3 id="3" tabindex="-1">步骤3: 测试访问</h3>
+<p>从外网环境（非您家庭或办公网络）尝试访问您的HTTP服务器。在浏览器地址栏输入 <a href="http://10.21.127.9:3332" target="_blank" class="external-link">http://10.21.127.9:3332</a>。如果一切设置正确，您应该能够看到从B电脑上的HTTP服务器返回的页面。</p>
+<h3 id="注意事项" tabindex="-1">注意事项</h3>
+<ul>
+<li>
+<p>确保在执行这些命令时使用管理员权限的命令提示符。</p>
+</li>
+<li>
+<p>考虑到安全因素，确保您的HTTP服务器已经进行了适当的安全配置，避免潜在的安全风险。</p>
+</li>
+<li>
+<p>如果您在设置过程中遇到任何问题，检查所有设备的IP配置和防火墙设置是否正确。</p>
+</li>
+</ul>
+<p>我在a电脑上可以通过运行里输入\192.168.137.25来访问的b主机的共享文件，我现在想能不能把这个也通过端口转发，让我能在外面也能通过\10.21.127.9访问，因为我想当做一个网盘</p>
+<p>要通过外网访问位于B电脑上的共享文件夹，您需要设置SMB（Server Message Block）协议的端口转发。然而，直接通过Internet公开SMB端口通常不推荐，因为这可能带来安全风险。如果确实需要远程访问文件，建议使用VPN（虚拟私人网络）或其他更安全的方法。但如果您仍然想通过端口转发来实现，以下是步骤：</p>
+<h3 id="smb" tabindex="-1">SMB端口</h3>
+<p>SMB通信通常使用以下端口：</p>
+<ul>
+<li>
+<p>TCP 445 (SMB直接在TCP上)</p>
+</li>
+<li>
+<p>TCP 139 (如果通过NetBIOS在TCP上)</p>
+</li>
+</ul>
+<h3 id="设置端口转发" tabindex="-1">设置端口转发</h3>
+<p>1. 在A电脑上设置端口转发：</p>
+<p>使用netsh命令在A电脑上为这两个端口设置端口转发。打开命令提示符（管理员），然后输入：</p>
+<p>Bash</p>
+<p>Ask</p>
+<p>Copy</p>
+<p>Run</p>
+<p>netsh interface portproxy add v4tov4 listenaddress=10.21.127.9 listenport=445 connectaddress=192.168.137.25 connectport=445</p>
+<p>netsh interface portproxy add v4tov4 listenaddress=10.21.127.9 listenport=139 connectaddress=192.168.137.25 connectport=139</p>
+<p>2. 配置Windows防火墙：</p>
+<p>在A电脑上，允许TCP端口445和139的入站连接。可以通过“Windows Defender 防火墙”的“高级设置”添加新的入站规则。</p>
+<h3 id="考虑安全性" tabindex="-1">考虑安全性</h3>
+<ul>
+<li>
+<p>使用VPN：建议设置VPN，让外部设备安全地连接到您的内部网络，然后像在本地网络一样访问共享文件。</p>
+</li>
+<li>
+<p>使用更安全的文件共享服务：考虑使用如Nextcloud、Google Drive等服务，这些服务为远程文件访问提供了更好的安全性和易用性。</p>
+</li>
+</ul>
+<h3 id="测试访问" tabindex="-1">测试访问</h3>
+<p>从外网环境尝试访问您的共享文件夹。在文件资源管理器地址栏输入 \10.21.127.9 看是否能访问到共享文件夹。</p>
+<h3 id="注意事项-1" tabindex="-1">注意事项</h3>
+<ul>
+<li>
+<p>直接通过Internet公开SMB端口可能会使您的系统面临安全风险，如勒索软件攻击等。</p>
+</li>
+<li>
+<p>确保进行适当的安全配置，包括使用强密码、定期更新系统和软件等。</p>
+</li>
+</ul>
+<p>总之，虽然技术上可以通过端口转发实现这一功能，但出于安全考虑，强烈建议使用VPN或其他安全的远程访问解决方案。</p>
+<p>我现在有一台c主机，是linux系统，内网ip地址是192.168.137.3，开启了ssh服务，端口号是22，我想端口转发到10.21.127.9的2203端口</p>
+<p>要将位于C电脑（Linux系统）上的SSH服务（默认端口22）通过A电脑（作为网关）转发到外网的特定端口（例如2203），您可以在A电脑上设置端口转发。这样，任何到A电脑公网IP（10.21.127.9）上的2203端口的SSH请求都会被转发到C电脑的22端口。以下是详细的设置步骤：</p>
+<h3 id="1-a" tabindex="-1">步骤1: 在A电脑上设置端口转发</h3>
+<p>在A电脑上，您需要使用netsh命令来添加端口转发规则。请以管理员权限打开命令提示符，然后输入以下命令：</p>
+<p>Bash</p>
+<p>Ask</p>
+<p>Copy</p>
+<p>Run</p>
+<p>netsh interface portproxy add v4tov4 listenaddress=10.21.127.9 listenport=2203 connectaddress=192.168.137.3 connectport=22</p>
+<p>这个命令的参数解释如下：</p>
+<ul>
+<li>
+<p>listenaddress=10.21.127.9：A电脑的公网IP地址。</p>
+</li>
+<li>
+<p>listenport=2203：外部访问时使用的端口号。</p>
+</li>
+<li>
+<p>connectaddress=192.168.137.3：C电脑的内网IP地址。</p>
+</li>
+<li>
+<p>connectport=22：C电脑上SSH服务的端口号。</p>
+</li>
+</ul>
+<h3 id="2-1" tabindex="-1">步骤2: 确保防火墙允许端口转发</h3>
+<p>您需要确保Windows防火墙允许从listenport（在本例中为2203）的流量。可以通过Windows防火墙的高级设置添加新的入站规则来允许此端口的流量。</p>
+<ol>
+<li>
+<p>打开“控制面板” -&gt; “系统和安全” -&gt; “Windows Defender 防火墙”。</p>
+</li>
+<li>
+<p>在左侧选择“高级设置”。</p>
+</li>
+<li>
+<p>在“Windows Defender 防火墙与高级安全”窗口中，选择“入站规则”。</p>
+</li>
+<li>
+<p>在右侧点击“新建规则”。</p>
+</li>
+</ol>
+<p>5. 选择“端口”，然后点击“下一步”。</p>
+<p>6. 选择“TCP”，指定“特定本地端口”，输入2203，然后点击“下一步”。</p>
+<p>7. 选择“允许连接”，然后继续。</p>
+<ul>
+<li>选择适用的配置文件（通常选择“域”，“私有”，“公共”），然后点击“下一步”。</li>
+</ul>
+<ol start="9">
+<li>给规则命名，例如“SSH Forwarding to C”，然后点击“完成”。</li>
+</ol>
+<h3 id="3-ssh" tabindex="-1">步骤3: 测试SSH连接</h3>
+<p>从外网环境尝试通过SSH连接到您的C电脑。在SSH客户端中，使用以下命令：</p>
+<p>Bash</p>
+<p>Ask</p>
+<p>Copy</p>
+<p>Run</p>
+<p>ssh -p 2203 <a href="mailto:username@10.21.127.9" target="_blank" class="external-link">username@10.21.127.9</a></p>
+<p>其中username是您在C电脑上的用户名。如果一切设置正确，您应该能够成功连接到C电脑。</p>
+<h3 id="注意事项-2" tabindex="-1">注意事项</h3>
+<ul>
+<li>
+<p>确保在执行这些命令时使用管理员权限的命令提示符。</p>
+</li>
+<li>
+<p>考虑到安全因素，确保您的SSH服务已经进行了适当的安全配置，例如使用密钥认证代替密码认证，以及定期更新系统和软件。</p>
+</li>
+<li>
+<p>直接通过Internet公开SSH端口可能会使您的系统面临安全风险，建议使用更安全的方法，如VPN。</p>
+</li>
+</ul>
+<hr>
+<p>如果您的A电脑充当软路由器，并且外网可以直接访问A电脑，您需要在A电脑上设置端口转发，以便将外部的HTTP请求转发到B电脑上的HTTP服务器。在Windows系统中，您可以使用netsh命令来设置端口转发。<br>
+步骤1：开启IP转发<br>
+首先，确保A电脑已经开启了IP转发功能。这可以通过编辑注册表来完成：<br>
+打开“运行”对话框（Win + R），输入regedit，按Enter打开注册表编辑器。<br>
+导航到HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters。<br>
+找到或创建一个名为IPEnableRouter的DWORD值，并将其设置为1。<br>
+重启A电脑以应用更改。<br>
+步骤2：使用netsh命令设置端口转发<br>
+在A电脑上打开命令提示符（以管理员身份），然后使用以下命令设置端口转发：<br>
+Bash<br>
+这里的参数解释如下：<br>
+listenport=3332：A电脑监听的端口。<br>
+listenaddress=192.168.137.1：A电脑的IP地址。<br>
+connectport=3332：B电脑上HTTP服务器的端口。<br>
+connectaddress=192.168.137.25：B电脑的IP地址。<br>
+步骤3：确保防火墙设置允许端口转发<br>
+您需要确保Windows防火墙允许从listenport（在本例中为3332）的流量。可以通过Windows防火墙的高级设置添加新的入站规则来允许此端口的流量。<br>
+步骤4：测试端口转发<br>
+从另一台不在您本地网络中的电脑上，尝试访问http://[A电脑的公网IP]:3332。如果设置正确，您应该能够看到从B电脑上的HTTP服务器返回的内容。<br>
+注意事项<br>
+确保A电脑的公网IP是固定的，或者使用DDNS服务，以便从外网可靠地访问。<br>
+考虑到安全因素，确保您的HTTP服务器已经进行了适当的安全配置，避免潜在的安全风险。<br>
+如果您在设置过程中遇到任何问题，检查所有设备的IP配置和防火墙设置是否正确。</p>
+</main>
+<script>window.location.hash&&document.getElementById(window.location.hash.slice(1)).classList.add("referred"),window.addEventListener("hashchange",(e=>{const t=e.oldURL.split("#");t[1]&&document.getElementById(t[1]).classList.remove("referred");const n=e.newURL.split("#");n[1]&&document.getElementById(n[1]).classList.add("referred")}),!1);const url_parts=window.location.href.split("#"),url=url_parts[0],referrence=url_parts[1];document.querySelectorAll(".cm-s-obsidian > *[id]").forEach((function(e){e.ondblclick=function(e){const t=url+"#"+e.target.id;navigator.clipboard.writeText(t)}}))</script>
+<script src="https://fastly.jsdelivr.net/npm/luxon@3.2.1/build/global/luxon.min.js"></script>
+<script defer="defer">TIMESTAMP_FORMAT="MMM dd, yyyy h:mm a",document.querySelectorAll(".human-date").forEach((function(e){date=e.getAttribute("data-date")||e.innerText,parsed_date=luxon.DateTime.fromISO(date),null!=parsed_date.invalid&&(parsed_date=luxon.DateTime.fromSQL(date)),null!=parsed_date.invalid&&(parsed_date=luxon.DateTime.fromHTML(date)),e.innerHTML=parsed_date.toFormat(TIMESTAMP_FORMAT)}))</script>
+<script>lucide.createIcons({attrs:{class:["svg-icon"]}})</script>
+</body>
+</html>

@@ -1,0 +1,476 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>狩猎样本的哈希游戏</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<script async type="module">import mermaid from"https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"</script>
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js" integrity="sha512-hpZ5pDCF2bRCweL5WoA0/N1elet1KYL5mx3LP555Eg/0ZguaHawxNvEjF6O3rufAChs16HVNhEc6blF/rZoowQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/plugins/autoloader/prism-autoloader.min.js" integrity="sha512-sv0slik/5O0JIPdLBCR2A3XDg/1U3WuDEheZfI/DI5n8Yqc3h5kjrnr46FGBNiUAJF7rE4LHKwQ/SoSLRKAxEA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script async src="https://cdn.jsdelivr.net/npm/lucide@0.115.0/dist/umd/lucide.min.js"></script>
+<script>window.addEventListener("load",(()=>{document.querySelectorAll(".callout").forEach((e=>{const t=getComputedStyle(e).getPropertyValue("--callout-icon"),l=t&&t.trim().replace(/^lucide-/,"");if(l){const t=e.querySelector(".callout-title");if(t){const e=document.createElement("div"),c=document.createElement("i");e.appendChild(c),c.setAttribute("icon-name",l),e.setAttribute("class","callout-icon"),t.insertBefore(e,t.firstChild)}}})),lucide.createIcons(),Array.from(document.querySelectorAll(".callout.is-collapsible")).forEach((e=>{e.querySelector(".callout-title").addEventListener("click",(t=>{e.classList.contains("is-collapsed")?e.classList.remove("is-collapsed"):e.classList.add("is-collapsed")}))}))}))</script>
+<script async src="https://fastly.jsdelivr.net/npm/force-graph@1.43.0/dist/force-graph.min.js"></script>
+<script async src="https://fastly.jsdelivr.net/npm/@alpinejs/persist@3.11.1/dist/cdn.min.js"></script>
+<script src="https://fastly.jsdelivr.net/npm/alpinejs@3.11.1/dist/cdn.min.js" async></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-okaidia.min.css" integrity="sha512-mIs9kKbaw6JZFfSuo+MovjU+Ntggfoj8RwAmJbVXQ5mkAX5LlgETQEweFPI18humSPHymTb5iikEOKWF7I8ncQ==" crossorigin="anonymous" referrerpolicy="no-referrer" async>
+<script src="https://fastly.jsdelivr.net/npm/whatwg-fetch@3.6.2/dist/fetch.umd.min.js" crossorigin="anonymous" referrerpolicy="no-referrer" async></script>
+<link href="/styles/digital-garden-base.css" rel="stylesheet">
+<link href="/styles/obsidian-base.css" rel="stylesheet">
+<link href="/styles/_theme.d92311c2.css" rel="stylesheet">
+<link href="/styles/custom-style.css" rel="stylesheet">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<style></style>
+</head>
+<body class="theme-dark markdown-preview-view markdown-rendered markdown-preview-section">
+<nav class="navbar">
+<div class="navbar-inner">
+<a href="/" style="text-decoration:none">
+<h1 style="margin:15px!important">Digital Garden</h1>
+</a>
+</div>
+</nav>
+<main class="content cm-s-obsidian">
+<header>
+<div class="header-meta">
+</div>
+</header>
+<p><a href="https://mp.weixin.qq.com/s/7WrlFUepch6JhU2NhdSyJw" target="_blank" class="external-link">狩猎样本的哈希游戏</a></p>
+<p>狩猎相似的恶意样本始终都是安全研究人员孜孜不倦追求的目标。通过已知的样本查找相似的样本，可以应用在家族归类、攻击归因等多个场景中，帮助分析人员更高效地挖掘样本与数据的最大价值。各个厂商也都介绍过一些使用案例，包括在跟踪 APT 样本上亦有使用。</p>
+<p>本文各有详略地介绍了二十余种哈希，虽然想要尽可能地覆盖更多信息但肯定仍有不足，感兴趣的同学可以进一步拓展阅读提供的相关链接。</p>
+<h2 id="一般哈希" tabindex="-1">一般哈希</h2>
+<p>MD5、SHA-1、SHA-2（SHA-224、SHA-256、SHA-384、SHA-512、SHA-512/224、SHA-512/256）等这些常见的哈希函数在业界有着广泛的应用，例如 siphash 被应用在 Python、Rust、Perl 等编程语言中。各方也都在努力设计更好的哈希函数，例如 Austin Appleby 提出的 murmur 就被 memcached 用作默认的哈希函数。</p>
+<p>NIST 提出了“密码学算法验证计划”（CAVP）来对密码学算法进行科学的评估测试。社区也在为这些哈希函数构建评估和测试，其中以 SMhasher 为典型，测试了百余种哈希函数：</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2022/png/1632223/1650767655292-4928148a-8c8f-43cb-b7d1-f92d62a215da.png" alt="img"></p>
+<p>通常来说，对哈希函数的评估主要集中在速度上，“安全性”并不是业界着重关注的要点。只是在算法设计时，一般必须关注“雪崩效应”，即输入上极其微小的改变也会导致输出出现极大的改变；和“抗碰撞”，即两个不同的输入产生相同的输出。</p>
+<p>尽管业界早就提出哈希函数存在碰撞的问题，但直到 2004 年，王小云研究团队才首次对外展示了 MD5 的碰撞实例。转年，王小云与姚期智合作再次碰撞了 SHA-1 算法。紧接着业界讨论制定出了新的哈希函数标准 SHA-3，但由于尚未研究出对 SHA-2 算法的高效碰撞方法也未被推动大面积使用。</p>
+<p>在能够找到碰撞样本的情况下，已经不推荐使用 MD5 和 SHA-1 算法来使用，在样本狩猎与样本检索的场景中也不推荐使用。而且此类哈希算法的“雪崩特性”也导致在痛苦金字塔中，哈希是最容易被改变的：</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2022/png/1632223/1650767655382-747e2928-4518-436b-b864-00344ca4d5ff.png" alt="img"></p>
+<p>一致性哈希等特定类型的哈希函数都有着特殊的用处，不过此类哈希并不是本文的重点，不加赘述。</p>
+<h2 id="spamsum" tabindex="-1">spamsum</h2>
+<h3 id="简介" tabindex="-1">简介</h3>
+<p>2002 年由 Andrew Tridgell（Samba 和 rsync 的作者）提出，基于局部敏感哈希算法识别与已知垃圾邮件相似的未知垃圾邮件。</p>
+<h3 id="原理" tabindex="-1">原理</h3>
+<p>使用 spamsum 算法主要分为两步：第一步生成小于 64 个字符的 ASCII 字符串作为哈希，第二步与已有哈希计算匹配程度。</p>
+<p>每个被切分的文件块都会被计算成一个字符，哈希太长或者太短都不合适。一旦已经找到 63 个文件块，直至文件结尾都会被视为最后一个文件块。而如果文件块不超过 32 个，spamsum 会减小每个文件块的长度，获得更长的哈希值。</p>
+<p>spamsum 算法其核心类似与 rsync 算法的滚动哈希，同时基于编辑距离衡量哈希结果的差异性。但 spamsum 无法保证较低的碰撞率，任何两个不同的块都有 1/64 的概率计算出相同的哈希值。</p>
+<h3 id="参考来源（部分）" tabindex="-1">参考来源（部分）</h3>
+<p><a href="https://www.samba.org/ftp/unpacked/junkcode/spamsum/README" target="_blank" class="external-link">spamsum-README</a></p>
+<p><a href="https://github.com/freakboy3742/pyspamsum" target="_blank" class="external-link">【GitHub】pyspamsum</a></p>
+<h2 id="nilsimsa" tabindex="-1">Nilsimsa</h2>
+<h3 id="简介-1" tabindex="-1">简介</h3>
+<p>Nilsimsa 也是一个针对垃圾邮件的局部敏感哈希算法，0 为不相似，128 为非常相似。</p>
+<h3 id="原理-1" tabindex="-1">原理</h3>
+<p>使用固定大小的滑动窗口（5 字节），组合产生输入字符可能的三元组。将三元组映射到 256 位的数组，再使用哈希函数对数组进行处理，处理得到最终的 32 字节哈希值。由于该哈希函数使用的相对较少，不过多介绍。</p>
+<h3 id="缺点与对抗" tabindex="-1">缺点与对抗</h3>
+<ul>
+<li>与后续的 TLSH、SSDEEP 和 SDHash 相比，nilsimsa 的误报率高得多</li>
+</ul>
+<h3 id="参考来源（部分）-1" tabindex="-1">参考来源（部分）</h3>
+<p><a href="https://github.com/diffeo/py-nilsimsa" target="_blank" class="external-link">【GitHub】py-nilsimsa</a></p>
+<h2 id="ssdeep" tabindex="-1">SSDEEP</h2>
+<h3 id="简介-2" tabindex="-1">简介</h3>
+<p>2006 年提出，基于 SpamSum 算法的模糊哈希算法，最新版本是 2017 年 11 月发布的 2.14.1。ssdeep 被业界广泛使用，例如 VirusTotal，其计算速度大概是后起之秀 TLSH 初版的两倍。</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2022/png/1632223/1650767655448-666eb652-8edc-47e6-b015-159874cb4d11.png" alt="img"></p>
+<h3 id="原理-2" tabindex="-1">原理</h3>
+<p>其格式为：chunksize:chunk:double_chunk，具体如下所示：</p>
+<ul>
+<li>chunksize 为切分的块大小</li>
+<li>chunk 的每个字符都代表原始文件 chunksize 长度的内容</li>
+<li>double_chunk 的每个字符代表 chunksize*2 长度的内容</li>
+</ul>
+<p>由此可以看出，在比较 ssdeep 的时候，两个哈希值的 chunksize 只能是 n 与 n/2、n 或者 2*n，其余 chunksize 相比哈希相似度肯定为0。</p>
+<p>使用 6 个 TheMoon 的样本，尽管每个样本的 MD5 都不相同，但从 ssdeep 却可以看出有相似之处。</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2022/png/1632223/1650767655395-2a00a9f9-bbba-4b46-a883-6648085e4bb2.png" alt="img"></p>
+<p>当然，如果样本量非常大，ssdeep 自身提供的比较方法就难以应对了。Brian Wallace 在 Virus Bulletin 分享过应对大规模样本场景下如何高性能使用 ssdeep，主要通过减少需要比较的哈希数量来提高性能，其中主要包括：</p>
+<ul>
+<li>只比较 CHUNKSIZE 相等、CHUNKSIZE*2 或 CHUNKSIZE/2 的 ssdeep</li>
+<li>只比较 chunk 或 double_chunk 中有七个字符串相同的 ssdeep</li>
+</ul>
+<p>Brian Wallace 的设计中，将每个七字符的字符串转换为整数可再提升性能。与此同时，Intezer 也指出，可以利用 ElasticSearch 和 NGram 来进行快速检索。</p>
+<h3 id="缺点与对抗-1" tabindex="-1">缺点与对抗</h3>
+<ul>
+<li>可以添加一个 section 修改 ssdeep 的哈希</li>
+<li>容易受到主动攻击</li>
+</ul>
+<h3 id="参考来源（部分）-2" tabindex="-1">参考来源（部分）</h3>
+<p><a href="https://www.sciencedirect.com/science/article/pii/S1742287606000764" target="_blank" class="external-link">Identifying almost identical files using context triggered piecewise hashing</a></p>
+<p><a href="https://github.com/ssdeep-project/ssdeep" target="_blank" class="external-link">【GitHub】ssdeep</a></p>
+<p><a href="https://nikhilh20.medium.com/fuzzy-hashing-ssdeep-3cade6931b72" target="_blank" class="external-link">Threat Attribution using ssdeep</a></p>
+<p><a href="https://www.virusbulletin.com/virusbulletin/2015/11/optimizing-ssdeep-use-scale" target="_blank" class="external-link">Optimizing ssDeep for use at scale</a></p>
+<p><a href="https://www.intezer.com/blog/malware-analysis/intezer-community-tip-ssdeep-comparisons-with-elasticsearch" target="_blank" class="external-link">Intezer Community Tip: How to Optimize ssdeep Comparisons with ElasticSearch</a></p>
+<p><a href="https://github.com/a4lg/ffuzzypp" target="_blank" class="external-link">【GitHub】ffuzzypp</a></p>
+<p><a href="https://github.com/a4lg/fast-ssdeep-clus" target="_blank" class="external-link">【GitHub】fast-ssdeep-clus</a></p>
+<p><a href="https://github.com/bwall/ssdc" target="_blank" class="external-link">【GitHub】ssdc</a></p>
+<p><a href="https://ieeexplore.ieee.org/document/5931110" target="_blank" class="external-link">Security Aspects of Piecewise Hashing in Computer Forensics</a></p>
+<h2 id="imp-hash" tabindex="-1">ImpHash</h2>
+<h3 id="简介-3" tabindex="-1">简介</h3>
+<p>FireEye <a href="https://www.mandiant.com/resources/apt1-exposing-one-of-chinas-cyber-espionage-units" target="_blank" class="external-link">在 2013 年首次提出 PE 文件导入表可用于跟踪同一个攻击组织的恶意样本</a>，而 Mandiant <a href="https://www.mandiant.com/resources/tracking-malware-import-hashing" target="_blank" class="external-link">在 2014 年应用于在 356 个样本中取得了不错的效果而被广为人知</a>。</p>
+<p>注：FireEye 在 2021 年 6 月已经已经将 FireEye 出售给了 Symphony 组织的财团，只保留了 Mandiant Solutions 部分，所以表述尽量做了区分。</p>
+<p><a href="https://www.mandiant.com/resources/tracking-malware-import-hashing" target="_blank" class="external-link">14.01.23-Tracking Malware with Import Hashing</a></p>
+<h3 id="原理-3" tabindex="-1">原理</h3>
+<p>源码的函数顺序以及源文件的顺序的改变都会导致编译时生成不同的导入表，也就有不同的导入表哈希。反过来说，如果两个文件的导入表哈希相同，即导入表相同，意味着文件是使用相同的源码通过相同的方式编译而来的。</p>
+<p><strong>imphash 的计算方式是将 PE 文件导入表中的函数名与 DLL 名连起来，全部小写化后计算 MD5。</strong></p>
+<p>使用 LokiBot 的样本作为示例，样本通过 KERNEL32.DLL 导入 GetTempPathA()、GetFileSize()、GetModuleFileNameA() 和其他函数。</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2022/png/1632223/1650767655356-d2ad8a97-302c-4cda-96bc-937bc5af2724.png" alt="img"></p>
+<p>这样可以将使用相同导入表的样本都找出来。</p>
+<h3 id="缺点与对抗-2" tabindex="-1">缺点与对抗</h3>
+<ul>
+<li>如果加壳程序在运行时重建原始导入表，这样就会因为使用相同的加壳程序而产生误报</li>
+<li>攻击者可以将整个恶意软件模块化，按需加载到内存中执行</li>
+<li>攻击者可以将导入表中的大部分都动态加载，保持导入表在最小</li>
+<li>攻击者可以构造特定的导入表来诱导错误归因</li>
+</ul>
+<h3 id="参考来源（部分）-3" tabindex="-1">参考来源（部分）</h3>
+<p><a href="https://www.mandiant.com/media/10316/download" target="_blank" class="external-link">SUPPLY CHAIN ANALYSIS: From Quartermaster to SunshopFireEye</a></p>
+<p><a href="https://www.mandiant.com/resources/tracking-malware-import-hashing" target="_blank" class="external-link">Tracking Malware with Import Hashing</a></p>
+<h2 id="impfuzzy" tabindex="-1">impfuzzy</h2>
+<h3 id="简介-4" tabindex="-1">简介</h3>
+<p>JPCERT/CC 在 2016 年发现一旦添加了新函数，生成的导入表哈希就会完全不一样，但这样不同导入表哈希的两个样本可能仍然有很高的相似度。故而 JPCERT/CC 开发了 pyimpfuzzy：</p>
+<h3 id="原理-4" tabindex="-1">原理</h3>
+<p>由于 imphash 使用 MD5 就要求导入表完全一致，但 impfuzzy 使用 ssdeep 作为哈希函数可以得到更好的效果。与 imphash 的区别只是使用 ssdeep 替换 MD5 作为哈希函数，其他都与 imphash 保持一致。使用 Dyre 银行木马为例，如下所示：</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2022/png/1632223/1650767655871-e9b98b25-29b5-459f-ab15-f5f64c32af3c.png" alt="img"></p>
+<p>使用多个家族的样本进行测试，普遍来看 impfuzzy 的效果要好于 imphash：</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2022/png/1632223/1650767655826-8ca20bf9-bc18-400c-92ff-1c62ced996bb.png" alt="img"></p>
+<h3 id="缺点与对抗-3" tabindex="-1">缺点与对抗</h3>
+<ul>
+<li>对使用构建工具的恶意软件（如 Pony、Zeus 等）比较有效，但变种很多的效果不好</li>
+<li>有些恶意软件导入表很短，使用的 Windows API 太少的情况下基本无效</li>
+<li>.NET 文件与直接执行 Windows API 的文件调用机制不同</li>
+</ul>
+<h3 id="参考来源（部分）-4" tabindex="-1">参考来源（部分）</h3>
+<p><a href="https://github.com/JPCERTCC/impfuzzy" target="_blank" class="external-link">【GitHub】impfuzzy</a></p>
+<p><a href="https://blogs.jpcert.or.jp/en/2016/05/classifying-mal-a988.html" target="_blank" class="external-link">Classifying Malware using Import API and Fuzzy Hashing – impfuzzy</a></p>
+<p><a href="https://blogs.jpcert.or.jp/en/2017/03/malware-clustering-using-impfuzzy-and-network-analysis---impfuzzy-for-neo4j-.html" target="_blank" class="external-link">Malware Clustering using impfuzzy and Network Analysis - impfuzzy for Neo4j</a></p>
+<h2 id="richhash" tabindex="-1">richhash</h2>
+<h3 id="介绍" tabindex="-1">介绍</h3>
+<p>Rich Header 是微软并未公开的信息头，没有任何描述该结构的官方文档。从 Visual Studio 6（1998）甚至更早（一说是 Visual Studio 97 SP3）就开始包含 Rich Header。根据 ESET 的数据，在一百万个恶意 PE 文件中，73.2% 的样本都包含 Rich Header。</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2022/png/1632223/1650767656035-23439e3f-6934-459c-8bb9-6e6567add640.png" alt="img"></p>
+<p>其余不包含的样本，很多都是由其他编译器（Turbo C++、MinGW GCC、Clang 等）或是使用其他语言（Delphi、Go 等）生成的。如果去掉这些样本，包含 Rich Header 的比例将上升到 83.3%。根据分析，缺少 Rich Header 的情况基本都是恶意软件开发者自己删除或者使用自定义壳导致没有 Rich Header。</p>
+<h3 id="原理-5" tabindex="-1">原理</h3>
+<p>Rich Header 是使用 Microsoft Visual Studio（LINK.EXE）编译链接的可执行文件的 PE 头的一部分（Rich Header），位于 MZ DOS Header 之后。</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2022/png/1632223/1650767656068-fa1fcbdb-f96a-4859-bbed-b89f3044ea7e.png" alt="img"></p>
+<p>Rich Header 以 DanS 开始，以 Rich 结束，随后是校验和（并且使用校验和作为异或加密的密钥）。</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2022/png/1632223/1650767656131-343c91ff-102d-4ff9-9df4-fad1cc274696.png" alt="img"></p>
+<p>Rich Header 中包含构建环境信息，基本结构如下所示：</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2022/png/1632223/1650767656409-14494ce6-bf35-4e8f-b9d0-79fc93d460a4.png" alt="img"></p>
+<p>例如攻击平昌冬奥会的 OlympicDestroyer 使用的 wiper 组件（3c0d740347b0362331c882c2dee96dbf）的 Rich Header 为：</p>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th><strong>Raw data</strong></th>
+<th><strong>Type</strong></th>
+<th><strong>Count</strong></th>
+<th><strong>Produced by</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>000C 1C7B 00000001</td>
+<td>oldnames</td>
+<td>1</td>
+<td>12 build 7291</td>
+</tr>
+<tr>
+<td>000A 1F6F 0000000B</td>
+<td>cobj</td>
+<td>11</td>
+<td>VC 6 (build 8047)</td>
+</tr>
+<tr>
+<td>000E 1C83 00000005</td>
+<td>masm613</td>
+<td>5</td>
+<td>MASM 6 (build 7299)</td>
+</tr>
+<tr>
+<td>0004 1F6F 00000004</td>
+<td>stdlibdll</td>
+<td>4</td>
+<td>VC 6 (build 8047)</td>
+</tr>
+<tr>
+<td>005D 0FC3 00000007</td>
+<td>sdk/imp</td>
+<td>7</td>
+<td>VC 2003 (build 4035)</td>
+</tr>
+<tr>
+<td>0001 0000 0000004D</td>
+<td>imports</td>
+<td>77</td>
+<td>imports (build 0)</td>
+</tr>
+<tr>
+<td>000B 2636 00000003</td>
+<td>c++obj</td>
+<td>3</td>
+<td>VC 6 (build 9782)</td>
+</tr>
+</tbody>
+</table></div>
+<p>该 Rich Header 指出该样本是使用 Visual Studio 6 编译的，而 VC 2003 表明使用了在 VC 6 发布时还没有的 Windows API 通过 Windows SDK 导入。</p>
+<p>值得注意的是，经过研究人员分析，该样本与 Lazarus 使用的 Bluenoroff 样本的 Rich Header 相吻合，但却是故意诱导错误归因，攻击者定制修改了 Rich Header 以迷惑分析人员。</p>
+<p>利用密钥对异或加密的数据（从 DanS（开始处）到 Rich（结尾处））解密后，计算 MD5 即为 richhash。</p>
+<p>在 Dridex、Sathurbot 等许多样本中都经受住了考验。</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2022/png/1632223/1650767656494-a95419b8-f89b-46e2-bae8-dd9bf66de1b5.png" alt="img"></p>
+<h3 id="缺点与对抗-4" tabindex="-1">缺点与对抗</h3>
+<ul>
+<li>Enigma Protector、Themida 和 VMProtect 等商业壳保留原始文件的 Rich Header，可以在未加壳的样本和加壳的样本间展开双向狩猎</li>
+<li>直接匹配异或的密钥可能会产生误报</li>
+<li>攻击者可以定制化修改，不仅对抗检测也可能误导归因（不过，篡改的 Rich Header 也可作为检测的特征之一，如重复、无效的 Rich Header 值；无效的异或密钥等）</li>
+</ul>
+<h3 id="参考来源（部分）-5" tabindex="-1">参考来源（部分）</h3>
+<p><a href="https://securelist.com/the-devils-in-the-rich-header/84348" target="_blank" class="external-link">【Kaspersky】The devil’s in the Rich header</a></p>
+<p><a href="https://www.virusbulletin.com/virusbulletin/2020/01/vb2019-paper-rich-headers-leveraging-mysterious-artifact-pe-format" target="_blank" class="external-link">VB2019 paper: Rich Headers: leveraging this mysterious artifact of the PE format</a></p>
+<p><a href="https://www.sans.org/white-papers/39045" target="_blank" class="external-link">Leveraging the PE Rich Header for Static Malware Detection and Linking</a></p>
+<p>【503】[<a href="https://infocon.hackingand.coffee/Hacktivity/Hacktivity%202016/Presentations/George_Webster-and-Julian-Kirsch.pdf" target="_blank" class="external-link">https://infocon.hackingand.coffee/Hacktivity/Hacktivity 2016/Presentations/George_Webster-and-Julian-Kirsch.pdf</a>](<a href="https://infocon.hackingand.coffee/Hacktivity/Hacktivity" target="_blank" class="external-link">https://infocon.hackingand.coffee/Hacktivity/Hacktivity</a> 2016/Presentations/George_Webster-and-Julian-Kirsch.pdf)</p>
+<p><a href="https://github.com/RichHeaderResearch/RichPE" target="_blank" class="external-link">【GitHub】RichPE</a></p>
+<p><a href="https://link.springer.com/chapter/10.1007%2F978-3-319-60876-1_6" target="_blank" class="external-link">Finding the Needle: A Study of the PE32 Rich Header and Respective Malware Triage</a></p>
+<h2 id="richpvhash" tabindex="-1">richpvhash</h2>
+<h3 id="背景" tabindex="-1">背景</h3>
+<p>RichPV 从数据中剔除了易变的 Rich Header 字段（Product Count）再进行计算。查找在同一系统上编译、来自同一源代码项目的文件，更适合 RichPVHash。</p>
+<h3 id="原理-6" tabindex="-1">原理</h3>
+<p>通过 2.5W 个 Korplug 样本测试后，对比如下所示：</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2022/png/1632223/1650767656554-455423cf-d25c-4e34-8d84-10a445171339.png" alt="img"></p>
+<p>使用不同恶意软件对比：</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2022/png/1632223/1650767656641-2ce1d495-e66b-46e3-b009-6339d7508586.png" alt="img"></p>
+<h3 id="缺点与对抗-5" tabindex="-1">缺点与对抗</h3>
+<ul>
+<li>Rich Header 必须足够长才能产生哈希的差异</li>
+</ul>
+<h3 id="参考来源（部分）-6" tabindex="-1">参考来源（部分）</h3>
+<p><a href="https://github.com/modubyk/PE_Richness" target="_blank" class="external-link">【GitHub】PE_Richness</a></p>
+<h2 id="machoc" tabindex="-1">Machoc</h2>
+<h3 id="简介-5" tabindex="-1">简介</h3>
+<p>控制流图（CFG）实际上有着广泛的用途，比如识别已知函数等，将 CFG 应用于相似样本发现也是一大期待。2015 年的 SSTIC 上提出了 Machoc，使用数字表示对应的 CFG。</p>
+<h3 id="原理-7" tabindex="-1">原理</h3>
+<p>基本方法：</p>
+<ul>
+<li>使用 IDAPython 或者 miasm 提取样本的控制流图（CFG）</li>
+<li>组成 CFG 的基本块按地址排序</li>
+<li>将每个基本块翻译成标准格式 NUMBER:[c,][DST, ...];，其中 NUMBER 是基本块编号、c 表示基本块中是否包含 call、DST 为下一个基本块的编号</li>
+<li>每个标准格式的内容串联起来再使用 Murmuhash3 计算哈希值</li>
+</ul>
+<p><img src="https://cdn.nlark.com/yuque/0/2022/png/1632223/1650767656675-6f4dcea0-abba-4960-93b4-5f6358371473.png" alt="img"></p>
+<h3 id="缺点与对抗-6" tabindex="-1">缺点与对抗</h3>
+<ul>
+<li>控制流混淆可以有效对抗此类分析</li>
+<li>开销与资源要求较大</li>
+</ul>
+<h3 id="参考来源（部分）-7" tabindex="-1">参考来源（部分）</h3>
+<p><a href="https://github.com/ANSSI-FR/polichombr" target="_blank" class="external-link">【GitHub】polichombr</a></p>
+<p><a href="https://www.sstic.org/media/SSTIC2016/SSTIC-actes/demarche_d_analyse_collaborative_de_codes_malveill/SSTIC2016-Article-demarche_d_analyse_collaborative_de_codes_malveillants-chevalier_le-berre_pourcelot.pdf" target="_blank" class="external-link">Démarche d’analyse collaborative de codes malveillants</a></p>
+<h2 id="machoke" tabindex="-1">Machoke</h2>
+<h3 id="原理-8" tabindex="-1">原理</h3>
+<p>2017 年的 R2con 上提出了 Machoke，该方式与 Machoc 基本相同，区别只存在于使用 radare2 和 r2pipe 提取 CFG。</p>
+<h3 id="参考来源（部分）-8" tabindex="-1">参考来源（部分）</h3>
+<p><a href="https://www.conix.fr/machoke-hashing" target="_blank" class="external-link">Machoke, CFG-hashing for everyone</a></p>
+<p><a href="https://github.com/radareorg/r2con-2017/blob/master/talks/cfg-fuzzy-hash/Machoke-cfg-based-fuzzy-hash.pdf" target="_blank" class="external-link">【PDF】Machoke CFG Based Fuzzy Hash</a></p>
+<h2 id="tlsh" tabindex="-1">TLSH</h2>
+<h3 id="简介-6" tabindex="-1">简介</h3>
+<p>趋势科技于 2013 年发布的哈希函数，全称为 Trend-Micro Locality Sensitive Hash。与 ssdeep 相比，TLSH 不依赖输入大小改变哈希长度（固定为 72 字符），且在恶意软件上能够具有更好的分类效果。</p>
+<h3 id="原理-9" tabindex="-1">原理</h3>
+<p>趋势科技展示了强大的技术功底，为该哈希算法的设计写了一系列的文章，这些文章对想要设计新的模糊哈希算法的人来说是极其有帮助的。例如指出 SSDEEP 等模糊哈希算法的相似度度量方法构造的树是极度不平衡的，搜索性能退化成链表后可扩展性大大降低。再如 TLSH 可以应对恶意软件检测逃避技术，序列重排不会改变哈希。</p>
+<p>这些技术要点便不再一一介绍了，<strong>设计上有着诸多考量和权衡，所有原理性设计都可以在相关的文章中找到细致的论述。总之，TLSH 搜索速度快，具有对数搜索时间；使用 Kskip-ngrams 鲁棒性更好；评估性能更高。</strong></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2022/png/1632223/1650767657101-3c56430f-8586-4184-a4ff-e25dc5c52bf3.png" alt="img"></p>
+<p>聚类样本画出树状图，以 Mirai 和 Gafgyt 为例：</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2022/png/1632223/1650767657106-57d3c8e0-c80f-4dda-9005-541239b9a361.png" alt="img"></p>
+<h3 id="缺点与对抗-7" tabindex="-1">缺点与对抗</h3>
+<ul>
+<li>不适用检测包含，而是相似</li>
+<li>最初的测试性能比 ssdeep 略低，但改进后应该更快了</li>
+</ul>
+<p><img src="https://cdn.nlark.com/yuque/0/2022/png/1632223/1650767657207-c1ee07bf-4ec1-496e-9695-18aa565829c1.png" alt="img"></p>
+<h3 id="参考来源（部分）-9" tabindex="-1">参考来源（部分）</h3>
+<p><a href="https://github.com/trendmicro/tlsh" target="_blank" class="external-link">【GitHub】tlsh</a></p>
+<p><a href="https://tlsh.org/index.html" target="_blank" class="external-link">【官网】TLSH - A Locality Sensitive Hash</a></p>
+<p><a href="https://documents.trendmicro.com/assets/wp/wp-locality-sensitive-hash.pdf" target="_blank" class="external-link">【PDF/19P】TLSH - A Locality Sensitive Hash</a></p>
+<p><a href="https://documents.trendmicro.com/assets/wp/wp-using-randomization-to-attack-similarity-digests.pdf" target="_blank" class="external-link">【PDF/23P】Using Randomization to Attack Similarity Digests</a></p>
+<p><a href="https://tlsh.org/papersDir/Design_TLSH_2021.pdf" target="_blank" class="external-link">【DVI/6P】Designing the Elements of a Fuzzy Hashing Scheme</a></p>
+<p><a href="https://tlsh.org/papersDir/COINS_2020_camera_ready.pdf" target="_blank" class="external-link">【PDF/7P】HAC-T and Fast Search for Similarity in Security</a></p>
+<p><a href="https://tlsh.org/papersDir/ISI_2020_final.pdf" target="_blank" class="external-link">【PDF/7P】Scalable Malware Clustering using Multi-Stage Tree Parallelization</a></p>
+<h2 id="pe-hash" tabindex="-1">PEHash</h2>
+<h3 id="简介-7" tabindex="-1">简介</h3>
+<p>2008 年的 Usenix Security 文章，spamsum 和 mrshash 都展示了作用，提出了新的算法为 pehash。</p>
+<h3 id="原理-10" tabindex="-1">原理</h3>
+<p>PEHash 不对完整文件计算哈希，而是对 PE 文件的部分字段进行哈希，这些字段在编译和加壳期间不易变化，如初始栈大小、堆大小等。</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2022/png/1632223/1650767657151-c5cca6d0-48ac-4469-9506-7f08abe4709d.png" alt="img"></p>
+<h3 id="参考来源（部分）-10" tabindex="-1">参考来源（部分）</h3>
+<p><a href="https://www.usenix.org/legacy/events/leet09/tech/full_papers/wicherski/wicherski_html/index.html" target="_blank" class="external-link">peHash: A Novel Approach to Fast Malware Clustering Georg Wicherski RWTH Aachen University gw@mwcollect.org December 7, 2008</a></p>
+<h2 id="authenticode-pe-image-hash" tabindex="-1">Authenticode PE Image Hash</h2>
+<h3 id="简介-8" tabindex="-1">简介</h3>
+<p>Authenticode 是微软用于验证数字签名的 PE 文件未被篡改的哈希值，可用于识别不同发布者签发的相同可执行文件。</p>
+<h3 id="原理-11" tabindex="-1">原理</h3>
+<p>计算忽略 Authenticode 数据、指向 Authenticode 数据的指针和文件校验和的文件哈希值：</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2022/png/1632223/1650767657428-9741bfd5-f562-4b2c-9c40-19403bf9d0ef.png" alt="img"></p>
+<h3 id="参考来源（部分）-11" tabindex="-1">参考来源（部分）</h3>
+<p><a href="https://www.blackhat.com/docs/us-16/materials/us-16-Nipravsky-Certificate-Bypass-Hiding-And-Executing-Malware-From-A-Digitally-Signed-Executable-wp.pdf" target="_blank" class="external-link">Certificate Bypass: Hiding and Executing Malware from a Digitally Signed Executable</a></p>
+<p><a href="https://blog.reversinglabs.com/blog/breaking-the-windows-authenticode-security-model" target="_blank" class="external-link">Breaking the Windows Authenticode security model</a></p>
+<p><a href="https://www.avira.com/en/blog/undermining-authenticode" target="_blank" class="external-link">What is Microsoft Authenticode?</a></p>
+<h2 id="type-ref-hash" tabindex="-1">TypeRefHash</h2>
+<h3 id="简介-9" tabindex="-1">简介</h3>
+<p>.NET 文件尽管也是 PE 格式，但导入表通常只包含 .NET 运行时（mscoree.dll），这就令 imphash 在 .NET 文件上失效了。与 imphash 类似，G Data Cyber Defense 针对 .NET 文件提出的导入表哈希就是 TypeRefHash。</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2022/png/1632223/1650767657609-155aa659-c1ae-45fc-87e6-a0204cf2cf92.png" alt="img"></p>
+<h3 id="原理-12" tabindex="-1">原理</h3>
+<p>.NET 引用的函数存储在所谓的元数据表中，将元数据表（排序后）中的命名空间（TypeNamespaces）和类型（TypeNames）连成字符串，然后计算 SHA-256 哈希值。</p>
+<p>在对 AsyncRAT、Nanocore、QuasarRAT 等样本的评估中，足见其有效性：</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2022/png/1632223/1650767657635-594568a7-2c88-4d2b-96b4-3fa47736ad39.png" alt="img"></p>
+<p>甚至包括 Agent Tesla 这种常见的 .NET 样本：</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2022/png/1632223/1650767657660-fd00eb46-ae03-4bb0-a9ff-98de99593a93.png" alt="img"></p>
+<h3 id="参考来源（部分）-12" tabindex="-1">参考来源（部分）</h3>
+<p><a href="https://www.gdatasoftware.com/blog/2020/06/36164-introducing-the-typerefhash-trh" target="_blank" class="external-link">Introducing the TypeRefHash (TRH)</a></p>
+<p><a href="https://github.com/GDATASoftwareAG/TypeRefHasher" target="_blank" class="external-link">【GitHub】TypeRefHasher</a></p>
+<p><a href="https://joseliyo-jstnk.medium.com/typeref-hasher-the-imphash-solution-for-samples-in-net-9aad14502bbf" target="_blank" class="external-link">TypeRef Hasher- The imphash solution for samples in .NET</a></p>
+<h2 id="dhash" tabindex="-1">Dhash</h2>
+<h3 id="简介-10" tabindex="-1">简介</h3>
+<p>常有恶意软件将图标修改为 Office 等常用程序来欺骗用户，业界发现 PE 文件的图标可用于聚类相似样本。VirusTotal 和 Malwarebazaar 都支持 dhash 来跟踪相似样本，JoeSecurity 沙盒用使用 dhash，当然这种相似很多时候并非是同源的。</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2022/png/1632223/1650767657750-62aeae9c-9173-425a-99b6-b7eddcbe74ec.png" alt="img"></p>
+<h3 id="原理-13" tabindex="-1">原理</h3>
+<p>将图片拉伸为固定大小，转换为灰度图片。将每个像素与右邻接像素比较，相比增加为 1，相比降低为 0。</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2022/png/1632223/1650767657993-5ea7f3ed-ef7a-4937-a4a9-05a62abc7cb2.png" alt="img"></p>
+<p>由下可知，与类似的算法相比，dhash 在性能和效果之间取得了平衡。尽管 phash 的准确度很高，但性能太差，难以应对大规模样本。</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2022/png/1632223/1650767658288-430245a6-88a3-4549-9fb0-4cc58ce71b19.png" alt="img"></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2022/png/1632223/1650767658441-13ec3666-62f3-4a8b-82a6-e813b7a5a268.png" alt="img"></p>
+<h3 id="参考来源（部分）-13" tabindex="-1">参考来源（部分）</h3>
+<p><a href="https://content-blockchain.org/research/testing-different-image-hash-functions" target="_blank" class="external-link">Testing Different Image Hash Functions</a></p>
+<p><a href="https://www.gdatasoftware.com/blog/2021/09/an-overview-of-malware-hashing-algorithms" target="_blank" class="external-link">All your hashes are belong to us: An overview of malware hashing algorithms</a></p>
+<h2 id="vhash" tabindex="-1">vhash</h2>
+<h3 id="简介-11" tabindex="-1">简介</h3>
+<p>VirusTotal 在 2020 年提出的，基于文件结构特征计算的哈希。VirusTotal 并未在公开场合讲述该算法的更多细节，但很多安全研究人员均表示该算法有效性尚可。</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2022/png/1632223/1650767658452-5b0a097d-cb80-4e7b-ae4f-f274eb0daf67.png" alt="img"></p>
+<p>如可发现 Donot 的部分样本：</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2022/png/1632223/1650767658408-5f372fb1-82f9-4a77-ba4f-0263b79a1775.png" alt="img"></p>
+<h3 id="参考来源（部分）-14" tabindex="-1">参考来源（部分）</h3>
+<p><a href="https://twitter.com/cyb3rops/status/1223248099323367424" target="_blank" class="external-link">https://twitter.com/cyb3rops/status/1223248099323367424</a></p>
+<p><a href="https://github.com/arieljt/VTvHash-Maltego" target="_blank" class="external-link">【GitHub】VTvHash-Maltego</a></p>
+<p><a href="https://blog.virustotal.com/2020/11/why-is-similarity-so-relevant-when.html" target="_blank" class="external-link">why-is-similarity-so-relevant-when.html</a></p>
+<h2 id="behash" tabindex="-1">behash</h2>
+<h3 id="简介-12" tabindex="-1">简介</h3>
+<p>VirusTotal 基于样本在沙盒中的行为计算的哈希，与 vhash 类似的 VirusTotal 也从未在公开场合讲述该算法的更多细节，计算方式不得而知：</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2022/png/1632223/1650767658516-e30d2bf3-6fa7-4f49-9355-a20f90173e5c.png" alt="img"></p>
+<h2 id="sd-hash" tabindex="-1">SDHash</h2>
+<h3 id="简介-13" tabindex="-1">简介</h3>
+<p>2010 年提出的模糊哈希算法，通过查找文件中随机发现的概率最低的序列，SDHash 弥补了 ssdeep 的准确性和可扩展性缺陷。</p>
+<h3 id="原理-14" tabindex="-1">原理</h3>
+<p>SDHash 选择二进制文件中统计上不可能的特征，筛选出弱特征并使用布隆过滤器来支持不同大小对象的比较。</p>
+<p>在 CODASPY 2018 中实验研究了四个哈希算法的效果，SDHash 的成绩相当好，但是比 TLSH 还是更差。</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2022/png/1632223/1650767658916-f4c6f420-0135-4a34-a661-3bbb91f09b40.png" alt="img"></p>
+<p>sdhash 比 ssdeep 准确度更高，其优势在片段比较而非全文件比较。</p>
+<h3 id="缺点和对抗" tabindex="-1">缺点和对抗</h3>
+<ul>
+<li>哈希大小会随着输入文件的大小而不断增加</li>
+<li>SDHash 研究发现了一些已知的漏洞</li>
+</ul>
+<h3 id="参考来源（部分）-15" tabindex="-1">参考来源（部分）</h3>
+<p><a href="https://github.com/sdhash/sdhash" target="_blank" class="external-link">【GitHub】sdhash</a></p>
+<p>《A collision attack on sdhash similarity hashing》</p>
+<p><a href="https://documents.trendmicro.com/assets/wp/wp-using-randomization-to-attack-similarity-digests.pdf" target="_blank" class="external-link">【PDF/23P】Using randomization to attack similarity digests</a></p>
+<p><a href="https://141.100.55.114/wp-content/uploads/2012/08/2012_08_Breitinger_NeSeFo.pdf" target="_blank" class="external-link">【PDF/16P】Security and implementation analysis of the similarity digest sdhash</a></p>
+<h2 id="telf-hash" tabindex="-1">TELFHash</h2>
+<h3 id="简介-14" tabindex="-1">简介</h3>
+<p>2020 年 4 月，趋势科技发布了 TELFHash（Trend Micro ELF Hash）。TELFHash 类似于 ELF 文件的导入表哈希，</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2022/png/1632223/1650767659030-45fcebd2-f1ea-47df-a392-13b7c447b39f.png" alt="img"></p>
+<h3 id="原理-15" tabindex="-1">原理</h3>
+<p>TELFHash 利用 TLSH 代替 MD5 作为哈希函数。</p>
+<p>通过 ELF 文件的符号表获取 ELF 文件的导入函数，如下所示。</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2022/png/1632223/1650767659088-02925b6c-2209-44ea-bbab-9c2774aeeba8.png" alt="img"></p>
+<p>从 ELF 符号表中提取函数名称，再重新排序计算哈希。另外，stripped 的样本虽然没有符号表，但使用的外部函数相关的符号并没有从二进制文件中被删除：</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2022/png/1632223/1650767659249-f3c38dc9-62b5-4ea7-a6a1-ec66768c313a.png" alt="img"></p>
+<p>为了兼容多种架构，忽略编译器添加的特定体系结构的函数：</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2022/png/1632223/1650767659314-b6adba49-9741-4ef1-a6e9-e8261d154aa9.png" alt="img"></p>
+<p>此时，已能够处理以下情况：</p>
+<ul>
+<li>静态链接、带有符号表</li>
+<li>动态链接、带有符号表</li>
+<li>动态链接、无符号表</li>
+</ul>
+<p>在只有静态链接、无符号表的情况下，通过在二进制文件中获取函数调用（需要支持在每个架构中匹配特定的调用函数指令）的目标地址组成列表，计算 TELFHahsh：</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2022/png/1632223/1650767659530-03aa2481-35d2-414d-9a9c-f07417fc22c3.png" alt="img"></p>
+<p>计算出来确实可见相关，但是静态链接、无符号表计算出的哈希和其他文件不相同，但仍然能够起效：</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2022/png/1632223/1650767659583-14bf38cc-1038-42e9-a7cb-60f934904663.png" alt="img"></p>
+<p>在 XorDDoS 上进行实验，结果如下所示：</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2022/png/1632223/1650767659850-5113dd30-1d4b-4f36-b80d-16a25b9dfd9d.png" alt="img"></p>
+<p>在 Momentum 上进行实验，结果如下所示：</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2022/png/1632223/1650767660013-ad4de6f8-55a2-4799-b8b2-c84fbc588f1d.png" alt="img"></p>
+<h3 id="参考来源（部分）-16" tabindex="-1">参考来源（部分）</h3>
+<p><a href="https://www.trendmicro.com/en_us/research/20/j/virustotal-now-supports-trend-micro-elf-hash.html" target="_blank" class="external-link">VirusTotal Now Supports Trend Micro ELF Hash</a></p>
+<p><a href="https://github.com/trendmicro/telfhash" target="_blank" class="external-link">【GitHub】telfhash</a></p>
+<h2 id="lempel-ziv-jaccard" tabindex="-1">Lempel-Ziv Jaccard</h2>
+<h3 id="简介-15" tabindex="-1">简介</h3>
+<p>2017 年提出、用于为任意字节序列计算距离的算法，设计用于替换归一化压缩距离（Normalized Compression Distance，NCD）。</p>
+<h3 id="原理-16" tabindex="-1">原理</h3>
+<p>比较之下，Lempel-Ziv Jaccard 比 ssdeep 和 SDHash 都要更好：</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2022/png/1632223/1650767660177-99c8af54-8d53-4562-babd-6668343a5cda.png" alt="img"></p>
+<h3 id="参考来源（部分）-17" tabindex="-1">参考来源（部分）</h3>
+<p><a href="https://github.com/EdwardRaff/LZJD" target="_blank" class="external-link">【GitHub】LZJD</a></p>
+<p><a href="https://github.com/EdwardRaff/jLZJD" target="_blank" class="external-link">【GitHub】jLZJD</a></p>
+<p><a href="https://github.com/EdwardRaff/pyLZJD" target="_blank" class="external-link">【GitHub】pyLZJD</a></p>
+<p><a href="http://www.edwardraff.com/publications/alternative-ncd-lzjd.pdf" target="_blank" class="external-link">【PDF/9P】An Alternative to NCD for Large Sequences, Lempel-Ziv Jaccard Distance</a></p>
+<p><a href="https://arxiv.org/abs/1708.03346" target="_blank" class="external-link">Lempel-Ziv Jaccard Distance, an Effective Alternative to Ssdeep and Sdhash</a></p>
+<h2 id="mv-hash-b" tabindex="-1">mvHash-B</h2>
+<h3 id="简介-16" tabindex="-1">简介</h3>
+<p>mvhash 是基于多数投票的模糊哈希，分为 mvHash-B 与 mvHash-L 两种。其中 mvHash-B 算法是在 2013 年提出的。</p>
+<h3 id="原理-17" tabindex="-1">原理</h3>
+<p>mvHash-B 将输入转换为等长度的 0x00 或者 0xFF 字节序列，在用 RLE 编码压缩后再利用改进的布隆过滤器生成等长的哈希值（2018 bit）。</p>
+<p>根据测试，mvHash-B 比 sdHash 更好：</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2022/png/1632223/1650767660237-71376f62-3698-4301-882a-859cfb583f74.png" alt="img"></p>
+<h3 id="参考来源（部分）-18" tabindex="-1">参考来源（部分）</h3>
+<p><a href="https://ieeexplore.ieee.org/abstract/document/6568552" target="_blank" class="external-link">mvHash-B - A New Approach for Similarity Preserving Hashing</a></p>
+<p><a href="https://ntnuopen.ntnu.no/ntnu-xmlui/bitstream/handle/11250/144008/KPAstebol.pdf" target="_blank" class="external-link">【PDF/68P】mvHash - a new approach for fuzzy hashing</a></p>
+<h2 id="mrsh-v2" tabindex="-1">mrsh-v2</h2>
+<h3 id="简介-17" tabindex="-1">简介</h3>
+<p>2012 年发布的 MRSH-V2（Multiresolution Similarity Hashing-v2）相比 MRSH 在效率和性能上均有所改进。其整合了 ssdeep 和 sdhash，声称改进了 ssdeep 的安全性。</p>
+<h3 id="原理-18" tabindex="-1">原理</h3>
+<p>在七个字节的滑动窗口上使用滚动哈希，再使用 FNV-1A 哈希函数对每个块进行哈希，并将结果分成五个子哈希，每部分的 k×log2(m) 位用于寻址布隆过滤器。</p>
+<h3 id="缺点和对抗-1" tabindex="-1">缺点和对抗</h3>
+<ul>
+<li>尽管速度比 sdhash 更快，但是准确率和召回率都更差。</li>
+</ul>
+<h3 id="参考来源（部分）-19" tabindex="-1">参考来源（部分）</h3>
+<p><a href="https://link.springer.com/chapter/10.1007/978-3-642-39891-9_11" target="_blank" class="external-link">Similarity Preserving Hashing: Eligible Properties and a New Algorithm MRSH-v2</a></p>
+<h2 id="其他" tabindex="-1">其他</h2>
+<p>业界也在积极探索其他解决方案，例如微软为模糊哈希设计 word embeddings 再结合神经网络 perceptron 进行检测。</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2022/png/1632223/1650767660255-fc08bd66-c180-499e-a372-ca9757068af9.png" alt="img"></p>
+<h3 id="参考来源（部分）-20" tabindex="-1">参考来源（部分）</h3>
+<p><a href="https://www.microsoft.com/security/blog/2021/07/27/combing-through-the-fuzz-using-fuzzy-hashing-and-deep-learning-to-counter-malware-detection-evasion-techniques/" target="_blank" class="external-link">Combing through the fuzz: Using fuzzy hashing and deep learning to counter malware detection evasion techniques</a></p>
+<h2 id="模糊哈希" tabindex="-1">模糊哈希</h2>
+<p>以上有很多哈希函数为模糊哈希，回头总结一下。总的来说，模糊哈希可分为以下四种类型：</p>
+<h3 id="context-triggered-piecewise-hashing-ctph" tabindex="-1">上下文触发分段哈希（Context Triggered Piecewise Hashing，CTPH）</h3>
+<p>为了避免哈希随文件变大而无限变长，块大小不固定而是依赖触发点，触发点依据样本大小计算而来，如 ssdeep。尽管样本对齐问题并不像 BHB 那样明显，但其实仍然限于大小差不多的相对较小的文件，为了提高检测能力就可以像 ssdeep 一样使用两个不同的值作为块大小的触发点。</p>
+<h3 id="block-based-hashing-bhb" tabindex="-1">基于块的哈希（Block-Based Hashing，BHB）</h3>
+<p>为固定大小的块创建哈希，但通常用于数字取证，如 dcfldd。因为文件越大，哈希越长，这样是没法应用在样本狩猎的应用场景下的。</p>
+<h3 id="statistically-improbable-features-sif" tabindex="-1">不可能统计特征（Statistically-Improbable Features，SIF）</h3>
+<p>根据文件非偶然出现的特征进行比较，如 sdhash 使用熵来计算特征。这样保证了文件的修改如果不影响该类特征，哈希就不会受到影响。</p>
+<h3 id="block-based-rebuilding-bbr" tabindex="-1">基于块的重构（Block-Based Rebuilding，BBR）</h3>
+<p>使用辅助数据重构文件，如 mvhash-B 通过多数投票将文件的每个字节与相邻字节进行比较，将文件的每个字节映射到 FF 或 00 上，再由字节序列组成哈希。</p>
+<h2 id="大尺度下相似文件检索" tabindex="-1">大尺度下相似文件检索</h2>
+<p>在样本量巨大的情况下，一一比较每个哈希计算相似程度的方式太耗时了。而且很多哈希的比较方法还是独特设计的，这都有可能带来很大的计算开销。传统的精确匹配可以利用平衡树等结构构建索引，保证单个查询的复杂度低于暴力搜索的 O(log(n))。为了提高匹配检索的效率，提出了几类方法：</p>
+<ul>
+<li>
+<p>分布式 P2P 搜索：将哈希按照固定的距离计算方式存储在特定的节点中，分布式处理检索相似的哈希。为了可靠性，必须多出额外的存储以及冗余的节点。</p>
+</li>
+<li>
+<p>使用 Nilsimsa 的分布式哈希表 DHTnil，误报率很高，且查询时间复杂度并不低于一一比对</p>
+</li>
+<li>
+<p>使用 ssdeep 的分布式哈希表 iCTPH，查询的时间复杂度也不低于一一比对</p>
+</li>
+<li>
+<p>索引搜索：构建索引，在索引上进行精确匹配以大大加速检索过程，例如 n-gram。</p>
+</li>
+<li>
+<p>过滤器搜索：通过过滤器的数据结构来快速判断是否存在但不能精确给出，而且对内存的占用极大。例如 Bloom 过滤器、Cuckoo 过滤器。</p>
+</li>
+</ul>
+<p>汇总对比如下所示：</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2022/png/1632223/1650767660525-bfc5b5f7-221d-40c0-879b-9fca1ca172a6.png" alt="img"></p>
+<p>结合之前介绍的方式，通用且高效的方法应该就是构建索引（例如 ngram）来做。需要处理大量的样本的情况下，可以参考自己进行设计。</p>
+</main>
+<script>window.location.hash&&document.getElementById(window.location.hash.slice(1)).classList.add("referred"),window.addEventListener("hashchange",(e=>{const t=e.oldURL.split("#");t[1]&&document.getElementById(t[1]).classList.remove("referred");const n=e.newURL.split("#");n[1]&&document.getElementById(n[1]).classList.add("referred")}),!1);const url_parts=window.location.href.split("#"),url=url_parts[0],referrence=url_parts[1];document.querySelectorAll(".cm-s-obsidian > *[id]").forEach((function(e){e.ondblclick=function(e){const t=url+"#"+e.target.id;navigator.clipboard.writeText(t)}}))</script>
+<script src="https://fastly.jsdelivr.net/npm/luxon@3.2.1/build/global/luxon.min.js"></script>
+<script defer="defer">TIMESTAMP_FORMAT="MMM dd, yyyy h:mm a",document.querySelectorAll(".human-date").forEach((function(e){date=e.getAttribute("data-date")||e.innerText,parsed_date=luxon.DateTime.fromISO(date),null!=parsed_date.invalid&&(parsed_date=luxon.DateTime.fromSQL(date)),null!=parsed_date.invalid&&(parsed_date=luxon.DateTime.fromHTML(date)),e.innerHTML=parsed_date.toFormat(TIMESTAMP_FORMAT)}))</script>
+<script>lucide.createIcons({attrs:{class:["svg-icon"]}})</script>
+</body>
+</html>

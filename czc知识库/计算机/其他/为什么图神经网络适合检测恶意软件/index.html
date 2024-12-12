@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>为什么图神经网络适合检测恶意软件</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<script async type="module">import mermaid from"https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"</script>
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js" integrity="sha512-hpZ5pDCF2bRCweL5WoA0/N1elet1KYL5mx3LP555Eg/0ZguaHawxNvEjF6O3rufAChs16HVNhEc6blF/rZoowQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/plugins/autoloader/prism-autoloader.min.js" integrity="sha512-sv0slik/5O0JIPdLBCR2A3XDg/1U3WuDEheZfI/DI5n8Yqc3h5kjrnr46FGBNiUAJF7rE4LHKwQ/SoSLRKAxEA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script async src="https://cdn.jsdelivr.net/npm/lucide@0.115.0/dist/umd/lucide.min.js"></script>
+<script>window.addEventListener("load",(()=>{document.querySelectorAll(".callout").forEach((e=>{const t=getComputedStyle(e).getPropertyValue("--callout-icon"),l=t&&t.trim().replace(/^lucide-/,"");if(l){const t=e.querySelector(".callout-title");if(t){const e=document.createElement("div"),c=document.createElement("i");e.appendChild(c),c.setAttribute("icon-name",l),e.setAttribute("class","callout-icon"),t.insertBefore(e,t.firstChild)}}})),lucide.createIcons(),Array.from(document.querySelectorAll(".callout.is-collapsible")).forEach((e=>{e.querySelector(".callout-title").addEventListener("click",(t=>{e.classList.contains("is-collapsed")?e.classList.remove("is-collapsed"):e.classList.add("is-collapsed")}))}))}))</script>
+<script async src="https://fastly.jsdelivr.net/npm/force-graph@1.43.0/dist/force-graph.min.js"></script>
+<script async src="https://fastly.jsdelivr.net/npm/@alpinejs/persist@3.11.1/dist/cdn.min.js"></script>
+<script src="https://fastly.jsdelivr.net/npm/alpinejs@3.11.1/dist/cdn.min.js" async></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-okaidia.min.css" integrity="sha512-mIs9kKbaw6JZFfSuo+MovjU+Ntggfoj8RwAmJbVXQ5mkAX5LlgETQEweFPI18humSPHymTb5iikEOKWF7I8ncQ==" crossorigin="anonymous" referrerpolicy="no-referrer" async>
+<script src="https://fastly.jsdelivr.net/npm/whatwg-fetch@3.6.2/dist/fetch.umd.min.js" crossorigin="anonymous" referrerpolicy="no-referrer" async></script>
+<link href="/styles/digital-garden-base.css" rel="stylesheet">
+<link href="/styles/obsidian-base.css" rel="stylesheet">
+<link href="/styles/_theme.d92311c2.css" rel="stylesheet">
+<link href="/styles/custom-style.css" rel="stylesheet">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<style></style>
+</head>
+<body class="theme-dark markdown-preview-view markdown-rendered markdown-preview-section">
+<nav class="navbar">
+<div class="navbar-inner">
+<a href="/" style="text-decoration:none">
+<h1 style="margin:15px!important">Digital Garden</h1>
+</a>
+</div>
+</nav>
+<main class="content cm-s-obsidian">
+<header>
+<div class="header-meta">
+</div>
+</header>
+<p>关系不大：<a href="202305.13.GCNs_AMD%EF%BC%9A%E5%9F%BA%E4%BA%8E%20GCN%20%E5%A2%9E%E5%BC%BA%E5%87%BD%E6%95%B0%E8%B0%83%E7%94%A8%E5%9B%BE%E4%B8%AD%E8%8A%82%E7%82%B9%E7%89%B9%E5%BE%81%E5%B7%AE%E5%BC%82%E7%9A%84%20Android%20%E6%81%B6%E6%84%8F%E8%BD%AF%E4%BB%B6%E6%A3%80%E6%B5%8B%E6%96%B9%E6%B3%95%20An%20Android%20Malware%20Detection%20Approach%20to%20Enhance%20Node%20Feature%20Differences%20in%20a%20Function%20Call%20Graph%20Based%20on%20GCNs.md#%5Ee04e17" target="_blank" class="external-link">GCNs论文对图神经网络在恶意代码检测中的相关表述</a></p>
+<p>图神经网络的恶意软件检测论文：<br>
+MSDroid<br>
+SriDroid</p>
+<div class="callout is-collapsible is-collapsed" data-callout="note"><div class="callout-title"><div class="callout-title-inner"> 软件学报：基于图神经网络的可解释安卓恶意软件检测方法-Interpretable Graph Neural Network-based Android Malware Detection Method</div><div class="callout-fold"><i icon-name="chevron-down"></i></div></div>
+<div class="callout-content">
+<p>
+</p><ul>
+<li>Interpretable Graph Neural Network-based Android Malware Detection Method
+<ul>
+<li>软件学报</li>
+<li><a href="https://jcs.iie.ac.cn/xxaqxb/ch/reader/view_abstract.aspx?flag=2&amp;file_no=202302150000001&amp;journal_id=xxaqxb#:~:text=%E9%9A%8F%E7%9D%80%E6%99%BA%E8%83%BD%E6%89%8B%E6%9C%BA%E7%9A%84%E5%B9%BF%E6%B3%9B%E6%99%AE%E5%8F%8A%EF%BC%8C%E8%BF%91%E5%B9%B4%E6%9D%A5%E5%AE%89%E5%8D%93%E6%81%B6%E6%84%8F%E8%BD%AF%E4%BB%B6%E7%9A%84%E6%95%B0%E9%87%8F%E8%BF%85%E9%80%9F%E5%A2%9E%E5%8A%A0%E5%AF%B9%E6%99%BA%E8%83%BD%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7%E7%9A%84%E5%AE%89%E5%85%A8%E6%9E%84%E6%88%90%E4%BA%86%E4%B8%A5%E9%87%8D%E5%A8%81%E8%83%81%E3%80%82%20%E5%AD%A6%E6%9C%AF%E7%95%8C%E5%92%8C%E5%B7%A5%E4%B8%9A%E7%95%8C%E5%B7%B2%E7%BB%8F%E5%BC%80%E5%A7%8B%E5%B9%BF%E6%B3%9B%E9%87%87%E7%94%A8%E5%9F%BA%E4%BA%8E%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%9A%84%E6%96%B9%E6%B3%95%E6%9D%A5%E8%87%AA%E5%8A%A8%E5%8C%96%E6%A3%80%E6%B5%8B%E6%81%B6%E6%84%8F%E8%BD%AF%E4%BB%B6%EF%BC%8C%E5%85%B6%E4%B8%AD%EF%BC%8C%E4%BD%BF%E7%94%A8%E5%9B%BE%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%EF%BC%88Graph%20Neural%20Network%EF%BC%8C,GNN%EF%BC%89%E5%AF%B9%E5%87%BD%E6%95%B0%E8%B0%83%E7%94%A8%E5%9B%BE%EF%BC%88Function%20Call%20Graph%EF%BC%8C%20FCG%EF%BC%89%E7%89%B9%E5%BE%81%E8%BF%9B%E8%A1%8C%E6%A3%80%E6%B5%8B%E7%9A%84%E6%96%B9%E6%B3%95%E5%B7%B2%E7%BB%8F%E8%A1%A8%E7%8E%B0%E5%87%BA%E4%BC%98%E7%A7%80%E7%9A%84%E5%87%86%E7%A1%AE%E6%80%A7%E5%92%8C%E9%B2%81%E6%A3%92%E6%80%A7%E3%80%82" target="_blank" class="external-link">基于图神经网络的可解释安卓恶意软件检测方法-Interpretable Graph Neural Network-based Android Malware Detection Method</a></li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>摘要：随着智能手机的广泛普及，近年来安卓恶意软件的数量迅速增加对智能手机用户的安全构成了严重威胁。学术界和工业界已经开始广泛采用基于深度学习的方法来自动化检测恶意软件，其中，使用图神经网络（Graph Neural Network， GNN）对函数调用图（Function Call Graph， FCG）特征进行检测的方法<strong>已经表现出优秀的准确性和鲁棒性</strong>。然而，由于现有的基于GNN的检测方法缺乏可解释性，使得对于检测结果的理解和分析变得困难，限制了其在实际中的应用范围。近年来，涌现出了众多GNN可解释性方法。但是，这些可解释性方法往往只关注了解释结果的准确度，而忽略了解释结果的保真度，从而导致在解释FCG图时解释结果准确率不佳。为了解决这一问题，本文提出了一种基于图神经网络的可解释安卓恶意软件检测方法（Interpretable Graph neural network-based Android Malware Detection， IGAMD）。该方法首先通过反编译安卓APK获得FCG，并进一步分析获取属性函数调用图（Attribute FCG，AFCG）特征。随后，IGAMD将AFCG输入到GNN分类模型和GNN解释模型，以得出分类结果和解释结果。与其他GNN可解释性方法不同，GNN解释模型同时关注了解释结果的准确度和保真度，从而达到了更优的性能表现。GNN解释模型能够识别出安卓恶意软件FCG中对分类贡献最大的子图，并提供节点重要性得分供进一步分析。实验结果显示，相较于现有研究中表现最佳的三种GNN可解释性方法，IGAMD的解释结果具有更高的准确度和保真度，能够准确揭示恶意软件的行为模式。同时，IGAMD在恶意软件检测任务中表现出了优异的性能，达到了96.23%的识别准确率。</p>
+</blockquote>
+<p></p></div></div>
+</main>
+<script>window.location.hash&&document.getElementById(window.location.hash.slice(1)).classList.add("referred"),window.addEventListener("hashchange",(e=>{const t=e.oldURL.split("#");t[1]&&document.getElementById(t[1]).classList.remove("referred");const n=e.newURL.split("#");n[1]&&document.getElementById(n[1]).classList.add("referred")}),!1);const url_parts=window.location.href.split("#"),url=url_parts[0],referrence=url_parts[1];document.querySelectorAll(".cm-s-obsidian > *[id]").forEach((function(e){e.ondblclick=function(e){const t=url+"#"+e.target.id;navigator.clipboard.writeText(t)}}))</script>
+<script src="https://fastly.jsdelivr.net/npm/luxon@3.2.1/build/global/luxon.min.js"></script>
+<script defer="defer">TIMESTAMP_FORMAT="MMM dd, yyyy h:mm a",document.querySelectorAll(".human-date").forEach((function(e){date=e.getAttribute("data-date")||e.innerText,parsed_date=luxon.DateTime.fromISO(date),null!=parsed_date.invalid&&(parsed_date=luxon.DateTime.fromSQL(date)),null!=parsed_date.invalid&&(parsed_date=luxon.DateTime.fromHTML(date)),e.innerHTML=parsed_date.toFormat(TIMESTAMP_FORMAT)}))</script>
+<script>lucide.createIcons({attrs:{class:["svg-icon"]}})</script>
+</body>
+</html>

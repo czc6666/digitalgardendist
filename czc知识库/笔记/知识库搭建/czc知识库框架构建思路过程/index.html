@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>czc知识库框架构建思路过程</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<script async type="module">import mermaid from"https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"</script>
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js" integrity="sha512-hpZ5pDCF2bRCweL5WoA0/N1elet1KYL5mx3LP555Eg/0ZguaHawxNvEjF6O3rufAChs16HVNhEc6blF/rZoowQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/plugins/autoloader/prism-autoloader.min.js" integrity="sha512-sv0slik/5O0JIPdLBCR2A3XDg/1U3WuDEheZfI/DI5n8Yqc3h5kjrnr46FGBNiUAJF7rE4LHKwQ/SoSLRKAxEA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script async src="https://cdn.jsdelivr.net/npm/lucide@0.115.0/dist/umd/lucide.min.js"></script>
+<script>window.addEventListener("load",(()=>{document.querySelectorAll(".callout").forEach((e=>{const t=getComputedStyle(e).getPropertyValue("--callout-icon"),l=t&&t.trim().replace(/^lucide-/,"");if(l){const t=e.querySelector(".callout-title");if(t){const e=document.createElement("div"),c=document.createElement("i");e.appendChild(c),c.setAttribute("icon-name",l),e.setAttribute("class","callout-icon"),t.insertBefore(e,t.firstChild)}}})),lucide.createIcons(),Array.from(document.querySelectorAll(".callout.is-collapsible")).forEach((e=>{e.querySelector(".callout-title").addEventListener("click",(t=>{e.classList.contains("is-collapsed")?e.classList.remove("is-collapsed"):e.classList.add("is-collapsed")}))}))}))</script>
+<script async src="https://fastly.jsdelivr.net/npm/force-graph@1.43.0/dist/force-graph.min.js"></script>
+<script async src="https://fastly.jsdelivr.net/npm/@alpinejs/persist@3.11.1/dist/cdn.min.js"></script>
+<script src="https://fastly.jsdelivr.net/npm/alpinejs@3.11.1/dist/cdn.min.js" async></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-okaidia.min.css" integrity="sha512-mIs9kKbaw6JZFfSuo+MovjU+Ntggfoj8RwAmJbVXQ5mkAX5LlgETQEweFPI18humSPHymTb5iikEOKWF7I8ncQ==" crossorigin="anonymous" referrerpolicy="no-referrer" async>
+<script src="https://fastly.jsdelivr.net/npm/whatwg-fetch@3.6.2/dist/fetch.umd.min.js" crossorigin="anonymous" referrerpolicy="no-referrer" async></script>
+<link href="/styles/digital-garden-base.css" rel="stylesheet">
+<link href="/styles/obsidian-base.css" rel="stylesheet">
+<link href="/styles/_theme.d92311c2.css" rel="stylesheet">
+<link href="/styles/custom-style.css" rel="stylesheet">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<style></style>
+</head>
+<body class="theme-dark markdown-preview-view markdown-rendered markdown-preview-section">
+<nav class="navbar">
+<div class="navbar-inner">
+<a href="/" style="text-decoration:none">
+<h1 style="margin:15px!important">Digital Garden</h1>
+</a>
+</div>
+</nav>
+<main class="content cm-s-obsidian">
+<header>
+<div class="header-meta">
+</div>
+</header>
+<p>本文是古代的东西了，这篇文章现在和我笔记没有多少关系了</p>
+<p>原始的思路<br>
+下面的内容可以全部作废 了呀，现在大变样了啊啊啊</p>
+<hr>
+<h1 id="总体框架" tabindex="-1">总体框架</h1>
+<p><a href="https://metactrl.com/userguide/?app=onesync" target="_blank" class="external-link">onesync用户手册</a></p>
+<pre class="mermaid">graph LR;
+总库-->czc知识库;
+总库-->Zotero;
+总库-->Books;</pre><p>20231219</p>
+<p>根目录为czc的知识库（新建文件夹即可）<br>
+czc知识库从czc个人OneDrive中创建<strong>目录联接</strong>到新库位置<br>
+Zotero也是由<strong>目录联接</strong>，源文件在用学校教育邮箱注册的OneDrive中<br>
+使用mklink /j命令创建<strong>目录联接</strong>到本地文件夹，再用obsidian（typora一样）打开这个知识库<br>
+目录联接构建好的知识库复制走会全部文件都复制，复制品就是不带目录链接的版本，彻底融合版</p>
+<p>命令写成脚本了在czc知识库.重构文件夹里</p>
+<p>原先直接联接出根目录，在联接后的目录里联接zotero，这样实际联接位置是czc知识库源目录的位置，也就是OneDrive会上传到2个g的zotero文件库</p>
+<p>临时：<br>
+现在总库大小就2.多g，直接全放个人网盘好了，这样手机也能看文献，那么在这个框架基础上，在个人OneDrive中联接个zotero，手机中直接把onesyncfiles作为总库文件夹，手机上就手动更新配置文件<br>
+<a href="obsidian.md" target="_blank" class="external-link">obsidian</a></p>
+<p>20231220</p>
+<p>zotero库中把所有电子书移出来（大幅减小空间），用教育OneDrive同步，知识库和文献用个人zotero同步，另外两个onedrive都移动到c盘根目录</p>
+<p>三个源目录：</p>
+<pre><code>C:\OneDrive\OneSyncFiles\czc知识库
+
+C:\OneDrive\OneSyncFiles\Zotero
+
+C:\OneDrive - mail.jxust.edu.cn\Books
+</code></pre>
+<p>20231220-2<br>
+nonono<br>
+book占的大，但是书也不会很多，所以现在5gonedrive勉强够用，不够用再去用b站的方法扩容10g（已经去淘宝买了10g邀请扩容，现在有15g了）<br>
+so，<br>
+之前的框架不用了，直接三个源都放一起用onedrive同步成一个大知识库</p>
+<p>20231221<br>
+总结一下手机新设备快速构建方法：<br>
+下载onesync登个人账号，同步到本地文件夹<br>
+下载obsidian打开文件夹，ok</p>
+<h1 id="为什么这么干？：" tabindex="-1">为什么这么干？：</h1>
+<p>尝试过onenote、语雀、notion、印象笔记、wolai、typora、最后发现了obsidian，各有优缺点，最终选择obsidian，<a href="%E5%81%9A%E7%AC%94%E8%AE%B0%E5%B7%A5%E5%85%B7%E5%AF%B9%E6%AF%94%E6%94%B6%E9%9B%86%20%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7%20%E8%BD%AF%E4%BB%B6%E7%BD%91%E7%AB%99%20OneNote%E3%80%81%E8%AF%AD%E9%9B%80%E3%80%81Notion%E3%80%81%E5%8D%B0%E8%B1%A1%E7%AC%94%E8%AE%B0.md" target="_blank" class="external-link">做笔记工具对比收集 使用技巧 软件网站 OneNote、语雀、Notion、印象笔记</a><br>
+我要实现所有设备都能同步，我发现了obsidian在Android上也能设文件夹为存储库。经过一天折腾，发现可行方案：<br>
+手机使用onesync（<font color="#de7802">只能授权个人账户</font>，教育邮箱账户不行）同步czc的存储库到手机目录，用obsidian手机版识别目录并打开<br>
+电脑使用两个OneDrive账户同步两个源文件，再用目录链接方法构建本地文件夹内的知识库框架</p>
+<h1 id="未来可能遇到的问题" tabindex="-1">未来可能遇到的问题</h1>
+<p>OneDrive教育版研究生毕业后可能过期是用不了，但是个人OneDrive的10g还在，到时候可以用百度网盘的同步文件功能在电脑上同步zotero（反正<font color="#de7802">手机上的百度网盘也不支持同步到本地</font>）<br>
+今天他妈研究了一晚上<br>
+20231221<br>
+问题不存在了，onedrive搞到了15g，一直用，如果将来会超容量再拆分知识库</p>
+<h1 id="之前碰到的问题" tabindex="-1">之前碰到的问题</h1>
+<p>onesync无法连接到Microsoft OneDrive账户<br>
+typora转obsidian后图片不识别问题：斜杠是反过来的（linux形式）<br>
+百度网盘无法同步到手机本地，可以在百度网盘app里看md文件<br>
+OneDrive无法同步到手机本地，甚至没法再软件内查看<br>
+文件路径组织问题（相对路径绝对路径）（so，现在用typora打开的问题应该只有图片不识别，需要手动替换斜杠方向）</p>
+<h1 id="知识库还想改进的地方" tabindex="-1">知识库还想改进的地方</h1>
+<p>把现在OneNote的手动表格实现日程功能搬过来？但是这里是markdown，markdown如何实现？</p>
+</main>
+<script>window.location.hash&&document.getElementById(window.location.hash.slice(1)).classList.add("referred"),window.addEventListener("hashchange",(e=>{const t=e.oldURL.split("#");t[1]&&document.getElementById(t[1]).classList.remove("referred");const n=e.newURL.split("#");n[1]&&document.getElementById(n[1]).classList.add("referred")}),!1);const url_parts=window.location.href.split("#"),url=url_parts[0],referrence=url_parts[1];document.querySelectorAll(".cm-s-obsidian > *[id]").forEach((function(e){e.ondblclick=function(e){const t=url+"#"+e.target.id;navigator.clipboard.writeText(t)}}))</script>
+<script src="https://fastly.jsdelivr.net/npm/luxon@3.2.1/build/global/luxon.min.js"></script>
+<script defer="defer">TIMESTAMP_FORMAT="MMM dd, yyyy h:mm a",document.querySelectorAll(".human-date").forEach((function(e){date=e.getAttribute("data-date")||e.innerText,parsed_date=luxon.DateTime.fromISO(date),null!=parsed_date.invalid&&(parsed_date=luxon.DateTime.fromSQL(date)),null!=parsed_date.invalid&&(parsed_date=luxon.DateTime.fromHTML(date)),e.innerHTML=parsed_date.toFormat(TIMESTAMP_FORMAT)}))</script>
+<script>lucide.createIcons({attrs:{class:["svg-icon"]}})</script>
+</body>
+</html>

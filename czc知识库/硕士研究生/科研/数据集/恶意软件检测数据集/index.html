@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>恶意软件检测数据集</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<script async type="module">import mermaid from"https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"</script>
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js" integrity="sha512-hpZ5pDCF2bRCweL5WoA0/N1elet1KYL5mx3LP555Eg/0ZguaHawxNvEjF6O3rufAChs16HVNhEc6blF/rZoowQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/plugins/autoloader/prism-autoloader.min.js" integrity="sha512-sv0slik/5O0JIPdLBCR2A3XDg/1U3WuDEheZfI/DI5n8Yqc3h5kjrnr46FGBNiUAJF7rE4LHKwQ/SoSLRKAxEA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script async src="https://cdn.jsdelivr.net/npm/lucide@0.115.0/dist/umd/lucide.min.js"></script>
+<script>window.addEventListener("load",(()=>{document.querySelectorAll(".callout").forEach((e=>{const t=getComputedStyle(e).getPropertyValue("--callout-icon"),l=t&&t.trim().replace(/^lucide-/,"");if(l){const t=e.querySelector(".callout-title");if(t){const e=document.createElement("div"),c=document.createElement("i");e.appendChild(c),c.setAttribute("icon-name",l),e.setAttribute("class","callout-icon"),t.insertBefore(e,t.firstChild)}}})),lucide.createIcons(),Array.from(document.querySelectorAll(".callout.is-collapsible")).forEach((e=>{e.querySelector(".callout-title").addEventListener("click",(t=>{e.classList.contains("is-collapsed")?e.classList.remove("is-collapsed"):e.classList.add("is-collapsed")}))}))}))</script>
+<script async src="https://fastly.jsdelivr.net/npm/force-graph@1.43.0/dist/force-graph.min.js"></script>
+<script async src="https://fastly.jsdelivr.net/npm/@alpinejs/persist@3.11.1/dist/cdn.min.js"></script>
+<script src="https://fastly.jsdelivr.net/npm/alpinejs@3.11.1/dist/cdn.min.js" async></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-okaidia.min.css" integrity="sha512-mIs9kKbaw6JZFfSuo+MovjU+Ntggfoj8RwAmJbVXQ5mkAX5LlgETQEweFPI18humSPHymTb5iikEOKWF7I8ncQ==" crossorigin="anonymous" referrerpolicy="no-referrer" async>
+<script src="https://fastly.jsdelivr.net/npm/whatwg-fetch@3.6.2/dist/fetch.umd.min.js" crossorigin="anonymous" referrerpolicy="no-referrer" async></script>
+<link href="/styles/digital-garden-base.css" rel="stylesheet">
+<link href="/styles/obsidian-base.css" rel="stylesheet">
+<link href="/styles/_theme.d92311c2.css" rel="stylesheet">
+<link href="/styles/custom-style.css" rel="stylesheet">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<style></style>
+</head>
+<body class="theme-dark markdown-preview-view markdown-rendered markdown-preview-section">
+<nav class="navbar">
+<div class="navbar-inner">
+<a href="/" style="text-decoration:none">
+<h1 style="margin:15px!important">Digital Garden</h1>
+</a>
+</div>
+</nav>
+<main class="content cm-s-obsidian">
+<header>
+<div class="header-meta">
+</div>
+</header>
+<p>我的研究方向事安卓恶意软件检测，所以我说的恶意软件检测大多数情况下默认指安卓恶意软件检测（如果是windows、物联网恶意软件我会特别说明）</p>
+<p>恶意软件检测这个研究方向的数据集和常规的深度学习应用研究方向（例如入侵检测、apt检测）基本采用标准数据集来进行科研工作不同。<br>
+恶意软件检测的数据集大多数论文都是自己构建，从各种公开良性、恶意的apk网站或者apk数据集网站下载并组合成自己的数据集。</p>
+<p>所以构建自己的数据集是大部分人的科研第一步</p>
+<h1 id="apk" tabindex="-1">目前所知的恶意软件检测的公开apk数据集和网站</h1>
+<h2 id="drebin" tabindex="-1">Drebin</h2>
+<ul>
+<li>drebin（恶意apk）
+<ul>
+<li>数据集内容：安卓恶意软件5000个（也有良性apk，但是大多数人用的少）</li>
+<li>apk收集时间：2010 年 8 月至 2012 年 10 月
+<ul>
+<li>2012 好老的数据集（但是经典，基本是个论文都用）</li>
+</ul>
+</li>
+<li>创造者：Arp et al.</li>
+<li>drebin压缩包解压密码：infected</li>
+<li>大小：5.05 GB（拷给我的文件大小）</li>
+<li><a href="https://drebin.mlsec.org/" target="_blank" class="external-link">The Drebin Dataset</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="cic-mal-droid2020" tabindex="-1">CIC-MalDroid2020</h2>
+<ul>
+<li>CIC-MalDroid2020：（恶意+良性apk）
+<ul>
+<li>apk收集时间：2017年12月-2018年12月</li>
+<li>官网的介绍：
+<ul>
+<li>我们设法从多个来源收集了超过 17,341 个 Android 样本，包括 VirusTotal 服务、Contagio 安全博客、AMD、MalDozer 以及最近研究贡献使用的其他数据集（论文中引用了这些来源）。我们提供了一个新的 Android 恶意软件数据集，即 CICMalDroid 2020，它具有以下四个属性：</li>
+</ul>
+<ol>
+<li><strong>大</strong>。它拥有超过 17,341 个 Android 样本。</li>
+<li><strong>最近</strong>。它包括 2018 年之前的最新和复杂的 Android 示例。</li>
+<li><strong>多样化</strong>。它包含涵盖五个不同类别的样本：广告软件、银行恶意软件、SMS 恶意软件、风险软件和良性软件</li>
+<li><strong>全面</strong>。与公开可用的数据集相比，它包括最完整的捕获静态和动态特征。</li>
+</ol>
+</li>
+<li>官方网页：
+<ul>
+<li><a href="https://www.unb.ca/cic/datasets/maldroid-2020.html" target="_blank" class="external-link">MalDroid 2020 | Datasets | Research | Canadian Institute for Cybersecurity | UNB</a></li>
+<li><a href="http://205.174.165.80/CICDataset/MalDroid-2020/Dataset/" target="_blank" class="external-link">Index of /CICDataset/MalDroid-2020/Dataset</a></li>
+</ul>
+</li>
+<li>具体文件和下载链接：
+<ul>
+<li><a href="http://205.174.165.80/CICDataset/MalDroid-2020/Dataset/APKs/Adware.tar.gz" target="_blank" class="external-link">Adware.tar.gz</a> 2020-07-26 21:26 1.8G</li>
+<li><a href="http://205.174.165.80/CICDataset/MalDroid-2020/Dataset/APKs/Banking.tar.gz" target="_blank" class="external-link">Banking.tar.gz</a> 2020-07-27 21:36 3.6G</li>
+<li><a href="http://205.174.165.80/CICDataset/MalDroid-2020/Dataset/APKs/Benign.tar.gz" target="_blank" class="external-link">Benign.tar.gz</a> 2020-07-27 17:42 48G</li>
+<li><a href="http://205.174.165.80/CICDataset/MalDroid-2020/Dataset/APKs/Riskware.tar.gz" target="_blank" class="external-link">Riskware.tar.gz</a> 2020-07-26 21:52 16G</li>
+<li><a href="http://205.174.165.80/CICDataset/MalDroid-2020/Dataset/APKs/SMS.tar.gz" target="_blank" class="external-link">SMS.tar.gz</a> 2020-07-26 21:21 1.2G</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="cic-and-mal2017" tabindex="-1">CIC-AndMal2017</h2>
+<ul>
+<li>CIC-AndMal2017（恶意apk）
+<ul>
+<li>大小：1.50 GB（拷给我的文件大小）</li>
+<li><a href="https://www.unb.ca/cic/datasets/andmal2017.html" target="_blank" class="external-link">Android Malware 2017 | Datasets | Research | Canadian Institute for Cybersecurity | UNB</a></li>
+<li>分类
+<ul>
+<li>Adware</li>
+<li>Ransomware（勒索软件）</li>
+<li>Scareware（安全软件）</li>
+<li>SMS Malware（短信恶意软件）</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="virus-share" tabindex="-1">VirusShare</h2>
+<ul>
+<li>VirusShare（恶意apk）
+<ul>
+<li>这个数据集提供大量恶意apk，官网下载需要申请且慢，有人将其做成了BT种子下载链接（建议用BT下载）</li>
+<li>需要发邮件申请才能下载：<a href="https://virusshare.com/" target="_blank" class="external-link">VirusShare.com</a></li>
+<li>一个收集VirusShare样本torrent的网站：<a href="http://71.105.224.114:6969/" target="_blank" class="external-link">VirusShare BitTorrent Tracker: 5.7.6.0/2.1.4</a></li>
+<li>自己申请到的账户：<a class="internal-link is-unresolved" href="/404" target="">VirusShare申请账户</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="androzoo" tabindex="-1">androzoo</h2>
+<ul>
+<li>androzoo
+<ul>
+<li>介绍：收集了上千万个apk，每个apk都经过多种反病毒引擎扫描并记录报毒引擎个数。作为自己的良性apk数据集的组成部分is very good</li>
+<li><a href="https://androzoo.uni.lu/" target="_blank" class="external-link">androzoo官网</a></li>
+<li>下载需要发邮件申请（很简单也很快）</li>
+<li>下载方法：官网给了
+<ul>
+<li>先在<a href="https://androzoo.uni.lu/lists" target="_blank" class="external-link">androzoo/lists</a>下载latest.csv（包含androzoo的所有apk索引和具体信息的列表文件（因为apk数量巨大，用excel打开不能完全显示，建议自己写程序筛选子集查看））</li>
+<li>根据apk的sha256组合你申请到的key组合成http下载链接用于下载apk</li>
+<li>当然：<strong>以上步骤我自己写了个程序实现，只需指定latest.csv位置和key值，再修改apk筛选条件即可实现下载</strong>，→<a href="https://github.com/czc6666/AndroZoo_Download" target="_blank" class="external-link">GitHub - czc6666/AndroZoo_Download: AndroZoo数据集下载程序 筛选超大csv文件 制作下载链接 多线程下载 apk文件 安卓恶意代码数据集</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="amd" tabindex="-1">AMD</h2>
+<ul>
+<li>AMD
+<ul>
+<li>上面那些够用了所以这个数据集没怎么看</li>
+</ul>
+</li>
+</ul>
+<h1 id="czc" tabindex="-1"><a class="internal-link" target="" data-note-icon="undefined" href="/czc知识库/硕士研究生/科研/数据集/自己的数据集/">自己的数据集</a></h1>
+<div class="transclusion internal-embed is-loaded"><a class="markdown-embed-link" href="/czc/////" aria-label="Open link"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a><div class="markdown-embed">
+<ul>
+<li>CIC2020数据子集3800个apk</li>
+<li>数据集2012年（2010-2012）
+<ul>
+<li>drebin的恶意软件（5000）+ AndroZoo 良性软件（8000）</li>
+</ul>
+</li>
+<li>数据集2013-2016
+<ul>
+<li>VirusShare 2016年 恶意软件 + 2016年 AndroZoo 良性软件</li>
+</ul>
+</li>
+<li>数据集2020年（2017-2018）
+<ul>
+<li>CICMalware2020 恶意软件、良性软件</li>
+</ul>
+</li>
+<li>数据集最新2019-2023
+<ul>
+<li>VirusShare 意软件 +AndroZoo 良性软件</li>
+<li>这个子集上传百度网盘了<br>
+链接:<a href="https://pan.baidu.com/s/1A8-67HqnfnMR-30acXYWxQ" target="_blank" class="external-link">https://pan.baidu.com/s/1A8-67HqnfnMR-30acXYWxQ</a> <br>
+提取码:48pz</li>
+</ul>
+</li>
+</ul>
+<hr>
+<hr>
+<p><a class="internal-link" target="" data-note-icon="undefined" href="/czc知识库/硕士研究生/科研/数据集/恶意软件检测数据集/">恶意软件检测数据集</a>介绍</p>
+<hr>
+<p>VirusShare下载了种子文件，从种子文件下载了部分apk数据集</p>
+<p>使用筛选恶意软件检测引擎检测数=0（写一个筛选条件公式和下载伪代码）</p>
+</div></div>
+<h1 id="其他研究方向" tabindex="-1">其他研究方向</h1>
+<h2 id="cic-ids-2017" tabindex="-1">CIC IDS 2017</h2>
+<ul>
+<li>入侵检测数据集
+<ul>
+<li>类型：网络异常流量</li>
+<li>官网有5天的流量数据，大概有50g，为什么这个数据集只有1.5g</li>
+<li><a href="https://www.unb.ca/cic/datasets/ids-2017.html" target="_blank" class="external-link">CIC-IDS2017介绍，加拿大网络安全研究所</a></li>
+<li>找的百度网盘链接：<a href="https://pan.baidu.com/s/13mp8W6spfA6jBFTrhUvtNA?pwd=9857" target="_blank" class="external-link">百度网盘 请输入提取码</a></li>
+<li>官网下载链接：<a href="http://205.174.165.80/CICDataset/CIC-IDS-2017/Dataset/" target="_blank" class="external-link">Index of /CICDataset/CIC-IDS-2017/Dataset</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="czc-virus-mnist-virus-mnist" tabindex="-1"><a class="internal-link" target="" data-note-icon="undefined" href="/czc知识库/硕士研究生/科研/数据集/其他/Virus-MNIST：基准恶意软件数据集 （图像分类数据集）/">Virus-MNIST：基准恶意软件数据集 （图像分类数据集）</a></h2>
+</main>
+<script>window.location.hash&&document.getElementById(window.location.hash.slice(1)).classList.add("referred"),window.addEventListener("hashchange",(e=>{const t=e.oldURL.split("#");t[1]&&document.getElementById(t[1]).classList.remove("referred");const n=e.newURL.split("#");n[1]&&document.getElementById(n[1]).classList.add("referred")}),!1);const url_parts=window.location.href.split("#"),url=url_parts[0],referrence=url_parts[1];document.querySelectorAll(".cm-s-obsidian > *[id]").forEach((function(e){e.ondblclick=function(e){const t=url+"#"+e.target.id;navigator.clipboard.writeText(t)}}))</script>
+<script src="https://fastly.jsdelivr.net/npm/luxon@3.2.1/build/global/luxon.min.js"></script>
+<script defer="defer">TIMESTAMP_FORMAT="MMM dd, yyyy h:mm a",document.querySelectorAll(".human-date").forEach((function(e){date=e.getAttribute("data-date")||e.innerText,parsed_date=luxon.DateTime.fromISO(date),null!=parsed_date.invalid&&(parsed_date=luxon.DateTime.fromSQL(date)),null!=parsed_date.invalid&&(parsed_date=luxon.DateTime.fromHTML(date)),e.innerHTML=parsed_date.toFormat(TIMESTAMP_FORMAT)}))</script>
+<script>lucide.createIcons({attrs:{class:["svg-icon"]}})</script>
+</body>
+</html>

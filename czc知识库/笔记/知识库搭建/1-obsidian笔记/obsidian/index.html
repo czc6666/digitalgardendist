@@ -1,0 +1,310 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>obsidian</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<script async type="module">import mermaid from"https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"</script>
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js" integrity="sha512-hpZ5pDCF2bRCweL5WoA0/N1elet1KYL5mx3LP555Eg/0ZguaHawxNvEjF6O3rufAChs16HVNhEc6blF/rZoowQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/plugins/autoloader/prism-autoloader.min.js" integrity="sha512-sv0slik/5O0JIPdLBCR2A3XDg/1U3WuDEheZfI/DI5n8Yqc3h5kjrnr46FGBNiUAJF7rE4LHKwQ/SoSLRKAxEA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script async src="https://cdn.jsdelivr.net/npm/lucide@0.115.0/dist/umd/lucide.min.js"></script>
+<script>window.addEventListener("load",(()=>{document.querySelectorAll(".callout").forEach((e=>{const t=getComputedStyle(e).getPropertyValue("--callout-icon"),l=t&&t.trim().replace(/^lucide-/,"");if(l){const t=e.querySelector(".callout-title");if(t){const e=document.createElement("div"),c=document.createElement("i");e.appendChild(c),c.setAttribute("icon-name",l),e.setAttribute("class","callout-icon"),t.insertBefore(e,t.firstChild)}}})),lucide.createIcons(),Array.from(document.querySelectorAll(".callout.is-collapsible")).forEach((e=>{e.querySelector(".callout-title").addEventListener("click",(t=>{e.classList.contains("is-collapsed")?e.classList.remove("is-collapsed"):e.classList.add("is-collapsed")}))}))}))</script>
+<script async src="https://fastly.jsdelivr.net/npm/force-graph@1.43.0/dist/force-graph.min.js"></script>
+<script async src="https://fastly.jsdelivr.net/npm/@alpinejs/persist@3.11.1/dist/cdn.min.js"></script>
+<script src="https://fastly.jsdelivr.net/npm/alpinejs@3.11.1/dist/cdn.min.js" async></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-okaidia.min.css" integrity="sha512-mIs9kKbaw6JZFfSuo+MovjU+Ntggfoj8RwAmJbVXQ5mkAX5LlgETQEweFPI18humSPHymTb5iikEOKWF7I8ncQ==" crossorigin="anonymous" referrerpolicy="no-referrer" async>
+<script src="https://fastly.jsdelivr.net/npm/whatwg-fetch@3.6.2/dist/fetch.umd.min.js" crossorigin="anonymous" referrerpolicy="no-referrer" async></script>
+<link href="/styles/digital-garden-base.css" rel="stylesheet">
+<link href="/styles/obsidian-base.css" rel="stylesheet">
+<link href="/styles/_theme.d92311c2.css" rel="stylesheet">
+<link href="/styles/custom-style.css" rel="stylesheet">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<style></style>
+</head>
+<body class="theme-dark markdown-preview-view markdown-rendered markdown-preview-section">
+<nav class="navbar">
+<div class="navbar-inner">
+<a href="/" style="text-decoration:none">
+<h1 style="margin:15px!important">Digital Garden</h1>
+</a>
+</div>
+</nav>
+<main class="content cm-s-obsidian">
+<header>
+<div class="header-meta">
+</div>
+</header>
+<h1 id="obsidian" tabindex="-1">obsidian介绍</h1>
+<p>这是介绍。。。。。</p>
+<p>obsidian使用初期可以观摩学习别人的成品笔记库</p>
+<h1 id="obsidian-1" tabindex="-1">obsidian网上的乱七八糟教程</h1>
+<ul>
+<li>官方help:<a href="https://help.obsidian.md/Home" target="_blank" class="external-link">Home - Obsidian Help</a></li>
+<li><a href="https://publish.obsidian.md/help-zh" target="_blank" class="external-link">由此开始 - Obsidian 中文帮助 - Obsidian Publish</a></li>
+<li><a href="https://sspai.com/post/72697#!" target="_blank" class="external-link">回归 Obsidian 的纯与真，写给普通人的入门指南 - 少数派</a></li>
+<li><a href="https://sspai.com/post/72385#!" target="_blank" class="external-link">每日笔记、日程管理、工作复盘——这是我钻研出的 Obsidian 八般武艺 - 少数派</a></li>
+<li><a href="https://pkmer.cn/Pkmer-Docs/10-obsidian/obsidian%E7%A4%BE%E5%8C%BA%E6%8F%92%E4%BB%B6/templater/templater-obsidian/" target="_blank" class="external-link">PKMer_Obsidian 插件：Templater 可以替代核心模板插件的效率神器</a></li>
+<li><a href="https://pkmer.cn/Pkmer-Docs/10-obsidian/obsidian%E7%A4%BE%E5%8C%BA%E6%8F%92%E4%BB%B6/templater/templater%E6%8F%92%E4%BB%B6%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95%E6%A0%BC%E5%BC%8F/" target="_blank" class="external-link">PKMer_Templater 基本语法格式</a></li>
+<li>发现的一个很全面的obsidian基础教学视频， 学完这个完全够用了。<a href="https://www.bilibili.com/video/BV16z4y1A7W9" target="_blank" class="external-link">【从零开始学OB】—— Obsidian 幻灯片_哔哩哔哩_bilibili</a></li>
+<li>工作流：<a href="https://mp.weixin.qq.com/s?__biz=Mzg5Njk3MDUyMQ==&amp;mid=2247487410&amp;idx=1&amp;sn=087665f876e3accf69707feefe0828b5&amp;source=41#wechat_redirect" target="_blank" class="external-link">zotero+obsidian+dataview助力文献阅读 (qq.com)</a></li>
+<li>一个看着很漂亮的个人主页现成方案，太太太太太太太太太太复杂了，学不来学不来，<a href="https://github.com/Rainbell129/Obsidian-Homepage?tab=readme-ov-file" target="_blank" class="external-link">GitHub - Rainbell129/Obsidian-Homepage: A dashboard for your obsidian vault.</a>，，<strong>不如现在的border主题一个主题来的好看</strong></li>
+<li><a href="https://publish.obsidian.md/chinesehelp/08+%E9%AB%98%E9%98%B6%E6%95%99%E7%A8%8B/%E9%AB%98%E9%98%B6%E6%95%99%E7%A8%8B%EF%BC%88MOC%EF%BC%89" target="_blank" class="external-link">高阶教程（MOC） - Obsidian中文教程 - Obsidian Publish</a></li>
+<li><strong>发布obsidian到互联网</strong>！：<a href="https://www.bilibili.com/video/BV1HF411173m" target="_blank" class="external-link">【Obsidian】人人都可以构建的 属于自己的独立网站 | Obsidian 发布、数字花园打造 | 渐进创作_哔哩哔哩_bilibili</a></li>
+</ul>
+<h1 id="主题相关" tabindex="-1">主题相关</h1>
+<div class="transclusion internal-embed is-loaded"><a class="markdown-embed-link" href="/czc///1-obsidian/obsidian-border/" aria-label="Open link"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a><div class="markdown-embed">
+<p><a href="https://github.com/Akifyss/obsidian-border" target="_blank" class="external-link">GitHub - Akifyss/obsidian-border: A theme for obsidian.md</a></p>
+<h1 id="strong-border-strong" tabindex="-1"><strong>border</strong></h1>
+</div></div>
+<hr>
+<div class="callout is-collapsible is-collapsed" data-callout="quote"><div class="callout-title"><div class="callout-title-inner"> 现在的主题的每一级标题颜色</div><div class="callout-fold"><i icon-name="chevron-down"></i></div></div>
+<div class="callout-content">
+<p>
+</p><h1 id="1" tabindex="-1">1</h1>
+<h2 id="2" tabindex="-1">2</h2>
+<h3 id="3" tabindex="-1">3</h3>
+<h4 id="4" tabindex="-1">4</h4>
+<h5 id="5" tabindex="-1">5</h5>
+<h6 id="6" tabindex="-1">6</h6>
+<p></p></div></div>
+<h1 id="markdown" tabindex="-1">markdown链接</h1>
+<p><a class="internal-link" target="" data-note-icon="undefined" href="/czc知识库/笔记/知识库搭建/1-obsidian笔记/markdown的链接/">markdown的链接</a></p>
+<h1 id="wiki-strong-strong" tabindex="-1">wiki链接（<strong>双链</strong>（双向链接））</h1>
+<p><a class="internal-link" target="" data-note-icon="undefined" href="/czc知识库/笔记/知识库搭建/双向链接/">双向链接</a></p>
+<h1 id="typora-base-on-mark-a-href-typora-e4-bd-bf-e7-94-a8-e7-ac-94-e8-ae-b0-md-target-blank-class-external-link-typora-a-a-href-http-xn-uvz335a-md-target-blank-class-external-link-md-a-so-typora-typora-win-explorer-strong-obsidian-strong" tabindex="-1">typora能用的在这都能用（base on mark<a href="typora%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0.md" target="_blank" class="external-link">typora使用笔记</a><a href="http://xn--uvz335a.md" target="_blank" class="external-link">笔记.md</a>)，so，在这也尽量照顾一下typora，玩意哪天想用回typora和win的explorer来管理知识库了呢。。。。。。。。。（现在基本确定不可能了，<strong>obsidian无敌</strong>）</h1>
+<h1 id="零零散散" tabindex="-1">零零散散</h1>
+<ul>
+<li>标题不要放链接，</li>
+<li>可以输入/输入复制obsidian链接，到电脑里去创建快捷方式填这个链接，可以从快捷方式打开这个页面</li>
+<li>添加附件（图片）保存位置，设置里改成”到指定的附件文件夹“，下面设置“0-附件/附件”（现在不在这放了，搬家了）</li>
+<li>obsidian链接附件的斜杠是正斜杠（typora是反斜杠（因为in windows））typora可以识别正斜杠，so，一律用正斜杠。并且文件链接格式为基于当前笔记的相对路径）</li>
+<li>代码显示格式：用前后一个点：`&lt;这里写代码&gt;`。。长代码用三个点````</li>
+<li>酷比线条：用大于号，效果看下面↓</li>
+</ul>
+<blockquote>
+<p>nb</p>
+</blockquote>
+<ul id="75d4af">
+<li>双链前加感叹号，预览内容，传统markdown格式也可以<br>
+![[]]</li>
+<li>在暗色模式下pdf是否颜色反转和主题有关，暗色的pdf看得好难受，硬转黑色，rgb颜色有色散（nonono，可以手动设置，我现在用的哪个Bluexxx的主题）</li>
+<li>注释语法：前后两个感叹号（写错了？百分号？），阅读模式不显示注释</li>
+<li>控制图片大小：在链接左边方括号内加“|”(|左边没有东西就可以不加|，直接输入数字)，然后写长宽像素，可以只写一个，会按比例缩放到这个像素长度
+<ul>
+<li><picture src="/img/user/czc%E7%9F%A5%E8%AF%86%E5%BA%93/%E6%9D%82%E4%B8%83%E6%9D%82%E5%85%AB/9-%E9%99%84%E4%BB%B6/%E9%99%84%E4%BB%B6/%E4%B8%BE%E4%B8%AA%E6%A0%97%E5%AD%90.png" alt="50"><source media="(max-width:480px)" srcset="/img/optimized/tOKv5hqExK-500.webp" type="image/webp">
+<source media="(max-width:480px)" srcset="/img/optimized/tOKv5hqExK-500.jpeg">
+<source media="(max-width:1920px)" srcset="/img/optimized/tOKv5hqExK-700.webp" type="image/webp"><source media="(max-width:1920px)" srcset="/img/optimized/tOKv5hqExK-700.jpeg"><img class="" src="/img/user/czc%E7%9F%A5%E8%AF%86%E5%BA%93/%E6%9D%82%E4%B8%83%E6%9D%82%E5%85%AB/9-%E9%99%84%E4%BB%B6/%E9%99%84%E4%BB%B6/%E4%B8%BE%E4%B8%AA%E6%A0%97%E5%AD%90.png" alt="50" width=""></picture>ng)</li>
+</ul>
+</li>
+<li>核心扩展-工作区：设置工作区，好用</li>
+<li>obsidian支持浏览器一样的快捷键</li>
+<li>代办框框：
+<ul class="task-list">
+<li class="task-list-item"><input type="checkbox" id="cbx_0" checked="true" disabled="true"><label for="cbx_0"> 1</label></li>
+</ul>
+</li>
+<li>关于html嵌入mar<a href="markdown%E4%B8%AD%E5%B5%8C%E5%85%A5html%E6%A0%BC%E5%BC%8F%E6%96%87%E6%9C%AC%20obsidian.md" target="_blank" class="external-link">markdown中嵌入html格式文本 obsidian</a>![<a href="obsidian%20%E6%96%87%E4%BB%B6%E9%93%BE%E6%8E%A5%E5%BC%95%E7%94%A8%E5%9D%97.md" target="_blank" class="external-link">子/obsidian 文件链接引用块</a><a href="http://97.md" target="_blank" class="external-link">97.md</a>)</li>
+<li>
+<h2 id="关于块标记" tabindex="-1">关于块标记</h2>
+</li>
+</ul>
+<p>- ↑上面这个是块的标记，用于其他文件链接到这个块</p>
+<h1 id="标签功能：（超实用）" tabindex="-1">标签功能：（超实用）</h1>
+<p><a class="tag" onclick="toggleTagSearch(this)" data-content="#obsidian技巧/标签">#obsidian技巧/标签</a></p>
+<ul>
+<li>注意可以用嵌套标签奥：such as：#标签/次标签/次次标签</li>
+<li>标签的左右须要有<strong>空格</strong>，才能识别成标签</li>
+<li>用标签插件（Tag Wrangler）可以批量修改插件包括嵌套标签-<a href="https://zhuanlan.zhihu.com/p/587111398" target="_blank" class="external-link">Tag Wrangler——快速管理 Obsidian 标签 - 知乎 (zhihu.com)</a></li>
+</ul>
+<h1 id="callout" tabindex="-1">callout功能总结：（主页神器啊）</h1>
+<p><a class="tag" onclick="toggleTagSearch(this)" data-content="#obsidian技巧/collout">#obsidian技巧/collout</a> b站学的：<a href="https://www.bilibili.com/video/BV16z4y1A7W9" target="_blank" class="external-link">【从零开始学OB】—— Obsidian 幻灯片_哔哩哔哩_bilibili</a>。<br>
+直接展示：（<strong>可以直接右键插入！！！！！</strong>）<br>
+格式：<code>&gt;[!note] &lt;文本&gt;</code>（这个note叫info类型）<br>
+（下面有扩展(callout manager)可以自定义callout，所以，在扩展里可以看到更全的各种类型列表）<br>
+info类型不一样，前面的icon也不一样，，-号是可折叠默认折叠，+号是可折叠默认展开</p>
+<div class="callout is-collapsible is-collapsed" data-callout="note" data-callout-metadata="right"><div class="callout-title"><div class="callout-title-inner"> ss<br></div><div class="callout-fold"><i icon-name="chevron-down"></i></div></div>
+<div class="callout-content">
+<p>
+s<br>
+s<br>
+s<br>
+s</p>
+</div></div>
+<div class="callout is-collapsible is-collapsed" data-callout="quote"><div class="callout-title"><div class="callout-title-inner"> 演示：里面列出了各种info类型</div><div class="callout-fold"><i icon-name="chevron-down"></i></div></div>
+<div class="callout-content">
+<p>
+</p><div class="callout is-collapsible is-collapsed" data-callout="tip"><div class="callout-title"><div class="callout-title-inner"> !tip</div><div class="callout-fold"><i icon-name="chevron-down"></i></div></div></div>
+<div class="callout" data-callout="abstract"><div class="callout-title"><div class="callout-title-inner">Abstract</div></div></div>
+<div class="callout" data-callout="example"><div class="callout-title"><div class="callout-title-inner">Example</div></div></div>
+<div class="callout is-collapsible is-collapsed" data-callout="failure"><div class="callout-title"><div class="callout-title-inner"> !failure</div><div class="callout-fold"><i icon-name="chevron-down"></i></div></div></div>
+<div class="callout is-collapsible is-collapsed" data-callout="danger"><div class="callout-title"><div class="callout-title-inner"> !danger</div><div class="callout-fold"><i icon-name="chevron-down"></i></div></div></div>
+<div class="callout is-collapsible is-collapsed" data-callout="bug"><div class="callout-title"><div class="callout-title-inner"> !bug</div><div class="callout-fold"><i icon-name="chevron-down"></i></div></div></div>
+<div class="callout" data-callout="note"><div class="callout-title"><div class="callout-title-inner"> !note 不写标题，会自动调用标签名</div></div></div>
+<div class="callout" data-callout="todo"><div class="callout-title"><div class="callout-title-inner">Todo</div></div></div>
+<div class="callout" data-callout="info"><div class="callout-title"><div class="callout-title-inner">Info</div></div></div>
+<div class="callout" data-callout data-callout-metadata="乱写标签，图标和note一样"><div class="callout-title"><div class="callout-title-inner"></div></div></div>
+<div class="callout is-collapsible is-collapsed" data-callout="quote"><div class="callout-title"><div class="callout-title-inner"> !quote 这是一个可折叠的，开启可折叠，不会一下就点进编辑页面变得乱七八糟</div><div class="callout-fold"><i icon-name="chevron-down"></i></div></div></div>
+<blockquote>
+<p><picture src="/img/user/czc%E7%9F%A5%E8%AF%86%E5%BA%93/%E6%9D%82%E4%B8%83%E6%9D%82%E5%85%AB/9-%E9%99%84%E4%BB%B6/%E9%99%84%E4%BB%B6/obsidian%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0_image-1.png" alt="200"><source media="(max-width:480px)" srcset="/img/optimized/YKdPl0RpvE-303.webp" type="image/webp">
+<source media="(max-width:480px)" srcset="/img/optimized/YKdPl0RpvE-303.jpeg">
+<img class="" src="/img/user/czc%E7%9F%A5%E8%AF%86%E5%BA%93/%E6%9D%82%E4%B8%83%E6%9D%82%E5%85%AB/9-%E9%99%84%E4%BB%B6/%E9%99%84%E4%BB%B6/obsidian%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0_image-1.png" alt="200" width=""></picture>9-附件/附件/obsidian使用笔记_image-1.png)</p>
+</blockquote>
+</div></div>
+<p><picture src="/img/user/czc%E7%9F%A5%E8%AF%86%E5%BA%93/%E6%9D%82%E4%B8%83%E6%9D%82%E5%85%AB/9-%E9%99%84%E4%BB%B6/%E9%99%84%E4%BB%B6/obsidian%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0_image-1.png" alt="200"><source media="(max-width:480px)" srcset="/img/optimized/YKdPl0RpvE-303.webp" type="image/webp">
+<source media="(max-width:480px)" srcset="/img/optimized/YKdPl0RpvE-303.jpeg">
+<img class="" src="/img/user/czc%E7%9F%A5%E8%AF%86%E5%BA%93/%E6%9D%82%E4%B8%83%E6%9D%82%E5%85%AB/9-%E9%99%84%E4%BB%B6/%E9%99%84%E4%BB%B6/obsidian%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0_image-1.png" alt="200" width=""></picture></p>
+<h1 id="创建脚注" tabindex="-1">创建脚注</h1>
+<p>创建脚注，再方括号（[^\1]）添加插入符号和标识符，标识符可以是数字和单词，标识符仅将脚注参考与脚注本身相关联，在输出中，脚注按顺序自动编号，上面的“1”知识标识符，不是编号<br>
+例如：脚注：<br>
+你好<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup><br>
+你不好<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup></p>
+<p>脚注内容（注意要有冒号，并且前面有空行）：</p>
+<h1 id="typora-me-a-href-typora-e4-bd-bf-e7-94-a8-e7-ac-94-e8-ae-b0-md-e7-94-bb-e5-9-b-be-target-blank-class-external-link-typora-a-md" tabindex="-1">画流程图思维导图，来自typora，me<a href="typora%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0.md#%E7%94%BB%E5%9B%BE" target="_blank" class="external-link">typora 画图</a>md#画图)</h1>
+<h1 id="插入各种挂件（猫，钟，倒计时）" tabindex="-1">插入各种挂件（猫，钟，倒计时）</h1>
+<p>在pkmer这个网站里的<a href="https://pkmer.cn/products/widget/widgetMarket/" target="_blank" class="external-link">挂件集市</a><br>
+注册了账号，密码是：A1.0bkquAA2</p>
+<h1 id="obsidian-2" tabindex="-1">obsidian的插件笔记</h1>
+<div class="transclusion internal-embed is-loaded"><a class="markdown-embed-link" href="/czc///1-obsidian/obsidian/" aria-label="Open link"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a><div class="markdown-embed">
+<p><a class="tag" onclick="toggleTagSearch(this)" data-content="#obsidian插件">#obsidian插件</a></p>
+<h1 id="waypoint" tabindex="-1">自动添加路标插件 waypoint</h1>
+<ul>
+<li>生成一个文件夹的目录树（实时更新）在一个文件中</li>
+<li><a href="https://www.bilibili.com/video/BV1zb421H71s" target="_blank" class="external-link">自动添加路标 Waypoint ｜ Obsidian神插件_哔哩哔哩_bilibili</a></li>
+<li>在文件夹下同名文件中<strong>手敲</strong> %% Waypoint %% 然后就能自动生成实时更新的目录树</li>
+<li>不能在知识库的根目录搞这个</li>
+</ul>
+<h1 id="远程多端同步插件" tabindex="-1">远程多端同步插件</h1>
+<ul>
+<li>remotely-save</li>
+</ul>
+<h1 id="dataview" tabindex="-1">热力图插件（基于dataview）：</h1>
+<ul>
+<li>Contribution Graph</li>
+</ul>
+<h1 id="dataview-1" tabindex="-1">实用小部件插件（基于dataview）：</h1>
+<ul>
+<li>Contribution Widget</li>
+</ul>
+<h1 id="未分类插件列表：" tabindex="-1">未分类插件列表：</h1>
+<ul>
+<li>
+<p>Paste image rename：自动重命名拖进来的图片</p>
+</li>
+<li>
+<p>clear unused images：清除笔记中不再使用的图像以节省空间</p>
+</li>
+<li>
+<p>quiet outline：更丰富的大纲，目录</p>
+</li>
+<li>
+<p>kanban：添加看板。例如3个: to do; doing; done</p>
+</li>
+<li>
+<p>mind map：目录自动生成思维导图</p>
+</li>
+<li>
+<p>commander：在任何你想要的地方位置添加命令按钮</p>
+</li>
+<li>
+<p>File Explorer Note Count：统计文件夹下的文件数量</p>
+</li>
+<li>
+<p>editing toolbar：添加文本编辑功能（类OneNote，会卡用下面的这个轻量级的编辑插件）</p>
+</li>
+<li>
+<p>cmenu：轻量级文本编辑（不会用）</p>
+</li>
+<li>
+<p>Icon Folder(iconize)：给文件夹换图标（自己在设置里下载图标）</p>
+</li>
+<li>
+<p>File Color：给文件夹上颜色（需要自己在设置里添加颜色）</p>
+</li>
+<li>
+<p>surfing：直接在obsidian里打开网页链接当浏览器用</p>
+</li>
+<li>
+<p>Obsidian42 - BRAT：Easily install a beta version of a plugin for testing. 装未发布的插件</p>
+</li>
+<li>
+<p>Bartender：允许重新排列状态栏和侧边栏中的元素，<a href="https://blog.csdn.net/m0_72265583/article/details/132005345" target="_blank" class="external-link">Bartender插件+BRAT插件——实现Obsidian目录文件手动排序</a></p>
+</li>
+<li>
+<p><strong>dataview</strong>：<a href="dataview%E6%8F%92%E4%BB%B6%E6%95%99%E7%A8%8B%E7%AC%94%E8%AE%B0.md" target="_blank" class="external-link">dataview教程</a>，最大的好处是自动更新，减少手动改的麻烦，数据库查询语法，难</p>
+</li>
+<li>
+<p>Day Planner：使用增强的时间块功能，从Markdown笔记中的任务列表中规划一天。（精确每小时安排，用不上，不用）</p>
+</li>
+<li>
+<p>style setting：设置当前主题的参数，标题颜色等等。（编辑主题的css文件）</p>
+</li>
+<li>
+<p><strong>banners</strong>：开头<strong>自定义图片页面背景</strong>（原理也是特殊语法写在页面前面，可能和其他头语法产生冲突（实测没有冲突，现在的ob会把头语法（yaml）显示成可视化的属性，编辑模式下看不了，切换阅读模式可以看图））（卡的乱七八糟，不用了他妈的）</p>
+<ul>
+<li><a href="https://pkmer.cn/Pkmer-Docs/10-obsidian/obsidian%E7%A4%BE%E5%8C%BA%E6%8F%92%E4%BB%B6/obsidian-banners/" target="_blank" class="external-link">PKMer_Obsidian 插件：Obsidian Banners 为你的笔记添加头图</a></li>
+<li></li>
+</ul>
+</li>
+<li>
+<p>Multi-Column Markdown：分栏，命令搜column插入就行（可配合dataview实现数据分栏可视化）</p>
+</li>
+<li>
+<p>Tag Wrangler：快速管理obsidian标签，<a href="https://zhuanlan.zhihu.com/p/587111398" target="_blank" class="external-link">Tag Wrangler——快速管理 Obsidian 标签 - 知乎 (zhihu.com)</a></p>
+</li>
+<li>
+<p>heat：日常活跃热力图，还没装，要写代码 <strong>垃坤</strong></p>
+</li>
+<li>
+<p>3d graph：3d显示关系图谱，很炫？</p>
+</li>
+<li>
+<p>pandoc：很强大的导出工具？我试试看，（要提前安装pandoc软件）配置方法：<a href="https://forum-zh.obsidian.md/t/topic/9626" target="_blank" class="external-link">在Obsidian中实现 Pandoc Plugin 的插件配置 - 经验分享 - Obsidian 中文论坛</a>，，狗屁，不能导出pdf？？？我直接卸载</p>
+</li>
+<li>
+<p>callout manager：自定义callout样式和看现有样式，无脑方便不敲代码（有问题）</p>
+</li>
+<li>
+<p>DB Folder：辅助dataview，给文件批量添加属性</p>
+</li>
+<li>
+<p>Contribution Graph：真正能用的<strong>热力图</strong>，Generate a interactive heatmap graph to visualize and track your productivity</p>
+</li>
+</ul>
+<h1 id="遇到问题去的解决方案插件" tabindex="-1">遇到问题去的解决方案插件</h1>
+<ul>
+<li>
+<p>Update Relative Links： - 移动文件的时候更新文件里的链接，重新按照相对路径写一遍链接</p>
+<ul>
+<li>ctrl+p：Update all relative links：刷新所有文件的链接</li>
+</ul>
+</li>
+<li>
+<p>Consistent attachments and links：（没试过）</p>
+<ul>
+<li>自动移动笔记附件并更新链接 - advanced URI：给每个文件附加一个唯一的UID，用这个来管理每个文件（创建文件链接代替obsidian原本的文件链接，原本的文件链接在文件数量很大以后修改文件，相关文件里的链接可能不会跟着修改）</li>
+</ul>
+</li>
+<li>
+<p>（废）obsidian-proxy-github-master：解决每次需要梯子才能访问商店的问题，obsidian网络代理，傻逼垃圾，<strong>只支持0.14版本以前</strong></p>
+</li>
+</ul>
+</div></div>
+<h1 id="a-href-czc-e7-9-f-a5-e8-af-86-e5-ba-93-e6-a1-86-e6-9-e-b6-e6-9-e-84-e5-bb-ba-e6-80-9-d-e8-b7-af-e8-bf-87-e7-a8-8-b-md-target-blank-class-external-link-czc-a" tabindex="-1"><a href="czc%E7%9F%A5%E8%AF%86%E5%BA%93%E6%A1%86%E6%9E%B6%E6%9E%84%E5%BB%BA%E6%80%9D%E8%B7%AF%E8%BF%87%E7%A8%8B.md" target="_blank" class="external-link">czc知识库框架构建思路过程</a></h1>
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p>This is nihao的a，<strong>这个脚注阅读模式会自动滚到最后面去</strong> <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn2" class="footnote-item"><p>第二个 <a href="#fnref2" class="footnote-backref">↩︎</a></p>
+</li>
+</ol>
+</section>
+</main>
+<script>window.location.hash&&document.getElementById(window.location.hash.slice(1)).classList.add("referred"),window.addEventListener("hashchange",(e=>{const t=e.oldURL.split("#");t[1]&&document.getElementById(t[1]).classList.remove("referred");const n=e.newURL.split("#");n[1]&&document.getElementById(n[1]).classList.add("referred")}),!1);const url_parts=window.location.href.split("#"),url=url_parts[0],referrence=url_parts[1];document.querySelectorAll(".cm-s-obsidian > *[id]").forEach((function(e){e.ondblclick=function(e){const t=url+"#"+e.target.id;navigator.clipboard.writeText(t)}}))</script>
+<script src="https://fastly.jsdelivr.net/npm/luxon@3.2.1/build/global/luxon.min.js"></script>
+<script defer="defer">TIMESTAMP_FORMAT="MMM dd, yyyy h:mm a",document.querySelectorAll(".human-date").forEach((function(e){date=e.getAttribute("data-date")||e.innerText,parsed_date=luxon.DateTime.fromISO(date),null!=parsed_date.invalid&&(parsed_date=luxon.DateTime.fromSQL(date)),null!=parsed_date.invalid&&(parsed_date=luxon.DateTime.fromHTML(date)),e.innerHTML=parsed_date.toFormat(TIMESTAMP_FORMAT)}))</script>
+<script>lucide.createIcons({attrs:{class:["svg-icon"]}})</script>
+</body>
+</html>

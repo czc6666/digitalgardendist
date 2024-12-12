@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>Shannon entropy：信息熵是什么（香农熵）</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<script async type="module">import mermaid from"https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"</script>
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js" integrity="sha512-hpZ5pDCF2bRCweL5WoA0/N1elet1KYL5mx3LP555Eg/0ZguaHawxNvEjF6O3rufAChs16HVNhEc6blF/rZoowQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/plugins/autoloader/prism-autoloader.min.js" integrity="sha512-sv0slik/5O0JIPdLBCR2A3XDg/1U3WuDEheZfI/DI5n8Yqc3h5kjrnr46FGBNiUAJF7rE4LHKwQ/SoSLRKAxEA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script async src="https://cdn.jsdelivr.net/npm/lucide@0.115.0/dist/umd/lucide.min.js"></script>
+<script>window.addEventListener("load",(()=>{document.querySelectorAll(".callout").forEach((e=>{const t=getComputedStyle(e).getPropertyValue("--callout-icon"),l=t&&t.trim().replace(/^lucide-/,"");if(l){const t=e.querySelector(".callout-title");if(t){const e=document.createElement("div"),c=document.createElement("i");e.appendChild(c),c.setAttribute("icon-name",l),e.setAttribute("class","callout-icon"),t.insertBefore(e,t.firstChild)}}})),lucide.createIcons(),Array.from(document.querySelectorAll(".callout.is-collapsible")).forEach((e=>{e.querySelector(".callout-title").addEventListener("click",(t=>{e.classList.contains("is-collapsed")?e.classList.remove("is-collapsed"):e.classList.add("is-collapsed")}))}))}))</script>
+<script async src="https://fastly.jsdelivr.net/npm/force-graph@1.43.0/dist/force-graph.min.js"></script>
+<script async src="https://fastly.jsdelivr.net/npm/@alpinejs/persist@3.11.1/dist/cdn.min.js"></script>
+<script src="https://fastly.jsdelivr.net/npm/alpinejs@3.11.1/dist/cdn.min.js" async></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-okaidia.min.css" integrity="sha512-mIs9kKbaw6JZFfSuo+MovjU+Ntggfoj8RwAmJbVXQ5mkAX5LlgETQEweFPI18humSPHymTb5iikEOKWF7I8ncQ==" crossorigin="anonymous" referrerpolicy="no-referrer" async>
+<script src="https://fastly.jsdelivr.net/npm/whatwg-fetch@3.6.2/dist/fetch.umd.min.js" crossorigin="anonymous" referrerpolicy="no-referrer" async></script>
+<link href="/styles/digital-garden-base.css" rel="stylesheet">
+<link href="/styles/obsidian-base.css" rel="stylesheet">
+<link href="/styles/_theme.d92311c2.css" rel="stylesheet">
+<link href="/styles/custom-style.css" rel="stylesheet">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<style></style>
+</head>
+<body class="theme-dark markdown-preview-view markdown-rendered markdown-preview-section">
+<nav class="navbar">
+<div class="navbar-inner">
+<a href="/" style="text-decoration:none">
+<h1 style="margin:15px!important">Digital Garden</h1>
+</a>
+</div>
+</nav>
+<main class="content cm-s-obsidian">
+<header>
+<div class="header-meta">
+</div>
+</header>
+<p><strong>信息熵：</strong></p>
+<div class="callout is-collapsible" data-callout="note"><div class="callout-title"><div class="callout-title-inner"> <a href="https://blog.csdn.net/qq_38890412/article/details/106149936" target="_blank" class="external-link">傻子都能看懂的——信息熵（香农熵）-CSDN博客</a><br></div><div class="callout-fold"><i icon-name="chevron-down"></i></div></div>
+<div class="callout-content">
+<p>
+<strong>（看之前可以了解一下信息熵的创始人：<a href="https://baike.baidu.com/item/%E5%85%8B%E5%8A%B3%E5%BE%B7%C2%B7%E8%89%BE%E5%B0%94%E4%BC%8D%E5%BE%B7%C2%B7%E9%A6%99%E5%86%9C/10588593" target="_blank" class="external-link">克劳德·艾尔伍德·香农（Claude Elwood Shannon ，1916年4月30日—2001年2月24日）</a>）</strong></p>
+<p>先给出<a href="https://so.csdn.net/so/search?q=%E4%BF%A1%E6%81%AF%E7%86%B5&amp;spm=1001.2101.3001.7020" target="_blank" class="external-link">信息熵</a>的公式：<br>
+                                            <img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pbWFnZXMyMDE4LmNuYmxvZ3MuY29tL2Jsb2cvNzgxMzA1LzIwMTgwOC83ODEzMDUtMjAxODA4MTAxNjA2MDQxMzQtNjE3NTE0MzgyLnBuZw?x-oss-process=image/format,png" alt=""></p>
+<p>其中：𝑝(𝑥𝑖)代表随机事件𝑥𝑖的概率。 <br>
+下面逐步介绍信息熵公式来源！</p>
+<p>首先了解一下信息量：信息量是对信息的度量，就跟时间的度量是秒一样，当我们考虑一个离散的随机变量 x 的时候，当我们观察到的这个变量的一个具体值的时候，我们接收到了多少信息呢？</p>
+<p>多少信息用信息量来衡量，我们接受到的信息量跟具体发生的事件有关。</p>
+<p>信息的大小跟随机事件的概率有关。越小概率的事情发生了产生的信息量越大，如湖南产生 的地震了；越大概率的事情发生了产生的信息量越小，如太阳从东边升起来了（肯定发生嘛， 没什么信息量）。这很好理解！</p>
+<p>因此一个具体事件的信息量应该是随着其发生概率而递减的，且不能为负。但是这个表示信 息量函数的形式怎么找呢？随着概率增大而减少的函数形式太多了！不要着急，我们还有下 面这条性质。</p>
+<p>如果我们有俩个不相关的事件 x 和 y，那么我们观察到的俩个事件同时发生时获得的信息应 该等于观察到的事件各自发生时获得的信息之和，即： <strong>h(x,y) = h(x) + h(y)</strong></p>
+<p>由于 x，y 是俩个不相关的事件，那么满足<code> p(x,y) = p(x)*p(y).</code></p>
+<p>根据上面推导，我们很容易看出 h(x)一定与 p(x)的对数有关（因为只有对数形式的真数相乘 之后，能够对应对数的相加形式，可以试试）。因此我们有信息量公式如下：</p>
+<p><strong>𝐡(𝐱) = −𝒍𝒐𝒈𝟐𝒑(𝒙)</strong></p>
+<p>（1）为什么有一个负号？其中，负号是为了确保信息一定是正数或者是 0，总不能为负数吧！</p>
+<p>（2）为什么底数为 2 这是因为，我们只需要信息量满足<strong>低概率事件 x 对应于高的信息量</strong>。那么对数的选择是任意的。我们只是遵循信息论的普遍传统，使用 2 作为对数的底！</p>
+<p>信息熵 下面正式引出信息熵：信息量度量的是一个具体事件发生了所带来的信息，而熵则是在结果出来之前对可能产生的信息量的期望——考虑该随机变量的所有可能取值，即所有可能发生事件所带来的信息量的期望。即</p>
+<p><strong>𝐇(𝐱) = −𝒔𝒖𝒎(𝒑(𝒙)𝒍𝒐𝒈𝟐𝒑(𝒙))</strong></p>
+<p>转换一下也就是： <br>
+<img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pbWFnZXMyMDE4LmNuYmxvZ3MuY29tL2Jsb2cvNzgxMzA1LzIwMTgwOC83ODEzMDUtMjAxODA4MTIxNDEyMDMxNjYtMTA0OTYzNjA0OS5wbmc?x-oss-process=image/format,png" alt=""></p>
+<p>最终我们的公式来源推导完成了。</p>
+<p>信息熵还可以作为一个系统复杂程度的度量，如果系统越复杂，出现不同情况的种类越多， 那么他的信息熵是比较大的。如果一个系统越简单，出现情况种类很少（极端情况为 1 种情况，那么对应概率为 1，那么对应的信息熵为 0），此时的信息熵较小。</p>
+<p>最后附上对数函数一些性质，你画出 𝐟(𝐱) = −𝒍𝒐𝒈𝟐𝒙 的图像会更加明了。</p>
+<p><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pbWFnZXMyMDE4LmNuYmxvZ3MuY29tL2Jsb2cvNzgxMzA1LzIwMTgwOC83ODEzMDUtMjAxODA4MTIxNDE0MDg5OTYtMTEwMzAyMzEzNS5qcGc?x-oss-process=image/format,png" alt=""><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pbWFnZXMyMDE4LmNuYmxvZ3MuY29tL2Jsb2cvNzgxMzA1LzIwMTgwOC83ODEzMDUtMjAxODA4MTIxNDE0MTg5MTgtMTI1NjE2MjM3Ny5wbmc?x-oss-process=image/format,png" alt=""></p>
+<p>链接：<a href="https://www.zhihu.com/question/22178202/answer/161732605" target="_blank" class="external-link">(34 封私信 / 80 条消息) 信息熵是什么？ - 知乎</a></p>
+</div></div>
+<pre><code class="language-python">import 123
+a = 1
+sdasda
+a
+s d
+a
+s d
+a
+ sd
+
+d
+s d
+</code></pre>
+</main>
+<script>window.location.hash&&document.getElementById(window.location.hash.slice(1)).classList.add("referred"),window.addEventListener("hashchange",(e=>{const t=e.oldURL.split("#");t[1]&&document.getElementById(t[1]).classList.remove("referred");const n=e.newURL.split("#");n[1]&&document.getElementById(n[1]).classList.add("referred")}),!1);const url_parts=window.location.href.split("#"),url=url_parts[0],referrence=url_parts[1];document.querySelectorAll(".cm-s-obsidian > *[id]").forEach((function(e){e.ondblclick=function(e){const t=url+"#"+e.target.id;navigator.clipboard.writeText(t)}}))</script>
+<script src="https://fastly.jsdelivr.net/npm/luxon@3.2.1/build/global/luxon.min.js"></script>
+<script defer="defer">TIMESTAMP_FORMAT="MMM dd, yyyy h:mm a",document.querySelectorAll(".human-date").forEach((function(e){date=e.getAttribute("data-date")||e.innerText,parsed_date=luxon.DateTime.fromISO(date),null!=parsed_date.invalid&&(parsed_date=luxon.DateTime.fromSQL(date)),null!=parsed_date.invalid&&(parsed_date=luxon.DateTime.fromHTML(date)),e.innerHTML=parsed_date.toFormat(TIMESTAMP_FORMAT)}))</script>
+<script>lucide.createIcons({attrs:{class:["svg-icon"]}})</script>
+</body>
+</html>

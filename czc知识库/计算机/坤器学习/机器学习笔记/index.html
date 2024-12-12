@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>机器学习笔记</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<script async type="module">import mermaid from"https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"</script>
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js" integrity="sha512-hpZ5pDCF2bRCweL5WoA0/N1elet1KYL5mx3LP555Eg/0ZguaHawxNvEjF6O3rufAChs16HVNhEc6blF/rZoowQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/plugins/autoloader/prism-autoloader.min.js" integrity="sha512-sv0slik/5O0JIPdLBCR2A3XDg/1U3WuDEheZfI/DI5n8Yqc3h5kjrnr46FGBNiUAJF7rE4LHKwQ/SoSLRKAxEA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script async src="https://cdn.jsdelivr.net/npm/lucide@0.115.0/dist/umd/lucide.min.js"></script>
+<script>window.addEventListener("load",(()=>{document.querySelectorAll(".callout").forEach((e=>{const t=getComputedStyle(e).getPropertyValue("--callout-icon"),l=t&&t.trim().replace(/^lucide-/,"");if(l){const t=e.querySelector(".callout-title");if(t){const e=document.createElement("div"),c=document.createElement("i");e.appendChild(c),c.setAttribute("icon-name",l),e.setAttribute("class","callout-icon"),t.insertBefore(e,t.firstChild)}}})),lucide.createIcons(),Array.from(document.querySelectorAll(".callout.is-collapsible")).forEach((e=>{e.querySelector(".callout-title").addEventListener("click",(t=>{e.classList.contains("is-collapsed")?e.classList.remove("is-collapsed"):e.classList.add("is-collapsed")}))}))}))</script>
+<script async src="https://fastly.jsdelivr.net/npm/force-graph@1.43.0/dist/force-graph.min.js"></script>
+<script async src="https://fastly.jsdelivr.net/npm/@alpinejs/persist@3.11.1/dist/cdn.min.js"></script>
+<script src="https://fastly.jsdelivr.net/npm/alpinejs@3.11.1/dist/cdn.min.js" async></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-okaidia.min.css" integrity="sha512-mIs9kKbaw6JZFfSuo+MovjU+Ntggfoj8RwAmJbVXQ5mkAX5LlgETQEweFPI18humSPHymTb5iikEOKWF7I8ncQ==" crossorigin="anonymous" referrerpolicy="no-referrer" async>
+<script src="https://fastly.jsdelivr.net/npm/whatwg-fetch@3.6.2/dist/fetch.umd.min.js" crossorigin="anonymous" referrerpolicy="no-referrer" async></script>
+<link href="/styles/digital-garden-base.css" rel="stylesheet">
+<link href="/styles/obsidian-base.css" rel="stylesheet">
+<link href="/styles/_theme.d92311c2.css" rel="stylesheet">
+<link href="/styles/custom-style.css" rel="stylesheet">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<style></style>
+</head>
+<body class="theme-dark markdown-preview-view markdown-rendered markdown-preview-section">
+<nav class="navbar">
+<div class="navbar-inner">
+<a href="/" style="text-decoration:none">
+<h1 style="margin:15px!important">Digital Garden</h1>
+</a>
+</div>
+</nav>
+<main class="content cm-s-obsidian">
+<header>
+<div class="header-meta">
+</div>
+</header>
+<p>一包名词：<br>
+DNN：Deep neural network，深度神经网络<br>
+CNN：Convolutional neural network，<a class="internal-link" target="" data-note-icon="undefined" href="/czc知识库/计算机/坤器学习/卷积神经网络/">卷积神经网络</a><br>
+RNN：Recurrent Neural Network，循环神经网络<br>
+DBN：Deep belief network，深度信念网络<br>
+LSTM：Long short-term memory，长短期记忆网络</p>
+<p>GNN：<a class="internal-link" target="" data-note-icon="undefined" href="/czc知识库/计算机/坤器学习/图神经网络/">图神经网络</a><br>
+GCN：Graph Convolutional Network，图卷积神经网络<br>
+GAT：Graph Attention Networks，<a class="internal-link" target="" data-note-icon="undefined" href="/czc知识库/计算机/坤器学习/图注意力网络/">图注意力网络</a></p>
+<p>PTM：Pre-train Model<a href="%E9%A2%84%E8%AE%AD%E7%BB%83%E6%A8%A1%E5%9E%8B%E6%98%AF%E4%BB%80%E4%B9%88.md" target="_blank" class="external-link">预训练模型是什么</a>)<br>
+BART：<strong>B</strong>idirectional and <strong>A</strong>uto-<strong>R</strong>egressive <strong>T</strong>ransformers，双向自回归transformer？<br>
+权重矩阵<a href="%E6%9D%83%E9%87%8D%E7%9F%A9%E9%98%B5.md" target="_blank" class="external-link">权重矩阵</a>)</p>
+<hr>
+<hr>
+<hr>
+<p>以下笔记基本来自于智能计算系统课程</p>
+<h1 id="机器学习" tabindex="-1">机器学习</h1>
+<p>人工智能先驱阿瑟·塞缪尔 (Arthur Samuel) 将机器学习描述为一组方法和技术，“赋予计算机无需明确编程的学习能力”。</p>
+<hr>
+<p>安装miniconda<br>
+sh Miniconda3-py39_4.12.0-Linux-x86_64.sh -b<br>
+安装深度学习框架和d2l软件包</p>
+<hr>
+<h1 id="1" tabindex="-1">1 引言</h1>
+<p>机器学习中的关键组件：可以用来学习的<strong>数据</strong>；如何转换数据的<strong>模型</strong>；一个<strong>目标函数</strong>，用来量化模型的有效性；调整模型参数以优化目标函数的<strong>优化算法</strong>(algorithm)</p>
+<h2 id="1-3" tabindex="-1">1-3 各种机器学习问题</h2>
+<h3 id="1-3-1" tabindex="-1">1-3-1 监督学习</h3>
+<p>监督学习的学习过程：获取训练数据集；选择有监督的学习算法，输入训练数据集，输出已完成学习的模型；使用模型预测之前没有见过的样本特征的标签</p>
+<p>回归（regression）：“<strong>训练一个回归函数来输出一个数值</strong>” (“动手学深度学习.pdf”, p. 41)。根据特征向量预测标签数值。最简单的监督学习任务之一。 (“动手学深度学习.pdf”, p. 41)</p>
+<p>分类（classification）：“<strong>训练一个分类器来 输出预测的类别</strong>” (“动手学深度学习.pdf”, p. 41)</p>
+<p>标记问题</p>
+<p>搜索</p>
+<p>推荐系统</p>
+<p>序列学习</p>
+<p>标记和解析（寻找英文句子中的实体）、自动语音识别、文本转语言、机器翻译</p>
+<h3 id="1-3-2-unsupervised-learning" tabindex="-1">1-3-2 无监督学习（unsupervised learning）</h3>
+<p>聚类（clustering）：</p>
+<p>主成分分析（principal component analysis）：</p>
+<p>因果关系（causality）和概率图模型（probabilisitic graphical models）问题：</p>
+<p>生成对抗性网络（generative adversarial networks）：<picture src="/img/user/czc%E7%9F%A5%E8%AF%86%E5%BA%93/%E6%9D%82%E4%B8%83%E6%9D%82%E5%85%AB/9-%E9%99%84%E4%BB%B6/%E9%99%84%E4%BB%B6/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0_image.png" alt=""><source media="(max-width:480px)" srcset="/img/optimized/N_i4QC73-h-500.webp" type="image/webp">
+<source media="(max-width:480px)" srcset="/img/optimized/N_i4QC73-h-500.jpeg">
+<source media="(max-width:1920px)" srcset="/img/optimized/N_i4QC73-h-700.webp" type="image/webp"><source media="(max-width:1920px)" srcset="/img/optimized/N_i4QC73-h-700.jpeg"><img class="" src="/img/user/czc%E7%9F%A5%E8%AF%86%E5%BA%93/%E6%9D%82%E4%B8%83%E6%9D%82%E5%85%AB/9-%E9%99%84%E4%BB%B6/%E9%99%84%E4%BB%B6/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0_image.png" alt="" width=""></picture>)<br>
+(“动手学深度学习.pdf”, p. 48)</p>
+<h2 id="1-3-4-img-src-img-user-czc-e7-9-f-a5-e8-af-86-e5-ba-93-e6-9-d-82-e4-b8-83-e6-9-d-82-e5-85-ab-9-e9-99-84-e4-bb-b6-e9-99-84-e4-bb-b6-e6-9-c-ba-e5-99-a8-e5-ad-a6-e4-b9-a0-e7-ac-94-e8-ae-b0-image-1-png-alt" tabindex="-1">1-3-4 强化学习<picture src="/img/user/czc%E7%9F%A5%E8%AF%86%E5%BA%93/%E6%9D%82%E4%B8%83%E6%9D%82%E5%85%AB/9-%E9%99%84%E4%BB%B6/%E9%99%84%E4%BB%B6/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0_image-1.png" alt=""><source media="(max-width:480px)" srcset="/img/optimized/ZrzmePcvVX-500.webp" type="image/webp">
+<source media="(max-width:480px)" srcset="/img/optimized/ZrzmePcvVX-500.jpeg">
+<source media="(max-width:1920px)" srcset="/img/optimized/ZrzmePcvVX-700.webp" type="image/webp"><source media="(max-width:1920px)" srcset="/img/optimized/ZrzmePcvVX-700.jpeg"><img class="" src="/img/user/czc%E7%9F%A5%E8%AF%86%E5%BA%93/%E6%9D%82%E4%B8%83%E6%9D%82%E5%85%AB/9-%E9%99%84%E4%BB%B6/%E9%99%84%E4%BB%B6/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0_image-1.png" alt="" width=""></picture>)</h2>
+<p>(“动手学深度学习.pdf”, p. 49)</p>
+<p>在强化学习问题中，智能体（agent）在一系列的时间步骤上与环境交互。在每个特定时间点，智能体从环境 接收一些观察（observation），并且必须选择一个动作（action），然后通过某种机制（有时称为执行器）将 其传输回环境，最后智能体从环境中获得奖励（reward）。此后新一轮循环开始，智能体接收后续观察，并 选择后续操作，依此类推。</p>
+<p>强化学习框架的通用性十分强大。例如，我们可以将任何监督学习问题转化为强化学习问题</p>
+<hr>
+<h1 id="2" tabindex="-1">2 预备知识</h1>
+<p>R → R</p>
+<p>2-1-2 运算符</p>
+<p>张量连结在一起时按照轴来连接</p>
+<p>0轴：第一维：行，添加在矩阵的下面</p>
+<p>1轴：第二维：列，添加在矩阵的右边</p>
+<p>2轴：第三维：高向？✔√</p>
+<h3 id="神经网络" tabindex="-1">神经网络</h3>
+<h3 id="cnn" tabindex="-1">卷积神经网络（CNN）：</h3>
+<p>CNN是一类专门用于处理网格化数据，尤其是图像和视频的深度学习模型。它是由卷积层和池化层构成的深层神经网络。CNN 在计算机视觉任务中有很大的优势和应用，如图像分类、目标检测和图像生成等。（之前高级算法设计与分析的大作业就是用采用CNN的yolo模型来进行目标检测）</p>
+<p>卷积神经网络的主要组成部分：<br>
+1.<strong>卷积层：</strong> 卷积操作是 CNN 的核心。通过卷积操作，网络能够检测输入数据中的局部特征。卷积层使用卷积核（filter）对输入图像进行滑动运算，提取局部特征。这有助于网络捕捉图像的空间层级结构。<br>
+2.<strong>激活函数：</strong> 激活函数引入非线性性质，使得网络可以学习更加复杂的映射关系。常用的激活函数包括ReLU（Rectified Linear Unit）、Sigmoid和Tanh。<br>
+3.<strong>池化层：</strong> 池化操作有助于降低数据维度，并保留最重要的信息。最大池化是一种常见的操作，它在每个区域选择最大值作为池化后的值。<br>
+4.<strong>全连接层：</strong> 在卷积神经网络的尾部，通常会添加全连接层，将卷积层提取的特征映射转换为最终的输出。这些层通常用于进行分类或回归等任务。<br>
+5.<strong>归一化：</strong> 批量归一化被广泛用于卷积神经网络，有助于加速训练过程，提高模型的鲁棒性。</p>
+<p>卷积神经网络的优势在于它能够利用权值共享和局部感受野的设计，减少参数数量，提高对平移不变性的学习能力。这使得 CNN 在处理图像等网格化数据时表现出色，广泛应用于图像处理、计算机视觉和深度学习任务。</p>
+<h3 id="循环神经网络：" tabindex="-1">循环神经网络：</h3>
+<p>有一个自反馈的机制，具有记忆功能</p>
+<p>RNN是一类专门用于处理序列数据的神经网络，它具有记忆功能，能够在处理序列时考虑之前的信息。与传统的前馈神经网络不同，RNN 具有反馈连接，允许信息在网络中传递。</p>
+<h3 id="生成对抗网络" tabindex="-1">生成对抗网络</h3>
+<p>GAN 的特点在于它包含两个相互竞争的神经网络：生成器（伪装者）和判别器（警察）。</p>
+<p>1.生成器的目标是生成与真实数据相似的新数据。尽可能生成能以假乱真的样本，使判别网络输出接近0.5（难以区分真假）。一旦被判别器发现假，生成器就会调整自己的参数使输出更真实</p>
+<p>2.判别器的任务是区分生成器生成的数据和真实训练数据。判断输入数据是来自真是样本集还是生成样本集，如真输出1，如假输出0。生成器成功骗过判别器，则跳转判别器参数使检测能力更强。</p>
+<p>3.<strong>对抗训练：</strong> GAN 的训练过程是一个对抗的过程。生成器和判别器相互竞争，通过不断优化它们的参数，使得生成器生成的数据越来越逼真，而判别器更难区分生成的数据和真实数据。</p>
+<h1 id="federated-learning" tabindex="-1">联邦学习（Federated Learning）</h1>
+<p><a class="tag" onclick="toggleTagSearch(this)" data-content="#机器学习/联邦学习">#机器学习/联邦学习</a><img src="%E8%81%94%E9%82%A6%E5%AD%A6%E4%B9%A0.md" alt="联邦学习">)</p>
+<h1 id="img-src-e6-a6-82-e5-bf-b5-e6-bc-82-e7-a7-bb-md-alt" tabindex="-1">名词解释：<img src="%E6%A6%82%E5%BF%B5%E6%BC%82%E7%A7%BB.md" alt="概念漂移">)</h1>
+<p><img src="%E6%9D%83%E9%87%8D%E7%9F%A9%E9%98%B5.md" alt="权重矩阵">)</p>
+<h2 id="什么是梯度、梯度下降、求导和其是什么关系" tabindex="-1">什么是梯度、梯度下降、求导和其是什么关系</h2>
+<p>上智能计算系统课<font color="#ff0000">听不懂系列</font>，为什么不上万能的b站大学呢？？？<br>
+<a href="https://zhuanlan.zhihu.com/p/668156356" target="_blank" class="external-link">深度学习 与 梯度 - 知乎 (zhihu.com)</a></p>
+<p>方向导数是<strong>导数</strong>，梯度是在某点使得函数值增加最快的<strong>方向</strong><br>
+在一元函数中：<strong>梯度</strong> 表示的自变量 x 移动的 <strong>方向</strong>, 可以通过 <strong>导数</strong> 的方式求解! 两者是两个概念!</p>
+<h2 id="（激活函数，损失函数，反向传播怎么实现，什么是计算图机构）" tabindex="-1">（激活函数，损失函数，反向传播怎么实现，什么是计算图机构）</h2>
+<h2 id="控制流？" tabindex="-1">控制流？</h2>
+</main>
+<script>window.location.hash&&document.getElementById(window.location.hash.slice(1)).classList.add("referred"),window.addEventListener("hashchange",(e=>{const t=e.oldURL.split("#");t[1]&&document.getElementById(t[1]).classList.remove("referred");const n=e.newURL.split("#");n[1]&&document.getElementById(n[1]).classList.add("referred")}),!1);const url_parts=window.location.href.split("#"),url=url_parts[0],referrence=url_parts[1];document.querySelectorAll(".cm-s-obsidian > *[id]").forEach((function(e){e.ondblclick=function(e){const t=url+"#"+e.target.id;navigator.clipboard.writeText(t)}}))</script>
+<script src="https://fastly.jsdelivr.net/npm/luxon@3.2.1/build/global/luxon.min.js"></script>
+<script defer="defer">TIMESTAMP_FORMAT="MMM dd, yyyy h:mm a",document.querySelectorAll(".human-date").forEach((function(e){date=e.getAttribute("data-date")||e.innerText,parsed_date=luxon.DateTime.fromISO(date),null!=parsed_date.invalid&&(parsed_date=luxon.DateTime.fromSQL(date)),null!=parsed_date.invalid&&(parsed_date=luxon.DateTime.fromHTML(date)),e.innerHTML=parsed_date.toFormat(TIMESTAMP_FORMAT)}))</script>
+<script>lucide.createIcons({attrs:{class:["svg-icon"]}})</script>
+</body>
+</html>

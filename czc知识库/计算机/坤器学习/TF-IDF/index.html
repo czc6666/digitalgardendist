@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>TF-IDF</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<script async type="module">import mermaid from"https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"</script>
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js" integrity="sha512-hpZ5pDCF2bRCweL5WoA0/N1elet1KYL5mx3LP555Eg/0ZguaHawxNvEjF6O3rufAChs16HVNhEc6blF/rZoowQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/plugins/autoloader/prism-autoloader.min.js" integrity="sha512-sv0slik/5O0JIPdLBCR2A3XDg/1U3WuDEheZfI/DI5n8Yqc3h5kjrnr46FGBNiUAJF7rE4LHKwQ/SoSLRKAxEA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script async src="https://cdn.jsdelivr.net/npm/lucide@0.115.0/dist/umd/lucide.min.js"></script>
+<script>window.addEventListener("load",(()=>{document.querySelectorAll(".callout").forEach((e=>{const t=getComputedStyle(e).getPropertyValue("--callout-icon"),l=t&&t.trim().replace(/^lucide-/,"");if(l){const t=e.querySelector(".callout-title");if(t){const e=document.createElement("div"),c=document.createElement("i");e.appendChild(c),c.setAttribute("icon-name",l),e.setAttribute("class","callout-icon"),t.insertBefore(e,t.firstChild)}}})),lucide.createIcons(),Array.from(document.querySelectorAll(".callout.is-collapsible")).forEach((e=>{e.querySelector(".callout-title").addEventListener("click",(t=>{e.classList.contains("is-collapsed")?e.classList.remove("is-collapsed"):e.classList.add("is-collapsed")}))}))}))</script>
+<script async src="https://fastly.jsdelivr.net/npm/force-graph@1.43.0/dist/force-graph.min.js"></script>
+<script async src="https://fastly.jsdelivr.net/npm/@alpinejs/persist@3.11.1/dist/cdn.min.js"></script>
+<script src="https://fastly.jsdelivr.net/npm/alpinejs@3.11.1/dist/cdn.min.js" async></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-okaidia.min.css" integrity="sha512-mIs9kKbaw6JZFfSuo+MovjU+Ntggfoj8RwAmJbVXQ5mkAX5LlgETQEweFPI18humSPHymTb5iikEOKWF7I8ncQ==" crossorigin="anonymous" referrerpolicy="no-referrer" async>
+<script src="https://fastly.jsdelivr.net/npm/whatwg-fetch@3.6.2/dist/fetch.umd.min.js" crossorigin="anonymous" referrerpolicy="no-referrer" async></script>
+<link href="/styles/digital-garden-base.css" rel="stylesheet">
+<link href="/styles/obsidian-base.css" rel="stylesheet">
+<link href="/styles/_theme.d92311c2.css" rel="stylesheet">
+<link href="/styles/custom-style.css" rel="stylesheet">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<style></style>
+</head>
+<body class="theme-dark markdown-preview-view markdown-rendered markdown-preview-section">
+<nav class="navbar">
+<div class="navbar-inner">
+<a href="/" style="text-decoration:none">
+<h1 style="margin:15px!important">Digital Garden</h1>
+</a>
+</div>
+</nav>
+<main class="content cm-s-obsidian">
+<header>
+<div class="header-meta">
+</div>
+</header>
+<p>TF-IDF：一种用于信息检索与数据挖掘的常用加权技术<br>
+terms frequency-inverse doc-ument frequency</p>
+<p>这篇精读的论文用了这个方法：<a class="internal-link" target="" data-note-icon="undefined" href="/czc知识库/硕士研究生/科研/文献阅读笔记/z-垃圾&归档文章&其他东西/!-笔记的笔记/202403.GAT_AMD：精读笔记/">202403.GAT_AMD：精读笔记</a></p>
+<p>网上随便找的两个教程：<br>
+<a href="https://zhuanlan.zhihu.com/p/31197209" target="_blank" class="external-link">机器学习：生动理解TF-IDF算法 - 知乎</a><br>
+<a href="https://zhuanlan.zhihu.com/p/592645536" target="_blank" class="external-link">用通俗易懂的方式讲解：TF-IDF算法介绍及实现 - 知乎</a></p>
+<p><a href="https://zh.wikipedia.org/wiki/Tf-idf" target="_blank" class="external-link">tf-idf - 维基百科，自由的百科全书</a></p>
+<p><strong>tf-idf</strong>（英语：<strong>t</strong>erm <strong>f</strong>requency–<strong>i</strong>nverse <strong>d</strong>ocument <strong>f</strong>requency）是一种用于<a href="https://zh.wikipedia.org/wiki/%E8%B3%87%E8%A8%8A%E6%AA%A2%E7%B4%A2" title="信息检索" target="_blank" class="external-link">信息检索</a>与<a href="https://zh.wikipedia.org/wiki/%E6%96%87%E6%9C%AC%E6%8C%96%E6%8E%98" title="文本挖掘" target="_blank" class="external-link">文本挖掘</a>的常用加权技术。tf-idf是一种统计方法，用以评估一字词对于一个文件集或一个<a href="https://zh.wikipedia.org/wiki/%E8%AA%9E%E6%96%99%E5%BA%AB" title="语料库" target="_blank" class="external-link">语料库</a>中的其中一份<a href="https://zh.wikipedia.org/wiki/%E6%96%87%E4%BB%B6" title="文件" target="_blank" class="external-link">文件</a>的重要程度。字词的重要性随着它在文件中出现的次数成<a href="https://zh.wikipedia.org/wiki/%E6%AD%A3%E6%AF%94" title="正比" target="_blank" class="external-link">正比</a>增加，但同时会随着它在语料库中出现的频率成反比下降。tf-idf加权的各种形式常被<a href="https://zh.wikipedia.org/wiki/%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E" title="搜索引擎" target="_blank" class="external-link">搜索引擎</a>应用，作为文件与用户查询之间相关程度的度量或评级。除了tf-idf以外，互联网上的搜索引擎还会使用基于链接分析的评级方法，以确定文件在搜索结果中出现的顺序。</p>
+<p><a href="202305.13.GCNs_AMD%EF%BC%9A%E5%9F%BA%E4%BA%8E%20GCN%20%E5%A2%9E%E5%BC%BA%E5%87%BD%E6%95%B0%E8%B0%83%E7%94%A8%E5%9B%BE%E4%B8%AD%E8%8A%82%E7%82%B9%E7%89%B9%E5%BE%81%E5%B7%AE%E5%BC%82%E7%9A%84%20Android%20%E6%81%B6%E6%84%8F%E8%BD%AF%E4%BB%B6%E6%A3%80%E6%B5%8B%E6%96%B9%E6%B3%95%20An%20Android%20Malware%20Detection%20Approach%20to%20Enhance%20Node%20Feature%20Differences%20in%20a%20Function%20Call%20Graph%20Based%20on%20GCNs.md#%5Ef2fe9b" target="_blank" class="external-link">GCNs论文用到这个方法：</a></p>
+<p>GAT_AMD也用了（结合LSO）</p>
+<p>tf-idf是一种统计方法，用以评估一字词对于一个文件集或<br>
+一个语料库中的其中一份文件的重要程度。它是一种用于<br>
+信息检索与文本挖掘的常用加权技术。</p>
+</main>
+<script>window.location.hash&&document.getElementById(window.location.hash.slice(1)).classList.add("referred"),window.addEventListener("hashchange",(e=>{const t=e.oldURL.split("#");t[1]&&document.getElementById(t[1]).classList.remove("referred");const n=e.newURL.split("#");n[1]&&document.getElementById(n[1]).classList.add("referred")}),!1);const url_parts=window.location.href.split("#"),url=url_parts[0],referrence=url_parts[1];document.querySelectorAll(".cm-s-obsidian > *[id]").forEach((function(e){e.ondblclick=function(e){const t=url+"#"+e.target.id;navigator.clipboard.writeText(t)}}))</script>
+<script src="https://fastly.jsdelivr.net/npm/luxon@3.2.1/build/global/luxon.min.js"></script>
+<script defer="defer">TIMESTAMP_FORMAT="MMM dd, yyyy h:mm a",document.querySelectorAll(".human-date").forEach((function(e){date=e.getAttribute("data-date")||e.innerText,parsed_date=luxon.DateTime.fromISO(date),null!=parsed_date.invalid&&(parsed_date=luxon.DateTime.fromSQL(date)),null!=parsed_date.invalid&&(parsed_date=luxon.DateTime.fromHTML(date)),e.innerHTML=parsed_date.toFormat(TIMESTAMP_FORMAT)}))</script>
+<script>lucide.createIcons({attrs:{class:["svg-icon"]}})</script>
+</body>
+</html>

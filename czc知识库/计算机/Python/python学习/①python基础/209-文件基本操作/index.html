@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>209-文件基本操作</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<script async type="module">import mermaid from"https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"</script>
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js" integrity="sha512-hpZ5pDCF2bRCweL5WoA0/N1elet1KYL5mx3LP555Eg/0ZguaHawxNvEjF6O3rufAChs16HVNhEc6blF/rZoowQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/plugins/autoloader/prism-autoloader.min.js" integrity="sha512-sv0slik/5O0JIPdLBCR2A3XDg/1U3WuDEheZfI/DI5n8Yqc3h5kjrnr46FGBNiUAJF7rE4LHKwQ/SoSLRKAxEA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script async src="https://cdn.jsdelivr.net/npm/lucide@0.115.0/dist/umd/lucide.min.js"></script>
+<script>window.addEventListener("load",(()=>{document.querySelectorAll(".callout").forEach((e=>{const t=getComputedStyle(e).getPropertyValue("--callout-icon"),l=t&&t.trim().replace(/^lucide-/,"");if(l){const t=e.querySelector(".callout-title");if(t){const e=document.createElement("div"),c=document.createElement("i");e.appendChild(c),c.setAttribute("icon-name",l),e.setAttribute("class","callout-icon"),t.insertBefore(e,t.firstChild)}}})),lucide.createIcons(),Array.from(document.querySelectorAll(".callout.is-collapsible")).forEach((e=>{e.querySelector(".callout-title").addEventListener("click",(t=>{e.classList.contains("is-collapsed")?e.classList.remove("is-collapsed"):e.classList.add("is-collapsed")}))}))}))</script>
+<script async src="https://fastly.jsdelivr.net/npm/force-graph@1.43.0/dist/force-graph.min.js"></script>
+<script async src="https://fastly.jsdelivr.net/npm/@alpinejs/persist@3.11.1/dist/cdn.min.js"></script>
+<script src="https://fastly.jsdelivr.net/npm/alpinejs@3.11.1/dist/cdn.min.js" async></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-okaidia.min.css" integrity="sha512-mIs9kKbaw6JZFfSuo+MovjU+Ntggfoj8RwAmJbVXQ5mkAX5LlgETQEweFPI18humSPHymTb5iikEOKWF7I8ncQ==" crossorigin="anonymous" referrerpolicy="no-referrer" async>
+<script src="https://fastly.jsdelivr.net/npm/whatwg-fetch@3.6.2/dist/fetch.umd.min.js" crossorigin="anonymous" referrerpolicy="no-referrer" async></script>
+<link href="/styles/digital-garden-base.css" rel="stylesheet">
+<link href="/styles/obsidian-base.css" rel="stylesheet">
+<link href="/styles/_theme.d92311c2.css" rel="stylesheet">
+<link href="/styles/custom-style.css" rel="stylesheet">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<style></style>
+</head>
+<body class="theme-dark markdown-preview-view markdown-rendered markdown-preview-section">
+<nav class="navbar">
+<div class="navbar-inner">
+<a href="/" style="text-decoration:none">
+<h1 style="margin:15px!important">Digital Garden</h1>
+</a>
+</div>
+</nav>
+<main class="content cm-s-obsidian">
+<header>
+<div class="header-meta">
+</div>
+</header>
+<h1 id="学习目标" tabindex="-1">学习目标</h1>
+<p>1.了解文件操作的作用<br>
+2.掌握文件的基本操作如打开、读写、关闭等<br>
+3.掌握Python操作文件和文件夹的方法<br>
+4.能独立完成文件操作案例的编写</p>
+<p>文件操作的目的是实现文件的永久保存</p>
+<h1 id="文件操作三步走" tabindex="-1">文件操作三步走</h1>
+<ul>
+<li>打开文件：<code>open(name, mode)</code>
+<ul>
+<li>name 代表要打开的<strong>文件路径</strong> + <strong>文件名</strong></li>
+<li>mode 代表访问模式：<code>r/w/a</code>（<strong>模式不止这三个还有很多很多</strong>），<strong>看下下面的细说</strong>
+<ul>
+<li><code>r</code>：read，只读模式，代表只能对文件进行读取，属于默认模式，如果要访问的<strong>文件不存在，则直接报错</strong>！</li>
+<li><code>w</code>：write，只写模式，代表只能对文件进行写入操作，<strong>如果访问的文件不存在则自动创建</strong>，写入数据到文件时，<strong>会覆盖源数据</strong>！（<strong>只会创建文件，不会创建文件夹</strong>❗）</li>
+<li><code>a</code>：append，追加模式（只写模式的一种），与w类似，如果文件不存在则创建，写入数据到文件时不会覆盖源数据而是在后面追加</li>
+</ul>
+</li>
+<li><code>open()</code>方法打开的文件返回的是一个<strong>文件对象（句柄）</strong>（对象的概念后面再学），之后对文件的操作都是对这个<strong>对象</strong>来操作</li>
+<li><code>f = open('python.txt','r',encoding='utf-8')</code></li>
+</ul>
+</li>
+<li>读写文件
+<ul>
+<li><code>f.write(content)</code>只能把字符串类型的数据写入到文件中</li>
+<li><code>f.write('fuck you')</code></li>
+</ul>
+</li>
+<li>关闭文件（释放内存空间）
+<ul>
+<li><code>f.close()</code></li>
+</ul>
+</li>
+</ul>
+<h1 id="读取文件方法" tabindex="-1">读取文件方法</h1>
+<p>打开文件 <code>f = open()</code> → 读取文件 → 关闭文件</p>
+<h2 id="code-read-code" tabindex="-1"><code>read()</code>：一次性读取全部内容</h2>
+<ul>
+<li>参数是指定读取多少个字符<code>read(1)</code>，代表<strong>读取1个字符</strong>，不指定就是<strong>读取所有内容</strong></li>
+</ul>
+<pre><code class="language-python">f = open('python.txt','r', encoding='utf-8')
+content = f.read()  <a class="tag" onclick="toggleTagSearch(this)" data-content="#读取文件所有内容">#读取文件所有内容</a>
+content = f.read(1)  <a class="tag" onclick="toggleTagSearch(this)" data-content="#代表只读取文件中的一个字符">#代表只读取文件中的一个字符</a>
+print(content)
+f.close
+</code></pre>
+<h2 id="code-readlines-code" tabindex="-1"><code>readlines()</code>：读取所有内容成列表，每个元素都是文件中的一行</h2>
+<ul>
+<li><strong>只适合读小文件！</strong></li>
+</ul>
+<pre><code class="language-python">f = open('python.txt', 'r', encoding='utf-8')
+content = f.readlines(
+print(content)
+f.close()
+</code></pre>
+<h2 id="code-readline-code" tabindex="-1"><code>readline()</code>：一行一行读取，</h2>
+<ul>
+<li><code>.readline()</code>一次就读一行（读取一次向后移动一次），直到文件读取完毕，通常配合<code>while True:</code>使用</li>
+</ul>
+<pre><code class="language-python">f = open('python.txt', 'r', encoding='utf-8′)
+while True:
+	content = f.readline()
+	<a class="tag" onclick="toggleTagSearch(this)" data-content="#判断，如果读取不到任何内容，则结束循环">#判断，如果读取不到任何内容，则结束循环</a>
+	if not content:
+		break
+	<a class="tag" onclick="toggleTagSearch(this)" data-content="#反之，如果没有执行break，则代表文件中还有内容">#反之，如果没有执行break，则代表文件中还有内容</a>
+	print(content, end='')  # 思考为什么要 end=''
+print(content)
+f.close()
+</code></pre>
+<h1 id="注意！编码问题" tabindex="-1">注意！编码问题</h1>
+<p>txt打开默认用utf8编码，python（大多数编程语言）输出的编码默认是ASCII编码</p>
+<p>国际化组织 编码标准unicode → UTF-8</p>
+<p>打开和写入要指定编码格式<br>
+<code>f = open('python.txt'，'w'，encoding='utf-8')</code></p>
+<h1 id="mode" tabindex="-1">文件访问方式（mode）</h1>
+<p>r：只读<br>
+w：只写<br>
+a：追加</p>
+<p>+：（增加读写功能 ）加号代表既可以读取也可以写入</p>
+<p>b：binary缩写形式，以二进制流的方式读取文件或写入数据到文件</p>
+<p>rb<br>
+wb<br>
+ab<br>
+以上rb、wb、ab不仅可以针对文本文件，还可以针对<strong>图片、音频、视频</strong>文件进行读写操作</p>
+<h1 id="应用：文件备份" tabindex="-1">应用：文件备份</h1>
+<p><code>test.txt =&gt; test[backup].txt</code></p>
+<p><a href="104-1-find()%E6%96%B9%E6%B3%95.md" target="_blank" class="external-link">104-1-find()方法</a></p>
+<pre><code class="language-python">
+# find方法找后缀
+oldname = 'test.txt' 拆解文件名与文件的后缀
+index = oldname.rfind('.')
+<a class="tag" onclick="toggleTagSearch(this)" data-content="#获取文件名称">#获取文件名称</a>
+filename = oldname[:index]  # 切片只管前不管后 =&gt; test
+postfix = oldname[index:]  # =&gt; .txt
+
+# 拼接新文件名
+newname = filename + '[backup]' + postfix
+
+# 创建文件句柄
+old_f = open(oldname, 'rb')  # 二进制流形式读
+new_f = open(newname, 'wb')  # 二进制流形式写
+
+# 大文件分块读
+while True:
+	content = old_f.read(1024)
+	if not content:
+		break
+	new_f.write(content)
+
+# 关闭文件
+old_f.close()
+new_f.close()
+</code></pre>
+</main>
+<script>window.location.hash&&document.getElementById(window.location.hash.slice(1)).classList.add("referred"),window.addEventListener("hashchange",(e=>{const t=e.oldURL.split("#");t[1]&&document.getElementById(t[1]).classList.remove("referred");const n=e.newURL.split("#");n[1]&&document.getElementById(n[1]).classList.add("referred")}),!1);const url_parts=window.location.href.split("#"),url=url_parts[0],referrence=url_parts[1];document.querySelectorAll(".cm-s-obsidian > *[id]").forEach((function(e){e.ondblclick=function(e){const t=url+"#"+e.target.id;navigator.clipboard.writeText(t)}}))</script>
+<script src="https://fastly.jsdelivr.net/npm/luxon@3.2.1/build/global/luxon.min.js"></script>
+<script defer="defer">TIMESTAMP_FORMAT="MMM dd, yyyy h:mm a",document.querySelectorAll(".human-date").forEach((function(e){date=e.getAttribute("data-date")||e.innerText,parsed_date=luxon.DateTime.fromISO(date),null!=parsed_date.invalid&&(parsed_date=luxon.DateTime.fromSQL(date)),null!=parsed_date.invalid&&(parsed_date=luxon.DateTime.fromHTML(date)),e.innerHTML=parsed_date.toFormat(TIMESTAMP_FORMAT)}))</script>
+<script>lucide.createIcons({attrs:{class:["svg-icon"]}})</script>
+</body>
+</html>

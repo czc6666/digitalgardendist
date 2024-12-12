@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>超线程</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<script async type="module">import mermaid from"https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"</script>
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js" integrity="sha512-hpZ5pDCF2bRCweL5WoA0/N1elet1KYL5mx3LP555Eg/0ZguaHawxNvEjF6O3rufAChs16HVNhEc6blF/rZoowQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/plugins/autoloader/prism-autoloader.min.js" integrity="sha512-sv0slik/5O0JIPdLBCR2A3XDg/1U3WuDEheZfI/DI5n8Yqc3h5kjrnr46FGBNiUAJF7rE4LHKwQ/SoSLRKAxEA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script async src="https://cdn.jsdelivr.net/npm/lucide@0.115.0/dist/umd/lucide.min.js"></script>
+<script>window.addEventListener("load",(()=>{document.querySelectorAll(".callout").forEach((e=>{const t=getComputedStyle(e).getPropertyValue("--callout-icon"),l=t&&t.trim().replace(/^lucide-/,"");if(l){const t=e.querySelector(".callout-title");if(t){const e=document.createElement("div"),c=document.createElement("i");e.appendChild(c),c.setAttribute("icon-name",l),e.setAttribute("class","callout-icon"),t.insertBefore(e,t.firstChild)}}})),lucide.createIcons(),Array.from(document.querySelectorAll(".callout.is-collapsible")).forEach((e=>{e.querySelector(".callout-title").addEventListener("click",(t=>{e.classList.contains("is-collapsed")?e.classList.remove("is-collapsed"):e.classList.add("is-collapsed")}))}))}))</script>
+<script async src="https://fastly.jsdelivr.net/npm/force-graph@1.43.0/dist/force-graph.min.js"></script>
+<script async src="https://fastly.jsdelivr.net/npm/@alpinejs/persist@3.11.1/dist/cdn.min.js"></script>
+<script src="https://fastly.jsdelivr.net/npm/alpinejs@3.11.1/dist/cdn.min.js" async></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-okaidia.min.css" integrity="sha512-mIs9kKbaw6JZFfSuo+MovjU+Ntggfoj8RwAmJbVXQ5mkAX5LlgETQEweFPI18humSPHymTb5iikEOKWF7I8ncQ==" crossorigin="anonymous" referrerpolicy="no-referrer" async>
+<script src="https://fastly.jsdelivr.net/npm/whatwg-fetch@3.6.2/dist/fetch.umd.min.js" crossorigin="anonymous" referrerpolicy="no-referrer" async></script>
+<link href="/styles/digital-garden-base.css" rel="stylesheet">
+<link href="/styles/obsidian-base.css" rel="stylesheet">
+<link href="/styles/_theme.d92311c2.css" rel="stylesheet">
+<link href="/styles/custom-style.css" rel="stylesheet">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<style></style>
+</head>
+<body class="theme-dark markdown-preview-view markdown-rendered markdown-preview-section">
+<nav class="navbar">
+<div class="navbar-inner">
+<a href="/" style="text-decoration:none">
+<h1 style="margin:15px!important">Digital Garden</h1>
+</a>
+</div>
+</nav>
+<main class="content cm-s-obsidian">
+<header>
+<div class="header-meta">
+</div>
+</header>
+<div class="callout is-collapsible" data-callout="note"><div class="callout-title"><div class="callout-title-inner"> 超线程的介绍<br></div><div class="callout-fold"><i icon-name="chevron-down"></i></div></div>
+<div class="callout-content">
+<p>
+超线程（Hyper-Threading）是一种由英特尔开发的技术，旨在提高CPU的并行处理能力。它允许每个物理核心同时处理多个线程，具体来说，通常是两个线程。以下是超线程的主要特点和工作原理：</p>
+<h3 id="主要特点" tabindex="-1">主要特点</h3>
+<ol>
+<li>
+<p><strong>逻辑核心</strong>：在支持超线程的CPU中，每个物理核心被视为两个逻辑核心。这意味着操作系统可以识别并调度更多的线程。</p>
+</li>
+<li>
+<p><strong>资源共享</strong>：逻辑核心共享物理核心的部分资源，如缓存和执行单元。这种共享可以提高资源利用率，但在高负载时可能导致性能瓶颈。</p>
+</li>
+<li>
+<p><strong>并发执行</strong>：超线程允许CPU在一个时钟周期内处理更多的任务，减少空闲时间，提高整体效率。</p>
+</li>
+<li>
+<p><strong>适用场景</strong>：超线程在多任务、高并发的应用中表现尤为出色，例如服务器、虚拟化环境和某些桌面应用。</p>
+</li>
+</ol>
+<h3 id="工作原理" tabindex="-1">工作原理</h3>
+<p>当一个物理核心的一个逻辑核心在执行某个线程时，另一个逻辑核心可以利用该核心的空闲资源来执行另一个线程。这种设计可以减少等待时间，提高吞吐量。</p>
+<h3 id="优缺点" tabindex="-1">优缺点</h3>
+<ul>
+<li><strong>优点</strong>：
+<ul>
+<li>提高CPU的并行处理能力。</li>
+<li>改善多任务处理性能。</li>
+</ul>
+</li>
+<li><strong>缺点</strong>：
+<ul>
+<li>由于资源共享，性能提升有限，尤其是在资源竞争严重的情况下。</li>
+<li>对某些应用程序的支持效果不明显。</li>
+</ul>
+</li>
+</ul>
+<p>总之，超线程是提升计算效率的一种重要技术，适合需要高并发处理能力的场景。</p>
+</div></div>
+<div class="callout is-collapsible" data-callout="note"><div class="callout-title"><div class="callout-title-inner"> 问题：<strong>cpu的超线程本质也是并发执行</strong>，不能真正算两个核心吗？<br></div><div class="callout-fold"><i icon-name="chevron-down"></i></div></div>
+<div class="callout-content">
+<p>
+是的，CPU的超线程技术（Hyper-Threading）本质上是通过在单个物理核心上创建多个逻辑核心来实现并发执行。虽然超线程可以让一个物理核心同时处理两个线程，从而提高资源利用率和性能，但它并不能真正提供两个独立的物理核心的性能。</p>
+<h3 id="超线程的特点：" tabindex="-1">超线程的特点：</h3>
+<ol>
+<li>
+<p><strong>共享资源</strong>：逻辑核心共享物理核心的资源，如缓存、执行单元等，因此在资源竞争时，性能提升可能有限。</p>
+</li>
+<li>
+<p><strong>提高效率</strong>：在某些情况下，超线程可以减少空闲周期，提高CPU的整体效率，特别是在多任务处理或高并发的工作负载中。</p>
+</li>
+<li>
+<p><strong>性能差异</strong>：实际性能提升因应用而异，有些应用能充分利用超线程，而有些则可能受限于资源共享。</p>
+</li>
+</ol>
+<p>综上所述，虽然超线程能够提高并发能力，但它并不能替代真正的物理核心，性能上也有所不同。</p>
+</div></div>
+</main>
+<script>window.location.hash&&document.getElementById(window.location.hash.slice(1)).classList.add("referred"),window.addEventListener("hashchange",(e=>{const t=e.oldURL.split("#");t[1]&&document.getElementById(t[1]).classList.remove("referred");const n=e.newURL.split("#");n[1]&&document.getElementById(n[1]).classList.add("referred")}),!1);const url_parts=window.location.href.split("#"),url=url_parts[0],referrence=url_parts[1];document.querySelectorAll(".cm-s-obsidian > *[id]").forEach((function(e){e.ondblclick=function(e){const t=url+"#"+e.target.id;navigator.clipboard.writeText(t)}}))</script>
+<script src="https://fastly.jsdelivr.net/npm/luxon@3.2.1/build/global/luxon.min.js"></script>
+<script defer="defer">TIMESTAMP_FORMAT="MMM dd, yyyy h:mm a",document.querySelectorAll(".human-date").forEach((function(e){date=e.getAttribute("data-date")||e.innerText,parsed_date=luxon.DateTime.fromISO(date),null!=parsed_date.invalid&&(parsed_date=luxon.DateTime.fromSQL(date)),null!=parsed_date.invalid&&(parsed_date=luxon.DateTime.fromHTML(date)),e.innerHTML=parsed_date.toFormat(TIMESTAMP_FORMAT)}))</script>
+<script>lucide.createIcons({attrs:{class:["svg-icon"]}})</script>
+</body>
+</html>

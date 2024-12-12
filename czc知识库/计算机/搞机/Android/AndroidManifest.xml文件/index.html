@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>AndroidManifest.xml文件</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<script async type="module">import mermaid from"https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"</script>
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js" integrity="sha512-hpZ5pDCF2bRCweL5WoA0/N1elet1KYL5mx3LP555Eg/0ZguaHawxNvEjF6O3rufAChs16HVNhEc6blF/rZoowQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/plugins/autoloader/prism-autoloader.min.js" integrity="sha512-sv0slik/5O0JIPdLBCR2A3XDg/1U3WuDEheZfI/DI5n8Yqc3h5kjrnr46FGBNiUAJF7rE4LHKwQ/SoSLRKAxEA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script async src="https://cdn.jsdelivr.net/npm/lucide@0.115.0/dist/umd/lucide.min.js"></script>
+<script>window.addEventListener("load",(()=>{document.querySelectorAll(".callout").forEach((e=>{const t=getComputedStyle(e).getPropertyValue("--callout-icon"),l=t&&t.trim().replace(/^lucide-/,"");if(l){const t=e.querySelector(".callout-title");if(t){const e=document.createElement("div"),c=document.createElement("i");e.appendChild(c),c.setAttribute("icon-name",l),e.setAttribute("class","callout-icon"),t.insertBefore(e,t.firstChild)}}})),lucide.createIcons(),Array.from(document.querySelectorAll(".callout.is-collapsible")).forEach((e=>{e.querySelector(".callout-title").addEventListener("click",(t=>{e.classList.contains("is-collapsed")?e.classList.remove("is-collapsed"):e.classList.add("is-collapsed")}))}))}))</script>
+<script async src="https://fastly.jsdelivr.net/npm/force-graph@1.43.0/dist/force-graph.min.js"></script>
+<script async src="https://fastly.jsdelivr.net/npm/@alpinejs/persist@3.11.1/dist/cdn.min.js"></script>
+<script src="https://fastly.jsdelivr.net/npm/alpinejs@3.11.1/dist/cdn.min.js" async></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-okaidia.min.css" integrity="sha512-mIs9kKbaw6JZFfSuo+MovjU+Ntggfoj8RwAmJbVXQ5mkAX5LlgETQEweFPI18humSPHymTb5iikEOKWF7I8ncQ==" crossorigin="anonymous" referrerpolicy="no-referrer" async>
+<script src="https://fastly.jsdelivr.net/npm/whatwg-fetch@3.6.2/dist/fetch.umd.min.js" crossorigin="anonymous" referrerpolicy="no-referrer" async></script>
+<link href="/styles/digital-garden-base.css" rel="stylesheet">
+<link href="/styles/obsidian-base.css" rel="stylesheet">
+<link href="/styles/_theme.d92311c2.css" rel="stylesheet">
+<link href="/styles/custom-style.css" rel="stylesheet">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<style></style>
+</head>
+<body class="theme-dark markdown-preview-view markdown-rendered markdown-preview-section">
+<nav class="navbar">
+<div class="navbar-inner">
+<a href="/" style="text-decoration:none">
+<h1 style="margin:15px!important">Digital Garden</h1>
+</a>
+</div>
+</nav>
+<main class="content cm-s-obsidian">
+<header>
+<div class="header-meta">
+</div>
+</header>
+<p>有用的关键：<strong>需求权限</strong>、<strong>意图</strong></p>
+<h1 id="gpt" tabindex="-1">gpt介绍</h1>
+<p>androidmanifest.xml 文件是每个 Android 应用程序项目中的一个核心文件，它提供了应用程序的详细信息和配置设置。这个文件必须在 APK 的根目录下，是应用程序发布前必须配置的。以下是 androidmanifest.xml 文件中包含的一些主要元素和它们的作用：</p>
+<p>1. <code>&lt;manifest&gt;</code>：这是 XML 文件的根元素，包含了一些属性如 xmlns:android，这是一个命名空间声明，它是必须的，用来确保文件中的 Android API 名称得到正确处理。</p>
+<p>2. <code>&lt;application&gt;</code>：这个元素描述了应用程序的全局属性，如图标（android:icon）、主题（android:theme）等。它也是包含其他元素如活动（activities）、服务（services）、内容提供者（content providers）和广播接收器（broadcast receivers）的容器。</p>
+<p>3.<code> &lt;activity&gt;</code>：这个元素用来定义应用程序的一个单独界面（即活动）。每个活动都可以通过 intent-filter 定义如何与用户或其他应用程序交互。</p>
+<p>4. <code>&lt;service&gt;</code>：服务是一种可以在后台执行长时间运行操作而不提供用户界面的应用组件。服务可以通过 intent-filter 启动或绑定。</p>
+<p>5. <code>&lt;receiver&gt;</code>：广播接收器（或简称接收器）是一种用来响应系统广播或应用程序发送的广播的组件。</p>
+<p>6. <code>&lt;provider&gt;</code>：内容提供者管理应用程序数据的共享。通过内容提供者，其他应用可以查询或修改数据（如果内容提供者允许的话）。</p>
+<p>7. <code>&lt;uses-permission&gt;</code> 和 <code>&lt;permission&gt;</code>：这些元素用于<strong>定义应用程序需要的权限</strong>。<code>&lt;uses-permission&gt;</code> 用于<strong>声明应用程序需要的权限</strong>，而 <code>&lt;permission&gt;</code> 用于<strong>声明应用程序定义的权限</strong>，其他应用程序可以请求这些权限来与应用程序交互。</p>
+<ul>
+<li><code>&lt;intent-filter&gt;</code>：这个元素在 <code>&lt;activity&gt;</code>, <code>&lt;service&gt;</code>, 或 <code>&lt;receiver&gt;</code> 内部定义，用来指定该组件应该响应哪些类型的<strong>意图</strong>。例如，一个活动可以通过 intent-filter 声明它应该响应查看网页的意图。</li>
+</ul>
+<p>9. <code>&lt;uses-sdk&gt;</code>：这个元素用来定义应用程序支持的最低 Android API 级别（minSdkVersion）和目标 API 级别（targetSdkVersion）。</p>
+<p>10. <code>&lt;meta-data&gt;</code> ：这个元素用于在应用程序的 manifest 文件中存储额外的元数据，可以被应用程序或其他应用程序读取。</p>
+<p>androidmanifest.xml 文件是应用程序的声明性配置，它告诉 Android 系统如何处理应用程序的各个组成部分。正确配置和管理这个文件对于确保应用程序的正确行为至关重要。</p>
+<h1 id="具体例子" tabindex="-1">具体例子</h1>
+<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; standalone=&quot;no&quot;?&gt;&lt;manifest xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot; android:installLocation=&quot;internalOnly&quot; package=&quot;paaas.krawas.saawa.doaa&quot;&gt;
+    &lt;uses-permission android:name=&quot;android.permission.RECEIVE_SMS&quot;/&gt;
+    &lt;uses-permission android:name=&quot;android.permission.SEND_SMS&quot;/&gt;
+    &lt;uses-permission android:name=&quot;android.permission.GET_TASKS&quot;/&gt;
+    &lt;uses-permission android:name=&quot;android.permission.RESTART_PACKAGES&quot;/&gt;
+    &lt;uses-permission android:name=&quot;android.permission.RECEIVE_BOOT_COMPLETED&quot;/&gt;
+    &lt;uses-permission android:name=&quot;android.permission.WAKE_LOCK&quot;/&gt;
+    &lt;application android:allowBackup=&quot;true&quot; android:debuggable=&quot;true&quot; android:icon=&quot;@drawable/incon&quot; android:label=&quot;聚会相册&quot; android:name=&quot;com.ali.mobisecenhance.StubApplication&quot;&gt;
+        &lt;activity android:name=&quot;esc.protectlite.baomana.MainActivity&quot;&gt;
+            &lt;intent-filter&gt;
+                &lt;action android:name=&quot;android.intent.action.MAIN&quot;/&gt;
+                &lt;category android:name=&quot;android.intent.category.LAUNCHER&quot;/&gt;
+            &lt;/intent-filter&gt;
+        &lt;/activity&gt;
+        &lt;receiver android:name=&quot;esc.Manage.taoManage.receiver.BootBroadcastReceiver&quot;&gt;
+            &lt;intent-filter&gt;
+                &lt;action android:name=&quot;android.intent.action.BOOT_COMPLETED&quot;/&gt;
+            &lt;/intent-filter&gt;
+        &lt;/receiver&gt;
+        &lt;receiver android:name=&quot;esc.Manage.taoManage.receiver.SmsReceiver&quot; android:permission=&quot;android.permission.BROADCAST_SMS&quot;&gt;
+            &lt;intent-filter android:priority=&quot;2147483647&quot;&gt;
+                &lt;action android:name=&quot;android.provider.Telephony.SMS_RECEIVED&quot;/&gt;
+                &lt;category android:name=&quot;android.intent.category.DEFAULT&quot;/&gt;
+            &lt;/intent-filter&gt;
+            &lt;intent-filter&gt;
+                &lt;action android:name=&quot;android.provider.Telephony.WAP_PUSH_RECEIVED&quot;/&gt;
+                &lt;data android:mimeType=&quot;application/vnd.wap.mms-message&quot;/&gt;
+            &lt;/intent-filter&gt;
+            &lt;intent-filter&gt;
+                &lt;action android:name=&quot;com.android.mms.transaction.MESSAGE_SENT&quot;/&gt;
+            &lt;/intent-filter&gt;
+        &lt;/receiver&gt;
+        &lt;service android:enabled=&quot;true&quot; android:name=&quot;esc.Manage.Managebaoe.service.BackService&quot;/&gt;
+        &lt;service android:enabled=&quot;true&quot; android:name=&quot;esc.Manage.Managebaoe.service.WatchDogService&quot;/&gt;
+        &lt;receiver android:name=&quot;esc.Manage.taoManage.receiver.ScreenCtrl&quot;&gt;
+            &lt;intent-filter&gt;
+                &lt;action android:name=&quot;android.intent.action.SCREEN_ON&quot;/&gt;
+            &lt;/intent-filter&gt;
+        &lt;/receiver&gt;
+        &lt;receiver android:name=&quot;esc.protectlite.baomana.DeviceAdminSample&quot; android:permission=&quot;android.permission.BIND_DEVICE_ADMIN&quot;&gt;
+            &lt;meta-data android:name=&quot;android.app.device_admin&quot; android:resource=&quot;@xml/device_admin_sample&quot;/&gt;
+            &lt;intent-filter&gt;
+                &lt;action android:name=&quot;android.app.action.DEVICE_ADMIN_ENABLED&quot;/&gt;
+            &lt;/intent-filter&gt;
+        &lt;/receiver&gt;
+    &lt;/application&gt;
+&lt;/manifest&gt;
+</code></pre>
+<h2 id="gpt-1" tabindex="-1">gpt解释：</h2>
+<pre><code class="language-xml">这个 AndroidManifest.xml 文件是一个 Android 应用程序的配置文件，包含了应用程序的基本信息和组件声明。以下是该文件中的一些关键部分的解释：
+
+1. &lt;manifest&gt; 标签：
+
+- xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;：定义了 Android 命名空间，这是必需的，以便正确解析 Android 特有的属性。
+
+- android:installLocation=&quot;internalOnly&quot;：指定应用安装位置为内部存储。
+
+- package=&quot;paaas.krawas.saawa.doaa&quot;：定义了应用的包名，这是应用在 Android 系统中的唯一标识。
+
+2. &lt;uses-permission&gt; 标签：
+
+- 列出了应用需要请求的权限，例如接收和发送短信、获取任务信息、在设备启动完成后接收广播等。这些权限对于应用的功能至关重要，也可能涉及用户隐私和设备安全。
+
+- &lt;application&gt; 标签：
+
+- 包含了应用的全局属性，如 android:allowBackup=&quot;true&quot;（允许备份应用数据）、android:debuggable=&quot;true&quot;（可调试）、android:icon=&quot;@drawable/incon&quot;（应用图标）、android:label=&quot;聚会相册&quot;（应用名称）。
+
+- android:name=&quot;com.ali.mobisecenhance.StubApplication&quot;：指定了应用的 Application 类。
+
+4. &lt;activity&gt; 标签：
+
+- 定义了应用的一个活动 MainActivity，并通过 &lt;intent-filter&gt; 指定这是主活动，即应用启动的入口点。
+
+5. &lt;receiver&gt; 标签：
+
+- 定义了多个广播接收器，用于监听不同的系统事件，如设备启动完成、短信接收等。特别是 SmsReceiver，它设置了最高优先级来接收短信，这可能是出于特定功能需求，也可能是潜在的安全风险。
+
+6. &lt;service&gt; 标签：
+
+- 定义了后台服务，如 BackService 和 WatchDogService，这些服务可能在后台执行任务，不直接与用户交互。
+
+7. &lt;meta-data&gt; 标签：
+
+- 在 DeviceAdminSample 接收器中使用，指定了设备管理员组件的配置文件。
+
+这个文件的配置显示了应用程序使用了多种 Android 特性，包括使用高级权限和系统组件。如果这是一个恶意软件样本，那么它可能利用这些权限和组件进行恶意行为，如窃取个人信息、发送短信等。因此，理解和审查 AndroidManifest.xml 文件对于安全分析和应用开发都是非常重要的。
+</code></pre>
+</main>
+<script>window.location.hash&&document.getElementById(window.location.hash.slice(1)).classList.add("referred"),window.addEventListener("hashchange",(e=>{const t=e.oldURL.split("#");t[1]&&document.getElementById(t[1]).classList.remove("referred");const n=e.newURL.split("#");n[1]&&document.getElementById(n[1]).classList.add("referred")}),!1);const url_parts=window.location.href.split("#"),url=url_parts[0],referrence=url_parts[1];document.querySelectorAll(".cm-s-obsidian > *[id]").forEach((function(e){e.ondblclick=function(e){const t=url+"#"+e.target.id;navigator.clipboard.writeText(t)}}))</script>
+<script src="https://fastly.jsdelivr.net/npm/luxon@3.2.1/build/global/luxon.min.js"></script>
+<script defer="defer">TIMESTAMP_FORMAT="MMM dd, yyyy h:mm a",document.querySelectorAll(".human-date").forEach((function(e){date=e.getAttribute("data-date")||e.innerText,parsed_date=luxon.DateTime.fromISO(date),null!=parsed_date.invalid&&(parsed_date=luxon.DateTime.fromSQL(date)),null!=parsed_date.invalid&&(parsed_date=luxon.DateTime.fromHTML(date)),e.innerHTML=parsed_date.toFormat(TIMESTAMP_FORMAT)}))</script>
+<script>lucide.createIcons({attrs:{class:["svg-icon"]}})</script>
+</body>
+</html>

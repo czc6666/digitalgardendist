@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>TTS文本转语音 。基于Bert-VITS2的原神+崩铁全角色文本转语音实现</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<script async type="module">import mermaid from"https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"</script>
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js" integrity="sha512-hpZ5pDCF2bRCweL5WoA0/N1elet1KYL5mx3LP555Eg/0ZguaHawxNvEjF6O3rufAChs16HVNhEc6blF/rZoowQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/plugins/autoloader/prism-autoloader.min.js" integrity="sha512-sv0slik/5O0JIPdLBCR2A3XDg/1U3WuDEheZfI/DI5n8Yqc3h5kjrnr46FGBNiUAJF7rE4LHKwQ/SoSLRKAxEA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script async src="https://cdn.jsdelivr.net/npm/lucide@0.115.0/dist/umd/lucide.min.js"></script>
+<script>window.addEventListener("load",(()=>{document.querySelectorAll(".callout").forEach((e=>{const t=getComputedStyle(e).getPropertyValue("--callout-icon"),l=t&&t.trim().replace(/^lucide-/,"");if(l){const t=e.querySelector(".callout-title");if(t){const e=document.createElement("div"),c=document.createElement("i");e.appendChild(c),c.setAttribute("icon-name",l),e.setAttribute("class","callout-icon"),t.insertBefore(e,t.firstChild)}}})),lucide.createIcons(),Array.from(document.querySelectorAll(".callout.is-collapsible")).forEach((e=>{e.querySelector(".callout-title").addEventListener("click",(t=>{e.classList.contains("is-collapsed")?e.classList.remove("is-collapsed"):e.classList.add("is-collapsed")}))}))}))</script>
+<script async src="https://fastly.jsdelivr.net/npm/force-graph@1.43.0/dist/force-graph.min.js"></script>
+<script async src="https://fastly.jsdelivr.net/npm/@alpinejs/persist@3.11.1/dist/cdn.min.js"></script>
+<script src="https://fastly.jsdelivr.net/npm/alpinejs@3.11.1/dist/cdn.min.js" async></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-okaidia.min.css" integrity="sha512-mIs9kKbaw6JZFfSuo+MovjU+Ntggfoj8RwAmJbVXQ5mkAX5LlgETQEweFPI18humSPHymTb5iikEOKWF7I8ncQ==" crossorigin="anonymous" referrerpolicy="no-referrer" async>
+<script src="https://fastly.jsdelivr.net/npm/whatwg-fetch@3.6.2/dist/fetch.umd.min.js" crossorigin="anonymous" referrerpolicy="no-referrer" async></script>
+<link href="/styles/digital-garden-base.css" rel="stylesheet">
+<link href="/styles/obsidian-base.css" rel="stylesheet">
+<link href="/styles/_theme.d92311c2.css" rel="stylesheet">
+<link href="/styles/custom-style.css" rel="stylesheet">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<style></style>
+</head>
+<body class="theme-dark markdown-preview-view markdown-rendered markdown-preview-section">
+<nav class="navbar">
+<div class="navbar-inner">
+<a href="/" style="text-decoration:none">
+<h1 style="margin:15px!important">Digital Garden</h1>
+</a>
+</div>
+</nav>
+<main class="content cm-s-obsidian">
+<header>
+<div class="header-meta">
+</div>
+</header>
+<p>TTS：Text To Speech 文本转语音<br>
+基于Bert-VITS2的原神+崩铁全角色文本转语音实现</p>
+<h2 id="bert-vits-2" tabindex="-1">基于Bert-VITS2的原神+崩铁全角色文本转语音实现</h2>
+<p>b站up主：Stardust_减</p>
+<p>视频地址： <a href="https://www.bilibili.com/video/BV1hp4y1K78E" target="_blank" class="external-link">https://www.bilibili.com/video/BV1hp4y1K78E</a></p>
+<p>github仓库地址： <a href="https://github.com/Stardust-minus/Bert-VITS2" target="_blank" class="external-link">https://github.com/Stardust-minus/Bert-VITS2</a></p>
+<p>在线合成使用网址：<a href="https://v2.genshinvoice.top" target="_blank" class="external-link">v2.genshinvoice.top</a></p>
+<p>同时这里已经裁切了一份Bert-VITS2的底模，仅可用于训练，无法推理。 <a href="https://openi.pcl.ac.cn/Stardust_minus/Bert-VITS2/modelmanage/model_readme_tmpl?name=Bert-VITS2%E4%B8%AD%E6%97%A5%E5%BA%95%E6%A8%A1" target="_blank" class="external-link">https://openi.pcl.ac.cn/Stardust_minus/Bert-VITS2/modelmanage/model_readme_tmpl?name=Bert-VITS2中日底模</a><br>
+从github加了qq群<br>
+20231200@全体成员 在线服务已与仓库主线版本同步，更换为gradio webui。原接口不再计划维护，不保证可用性，请使用API的各位及时迁移到gradio client。新地址 。原版API仍在运行，但由于<strong>目前有大量请求在攻击后端API</strong>，可能出现访问异常缓慢的情况。<br>
+找的别人的部署本地的视频： <a href="https://www.bilibili.com/video/BV15j411j7Jz" target="_blank" class="external-link">https://www.bilibili.com/video/BV15j411j7Jz</a></p>
+<h2 id="a-href-https-www-text-to-speech-cn-target-blank-class-external-link-text-to-speech-text-to-speech-cn-a" tabindex="-1"><a href="https://www.text-to-speech.cn/" target="_blank" class="external-link">Text To Speech - 在线文本转语音 (text-to-speech.cn)</a></h2>
+<p>网上随便找的，貌似调用的微软的api。每天限制2000字<br>
+A Speech service feature that converts text to lifelike speech</p>
+<h2 id="a-href-https-okmiku-com-anime-tts-target-blank-class-external-link-miku-tools-okmiku-com-a" tabindex="-1"><a href="https://okmiku.com/anime_tts" target="_blank" class="external-link">原神语音合成 - MikuTools (okmiku.com)</a></h2>
+<p>网上找的另一个。负载好像很高，用不了 。傻逼网站，几个字慢的要死，还限制25字</p>
+</main>
+<script>window.location.hash&&document.getElementById(window.location.hash.slice(1)).classList.add("referred"),window.addEventListener("hashchange",(e=>{const t=e.oldURL.split("#");t[1]&&document.getElementById(t[1]).classList.remove("referred");const n=e.newURL.split("#");n[1]&&document.getElementById(n[1]).classList.add("referred")}),!1);const url_parts=window.location.href.split("#"),url=url_parts[0],referrence=url_parts[1];document.querySelectorAll(".cm-s-obsidian > *[id]").forEach((function(e){e.ondblclick=function(e){const t=url+"#"+e.target.id;navigator.clipboard.writeText(t)}}))</script>
+<script src="https://fastly.jsdelivr.net/npm/luxon@3.2.1/build/global/luxon.min.js"></script>
+<script defer="defer">TIMESTAMP_FORMAT="MMM dd, yyyy h:mm a",document.querySelectorAll(".human-date").forEach((function(e){date=e.getAttribute("data-date")||e.innerText,parsed_date=luxon.DateTime.fromISO(date),null!=parsed_date.invalid&&(parsed_date=luxon.DateTime.fromSQL(date)),null!=parsed_date.invalid&&(parsed_date=luxon.DateTime.fromHTML(date)),e.innerHTML=parsed_date.toFormat(TIMESTAMP_FORMAT)}))</script>
+<script>lucide.createIcons({attrs:{class:["svg-icon"]}})</script>
+</body>
+</html>

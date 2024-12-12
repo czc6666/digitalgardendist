@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>校园网AP隔离解决方案笔记-解决校园网设备无法互相通信的臭毛病-附破解程序</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<script async type="module">import mermaid from"https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"</script>
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js" integrity="sha512-hpZ5pDCF2bRCweL5WoA0/N1elet1KYL5mx3LP555Eg/0ZguaHawxNvEjF6O3rufAChs16HVNhEc6blF/rZoowQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/plugins/autoloader/prism-autoloader.min.js" integrity="sha512-sv0slik/5O0JIPdLBCR2A3XDg/1U3WuDEheZfI/DI5n8Yqc3h5kjrnr46FGBNiUAJF7rE4LHKwQ/SoSLRKAxEA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script async src="https://cdn.jsdelivr.net/npm/lucide@0.115.0/dist/umd/lucide.min.js"></script>
+<script>window.addEventListener("load",(()=>{document.querySelectorAll(".callout").forEach((e=>{const t=getComputedStyle(e).getPropertyValue("--callout-icon"),l=t&&t.trim().replace(/^lucide-/,"");if(l){const t=e.querySelector(".callout-title");if(t){const e=document.createElement("div"),c=document.createElement("i");e.appendChild(c),c.setAttribute("icon-name",l),e.setAttribute("class","callout-icon"),t.insertBefore(e,t.firstChild)}}})),lucide.createIcons(),Array.from(document.querySelectorAll(".callout.is-collapsible")).forEach((e=>{e.querySelector(".callout-title").addEventListener("click",(t=>{e.classList.contains("is-collapsed")?e.classList.remove("is-collapsed"):e.classList.add("is-collapsed")}))}))}))</script>
+<script async src="https://fastly.jsdelivr.net/npm/force-graph@1.43.0/dist/force-graph.min.js"></script>
+<script async src="https://fastly.jsdelivr.net/npm/@alpinejs/persist@3.11.1/dist/cdn.min.js"></script>
+<script src="https://fastly.jsdelivr.net/npm/alpinejs@3.11.1/dist/cdn.min.js" async></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-okaidia.min.css" integrity="sha512-mIs9kKbaw6JZFfSuo+MovjU+Ntggfoj8RwAmJbVXQ5mkAX5LlgETQEweFPI18humSPHymTb5iikEOKWF7I8ncQ==" crossorigin="anonymous" referrerpolicy="no-referrer" async>
+<script src="https://fastly.jsdelivr.net/npm/whatwg-fetch@3.6.2/dist/fetch.umd.min.js" crossorigin="anonymous" referrerpolicy="no-referrer" async></script>
+<link href="/styles/digital-garden-base.css" rel="stylesheet">
+<link href="/styles/obsidian-base.css" rel="stylesheet">
+<link href="/styles/_theme.d92311c2.css" rel="stylesheet">
+<link href="/styles/custom-style.css" rel="stylesheet">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<style></style>
+</head>
+<body class="theme-dark markdown-preview-view markdown-rendered markdown-preview-section">
+<nav class="navbar">
+<div class="navbar-inner">
+<a href="/" style="text-decoration:none">
+<h1 style="margin:15px!important">Digital Garden</h1>
+</a>
+</div>
+</nav>
+<main class="content cm-s-obsidian">
+<header>
+<div class="header-meta">
+</div>
+</header>
+<h1 id="ac-ap" tabindex="-1">问题介绍 AC AP 隔离</h1>
+<p>两台电脑在同一楼层时触发了ap隔离，但是隔了距离跨ap是可以正常访问的，这就是原因</p>
+<p>无线用户隔离</p>
+<p><a href="https://support.huawei.com/enterprise/zh/doc/EDOC1000051014/54f784b4" target="_blank" class="external-link">华为 WLAN 维护宝典（V200）# 如何配置无线用户隔离？</a></p>
+<p><a href="https://blog.csdn.net/xiao_yi_xiao/article/details/131899457" target="_blank" class="external-link">Wifi隔离 （AP隔离）的原理及实现_mtk noforwarding-CSDN博客</a></p>
+<blockquote>
+<p>AP隔离非常类似有线网络的VLAN(虚拟局域网)，将所有的无线客户端设备之间完全隔离，是客户端只能访问AP接入的固定网络。通俗来讲，就是各个连接无线的客户机（如手机、电脑等）之间无法互相通讯的，即你无法在两台同时连接AP的电脑间使用类似共享文件等功能。因此，在开启该功能之后，可以保护不同用户间的数据安全，有利于抵御外部攻击。</p>
+</blockquote>
+<hr>
+<p><a href="https://zhuanlan.zhihu.com/p/235550377" target="_blank" class="external-link"># 家庭无线漫游组网方案——AC+AP篇</a></p>
+<h1 id="我们的目标是解决校内两设备无法互相通信的臭毛病" tabindex="-1">我们的目标是解决校内两设备无法互相通信的臭毛病</h1>
+<h1 id="核心思想，自己重新设置路由规则" tabindex="-1">核心思想，自己重新设置路由规则</h1>
+<p>举个例子</p>
+<ul>
+<li>AP隔离就像&quot;教室规定学生不能直接传纸条&quot;</li>
+<li>但学生都可以和老师（网关）通信</li>
+<li>修改路由相当于&quot;所有纸条都先交给老师转交&quot;</li>
+<li>这样就绕过了&quot;学生之间不能直接传纸条&quot;的限制</li>
+</ul>
+<h1 id="linux" tabindex="-1">linux 系统</h1>
+<p><a href="https://www.cnblogs.com/wangbingbing/p/17931315.html" target="_blank" class="external-link">AP隔离的设备互相访问 - 王冰冰 - 博客园</a></p>
+<h1 id="windows" tabindex="-1">windows</h1>
+<p>查看当前路由表：<code>route print</code><br>
+删除直连路由：<code>route delete 10.21.64.0 mask 255.255.192.0</code><br>
+添加通过网关的路由：<code>route add 10.21.64.0 mask 255.255.192.0 10.21.64.1</code><br>
+如果想要路由在重启后依然生效，使用：<code>route -p add 10.21.64.0 mask 255.255.192.0 10.21.64.1</code></p>
+<p>默认的</p>
+<pre><code>IPv4 路由表  
+=========================================================================
+活动路由:  
+网络目标 网络掩码 网关 接口 跃点数  
+0.0.0.0 0.0.0.0 10.21.64.1 10.21.127.9 46  
+10.21.64.0 255.255.192.0 在链路上 10.21.127.9 301  
+10.21.127.9 255.255.255.255 在链路上 10.21.127.9 301
+</code></pre>
+<hr>
+<h1 id="ap" tabindex="-1">让我用简单的方式解释AP隔离破解的原理：</h1>
+<ol>
+<li>正常情况（有AP隔离）
+<ul>
+<li>AP隔离阻止了同一AP下设备之间的直接通信</li>
+<li>但所有设备都能和网关通信</li>
+</ul>
+</li>
+</ol>
+<pre><code>设备A ←→ AP ←→ 设备B
+        ❌
+设备A ←→ 设备B
+</code></pre>
+<ol start="2">
+<li>修改路由后：
+<ul>
+<li>删除直连路由，强制所有通信都经过网关</li>
+<li>网关成为&quot;中转站&quot;，帮助转发数据包</li>
+</ul>
+</li>
+</ol>
+<pre><code>设备A → 网关 → 设备B
+设备B → 网关 → 设备A
+</code></pre>
+<ol start="3">
+<li>具体原理：
+<ul>
+<li>默认路由表让设备尝试在同一网段内直接通信</li>
+<li>AP隔离阻止了这种直接通信</li>
+<li>修改路由后，即使是同网段通信也会发送到网关</li>
+<li>网关没有AP隔离限制，可以转发到目标设备</li>
+</ul>
+</li>
+</ol>
+<p><strong>就像</strong>：</p>
+<ul>
+<li>AP隔离就像&quot;教室规定学生不能直接传纸条&quot;</li>
+<li>但学生都可以和老师（网关）通信</li>
+<li>修改路由相当于&quot;所有纸条都先交给老师转交&quot;</li>
+<li>这样就绕过了&quot;学生之间不能直接传纸条&quot;的限制</li>
+</ul>
+<h1 id="破解工作原理" tabindex="-1">破解工作原理</h1>
+<pre><code>设备A ─→ 检测网关 ─→ 修改路由 ─┐
+	                        ├─→ 可以互相访问
+设备B ─→ 检测网关 ─→ 修改路由 ─┘
+</code></pre>
+<h1 id="ap-1" tabindex="-1">ap隔离脚本程序</h1>
+<p><img src="windows%20%E5%B0%86ps%E3%80%81bat%E3%80%81py%E7%AD%89%E8%84%9A%E6%9C%AC%E3%80%81%E4%BB%A3%E7%A0%81%E7%BC%96%E8%AF%91%E6%88%90exe%E6%96%87%E4%BB%B6.md" alt="windows 将ps、bat、py等脚本、代码编译成exe文件"></p>
+<p>代码上传github：</p>
+<pre><code class="language-powershell"># 自动请求管理员权限
+if (-NOT GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole] &quot;Administrator&quot;) {
+    Start-Process powershell -Verb RunAs -ArgumentList &quot;-File `&quot;$PSCommandPath`&quot;&quot;
+    exit
+}
+
+# 获取所有网络适配器
+$adapters = Get-NetAdapter | Where-Object { $_.Status -eq &quot;Up&quot; } | ForEach-Object {
+    $config = Get-NetIPConfiguration -InterfaceIndex $_.InterfaceIndex
+    [PSCustomObject]@{
+        Index = $_.InterfaceIndex
+        Name = $_.Name
+        Description = $_.InterfaceDescription
+        IP = $config.IPv4Address.IPAddress
+        Gateway = $config.IPv4DefaultGateway.NextHop
+        Status = $_.Status
+    }
+}
+
+# 显示适配器列表
+Write-Host &quot;`n所有活动的网络适配器：&quot; -ForegroundColor Green
+
+if ($adapters.Count -eq 0) {
+    Write-Host &quot;未找到任何活动的网络适配器！&quot; -ForegroundColor Red
+    Write-Host &quot;`n按任意键退出...&quot; -ForegroundColor Yellow
+    $null = $Host.UI.RawUI.ReadKey(&quot;NoEcho,IncludeKeyDown&quot;)
+    exit
+}
+
+for ($i = 0; $i -lt $adapters.Count; $i++) {
+    Write-Host &quot;`n[$i] &quot; -NoNewline -ForegroundColor Yellow
+    Write-Host &quot;$($adapters[$i].Name)&quot; -ForegroundColor Cyan
+    Write-Host &quot;    描述: $($adapters[$i].Description)&quot;
+    Write-Host &quot;    IP地址: $($adapters[$i].IP)&quot;
+    Write-Host &quot;    网关: &quot; -NoNewline
+    if ($adapters[$i].Gateway) {
+        Write-Host &quot;$($adapters[$i].Gateway)&quot; -ForegroundColor Green
+    } else {
+        Write-Host &quot;无默认网关&quot; -ForegroundColor Red
+    }
+    Write-Host &quot;    状态: $($adapters[$i].Status)&quot;
+}
+
+# 用户选择
+do {
+    Write-Host &quot;`n请选择要配置的网络适配器 [0-$($adapters.Count - 1)]: &quot; -NoNewline -ForegroundColor Green
+    $choice = Read-Host
+} while ($choice -notmatch '^\d+
+
+将ps脚本编译成exe文件的方法
+1. 以管理员身份打开 PowerShell
+2. 运行: Install-Module ps2exe -Force
+3. 运行: Invoke-ps2exe &quot;route_config.ps1&quot; &quot;路由配置工具.exe&quot; -or [int]$choice -lt 0 -or [int]$choice -ge $adapters.Count)
+
+$selected = $adapters[[int]$choice]
+
+# 检查选择的适配器是否有网关
+if (-not $selected.Gateway) {
+    Write-Host &quot;`n错误：选择的网络适配器没有默认网关，无法配置！&quot; -ForegroundColor Red
+    Write-Host &quot;请选择有默认网关的网络适配器。&quot; -ForegroundColor Yellow
+    Write-Host &quot;`n按任意键退出...&quot; -ForegroundColor Yellow
+    $null = $Host.UI.RawUI.ReadKey(&quot;NoEcho,IncludeKeyDown&quot;)
+    exit
+}
+
+# 计算网段
+$ipParts = $selected.IP.Split('.')
+$networkID = &quot;{0}.{1}.{2}.0&quot; -f $ipParts[0], $ipParts[1], ($ipParts[2] -band 0xC0)
+
+Write-Host &quot;`n正在配置路由...&quot; -ForegroundColor Green
+Write-Host &quot;选择的适配器: $($selected.Name)&quot; -ForegroundColor Yellow
+Write-Host &quot;网关: $($selected.Gateway)&quot; -ForegroundColor Yellow
+Write-Host &quot;网段: $networkID&quot; -ForegroundColor Yellow
+
+# 删除直连路由
+Write-Host &quot;`n删除直连路由...&quot; -ForegroundColor Yellow
+route delete $networkID mask 255.255.192.0
+
+# 添加网关路由
+Write-Host &quot;添加网关路由...&quot; -ForegroundColor Yellow
+route -p add $networkID mask 255.255.192.0 $selected.Gateway
+
+Write-Host &quot;`n配置完成！&quot; -ForegroundColor Green
+Write-Host &quot;`n按任意键退出...&quot; -ForegroundColor Green
+$null = $Host.UI.RawUI.ReadKey(&quot;NoEcho,IncludeKeyDown&quot;)
+</code></pre>
+<p>将ps脚本编译成exe文件的方法</p>
+<ol>
+<li>以管理员身份打开 PowerShell</li>
+<li>运行: Install-Module ps2exe -Force</li>
+<li>运行: Invoke-ps2exe &quot;route_config.ps1&quot; &quot;路由配置工具.exe&quot;</li>
+</ol>
+</main>
+<script>window.location.hash&&document.getElementById(window.location.hash.slice(1)).classList.add("referred"),window.addEventListener("hashchange",(e=>{const t=e.oldURL.split("#");t[1]&&document.getElementById(t[1]).classList.remove("referred");const n=e.newURL.split("#");n[1]&&document.getElementById(n[1]).classList.add("referred")}),!1);const url_parts=window.location.href.split("#"),url=url_parts[0],referrence=url_parts[1];document.querySelectorAll(".cm-s-obsidian > *[id]").forEach((function(e){e.ondblclick=function(e){const t=url+"#"+e.target.id;navigator.clipboard.writeText(t)}}))</script>
+<script src="https://fastly.jsdelivr.net/npm/luxon@3.2.1/build/global/luxon.min.js"></script>
+<script defer="defer">TIMESTAMP_FORMAT="MMM dd, yyyy h:mm a",document.querySelectorAll(".human-date").forEach((function(e){date=e.getAttribute("data-date")||e.innerText,parsed_date=luxon.DateTime.fromISO(date),null!=parsed_date.invalid&&(parsed_date=luxon.DateTime.fromSQL(date)),null!=parsed_date.invalid&&(parsed_date=luxon.DateTime.fromHTML(date)),e.innerHTML=parsed_date.toFormat(TIMESTAMP_FORMAT)}))</script>
+<script>lucide.createIcons({attrs:{class:["svg-icon"]}})</script>
+</body>
+</html>

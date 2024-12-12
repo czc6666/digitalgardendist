@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>002-输入输出运算符等</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<script async type="module">import mermaid from"https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"</script>
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js" integrity="sha512-hpZ5pDCF2bRCweL5WoA0/N1elet1KYL5mx3LP555Eg/0ZguaHawxNvEjF6O3rufAChs16HVNhEc6blF/rZoowQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/plugins/autoloader/prism-autoloader.min.js" integrity="sha512-sv0slik/5O0JIPdLBCR2A3XDg/1U3WuDEheZfI/DI5n8Yqc3h5kjrnr46FGBNiUAJF7rE4LHKwQ/SoSLRKAxEA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script async src="https://cdn.jsdelivr.net/npm/lucide@0.115.0/dist/umd/lucide.min.js"></script>
+<script>window.addEventListener("load",(()=>{document.querySelectorAll(".callout").forEach((e=>{const t=getComputedStyle(e).getPropertyValue("--callout-icon"),l=t&&t.trim().replace(/^lucide-/,"");if(l){const t=e.querySelector(".callout-title");if(t){const e=document.createElement("div"),c=document.createElement("i");e.appendChild(c),c.setAttribute("icon-name",l),e.setAttribute("class","callout-icon"),t.insertBefore(e,t.firstChild)}}})),lucide.createIcons(),Array.from(document.querySelectorAll(".callout.is-collapsible")).forEach((e=>{e.querySelector(".callout-title").addEventListener("click",(t=>{e.classList.contains("is-collapsed")?e.classList.remove("is-collapsed"):e.classList.add("is-collapsed")}))}))}))</script>
+<script async src="https://fastly.jsdelivr.net/npm/force-graph@1.43.0/dist/force-graph.min.js"></script>
+<script async src="https://fastly.jsdelivr.net/npm/@alpinejs/persist@3.11.1/dist/cdn.min.js"></script>
+<script src="https://fastly.jsdelivr.net/npm/alpinejs@3.11.1/dist/cdn.min.js" async></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-okaidia.min.css" integrity="sha512-mIs9kKbaw6JZFfSuo+MovjU+Ntggfoj8RwAmJbVXQ5mkAX5LlgETQEweFPI18humSPHymTb5iikEOKWF7I8ncQ==" crossorigin="anonymous" referrerpolicy="no-referrer" async>
+<script src="https://fastly.jsdelivr.net/npm/whatwg-fetch@3.6.2/dist/fetch.umd.min.js" crossorigin="anonymous" referrerpolicy="no-referrer" async></script>
+<link href="/styles/digital-garden-base.css" rel="stylesheet">
+<link href="/styles/obsidian-base.css" rel="stylesheet">
+<link href="/styles/_theme.d92311c2.css" rel="stylesheet">
+<link href="/styles/custom-style.css" rel="stylesheet">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<style></style>
+</head>
+<body class="theme-dark markdown-preview-view markdown-rendered markdown-preview-section">
+<nav class="navbar">
+<div class="navbar-inner">
+<a href="/" style="text-decoration:none">
+<h1 style="margin:15px!important">Digital Garden</h1>
+</a>
+</div>
+</nav>
+<main class="content cm-s-obsidian">
+<header>
+<div class="header-meta">
+</div>
+</header>
+<h1 id="格式化输出❗" tabindex="-1">格式化输出❗</h1>
+<p>变量按照一定格式输出<br>
+通过百分号格式化输出字符串</p>
+<pre><code class="language-python">name = 'czc'
+age = 98
+print('名字：%s，今年%d岁。' % (name, age))
+</code></pre>
+<pre><code class="language-python">%d  # 整型变量
+%s  # 字符串
+%.2f  # 保留两位小数的浮点数
+%6d  # 6位整数，不足补零
+%%  # 输出一个百分号，只输一个百分号会报错
+</code></pre>
+<pre><code class="language-python"># f形式的格式化输出
+# .format（）形式的格式化输出只能在Python3中使用！
+print('姓名：{}，联系方式：{}'.format(name，mobile))
+print(f'姓名：{name}，联系方式：{mobile}')  # 简写，推荐形式
+
+title= '大白菜'
+price = 3.5
+
+print(f'今天蔬菜特价了，{title}只要{price:.3f}元/斤。')  # {price:06d}
+</code></pre>
+<p><strong><code>print</code>输出后不换行</strong>：<code>print(_,end='')</code><br>
+<code>print()</code>就相当于输出换一行：&quot;<code>\n</code>&quot;</p>
+<h2 id="转义字符" tabindex="-1">转义字符</h2>
+<pre><code class="language-python">&quot;&quot;&quot;
+\t 制表符
+\n 换行符
+扩展：print（）完整写法print（变量名称，end='\n'）代表在输出变量以后，会自动在变量的后面追加一个\n
+&quot;&quot;&quot;
+print(name, end='')  # 把默认end的\n删掉
+print(age, end='')  # 这样这两行都在一起
+</code></pre>
+<h1 id="python" tabindex="-1">python中的标准输入</h1>
+<pre><code class="language-python">&quot;&quot;&quot;
+input()除了可以接收数据以外，还隐藏了两个特殊的功能：
+①input()方法，永远都是str字符串类型
+②input()方法还具有一个&quot;暂停&quot;功能，阻塞后续代码的继续执行，直到用户输入完成以后，代码才可以继续向下执行
+&quot;&quot;&quot;
+变量名称 = input('提示用户输入信息：')
+</code></pre>
+<pre><code class="language-python">id = 12
+name = 'itheima'
+print(f'姓名{name}，学号{id:6d}')  # 输出：    12
+print(f'姓名{name}，学号{id:06d}')  # 输出：000012
+</code></pre>
+<h1 id="python-if" tabindex="-1">python运算符与if判断</h1>
+<h2 id="短路求值" tabindex="-1">短路求值</h2>
+<p>“短路求值”，一旦某个条件满足并确定了输出结果，就不再继续进行后续的判断。这可以提高代码的执行效率，避免不必要的计算和判断。</p>
+<h2 id="逻辑运算符" tabindex="-1">逻辑运算符</h2>
+<p>优先级：not &gt; and &gt; or</p>
+<p><picture src="/img/user/czc%E7%9F%A5%E8%AF%86%E5%BA%93/%E6%9D%82%E4%B8%83%E6%9D%82%E5%85%AB/9-%E9%99%84%E4%BB%B6/%E9%99%84%E4%BB%B6/2_image.png" alt=""><source media="(max-width:480px)" srcset="/img/optimized/nJhQCQcsDr-500.webp" type="image/webp">
+<source media="(max-width:480px)" srcset="/img/optimized/nJhQCQcsDr-500.jpeg">
+<source media="(max-width:1920px)" srcset="/img/optimized/nJhQCQcsDr-700.webp" type="image/webp"><source media="(max-width:1920px)" srcset="/img/optimized/nJhQCQcsDr-700.jpeg"><img class="" src="/img/user/czc%E7%9F%A5%E8%AF%86%E5%BA%93/%E6%9D%82%E4%B8%83%E6%9D%82%E5%85%AB/9-%E9%99%84%E4%BB%B6/%E9%99%84%E4%BB%B6/2_image.png" alt="" width=""></picture></p>
+<h2 id="数据类型转换" tabindex="-1">数据类型转换</h2>
+<ol>
+<li>int()</li>
+<li>float()</li>
+<li>str()</li>
+<li>eval() # '10'、'99.1'，不能:'12dd'</li>
+</ol>
+<h1 id="程序的三种结构" tabindex="-1">程序的三种结构</h1>
+<p>顺序结构<br>
+if分支结构（if、elif、else）<br>
+循环结构（while、for）</p>
+<h1 id="运算符" tabindex="-1">运算符</h1>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>+</td>
+<td>加 - 两个对象相加</td>
+<td>a + b 输出结果 30</td>
+</tr>
+<tr>
+<td>-</td>
+<td>减 - 得到负数或是一个数减去另一个数</td>
+<td>a - b 输出结果 -10</td>
+</tr>
+<tr>
+<td>*</td>
+<td>乘 - 两个数相乘或是返回一个被重复若干次的字符串</td>
+<td>a * b 输出结果 200</td>
+</tr>
+<tr>
+<td>/</td>
+<td>除 - x除以y</td>
+<td>b / a 输出结果 2</td>
+</tr>
+<tr>
+<td>%</td>
+<td>取模 - 返回除法的余数</td>
+<td>b % a 输出结果 0</td>
+</tr>
+<tr>
+<td>**</td>
+<td>幂 - 返回x的y次幂</td>
+<td>a**b 为10的20次方， 输出结果 100000000000000000000</td>
+</tr>
+<tr>
+<td>//</td>
+<td>取整除 - 返回商的整数部分（<strong>向下取整</strong>）</td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="三目运算符（三元运算符）" tabindex="-1">三目运算符（三元运算符）</h2>
+<pre><code class="language-python"># 值1 if 条件判断 else 值2
+a = fuck if fuck == 0 else 0.0  # 满足if条件则短路求值，不执行else后面的
+max = n1 if n1 &gt; n2 else n2
+</code></pre>
+</main>
+<script>window.location.hash&&document.getElementById(window.location.hash.slice(1)).classList.add("referred"),window.addEventListener("hashchange",(e=>{const t=e.oldURL.split("#");t[1]&&document.getElementById(t[1]).classList.remove("referred");const n=e.newURL.split("#");n[1]&&document.getElementById(n[1]).classList.add("referred")}),!1);const url_parts=window.location.href.split("#"),url=url_parts[0],referrence=url_parts[1];document.querySelectorAll(".cm-s-obsidian > *[id]").forEach((function(e){e.ondblclick=function(e){const t=url+"#"+e.target.id;navigator.clipboard.writeText(t)}}))</script>
+<script src="https://fastly.jsdelivr.net/npm/luxon@3.2.1/build/global/luxon.min.js"></script>
+<script defer="defer">TIMESTAMP_FORMAT="MMM dd, yyyy h:mm a",document.querySelectorAll(".human-date").forEach((function(e){date=e.getAttribute("data-date")||e.innerText,parsed_date=luxon.DateTime.fromISO(date),null!=parsed_date.invalid&&(parsed_date=luxon.DateTime.fromSQL(date)),null!=parsed_date.invalid&&(parsed_date=luxon.DateTime.fromHTML(date)),e.innerHTML=parsed_date.toFormat(TIMESTAMP_FORMAT)}))</script>
+<script>lucide.createIcons({attrs:{class:["svg-icon"]}})</script>
+</body>
+</html>

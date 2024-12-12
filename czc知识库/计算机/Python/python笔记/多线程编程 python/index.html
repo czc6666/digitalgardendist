@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>多线程编程 python</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<script async type="module">import mermaid from"https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"</script>
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js" integrity="sha512-hpZ5pDCF2bRCweL5WoA0/N1elet1KYL5mx3LP555Eg/0ZguaHawxNvEjF6O3rufAChs16HVNhEc6blF/rZoowQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/plugins/autoloader/prism-autoloader.min.js" integrity="sha512-sv0slik/5O0JIPdLBCR2A3XDg/1U3WuDEheZfI/DI5n8Yqc3h5kjrnr46FGBNiUAJF7rE4LHKwQ/SoSLRKAxEA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script async src="https://cdn.jsdelivr.net/npm/lucide@0.115.0/dist/umd/lucide.min.js"></script>
+<script>window.addEventListener("load",(()=>{document.querySelectorAll(".callout").forEach((e=>{const t=getComputedStyle(e).getPropertyValue("--callout-icon"),l=t&&t.trim().replace(/^lucide-/,"");if(l){const t=e.querySelector(".callout-title");if(t){const e=document.createElement("div"),c=document.createElement("i");e.appendChild(c),c.setAttribute("icon-name",l),e.setAttribute("class","callout-icon"),t.insertBefore(e,t.firstChild)}}})),lucide.createIcons(),Array.from(document.querySelectorAll(".callout.is-collapsible")).forEach((e=>{e.querySelector(".callout-title").addEventListener("click",(t=>{e.classList.contains("is-collapsed")?e.classList.remove("is-collapsed"):e.classList.add("is-collapsed")}))}))}))</script>
+<script async src="https://fastly.jsdelivr.net/npm/force-graph@1.43.0/dist/force-graph.min.js"></script>
+<script async src="https://fastly.jsdelivr.net/npm/@alpinejs/persist@3.11.1/dist/cdn.min.js"></script>
+<script src="https://fastly.jsdelivr.net/npm/alpinejs@3.11.1/dist/cdn.min.js" async></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-okaidia.min.css" integrity="sha512-mIs9kKbaw6JZFfSuo+MovjU+Ntggfoj8RwAmJbVXQ5mkAX5LlgETQEweFPI18humSPHymTb5iikEOKWF7I8ncQ==" crossorigin="anonymous" referrerpolicy="no-referrer" async>
+<script src="https://fastly.jsdelivr.net/npm/whatwg-fetch@3.6.2/dist/fetch.umd.min.js" crossorigin="anonymous" referrerpolicy="no-referrer" async></script>
+<link href="/styles/digital-garden-base.css" rel="stylesheet">
+<link href="/styles/obsidian-base.css" rel="stylesheet">
+<link href="/styles/_theme.d92311c2.css" rel="stylesheet">
+<link href="/styles/custom-style.css" rel="stylesheet">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<style></style>
+</head>
+<body class="theme-dark markdown-preview-view markdown-rendered markdown-preview-section">
+<nav class="navbar">
+<div class="navbar-inner">
+<a href="/" style="text-decoration:none">
+<h1 style="margin:15px!important">Digital Garden</h1>
+</a>
+</div>
+</nav>
+<main class="content cm-s-obsidian">
+<header>
+<div class="header-meta">
+</div>
+</header>
+<div class="callout is-collapsible is-collapsed" data-callout="note"><div class="callout-title"><div class="callout-title-inner"> ChatGPT介绍多线程：</div><div class="callout-fold"><i icon-name="chevron-down"></i></div></div>
+<div class="callout-content">
+<p>
+</p><p>当涉及到 Python 中的多线程编程时，以下是需要了解的关键知识点：</p>
+<ol>
+<li>
+<p><strong>线程与进程的区别</strong>：</p>
+<ul>
+<li>线程是程序执行的最小单元，进程是操作系统分配资源的最小单位。一个进程可以包含多个线程，它们共享进程的资源。</li>
+<li>线程之间共享内存空间，进程之间通常需要通过 IPC（进程间通信）来进行数据交换。</li>
+</ul>
+</li>
+<li>
+<p><strong>Python 中的多线程</strong>：</p>
+<ul>
+<li>Python 提供了 <code>threading</code> 模块来支持多线程编程，通过创建 <code>Thread</code> 类的实例来实现多线程。</li>
+<li>多线程可以并发执行任务，但由于 Python 的全局解释器锁 GIL（Global Interpreter Lock），多线程在 CPU 密集型任务中无法实现真正的并行。</li>
+</ul>
+</li>
+<li>
+<p><strong>多线程的应用场景</strong>：</p>
+<ul>
+<li>多线程适用于 I/O 密集型任务，比如网络请求、文件读写等，因为这些任务通常会涉及等待时间，多线程可以充分利用等待时间执行其他任务。</li>
+<li>对于 CPU 密集型任务，可以考虑使用多进程或异步编程来提高性能。</li>
+</ul>
+</li>
+<li>
+<p><strong>线程的创建和管理</strong>：</p>
+<ul>
+<li>创建线程可以通过继承 <code>threading.Thread</code> 类或传递可调用对象给 <code>Thread</code> 构造函数来实现。</li>
+<li>可以使用 <code>start()</code> 方法启动线程，<code>join()</code> 方法等待线程执行完毕，<code>is_alive()</code> 方法检查线程是否在运行。</li>
+</ul>
+</li>
+<li>
+<p><strong>线程间的通信</strong>：</p>
+<ul>
+<li>多线程之间可以通过共享数据结构、队列等方式进行通信，但需要注意线程安全性，避免出现数据竞争和并发问题。</li>
+<li>Python 提供了 <code>threading.Lock</code> 等锁机制来确保多线程访问共享资源的安全性。</li>
+</ul>
+</li>
+</ol>
+<p>总的来说，多线程编程可以提高程序的并发性和响应性，但需要注意线程安全性和 GIL 对并行性能的影响，合理选择多线程或其他并发模型来解决不同类型的任务。</p>
+</div></div>
+<p>使用的模块介绍：<a href="python%E6%A8%A1%E5%9D%97%E5%AD%A6%E4%B9%A0%EF%BC%9Amultiprocessing%E6%A8%A1%E5%9D%97%20%20%E5%A4%9A%E7%BA%BF%E7%A8%8B%E9%94%81.md" target="_blank" class="external-link">python模块学习：multiprocessing模块 多线程锁</a></p>
+<h2 id="自己在代码中见到的：" tabindex="-1">自己在代码中见到的：</h2>
+<pre><code class="language-python"># 来源：10篇方法总结里的Drebin代码
+import multiprocessing as mp
+
+processes = []  
+lock = mp.Lock()
+
+
+
+
+if njobs &lt; 0:  # njobs  指并行处理的任务或作业数量，作为函数的输入
+	nproc = mp.cpu_count() - 2 # 计算可用的CPU核心数并减去2（给系统留出一些资源），赋值给变量 nproc，即确定并行处理的进程数。  
+	# nproc  指并行处理的进程数量
+	part_size = n_files // nproc # 计算每个进程需要处理的文件数量 part_size，通过整除操作（//）获得  
+else:  
+	nproc = njobs  
+	part_size = n_files // nproc
+
+init_idx = 0 # 初始索引  
+fin_idx = 0 # 结束索引  
+for pn in range(nproc - 1):  
+	init_idx = pn * part_size # 开始的位置  
+	fin_idx = (pn + 1) * part_size # 结束的位置  
+	processes.append( # 创建的进程对象添加到 processes 列表中  
+	mp.Process(target=self._writeAPKfeatures, args=(files[init_idx:fin_idx], self._working_path, lock))  
+	)  # 创建一个进程对象（目标函数=...，目标函数的参数=...，  
+	processes[pn].start() # 通过 processes[pn].start() 启动这些进程进行并行处理  
+  
+# 这个进程也会工作，处理剩下的  
+self._writeAPKfeatures(files[fin_idx:], self._working_path, lock)  
+  
+# 让当前进程（通常是主进程）等待指定的子进程执行完成后再继续执行后续的代码
+for proc in processes:  
+proc.join()
+# 依次调用每个进程的 join()方法，但调用 join() 并不会暂停进程的执行
+</code></pre>
+</main>
+<script>window.location.hash&&document.getElementById(window.location.hash.slice(1)).classList.add("referred"),window.addEventListener("hashchange",(e=>{const t=e.oldURL.split("#");t[1]&&document.getElementById(t[1]).classList.remove("referred");const n=e.newURL.split("#");n[1]&&document.getElementById(n[1]).classList.add("referred")}),!1);const url_parts=window.location.href.split("#"),url=url_parts[0],referrence=url_parts[1];document.querySelectorAll(".cm-s-obsidian > *[id]").forEach((function(e){e.ondblclick=function(e){const t=url+"#"+e.target.id;navigator.clipboard.writeText(t)}}))</script>
+<script src="https://fastly.jsdelivr.net/npm/luxon@3.2.1/build/global/luxon.min.js"></script>
+<script defer="defer">TIMESTAMP_FORMAT="MMM dd, yyyy h:mm a",document.querySelectorAll(".human-date").forEach((function(e){date=e.getAttribute("data-date")||e.innerText,parsed_date=luxon.DateTime.fromISO(date),null!=parsed_date.invalid&&(parsed_date=luxon.DateTime.fromSQL(date)),null!=parsed_date.invalid&&(parsed_date=luxon.DateTime.fromHTML(date)),e.innerHTML=parsed_date.toFormat(TIMESTAMP_FORMAT)}))</script>
+<script>lucide.createIcons({attrs:{class:["svg-icon"]}})</script>
+</body>
+</html>

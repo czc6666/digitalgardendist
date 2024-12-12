@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>spacedesk 远控 平板做副屏</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<script async type="module">import mermaid from"https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"</script>
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js" integrity="sha512-hpZ5pDCF2bRCweL5WoA0/N1elet1KYL5mx3LP555Eg/0ZguaHawxNvEjF6O3rufAChs16HVNhEc6blF/rZoowQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/plugins/autoloader/prism-autoloader.min.js" integrity="sha512-sv0slik/5O0JIPdLBCR2A3XDg/1U3WuDEheZfI/DI5n8Yqc3h5kjrnr46FGBNiUAJF7rE4LHKwQ/SoSLRKAxEA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script async src="https://cdn.jsdelivr.net/npm/lucide@0.115.0/dist/umd/lucide.min.js"></script>
+<script>window.addEventListener("load",(()=>{document.querySelectorAll(".callout").forEach((e=>{const t=getComputedStyle(e).getPropertyValue("--callout-icon"),l=t&&t.trim().replace(/^lucide-/,"");if(l){const t=e.querySelector(".callout-title");if(t){const e=document.createElement("div"),c=document.createElement("i");e.appendChild(c),c.setAttribute("icon-name",l),e.setAttribute("class","callout-icon"),t.insertBefore(e,t.firstChild)}}})),lucide.createIcons(),Array.from(document.querySelectorAll(".callout.is-collapsible")).forEach((e=>{e.querySelector(".callout-title").addEventListener("click",(t=>{e.classList.contains("is-collapsed")?e.classList.remove("is-collapsed"):e.classList.add("is-collapsed")}))}))}))</script>
+<script async src="https://fastly.jsdelivr.net/npm/force-graph@1.43.0/dist/force-graph.min.js"></script>
+<script async src="https://fastly.jsdelivr.net/npm/@alpinejs/persist@3.11.1/dist/cdn.min.js"></script>
+<script src="https://fastly.jsdelivr.net/npm/alpinejs@3.11.1/dist/cdn.min.js" async></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-okaidia.min.css" integrity="sha512-mIs9kKbaw6JZFfSuo+MovjU+Ntggfoj8RwAmJbVXQ5mkAX5LlgETQEweFPI18humSPHymTb5iikEOKWF7I8ncQ==" crossorigin="anonymous" referrerpolicy="no-referrer" async>
+<script src="https://fastly.jsdelivr.net/npm/whatwg-fetch@3.6.2/dist/fetch.umd.min.js" crossorigin="anonymous" referrerpolicy="no-referrer" async></script>
+<link href="/styles/digital-garden-base.css" rel="stylesheet">
+<link href="/styles/obsidian-base.css" rel="stylesheet">
+<link href="/styles/_theme.d92311c2.css" rel="stylesheet">
+<link href="/styles/custom-style.css" rel="stylesheet">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<style></style>
+</head>
+<body class="theme-dark markdown-preview-view markdown-rendered markdown-preview-section">
+<nav class="navbar">
+<div class="navbar-inner">
+<a href="/" style="text-decoration:none">
+<h1 style="margin:15px!important">Digital Garden</h1>
+</a>
+</div>
+</nav>
+<main class="content cm-s-obsidian">
+<header>
+<div class="header-meta">
+</div>
+</header>
+<p><a href="https://zhuanlan.zhihu.com/p/378311525" target="_blank" class="external-link">zhuanlan.zhihu.com/p/378311525</a><br>
+<a href="https://www.bilibili.com/opus/912838630992510994" target="_blank" class="external-link">Windows与iPad有线副屏SpaceDesk扩展与常见问题 - 哔哩哔哩</a></p>
+<h1 id="问题" tabindex="-1">问题</h1>
+<ul>
+<li>spacedesk不能120hz远控啊</li>
+</ul>
+<h1 id="无线连接：" tabindex="-1">无线连接：</h1>
+<p>两端装好软件连同一个wifi就行</p>
+<h1 id="有限连接（延迟很低，带宽很高）" tabindex="-1">有限连接（延迟很低，带宽很高）</h1>
+<p><a href="https://blog.csdn.net/mfysss/article/details/132610470" target="_blank" class="external-link">使用SpaceDesk连接平板作为电脑副屏详细步骤教程-CSDN博客</a></p>
+<p>关于不能开120hz的问题：<br>
+<a href="https://www.reddit.com/r/spacedesk/comments/188aw3l/how_to_enable_120fps/?rdt=41202" target="_blank" class="external-link">How to enable 120FPS? : r/spacedesk</a></p>
+<p>SuperDisplay 支持 120hz。AFAIK 没有任何免费应用程序可以支持 120hz。</p>
+<h3 id="ai-spacedesk-super-display" tabindex="-1">天工ai总结spacedesk和SuperDisplay的优缺点</h3>
+<p>SuperDisplay与Spacedesk对比</p>
+<p>SuperDisplay和Spacedesk都是可以将智能设备（如手机和平板）转换为电脑的第二屏幕的软件。它们各自有不同的特点和使用场景，下面是两者的对比：</p>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>对比维度</th>
+<th>SuperDisplay</th>
+<th>Spacedesk</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>支持平台</td>
+<td>Windows + Android/iOS<a href="https://blog.revincx.icu/posts/streaming-between-devices/" target="_blank" class="external-link">2</a><a href="https://www.jianshu.com/p/4db31b018053" target="_blank" class="external-link">5</a></td>
+<td>Windows + Android/iOS<a href="https://blog.revincx.icu/posts/streaming-between-devices/" target="_blank" class="external-link">2</a><a href="https://blog.csdn.net/COCOLI_BK/article/details/113092846" target="_blank" class="external-link">6</a></td>
+</tr>
+<tr>
+<td>连接方式</td>
+<td>USB/Wi-Fi<a href="https://blog.revincx.icu/posts/streaming-between-devices/" target="_blank" class="external-link">2</a><a href="https://www.jianshu.com/p/4db31b018053" target="_blank" class="external-link">5</a></td>
+<td>Wi-Fi/有线局域网<a href="https://blog.revincx.icu/posts/streaming-between-devices/" target="_blank" class="external-link">2</a><a href="https://blog.csdn.net/COCOLI_BK/article/details/113092846" target="_blank" class="external-link">6</a></td>
+</tr>
+<tr>
+<td>延迟</td>
+<td>较低，支持30-120Hz的采样和显示刷新率<a href="https://www.jianshu.com/p/4db31b018053" target="_blank" class="external-link">5</a></td>
+<td>一般，支持触控驱动<a href="https://blog.revincx.icu/posts/streaming-between-devices/" target="_blank" class="external-link">2</a></td>
+</tr>
+<tr>
+<td>画质</td>
+<td>支持高分辨率和高刷新率<a href="https://www.jianshu.com/p/4db31b018053" target="_blank" class="external-link">5</a></td>
+<td>支持触控驱动，但画质可能不如SuperDisplay<a href="https://blog.revincx.icu/posts/streaming-between-devices/" target="_blank" class="external-link">2</a></td>
+</tr>
+<tr>
+<td>触控支持</td>
+<td>支持压感、触摸、高刷等功能<a href="https://www.jianshu.com/p/4db31b018053" target="_blank" class="external-link">5</a></td>
+<td>支持触控驱动，但可能不支持压感<a href="https://blog.revincx.icu/posts/streaming-between-devices/" target="_blank" class="external-link">2</a></td>
+</tr>
+<tr>
+<td>使用便捷性</td>
+<td>需要安装专用驱动<a href="https://www.jianshu.com/p/4db31b018053" target="_blank" class="external-link">5</a></td>
+<td>通常不需要安装驱动，直接通过APP连接<a href="https://blog.csdn.net/COCOLI_BK/article/details/113092846" target="_blank" class="external-link">6</a></td>
+</tr>
+<tr>
+<td>价格</td>
+<td>专业版需付费<a href="https://www.jianshu.com/p/4db31b018053" target="_blank" class="external-link">5</a></td>
+<td>免费软件，部分高级功能可能需要付费<a href="https://blog.csdn.net/COCOLI_BK/article/details/113092846" target="_blank" class="external-link">6</a></td>
+</tr>
+<tr>
+<td>延迟表现</td>
+<td>60~70ms<a href="https://www.zhihu.com/question/454070741/answer/1937745272" target="_blank" class="external-link">3</a></td>
+<td>一般场景30ms左右<a href="https://www.zhihu.com/question/454070741/answer/1937745272" target="_blank" class="external-link">3</a></td>
+</tr>
+<tr>
+<td>触控笔支持</td>
+<td>支持触控笔悬停信息及屏幕压感信息传递<a href="https://www.zhihu.com/question/454070741/answer/1937745272" target="_blank" class="external-link">3</a></td>
+<td>主要只有单点触控<a href="https://www.zhihu.com/question/454070741/answer/1937745272" target="_blank" class="external-link">3</a></td>
+</tr>
+<tr>
+<td>文件访问</td>
+<td>支持直接访问平板上的文件<a href="https://www.zhihu.com/question/454070741/answer/1937745272" target="_blank" class="external-link">3</a></td>
+<td>不支持直接访问平板文件<a href="https://blog.csdn.net/COCOLI_BK/article/details/113092846" target="_blank" class="external-link">6</a></td>
+</tr>
+<tr>
+<td>软件更新</td>
+<td>定期更新<a href="https://www.jianshu.com/p/4db31b018053" target="_blank" class="external-link">5</a></td>
+<td>不定期更新<a href="https://blog.csdn.net/COCOLI_BK/article/details/113092846" target="_blank" class="external-link">6</a></td>
+</tr>
+<tr>
+<td>用户评价</td>
+<td>用户反馈良好，尤其是在专业领域<a href="https://www.jianshu.com/p/4db31b018053" target="_blank" class="external-link">5</a></td>
+<td>用户反馈一般，显示清晰度和延迟方面有局限性<a href="https://www.52txr.cn/2024/spacedesk.html" target="_blank" class="external-link">8</a></td>
+</tr>
+</tbody>
+</table></div>
+<p>1</p>
+</main>
+<script>window.location.hash&&document.getElementById(window.location.hash.slice(1)).classList.add("referred"),window.addEventListener("hashchange",(e=>{const t=e.oldURL.split("#");t[1]&&document.getElementById(t[1]).classList.remove("referred");const n=e.newURL.split("#");n[1]&&document.getElementById(n[1]).classList.add("referred")}),!1);const url_parts=window.location.href.split("#"),url=url_parts[0],referrence=url_parts[1];document.querySelectorAll(".cm-s-obsidian > *[id]").forEach((function(e){e.ondblclick=function(e){const t=url+"#"+e.target.id;navigator.clipboard.writeText(t)}}))</script>
+<script src="https://fastly.jsdelivr.net/npm/luxon@3.2.1/build/global/luxon.min.js"></script>
+<script defer="defer">TIMESTAMP_FORMAT="MMM dd, yyyy h:mm a",document.querySelectorAll(".human-date").forEach((function(e){date=e.getAttribute("data-date")||e.innerText,parsed_date=luxon.DateTime.fromISO(date),null!=parsed_date.invalid&&(parsed_date=luxon.DateTime.fromSQL(date)),null!=parsed_date.invalid&&(parsed_date=luxon.DateTime.fromHTML(date)),e.innerHTML=parsed_date.toFormat(TIMESTAMP_FORMAT)}))</script>
+<script>lucide.createIcons({attrs:{class:["svg-icon"]}})</script>
+</body>
+</html>

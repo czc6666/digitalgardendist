@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>AI 如何赋能恶意软件分析 1</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<script async type="module">import mermaid from"https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"</script>
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js" integrity="sha512-hpZ5pDCF2bRCweL5WoA0/N1elet1KYL5mx3LP555Eg/0ZguaHawxNvEjF6O3rufAChs16HVNhEc6blF/rZoowQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/plugins/autoloader/prism-autoloader.min.js" integrity="sha512-sv0slik/5O0JIPdLBCR2A3XDg/1U3WuDEheZfI/DI5n8Yqc3h5kjrnr46FGBNiUAJF7rE4LHKwQ/SoSLRKAxEA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script async src="https://cdn.jsdelivr.net/npm/lucide@0.115.0/dist/umd/lucide.min.js"></script>
+<script>window.addEventListener("load",(()=>{document.querySelectorAll(".callout").forEach((e=>{const t=getComputedStyle(e).getPropertyValue("--callout-icon"),l=t&&t.trim().replace(/^lucide-/,"");if(l){const t=e.querySelector(".callout-title");if(t){const e=document.createElement("div"),c=document.createElement("i");e.appendChild(c),c.setAttribute("icon-name",l),e.setAttribute("class","callout-icon"),t.insertBefore(e,t.firstChild)}}})),lucide.createIcons(),Array.from(document.querySelectorAll(".callout.is-collapsible")).forEach((e=>{e.querySelector(".callout-title").addEventListener("click",(t=>{e.classList.contains("is-collapsed")?e.classList.remove("is-collapsed"):e.classList.add("is-collapsed")}))}))}))</script>
+<script async src="https://fastly.jsdelivr.net/npm/force-graph@1.43.0/dist/force-graph.min.js"></script>
+<script async src="https://fastly.jsdelivr.net/npm/@alpinejs/persist@3.11.1/dist/cdn.min.js"></script>
+<script src="https://fastly.jsdelivr.net/npm/alpinejs@3.11.1/dist/cdn.min.js" async></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-okaidia.min.css" integrity="sha512-mIs9kKbaw6JZFfSuo+MovjU+Ntggfoj8RwAmJbVXQ5mkAX5LlgETQEweFPI18humSPHymTb5iikEOKWF7I8ncQ==" crossorigin="anonymous" referrerpolicy="no-referrer" async>
+<script src="https://fastly.jsdelivr.net/npm/whatwg-fetch@3.6.2/dist/fetch.umd.min.js" crossorigin="anonymous" referrerpolicy="no-referrer" async></script>
+<link href="/styles/digital-garden-base.css" rel="stylesheet">
+<link href="/styles/obsidian-base.css" rel="stylesheet">
+<link href="/styles/_theme.d92311c2.css" rel="stylesheet">
+<link href="/styles/custom-style.css" rel="stylesheet">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<style></style>
+</head>
+<body class="theme-dark markdown-preview-view markdown-rendered markdown-preview-section">
+<nav class="navbar">
+<div class="navbar-inner">
+<a href="/" style="text-decoration:none">
+<h1 style="margin:15px!important">Digital Garden</h1>
+</a>
+</div>
+</nav>
+<main class="content cm-s-obsidian">
+<header>
+<div class="header-meta">
+</div>
+</header>
+<p><a href="https://mp.weixin.qq.com/s/-0l0O48PYxmqg6Hd84D-CQ" target="_blank" class="external-link">AI 如何赋能恶意软件分析</a><br>
+原创 Avenger [威胁棱镜] <em>2023-12-08 09:00</em> <em>发表于北京</em></p>
+<p>VirusTotal 横跨 195 个国家/地区每天处理超过 200 万个文件，近二十年的运营使其收集了规模庞大的样本文件库。2023 年 4 月，VirusTotal推出了利用 AI 的代码分析工具 Code Insight。历经半年多的使用，已经对数十万个文件测试了 AI 在该场景下的能力。AI 为安全赋能的前景光明，VirusTotal 只是走出了一小步。Google 在《2024 年网络安全态势预测》中也指出，防御者将会使用生成式 AI 来加强检测、加快分析效率。</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2023/png/1632223/1702016193424-eb12f223-3629-4569-87a5-153a4dc2bf3f.png" alt="img"></p>
+<p><strong>VirusTotal</strong> <strong>目前提供了三个</strong> <strong>AI</strong> <strong>驱动的代码分析引擎</strong>，可以尝试理解恶意代码的用途并且为分析人员提供更多的上下文信息。这样可以将需要高度专业知识的恶意软件分析工作，一方面减少分析所需时间，另一方面降低难度门槛，使得分析人员可以尽早发现恶意攻击。</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2023/png/1632223/1702016193442-0901e459-0965-483f-be77-c3722e47137f.png" alt="img"></p>
+<p><strong>样本行为的描述其实比恶意与否的二元判断更有价值</strong>，对分析人员来说，缺乏足够的上下文很难对样本文件进行恶意性判定。</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2023/png/1632223/1702016193566-837ed63e-7a01-4922-a144-f069e80a3b74.png" alt="img"></p>
+<p>使用小样本集将 AI 引擎与传统引擎的检测进行对比。对于 Office 文件，AI 引擎与传统引擎可以在 98.5% 的情况下达成一致。对于 PowerShell 文件，AI 引擎与传统引擎可以在 96.23% 的情况下达成一致，产生分歧的主要原因是缺乏上下文。对于 PHP 文件，AI 引擎与传统引擎可以在 72.45% 的情况下达成一致，<strong>AI</strong> <strong>引擎更适合源代码分析，能够更好地进行去混淆</strong>。</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2023/png/1632223/1702016193930-28efaeee-e55e-4ced-850b-822a269e0a3a.png" alt="img"></p>
+<p>在传统引擎检出恶意，但 AI 引擎不认为是恶意的情况下，分析人员认为主要在于判断标准存在分歧。并不是 AI 引擎的判断是错误的，AI 引擎对脚本行为的描述还是正确的。<strong>AI</strong> <strong>引擎的最大好处其实是判断样本文件类型</strong>，文本文件的分类是一个非常困难的问题。引入 AI 引擎后多达一百多种文本文件格式都能够识别的更加准确，如 Mathematica、QML、R、Rust、Lua 甚至 LAMMPS。</p>
+<h2 id="常见漏洞与漏洞利用发现" tabindex="-1">常见漏洞与漏洞利用发现</h2>
+<p><strong>传统方式（检测引擎和社区规则）只能识别出</strong> <strong>AI</strong> <strong>引擎所有检出的</strong> <strong>25.6%</strong>。即便是二者都识别出了漏洞利用存在，二者也会存在分歧，<strong>53.4%</strong> <strong>的情况都是</strong> <strong>AI</strong> <strong>引擎更准确</strong>。AI 引擎不仅可以分析脚本文件代码中的注释和引用，还能够基于漏洞利用技术进行检测。即便是传统方式检出而 AI 引擎没有检出的情况下，AI 引擎也仍然给出了准确的行为描述与具体漏洞利用的实施方式。</p>
+<p>当然，其实判断边界本身就很模糊。例如漏洞扫描器、POC 脚本、Metasploit模块甚至是存在漏洞的源代码，都与漏洞本身有关。POC 脚本与恶意脚本之间的边界也是非常模糊的。如下所示，尽管检测引擎对 Metasploit 模块的静态检出率较低，但其实反病毒产品的主防往往是可以检出的。</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2023/png/1632223/1702016194094-a41d9a44-d816-423f-bbd0-800b1b0e49fc.png" alt="img"></p>
+<p><strong>AI</strong> <strong>引擎检出的所有恶意脚本文件，其中</strong> <strong>41%</strong> <strong>都没有传统检测引擎检出</strong>，如下所示：</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2023/png/1632223/1702016199021-c700efc8-ac55-49e1-8e37-e001c8f9e344.png" alt="img"></p>
+<p>当然，AI 引擎检出的恶意脚本实际上是很宽泛的，例如会包括非 Windows 系统的提权操作等。有人声称这些恶意行为可能并不是传统检测引擎关注的重点，这样的比较不公平。但其实，<strong>这样也能说明二者其实恰好存在良好的互补性</strong>。</p>
+<p>当然，AI 引擎在判断带有下载与执行功能的脚本时还会“犹豫”。但当给予 AI 引擎更多的上下文时，还是能够给出准确的判断，这说明模型其实还有改进和提升的空间。</p>
+<h2 id="ai" tabindex="-1">AI 生成恶意软件</h2>
+<p>目前生成式 AI 已经席卷全球，VirusTotal 也常问一个问题：“有没有发现任何 AI 生成的恶意软件？”。当然，判断恶意软件是由 AI 生成的是非常具有挑战的任务。此前，<strong>美国国家安全委员会网络和新兴技术国家安全顾问</strong> <strong>Anne Neuberger</strong> <strong>声称“观察到朝鲜黑客正试图使用</strong> <strong>AI 技术</strong>来<strong>帮助加速编写恶意软件与寻找可利用的系统”</strong>。但 VirusTotal 深入研究了朝鲜黑客过往的攻击行为，并未发现明显的证据能支撑这一论点。</p>
+<p>在地下论坛中，很多恶意软件生成工具都声称已经使用 AI 引擎来创建样本文件。但在此类恶意样本中，研究人员并未发现能良好运行的样本文件。<strong>VirusTotal</strong> <strong>预计攻击者未来会利用</strong> <strong>AI</strong> <strong>引擎进行社会工程学攻击</strong>**，形成全球普及的趋势**。</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2023/png/1632223/1702016199282-7666cdbc-105c-4072-9566-e298dad97cd5.png" alt="img"></p>
+<p>上图为在图标、名称与元数据上伪装成 Google Bard 或 OpenAI ChatGPT 进行分发的恶意样本的趋势情况，2023 年此类样本量不断增加。其中 88% 是 Windows 系统的木马，少部分是 Android 样本。</p>
+<p>除了恶意样本外，<strong>也有大量的恶意域名和</strong> <strong>URL</strong> <strong>使用</strong> <strong>ChatGPT</strong> <strong>的图标</strong>。</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2023/png/1632223/1702016199403-92e19ff1-c642-49ee-9639-acf094f2d340.png" alt="img"></p>
+<p>2023 年，VirusTotal 也发现了与 OpenAI API 存在交互的恶意样本越来越多。大多数都是 Windows 可执行文件，其次是 Office 文件。Office 文件是通过其他扩展功能（如 VBA-WEB 或 SEMTools）与 OpenAI 的 API 进行交互的。</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2023/png/1632223/1702016199472-a8c0ec19-2bcf-4602-aa4e-f85d8cd14195.png" alt="img"></p>
+<p><strong>目前发现的可能是</strong> <strong>AI</strong> <strong>生成的恶意软件，应该都是安全研究人员生成的</strong>，有些甚至在样本中还包含提示词。</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2023/png/1632223/1702016200269-2ffb9a68-cbf5-4df2-9ab0-b154c0031da5.png" alt="img"></p>
+<h2 id="总结" tabindex="-1">总结</h2>
+<p>AI 引擎在很多场景下都已经展示出了令人难以置信的非凡潜力。传统引擎给出确定的结论其实还是存在理解鸿沟的，但 AI 引擎能够给出结论背后的推理过程，这对任何分析人员来说都是巨大的优势。</p>
+<p>恶意软件样本量越来越多，使用人工智能技术来识别、分析与解释恶意脚本的实际意图也有利于行业的发展。而且技术的更新也有利于解决目前劳动力短缺的问题，毕竟各国的网络安全从业人员其实都是大大短缺的。</p>
+<h2 id="pdf" tabindex="-1">PDF</h2>
+<h3 id="virus-total-a-href-https-assets-virustotal-com-reports-2023-ai-target-blank-class-external-link-empowering-defenders-how-ai-is-shaping-malware-analysis-a" tabindex="-1">Virus Total - <a href="https://assets.virustotal.com/reports/2023-ai" target="_blank" class="external-link">Empowering Defenders: How AI is shaping malware analysis</a></h3>
+<p><a href="https://services.google.com/fh/files/misc/google-cloud-cybersecurity-forecast-2024.pdf" target="_blank" class="external-link">Google Cloud - Cybersecurity Forecast 2024（Insights for future planning）</a></p>
+<p><a href="https://www.yuque.com/attachments/yuque/0/2023/pdf/1632223/1702016606290-b19328c0-e85e-43eb-9427-f6c71da477ef.pdf" target="_blank" class="external-link">Google Cloud - Cybersecurity Forecast 2024（Insights for future planning）.pdf</a></p>
+</main>
+<script>window.location.hash&&document.getElementById(window.location.hash.slice(1)).classList.add("referred"),window.addEventListener("hashchange",(e=>{const t=e.oldURL.split("#");t[1]&&document.getElementById(t[1]).classList.remove("referred");const n=e.newURL.split("#");n[1]&&document.getElementById(n[1]).classList.add("referred")}),!1);const url_parts=window.location.href.split("#"),url=url_parts[0],referrence=url_parts[1];document.querySelectorAll(".cm-s-obsidian > *[id]").forEach((function(e){e.ondblclick=function(e){const t=url+"#"+e.target.id;navigator.clipboard.writeText(t)}}))</script>
+<script src="https://fastly.jsdelivr.net/npm/luxon@3.2.1/build/global/luxon.min.js"></script>
+<script defer="defer">TIMESTAMP_FORMAT="MMM dd, yyyy h:mm a",document.querySelectorAll(".human-date").forEach((function(e){date=e.getAttribute("data-date")||e.innerText,parsed_date=luxon.DateTime.fromISO(date),null!=parsed_date.invalid&&(parsed_date=luxon.DateTime.fromSQL(date)),null!=parsed_date.invalid&&(parsed_date=luxon.DateTime.fromHTML(date)),e.innerHTML=parsed_date.toFormat(TIMESTAMP_FORMAT)}))</script>
+<script>lucide.createIcons({attrs:{class:["svg-icon"]}})</script>
+</body>
+</html>

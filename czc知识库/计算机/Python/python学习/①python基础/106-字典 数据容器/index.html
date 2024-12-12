@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>106-字典 数据容器</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<script async type="module">import mermaid from"https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"</script>
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js" integrity="sha512-hpZ5pDCF2bRCweL5WoA0/N1elet1KYL5mx3LP555Eg/0ZguaHawxNvEjF6O3rufAChs16HVNhEc6blF/rZoowQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/plugins/autoloader/prism-autoloader.min.js" integrity="sha512-sv0slik/5O0JIPdLBCR2A3XDg/1U3WuDEheZfI/DI5n8Yqc3h5kjrnr46FGBNiUAJF7rE4LHKwQ/SoSLRKAxEA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script async src="https://cdn.jsdelivr.net/npm/lucide@0.115.0/dist/umd/lucide.min.js"></script>
+<script>window.addEventListener("load",(()=>{document.querySelectorAll(".callout").forEach((e=>{const t=getComputedStyle(e).getPropertyValue("--callout-icon"),l=t&&t.trim().replace(/^lucide-/,"");if(l){const t=e.querySelector(".callout-title");if(t){const e=document.createElement("div"),c=document.createElement("i");e.appendChild(c),c.setAttribute("icon-name",l),e.setAttribute("class","callout-icon"),t.insertBefore(e,t.firstChild)}}})),lucide.createIcons(),Array.from(document.querySelectorAll(".callout.is-collapsible")).forEach((e=>{e.querySelector(".callout-title").addEventListener("click",(t=>{e.classList.contains("is-collapsed")?e.classList.remove("is-collapsed"):e.classList.add("is-collapsed")}))}))}))</script>
+<script async src="https://fastly.jsdelivr.net/npm/force-graph@1.43.0/dist/force-graph.min.js"></script>
+<script async src="https://fastly.jsdelivr.net/npm/@alpinejs/persist@3.11.1/dist/cdn.min.js"></script>
+<script src="https://fastly.jsdelivr.net/npm/alpinejs@3.11.1/dist/cdn.min.js" async></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-okaidia.min.css" integrity="sha512-mIs9kKbaw6JZFfSuo+MovjU+Ntggfoj8RwAmJbVXQ5mkAX5LlgETQEweFPI18humSPHymTb5iikEOKWF7I8ncQ==" crossorigin="anonymous" referrerpolicy="no-referrer" async>
+<script src="https://fastly.jsdelivr.net/npm/whatwg-fetch@3.6.2/dist/fetch.umd.min.js" crossorigin="anonymous" referrerpolicy="no-referrer" async></script>
+<link href="/styles/digital-garden-base.css" rel="stylesheet">
+<link href="/styles/obsidian-base.css" rel="stylesheet">
+<link href="/styles/_theme.d92311c2.css" rel="stylesheet">
+<link href="/styles/custom-style.css" rel="stylesheet">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<style></style>
+</head>
+<body class="theme-dark markdown-preview-view markdown-rendered markdown-preview-section">
+<nav class="navbar">
+<div class="navbar-inner">
+<a href="/" style="text-decoration:none">
+<h1 style="margin:15px!important">Digital Garden</h1>
+</a>
+</div>
+</nav>
+<main class="content cm-s-obsidian">
+<header>
+<div class="header-meta">
+</div>
+</header>
+<p>一个变量中同时保存多个值就成为容器</p>
+<p>字典、集合的定义和应用场景<br>
+数据容器的公共方法<br>
+列表推导式编写（简化代码）</p>
+<h1 id="字典" tabindex="-1">字典</h1>
+<h2 id="定义" tabindex="-1">定义</h2>
+<p>保存某一个事物的信息，可以体现出事物的信息</p>
+<p>key不一定要是字符串<br>
+<code>字典名称 = {key: value, key:value}</code><br>
+索引没有索引下标，key等价于索引下标<br>
+key是唯一的，<br>
+没有顺序要求</p>
+<p><code>print(字段名称['key'])</code></p>
+<h2 id="常见问题" tabindex="-1">常见问题</h2>
+<ul>
+<li>字典不允许切片</li>
+<li>创建有数据的字典，只能通过{}大括号，不能通过<code>dict()</code>方法
+<ul>
+<li><code>dict()</code>用来转换类型和创建空字典</li>
+</ul>
+</li>
+<li>字符串加引号，数字不用加引号</li>
+</ul>
+<h2 id="增删改查（相同语法）" tabindex="-1">增删改查（相同语法）</h2>
+<p><code>字典名称[key] = value</code></p>
+<p>如果字典中没有这个key，以上就是一个新增操作<br>
+如果字典中有这个key，以上就是修改操作</p>
+<h3 id="删除" tabindex="-1">删除</h3>
+<ul>
+<li>
+<p><code>del 字典名[key]</code></p>
+</li>
+<li>
+<p>删除整个字典：<code>self.items.clear()</code></p>
+</li>
+<li>
+<p>使用 pop() 方法<br>
+pop() 方法除了删除键外，还会返回被删除键的值。</p>
+</li>
+</ul>
+<h3 id="查询" tabindex="-1">查询</h3>
+<blockquote>
+<ul>
+<li><strong>获取字典中的某个元素</strong>，字典名称[key]，代表访问指定的元素</li>
+<li>字典也支持直接打印输出</li>
+<li>字典也可以配合for循环进行遍历，但是要特别注意：<strong>只有字典中的key可以遍历出来</strong>（默认）</li>
+</ul>
+</blockquote>
+<pre><code class="language-python">for key in dic:
+	print(key)  # 打印键
+	print(dic[key])
+</code></pre>
+<h4 id="其他方法" tabindex="-1">其他方法</h4>
+<ul>
+<li>keys（）：以列表方式返回字典中所有的key键</li>
+<li>values（）：以列表方式返回字典中所有的vaLue值</li>
+<li>items（）：以外面是列表，里面每一个元素都是元组的方式获取字典中的key,，value键值对=&gt;［（key1，vaLue1），（key2，value2）]<br>
+注意：以上三个方法很少单独使用，都要配合for循环进行遍历操作</li>
+</ul>
+<p>例如：!!!!!‼️❗<br>
+❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗</p>
+<pre><code class="language-python"># ③使用for循环直接对字典进行遍历
+for key in student:
+print(key)
+# 在④使用keys方法获取字典中所有的key键与上面的代码等价
+for key in student.keys():
+print(key)
+# 使用vaLues（）方法获取字典中所有的vaLue值
+for value in student.values():
+print(value)
+# 使用items（）方法获取字典中的key，vaLue键值对
+for key, value in student.items():
+print(f'{key}: {value}')
+</code></pre>
+<p>❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗❗</p>
+<h1 id="列表和字典的结合" tabindex="-1">列表和字典的结合</h1>
+<ul>
+<li>列表：特别适合保存多个数据</li>
+<li>字典：特别适合保存一个事物的信息，如一个人、一本书、一个商品等等</li>
+<li>把列表+字典结合起来就可以同时保存多个事物的信息</li>
+</ul>
+<h1 id="get" tabindex="-1">字典的 get() 方法，用于安全地获取字典中的值</h1>
+<p><code>dic.get(key) 是字典的 get() 方法，用于安全地获取字典中的值。</code></p>
+</main>
+<script>window.location.hash&&document.getElementById(window.location.hash.slice(1)).classList.add("referred"),window.addEventListener("hashchange",(e=>{const t=e.oldURL.split("#");t[1]&&document.getElementById(t[1]).classList.remove("referred");const n=e.newURL.split("#");n[1]&&document.getElementById(n[1]).classList.add("referred")}),!1);const url_parts=window.location.href.split("#"),url=url_parts[0],referrence=url_parts[1];document.querySelectorAll(".cm-s-obsidian > *[id]").forEach((function(e){e.ondblclick=function(e){const t=url+"#"+e.target.id;navigator.clipboard.writeText(t)}}))</script>
+<script src="https://fastly.jsdelivr.net/npm/luxon@3.2.1/build/global/luxon.min.js"></script>
+<script defer="defer">TIMESTAMP_FORMAT="MMM dd, yyyy h:mm a",document.querySelectorAll(".human-date").forEach((function(e){date=e.getAttribute("data-date")||e.innerText,parsed_date=luxon.DateTime.fromISO(date),null!=parsed_date.invalid&&(parsed_date=luxon.DateTime.fromSQL(date)),null!=parsed_date.invalid&&(parsed_date=luxon.DateTime.fromHTML(date)),e.innerHTML=parsed_date.toFormat(TIMESTAMP_FORMAT)}))</script>
+<script>lucide.createIcons({attrs:{class:["svg-icon"]}})</script>
+</body>
+</html>

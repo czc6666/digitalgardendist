@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>obsidian插件</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<script async type="module">import mermaid from"https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"</script>
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js" integrity="sha512-hpZ5pDCF2bRCweL5WoA0/N1elet1KYL5mx3LP555Eg/0ZguaHawxNvEjF6O3rufAChs16HVNhEc6blF/rZoowQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/plugins/autoloader/prism-autoloader.min.js" integrity="sha512-sv0slik/5O0JIPdLBCR2A3XDg/1U3WuDEheZfI/DI5n8Yqc3h5kjrnr46FGBNiUAJF7rE4LHKwQ/SoSLRKAxEA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script async src="https://cdn.jsdelivr.net/npm/lucide@0.115.0/dist/umd/lucide.min.js"></script>
+<script>window.addEventListener("load",(()=>{document.querySelectorAll(".callout").forEach((e=>{const t=getComputedStyle(e).getPropertyValue("--callout-icon"),l=t&&t.trim().replace(/^lucide-/,"");if(l){const t=e.querySelector(".callout-title");if(t){const e=document.createElement("div"),c=document.createElement("i");e.appendChild(c),c.setAttribute("icon-name",l),e.setAttribute("class","callout-icon"),t.insertBefore(e,t.firstChild)}}})),lucide.createIcons(),Array.from(document.querySelectorAll(".callout.is-collapsible")).forEach((e=>{e.querySelector(".callout-title").addEventListener("click",(t=>{e.classList.contains("is-collapsed")?e.classList.remove("is-collapsed"):e.classList.add("is-collapsed")}))}))}))</script>
+<script async src="https://fastly.jsdelivr.net/npm/force-graph@1.43.0/dist/force-graph.min.js"></script>
+<script async src="https://fastly.jsdelivr.net/npm/@alpinejs/persist@3.11.1/dist/cdn.min.js"></script>
+<script src="https://fastly.jsdelivr.net/npm/alpinejs@3.11.1/dist/cdn.min.js" async></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-okaidia.min.css" integrity="sha512-mIs9kKbaw6JZFfSuo+MovjU+Ntggfoj8RwAmJbVXQ5mkAX5LlgETQEweFPI18humSPHymTb5iikEOKWF7I8ncQ==" crossorigin="anonymous" referrerpolicy="no-referrer" async>
+<script src="https://fastly.jsdelivr.net/npm/whatwg-fetch@3.6.2/dist/fetch.umd.min.js" crossorigin="anonymous" referrerpolicy="no-referrer" async></script>
+<link href="/styles/digital-garden-base.css" rel="stylesheet">
+<link href="/styles/obsidian-base.css" rel="stylesheet">
+<link href="/styles/_theme.d92311c2.css" rel="stylesheet">
+<link href="/styles/custom-style.css" rel="stylesheet">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<style></style>
+</head>
+<body class="theme-dark markdown-preview-view markdown-rendered markdown-preview-section">
+<nav class="navbar">
+<div class="navbar-inner">
+<a href="/" style="text-decoration:none">
+<h1 style="margin:15px!important">Digital Garden</h1>
+</a>
+</div>
+</nav>
+<main class="content cm-s-obsidian">
+<header>
+<div class="header-meta">
+</div>
+</header>
+<p><a class="tag" onclick="toggleTagSearch(this)" data-content="#obsidian插件">#obsidian插件</a></p>
+<h1 id="waypoint" tabindex="-1">自动添加路标插件 waypoint</h1>
+<ul>
+<li>生成一个文件夹的目录树（实时更新）在一个文件中</li>
+<li><a href="https://www.bilibili.com/video/BV1zb421H71s" target="_blank" class="external-link">自动添加路标 Waypoint ｜ Obsidian神插件_哔哩哔哩_bilibili</a></li>
+<li>在文件夹下同名文件中<strong>手敲</strong> %% Waypoint %% 然后就能自动生成实时更新的目录树</li>
+<li>不能在知识库的根目录搞这个</li>
+</ul>
+<h1 id="远程多端同步插件" tabindex="-1">远程多端同步插件</h1>
+<ul>
+<li>remotely-save</li>
+</ul>
+<h1 id="dataview" tabindex="-1">热力图插件（基于dataview）：</h1>
+<ul>
+<li>Contribution Graph</li>
+</ul>
+<h1 id="dataview-1" tabindex="-1">实用小部件插件（基于dataview）：</h1>
+<ul>
+<li>Contribution Widget</li>
+</ul>
+<h1 id="未分类插件列表：" tabindex="-1">未分类插件列表：</h1>
+<ul>
+<li>
+<p>Paste image rename：自动重命名拖进来的图片</p>
+</li>
+<li>
+<p>clear unused images：清除笔记中不再使用的图像以节省空间</p>
+</li>
+<li>
+<p>quiet outline：更丰富的大纲，目录</p>
+</li>
+<li>
+<p>kanban：添加看板。例如3个: to do; doing; done</p>
+</li>
+<li>
+<p>mind map：目录自动生成思维导图</p>
+</li>
+<li>
+<p>commander：在任何你想要的地方位置添加命令按钮</p>
+</li>
+<li>
+<p>File Explorer Note Count：统计文件夹下的文件数量</p>
+</li>
+<li>
+<p>editing toolbar：添加文本编辑功能（类OneNote，会卡用下面的这个轻量级的编辑插件）</p>
+</li>
+<li>
+<p>cmenu：轻量级文本编辑（不会用）</p>
+</li>
+<li>
+<p>Icon Folder(iconize)：给文件夹换图标（自己在设置里下载图标）</p>
+</li>
+<li>
+<p>File Color：给文件夹上颜色（需要自己在设置里添加颜色）</p>
+</li>
+<li>
+<p>surfing：直接在obsidian里打开网页链接当浏览器用</p>
+</li>
+<li>
+<p>Obsidian42 - BRAT：Easily install a beta version of a plugin for testing. 装未发布的插件</p>
+</li>
+<li>
+<p>Bartender：允许重新排列状态栏和侧边栏中的元素，<a href="https://blog.csdn.net/m0_72265583/article/details/132005345" target="_blank" class="external-link">Bartender插件+BRAT插件——实现Obsidian目录文件手动排序</a></p>
+</li>
+<li>
+<p><strong>dataview</strong>：<a href="dataview%E6%8F%92%E4%BB%B6%E6%95%99%E7%A8%8B%E7%AC%94%E8%AE%B0.md" target="_blank" class="external-link">dataview教程</a>，最大的好处是自动更新，减少手动改的麻烦，数据库查询语法，难</p>
+</li>
+<li>
+<p>Day Planner：使用增强的时间块功能，从Markdown笔记中的任务列表中规划一天。（精确每小时安排，用不上，不用）</p>
+</li>
+<li>
+<p>style setting：设置当前主题的参数，标题颜色等等。（编辑主题的css文件）</p>
+</li>
+<li>
+<p><strong>banners</strong>：开头<strong>自定义图片页面背景</strong>（原理也是特殊语法写在页面前面，可能和其他头语法产生冲突（实测没有冲突，现在的ob会把头语法（yaml）显示成可视化的属性，编辑模式下看不了，切换阅读模式可以看图））（卡的乱七八糟，不用了他妈的）</p>
+<ul>
+<li><a href="https://pkmer.cn/Pkmer-Docs/10-obsidian/obsidian%E7%A4%BE%E5%8C%BA%E6%8F%92%E4%BB%B6/obsidian-banners/" target="_blank" class="external-link">PKMer_Obsidian 插件：Obsidian Banners 为你的笔记添加头图</a></li>
+<li></li>
+</ul>
+</li>
+<li>
+<p>Multi-Column Markdown：分栏，命令搜column插入就行（可配合dataview实现数据分栏可视化）</p>
+</li>
+<li>
+<p>Tag Wrangler：快速管理obsidian标签，<a href="https://zhuanlan.zhihu.com/p/587111398" target="_blank" class="external-link">Tag Wrangler——快速管理 Obsidian 标签 - 知乎 (zhihu.com)</a></p>
+</li>
+<li>
+<p>heat：日常活跃热力图，还没装，要写代码 <strong>垃坤</strong></p>
+</li>
+<li>
+<p>3d graph：3d显示关系图谱，很炫？</p>
+</li>
+<li>
+<p>pandoc：很强大的导出工具？我试试看，（要提前安装pandoc软件）配置方法：<a href="https://forum-zh.obsidian.md/t/topic/9626" target="_blank" class="external-link">在Obsidian中实现 Pandoc Plugin 的插件配置 - 经验分享 - Obsidian 中文论坛</a>，，狗屁，不能导出pdf？？？我直接卸载</p>
+</li>
+<li>
+<p>callout manager：自定义callout样式和看现有样式，无脑方便不敲代码（有问题）</p>
+</li>
+<li>
+<p>DB Folder：辅助dataview，给文件批量添加属性</p>
+</li>
+<li>
+<p>Contribution Graph：真正能用的<strong>热力图</strong>，Generate a interactive heatmap graph to visualize and track your productivity</p>
+</li>
+</ul>
+<h1 id="遇到问题去的解决方案插件" tabindex="-1">遇到问题去的解决方案插件</h1>
+<ul id="05e012">
+<li>
+<p>Update Relative Links：</p>
+<ul>
+<li>移动文件的时候更新文件里的链接，重新按照相对路径写一遍链接</li>
+<li>ctrl+p：Update all relative links：刷新所有文件的链接</li>
+</ul>
+</li>
+<li>
+<p>Consistent attachments and links：（没试过）</p>
+<ul id="043752">
+<li>自动移动笔记附件并更新链接</li>
+</ul>
+</li>
+<li>
+<p>advanced URI：给每个文件附加一个唯一的UID，用这个来管理每个文件（创建文件链接代替obsidian原本的文件链接，原本的文件链接在文件数量很大以后修改文件，相关文件里的链接可能不会跟着修改）</p>
+</li>
+<li>
+<p>（废）obsidian-proxy-github-master：解决每次需要梯子才能访问商店的问题，obsidian网络代理，傻逼垃圾，<strong>只支持0.14版本以前</strong></p>
+</li>
+</ul>
+</main>
+<script>window.location.hash&&document.getElementById(window.location.hash.slice(1)).classList.add("referred"),window.addEventListener("hashchange",(e=>{const t=e.oldURL.split("#");t[1]&&document.getElementById(t[1]).classList.remove("referred");const n=e.newURL.split("#");n[1]&&document.getElementById(n[1]).classList.add("referred")}),!1);const url_parts=window.location.href.split("#"),url=url_parts[0],referrence=url_parts[1];document.querySelectorAll(".cm-s-obsidian > *[id]").forEach((function(e){e.ondblclick=function(e){const t=url+"#"+e.target.id;navigator.clipboard.writeText(t)}}))</script>
+<script src="https://fastly.jsdelivr.net/npm/luxon@3.2.1/build/global/luxon.min.js"></script>
+<script defer="defer">TIMESTAMP_FORMAT="MMM dd, yyyy h:mm a",document.querySelectorAll(".human-date").forEach((function(e){date=e.getAttribute("data-date")||e.innerText,parsed_date=luxon.DateTime.fromISO(date),null!=parsed_date.invalid&&(parsed_date=luxon.DateTime.fromSQL(date)),null!=parsed_date.invalid&&(parsed_date=luxon.DateTime.fromHTML(date)),e.innerHTML=parsed_date.toFormat(TIMESTAMP_FORMAT)}))</script>
+<script>lucide.createIcons({attrs:{class:["svg-icon"]}})</script>
+</body>
+</html>

@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>104-字符串和列表（数据容器）</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<script async type="module">import mermaid from"https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"</script>
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js" integrity="sha512-hpZ5pDCF2bRCweL5WoA0/N1elet1KYL5mx3LP555Eg/0ZguaHawxNvEjF6O3rufAChs16HVNhEc6blF/rZoowQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/plugins/autoloader/prism-autoloader.min.js" integrity="sha512-sv0slik/5O0JIPdLBCR2A3XDg/1U3WuDEheZfI/DI5n8Yqc3h5kjrnr46FGBNiUAJF7rE4LHKwQ/SoSLRKAxEA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script async src="https://cdn.jsdelivr.net/npm/lucide@0.115.0/dist/umd/lucide.min.js"></script>
+<script>window.addEventListener("load",(()=>{document.querySelectorAll(".callout").forEach((e=>{const t=getComputedStyle(e).getPropertyValue("--callout-icon"),l=t&&t.trim().replace(/^lucide-/,"");if(l){const t=e.querySelector(".callout-title");if(t){const e=document.createElement("div"),c=document.createElement("i");e.appendChild(c),c.setAttribute("icon-name",l),e.setAttribute("class","callout-icon"),t.insertBefore(e,t.firstChild)}}})),lucide.createIcons(),Array.from(document.querySelectorAll(".callout.is-collapsible")).forEach((e=>{e.querySelector(".callout-title").addEventListener("click",(t=>{e.classList.contains("is-collapsed")?e.classList.remove("is-collapsed"):e.classList.add("is-collapsed")}))}))}))</script>
+<script async src="https://fastly.jsdelivr.net/npm/force-graph@1.43.0/dist/force-graph.min.js"></script>
+<script async src="https://fastly.jsdelivr.net/npm/@alpinejs/persist@3.11.1/dist/cdn.min.js"></script>
+<script src="https://fastly.jsdelivr.net/npm/alpinejs@3.11.1/dist/cdn.min.js" async></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-okaidia.min.css" integrity="sha512-mIs9kKbaw6JZFfSuo+MovjU+Ntggfoj8RwAmJbVXQ5mkAX5LlgETQEweFPI18humSPHymTb5iikEOKWF7I8ncQ==" crossorigin="anonymous" referrerpolicy="no-referrer" async>
+<script src="https://fastly.jsdelivr.net/npm/whatwg-fetch@3.6.2/dist/fetch.umd.min.js" crossorigin="anonymous" referrerpolicy="no-referrer" async></script>
+<link href="/styles/digital-garden-base.css" rel="stylesheet">
+<link href="/styles/obsidian-base.css" rel="stylesheet">
+<link href="/styles/_theme.d92311c2.css" rel="stylesheet">
+<link href="/styles/custom-style.css" rel="stylesheet">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<style></style>
+</head>
+<body class="theme-dark markdown-preview-view markdown-rendered markdown-preview-section">
+<nav class="navbar">
+<div class="navbar-inner">
+<a href="/" style="text-decoration:none">
+<h1 style="margin:15px!important">Digital Garden</h1>
+</a>
+</div>
+</nav>
+<main class="content cm-s-obsidian">
+<header>
+<div class="header-meta">
+</div>
+</header>
+<h1 id="学习要求" tabindex="-1">学习要求</h1>
+<h2 id="容器学习要求：" tabindex="-1">容器学习要求：</h2>
+<p>理解下标、步长、切片</p>
+<h2 id="字符串学习要求：" tabindex="-1">字符串学习要求：</h2>
+<p>复现课堂代码，能知晓字符串操作的常见方法（至少罗列三个)。</p>
+<h2 id="列表学习要求：" tabindex="-1">列表学习要求：</h2>
+<p>1，复现课堂代码，能够自己罗列列表的增删改<strong>查</strong>方法。<br>
+2，能够看懂列表的嵌套规则。</p>
+<hr>
+<p>容器：<strong>字符串、列表、元组、字典、集合</strong><br>
+字符串下标<br>
+字符串切片<br>
+字符串操作方法<br>
+列表<br>
+元组</p>
+<h1 id="字符串" tabindex="-1">字符串</h1>
+<p>三引号可以用来定义字符串，三引号没有赋值就是注释，赋值了就是字符串。<strong>三引号支持换行</strong></p>
+<p>字符串中有引号，就交叉使用，或者使用转义字符”\“，告诉计算机，你只要把我当成字符串</p>
+<pre><code class="language-python">&quot;&quot;&quot;这是注释&quot;&quot;&quot;
+a = &quot;&quot;&quot;这是赋值的字符串&quot;&quot;&quot;
+b = '这也是字符串'
+c = '''
+	这也是字符串
+	'''
+</code></pre>
+<h2 id="字符串的输入" tabindex="-1">字符串的输入</h2>
+<p><code>input()</code></p>
+<h2 id="字符串的输出" tabindex="-1">字符串的输出</h2>
+<p>字符串的索引</p>
+<pre><code class="language-python">a，b，c，d，e，f
+0，1，2，3，4，5
+print(str[0])
+</code></pre>
+<p>索引有正索引：012346<br>
+还有负索引：-1-2-3-4-5-6</p>
+<h2 id="strong-strong" tabindex="-1">字符串切片（列表，元组都支持）<strong>只管头不管尾</strong></h2>
+<p>对操作对象截取其中的一部分数据，这个过程就是切片<br>
+<code>字符串名称[其实位置:结束位置:步长]</code></p>
+<pre><code class="language-python">[::-1]  # 字符串反转，等效于reserve()
+[:-1]：除掉最后一个元素
+[::2]：所有偶数索引
+</code></pre>
+<p>✨✨✨<br>
+✨✨✨<strong>字符串不能用<code>reverse()</code>来反转，只能用切片</strong><br>
+✨✨✨</p>
+<h2 id="find-strong-find-strong" tabindex="-1">字符串查找，find()，<strong>列表不能用find</strong></h2>
+<p>查找关键词在字符串中出现的位置，find方法：主要功能就是查找关键词在字符串中出现（<strong>第一个</strong>）的位置，找到了就返回开始的索引下标，<strong>没有找到，返回-1</strong></p>
+<p><code>find(',', 0)</code>，从索引为0的位置开始找</p>
+<p>返回寻找到的字符串的索引（索引从0开始到n-1）（从第{索引}开始是find到的字符串）</p>
+<p>具体用法：用来寻找文件的后缀名。思路：查找“.”所在的位置下标</p>
+<p>例如：</p>
+<pre><code class="language-python">file = GAT_AMD.py
+index = file.find('.')
+filename = file[:index]  # 等效于file[0,7,1]
+postfix = file[index:]  # file[7::1]
+print(f'{..}{..}')
+</code></pre>
+<h2 id="replace-split-join" tabindex="-1">字符串修改方法replace(), split(), join()</h2>
+<pre><code class="language-python">replace(old, new)  # 把旧内容替换成新内容
+split(分割符号)  # 使用分割符号对字符串进行分割，返回列表，列表每个元素就是分隔符两边的数据
+join(列表容器)  # 和split相反，把一个列表拼接成字符串
+</code></pre>
+<h2 id="字符串判断方法" tabindex="-1">字符串判断方法</h2>
+<p>isdigit() # 判断字符串是否全部由数字组成</p>
+<p>用法</p>
+<ul>
+<li>要把字符串转成数字类型，就可以先用isdigit判断一下</li>
+<li>判断用户是否输入的是数字</li>
+</ul>
+<p><code>if passwd.isdigit(): print(f'密码是：{passwd}')</code></p>
+<h1 id="列表" tabindex="-1">列表</h1>
+<p>一种容器，用一个容器存储多个信息</p>
+<p><code>name = ['a', 'b', 'c'] # 列表定义</code></p>
+<p>列表的索引从0开始</p>
+<p><code>print(name[0]) # 打印第一个元素</code></p>
+<pre><code class="language-python"># 遍历列表
+while i &lt; len(name):
+	print(name[i])
+	i += 1
+
+for i in names:
+	print(i)
+</code></pre>
+<h2 id="列表的操作，增删改查" tabindex="-1">列表的操作，增删改查</h2>
+<h3 id="查询：" tabindex="-1">查询：</h3>
+<ul>
+<li><code>a[索引下标]</code> # 基于列表下标</li>
+<li><code>len(列表名称)</code> # 求容器长度</li>
+<li><code>in方法</code> # 可以在字符串、列表、元组中使用，<code>if 元素 in 数据容器 # 判断元素是否在容器中出现</code></li>
+</ul>
+<h3 id="增加" tabindex="-1">增加</h3>
+<ul>
+<li>append() # <strong>追加操作</strong>，一个元素一个元素增加，方法本身不返回任何内容，所以追加完后要打印原列表
+<ul>
+<li>例如<code>list.append('孙权')</code></li>
+</ul>
+</li>
+<li>+加号 # 可以把两个列表进行<strong>合并操作</strong>
+<ul>
+<li>例如<code>print(list2 + list3)</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="删除" tabindex="-1">删除</h3>
+<ul>
+<li>remove() # 根据元素删除元素，方法本身不返回任何内容
+<ul>
+<li>例如list1.remove(20)</li>
+</ul>
+</li>
+</ul>
+<h3 id="修改" tabindex="-1">修改</h3>
+<ul>
+<li>基本方法：<code>列表名称[索引] = 修改的值</code> 例如<code>list1[0] = '刘禅'</code></li>
+<li>翻转与排序方法
+<ul>
+<li>翻转：<code>reverse()</code>：相当于切片中的 <code>[ : :-1]</code>
+<ul>
+<li><code>list.reserve()</code> = <code>list[: :-1]</code></li>
+</ul>
+</li>
+<li>排序：<code>sort(reverse=False)</code>：把列表的元素从小到大排序，该参数可以从大到小排
+<ul>
+<li>关于字符串列表的排序？</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="列表的嵌套" tabindex="-1">列表的嵌套</h1>
+<pre><code class="language-python">a = [[], [], []]
+print(a[0])
+print(a[1][0])
+</code></pre>
+<h1 id="错题：" tabindex="-1">错题：</h1>
+<pre><code class="language-python">names = ['A','B','C','D','E','F','G','H'] for name in names: index = random.randint(0,2) offices[index].append(name)
+</code></pre>
+<pre><code class="language-python"># 将价格列表按升序排序 
+prices.sort() 
+print(&quot;升序排序后的价格列表：&quot;, prices)
+</code></pre>
+</main>
+<script>window.location.hash&&document.getElementById(window.location.hash.slice(1)).classList.add("referred"),window.addEventListener("hashchange",(e=>{const t=e.oldURL.split("#");t[1]&&document.getElementById(t[1]).classList.remove("referred");const n=e.newURL.split("#");n[1]&&document.getElementById(n[1]).classList.add("referred")}),!1);const url_parts=window.location.href.split("#"),url=url_parts[0],referrence=url_parts[1];document.querySelectorAll(".cm-s-obsidian > *[id]").forEach((function(e){e.ondblclick=function(e){const t=url+"#"+e.target.id;navigator.clipboard.writeText(t)}}))</script>
+<script src="https://fastly.jsdelivr.net/npm/luxon@3.2.1/build/global/luxon.min.js"></script>
+<script defer="defer">TIMESTAMP_FORMAT="MMM dd, yyyy h:mm a",document.querySelectorAll(".human-date").forEach((function(e){date=e.getAttribute("data-date")||e.innerText,parsed_date=luxon.DateTime.fromISO(date),null!=parsed_date.invalid&&(parsed_date=luxon.DateTime.fromSQL(date)),null!=parsed_date.invalid&&(parsed_date=luxon.DateTime.fromHTML(date)),e.innerHTML=parsed_date.toFormat(TIMESTAMP_FORMAT)}))</script>
+<script>lucide.createIcons({attrs:{class:["svg-icon"]}})</script>
+</body>
+</html>

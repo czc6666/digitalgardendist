@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>精确度、准确度、精密度区别，准确性、精确性</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<script async type="module">import mermaid from"https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"</script>
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js" integrity="sha512-hpZ5pDCF2bRCweL5WoA0/N1elet1KYL5mx3LP555Eg/0ZguaHawxNvEjF6O3rufAChs16HVNhEc6blF/rZoowQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/plugins/autoloader/prism-autoloader.min.js" integrity="sha512-sv0slik/5O0JIPdLBCR2A3XDg/1U3WuDEheZfI/DI5n8Yqc3h5kjrnr46FGBNiUAJF7rE4LHKwQ/SoSLRKAxEA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script async src="https://cdn.jsdelivr.net/npm/lucide@0.115.0/dist/umd/lucide.min.js"></script>
+<script>window.addEventListener("load",(()=>{document.querySelectorAll(".callout").forEach((e=>{const t=getComputedStyle(e).getPropertyValue("--callout-icon"),l=t&&t.trim().replace(/^lucide-/,"");if(l){const t=e.querySelector(".callout-title");if(t){const e=document.createElement("div"),c=document.createElement("i");e.appendChild(c),c.setAttribute("icon-name",l),e.setAttribute("class","callout-icon"),t.insertBefore(e,t.firstChild)}}})),lucide.createIcons(),Array.from(document.querySelectorAll(".callout.is-collapsible")).forEach((e=>{e.querySelector(".callout-title").addEventListener("click",(t=>{e.classList.contains("is-collapsed")?e.classList.remove("is-collapsed"):e.classList.add("is-collapsed")}))}))}))</script>
+<script async src="https://fastly.jsdelivr.net/npm/force-graph@1.43.0/dist/force-graph.min.js"></script>
+<script async src="https://fastly.jsdelivr.net/npm/@alpinejs/persist@3.11.1/dist/cdn.min.js"></script>
+<script src="https://fastly.jsdelivr.net/npm/alpinejs@3.11.1/dist/cdn.min.js" async></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-okaidia.min.css" integrity="sha512-mIs9kKbaw6JZFfSuo+MovjU+Ntggfoj8RwAmJbVXQ5mkAX5LlgETQEweFPI18humSPHymTb5iikEOKWF7I8ncQ==" crossorigin="anonymous" referrerpolicy="no-referrer" async>
+<script src="https://fastly.jsdelivr.net/npm/whatwg-fetch@3.6.2/dist/fetch.umd.min.js" crossorigin="anonymous" referrerpolicy="no-referrer" async></script>
+<link href="/styles/digital-garden-base.css" rel="stylesheet">
+<link href="/styles/obsidian-base.css" rel="stylesheet">
+<link href="/styles/_theme.d92311c2.css" rel="stylesheet">
+<link href="/styles/custom-style.css" rel="stylesheet">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<style></style>
+</head>
+<body class="theme-dark markdown-preview-view markdown-rendered markdown-preview-section">
+<nav class="navbar">
+<div class="navbar-inner">
+<a href="/" style="text-decoration:none">
+<h1 style="margin:15px!important">Digital Garden</h1>
+</a>
+</div>
+</nav>
+<main class="content cm-s-obsidian">
+<header>
+<div class="header-meta">
+</div>
+</header>
+<p><a href="https://zhuanlan.zhihu.com/p/625483934" target="_blank" class="external-link">【继续辨析】精密度、准确度、精确度究竟有什么关系！？ - 知乎 (zhihu.com)</a></p>
+<h1 id="图示" tabindex="-1">图示</h1>
+<p>为了更好地说明测量的精密度、测量的准确度和测量的精确度三者之间的联系和不同，下面我们用打靶时弹着点的情况为例说明。</p>
+<p><img src="https://pic3.zhimg.com/80/v2-63b526454291528760d2965eb2e7e20a_720w.webp" alt="img"></p>
+<p>图1 表示射击的精密度高，好比测量数据精密度高，但准确度较差；</p>
+<p>图2 表示射击的准确度高，好比测量数据的准确度高，但精密度差；</p>
+<p>图3 表示精密度和准确度均较好，好比测量数据的精密度和准确度都好，即精确度高。</p>
+<p>仪器的精密度、仪器的准确度和仪器的精确度反映仪器性能的优劣，正确理解就可以更好地认识、掌握和使用实验仪器。</p>
+<p>测量的精密度、测量的准确度和测量的精确度反映测量值的好坏，正确认识就可以帮助我们很好地分析和理解实验数据。</p>
+<hr>
+<p>精密度、准确度和精确度是分析实验中经常用到的几个术语，它们之间有完全不同的物理意义且又存在着必然联系，有的是尽对仪器而言的，有的既是对仪器又是对测量而言，极易出现混淆。</p>
+<p>那么问题就来了，它们之间究竟是什么关系？</p>
+<p>作为一名分析测试人员，这些术语是应该搞清楚的概念，但这些概念互相联系又有区别，也常常使人不知所云。</p>
+<p>那么今天，局长就从仪器和测量两方面，跟大家唠唠它们之前的关系。</p>
+<p>精密度、准确度、精确度分为仪器的精密度、准确度、精确度和测量的精密度、准确度、精确度。它们之间有完全不同的物理意义且又存在着必然联系。</p>
+<p>仪器的精密度、仪器的准确度、仪器的精确度是用来说明物理仪器性能的概念，而测量的精密度、测量的准确度、测量的精确度是用来评价测量结果的概念。而测量的精密度、测量的准确度、测量的精确度是用来评价测量结果的概念。</p>
+<h1 id="精密度" tabindex="-1">精密度</h1>
+<p><strong>仪器的精密度</strong>一般是指量具仪表类仪器的最小分度值。例如常用米尺的最小分度值是一毫米，那么他的精密度就是一毫米。同类仪器对同一对象的测量，仪器的精密度越高，测量结果就越接近真值。</p>
+<p>如常用来测量长度的仪器米尺、游标卡尺、螺旋测微计，其中米尺的精密度最低, 游标卡尺的精密度居中，螺旋测微计的精密度最高，相应地测量数据就越准确。量具仪表类仪器的精密度是决定测量随机误差的主要因素。</p>
+<p>由于每次测量值的随机误差一般在精密度的±1/2 范围内，因此，所用测量仪器的精密度高，测量值的随机误差就小。</p>
+<p><strong>测量的精密度</strong>是指测量数据的集散情况。测量数据的集散情况主要体现测量随机误差的分布问题，可用标准偏差定量的表示。</p>
+<p>测量的精密度高，那么测量数据就比较集中。理想的测量数据应集中在真值附近，有比真值大的，有比真值小的。</p>
+<p>测量的精密度高，并不意味着测量数据理想。例如，测量数据的分布很集中但绝大部分比真值大或绝大部分比真值小，都不是理想的测量结果。所以测量的精密度只能说明测量的某一个方面。</p>
+<p>一般来说仪器的精密度影响着测量的精密度，仪器的精密度高，所测得数据的精密度就高，测量的标准偏差就小。这就要求在实验允许的情况下，尽量选择精密度高的仪器，让实验误差减小到最小。</p>
+<h1 id="准确度" tabindex="-1">准确度</h1>
+<p><strong>准确度有时也称为正确度。</strong></p>
+<p><strong>仪器的准确度</strong>是指在规定的使用条件下工作时的基本误差(额定最大相对误差)。准确度在我们常用的电表类仪器中由仪器的级别数体现出来，或者说电表类仪器的级别数就是由准确度所决定的。现以电流表为例来说明，设电流表的量程为xm，最大绝对误差为Δxm，额定相对误差δxm 为：</p>
+<p><img src="https://pic2.zhimg.com/80/v2-19ada2afdb359ab3eac5f7593426c5e9_720w.webp" alt="img"></p>
+<p>上式中的k 称为电流表的级别数。因此电表类仪器的级别数k 值大，仪器的准确度就低，反之，级别数k 值小，仪器的准确度就高。仪器的准确度在仪器的设计制造时就已经确定了，故仪表类仪器的准确度反映系统误差的大小。</p>
+<p>电表类仪器的准确度一般比较精确，在使用中随机误差可以略去，只按其准确度级别确定误差。在准确度级一定的情况下实验中要注意选择电表类仪器的量程，使得测量值大于量程的三分之二，否则会增大实验误差。</p>
+<p><strong>测量的准确度</strong>由测量结果与该量的公认值(或高一级的测量结果)之差去衡量，差值小测量结果准确度高，差值大测量结果的准确度就低，测量的准确度反映的是测量值的相对误差。一般情况下所使用仪器的精密度高，测量的准确度就高。如用米尺和螺旋测微计测量长度，米尺测到的数据的准确度不如螺旋测微计测到的数据的准确度高。</p>
+<p>因此，测量所使用仪器的准确度和精密度影响着测量的准确度。</p>
+<h1 id="精确度" tabindex="-1">精确度</h1>
+<p><strong>仪器的精确度</strong>是个泛指词，它既包含着精密度，也包含着准确度，在一般情况下当仪器的系统误差起主导作用而随机误差可略去时，精确度主要代表准确度，如电流表。当仪器的随机误差起主导作用而系统误差可略去不计时，精确度主要代表精密度，如米尺、游标卡尺等。仪器的精确度也称为仪器的精度。有些仪器的精密度既与精密度和准确度有关，又不同于这两个概念，如天平。天平的精确度级别是以其感量跟称量之比来定义的。</p>
+<p><strong>测量的精确度</strong>是对测量的精密度和准确度的综合评价。测量的精密度和准确度都好，测量的精确度就高，即测量结果的系统误差和随机误差小，测量值精确。测量的精确度也称为测量的精度。</p>
+<p>仪器的精确度决定着测量的精确度。</p>
+</main>
+<script>window.location.hash&&document.getElementById(window.location.hash.slice(1)).classList.add("referred"),window.addEventListener("hashchange",(e=>{const t=e.oldURL.split("#");t[1]&&document.getElementById(t[1]).classList.remove("referred");const n=e.newURL.split("#");n[1]&&document.getElementById(n[1]).classList.add("referred")}),!1);const url_parts=window.location.href.split("#"),url=url_parts[0],referrence=url_parts[1];document.querySelectorAll(".cm-s-obsidian > *[id]").forEach((function(e){e.ondblclick=function(e){const t=url+"#"+e.target.id;navigator.clipboard.writeText(t)}}))</script>
+<script src="https://fastly.jsdelivr.net/npm/luxon@3.2.1/build/global/luxon.min.js"></script>
+<script defer="defer">TIMESTAMP_FORMAT="MMM dd, yyyy h:mm a",document.querySelectorAll(".human-date").forEach((function(e){date=e.getAttribute("data-date")||e.innerText,parsed_date=luxon.DateTime.fromISO(date),null!=parsed_date.invalid&&(parsed_date=luxon.DateTime.fromSQL(date)),null!=parsed_date.invalid&&(parsed_date=luxon.DateTime.fromHTML(date)),e.innerHTML=parsed_date.toFormat(TIMESTAMP_FORMAT)}))</script>
+<script>lucide.createIcons({attrs:{class:["svg-icon"]}})</script>
+</body>
+</html>

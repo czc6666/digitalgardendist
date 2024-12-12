@@ -1,0 +1,634 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>python基础学习笔记 蟒蛇书</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<script async type="module">import mermaid from"https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"</script>
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js" integrity="sha512-hpZ5pDCF2bRCweL5WoA0/N1elet1KYL5mx3LP555Eg/0ZguaHawxNvEjF6O3rufAChs16HVNhEc6blF/rZoowQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/plugins/autoloader/prism-autoloader.min.js" integrity="sha512-sv0slik/5O0JIPdLBCR2A3XDg/1U3WuDEheZfI/DI5n8Yqc3h5kjrnr46FGBNiUAJF7rE4LHKwQ/SoSLRKAxEA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script async src="https://cdn.jsdelivr.net/npm/lucide@0.115.0/dist/umd/lucide.min.js"></script>
+<script>window.addEventListener("load",(()=>{document.querySelectorAll(".callout").forEach((e=>{const t=getComputedStyle(e).getPropertyValue("--callout-icon"),l=t&&t.trim().replace(/^lucide-/,"");if(l){const t=e.querySelector(".callout-title");if(t){const e=document.createElement("div"),c=document.createElement("i");e.appendChild(c),c.setAttribute("icon-name",l),e.setAttribute("class","callout-icon"),t.insertBefore(e,t.firstChild)}}})),lucide.createIcons(),Array.from(document.querySelectorAll(".callout.is-collapsible")).forEach((e=>{e.querySelector(".callout-title").addEventListener("click",(t=>{e.classList.contains("is-collapsed")?e.classList.remove("is-collapsed"):e.classList.add("is-collapsed")}))}))}))</script>
+<script async src="https://fastly.jsdelivr.net/npm/force-graph@1.43.0/dist/force-graph.min.js"></script>
+<script async src="https://fastly.jsdelivr.net/npm/@alpinejs/persist@3.11.1/dist/cdn.min.js"></script>
+<script src="https://fastly.jsdelivr.net/npm/alpinejs@3.11.1/dist/cdn.min.js" async></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-okaidia.min.css" integrity="sha512-mIs9kKbaw6JZFfSuo+MovjU+Ntggfoj8RwAmJbVXQ5mkAX5LlgETQEweFPI18humSPHymTb5iikEOKWF7I8ncQ==" crossorigin="anonymous" referrerpolicy="no-referrer" async>
+<script src="https://fastly.jsdelivr.net/npm/whatwg-fetch@3.6.2/dist/fetch.umd.min.js" crossorigin="anonymous" referrerpolicy="no-referrer" async></script>
+<link href="/styles/digital-garden-base.css" rel="stylesheet">
+<link href="/styles/obsidian-base.css" rel="stylesheet">
+<link href="/styles/_theme.d92311c2.css" rel="stylesheet">
+<link href="/styles/custom-style.css" rel="stylesheet">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<style></style>
+</head>
+<body class="theme-dark markdown-preview-view markdown-rendered markdown-preview-section">
+<nav class="navbar">
+<div class="navbar-inner">
+<a href="/" style="text-decoration:none">
+<h1 style="margin:15px!important">Digital Garden</h1>
+</a>
+</div>
+</nav>
+<main class="content cm-s-obsidian">
+<header>
+<div class="header-meta">
+</div>
+</header>
+<h1 id="第二章  变量和简单数据类型" tabindex="-1">第二章 变量和简单数据类型</h1>
+<pre><code class="language-python"># 将一条消息赋给变量并且将其打印出来  
+a = 'you are very good'  
+print(a)
+</code></pre>
+<pre><code class="language-python"># 在字符串中使用变量↓  
+# 把两个变量搞成一个变量要用ａ＝　ｆ＂｛ｘ｝｛ｙ｝＂  
+  
+first_name = '阿普杜拉'  
+mid_name = '穆罕穆德'  
+last_name = '克斯特洛夫斯基'  
+full_name = f&quot;sb→{first_name}·{mid_name}·{last_name}&quot;  
+print(f&quot;hello,{full_name}&quot;)  
+print(&quot;\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\thello&quot;)  
+message = f&quot;hello,{full_name}&quot;  
+print(message)  
+  
+# 添加空白用\n和\t  
+# 删除空白用.strip()方法  
+# 分为三种: 某某某.lstrip() 某某某.strip() 某某某.rstrip()
+name = &quot; sb &quot;  
+  
+print(name.strip())  
+print(name.lstrip())  
+print(name.rstrip())
+
+</code></pre>
+<pre><code class="language-python">&quot;&quot;&quot;  
+用变量表示一个人的名字，再用小写，大写和首字母大写的方式显示人名  
+&quot;&quot;&quot;  
+a_name = 'apUdulAmuhanmuDe' # firstname  
+b_name = 'kesiTeluoFUsiji' # lastname  
+  
+# lower  
+print(f&quot;{a_name.lower()}·{b_name.lower()}&quot;)  
+  
+# upper()  
+print(f&quot;{a_name.upper()}·{b_name.upper()}&quot;)  
+  
+# title()  
+print(f&quot;{a_name.title()}·{b_name.title()}&quot;)
+</code></pre>
+<h1 id="第三章 列表" tabindex="-1">第三章 列表</h1>
+<pre><code class="language-python"># 3-1 将一些朋友的姓名存储在一个列表中，并将其命名为names。依次访问该列表中的每个元素，从而将每个朋友的姓名打印出来  
+names = ['frank', 'fuck', 'framework']  
+for n in names:  
+print(n)  
+  
+# 3-2 问候语：继续使用3-1中的列表，但是不打印每个朋友的姓名，而为每人打印一条消息  
+# 每条消息都包含相同的问候语，但抬头为朋友的姓名  
+for name in names:  
+print(f&quot;hello {name.title()}, fuck you&quot;)  
+  
+# 3-3 自己的列表：想想你喜欢的通勤方式，如骑摩托车，并创建以一个包含多种通勤方式的列表。  
+# 根据该列表打印一系列有关这些通勤方式的宣言，下面是一个例子  
+# I would like to own a Honda motorcycle  
+Commuting = ['bycycle', 'motorcycle', 'car']  
+for way in Commuting:  
+print(f&quot;I would like to own a Honda {way}&quot;)  
+  
+################################################  
+# 列表末尾添加元素：append()，例如a.append(b)  
+# 列表第二个位置插入元素：a.insert(1,b)  
+# 列表末尾弹出（类似于栈，删除）：a.pop()或x=a.pop()————也可以弹出任意位置的:x=a.pop(2)  
+# 列表任意位置删除元素del a[0]  
+# 根据值删除元素：a.remove('sb')————只删除列表中第一个指定的值  
+################################################  
+  
+# 3-4 嘉宾名单  
+guests = names  
+for gg in guests:  
+print(f&quot;hi {gg}, please you attend my party&quot;)  
+  
+# 3-5 修改嘉宾名单  
+no_lai = 'framework'  
+print(f&quot;{no_lai}来不了了&quot;)  
+guests.remove(no_lai)  
+guests.append('mike')  
+for gg in guests:  
+print(f&quot;hi {gg}, please you attend my party&quot;)  
+  
+# 3-6 添加嘉宾  
+guests.insert(0, &quot;a&quot;)  
+guests.insert(2, 'b')  
+guests.append('c')  
+for gg in guests:  
+print(f&quot;hi {gg}, please you attend my party&quot;)  
+print(guests)  
+  
+# 3-7 缩减名单  
+print('我只能邀请两个人了，其他人别来了')  
+for i in range(4):  
+print(f&quot;sorry, i can`t 邀请你了，{guests.pop()}&quot;)  
+i = 0  
+for i in range(2):  
+print(f&quot;我还是邀请了你{guests[i]}&quot;)  
+i += 1  
+print(guests)  
+for _ in range(2):  
+del guests[0]  
+print(guests)  
+  
+#############################################  
+# a.sort() 永久按字母顺序排序  
+# a.sort(reverse=True) 永久按字母逆序排序  
+# a.reverse() 反转列表  
+#  
+# sorted(a) 临时按字母顺序排序  
+# sorted(a, reverse=True) 临时按字母逆序排序 True!!!!!!!!!# len(a) 获取列表a的长度  
+#############################################  
+  
+# 3-8 放眼世界  
+I_want_to_travel_somewhere = ['LaSa', 'XiAn', 'GuiLin', 'NeiMengGu', 'MaLaiXiYa']  
+print(I_want_to_travel_somewhere)  
+print(f'临时字母排序:{sorted(I_want_to_travel_somewhere)}')  
+print(I_want_to_travel_somewhere)  
+print(f'临时反字母排序:{sorted(I_want_to_travel_somewhere, reverse=True)}')  
+print(I_want_to_travel_somewhere)  
+I_want_to_travel_somewhere.reverse()  
+print(I_want_to_travel_somewhere)  
+I_want_to_travel_somewhere.reverse()  
+print(I_want_to_travel_somewhere)  
+print('已经完成两次反转')  
+print('顺序排序：')  
+I_want_to_travel_somewhere.sort()  
+print(I_want_to_travel_somewhere)  
+print('逆序排序：')  
+I_want_to_travel_somewhere.sort(reverse=True)  
+print(I_want_to_travel_somewhere)  
+  
+# 3-9 晚餐嘉宾  
+print(f'我想去的地方一共有{len(I_want_to_travel_somewhere)}处')  
+  
+# 3-10 尝试使用各个函数  
+# 略  
+  
+# 3-11 不要引发索引错误  
+# 例如，列表里有3个元素，你访问第四个元素 a.[3]
+</code></pre>
+<h1 id="第四章 列表操作" tabindex="-1">第四章 列表操作</h1>
+<pre><code class="language-python"># 4-1 比萨  
+pizzas = [&quot;a&quot;, 'b', 'c']  
+for pizza in pizzas:  
+print(f'i like {pizza} pizza')  
+print('i really love pizza')  
+  
+# 4-2 动物  
+# 略  
+  
+####################  
+# for _ in range(6):  
+# numbers = list(range(1,6,2))  
+# min(a) max(a) sum(a)  
+# 列表解析，squares = [value**2 for value in range(1,11)]  
+####################  
+  
+# 4-3 数到20  
+for i in range(1, 21):  
+print(i)  
+  
+# 4-4 一百万 打印1到一百万  
+yi_bai_wan = list(range(1, 1000001))  
+# for i in yi_bai_wan:  
+# print(i)  
+  
+# 4-5 一百万求和  
+print(f'列表最小数为：{min(yi_bai_wan)},列表最大数为：{max(yi_bai_wan)},列表所有数的和为：{sum(yi_bai_wan)}')  
+  
+# 4-6 奇数  
+odd_number = list(range(1, 20, 2))  
+for i in odd_number:  
+print(i)  
+  
+# 4-7 3的倍数  
+number3 = list(range(0, 30, 3))  
+for i in number3:  
+print(i)  
+  
+# 4-8 立方 1到10的立方打印出来  
+for i in range(1,11):  
+print(i**3)  
+  
+# 4-9 立方解析 用列表解析生成  
+number333 = [number**3 for number in range(1,11)]  
+print(number333)
+</code></pre>
+<h1 id="if" tabindex="-1">第五章 if语句</h1>
+<pre><code class="language-python"># 5-1 条件测试 略  
+# 5-2 更多条件测试 略  
+&quot;&quot;&quot;  
+if ---:  
+---  
+elif ---:  
+---  
+else:  
+---  
+&quot;&quot;&quot;  
+# 5-3 外星人颜色  
+alien_color = 'yellow'  
+if alien_color == 'green':  
+print('你得了5分')  
+  
+# 5-4 外星人颜色2  
+if alien_color == 'green':  
+print('5point')  
+else:  
+print('10print')  
+  
+# 5-5 外星人颜色3  
+if alien_color == 'green':  
+print('5point')  
+elif alien_color == 'yellow':  
+print('10print')  
+else:  
+print('15point')  
+  
+# 5-6 人生的不同阶段 略  
+# 5-7 喜欢的水果  
+favorite_fruits = ['banana', 'apple', 'ZhiYin']  
+# 5-8 以特殊方式跟管理员打招呼  
+users = ['admin', 'a', 'b', 'c', 'd']  
+for user in users:  
+if user == 'admin':  
+print(f&quot;Hello {user}, would you like to see a status report?&quot;)  
+else:  
+print(f&quot;Hello {user}, thank you for logging in again&quot;)  
+# 5-9 处理没有用户的情形  
+users.clear()  
+if users:  
+for user in users:  
+if user == 'admin':  
+print(f&quot;Hello {user}, would you like to see a status report?&quot;)  
+else:  
+print(f&quot;Hello {user}, thank you for logging in again&quot;)  
+else:  
+print('We need to find some users')  
+# 5-10 检查用户名  
+current_users = ['A', 'b', 'C', 'd', 'E']  
+print(current_users)  
+XiaoXie_current_users = [item.lower() for item in current_users] # !!!!好好学习这句 复制出一个全部是小写的列表  
+print(XiaoXie_current_users)  
+new_users = ['D', 'B', 'v', 'x', 'z']  
+for new_user in new_users:  
+if new_user.lower() in current_users:  
+print(f'{new_user}:需要使用其他用户名')  
+else:  
+print(f'{new_user}:这个用户名暂时未被使用')  
+# 5-11 序数  
+numbers = list(range(1, 10))  
+for number in numbers:  
+if number == 1:  
+print(f'{number}st')  
+elif number == 2:  
+print(f'{number}nd')  
+else:  
+print(f'{number}th')
+</code></pre>
+<h1 id="第六章 字典" tabindex="-1">第六章 字典</h1>
+<pre><code class="language-python"># 6-1 人  
+ren = {'first_name': 'tony', &quot;last_name&quot;: 'chen', 'age': '99', 'city': 'SanYa'}  
+print(ren)  
+# 6-2 喜欢的数  
+# 6-3 词汇表  
+dictionary = {'a': 'fuck', 'b': 'frank', 'c': 'fastbook', 'd': 'fastboot', 'e': 'bootloader'}  
+for a, b in dictionary.items():  
+print(f'{a}:{b}')  
+# 6-4 词汇表2  
+dictionary['f'] = '盖林柏林'  
+dictionary['g'] = '脖子→拧'  
+dictionary['h'] = '我叫磁力泵'  
+dictionary['i'] = 'engineer'  
+dictionary['j'] = '哈哈哈哈哈'  
+for a, b in dictionary.items():  
+print(f'{a}:{b}')  
+# 6-5 河流  
+HeLiu = {'黄河': '中国', '长江': '中国', '赣江': '中国'}  
+for key, value in HeLiu.items():  
+print(f'The {key} runs through {value}')  
+for He in set(HeLiu.keys()):  
+print(He)  
+for GuoJia in set(HeLiu.values()):  
+print(GuoJia)  
+# 6-6 调查  
+print('================')  
+favorite_languages = {'jen': 'python', 'sarah': 'c', 'edward': 'ruby', 'phil': 'python'}  
+people_list = ['jen', 'sarah', 'phil', 'frank', 'fastbook']  
+for people in people_list:  
+if people in favorite_languages.keys():  
+print('thank you')  
+else:  
+print('I invite you to participate in this survey')  
+print('========================')  
+favorite_languages = {'jen': 'python', 'sarah': 'c', 'edward': 'ruby', 'phil': 'python'}  
+people_list = {'jen', 'sarah', 'phil', 'frank', 'fastbook'}  
+for people in people_list:  
+if people in favorite_languages.keys():  
+print(f'thank you, {people}')  
+else:  
+print(f'{people}, I invite you to participate in this survey')  
+# 6-7 人们  
+ren2 = {'first_name': 'sb', &quot;last_name&quot;: '2b', 'age': '88', 'city': '北金'}  
+ren3 = {'first_name': '牛逼', &quot;last_name&quot;: '铸币', 'age': '77', 'city': '上海'}  
+people__ = [ren, ren2, ren3]  
+for sb in people__:  
+for a, b in sb.items():  
+print(a + &quot; 和 &quot; + b)  
+# 6-8 宠物  
+# 6-9  
+# 6-10  
+# 6-11  
+# 6-12
+</code></pre>
+<h1 id="while" tabindex="-1">第七章 用户输入和while循环</h1>
+<pre><code class="language-python">&quot;&quot;&quot;  
+# 7-1 汽车租赁  
+a = input('你要租什么车\n')  
+print(f'Let me see if i can find you a {a}')  
+# 7-2 餐馆订位  
+YongCanRenShu = int(input('有他妈多少个人用餐？？\n'))  
+if YongCanRenShu &gt; 8:  
+print('没有空桌')  
+else:  
+print('有空桌')  
+# 7-3 10的倍数  
+b = int(input('输入一个数\n'))  
+if b % 10 == 0:  
+print('这就是10的倍数')  
+else:  
+print('这不是10的倍数')  
+# 7-4 披萨配料  
+active = True  
+while active:  
+c = input('请输入你要加入的配料，输入0退出循环')  
+if c == '0':  
+active = False  
+else:  
+print(f'已添加{c}')  
+# 7-5 电影票  
+age = int(input('请输入年龄以计算票价:\n'))  
+while 1:  
+if age == 0:  
+break  
+else:  
+if age &lt; 3:  
+print('免费')  
+elif 3 &lt;= age &lt;= 12:  
+print('10美元')  
+else:  
+print('15美元')  
+# 7-6 三种出路 略  
+# 7-7 无线循环 略  
+&quot;&quot;&quot;  
+# 7-8 熟食店  
+sandwich_orders = ['pastrami', 'a', 'pastrami', 'b', 'pastrami', 'c']  
+finished_sandwiches = []  
+while sandwich_orders:  
+sandwich = sandwich_orders.pop()  
+print(f'I made your {sandwich} sandwich')  
+finished_sandwiches.append(sandwich)  
+for a in finished_sandwiches:  
+print(f'{a} sandwich is finished')  
+# 7-9 五香烟熏牛肉卖完了  
+print('===========================')  
+sandwich_orders = ['pastrami', 'a', 'pastrami', 'b', 'pastrami', 'c']  
+print('Our pastrami is sold out')  
+while 'pastrami' in sandwich_orders:  
+sandwich_orders.remove('pastrami')  
+print(sandwich_orders)  
+# 7-10 梦想的度假胜地  
+dream_destination = {}  
+while 666:  
+name = input('please enter your name')  
+if name == 'exit':  
+break  
+destination = input('please enter your dream destination')  
+dream_destination[name] = destination  
+for a, b in dream_destination.items():  
+print(f&quot;{a}'s dream destination is {b}&quot;)
+</code></pre>
+<h1 id="第八章 函数" tabindex="-1">第八章 函数</h1>
+<pre><code class="language-python"># printing_fuctions.py
+def print_models(unprinted_designs, completed_models):  
+&quot;&quot;&quot;  
+模拟打印每个设计，直到没有打印的设计为止  
+打印每个设计后，都将其移到列表completed_models中  
+:param unprinted_designs::param completed_models::return:  
+&quot;&quot;&quot;  
+while unprinted_designs:  
+current_design = unprinted_designs.pop()  
+print(f&quot;Printing model: {current_design}&quot;)  
+completed_models.append(current_design)  
+  
+  
+def show_completed_models(completed_models):  
+&quot;&quot;&quot;  
+显示打印好的所有模型  
+:param completed_models::return:  
+&quot;&quot;&quot;  
+print('\nThe following models have been printed:')  
+for completed_model in completed_models:  
+print(completed_model)
+</code></pre>
+<pre><code class="language-python"># printing_models.py
+from printing_functions import *  
+  
+unprinted_designs = ['phone case', 'robot pendant', 'dodecahedron']  
+completed_models = []  
+  
+print_models(unprinted_designs, completed_models)  
+show_completed_models(completed_models)
+</code></pre>
+<pre><code class="language-python"># main.py
+# 8-1 消息 8-2 喜欢的图书  
+def display_message():  
+print('In this chapter I am going to learn about functions')  
+  
+  
+def favorite_book(title):  
+print(f&quot;One of my favorite books is {title}&quot;)  
+  
+  
+favorite_book('The old man and the sea')  
+display_message()  
+  
+  
+# 8-3 T恤  
+def make_shirt(size, character):  
+print(f&quot;The size of the T-shirt is {size}, and the pattern of the T-shirt is {character}&quot;)  
+  
+  
+make_shirt('a', 'b')  
+make_shirt(size='sb', character='2b')  
+  
+  
+# 8-4 大号T恤  
+def make_shirt(size, character='I love Python'):  
+print(f&quot;The size of the T-shirt is {size}, and the pattern of the T-shirt is {character}&quot;)  
+  
+  
+make_shirt('large')  
+make_shirt('medium')  
+make_shirt('999', 'bbb')  
+  
+  
+# 8-5 城市  
+def describe_city(name='深圳', country='China'):  
+print(f&quot;{name} is in {country}&quot;)  
+  
+  
+describe_city()  
+describe_city('1', '2')  
+describe_city('ss')  
+  
+  
+# 8-6 城市名  
+def city_country(city_name, country):  
+return f'&quot;{city_name}, {country}&quot;'  
+  
+  
+print(city_country('a', '1'))  
+print(city_country('b', '2'))  
+print(city_country('c', '3'))  
+  
+  
+# 8-7 专辑 # 8-8 用户的专辑 略  
+def make_album(singer_name, album_title, number=None):  
+b = {singer_name: album_title}  
+if number:  
+b['number'] = number  
+return b  
+  
+  
+print(make_album('a', 'b', 10))  
+print(make_album('c', 'd'))  
+print(make_album('e', 'f'))  
+  
+  
+# 8-9 消息  
+messages = ['111', '222', '333']  
+  
+  
+def show_messages(b):  
+for message in b:  
+print(message)  
+  
+  
+show_messages(messages)  
+print('=================')  
+  
+  
+# 8-10 发送消息  
+sent_messages = []  
+  
+  
+def send_messages(a, b):  
+while a:  
+message = a.pop()  
+print(message)  
+b.append(message)  
+  
+  
+send_messages(messages, sent_messages)  
+print(messages)  
+print(sent_messages)  
+  
+  
+# 8-11 消息归档  
+print('--------------------------------------------')  
+messages = ['111', '222', '333']  
+sent_messages = []  
+  
+  
+def send_messages(a, b):  
+while a:  
+message = a.pop()  
+print(message)  
+b.append(message)  
+  
+  
+send_messages(messages[:], sent_messages) # ！！！切片在这里切，不是在函数定义的地方切！！！  
+print(messages)  
+print(sent_messages)  
+  
+  
+# 8-12 三明治  
+def sandwich(*sb):  
+print('这个sb要求的配料有这些：')  
+for a in sb:  
+print(f'--{a}')  
+  
+  
+sandwich('1', '2', '3')  
+sandwich('sss', 'vvv')  
+sandwich('aaa')  
+  
+  
+# 8-13 用户简介  
+def build_profile(first, last, **user_info):  
+user_info['first_name'] = first  
+user_info['last_name'] = last  
+return user_info  
+  
+  
+user_profile = build_profile('czc', 'czc', location='GanZhou', country='China')  
+print(user_profile)  
+  
+  
+# 8-14 汽车  
+def make_car(manufacturer, model, **car_info):  
+car_info['manufacturer'] = manufacturer  
+car_info['model'] = model  
+return car_info  
+  
+  
+car = make_car('subaru', 'outback', color='blue', tow_package=True)  
+print(car)
+</code></pre>
+<h1 id="第九章 类" tabindex="-1">第九章 类</h1>
+<pre><code class="language-python">class User:  
+	def __init__(self, name, age, location):  
+		self.name = name  
+		self.age = age  
+		self.location = location  
+  
+	def print_user_information(self):  
+		print(self.name + self.age + self.location)
+
+
+class Privileges:  
+	def __init__(self):  
+		self.privileges = ['can add post', 'can delete user', 'can ban user']  
+	  
+	def show_privileges(self):  
+		print(self.privileges)  
+  
+  
+class Admin(User):  
+	def __init__(self, name, age, location):  
+		super().__init__(name, age, location)  
+		self.privileges = Privileges()
+
+
+czc_admin = admin.Admin('czc', '23', &quot;China&quot;)  
+czc_admin.privileges.show_privileges()
+</code></pre>
+<h1 id="第十章 文件和异常" tabindex="-1">第十章 文件和异常</h1>
+<p>布响学！</p>
+<h1 id="第十一章 测试代码" tabindex="-1">第十一章 测试代码</h1>
+<p>布响学！</p>
+</main>
+<script>window.location.hash&&document.getElementById(window.location.hash.slice(1)).classList.add("referred"),window.addEventListener("hashchange",(e=>{const t=e.oldURL.split("#");t[1]&&document.getElementById(t[1]).classList.remove("referred");const n=e.newURL.split("#");n[1]&&document.getElementById(n[1]).classList.add("referred")}),!1);const url_parts=window.location.href.split("#"),url=url_parts[0],referrence=url_parts[1];document.querySelectorAll(".cm-s-obsidian > *[id]").forEach((function(e){e.ondblclick=function(e){const t=url+"#"+e.target.id;navigator.clipboard.writeText(t)}}))</script>
+<script src="https://fastly.jsdelivr.net/npm/luxon@3.2.1/build/global/luxon.min.js"></script>
+<script defer="defer">TIMESTAMP_FORMAT="MMM dd, yyyy h:mm a",document.querySelectorAll(".human-date").forEach((function(e){date=e.getAttribute("data-date")||e.innerText,parsed_date=luxon.DateTime.fromISO(date),null!=parsed_date.invalid&&(parsed_date=luxon.DateTime.fromSQL(date)),null!=parsed_date.invalid&&(parsed_date=luxon.DateTime.fromHTML(date)),e.innerHTML=parsed_date.toFormat(TIMESTAMP_FORMAT)}))</script>
+<script>lucide.createIcons({attrs:{class:["svg-icon"]}})</script>
+</body>
+</html>

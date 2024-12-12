@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>206-函数的参数进阶</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<script async type="module">import mermaid from"https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"</script>
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js" integrity="sha512-hpZ5pDCF2bRCweL5WoA0/N1elet1KYL5mx3LP555Eg/0ZguaHawxNvEjF6O3rufAChs16HVNhEc6blF/rZoowQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/plugins/autoloader/prism-autoloader.min.js" integrity="sha512-sv0slik/5O0JIPdLBCR2A3XDg/1U3WuDEheZfI/DI5n8Yqc3h5kjrnr46FGBNiUAJF7rE4LHKwQ/SoSLRKAxEA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script async src="https://cdn.jsdelivr.net/npm/lucide@0.115.0/dist/umd/lucide.min.js"></script>
+<script>window.addEventListener("load",(()=>{document.querySelectorAll(".callout").forEach((e=>{const t=getComputedStyle(e).getPropertyValue("--callout-icon"),l=t&&t.trim().replace(/^lucide-/,"");if(l){const t=e.querySelector(".callout-title");if(t){const e=document.createElement("div"),c=document.createElement("i");e.appendChild(c),c.setAttribute("icon-name",l),e.setAttribute("class","callout-icon"),t.insertBefore(e,t.firstChild)}}})),lucide.createIcons(),Array.from(document.querySelectorAll(".callout.is-collapsible")).forEach((e=>{e.querySelector(".callout-title").addEventListener("click",(t=>{e.classList.contains("is-collapsed")?e.classList.remove("is-collapsed"):e.classList.add("is-collapsed")}))}))}))</script>
+<script async src="https://fastly.jsdelivr.net/npm/force-graph@1.43.0/dist/force-graph.min.js"></script>
+<script async src="https://fastly.jsdelivr.net/npm/@alpinejs/persist@3.11.1/dist/cdn.min.js"></script>
+<script src="https://fastly.jsdelivr.net/npm/alpinejs@3.11.1/dist/cdn.min.js" async></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-okaidia.min.css" integrity="sha512-mIs9kKbaw6JZFfSuo+MovjU+Ntggfoj8RwAmJbVXQ5mkAX5LlgETQEweFPI18humSPHymTb5iikEOKWF7I8ncQ==" crossorigin="anonymous" referrerpolicy="no-referrer" async>
+<script src="https://fastly.jsdelivr.net/npm/whatwg-fetch@3.6.2/dist/fetch.umd.min.js" crossorigin="anonymous" referrerpolicy="no-referrer" async></script>
+<link href="/styles/digital-garden-base.css" rel="stylesheet">
+<link href="/styles/obsidian-base.css" rel="stylesheet">
+<link href="/styles/_theme.d92311c2.css" rel="stylesheet">
+<link href="/styles/custom-style.css" rel="stylesheet">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<style></style>
+</head>
+<body class="theme-dark markdown-preview-view markdown-rendered markdown-preview-section">
+<nav class="navbar">
+<div class="navbar-inner">
+<a href="/" style="text-decoration:none">
+<h1 style="margin:15px!important">Digital Garden</h1>
+</a>
+</div>
+</nav>
+<main class="content cm-s-obsidian">
+<header>
+<div class="header-meta">
+</div>
+</header>
+<h1 id="形参、实参" tabindex="-1">形参、实参</h1>
+<p>形参：在函数定义时，所编写的参数就称之为形式参数（<strong>本质是个局部变量</strong>）<br>
+实参：在函数调用时，所传递的参数就称之为实际参数</p>
+<h1 id="函数调用的参数" tabindex="-1">函数调用的参数</h1>
+<p>位置参数、关键词参数</p>
+<pre><code class="language-python"># 2、在函数调用时，函数一共有3个参数，所以调用时也需要传递3个参数，但是传递过程中有两种传递方式：①位置传参②关键词传参
+<a class="tag" onclick="toggleTagSearch(this)" data-content="#①位置传参，根据函数定义时参数的位置传递参数的值（强调参数的位置，顺序不能颠倒）">#①位置传参，根据函数定义时参数的位置传递参数的值（强调参数的位置，顺序不能颠倒）</a>
+func('Tom'，23，'10086')
+<a class="tag" onclick="toggleTagSearch(this)" data-content="#②关键词传参，根据”参数">#②关键词传参，根据”参数</a>=值&quot;方式来实现对参数的传递，优势：不需要考虑位置关系，只要参数名称没错，任何位置都可以
+func(name='Jack', mobile='10010', age=19)
+</code></pre>
+<h1 id="函数定义时参数的类别" tabindex="-1">函数定义时参数的类别</h1>
+<p>在Python代码中，函数定义时的参数一共有3种类别：</p>
+<ol>
+<li>普通参数，如<code>def func(name，age，mobile)</code></li>
+<li>缺省参数（默认值参数），如<code>def func（name，age，gender='male'）</code></li>
+<li>不定长参数，如<code>def func（*args，**kwargs)</code></li>
+</ol>
+<h1 id="strong-strong" tabindex="-1"><strong>不定长参数</strong></h1>
+<p>不定长参数也叫可变参数。用于不确定调用的时候会传递多少个参数（不传参也可以）的场景。<br>
+此时，可用包裹（packing）位置参数，或者包裹关键字参数，来进行参数传递，会显得非常方便。</p>
+<ul>
+<li><code>*args</code>：不定长<strong>位置</strong>参数（不定长<strong>元组</strong>参数），<code>*args</code>代表固定格式，<code>args</code>代表变量的名称，<strong>可以接受列表形参（看下面的面试题）</strong></li>
+</ul>
+<pre><code class="language-python">def func(*args):  # 接收的是元组
+	print(args)
+func(1, 2, 3)  # 输出的是(1, 2, 3)
+</code></pre>
+<ul>
+<li><code>**kwargs</code>：不定长<strong>关键词</strong>参数（不定长<strong>字典</strong>参数），<code>**kwargs</code>代表固定格式，<code>kwargs</code>代表变量名称，主要用于接收不定长关键词参数，<strong>可以接受字典形参（看下面的面试题）</strong><br>
+关键词参数</li>
+</ul>
+<pre><code class="language-python">def func(**kwsrgs):
+	print(kwargs)
+func(a=1, b=2, c=3)  # 输出的是字典{'a':1，'b':2，'c':3}
+</code></pre>
+<h2 id="不定长参数应用场景" tabindex="-1">不定长参数应用场景</h2>
+<p>在实际Python开发工作中，<code>*args</code>与<code>**kwargs</code>还可以结合在一起使用！<br>
+注意事项：<code>*args</code>必须放在左边，<code>**kwargs</code>必须放在右边</p>
+<pre><code class="language-python">def func(*args，**kwargs):
+	print(args)
+	print(kwargs)
+func(1, 2, 3, a=4, b=5)
+</code></pre>
+<h4 id="面试题" tabindex="-1">面试题</h4>
+<pre><code class="language-python"><a class="tag" onclick="toggleTagSearch(this)" data-content="#需求：请封装一个函数，用于接收List1与dict1的值，然后对其进行求和操作，函数最终返回结果为1">#需求：请封装一个函数，用于接收List1与dict1的值，然后对其进行求和操作，函数最终返回结果为1</a>+2+3+4+5
+def func(*args,**kwargs):
+	sum = 0
+	for i in args:
+		SUm += i
+	for value in kwargs.values():
+		sum += value
+	print(sum)
+list1=[1,2,3]
+dict1={'a':4, 'b':5}
+func(*list1,**dict1)
+</code></pre>
+<h1 id="参数混用" tabindex="-1">参数混用</h1>
+<p>普通参数、缺省参数、不定长参数的混用，必须按顺序使用<br>
+①<code>普通参数</code>②<code>*args</code>③<code>缺省参数</code>④<code>**kwargs</code><br>
+<code>def func（①普通参数②*args③缺省参数④**kwargs）</code></p>
+<p>混用情况的省略参数必须用关键词方式赋值<br>
+<code>def func（a, b, *args, c=4, **kwargs):</code><br>
+<code>func（1,2, 3, c=100, d=5,e=6)</code></p>
+</main>
+<script>window.location.hash&&document.getElementById(window.location.hash.slice(1)).classList.add("referred"),window.addEventListener("hashchange",(e=>{const t=e.oldURL.split("#");t[1]&&document.getElementById(t[1]).classList.remove("referred");const n=e.newURL.split("#");n[1]&&document.getElementById(n[1]).classList.add("referred")}),!1);const url_parts=window.location.href.split("#"),url=url_parts[0],referrence=url_parts[1];document.querySelectorAll(".cm-s-obsidian > *[id]").forEach((function(e){e.ondblclick=function(e){const t=url+"#"+e.target.id;navigator.clipboard.writeText(t)}}))</script>
+<script src="https://fastly.jsdelivr.net/npm/luxon@3.2.1/build/global/luxon.min.js"></script>
+<script defer="defer">TIMESTAMP_FORMAT="MMM dd, yyyy h:mm a",document.querySelectorAll(".human-date").forEach((function(e){date=e.getAttribute("data-date")||e.innerText,parsed_date=luxon.DateTime.fromISO(date),null!=parsed_date.invalid&&(parsed_date=luxon.DateTime.fromSQL(date)),null!=parsed_date.invalid&&(parsed_date=luxon.DateTime.fromHTML(date)),e.innerHTML=parsed_date.toFormat(TIMESTAMP_FORMAT)}))</script>
+<script>lucide.createIcons({attrs:{class:["svg-icon"]}})</script>
+</body>
+</html>

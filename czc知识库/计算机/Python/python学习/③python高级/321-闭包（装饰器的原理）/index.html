@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>321-闭包（装饰器的原理）</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<script async type="module">import mermaid from"https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"</script>
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js" integrity="sha512-hpZ5pDCF2bRCweL5WoA0/N1elet1KYL5mx3LP555Eg/0ZguaHawxNvEjF6O3rufAChs16HVNhEc6blF/rZoowQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/plugins/autoloader/prism-autoloader.min.js" integrity="sha512-sv0slik/5O0JIPdLBCR2A3XDg/1U3WuDEheZfI/DI5n8Yqc3h5kjrnr46FGBNiUAJF7rE4LHKwQ/SoSLRKAxEA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script async src="https://cdn.jsdelivr.net/npm/lucide@0.115.0/dist/umd/lucide.min.js"></script>
+<script>window.addEventListener("load",(()=>{document.querySelectorAll(".callout").forEach((e=>{const t=getComputedStyle(e).getPropertyValue("--callout-icon"),l=t&&t.trim().replace(/^lucide-/,"");if(l){const t=e.querySelector(".callout-title");if(t){const e=document.createElement("div"),c=document.createElement("i");e.appendChild(c),c.setAttribute("icon-name",l),e.setAttribute("class","callout-icon"),t.insertBefore(e,t.firstChild)}}})),lucide.createIcons(),Array.from(document.querySelectorAll(".callout.is-collapsible")).forEach((e=>{e.querySelector(".callout-title").addEventListener("click",(t=>{e.classList.contains("is-collapsed")?e.classList.remove("is-collapsed"):e.classList.add("is-collapsed")}))}))}))</script>
+<script async src="https://fastly.jsdelivr.net/npm/force-graph@1.43.0/dist/force-graph.min.js"></script>
+<script async src="https://fastly.jsdelivr.net/npm/@alpinejs/persist@3.11.1/dist/cdn.min.js"></script>
+<script src="https://fastly.jsdelivr.net/npm/alpinejs@3.11.1/dist/cdn.min.js" async></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-okaidia.min.css" integrity="sha512-mIs9kKbaw6JZFfSuo+MovjU+Ntggfoj8RwAmJbVXQ5mkAX5LlgETQEweFPI18humSPHymTb5iikEOKWF7I8ncQ==" crossorigin="anonymous" referrerpolicy="no-referrer" async>
+<script src="https://fastly.jsdelivr.net/npm/whatwg-fetch@3.6.2/dist/fetch.umd.min.js" crossorigin="anonymous" referrerpolicy="no-referrer" async></script>
+<link href="/styles/digital-garden-base.css" rel="stylesheet">
+<link href="/styles/obsidian-base.css" rel="stylesheet">
+<link href="/styles/_theme.d92311c2.css" rel="stylesheet">
+<link href="/styles/custom-style.css" rel="stylesheet">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<style></style>
+</head>
+<body class="theme-dark markdown-preview-view markdown-rendered markdown-preview-section">
+<nav class="navbar">
+<div class="navbar-inner">
+<a href="/" style="text-decoration:none">
+<h1 style="margin:15px!important">Digital Garden</h1>
+</a>
+</div>
+</nav>
+<main class="content cm-s-obsidian">
+<header>
+<div class="header-meta">
+</div>
+</header>
+<h1 id="复习强化知识点" tabindex="-1">复习强化知识点</h1>
+<p>强化一下作用域 <a class="internal-link" target="" data-note-icon="undefined" href="/czc知识库/计算机/Python/python学习/①python基础/205-变量作用域/">205-变量作用域</a></p>
+<p>这里学一下global和nonlocal两个关键字 <a class="internal-link" target="" data-note-icon="undefined" href="/czc知识库/计算机/Python/python学习/③python高级/312-关键字global和nonlocal/">312-关键字global和nonlocal</a></p>
+<p>装饰器是语法糖格式<br>
+装饰器由闭包组成<br>
+所以先学闭包</p>
+<h1 id="学习内容" tabindex="-1">学习内容</h1>
+<p>闭包的概念<br>
+闭包介绍<br>
+闭包的使用<br>
+修改闭包内使用的外部变量<br>
+装饰器的概念<br>
+装饰器的使用<br>
+通用装饰器的使用<br>
+多个装饰器的使用<br>
+带有参数装饰器<br>
+类装饰器的使用</p>
+<p>学习目标<br>
+能够知道闭包的构成条件<br>
+能够知道定义闭包的基本语法<br>
+能够知道修改闭包内使用的外部变量所需要的关键字<br>
+能够知道定义装饰器的基本语法及其作用<br>
+<strong>能够写出通用的装饰器</strong><br>
+能够使用多个装饰器装饰一个函数<br>
+能够写出带有参数的装饰器<br>
+能够知道类装饰器的使用</p>
+<h1 id="闭包" tabindex="-1">闭包</h1>
+<p>什么是闭包</p>
+<p>回顾：变量的作用域<br>
+作用域就是变量的作用范围，在哪里可以使用，在哪里不可以使用。<br>
+Python中变量随着函数的出现，作用域可以划分两种情况：①全局作用域②局部作用域</p>
+<p>问题：函数执行完毕后能不能把局部变量保留在内存中<br>
+答：闭包可以实现</p>
+<h2 id="闭包的作用" tabindex="-1">闭包的作用</h2>
+<ul>
+<li>在函数执行完毕后保留局部变量在内存
+<ul>
+<li>保存函数内部的局部变量在内存，不会被垃圾回收</li>
+<li>编写<strong>装饰器</strong>，装饰器本质就是一个闭包函数</li>
+</ul>
+</li>
+</ul>
+<h2 id="strong-strong" tabindex="-1"><strong>闭包的定义：</strong></h2>
+<p>官方定义：在函数嵌套的前提下，内部函数使用了外部函数的变量，并且外部函数返回了内部函数地址，我们把这个使用外部函数变量的内部函数称为闭包。</p>
+<p>函数进阶一下 ：<a href="201-python%E5%87%BD%E6%95%B0.md" target="_blank" class="external-link">201-python函数</a></p>
+<p>举个栗子</p>
+<p>问题：如何把官方的闭包掌握下来？<br>
+闭包三步走<br>
+答：<strong>①有嵌套（函数嵌套）②有引用③有返回</strong><br>
+（本质是让垃圾回收的某计数器值不为0，就不会被清掉）</p>
+<pre><code class="language-python">def outer():
+	# 局部变量
+	num2 = 100  # 被第五行调用，内存计数器+1，≠0不能被清掉
+	def inner():  # 被第六行调用，内存计数器+1，≠0不能被清掉
+		print(num2)
+	return inner  # 不能inner()，这样就是执行，执行完计数器又是0了
+	
+# 全局变量引用了outer函数返回值
+fn = outer()  # 把outer函数执行结果赋值给全局变量fn
+fn()  # 找到inner函数在内存中的地址并立即执行print（num2），num2=100，所以弹出100
+</code></pre>
+<p>闭包要掌握的两个方面：①遇到闭包案例，知道如何解题，②能使用闭包编写Python装饰器</p>
+<h1 id="闭包的题目" tabindex="-1">闭包的题目</h1>
+<p>闭包三步走：①有嵌套②有引用③有返回<br>
+闭包作用？当函数执行完毕后，让局部变量一直驻留在内存中</p>
+<pre><code class="language-python">def func():
+	<a class="tag" onclick="toggleTagSearch(this)" data-content="#局部变量">#局部变量</a>
+	result = 0
+	<a class="tag" onclick="toggleTagSearch(this)" data-content="#嵌套函数">#嵌套函数</a>
+	def inner(num):
+		<a class="tag" onclick="toggleTagSearch(this)" data-content="#访问离它最近的局部变量">#访问离它最近的局部变量</a>
+		nonlocal result
+		<a class="tag" onclick="toggleTagSearch(this)" data-content="#针对resuLt与num参数相加">#针对resuLt与num参数相加</a>
+		result += num
+		print(result)
+	return inner
+fn = func()
+fn(1)  # 1
+fn(2)  # 3
+fn(3)  # 6
+</code></pre>
+</main>
+<script>window.location.hash&&document.getElementById(window.location.hash.slice(1)).classList.add("referred"),window.addEventListener("hashchange",(e=>{const t=e.oldURL.split("#");t[1]&&document.getElementById(t[1]).classList.remove("referred");const n=e.newURL.split("#");n[1]&&document.getElementById(n[1]).classList.add("referred")}),!1);const url_parts=window.location.href.split("#"),url=url_parts[0],referrence=url_parts[1];document.querySelectorAll(".cm-s-obsidian > *[id]").forEach((function(e){e.ondblclick=function(e){const t=url+"#"+e.target.id;navigator.clipboard.writeText(t)}}))</script>
+<script src="https://fastly.jsdelivr.net/npm/luxon@3.2.1/build/global/luxon.min.js"></script>
+<script defer="defer">TIMESTAMP_FORMAT="MMM dd, yyyy h:mm a",document.querySelectorAll(".human-date").forEach((function(e){date=e.getAttribute("data-date")||e.innerText,parsed_date=luxon.DateTime.fromISO(date),null!=parsed_date.invalid&&(parsed_date=luxon.DateTime.fromSQL(date)),null!=parsed_date.invalid&&(parsed_date=luxon.DateTime.fromHTML(date)),e.innerHTML=parsed_date.toFormat(TIMESTAMP_FORMAT)}))</script>
+<script>lucide.createIcons({attrs:{class:["svg-icon"]}})</script>
+</body>
+</html>

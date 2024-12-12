@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>本地构建+云服务器部署数字花园</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<script async type="module">import mermaid from"https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"</script>
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js" integrity="sha512-hpZ5pDCF2bRCweL5WoA0/N1elet1KYL5mx3LP555Eg/0ZguaHawxNvEjF6O3rufAChs16HVNhEc6blF/rZoowQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/plugins/autoloader/prism-autoloader.min.js" integrity="sha512-sv0slik/5O0JIPdLBCR2A3XDg/1U3WuDEheZfI/DI5n8Yqc3h5kjrnr46FGBNiUAJF7rE4LHKwQ/SoSLRKAxEA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script async src="https://cdn.jsdelivr.net/npm/lucide@0.115.0/dist/umd/lucide.min.js"></script>
+<script>window.addEventListener("load",(()=>{document.querySelectorAll(".callout").forEach((e=>{const t=getComputedStyle(e).getPropertyValue("--callout-icon"),l=t&&t.trim().replace(/^lucide-/,"");if(l){const t=e.querySelector(".callout-title");if(t){const e=document.createElement("div"),c=document.createElement("i");e.appendChild(c),c.setAttribute("icon-name",l),e.setAttribute("class","callout-icon"),t.insertBefore(e,t.firstChild)}}})),lucide.createIcons(),Array.from(document.querySelectorAll(".callout.is-collapsible")).forEach((e=>{e.querySelector(".callout-title").addEventListener("click",(t=>{e.classList.contains("is-collapsed")?e.classList.remove("is-collapsed"):e.classList.add("is-collapsed")}))}))}))</script>
+<script async src="https://fastly.jsdelivr.net/npm/force-graph@1.43.0/dist/force-graph.min.js"></script>
+<script async src="https://fastly.jsdelivr.net/npm/@alpinejs/persist@3.11.1/dist/cdn.min.js"></script>
+<script src="https://fastly.jsdelivr.net/npm/alpinejs@3.11.1/dist/cdn.min.js" async></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-okaidia.min.css" integrity="sha512-mIs9kKbaw6JZFfSuo+MovjU+Ntggfoj8RwAmJbVXQ5mkAX5LlgETQEweFPI18humSPHymTb5iikEOKWF7I8ncQ==" crossorigin="anonymous" referrerpolicy="no-referrer" async>
+<script src="https://fastly.jsdelivr.net/npm/whatwg-fetch@3.6.2/dist/fetch.umd.min.js" crossorigin="anonymous" referrerpolicy="no-referrer" async></script>
+<link href="/styles/digital-garden-base.css" rel="stylesheet">
+<link href="/styles/obsidian-base.css" rel="stylesheet">
+<link href="/styles/_theme.d92311c2.css" rel="stylesheet">
+<link href="/styles/custom-style.css" rel="stylesheet">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<style></style>
+</head>
+<body class="theme-dark markdown-preview-view markdown-rendered markdown-preview-section">
+<nav class="navbar">
+<div class="navbar-inner">
+<a href="/" style="text-decoration:none">
+<h1 style="margin:15px!important">Digital Garden</h1>
+</a>
+</div>
+</nav>
+<main class="content cm-s-obsidian">
+<header>
+<div class="header-meta">
+</div>
+</header>
+<h1 id="为什么又多一个部署方案？" tabindex="-1">为什么又多一个部署方案？</h1>
+<p>当我心安理得的全部使用云服务器构建（build）+部署的时候，随着我逐渐将笔记整合进数字花园，遇到一个很大的问题。</p>
+<p>当笔记数量多了以后，构建（build）的时候消耗的内存会逐渐增加，但是我的云服务器内存只有2g，当内存满了以后就会卡死不再构建（build），所以我不得不把构建的步骤放到本地来执行，然后将构建好的网页源代码上传服务器部署。</p>
+<h1 id="build" tabindex="-1">现在的部署流程：build和</h1>
+<p>obsidian编辑笔记，digital garden插件上传笔记到github<br>
+执行脚本一键部署（前提是按照之前的流程先完成了云服务器的部署操作）<br>
+部署成功，网页可以访问</p>
+<h1 id="一键部署脚本（服务器端执行）" tabindex="-1">一键部署脚本（服务器端执行）</h1>
+<p>我写了一个自动化脚本用于帮助我一键实现构建+远程部署<br>
+下面这俩地方记得修改为自己的服务器信息：<br>
+&lt;ssh用户名&gt;@&lt;服务器ip地址&gt;以及&quot;这里写你的ssh连接密码&quot;</p>
+<pre><code class="language-sh">#!/bin/bash
+
+# 颜色定义
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+NC='\033[0m' # No Color
+
+# 打印带颜色的信息
+print_info() {
+    echo -e &quot;${GREEN}[INFO] $1${NC}&quot;
+}
+
+print_error() {
+    echo -e &quot;${RED}[ERROR] $1${NC}&quot;
+}
+
+# 检查命令是否执行成功
+check_result() {
+    if [ $? -eq 0 ]; then
+        print_info &quot;$1 成功&quot;
+    else
+        print_error &quot;$1 失败&quot;
+        exit 1
+    fi
+}
+
+# 1. 安装必要工具
+print_info &quot;安装必要工具...&quot;
+sudo apt install -y sshpass rsync
+check_result &quot;安装 sshpass 和 rsync&quot;
+
+# 2. 检查并进入项目目录
+if [ ! -d &quot;digitalgarden&quot; ]; then
+    print_info &quot;克隆代码仓库...&quot;
+    git clone https://github.com/your-repo/digitalgarden.git
+    check_result &quot;克隆代码仓库&quot;
+else
+    print_info &quot;项目目录已存在，直接使用...&quot;
+fi
+
+cd digitalgarden
+check_result &quot;进入项目目录&quot;
+
+# 3. 更新系统并安装依赖
+print_info &quot;更新系统并安装依赖...&quot;
+sudo apt update
+check_result &quot;系统更新&quot;
+
+sudo apt install -y nodejs npm
+check_result &quot;安装 nodejs 和 npm&quot;
+
+# 4. 配置 npm
+print_info &quot;配置 npm...&quot;
+npm config set registry https://registry.npmmirror.com
+npm cache clean --force
+
+# 5. 拉取最新代码
+print_info &quot;拉取最新代码...&quot;
+git pull
+check_result &quot;拉取代码&quot;
+
+# 6. 安装依赖
+print_info &quot;安装项目依赖...&quot;
+npm install
+npm install -g npm
+check_result &quot;安装依赖&quot;
+
+# 7. 构建项目
+print_info &quot;构建项目...&quot;
+npm run build
+check_result &quot;构建项目&quot;
+
+# 8. 上传到服务器
+print_info &quot;上传到服务器...&quot;
+sshpass -p &quot;这里写你的ssh连接密码&quot; rsync -avz --delete dist/ &lt;ssh用户名&gt;@&lt;服务器ip地址&gt;:~/digitalgarden/dist/
+check_result &quot;上传文件&quot;
+
+# 9. 重启服务器上的服务
+print_info &quot;重启服务...&quot;
+sshpass -p &quot;这里写你的ssh连接密码&quot; ssh &lt;ssh用户名&gt;@&lt;服务器ip地址&gt; &quot;cd ~/digitalgarden &amp;&amp; pm2 restart digitalgarden || pm2 start http-server -- dist -p 8080 --name digitalgarden&quot;
+check_result &quot;重启服务&quot;
+
+print_info &quot;部署完成！&quot;
+</code></pre>
+</main>
+<script>window.location.hash&&document.getElementById(window.location.hash.slice(1)).classList.add("referred"),window.addEventListener("hashchange",(e=>{const t=e.oldURL.split("#");t[1]&&document.getElementById(t[1]).classList.remove("referred");const n=e.newURL.split("#");n[1]&&document.getElementById(n[1]).classList.add("referred")}),!1);const url_parts=window.location.href.split("#"),url=url_parts[0],referrence=url_parts[1];document.querySelectorAll(".cm-s-obsidian > *[id]").forEach((function(e){e.ondblclick=function(e){const t=url+"#"+e.target.id;navigator.clipboard.writeText(t)}}))</script>
+<script src="https://fastly.jsdelivr.net/npm/luxon@3.2.1/build/global/luxon.min.js"></script>
+<script defer="defer">TIMESTAMP_FORMAT="MMM dd, yyyy h:mm a",document.querySelectorAll(".human-date").forEach((function(e){date=e.getAttribute("data-date")||e.innerText,parsed_date=luxon.DateTime.fromISO(date),null!=parsed_date.invalid&&(parsed_date=luxon.DateTime.fromSQL(date)),null!=parsed_date.invalid&&(parsed_date=luxon.DateTime.fromHTML(date)),e.innerHTML=parsed_date.toFormat(TIMESTAMP_FORMAT)}))</script>
+<script>lucide.createIcons({attrs:{class:["svg-icon"]}})</script>
+</body>
+</html>

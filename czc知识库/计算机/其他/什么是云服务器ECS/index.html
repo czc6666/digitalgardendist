@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>什么是云服务器ECS</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<script async type="module">import mermaid from"https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"</script>
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js" integrity="sha512-hpZ5pDCF2bRCweL5WoA0/N1elet1KYL5mx3LP555Eg/0ZguaHawxNvEjF6O3rufAChs16HVNhEc6blF/rZoowQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/plugins/autoloader/prism-autoloader.min.js" integrity="sha512-sv0slik/5O0JIPdLBCR2A3XDg/1U3WuDEheZfI/DI5n8Yqc3h5kjrnr46FGBNiUAJF7rE4LHKwQ/SoSLRKAxEA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script async src="https://cdn.jsdelivr.net/npm/lucide@0.115.0/dist/umd/lucide.min.js"></script>
+<script>window.addEventListener("load",(()=>{document.querySelectorAll(".callout").forEach((e=>{const t=getComputedStyle(e).getPropertyValue("--callout-icon"),l=t&&t.trim().replace(/^lucide-/,"");if(l){const t=e.querySelector(".callout-title");if(t){const e=document.createElement("div"),c=document.createElement("i");e.appendChild(c),c.setAttribute("icon-name",l),e.setAttribute("class","callout-icon"),t.insertBefore(e,t.firstChild)}}})),lucide.createIcons(),Array.from(document.querySelectorAll(".callout.is-collapsible")).forEach((e=>{e.querySelector(".callout-title").addEventListener("click",(t=>{e.classList.contains("is-collapsed")?e.classList.remove("is-collapsed"):e.classList.add("is-collapsed")}))}))}))</script>
+<script async src="https://fastly.jsdelivr.net/npm/force-graph@1.43.0/dist/force-graph.min.js"></script>
+<script async src="https://fastly.jsdelivr.net/npm/@alpinejs/persist@3.11.1/dist/cdn.min.js"></script>
+<script src="https://fastly.jsdelivr.net/npm/alpinejs@3.11.1/dist/cdn.min.js" async></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-okaidia.min.css" integrity="sha512-mIs9kKbaw6JZFfSuo+MovjU+Ntggfoj8RwAmJbVXQ5mkAX5LlgETQEweFPI18humSPHymTb5iikEOKWF7I8ncQ==" crossorigin="anonymous" referrerpolicy="no-referrer" async>
+<script src="https://fastly.jsdelivr.net/npm/whatwg-fetch@3.6.2/dist/fetch.umd.min.js" crossorigin="anonymous" referrerpolicy="no-referrer" async></script>
+<link href="/styles/digital-garden-base.css" rel="stylesheet">
+<link href="/styles/obsidian-base.css" rel="stylesheet">
+<link href="/styles/_theme.d92311c2.css" rel="stylesheet">
+<link href="/styles/custom-style.css" rel="stylesheet">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<style></style>
+</head>
+<body class="theme-dark markdown-preview-view markdown-rendered markdown-preview-section">
+<nav class="navbar">
+<div class="navbar-inner">
+<a href="/" style="text-decoration:none">
+<h1 style="margin:15px!important">Digital Garden</h1>
+</a>
+</div>
+</nav>
+<main class="content cm-s-obsidian">
+<header>
+<div class="header-meta">
+</div>
+</header>
+<p>下面是阿里的云服务器入门教程</p>
+<p>学习目标：在阿里云上搭建个人博客</p>
+<p><strong>云服务器本质是一种商业模式</strong>，不仅仅是你发现了服务器的拥有、维护成本非常高，于是就出现了一种公司，比如阿里云，他们会大量购买服务器，在全世界建设服务器机房，通过专业的技术人员管理、维护这些服务器，然后将这些服务器在通过池化、虚拟化等技术手段给用户提供各种规格的<strong>虚拟服务器</strong>，因为这些服务器用户看不见其实体，感觉就像是在“云端”，所以又称为 <strong>“云服务器”</strong> 。</p>
+<p>云服务器是<strong>按需租赁</strong>的，用户只需要付租金即可**“拎包入住”<strong>，且在不需要的时候，可随时</strong>“退租”（释放资源）<strong>，灵活且节约成本。其次，云服务器公司（阿里云）会负责服务器的维护管理，这样大大降低的管理的难度。最后由于云服务器是一种虚拟服务器，其</strong>配置可以随时调整**，比如：CPU处理能力不足、内存不够、存储空间不足，都可以根据实际情况进行扩大，所以<strong>阿里云的云服务器又叫ECS（Elastic Compute Service），即弹性计算服务。</strong></p>
+<div class="callout" data-callout="note"><div class="callout-title"><div class="callout-title-inner">Note</div></div>
+<div class="callout-content">
+<p>
+如下是一些常见的云服务器使用场景：</p>
+<ol>
+<li>
+<p><strong>网站建设</strong></p>
+</li>
+<li>
+<p>搭建个人应用：博客、论坛、网盘</p>
+</li>
+<li>
+<p>搭建企业门户网站</p>
+</li>
+<li>
+<p>搭建游戏私服</p>
+</li>
+<li>
+<p><strong>测试学习</strong></p>
+</li>
+<li>
+<p>Linux操作系统学习</p>
+</li>
+<li>
+<p>应用软件开发、部署与测试</p>
+</li>
+<li>
+<p><strong>数据管理</strong></p>
+</li>
+<li>
+<p>存储、共享和管理数据</p>
+</li>
+<li>
+<p>数据开发、数据分析等大数据场景</p>
+</li>
+<li>
+<p><strong>制图渲染</strong></p>
+</li>
+<li>
+<p>搭建 AIGC 应用</p>
+</li>
+<li>
+<p>实时渲染云端游戏画面</p>
+</li>
+<li>
+<p>实时渲染AR/VR图像</p>
+</li>
+</ol>
+</div></div>
+<div class="callout" data-callout data-callout-metadata="狗屁"><div class="callout-title"><div class="callout-title-inner"> 狗屎<br></div></div>
+<div class="callout-content">
+<p>
+从云服务器ECS整体使用流程来看可以分为以下四个步骤：</p>
+<ol>
+<li><strong>获取</strong>云服务器ECS——<a href="http://xn--www-sj3fu53h.aliyun.com" target="_blank" class="external-link">登录www.aliyun.com</a>，购买或免费领用云服务器ECS</li>
+<li><strong>登录</strong>云服务器ECS——远程登录ECS实例配置主机环境</li>
+<li><strong>管理</strong>云服务器ECS——在云服务器上搭建个人网站，管理并维护网站</li>
+<li><strong>释放</strong>云服务器ECS——不需要ECS实例时释放资源，节省费用</li>
+</ol>
+</div></div>
+<h2 id="ecs" tabindex="-1">获取云服务器ECS</h2>
+<p>获取云服务器ECS的方式主要有两种，可以在阿里云官网的试用中心<strong>免费领取</strong>，这种方式需要符合免费试用的条件，另一种最常见的方式就是<strong>直接购买</strong>一台云服务器ECS，购买的方式也有多种，可以根据实际的试用场景来选择。</p>
+<h2 id="ecs-1" tabindex="-1">登录ECS</h2>
+<h2 id="网站选型和搭建" tabindex="-1">网站选型和搭建</h2>
+<p>目前有很多的个人网站系统软件，其中 <strong>WordPress</strong> 是使用非常广泛的一款，而且也可以把 WordPress 当作一个内容管理系统（CMS）来使用，很多初创的企业也是通过 WordPress 构建自己公司的主页。</p>
+<p>WordPress是使用PHP语言开发的内容管理平台，WordPress运行的<strong>基础环境一般为“</strong> <strong>LAMP/LNMP</strong> <strong>”</strong> ，其中：</p>
+<ul>
+<li>“L”为Linux的缩写，是<strong>操作系统软件</strong>，是服务器中其它软件运行的基础，常见的CentOS、Ubuntu等；</li>
+<li>“A/N”为Apache/Nginx的缩写，是<strong>Web服务器软件</strong>，用来运行网站页面以及响应处理用户请求；</li>
+<li>“M”为MySQL的缩写，是<strong>数据库软件</strong>，用来存放网站运行必要的系统数据和用户数据；</li>
+<li>“P”为PHP的缩写，是<strong>编程软件</strong>，用来运行WordPress软件的代码。<br>
+我这里推荐的搭建方案有两种，第一种就是通过<strong>云市场镜像</strong>来搭建，这种方式最简单；第二种方式是自己<strong>手动搭建</strong>，也就是要登录ECS实例后，先搭建<strong>搭建</strong> <strong>“LAMP/LNMP</strong> <strong>”<strong>环境，然后再</strong>安装和配置WordPress</strong>，这种方式相对来说要了解一些<strong>Linux操作系统的基本操作</strong>以及如何<strong>安装配置软件</strong>。接下来我把这两种方式都介绍一下。</li>
+</ul>
+<h2 id="strong-ecs-strong" tabindex="-1"><strong>释放云服务器ECS</strong></h2>
+<h1 id="对外发布个人网站" tabindex="-1">对外发布个人网站</h1>
+<h2 id="为网站配置域名" tabindex="-1">为网站配置域名</h2>
+<div class="callout" data-callout="note"><div class="callout-title"><div class="callout-title-inner">Note</div></div>
+<div class="callout-content">
+<p>
+由于<strong>IP地址</strong>不方便记忆并且不能显示地址组织的名称和性质，人们设计出了域名，并通过<strong>域名系统</strong>（<strong>DNS</strong>，Domain Name System）来将<strong>域名</strong>和<strong>IP地址相互映射</strong>，使人更方便地访问互联网，而不用去记住能够被机器直接读取的IP地址。</p>
+<p><strong>用户是如何访问网站的呢？</strong></p>
+<ol>
+<li>用户在浏览器(IE、Chrome、FireFox等)上输入域名，如：<a href="http://www.aliyun.com/" target="_blank" class="external-link">http://www.aliyun.com</a> ；</li>
+<li>浏览器自动调用DNS（域名服务）将域名解析为IP地址，如：123.123.123.123，并通过IP地址找到网站的服务器，并将用户请求发送给服务器；</li>
+<li>服务器处理用户请求；</li>
+<li>服务器返回网页至浏览器；</li>
+<li>浏览器呈现内容到用户。</li>
+</ol>
+</div></div>
+<p><picture src="/img/user/czc%E7%9F%A5%E8%AF%86%E5%BA%93/%E6%9D%82%E4%B8%83%E6%9D%82%E5%85%AB/9-%E9%99%84%E4%BB%B6/%E9%99%84%E4%BB%B6/%E4%BB%80%E4%B9%88%E6%98%AF%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8ECS_image.png" alt=""><source media="(max-width:480px)" srcset="/img/optimized/EO10AmuUjw-500.webp" type="image/webp">
+<source media="(max-width:480px)" srcset="/img/optimized/EO10AmuUjw-500.jpeg">
+<source media="(max-width:1920px)" srcset="/img/optimized/EO10AmuUjw-700.webp" type="image/webp"><source media="(max-width:1920px)" srcset="/img/optimized/EO10AmuUjw-700.jpeg"><img class="" src="/img/user/czc%E7%9F%A5%E8%AF%86%E5%BA%93/%E6%9D%82%E4%B8%83%E6%9D%82%E5%85%AB/9-%E9%99%84%E4%BB%B6/%E9%99%84%E4%BB%B6/%E4%BB%80%E4%B9%88%E6%98%AF%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8ECS_image.png" alt="" width=""></picture></p>
+<p><strong>域名注册</strong></p>
+<p>可以通过阿里云万网主页进行域名注册 <a href="https://wanwang.aliyun.com/" target="_blank" class="external-link">https://wanwang.aliyun.com/</a></p>
+<ul>
+<li><strong>查询域名</strong>：查询要注册的域名状态</li>
+<li><strong>确认订单</strong>：购买域名要确认域名持有者是<strong>个人</strong>还是<strong>企业</strong>，并进行<strong>个人/企业</strong>的<strong>实名认证信息模板</strong>，需提前准备好相关证件，实名认证通过后即可正常购买域名。</li>
+</ul>
+<p><strong>实名认证域名</strong><br>
+根据上一步已认证的<strong>信息模板</strong>自动提交<strong>实名认证域名</strong>。访问域名控制台查看相关信息 <a href="https://dc.console.aliyun.com/next/index#/overview" target="_blank" class="external-link">https://dc.console.aliyun.com/next/index#/overview</a></p>
+<p><strong>域名解析配置</strong></p>
+<ul>
+<li><strong>解析域名</strong>：访问域名控制台，点击<strong>解析</strong>按钮</li>
+<li><strong>解析设置</strong>：点击添加记录，<strong>记录类型</strong> A记录，<strong>主机记录</strong> www.域名，<strong>记录值</strong> ECS的公网IP</li>
+<li><strong>访问域名</strong>：打开浏览器，访问www.域名，即可访问前面在云服务器ECS上构建的网站。</li>
+</ul>
+<h2 id="为网站备案" tabindex="-1">为网站备案</h2>
+<p>记得一定要<strong>完成</strong> <strong>ICP备案，才可以通过网站对外提供互联网信息服务！</strong></p>
+<p>根据 《<strong>互联网信息服务管理办法</strong>》以及 《<strong>非经营性互联网信息服务备案管理办法</strong>》，国家对<strong>非经营性</strong>互联网信息服务<strong>实行备案制度</strong>，对<strong>经营性</strong>互联网信息服务<strong>实行许可制度</strong>。未取得许可或者未履行ICP备案手续的，不得从事互联网信息服务。</p>
+<p>根据上述政策规定，<strong>解析至中国内地</strong>服务器的<strong>网站</strong>等服务，<strong>必须完成ICP备案</strong>才可对外提供服务。阿里云ICP代备案管理系统为您提供申请备案、修改注销备案信息、认领备案等服务。备案链接：<a href="https://beian.aliyun.com/" target="_blank" class="external-link">https://beian.aliyun.com/</a>，备案流程如下：</p>
+<p><picture src="/img/user/czc%E7%9F%A5%E8%AF%86%E5%BA%93/%E6%9D%82%E4%B8%83%E6%9D%82%E5%85%AB/9-%E9%99%84%E4%BB%B6/%E9%99%84%E4%BB%B6/%E4%BB%80%E4%B9%88%E6%98%AF%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8ECS_image-1.png" alt=""><source media="(max-width:480px)" srcset="/img/optimized/rtxsfmU5yD-500.webp" type="image/webp">
+<source media="(max-width:480px)" srcset="/img/optimized/rtxsfmU5yD-500.jpeg">
+<source media="(max-width:1920px)" srcset="/img/optimized/rtxsfmU5yD-700.webp" type="image/webp"><source media="(max-width:1920px)" srcset="/img/optimized/rtxsfmU5yD-700.jpeg"><img class="" src="/img/user/czc%E7%9F%A5%E8%AF%86%E5%BA%93/%E6%9D%82%E4%B8%83%E6%9D%82%E5%85%AB/9-%E9%99%84%E4%BB%B6/%E9%99%84%E4%BB%B6/%E4%BB%80%E4%B9%88%E6%98%AF%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8ECS_image-1.png" alt="" width=""></picture></p>
+<p><strong>关于备案，您还可以进行如下操作</strong>：</p>
+<ul>
+<li><strong>修改ICP备案</strong>：在阿里云ICP备案成功后，如需修改备案主体信息或网站信息，例如网站负责人或网站域名，您可以通过PC端或移动端在阿里云ICP代备案管理系统中提交变更备案的申请。</li>
+<li><strong>注销ICP备案</strong>：如果您通过阿里云备案的网站已不再使用，您需注销ICP备案（注销主体或注销网站）。</li>
+</ul>
+</main>
+<script>window.location.hash&&document.getElementById(window.location.hash.slice(1)).classList.add("referred"),window.addEventListener("hashchange",(e=>{const t=e.oldURL.split("#");t[1]&&document.getElementById(t[1]).classList.remove("referred");const n=e.newURL.split("#");n[1]&&document.getElementById(n[1]).classList.add("referred")}),!1);const url_parts=window.location.href.split("#"),url=url_parts[0],referrence=url_parts[1];document.querySelectorAll(".cm-s-obsidian > *[id]").forEach((function(e){e.ondblclick=function(e){const t=url+"#"+e.target.id;navigator.clipboard.writeText(t)}}))</script>
+<script src="https://fastly.jsdelivr.net/npm/luxon@3.2.1/build/global/luxon.min.js"></script>
+<script defer="defer">TIMESTAMP_FORMAT="MMM dd, yyyy h:mm a",document.querySelectorAll(".human-date").forEach((function(e){date=e.getAttribute("data-date")||e.innerText,parsed_date=luxon.DateTime.fromISO(date),null!=parsed_date.invalid&&(parsed_date=luxon.DateTime.fromSQL(date)),null!=parsed_date.invalid&&(parsed_date=luxon.DateTime.fromHTML(date)),e.innerHTML=parsed_date.toFormat(TIMESTAMP_FORMAT)}))</script>
+<script>lucide.createIcons({attrs:{class:["svg-icon"]}})</script>
+</body>
+</html>

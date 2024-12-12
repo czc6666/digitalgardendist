@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>华为杯数学建模学习笔记 题目分类</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<script async type="module">import mermaid from"https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"</script>
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js" integrity="sha512-hpZ5pDCF2bRCweL5WoA0/N1elet1KYL5mx3LP555Eg/0ZguaHawxNvEjF6O3rufAChs16HVNhEc6blF/rZoowQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/plugins/autoloader/prism-autoloader.min.js" integrity="sha512-sv0slik/5O0JIPdLBCR2A3XDg/1U3WuDEheZfI/DI5n8Yqc3h5kjrnr46FGBNiUAJF7rE4LHKwQ/SoSLRKAxEA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script async src="https://cdn.jsdelivr.net/npm/lucide@0.115.0/dist/umd/lucide.min.js"></script>
+<script>window.addEventListener("load",(()=>{document.querySelectorAll(".callout").forEach((e=>{const t=getComputedStyle(e).getPropertyValue("--callout-icon"),l=t&&t.trim().replace(/^lucide-/,"");if(l){const t=e.querySelector(".callout-title");if(t){const e=document.createElement("div"),c=document.createElement("i");e.appendChild(c),c.setAttribute("icon-name",l),e.setAttribute("class","callout-icon"),t.insertBefore(e,t.firstChild)}}})),lucide.createIcons(),Array.from(document.querySelectorAll(".callout.is-collapsible")).forEach((e=>{e.querySelector(".callout-title").addEventListener("click",(t=>{e.classList.contains("is-collapsed")?e.classList.remove("is-collapsed"):e.classList.add("is-collapsed")}))}))}))</script>
+<script async src="https://fastly.jsdelivr.net/npm/force-graph@1.43.0/dist/force-graph.min.js"></script>
+<script async src="https://fastly.jsdelivr.net/npm/@alpinejs/persist@3.11.1/dist/cdn.min.js"></script>
+<script src="https://fastly.jsdelivr.net/npm/alpinejs@3.11.1/dist/cdn.min.js" async></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-okaidia.min.css" integrity="sha512-mIs9kKbaw6JZFfSuo+MovjU+Ntggfoj8RwAmJbVXQ5mkAX5LlgETQEweFPI18humSPHymTb5iikEOKWF7I8ncQ==" crossorigin="anonymous" referrerpolicy="no-referrer" async>
+<script src="https://fastly.jsdelivr.net/npm/whatwg-fetch@3.6.2/dist/fetch.umd.min.js" crossorigin="anonymous" referrerpolicy="no-referrer" async></script>
+<link href="/styles/digital-garden-base.css" rel="stylesheet">
+<link href="/styles/obsidian-base.css" rel="stylesheet">
+<link href="/styles/_theme.d92311c2.css" rel="stylesheet">
+<link href="/styles/custom-style.css" rel="stylesheet">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<style></style>
+</head>
+<body class="theme-dark markdown-preview-view markdown-rendered markdown-preview-section">
+<nav class="navbar">
+<div class="navbar-inner">
+<a href="/" style="text-decoration:none">
+<h1 style="margin:15px!important">Digital Garden</h1>
+</a>
+</div>
+</nav>
+<main class="content cm-s-obsidian">
+<header>
+<div class="header-meta">
+</div>
+</header>
+<p><a href="https://docs.qq.com/aio/DSEhSVHhidnVPa1ZD?p=ACRkeDT76moWdGYpdDvsu7" target="_blank" class="external-link">21届华为杯数学建模比赛讨论&amp;计划&amp;思路&amp;笔记</a></p>
+<p><a href="https://blog.csdn.net/kstt20230206/article/details/141502149" target="_blank" class="external-link">【赛中必备】ChatGPT辅助数学建模技巧分享-CSDN博客</a></p>
+<p><a href="https://blog.csdn.net/Kakaxiii/article/details/141432731" target="_blank" class="external-link">2024”华为杯“数学建模小白全攻略【近五年题目、获奖名单、类型、策略】_华为杯数学建模-CSDN博客</a></p>
+<p>比赛开始：2024.9.21-9.24<br>
+模拟：2024.9.16-9.19<br>
+时间控制<br>
+1.第一天的整个晚上，你们需要认真努力地研究问题，建立模型，编写程序。<br>
+2.第二天的绝大部分时间将花在问题的研究，模型的建立和程序设计上。并开始写作。应该在第二天完成问题的大部分解答，并尽可能早地开始写作。尽可能在当晚从模型中获得一些初步结果。<br>
+3.第三天应该花在结果的求解和论文的主体写作上。<br>
+基于第二天晚上得到的初步结果，花一天时间来改进方法并重新计算结果。在第三天，团队应该共同写作完成论文的主体部分。写手可以为其他成员指派任务以更快地完成论文的写作。直到大部分写作完成，所有程序编写完成后才能睡觉。<br>
+4.第四天的早晨应该已经完成了所有程序（没有新程序要编写了）。队员继续完善论文的其他部分，如你发现论文的某些不足时，你可以尝试一些改进方案来避免这些缺点。第四天的下午就应该完成论文的初稿，并且打印出来仔细修改。到晚上，所有结果和论文都应该完成，并开始着手写摘要。第四天晚上到第五天早晨结束比赛前，这段时间大部分用来写摘要，即使你还有一些工作没有完成，这时也得停下来。如果时间剩余，再润色一下论文，完善一下附录。当论文和摘要全部完成后，再给论文定一个标题。</p>
+<h1 id="知识点" tabindex="-1">知识点</h1>
+<div class="callout" data-callout="note"><div class="callout-title"><div class="callout-title-inner"> 数据挖掘 --豆包<br></div></div>
+<div class="callout-content">
+<p>
+数据挖掘主要是从大量的数据中发现潜在的、有价值的模式、关系和知识。在处理与生物医学、健康科学相关的问题时，具体可以做以下这些事情：</p>
+<p><strong>一、数据挖掘的任务</strong></p>
+<ol>
+<li>
+<p>关联分析</p>
+<ul>
+<li>目的：发现数据中不同变量之间的关联关系。例如，在医学数据中，可能会发现某些症状与特定疾病之间的关联。</li>
+<li>做法：通过分析大量的患者病历数据，找出同时出现的症状组合，从而为疾病诊断提供线索。比如，如果发现患者出现症状 A、B 和 C 时，很可能患有某种特定疾病，那么在后续的诊断中，医生就可以更加关注这些症状的出现。</li>
+</ul>
+</li>
+<li>
+<p>聚类分析</p>
+<ul>
+<li>目的：将数据对象划分为不同的组或簇，使得同一簇中的对象具有较高的相似性，而不同簇中的对象具有较大的差异性。</li>
+<li>做法：在医学领域，可以将患者根据其症状、生理指标等特征进行聚类。例如，将患有相似疾病的患者归为一类，以便更好地了解不同类型疾病的特点和治疗方法。通过计算患者之间的距离或相似度，使用聚类算法将患者分组，然后分析每个簇的特征，为疾病的分类和治疗提供参考。</li>
+</ul>
+</li>
+<li>
+<p>分类与预测</p>
+<ul>
+<li>目的：根据已知的类别标签数据，建立模型来预测新数据的类别或数值。</li>
+<li>做法：在疾病诊断中，可以利用已知的患病和未患病患者的特征数据，建立分类模型，如决策树、支持向量机等，来预测新患者是否患有某种疾病。首先，收集大量的医学数据，包括患者的症状、检查结果、病史等特征以及对应的疾病诊断结果。然后，将数据分为训练集和测试集，使用训练集来训练分类模型，调整模型参数以提高准确性。最后，使用测试集来评估模型的性能，看其在新数据上的预测准确性如何。</li>
+</ul>
+</li>
+</ol>
+<p><strong>二、数据挖掘的步骤</strong></p>
+<ol>
+<li>
+<p>数据收集</p>
+<ul>
+<li>广泛收集与生物医学问题相关的各种数据，包括患者的病历记录、实验室检查结果、影像学数据等。可以从医院的电子病历系统、医学数据库、科研文献等渠道获取数据。</li>
+</ul>
+</li>
+<li>
+<p>数据预处理</p>
+<ul>
+<li>数据清洗：去除噪声数据、处理缺失值和异常值。例如，对于缺失值可以采用均值填充、中位数填充或使用回归模型进行预测填充。</li>
+<li>数据转换：将原始数据转换为适合挖掘的形式，如标准化、归一化等。这可以提高算法的性能和准确性。</li>
+<li>特征选择：从大量的特征中选择对问题最有价值的特征，减少数据维度，提高计算效率。可以使用相关性分析、主成分分析等方法进行特征选择。</li>
+</ul>
+</li>
+<li>
+<p>选择数据挖掘算法</p>
+<ul>
+<li>根据问题的特点和数据的类型，选择合适的数据挖掘算法。例如，如果问题是分类问题，可以选择决策树、支持向量机、随机森林等算法；如果是聚类问题，可以选择 K-Means 聚类、层次聚类等算法。</li>
+</ul>
+</li>
+<li>
+<p>模型训练与评估</p>
+<ul>
+<li>使用训练数据对选择的算法进行训练，调整模型参数以获得最佳性能。</li>
+<li>使用测试数据对训练好的模型进行评估，计算模型的准确性、精度、召回率等指标，判断模型的性能是否满足要求。</li>
+</ul>
+</li>
+<li>
+<p>结果解释与应用</p>
+<ul>
+<li>对挖掘出的结果进行解释和分析，理解其在生物医学问题中的意义。</li>
+<li>将结果应用于实际问题中，如疾病诊断、治疗方案制定、疾病预测等，为医学决策提供支持。</li>
+</ul>
+</li>
+</ol>
+<p>在进行数据挖掘时，要注意数据的质量和可靠性，选择合适的算法和参数，以及对结果进行合理的解释和验证。同时，要结合医学领域的专业知识，确保挖掘出的结果具有实际的医学价值。</p>
+</div></div>
+<h1 id="题目分类" tabindex="-1">题目分类</h1>
+<div class="callout is-collapsible is-collapsed" data-callout="note"><div class="callout-title"><div class="callout-title-inner"> A 题：工程技术领域的实际问题（放弃）<br></div><div class="callout-fold"><i icon-name="chevron-down"></i></div></div>
+<div class="callout-content">
+<p>
+特点：通常涉及工程技术领域的实际问题，可能与物理、机械、电子等学科密切相关，问题较为复杂，需要综合运用多学科知识。<br>
+研究方法：首先需要对相关的工程背景和技术原理有深入理解，通过建立物理模型、数学方程来描述问题。可能会运用数值计算、仿真模拟等方法求解，同时需要进行实验验证或与实际数据进行对比分析。</p>
+<p>物理模型构建：例如力学模型、电学模型等，通过牛顿定律、欧姆定律等基本原理建立方程。<br>
+数值模拟：如有限元分析（FEM）、有限差分法等，用于求解复杂的物理过程。<br>
+实验设计与数据分析：通过设计实验获取数据，并运用统计方法分析。</p>
+</div></div>
+<div class="callout is-collapsible is-collapsed" data-callout="note"><div class="callout-title"><div class="callout-title-inner"> B 题：数学理论和算法方面的问题（放弃）<br></div><div class="callout-fold"><i icon-name="chevron-down"></i></div></div>
+<div class="callout-content">
+<p>
+特点：多侧重于数学理论和算法方面的问题，可能涉及优化算法、数据分析、模型拟合等，要求有较强的数学功底。<br>
+研究方法：一般会从问题中抽象出数学模型，运用数学分析方法推导公式，选择合适的算法进行求解，如线性规划、非线性优化、随机算法等。同时，要对算法的有效性和精度进行评估。</p>
+<p>数学推导与证明：基于数学理论进行严格的逻辑推导。<br>
+优化算法：如遗传算法、粒子群优化算法等，求解复杂的优化问题。<br>
+数据分析与拟合：对数据进行分析和拟合，找到合适的数学表达式。</p>
+</div></div>
+<div class="callout" data-callout="note"><div class="callout-title"><div class="callout-title-inner"> C 题：（数学分析）<br></div></div>
+<div class="callout-content">
+<p>
+特点：往往与生物医学、健康科学等领域相关，需要对医学知识和生理现象有一定了解，可能涉及大量的数据处理和统计分析。<br>
+研究方法：需要收集和整理相关的医学数据，运用统计学方法进行数据分析，建立统计模型。可能会用到机器学习、数据挖掘等技术，来挖掘数据中的规律和特征。</p>
+<p>统计学方法：如假设检验、方差分析、回归分析等，处理医学数据。<br>
+机器学习算法：例如决策树、支持向量机等，进行疾病诊断或预测。<br>
+生物模型：建立与生理过程相关的数学模型。</p>
+</div></div>
+<div class="callout" data-callout="note"><div class="callout-title"><div class="callout-title-inner"> D 题：（优化)<br></div></div>
+<div class="callout-content">
+<p>
+特点：通常围绕交通、物流、能源等领域的规划和决策问题，需要考虑多种约束条件和优化目标，具有较强的综合性。<br>
+研究方法：建立优化模型，明确目标函数和约束条件，运用运筹学中的优化算法，如线性规划、整数规划、动态规划等进行求解。同时，要进行敏感性分析，探讨不同参数对结果的影响。</p>
+<p>线性规划和整数规划：解决资源分配和路径规划问题。<br>
+动态规划：处理多阶段决策过程。<br>
+图论算法：如最短路径算法、最大流算法等</p>
+</div></div>
+<div class="callout" data-callout="note"><div class="callout-title"><div class="callout-title-inner"> E 题：（预测）<br></div></div>
+<div class="callout-content">
+<p>
+特点：多涉及自然科学中的现象和规律研究，如天文、气象、环境等，需要对相关学科的原理有清晰的认识，可能需要处理大量的观测数据。<br>
+研究方法：通过对观测数据的分析和处理，建立数学模型来描述自然现象。可能会用到时间序列分析、回归分析、数值模拟等方法，来预测和解释现象的发展变化。</p>
+<p>数据挖掘技术：发现数据中的隐藏模式和规律。<br>
+时间序列分析：预测自然现象的发展趋势。<br>
+模拟仿真：对自然过程进行模拟。</p>
+</div></div>
+<div class="callout" data-callout="note"><div class="callout-title"><div class="callout-title-inner"> F 题：（评价）<br></div></div>
+<div class="callout-content">
+<p>
+特点：要求对某个对象、方案、系统或现象等进行评估、衡量和判断的问题。<br>
+在这类题目中，通常需要根据给定的一系列标准、指标或因素，对所研究的对象进行定性或定量的分析，以确定其优劣、价值、效果、可行性等方面的情况。<br>
+例如，评价一个城市的交通系统是否高效，可能需要考虑交通拥堵程度、公共交通的覆盖范围和便利性、道路设施的状况等因素；评价一种新的教学方法是否有效，可能要依据学生的考试成绩提升情况、学习兴趣变化、课堂参与度等指标。<br>
+评价类题目旨在帮助人们做出决策、改进方案、比较不同选项，或者对某个事物的状态有更清晰和客观的认识。</p>
+</div></div>
+</main>
+<script>window.location.hash&&document.getElementById(window.location.hash.slice(1)).classList.add("referred"),window.addEventListener("hashchange",(e=>{const t=e.oldURL.split("#");t[1]&&document.getElementById(t[1]).classList.remove("referred");const n=e.newURL.split("#");n[1]&&document.getElementById(n[1]).classList.add("referred")}),!1);const url_parts=window.location.href.split("#"),url=url_parts[0],referrence=url_parts[1];document.querySelectorAll(".cm-s-obsidian > *[id]").forEach((function(e){e.ondblclick=function(e){const t=url+"#"+e.target.id;navigator.clipboard.writeText(t)}}))</script>
+<script src="https://fastly.jsdelivr.net/npm/luxon@3.2.1/build/global/luxon.min.js"></script>
+<script defer="defer">TIMESTAMP_FORMAT="MMM dd, yyyy h:mm a",document.querySelectorAll(".human-date").forEach((function(e){date=e.getAttribute("data-date")||e.innerText,parsed_date=luxon.DateTime.fromISO(date),null!=parsed_date.invalid&&(parsed_date=luxon.DateTime.fromSQL(date)),null!=parsed_date.invalid&&(parsed_date=luxon.DateTime.fromHTML(date)),e.innerHTML=parsed_date.toFormat(TIMESTAMP_FORMAT)}))</script>
+<script>lucide.createIcons({attrs:{class:["svg-icon"]}})</script>
+</body>
+</html>

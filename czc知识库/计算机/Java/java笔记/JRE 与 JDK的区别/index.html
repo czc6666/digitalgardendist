@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>JRE 与 JDK的区别</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<script async type="module">import mermaid from"https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"</script>
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js" integrity="sha512-hpZ5pDCF2bRCweL5WoA0/N1elet1KYL5mx3LP555Eg/0ZguaHawxNvEjF6O3rufAChs16HVNhEc6blF/rZoowQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/plugins/autoloader/prism-autoloader.min.js" integrity="sha512-sv0slik/5O0JIPdLBCR2A3XDg/1U3WuDEheZfI/DI5n8Yqc3h5kjrnr46FGBNiUAJF7rE4LHKwQ/SoSLRKAxEA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script async src="https://cdn.jsdelivr.net/npm/lucide@0.115.0/dist/umd/lucide.min.js"></script>
+<script>window.addEventListener("load",(()=>{document.querySelectorAll(".callout").forEach((e=>{const t=getComputedStyle(e).getPropertyValue("--callout-icon"),l=t&&t.trim().replace(/^lucide-/,"");if(l){const t=e.querySelector(".callout-title");if(t){const e=document.createElement("div"),c=document.createElement("i");e.appendChild(c),c.setAttribute("icon-name",l),e.setAttribute("class","callout-icon"),t.insertBefore(e,t.firstChild)}}})),lucide.createIcons(),Array.from(document.querySelectorAll(".callout.is-collapsible")).forEach((e=>{e.querySelector(".callout-title").addEventListener("click",(t=>{e.classList.contains("is-collapsed")?e.classList.remove("is-collapsed"):e.classList.add("is-collapsed")}))}))}))</script>
+<script async src="https://fastly.jsdelivr.net/npm/force-graph@1.43.0/dist/force-graph.min.js"></script>
+<script async src="https://fastly.jsdelivr.net/npm/@alpinejs/persist@3.11.1/dist/cdn.min.js"></script>
+<script src="https://fastly.jsdelivr.net/npm/alpinejs@3.11.1/dist/cdn.min.js" async></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-okaidia.min.css" integrity="sha512-mIs9kKbaw6JZFfSuo+MovjU+Ntggfoj8RwAmJbVXQ5mkAX5LlgETQEweFPI18humSPHymTb5iikEOKWF7I8ncQ==" crossorigin="anonymous" referrerpolicy="no-referrer" async>
+<script src="https://fastly.jsdelivr.net/npm/whatwg-fetch@3.6.2/dist/fetch.umd.min.js" crossorigin="anonymous" referrerpolicy="no-referrer" async></script>
+<link href="/styles/digital-garden-base.css" rel="stylesheet">
+<link href="/styles/obsidian-base.css" rel="stylesheet">
+<link href="/styles/_theme.d92311c2.css" rel="stylesheet">
+<link href="/styles/custom-style.css" rel="stylesheet">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<style></style>
+</head>
+<body class="theme-dark markdown-preview-view markdown-rendered markdown-preview-section">
+<nav class="navbar">
+<div class="navbar-inner">
+<a href="/" style="text-decoration:none">
+<h1 style="margin:15px!important">Digital Garden</h1>
+</a>
+</div>
+</nav>
+<main class="content cm-s-obsidian">
+<header>
+<div class="header-meta">
+</div>
+</header>
+<p><a href="https://www.runoob.com/w3cnote/the-different-of-jre-and-jdk.html" target="_blank" class="external-link">JRE 与 JDK的区别 | 菜鸟教程</a></p>
+<div class="callout" data-callout="note"><div class="callout-title"><div class="callout-title-inner">Note</div></div>
+<div class="callout-content">
+<p>
+</p><h3 id="1" tabindex="-1">1. 定义</h3>
+<p></p><p><strong>JRE(Java Runtime Enviroment)</strong> 是 Java 的运行环境。面向 Java 程序的使用者，而不是开发者。如果你仅下载并安装了 JRE，那么你的系统只能运行 Java 程序。JRE 是运行 Java 程序所必须环境的集合，包含 JVM 标准实现及 Java 核心类库。它包括 Java 虚拟机、Java 平台核心类和支持文件。它不包含开发工具(编译器、调试器等)。</p>
+<p>JDK(Java Development Kit) 又称 J2SDK(Java2 Software Development Kit)，是 Java 开发工具包，它提供了 Java 的开发环境(提供了编译器 javac 等工具，用于将 java 文件编译为 class 文件)和运行环境(提 供了 JVM 和 Runtime 辅助包，用于解析 class 文件使其得到运行)。如果你下载并安装了 JDK，那么你不仅可以开发 Java 程序，也同时拥有了运行 Java 程序的平台。JDK 是整个 Java 的核心，包括了 Java 运行环境(JRE)，一堆 Java 工具 tools.jar 和 Java 标准类库 (rt.jar)。</p>
+<h3 id="2" tabindex="-1">2. 区别</h3>
+<p>JRE 主要包含：java 类库的 class 文件(都在 lib 目录下打包成了 jar)和虚拟机(jvm.dll)；JDK 主要包含：java 类库的 class文件(都在 lib 目录下打包成了 jar)并自带一个 JRE。那么为什么 JDK 要自带一个 JRE 呢？而且 jdk/jre/bin 下的 client 和 server 两个文件夹下都包含 jvm.dll(说明 JDK 自带的 JRE 有两个虚拟机)。</p>
+<p>**记得在环境变量 path 中设置 jdk/bin 路径吗？**老师会告诉大家不设置的话 javac 和 java 是用不了的。确实 jdk/bin 目录下包含了所有的命令。可是有没有人想过我们用的 java 命令并不是 jdk/bin 目录下的而是 jre/bin 目录下的呢？不信可以做一个实验，大家可以把 jdk/bin 目录下的 java.exe 剪切到别的地方再运行 java 程序，发现了什么？一切 OK！(JRE 中没有 javac 命令，原因很简单，它不是开发环境)那么有人会问了？我明明没有设置 jre/bin 目录到环境变量中啊？试想一下如果 java 为了提供给大多数人使用，他们是不需要 jdk 做开发的，只需要 jre 能让 java 程序跑起来就可以了，那么每个客户还需要手动去设置环境变量多麻烦啊？所以安装jre的时候安装程序自动帮你把 jre 的 java.exe 添加到了系统变量中，验证的方法很简单，去 Windows/system32 下面去看看吧，发现了什么？有一个 java.exe。</p>
+<h3 id="3" tabindex="-1">3. 难点</h3>
+<p>如果安装了 JDK，会发现你的电脑有两套 JRE，一套位于 <strong>C:\Program Files\Java\jre6</strong>， 另外一套位于 <strong>C:\Program Files\Java\jdk1.6.0_41\jre</strong> 目录下。</p>
+<p>JRE 的地位就象一台 PC 机一样，我们写好的 Win32 应用程序需要操作系统帮我们运行，同样的，我们编写的 Java 程序也必须要 JRE 才能运行。所以当你装完 JDK 后，如果分别在硬盘上的两个不同地方安装了两套 JRE，那么你可以想象你的电脑有两台虚拟的 Java PC 机，都具有运行 Java 程序的功能。所以我们可以说，只要你的电脑安装了 JRE，就可以正确运行 Java 应用程序。</p>
+<p><strong>1、为什么Sun要让JDK安装两套相同的JRE？</strong></p>
+<p>这是因为 JDK 里面有很多用 Java 所编写的开发工具，如 javac.exe、jar.exe 等，这些命令放置在 C:\Program Files\Java\jdk1.6.0_41\bin 目录里。</p>
+<p>因为他们是 java 编写的命令，所以要依靠 java 的 jar 包，这些 jar 包存放在 <strong>C:\Program Files\Java\jdk1.6.0_41\lib</strong> 目录里。</p>
+<p>如果将 C:\Program Files\Java\jdk1.6.0_41\lib\ 目录里面的 tools.jar 改名为 tools1.jar，然后运行 javac.exe，显示如下结果：</p>
+<p>Exception in thread &quot;main&quot; java.lang.NoClassDefFoundError: com/sun/tools/javac /Main</p>
+<p>但是输入:</p>
+<p>java -cp C:\Program Files\Java\jdk1.6.0_41\lib\tools1.jar com.sun.tools.javac.Mainx</p>
+<p>会得到与 javac.exe 相同的结果。</p>
+<p>从这里我们可以证明 javac.exe 只是一个包装器（Wrapper），而制作的目的是为了让开发者免于输入太长的指命。</p>
+<p>而且我们可以发现 C:\Program Files\Java\jdk1.6.0_41\bin 目录下的程序都很小，不大于 29K，从这里我们可以得出一个结论。就是 JDK 里的工具几乎是用 Java 所编写，所以也是 Java 应用程序，因此要使用 JDK 所附的工具来开发 Java 程序，也必须要自行附一套 JRE 才行，所以位于C:\Program Files\Java\jdk1.6.0_41\jre 目录下的那套 JRE 就是用来运行一般 Java 程序用的。</p>
+<p><strong>2、如果一台电脑安装两套以上的 JRE，谁来决定呢？</strong></p>
+<p>这个重大任务就落在 java.exe 身上。java.exe 的工作就是找到合适的 JRE 来运行 Java 程序。 java.exe 依照底下的顺序来查找 JRE：自己的目录下有没有 JRE；父目录有没有 JRE；查询注册表：</p>
+<p>[HKEY_LOCAL_MACHINE\SOFTWARE\JavaSoft\Java Runtime Environment]</p>
+<p>所以 java.exe 的运行结果与你的电脑里面哪个 JRE 被执行有很大的关系。</p>
+<blockquote>
+<p>文章出处：<a href="http://swiftlet.net/archives/639" target="_blank" class="external-link">http://swiftlet.net/archives/639</a></p>
+</blockquote>
+</div></div>
+</main>
+<script>window.location.hash&&document.getElementById(window.location.hash.slice(1)).classList.add("referred"),window.addEventListener("hashchange",(e=>{const t=e.oldURL.split("#");t[1]&&document.getElementById(t[1]).classList.remove("referred");const n=e.newURL.split("#");n[1]&&document.getElementById(n[1]).classList.add("referred")}),!1);const url_parts=window.location.href.split("#"),url=url_parts[0],referrence=url_parts[1];document.querySelectorAll(".cm-s-obsidian > *[id]").forEach((function(e){e.ondblclick=function(e){const t=url+"#"+e.target.id;navigator.clipboard.writeText(t)}}))</script>
+<script src="https://fastly.jsdelivr.net/npm/luxon@3.2.1/build/global/luxon.min.js"></script>
+<script defer="defer">TIMESTAMP_FORMAT="MMM dd, yyyy h:mm a",document.querySelectorAll(".human-date").forEach((function(e){date=e.getAttribute("data-date")||e.innerText,parsed_date=luxon.DateTime.fromISO(date),null!=parsed_date.invalid&&(parsed_date=luxon.DateTime.fromSQL(date)),null!=parsed_date.invalid&&(parsed_date=luxon.DateTime.fromHTML(date)),e.innerHTML=parsed_date.toFormat(TIMESTAMP_FORMAT)}))</script>
+<script>lucide.createIcons({attrs:{class:["svg-icon"]}})</script>
+</body>
+</html>

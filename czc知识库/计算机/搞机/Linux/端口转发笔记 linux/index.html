@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>端口转发笔记 linux</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<script async type="module">import mermaid from"https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"</script>
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js" integrity="sha512-hpZ5pDCF2bRCweL5WoA0/N1elet1KYL5mx3LP555Eg/0ZguaHawxNvEjF6O3rufAChs16HVNhEc6blF/rZoowQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/plugins/autoloader/prism-autoloader.min.js" integrity="sha512-sv0slik/5O0JIPdLBCR2A3XDg/1U3WuDEheZfI/DI5n8Yqc3h5kjrnr46FGBNiUAJF7rE4LHKwQ/SoSLRKAxEA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script async src="https://cdn.jsdelivr.net/npm/lucide@0.115.0/dist/umd/lucide.min.js"></script>
+<script>window.addEventListener("load",(()=>{document.querySelectorAll(".callout").forEach((e=>{const t=getComputedStyle(e).getPropertyValue("--callout-icon"),l=t&&t.trim().replace(/^lucide-/,"");if(l){const t=e.querySelector(".callout-title");if(t){const e=document.createElement("div"),c=document.createElement("i");e.appendChild(c),c.setAttribute("icon-name",l),e.setAttribute("class","callout-icon"),t.insertBefore(e,t.firstChild)}}})),lucide.createIcons(),Array.from(document.querySelectorAll(".callout.is-collapsible")).forEach((e=>{e.querySelector(".callout-title").addEventListener("click",(t=>{e.classList.contains("is-collapsed")?e.classList.remove("is-collapsed"):e.classList.add("is-collapsed")}))}))}))</script>
+<script async src="https://fastly.jsdelivr.net/npm/force-graph@1.43.0/dist/force-graph.min.js"></script>
+<script async src="https://fastly.jsdelivr.net/npm/@alpinejs/persist@3.11.1/dist/cdn.min.js"></script>
+<script src="https://fastly.jsdelivr.net/npm/alpinejs@3.11.1/dist/cdn.min.js" async></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-okaidia.min.css" integrity="sha512-mIs9kKbaw6JZFfSuo+MovjU+Ntggfoj8RwAmJbVXQ5mkAX5LlgETQEweFPI18humSPHymTb5iikEOKWF7I8ncQ==" crossorigin="anonymous" referrerpolicy="no-referrer" async>
+<script src="https://fastly.jsdelivr.net/npm/whatwg-fetch@3.6.2/dist/fetch.umd.min.js" crossorigin="anonymous" referrerpolicy="no-referrer" async></script>
+<link href="/styles/digital-garden-base.css" rel="stylesheet">
+<link href="/styles/obsidian-base.css" rel="stylesheet">
+<link href="/styles/_theme.d92311c2.css" rel="stylesheet">
+<link href="/styles/custom-style.css" rel="stylesheet">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<style></style>
+</head>
+<body class="theme-dark markdown-preview-view markdown-rendered markdown-preview-section">
+<nav class="navbar">
+<div class="navbar-inner">
+<a href="/" style="text-decoration:none">
+<h1 style="margin:15px!important">Digital Garden</h1>
+</a>
+</div>
+</nav>
+<main class="content cm-s-obsidian">
+<header>
+<div class="header-meta">
+</div>
+</header>
+<div class="callout" data-callout="note"><div class="callout-title"><div class="callout-title-inner"> gpt4turbo对话记录<br></div></div>
+<div class="callout-content">
+<p>
+在windows中配置端口转发用这个目录：<br>
+netsh interface portproxy add v4tov4 listenaddress=192.168.137.3 listenport=2205 connectaddress=192.168.137.5 connectport=2205<br>
+那么在linux中如何配置端口转发呢？<br>
+一般来说时windows做软路由同时配置各种端口转发规则容易高效还是linux更合适？</p>
+<p>在Linux中配置端口转发，你可以使用iptables命令来实现。以下是一个基本的示例，用于设置类似于你在Windows中提到的端口转发规则：</p>
+<pre><code>sudo iptables -t nat -A PREROUTING -p tcp --dport 2205 -j DNAT --to-destination 192.168.137.5:2205
+sudo iptables -t nat -A POSTROUTING -p tcp -d 192.168.137.5 --dport 2205 -j MASQUERADE
+</code></pre>
+<p>这里的命令做了两件事：</p>
+<p>1. -A PREROUTING 将所有目标端口为2205的TCP流量重定向到192.168.137.5的2205端口。</p>
+<p>2. -A POSTROUTING 确保从192.168.137.5发出的数据包看起来像是从原始的Linux服务器发出的，这是通过伪装（MASQUERADE）完成的。</p>
+<p>关于Windows和Linux哪个更适合作为软路由并配置端口转发，这主要取决于你的具体需求和环境：</p>
+<ul>
+<li>
+<p>Linux 通常被认为在网络服务和路由方面更加灵活和强大。它支持广泛的网络工具和自定义脚本，适合需要高度定制的环境。</p>
+</li>
+<li>
+<p>Windows 的配置可能更加直观，特别是对于那些习惯于图形用户界面的用户。但是，它可能不如Linux那样灵活，特别是在高级网络功能和自动化方面。</p>
+</li>
+</ul>
+<p>如果你需要高度可定制的解决方案，或者是在寻找一个能够支持复杂网络配置的系统，Linux可能是更好的选择。如果你寻求易用性并且环境主要是Windows，那么使用Windows也是合理的选择。</p>
+</div></div>
+<p>配置笔记</p>
+<p>由于ip中包含137，win的局域网其他设备访问会出问题，czc-pc局域网内只能ssh到wzd-1服务器，所以我在wzd-1服务器中配置端口转发</p>
+<p>sudo iptables -t nat -A PREROUTING -p tcp --dport 2205 -j DNAT --to-destination 192.168.137.5:2205<br>
+sudo iptables -t nat -A POSTROUTING -p tcp -d 192.168.137.5 --dport 2205 -j MASQUERADE</p>
+<p>！！！<br>
+不对，这样还是没有用！！！</p>
+<p>看来要指定访问端口也不行，那我只有在软路由上开ssh服务器，中转访问.5<br>
+这样可以，用wzd-0做ssh中转</p>
+</main>
+<script>window.location.hash&&document.getElementById(window.location.hash.slice(1)).classList.add("referred"),window.addEventListener("hashchange",(e=>{const t=e.oldURL.split("#");t[1]&&document.getElementById(t[1]).classList.remove("referred");const n=e.newURL.split("#");n[1]&&document.getElementById(n[1]).classList.add("referred")}),!1);const url_parts=window.location.href.split("#"),url=url_parts[0],referrence=url_parts[1];document.querySelectorAll(".cm-s-obsidian > *[id]").forEach((function(e){e.ondblclick=function(e){const t=url+"#"+e.target.id;navigator.clipboard.writeText(t)}}))</script>
+<script src="https://fastly.jsdelivr.net/npm/luxon@3.2.1/build/global/luxon.min.js"></script>
+<script defer="defer">TIMESTAMP_FORMAT="MMM dd, yyyy h:mm a",document.querySelectorAll(".human-date").forEach((function(e){date=e.getAttribute("data-date")||e.innerText,parsed_date=luxon.DateTime.fromISO(date),null!=parsed_date.invalid&&(parsed_date=luxon.DateTime.fromSQL(date)),null!=parsed_date.invalid&&(parsed_date=luxon.DateTime.fromHTML(date)),e.innerHTML=parsed_date.toFormat(TIMESTAMP_FORMAT)}))</script>
+<script>lucide.createIcons({attrs:{class:["svg-icon"]}})</script>
+</body>
+</html>

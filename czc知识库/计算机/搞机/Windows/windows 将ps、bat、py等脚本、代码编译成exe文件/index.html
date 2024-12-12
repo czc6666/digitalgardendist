@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>windows 将ps、bat、py等脚本、代码编译成exe文件</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<script async type="module">import mermaid from"https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"</script>
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js" integrity="sha512-hpZ5pDCF2bRCweL5WoA0/N1elet1KYL5mx3LP555Eg/0ZguaHawxNvEjF6O3rufAChs16HVNhEc6blF/rZoowQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/plugins/autoloader/prism-autoloader.min.js" integrity="sha512-sv0slik/5O0JIPdLBCR2A3XDg/1U3WuDEheZfI/DI5n8Yqc3h5kjrnr46FGBNiUAJF7rE4LHKwQ/SoSLRKAxEA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script async src="https://cdn.jsdelivr.net/npm/lucide@0.115.0/dist/umd/lucide.min.js"></script>
+<script>window.addEventListener("load",(()=>{document.querySelectorAll(".callout").forEach((e=>{const t=getComputedStyle(e).getPropertyValue("--callout-icon"),l=t&&t.trim().replace(/^lucide-/,"");if(l){const t=e.querySelector(".callout-title");if(t){const e=document.createElement("div"),c=document.createElement("i");e.appendChild(c),c.setAttribute("icon-name",l),e.setAttribute("class","callout-icon"),t.insertBefore(e,t.firstChild)}}})),lucide.createIcons(),Array.from(document.querySelectorAll(".callout.is-collapsible")).forEach((e=>{e.querySelector(".callout-title").addEventListener("click",(t=>{e.classList.contains("is-collapsed")?e.classList.remove("is-collapsed"):e.classList.add("is-collapsed")}))}))}))</script>
+<script async src="https://fastly.jsdelivr.net/npm/force-graph@1.43.0/dist/force-graph.min.js"></script>
+<script async src="https://fastly.jsdelivr.net/npm/@alpinejs/persist@3.11.1/dist/cdn.min.js"></script>
+<script src="https://fastly.jsdelivr.net/npm/alpinejs@3.11.1/dist/cdn.min.js" async></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-okaidia.min.css" integrity="sha512-mIs9kKbaw6JZFfSuo+MovjU+Ntggfoj8RwAmJbVXQ5mkAX5LlgETQEweFPI18humSPHymTb5iikEOKWF7I8ncQ==" crossorigin="anonymous" referrerpolicy="no-referrer" async>
+<script src="https://fastly.jsdelivr.net/npm/whatwg-fetch@3.6.2/dist/fetch.umd.min.js" crossorigin="anonymous" referrerpolicy="no-referrer" async></script>
+<link href="/styles/digital-garden-base.css" rel="stylesheet">
+<link href="/styles/obsidian-base.css" rel="stylesheet">
+<link href="/styles/_theme.d92311c2.css" rel="stylesheet">
+<link href="/styles/custom-style.css" rel="stylesheet">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<style></style>
+</head>
+<body class="theme-dark markdown-preview-view markdown-rendered markdown-preview-section">
+<nav class="navbar">
+<div class="navbar-inner">
+<a href="/" style="text-decoration:none">
+<h1 style="margin:15px!important">Digital Garden</h1>
+</a>
+</div>
+</nav>
+<main class="content cm-s-obsidian">
+<header>
+<div class="header-meta">
+</div>
+</header>
+<h1 id="powershell-code-ps1-code" tabindex="-1">powershell脚本：<code>.ps1</code>文件</h1>
+<ol>
+<li>以管理员身份打开<code> PowerShell</code></li>
+<li>运行: <code>Install-Module ps2exe -Force</code></li>
+<li>运行: <code>Invoke-ps2exe &quot;route_config.ps1&quot; &quot;路由配置工具.exe&quot;</code></li>
+</ol>
+<p>❗❗❗❗<br>
+如果需要编译出的exe文件执行许需要管理员权限可以用这条命令编译：</p>
+<pre><code class="language-bash">Invoke-ps2exe &quot;route_config.ps1&quot; &quot;校园网通信限制破解.exe&quot; -requireAdmin
+</code></pre>
+<p><a href="%E6%A0%A1%E5%9B%AD%E7%BD%91AP%E9%9A%94%E7%A6%BB%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E7%AC%94%E8%AE%B0-%E8%A7%A3%E5%86%B3%E6%A0%A1%E5%9B%AD%E7%BD%91%E8%AE%BE%E5%A4%87%E6%97%A0%E6%B3%95%E4%BA%92%E7%9B%B8%E9%80%9A%E4%BF%A1%E7%9A%84%E8%87%AD%E6%AF%9B%E7%97%85-%E9%99%84%E7%A0%B4%E8%A7%A3%E7%A8%8B%E5%BA%8F.md" target="_blank" class="external-link">校园网AP隔离解决方案笔记-解决校园网设备无法互相通信的臭毛病-附破解程序</a></p>
+<h1 id="bat" tabindex="-1">bat脚本</h1>
+<ol>
+<li>按 Win+R，输入 iexpress</li>
+<li>选择 &quot;Create new Self Extraction Directive file&quot;</li>
+<li>点击 Next</li>
+<li>选择 &quot;Extract files and run an installation command&quot;</li>
+<li>填写包名称</li>
+<li>选择是否显示提示</li>
+<li>选择是否显示许可证</li>
+<li>添加你的 BAT 文件</li>
+<li>设置安装程序命令（通常是你的 BAT 文件名）</li>
+<li>选择显示模式</li>
+<li>完成设置并生成 EXE</li>
+</ol>
+<h1 id="python" tabindex="-1">python程序（脚本）</h1>
+<p>这里简单说</p>
+<p>用pyinstaller</p>
+<pre><code class="language-bash"># 1. 安装 PyInstaller
+pip install pyinstaller
+
+# 2. 基本打包命令
+pyinstaller your_script.py
+
+# 3. 常用的打包选项
+pyinstaller --onefile --windowed --icon=your_icon.ico your_script.py
+</code></pre>
+<p>常用参数：</p>
+<pre><code class="language-bash">--onefile        # 打包成单个文件
+--windowed       # 不显示控制台窗口
+--icon=file.ico  # 添加图标
+--name=NAME      # 指定输出文件名
+--clean          # 清理临时文件
+--add-data &quot;src;dst&quot;  # 添加额外文件
+--hidden-import MODULENAME  # 添加隐藏的依赖
+</code></pre>
+</main>
+<script>window.location.hash&&document.getElementById(window.location.hash.slice(1)).classList.add("referred"),window.addEventListener("hashchange",(e=>{const t=e.oldURL.split("#");t[1]&&document.getElementById(t[1]).classList.remove("referred");const n=e.newURL.split("#");n[1]&&document.getElementById(n[1]).classList.add("referred")}),!1);const url_parts=window.location.href.split("#"),url=url_parts[0],referrence=url_parts[1];document.querySelectorAll(".cm-s-obsidian > *[id]").forEach((function(e){e.ondblclick=function(e){const t=url+"#"+e.target.id;navigator.clipboard.writeText(t)}}))</script>
+<script src="https://fastly.jsdelivr.net/npm/luxon@3.2.1/build/global/luxon.min.js"></script>
+<script defer="defer">TIMESTAMP_FORMAT="MMM dd, yyyy h:mm a",document.querySelectorAll(".human-date").forEach((function(e){date=e.getAttribute("data-date")||e.innerText,parsed_date=luxon.DateTime.fromISO(date),null!=parsed_date.invalid&&(parsed_date=luxon.DateTime.fromSQL(date)),null!=parsed_date.invalid&&(parsed_date=luxon.DateTime.fromHTML(date)),e.innerHTML=parsed_date.toFormat(TIMESTAMP_FORMAT)}))</script>
+<script>lucide.createIcons({attrs:{class:["svg-icon"]}})</script>
+</body>
+</html>

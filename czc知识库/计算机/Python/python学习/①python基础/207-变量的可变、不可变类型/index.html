@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>207-变量的可变、不可变类型</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<script async type="module">import mermaid from"https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"</script>
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js" integrity="sha512-hpZ5pDCF2bRCweL5WoA0/N1elet1KYL5mx3LP555Eg/0ZguaHawxNvEjF6O3rufAChs16HVNhEc6blF/rZoowQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/plugins/autoloader/prism-autoloader.min.js" integrity="sha512-sv0slik/5O0JIPdLBCR2A3XDg/1U3WuDEheZfI/DI5n8Yqc3h5kjrnr46FGBNiUAJF7rE4LHKwQ/SoSLRKAxEA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script async src="https://cdn.jsdelivr.net/npm/lucide@0.115.0/dist/umd/lucide.min.js"></script>
+<script>window.addEventListener("load",(()=>{document.querySelectorAll(".callout").forEach((e=>{const t=getComputedStyle(e).getPropertyValue("--callout-icon"),l=t&&t.trim().replace(/^lucide-/,"");if(l){const t=e.querySelector(".callout-title");if(t){const e=document.createElement("div"),c=document.createElement("i");e.appendChild(c),c.setAttribute("icon-name",l),e.setAttribute("class","callout-icon"),t.insertBefore(e,t.firstChild)}}})),lucide.createIcons(),Array.from(document.querySelectorAll(".callout.is-collapsible")).forEach((e=>{e.querySelector(".callout-title").addEventListener("click",(t=>{e.classList.contains("is-collapsed")?e.classList.remove("is-collapsed"):e.classList.add("is-collapsed")}))}))}))</script>
+<script async src="https://fastly.jsdelivr.net/npm/force-graph@1.43.0/dist/force-graph.min.js"></script>
+<script async src="https://fastly.jsdelivr.net/npm/@alpinejs/persist@3.11.1/dist/cdn.min.js"></script>
+<script src="https://fastly.jsdelivr.net/npm/alpinejs@3.11.1/dist/cdn.min.js" async></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-okaidia.min.css" integrity="sha512-mIs9kKbaw6JZFfSuo+MovjU+Ntggfoj8RwAmJbVXQ5mkAX5LlgETQEweFPI18humSPHymTb5iikEOKWF7I8ncQ==" crossorigin="anonymous" referrerpolicy="no-referrer" async>
+<script src="https://fastly.jsdelivr.net/npm/whatwg-fetch@3.6.2/dist/fetch.umd.min.js" crossorigin="anonymous" referrerpolicy="no-referrer" async></script>
+<link href="/styles/digital-garden-base.css" rel="stylesheet">
+<link href="/styles/obsidian-base.css" rel="stylesheet">
+<link href="/styles/_theme.d92311c2.css" rel="stylesheet">
+<link href="/styles/custom-style.css" rel="stylesheet">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<style></style>
+</head>
+<body class="theme-dark markdown-preview-view markdown-rendered markdown-preview-section">
+<nav class="navbar">
+<div class="navbar-inner">
+<a href="/" style="text-decoration:none">
+<h1 style="margin:15px!important">Digital Garden</h1>
+</a>
+</div>
+</nav>
+<main class="content cm-s-obsidian">
+<header>
+<div class="header-meta">
+</div>
+</header>
+<h1 id="标准数据类型" tabindex="-1">标准数据类型</h1>
+<h5 id="python3" tabindex="-1">Python3 中常见的数据类型有：</h5>
+<ul>
+<li>Number（数字）</li>
+<li>String（字符串）</li>
+<li>bool（布尔类型）</li>
+<li>List（列表）</li>
+<li>Tuple（元组）</li>
+<li>Set（集合）</li>
+<li>Dictionary（字典）</li>
+</ul>
+<h5 id="python3-qi" tabindex="-1">Python3 的qi个标准数据类型中：</h5>
+<ul>
+<li><strong>不可变数据（4 个）：</strong> Number（数字）、String（字符串）、Tuple（元组）、<strong>布尔</strong>；</li>
+<li><strong>可变数据（3 个）：</strong> List（列表）、Dictionary（字典）、Set（集合）。</li>
+</ul>
+<h1 id="不可变数据类型" tabindex="-1">不可变数据类型</h1>
+<p><picture src="/img/user/czc%E7%9F%A5%E8%AF%86%E5%BA%93/%E6%9D%82%E4%B8%83%E6%9D%82%E5%85%AB/9-%E9%99%84%E4%BB%B6/%E9%99%84%E4%BB%B6/%E4%B8%BE%E4%B8%AA%E6%A0%97%E5%AD%90.png" alt="50"><source media="(max-width:480px)" srcset="/img/optimized/tOKv5hqExK-500.webp" type="image/webp">
+<source media="(max-width:480px)" srcset="/img/optimized/tOKv5hqExK-500.jpeg">
+<source media="(max-width:1920px)" srcset="/img/optimized/tOKv5hqExK-700.webp" type="image/webp"><source media="(max-width:1920px)" srcset="/img/optimized/tOKv5hqExK-700.jpeg"><img class="" src="/img/user/czc%E7%9F%A5%E8%AF%86%E5%BA%93/%E6%9D%82%E4%B8%83%E6%9D%82%E5%85%AB/9-%E9%99%84%E4%BB%B6/%E9%99%84%E4%BB%B6/%E4%B8%BE%E4%B8%AA%E6%A0%97%E5%AD%90.png" alt="50" width=""></picture></p>
+<pre><code class="language-python">num1 = 200
+num2 = num1
+
+num2 = 100
+&quot;&quot;&quot;
+这里num2是100，但是num1还是200，因为不可变数据类型赋值都是指针指向新内存空间，num1指向值为200的内存空间始终没变，变得是num2的指针。。。。。。
+&quot;&quot;&quot;
+</code></pre>
+<p>举例子，这里用了新的<code>id()</code>方法（查看内存地址）</p>
+<pre><code class="language-python">num = 10
+print(num)
+print(id(num))  # 打印变量的内存地址：....0001
+num2 = 10
+print(id(num2))  # ....0001
+num = 100
+print(id(num))  # ....0002
+# 探讨一种情况：
+# 假设把变量num1赋值给变量num2，两者是什么关系呢？
+# 结论：
+# 如果把num1赋值给num2，相当于两者指向了相同的内存空间
+# 问题：如果这个时候我更新了变量num1的值为100，问num2是否会受到影响
+# 答：不会受到影响，因为数值10是一个数值类型=》不可变类型，一旦内存地址固定了，则里面的值就不能改变了，所以当我
+# num1重新赋值，相当于在内存中新开辟了一块空间保存100，这num1和num2指向了不同的空间。所以不会产生任何影响
+</code></pre>
+<p><strong>所谓的不可变类型就是当这个地址一旦固定，则其值无法改变的数据类型=&gt;不可变类型</strong></p>
+<blockquote>
+<p>czc：要修改值，那就是在内存空间中新开一个空间放这个新值，然后把指针指向新的内存空间。所以对于函数接收的不可变数据类型就相当于一个新的变量指向这个值，当对他修改，就是新变量指针指向新值，这时候接受进来的老变量的指针还是指向原来的内存空间。所以这就是局部变量修改不会影响全局变量的原因，<br>
+要修改不可变数据类型就必须要提前声明global</p>
+</blockquote>
+<div class="callout" data-callout="note"><div class="callout-title"><div class="callout-title-inner"> gpt纠正<br></div></div>
+<div class="callout-content">
+<p>
+对于不可变数据类型（如整数、浮点数、字符串、元组等），当你尝试在函数内部修改这些数据时，实际上是创建了一个新的对象，并将局部变量的引用指向这个新对象。原始的全局变量不会受到影响，除非你使用 global 关键字显式地声明它，这样你就可以在函数内部修改全局变量。这是因为不可变对象不能被改变，每次修改都会生成一个新的对象。</p>
+</div></div>
+<p><strong>不可变类型包括：数值类型、布尔类型、字符串类型、元组类型</strong></p>
+<p>比如原来这块空间里面放了数字10，想把它设置为100，不行，因为这块空间无法调整！</p>
+<h1 id="可变数据类型" tabindex="-1">可变数据类型</h1>
+<p>所谓的可变数据类型就是<strong>内存地址一旦固定，其值是可以发生改变的</strong><br>
+列表、字典、集合类型</p>
+<pre><code class="language-python"><a class="tag" onclick="toggleTagSearch(this)" data-content="#定义一个函数">#定义一个函数</a>
+def func(names2):  # names1和局部变量name2都指向相同内存空间
+	<a class="tag" onclick="toggleTagSearch(this)" data-content="#局部作用域">#局部作用域</a>
+	names2.append('赵六')
+
+<a class="tag" onclick="toggleTagSearch(this)" data-content="#定义一个全局变量">#定义一个全局变量</a>
+names1 = ['张三'，‘李四'，‘王五']
+<a class="tag" onclick="toggleTagSearch(this)" data-content="#调用函数">#调用函数</a>
+func(names1)
+
+print(names1)  # 选择题：A.[张三李四王五] B。[张三李四王五赵六]
+</code></pre>
+<blockquote>
+<p>czc：对于可变数据类型就不会受全局变量和局部变量作用于的影响，传入可变数据类型相当于新建一个变量指针指向那片内存空间，但是那个内存空间里的值是可修改的，所以可以直接修改，不用新开辟内存空间后修改指针，所以在局部作用域中可变数据类型的修改可以影响全局作用域</p>
+</blockquote>
+<div class="callout" data-callout="note"><div class="callout-title"><div class="callout-title-inner"> gpt纠正<br></div></div>
+<div class="callout-content">
+<p>
+对于可变数据类型（如列表、字典、集合等），当你在函数内部修改它们时，你实际上是在修改原始对象。这是因为可变对象可以被改变，所以不需要创建新的对象。即使在函数内部，你也是在操作同一个对象的引用。</p>
+</div></div>
+<h1 id="具体例子示例" tabindex="-1">具体例子示例</h1>
+</main>
+<script>window.location.hash&&document.getElementById(window.location.hash.slice(1)).classList.add("referred"),window.addEventListener("hashchange",(e=>{const t=e.oldURL.split("#");t[1]&&document.getElementById(t[1]).classList.remove("referred");const n=e.newURL.split("#");n[1]&&document.getElementById(n[1]).classList.add("referred")}),!1);const url_parts=window.location.href.split("#"),url=url_parts[0],referrence=url_parts[1];document.querySelectorAll(".cm-s-obsidian > *[id]").forEach((function(e){e.ondblclick=function(e){const t=url+"#"+e.target.id;navigator.clipboard.writeText(t)}}))</script>
+<script src="https://fastly.jsdelivr.net/npm/luxon@3.2.1/build/global/luxon.min.js"></script>
+<script defer="defer">TIMESTAMP_FORMAT="MMM dd, yyyy h:mm a",document.querySelectorAll(".human-date").forEach((function(e){date=e.getAttribute("data-date")||e.innerText,parsed_date=luxon.DateTime.fromISO(date),null!=parsed_date.invalid&&(parsed_date=luxon.DateTime.fromSQL(date)),null!=parsed_date.invalid&&(parsed_date=luxon.DateTime.fromHTML(date)),e.innerHTML=parsed_date.toFormat(TIMESTAMP_FORMAT)}))</script>
+<script>lucide.createIcons({attrs:{class:["svg-icon"]}})</script>
+</body>
+</html>
