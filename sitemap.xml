@@ -82,11 +82,6 @@
         </url>
     
         <url>
-            <loc>/czc知识库/硕士研究生/科研/学术常识/会议期刊笔记汇总/</loc>
-            <lastmod>2024-12-12T12:29:17.089Z</lastmod>
-        </url>
-    
-        <url>
             <loc>/czc知识库/硕士研究生/科研/学术常识/关于ISI、SCI、EI、IEEE、Elsevier、Springer的区别/</loc>
             <lastmod>2024-12-12T12:29:17.089Z</lastmod>
         </url>
@@ -193,11 +188,6 @@
     
         <url>
             <loc>/czc知识库/硕士研究生/科研/文献阅读笔记/2-图神经网络/202404.FAGnet：使用图神经网络进行基于家庭感知的 Android 恶意软件分析 Family-aware-based android malware analysis using graph neural network/</loc>
-            <lastmod>2024-12-12T12:29:17.100Z</lastmod>
-        </url>
-    
-        <url>
-            <loc>/czc知识库/硕士研究生/科研/文献阅读笔记/2-语义/202402.通过提取 API 语义来实现的一个新颖的安卓恶意软件检测方法。AnovelAndroid malware detection method with API semantics extraction/</loc>
             <lastmod>2024-12-12T12:29:17.100Z</lastmod>
         </url>
     
@@ -323,26 +313,6 @@
     
         <url>
             <loc>/czc知识库/硕士研究生/科研/文献阅读笔记/z-垃圾&amp;归档文章&amp;其他东西/垃圾：基于深度可分离卷积的多神经网络恶意代码检测模型/</loc>
-            <lastmod>2024-12-12T12:29:17.100Z</lastmod>
-        </url>
-    
-        <url>
-            <loc>/czc知识库/硕士研究生/科研/文献阅读笔记/z-垃圾&amp;归档文章&amp;其他东西/邹德清 吴月明系列/HomDroid：吴月明2/</loc>
-            <lastmod>2024-12-12T12:29:17.100Z</lastmod>
-        </url>
-    
-        <url>
-            <loc>/czc知识库/硕士研究生/科研/文献阅读笔记/z-垃圾&amp;归档文章&amp;其他东西/邹德清 吴月明系列/IntDroid：吴月明3/</loc>
-            <lastmod>2024-12-12T12:29:17.100Z</lastmod>
-        </url>
-    
-        <url>
-            <loc>/czc知识库/硕士研究生/科研/文献阅读笔记/z-垃圾&amp;归档文章&amp;其他东西/邹德清 吴月明系列/MalScan：吴月明1/</loc>
-            <lastmod>2024-12-12T12:29:17.100Z</lastmod>
-        </url>
-    
-        <url>
-            <loc>/czc知识库/硕士研究生/科研/文献阅读笔记/文献阅读笔记/</loc>
             <lastmod>2024-12-12T12:29:17.100Z</lastmod>
         </url>
     
@@ -1739,6 +1709,56 @@
         <url>
             <loc>/</loc>
             <lastmod>2024-12-14T09:33:23.372Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/硕士研究生/科研/学术常识/会议期刊笔记汇总/</loc>
+            <lastmod>2024-12-15T15:11:02.725Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/硕士研究生/科研/文献阅读笔记/0-翻译来发csdn/2022.03.SDAC：使用基于语义距离的 API 集群进行 Android 恶意软件检测的慢老化解决方案/</loc>
+            <lastmod>2024-12-15T15:11:02.725Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/硕士研究生/科研/文献阅读笔记/0-翻译来发csdn/2024.02.一种基于API语义提取的Android恶意软件检测方法/</loc>
+            <lastmod>2024-12-15T15:11:02.725Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/硕士研究生/科研/文献阅读笔记/0-翻译来发csdn/2024.11.用于 Android 恶意软件检测的混合 ML-DL 方法/</loc>
+            <lastmod>2024-12-15T15:11:02.725Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/硕士研究生/科研/文献阅读笔记/0-翻译来发csdn/邹德清 吴月明系列/2021.07.吴月明3.IntDroid：基于API亲密度分析的Android恶意软件检测/</loc>
+            <lastmod>2024-12-15T15:11:02.725Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/硕士研究生/科研/文献阅读笔记/0-翻译来发csdn/邹德清 吴月明系列/HomDroid：吴月明2/</loc>
+            <lastmod>2024-12-15T15:11:02.725Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/硕士研究生/科研/文献阅读笔记/0-翻译来发csdn/邹德清 吴月明系列/MalScan：吴月明1/</loc>
+            <lastmod>2024-12-15T15:11:02.725Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/硕士研究生/科研/文献阅读笔记/2-语义/202402.通过提取 API 语义来实现的一个新颖的安卓恶意软件检测方法。A novel Android malware detection method with API semantics extraction/</loc>
+            <lastmod>2024-12-15T15:11:02.725Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/硕士研究生/科研/文献阅读笔记/懒人专用ai文献翻译提示词prompt/</loc>
+            <lastmod>2024-12-15T15:11:02.725Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/硕士研究生/科研/文献阅读笔记/文献阅读笔记/</loc>
+            <lastmod>2024-12-15T15:11:02.725Z</lastmod>
         </url>
     
 </urlset>
