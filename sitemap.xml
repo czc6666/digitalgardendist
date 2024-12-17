@@ -1572,11 +1572,6 @@
         </url>
     
         <url>
-            <loc>/czc知识库/最近更新的笔记/</loc>
-            <lastmod>2024-12-17T13:31:29.545Z</lastmod>
-        </url>
-    
-        <url>
             <loc>/czc知识库/计算机/Python/Python/</loc>
             <lastmod>2024-12-17T13:31:29.545Z</lastmod>
         </url>
@@ -1797,8 +1792,13 @@
         </url>
     
         <url>
+            <loc>/czc知识库/最近更新的笔记/</loc>
+            <lastmod>2024-12-17T13:36:19.494Z</lastmod>
+        </url>
+    
+        <url>
             <loc>/</loc>
-            <lastmod>2024-12-17T13:31:29.545Z</lastmod>
+            <lastmod>2024-12-17T13:36:19.494Z</lastmod>
         </url>
     
 </urlset>
