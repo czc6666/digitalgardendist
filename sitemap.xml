@@ -757,11 +757,6 @@
         </url>
     
         <url>
-            <loc>/czc知识库/计算机/Python/python学习/①python基础/212-异常/</loc>
-            <lastmod>2024-12-12T12:29:17.100Z</lastmod>
-        </url>
-    
-        <url>
             <loc>/czc知识库/计算机/Python/python学习/①python基础/213-模块和包/</loc>
             <lastmod>2024-12-12T12:29:17.100Z</lastmod>
         </url>
@@ -777,67 +772,7 @@
         </url>
     
         <url>
-            <loc>/czc知识库/计算机/Python/python学习/②面向对象/301-面向对象基本思想/</loc>
-            <lastmod>2024-12-12T12:29:17.110Z</lastmod>
-        </url>
-    
-        <url>
-            <loc>/czc知识库/计算机/Python/python学习/②面向对象/302-类/</loc>
-            <lastmod>2024-12-12T12:29:17.110Z</lastmod>
-        </url>
-    
-        <url>
-            <loc>/czc知识库/计算机/Python/python学习/②面向对象/303-魔术方法：__init__()、__str__()、__del__()/</loc>
-            <lastmod>2024-12-12T12:29:17.110Z</lastmod>
-        </url>
-    
-        <url>
-            <loc>/czc知识库/计算机/Python/python学习/②面向对象/304-面向对象三大特性-1.封装/</loc>
-            <lastmod>2024-12-12T12:29:17.110Z</lastmod>
-        </url>
-    
-        <url>
-            <loc>/czc知识库/计算机/Python/python学习/②面向对象/304-面向对象三大特性-2.继承/</loc>
-            <lastmod>2024-12-12T12:29:17.110Z</lastmod>
-        </url>
-    
-        <url>
-            <loc>/czc知识库/计算机/Python/python学习/②面向对象/304-面向对象三大特性-3.多态/</loc>
-            <lastmod>2024-12-12T12:29:17.110Z</lastmod>
-        </url>
-    
-        <url>
-            <loc>/czc知识库/计算机/Python/python学习/②面向对象/305-类属性、类方法、静态方法/</loc>
-            <lastmod>2024-12-12T12:29:17.110Z</lastmod>
-        </url>
-    
-        <url>
-            <loc>/czc知识库/计算机/Python/python学习/②面向对象/306-魔术方法：__dict__()/</loc>
-            <lastmod>2024-12-12T12:29:17.110Z</lastmod>
-        </url>
-    
-        <url>
-            <loc>/czc知识库/计算机/Python/python学习/②面向对象/310-面向对象开发学生管理系统/</loc>
-            <lastmod>2024-12-12T12:29:17.110Z</lastmod>
-        </url>
-    
-        <url>
-            <loc>/czc知识库/计算机/Python/python学习/②面向对象/311-面向对象习题/</loc>
-            <lastmod>2024-12-12T12:29:17.110Z</lastmod>
-        </url>
-    
-        <url>
-            <loc>/czc知识库/计算机/Python/python学习/②面向对象/②面向对象/</loc>
-            <lastmod>2024-12-12T12:29:17.110Z</lastmod>
-        </url>
-    
-        <url>
             <loc>/czc知识库/计算机/Python/python学习/③python高级/312-关键字global和nonlocal/</loc>
-            <lastmod>2024-12-12T12:29:17.110Z</lastmod>
-        </url>
-    
-        <url>
-            <loc>/czc知识库/计算机/Python/python学习/③python高级/321-闭包（装饰器的原理）/</loc>
             <lastmod>2024-12-12T12:29:17.110Z</lastmod>
         </url>
     
@@ -852,16 +787,6 @@
         </url>
     
         <url>
-            <loc>/czc知识库/计算机/Python/python学习/③python高级/341-计算机网络基础 for Socket网络编程/</loc>
-            <lastmod>2024-12-12T12:29:17.110Z</lastmod>
-        </url>
-    
-        <url>
-            <loc>/czc知识库/计算机/Python/python学习/③python高级/342-TCP服务器开发流程/</loc>
-            <lastmod>2024-12-12T12:29:17.110Z</lastmod>
-        </url>
-    
-        <url>
             <loc>/czc知识库/计算机/Python/python学习/③python高级/343-TCP服务器程序入口与端口复用/</loc>
             <lastmod>2024-12-12T12:29:17.110Z</lastmod>
         </url>
@@ -872,107 +797,7 @@
         </url>
     
         <url>
-            <loc>/czc知识库/计算机/Python/python学习/③python高级/351-进程/</loc>
-            <lastmod>2024-12-12T12:29:17.110Z</lastmod>
-        </url>
-    
-        <url>
-            <loc>/czc知识库/计算机/Python/python学习/③python高级/352-线程/</loc>
-            <lastmod>2024-12-12T12:29:17.110Z</lastmod>
-        </url>
-    
-        <url>
             <loc>/czc知识库/计算机/Python/python学习/③python高级/353-多任务版本TCP服务器/</loc>
-            <lastmod>2024-12-12T12:29:17.110Z</lastmod>
-        </url>
-    
-        <url>
-            <loc>/czc知识库/计算机/Python/python学习/③python高级/360-静态Web服务器/</loc>
-            <lastmod>2024-12-12T12:29:17.110Z</lastmod>
-        </url>
-    
-        <url>
-            <loc>/czc知识库/计算机/Python/python学习/③python高级/361-HTTP协议/</loc>
-            <lastmod>2024-12-12T12:29:17.110Z</lastmod>
-        </url>
-    
-        <url>
-            <loc>/czc知识库/计算机/Python/python学习/③python高级/③python高级/</loc>
-            <lastmod>2024-12-12T12:29:17.110Z</lastmod>
-        </url>
-    
-        <url>
-            <loc>/czc知识库/计算机/Python/python笔记/Python的内置函数或内置方法/</loc>
-            <lastmod>2024-12-12T12:29:17.110Z</lastmod>
-        </url>
-    
-        <url>
-            <loc>/czc知识库/计算机/Python/python笔记/pip安装 修改清华大学源 python库 pip命令秒安装sklearn库 pip install 清华源/</loc>
-            <lastmod>2024-12-12T12:29:17.110Z</lastmod>
-        </url>
-    
-        <url>
-            <loc>/czc知识库/计算机/Python/python笔记/python class类编程 面向对象编程/</loc>
-            <lastmod>2024-12-12T12:29:17.110Z</lastmod>
-        </url>
-    
-        <url>
-            <loc>/czc知识库/计算机/Python/python笔记/python windows反斜杠的问题/</loc>
-            <lastmod>2024-12-12T12:29:17.110Z</lastmod>
-        </url>
-    
-        <url>
-            <loc>/czc知识库/计算机/Python/python笔记/python关键字：with/</loc>
-            <lastmod>2024-12-12T12:29:17.110Z</lastmod>
-        </url>
-    
-        <url>
-            <loc>/czc知识库/计算机/Python/python笔记/python基础学习笔记 蟒蛇书/</loc>
-            <lastmod>2024-12-12T12:29:17.110Z</lastmod>
-        </url>
-    
-        <url>
-            <loc>/czc知识库/计算机/Python/python笔记/python的字典/</loc>
-            <lastmod>2024-12-12T12:29:17.110Z</lastmod>
-        </url>
-    
-        <url>
-            <loc>/czc知识库/计算机/Python/python笔记/python笔记/</loc>
-            <lastmod>2024-12-12T12:29:17.110Z</lastmod>
-        </url>
-    
-        <url>
-            <loc>/czc知识库/计算机/Python/python笔记/python：检查路径是否存在，不存在就递归创建此路径/</loc>
-            <lastmod>2024-12-12T12:29:17.110Z</lastmod>
-        </url>
-    
-        <url>
-            <loc>/czc知识库/计算机/Python/python笔记/requirement文件安装环境命令 python 配置/</loc>
-            <lastmod>2024-12-12T12:29:17.110Z</lastmod>
-        </url>
-    
-        <url>
-            <loc>/czc知识库/计算机/Python/python笔记/with语句/</loc>
-            <lastmod>2024-12-12T12:29:17.110Z</lastmod>
-        </url>
-    
-        <url>
-            <loc>/czc知识库/计算机/Python/python笔记/什么是python对象/</loc>
-            <lastmod>2024-12-12T12:29:17.110Z</lastmod>
-        </url>
-    
-        <url>
-            <loc>/czc知识库/计算机/Python/python笔记/关闭jupyter服务器 在pycharm中/</loc>
-            <lastmod>2024-12-12T12:29:17.110Z</lastmod>
-        </url>
-    
-        <url>
-            <loc>/czc知识库/计算机/Python/python笔记/多线程编程 python/</loc>
-            <lastmod>2024-12-12T12:29:17.110Z</lastmod>
-        </url>
-    
-        <url>
-            <loc>/czc知识库/计算机/Python/python笔记/程序中添加可视化进图条/</loc>
             <lastmod>2024-12-12T12:29:17.110Z</lastmod>
         </url>
     
@@ -1697,16 +1522,6 @@
         </url>
     
         <url>
-            <loc>/czc知识库/计算机/Python/Python/</loc>
-            <lastmod>2024-12-13T04:59:56.783Z</lastmod>
-        </url>
-    
-        <url>
-            <loc>/czc知识库/计算机/计算机/</loc>
-            <lastmod>2024-12-13T04:59:56.783Z</lastmod>
-        </url>
-    
-        <url>
             <loc>/czc知识库/硕士研究生/科研/学术常识/会议期刊笔记汇总/</loc>
             <lastmod>2024-12-15T15:11:02.725Z</lastmod>
         </url>
@@ -1757,8 +1572,233 @@
         </url>
     
         <url>
+            <loc>/czc知识库/最近更新的笔记/</loc>
+            <lastmod>2024-12-17T13:31:29.545Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/计算机/Python/Python/</loc>
+            <lastmod>2024-12-17T13:31:29.545Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/计算机/Python/python学习/①python基础/212-异常/</loc>
+            <lastmod>2024-12-17T13:31:29.545Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/计算机/Python/python学习/②python面向对象/301-面向对象基本思想/</loc>
+            <lastmod>2024-12-17T13:31:29.545Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/计算机/Python/python学习/②python面向对象/302-类/</loc>
+            <lastmod>2024-12-17T13:31:29.545Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/计算机/Python/python学习/②python面向对象/303-魔术方法：__init__()、__str__()、__del__()/</loc>
+            <lastmod>2024-12-17T13:31:29.545Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/计算机/Python/python学习/②python面向对象/304-面向对象三大特性-1.封装/</loc>
+            <lastmod>2024-12-17T13:31:29.545Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/计算机/Python/python学习/②python面向对象/304-面向对象三大特性-2.继承/</loc>
+            <lastmod>2024-12-17T13:31:29.545Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/计算机/Python/python学习/②python面向对象/304-面向对象三大特性-3.多态/</loc>
+            <lastmod>2024-12-17T13:31:29.545Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/计算机/Python/python学习/②python面向对象/305-类属性、类方法、静态方法/</loc>
+            <lastmod>2024-12-17T13:31:29.545Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/计算机/Python/python学习/②python面向对象/306-魔术方法：__dict__()/</loc>
+            <lastmod>2024-12-17T13:31:29.545Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/计算机/Python/python学习/②python面向对象/310-面向对象开发学生管理系统/</loc>
+            <lastmod>2024-12-17T13:31:29.545Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/计算机/Python/python学习/②python面向对象/311-面向对象习题/</loc>
+            <lastmod>2024-12-17T13:31:29.545Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/计算机/Python/python学习/②python面向对象/②python面向对象/</loc>
+            <lastmod>2024-12-17T13:31:29.545Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/计算机/Python/python学习/③python高级/321-闭包（装饰器的原理）/</loc>
+            <lastmod>2024-12-17T13:31:29.545Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/计算机/Python/python学习/③python高级/341-计算机网络基础 for Socket网络编程/</loc>
+            <lastmod>2024-12-17T13:31:29.545Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/计算机/Python/python学习/③python高级/342-TCP服务器开发流程/</loc>
+            <lastmod>2024-12-17T13:31:29.545Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/计算机/Python/python学习/③python高级/351-进程/</loc>
+            <lastmod>2024-12-17T13:31:29.545Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/计算机/Python/python学习/③python高级/352-线程/</loc>
+            <lastmod>2024-12-17T13:31:29.545Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/计算机/Python/python学习/③python高级/360-静态Web服务器/</loc>
+            <lastmod>2024-12-17T13:31:29.545Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/计算机/Python/python学习/③python高级/361-HTTP协议/</loc>
+            <lastmod>2024-12-17T13:31:29.545Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/计算机/Python/python学习/③python高级/363-HTTP报文/</loc>
+            <lastmod>2024-12-17T13:31:29.545Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/计算机/Python/python学习/③python高级/365-python自带的静态Web服务器/</loc>
+            <lastmod>2024-12-17T13:31:29.545Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/计算机/Python/python学习/③python高级/366-静态Web服务器开发/</loc>
+            <lastmod>2024-12-17T13:31:29.545Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/计算机/Python/python学习/③python高级/367-FastAPI框架入门/</loc>
+            <lastmod>2024-12-17T13:31:29.545Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/计算机/Python/python学习/③python高级/400-Python高级语法/</loc>
+            <lastmod>2024-12-17T13:31:29.545Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/计算机/Python/python学习/③python高级/401-with上下文管理器/</loc>
+            <lastmod>2024-12-17T13:31:29.545Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/计算机/Python/python学习/③python高级/402-Python生成器/</loc>
+            <lastmod>2024-12-17T13:31:29.545Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/计算机/Python/python学习/③python高级/③python高级/</loc>
+            <lastmod>2024-12-17T13:31:29.545Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/计算机/Python/python日常笔记/Python的内置函数或内置方法/</loc>
+            <lastmod>2024-12-17T13:31:29.545Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/计算机/Python/python日常笔记/pip安装 修改清华大学源 python库 pip命令秒安装sklearn库 pip install 清华源/</loc>
+            <lastmod>2024-12-17T13:31:29.545Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/计算机/Python/python日常笔记/python class类编程 面向对象编程/</loc>
+            <lastmod>2024-12-17T13:31:29.545Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/计算机/Python/python日常笔记/python windows反斜杠的问题/</loc>
+            <lastmod>2024-12-17T13:31:29.545Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/计算机/Python/python日常笔记/python关键字：with/</loc>
+            <lastmod>2024-12-17T13:31:29.545Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/计算机/Python/python日常笔记/python基础学习笔记 蟒蛇书/</loc>
+            <lastmod>2024-12-17T13:31:29.545Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/计算机/Python/python日常笔记/python的字典/</loc>
+            <lastmod>2024-12-17T13:31:29.545Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/计算机/Python/python日常笔记/python笔记/</loc>
+            <lastmod>2024-12-17T13:31:29.545Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/计算机/Python/python日常笔记/python：检查路径是否存在，不存在就递归创建此路径/</loc>
+            <lastmod>2024-12-17T13:31:29.545Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/计算机/Python/python日常笔记/requirement文件安装环境命令 python 配置/</loc>
+            <lastmod>2024-12-17T13:31:29.545Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/计算机/Python/python日常笔记/with语句/</loc>
+            <lastmod>2024-12-17T13:31:29.545Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/计算机/Python/python日常笔记/什么是python对象/</loc>
+            <lastmod>2024-12-17T13:31:29.545Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/计算机/Python/python日常笔记/关闭jupyter服务器 在pycharm中/</loc>
+            <lastmod>2024-12-17T13:31:29.545Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/计算机/Python/python日常笔记/多线程编程 python/</loc>
+            <lastmod>2024-12-17T13:31:29.545Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/计算机/Python/python日常笔记/程序中添加可视化进图条/</loc>
+            <lastmod>2024-12-17T13:31:29.545Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/计算机/计算机/</loc>
+            <lastmod>2024-12-17T13:31:29.545Z</lastmod>
+        </url>
+    
+        <url>
             <loc>/</loc>
-            <lastmod>2024-12-15T15:43:37.945Z</lastmod>
+            <lastmod>2024-12-17T13:31:29.545Z</lastmod>
         </url>
     
 </urlset>
