@@ -579,10 +579,6 @@ CTRL + K
 </div>
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
-<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/硕士研究生/科研/文献阅读笔记/懒人专用ai文献翻译提示词prompt/">懒人专用ai文献翻译提示词prompt </a>
-</div>
-</div>
-<div x-show="isOpen" style="display:none" class="filelist">
 <div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/硕士研究生/科研/文献阅读笔记/文献阅读笔记/">文献阅读笔记 </a>
 </div>
 </div>
@@ -701,6 +697,23 @@ CTRL + K
 <i x-show="isOpen" style="display:none" icon-name="chevron-down"></i>
 <i x-show="!isOpen" icon-name="chevron-right"></i>
 <span class="foldername">笔记</span>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div class="folder inner-folder" x-data="{isOpen: $persist(false).as('czc知识库/笔记/prompt')}" @click.stop="isOpen=!isOpen">
+<div class="foldername-wrapper align-icon">
+<i x-show="isOpen" style="display:none" icon-name="chevron-down"></i>
+<i x-show="!isOpen" icon-name="chevron-right"></i>
+<span class="foldername">prompt</span>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/笔记/prompt/prompt/">prompt </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/笔记/prompt/文献翻译提示词prompt/">文献翻译提示词prompt </a>
+</div>
+</div>
+</div>
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
 <div class="folder inner-folder" x-data="{isOpen: $persist(false).as('czc知识库/笔记/不分类')}" @click.stop="isOpen=!isOpen">
@@ -1350,6 +1363,14 @@ CTRL + K
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
 <div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/计算机/Python/python学习/③python高级/402-Python生成器/">402-Python生成器 </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/计算机/Python/python学习/③python高级/403-Python中的深浅拷贝/">403-Python中的深浅拷贝 </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/计算机/Python/python学习/③python高级/404-正则表达式/">404-正则表达式 </a>
 </div>
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
@@ -2092,28 +2113,6 @@ CTRL + K
 <span class="foldername">编程</span>
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
-<div class="folder inner-folder" x-data="{isOpen: $persist(false).as('czc知识库/计算机/编程/软件开发笔记')}" @click.stop="isOpen=!isOpen">
-<div class="foldername-wrapper align-icon">
-<i x-show="isOpen" style="display:none" icon-name="chevron-down"></i>
-<i x-show="!isOpen" icon-name="chevron-right"></i>
-<span class="foldername">软件开发笔记</span>
-</div>
-<div x-show="isOpen" style="display:none" class="filelist">
-<div class="folder inner-folder" x-data="{isOpen: $persist(false).as('czc知识库/计算机/编程/软件开发笔记/AndroZoo数据集下载器')}" @click.stop="isOpen=!isOpen">
-<div class="foldername-wrapper align-icon">
-<i x-show="isOpen" style="display:none" icon-name="chevron-down"></i>
-<i x-show="!isOpen" icon-name="chevron-right"></i>
-<span class="foldername">AndroZoo数据集下载器</span>
-</div>
-<div x-show="isOpen" style="display:none" class="filelist">
-<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/计算机/编程/软件开发笔记/AndroZoo数据集下载器/笔记：AndroZoo数据集下载程序 筛选超大csv文件 制作下载链接 多线程下载 apk文件 python笔记/">笔记：AndroZoo数据集下载程序 筛选超大csv文件 制作下载链接 多线程下载 apk文件 python笔记 </a>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div x-show="isOpen" style="display:none" class="filelist">
 <div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/计算机/编程/anaconda笔记/">anaconda笔记 </a>
 </div>
 </div>
@@ -2159,6 +2158,10 @@ CTRL + K
 <div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/">主页 </a>
 </div>
 </div>
+<div x-show="isOpen" style="display:none" class="">
+<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/公共类/">公共类 </a>
+</div>
+</div>
 </div>
 </nav>
 </div>
@@ -2182,7 +2185,7 @@ CTRL + K
 </div>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/flexsearch@0.7.21/dist/flexsearch.bundle.js"></script>
-<script>document.addEventListener("DOMContentLoaded",init,!1),document.addEventListener("DOMContentLoaded",setCorrectShortcut,!1),window.toggleSearch=function(){document.getElementById("globalsearch").classList.contains("active")?document.getElementById("globalsearch").classList.remove("active"):(document.getElementById("globalsearch").classList.add("active"),document.getElementById("term").focus())},window.toggleTagSearch=function(e){console.log(e.textContent);const t=e.textContent;t&&(window.document.getElementById("term").value=t.trim(),window.toggleSearch(),window.search())};const loadingSvg='\n    <svg width="100" height="100" viewBox="0 0 45 45" xmlns="http://www.w3.org/2000/svg" stroke="#fff">\n      <g fill="none" fill-rule="evenodd" transform="translate(1 1)" stroke-width="2">\n          <circle cx="22" cy="22" r="6" stroke-opacity="0">\n              <animate attributeName="r"\n                   begin="1.5s" dur="3s"\n                   values="6;22"\n                   calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-opacity"\n                   begin="1.5s" dur="3s"\n                   values="1;0" calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-width"\n                   begin="1.5s" dur="3s"\n                   values="2;0" calcMode="linear"\n                   repeatCount="indefinite" />\n          </circle>\n          <circle cx="22" cy="22" r="6" stroke-opacity="0">\n              <animate attributeName="r"\n                   begin="3s" dur="3s"\n                   values="6;22"\n                   calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-opacity"\n                   begin="3s" dur="3s"\n                   values="1;0" calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-width"\n                   begin="3s" dur="3s"\n                   values="2;0" calcMode="linear"\n                   repeatCount="indefinite" />\n          </circle>\n          <circle cx="22" cy="22" r="8">\n              <animate attributeName="r"\n                   begin="0s" dur="1.5s"\n                   values="6;1;2;3;4;5;6"\n                   calcMode="linear"\n                   repeatCount="indefinite" />\n          </circle>\n      </g>\n  </svg>';function debounce(e,t,n){var a;return function(){var r=this,i=arguments,c=n&&!a;clearTimeout(a),a=setTimeout((function(){a=null,n||e.apply(r,i)}),t),c&&e.apply(r,i)}}function setCorrectShortcut(){navigator.platform.toUpperCase().indexOf("MAC")>=0&&document.querySelectorAll(".search-keys").forEach((e=>e.innerHTML="⌘ + K"))}function createIndex(e){const t=e=>e.toLowerCase().split(/([^a-z]|[^\x00-\x7F])/),n=new FlexSearch.Document({cache:!0,charset:"latin:extra",optimize:!0,index:[{field:"content",tokenize:"reverse",encode:t},{field:"title",tokenize:"forward",encode:t},{field:"tags",tokenize:"forward",encode:t}]});return e.forEach(((e,t)=>{n.add({id:t,title:e.title,content:e.content,tags:e.tags})})),n}async function init(){let e=!0;if(localStorage.getItem("searchIndex")){let{date:t,docs:n}=JSON.parse(localStorage.getItem("searchIndex"));if("2024-12-17T13:36:26.725Z"===t){e=!1;let t=createIndex(n);window.docs=n,window.index=t}}if(e){let e=await(await fetch("/searchIndex.json?v=2024-12-17T13:36:26.725Z")).json(),t=createIndex(e);localStorage.setItem("searchIndex",JSON.stringify({date:"2024-12-17T13:36:26.725Z",docs:e})),window.docs=e,window.index=t}document.addEventListener("keydown",(e=>{if((e.ctrlKey||e.metaKey)&&"k"===e.key&&(e.preventDefault(),toggleSearch()),"Escape"===e.key&&document.getElementById("globalsearch").classList.remove("active"),document.getElementById("globalsearch").classList.contains("active")){if("ArrowDown"===e.key){e.preventDefault();let t=document.querySelector(".searchresult.active");t?(t.classList.remove("active"),t.nextElementSibling?t.nextElementSibling.classList.add("active"):document.querySelector(".searchresult").classList.add("active")):document.querySelector(".searchresult").classList.add("active");let n=document.querySelector(".searchresult.active");n&&n.scrollIntoView({behavior:"smooth",block:"nearest",inline:"start"})}if("ArrowUp"===e.key){e.preventDefault();let t=document.querySelector(".searchresult.active");t?(t.classList.remove("active"),t.previousElementSibling?t.previousElementSibling.classList.add("active"):document.querySelectorAll(".searchresult").forEach((e=>{e.nextElementSibling||e.classList.add("active")}))):document.querySelectorAll(".searchresult").forEach((e=>{e.nextElementSibling&&e.classList.add("active")}));let n=document.querySelector(".searchresult.active");n&&n.scrollIntoView({behavior:"smooth",block:"nearest",inline:"start"})}if("Enter"===e.key){e.preventDefault();let t=document.querySelector(".searchresult.active");t&&(window.location.href=t.querySelector("a").href)}}}));const t=debounce(search,200,!1);field=document.querySelector("#term"),field.addEventListener("keydown",(e=>{"ArrowDown"!==e.key&&"ArrowUp"!==e.key&&t()})),resultsDiv=document.querySelector("#search-results");const n=new URL(location.href).searchParams;n.get("q")&&(field.setAttribute("value",n.get("q")),toggleSearch(),search())}async function search(){let e=field.value.trim();if(!e)return;if(e==lastSearch)return;console.log(`search for ${e}`),window.lastSearch=e,resultsDiv.innerHTML=loadingSvg;let t=offlineSearch(e),n="";if(!t.length){let t=document.createElement("p");return t.innerText=`No results for "${e}"`,resultsDiv.innerHTML="",void resultsDiv.appendChild(t)}n+='<div style="max-width:100%;">',t.forEach((e=>{e.tags&&e.tags.length>0?n+=`<div class="searchresult">\n                    <a class="search-link" href="${e.url}">${e.title}</a>\n                    <div onclick="window.location='${e.url}'">\n                        <div class="header-meta">\n                            <div class="header-tags">\n                                ${e.tags.map((e=>'<a class="tag" href="JavaScript:Void(0);">#'+e+"</a>")).join("")}\n                            </div>\n                        </div>\n                        ${e.content}\n                    </div>\n                </div>`:n+=`<div class="searchresult">\n                    <a class="search-link" href="${e.url}">${e.title}</a>\n                    <div onclick="window.location='${e.url}'">\n                        ${e.content}\n                    </div>\n                </div>`})),n+="</div>",resultsDiv.innerHTML=n}function truncate(e,t){return(e=e.replaceAll(/<[^>]*>/g,"")).length<t?e:e.substring(0,t-3)+"..."}function offlineSearch(e){let t=window.docs,n="#"===e[0]&&e.length>1?index.search(e.substring(1),[{field:"tags"}]):index.search(e,[{field:"title",limit:5},{field:"content",weight:10}]);const a=e=>{const t=n.filter((t=>t.field===e));return 0===t.length?[]:[...t[0].result]};return[...new Set([...a("title"),...a("content"),...a("tags")])].map((e=>{let n=t[e];return n.content=truncate(n.content,400),n.tags=n.tags.filter((e=>"gardenEntry"!=e&&"note"!=e)),n}))}window.lastSearch=""</script>
+<script>document.addEventListener("DOMContentLoaded",init,!1),document.addEventListener("DOMContentLoaded",setCorrectShortcut,!1),window.toggleSearch=function(){document.getElementById("globalsearch").classList.contains("active")?document.getElementById("globalsearch").classList.remove("active"):(document.getElementById("globalsearch").classList.add("active"),document.getElementById("term").focus())},window.toggleTagSearch=function(e){console.log(e.textContent);const t=e.textContent;t&&(window.document.getElementById("term").value=t.trim(),window.toggleSearch(),window.search())};const loadingSvg='\n    <svg width="100" height="100" viewBox="0 0 45 45" xmlns="http://www.w3.org/2000/svg" stroke="#fff">\n      <g fill="none" fill-rule="evenodd" transform="translate(1 1)" stroke-width="2">\n          <circle cx="22" cy="22" r="6" stroke-opacity="0">\n              <animate attributeName="r"\n                   begin="1.5s" dur="3s"\n                   values="6;22"\n                   calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-opacity"\n                   begin="1.5s" dur="3s"\n                   values="1;0" calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-width"\n                   begin="1.5s" dur="3s"\n                   values="2;0" calcMode="linear"\n                   repeatCount="indefinite" />\n          </circle>\n          <circle cx="22" cy="22" r="6" stroke-opacity="0">\n              <animate attributeName="r"\n                   begin="3s" dur="3s"\n                   values="6;22"\n                   calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-opacity"\n                   begin="3s" dur="3s"\n                   values="1;0" calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-width"\n                   begin="3s" dur="3s"\n                   values="2;0" calcMode="linear"\n                   repeatCount="indefinite" />\n          </circle>\n          <circle cx="22" cy="22" r="8">\n              <animate attributeName="r"\n                   begin="0s" dur="1.5s"\n                   values="6;1;2;3;4;5;6"\n                   calcMode="linear"\n                   repeatCount="indefinite" />\n          </circle>\n      </g>\n  </svg>';function debounce(e,t,n){var a;return function(){var r=this,i=arguments,c=n&&!a;clearTimeout(a),a=setTimeout((function(){a=null,n||e.apply(r,i)}),t),c&&e.apply(r,i)}}function setCorrectShortcut(){navigator.platform.toUpperCase().indexOf("MAC")>=0&&document.querySelectorAll(".search-keys").forEach((e=>e.innerHTML="⌘ + K"))}function createIndex(e){const t=e=>e.toLowerCase().split(/([^a-z]|[^\x00-\x7F])/),n=new FlexSearch.Document({cache:!0,charset:"latin:extra",optimize:!0,index:[{field:"content",tokenize:"reverse",encode:t},{field:"title",tokenize:"forward",encode:t},{field:"tags",tokenize:"forward",encode:t}]});return e.forEach(((e,t)=>{n.add({id:t,title:e.title,content:e.content,tags:e.tags})})),n}async function init(){let e=!0;if(localStorage.getItem("searchIndex")){let{date:t,docs:n}=JSON.parse(localStorage.getItem("searchIndex"));if("2024-12-23T06:52:10.978Z"===t){e=!1;let t=createIndex(n);window.docs=n,window.index=t}}if(e){let e=await(await fetch("/searchIndex.json?v=2024-12-23T06:52:10.978Z")).json(),t=createIndex(e);localStorage.setItem("searchIndex",JSON.stringify({date:"2024-12-23T06:52:10.978Z",docs:e})),window.docs=e,window.index=t}document.addEventListener("keydown",(e=>{if((e.ctrlKey||e.metaKey)&&"k"===e.key&&(e.preventDefault(),toggleSearch()),"Escape"===e.key&&document.getElementById("globalsearch").classList.remove("active"),document.getElementById("globalsearch").classList.contains("active")){if("ArrowDown"===e.key){e.preventDefault();let t=document.querySelector(".searchresult.active");t?(t.classList.remove("active"),t.nextElementSibling?t.nextElementSibling.classList.add("active"):document.querySelector(".searchresult").classList.add("active")):document.querySelector(".searchresult").classList.add("active");let n=document.querySelector(".searchresult.active");n&&n.scrollIntoView({behavior:"smooth",block:"nearest",inline:"start"})}if("ArrowUp"===e.key){e.preventDefault();let t=document.querySelector(".searchresult.active");t?(t.classList.remove("active"),t.previousElementSibling?t.previousElementSibling.classList.add("active"):document.querySelectorAll(".searchresult").forEach((e=>{e.nextElementSibling||e.classList.add("active")}))):document.querySelectorAll(".searchresult").forEach((e=>{e.nextElementSibling&&e.classList.add("active")}));let n=document.querySelector(".searchresult.active");n&&n.scrollIntoView({behavior:"smooth",block:"nearest",inline:"start"})}if("Enter"===e.key){e.preventDefault();let t=document.querySelector(".searchresult.active");t&&(window.location.href=t.querySelector("a").href)}}}));const t=debounce(search,200,!1);field=document.querySelector("#term"),field.addEventListener("keydown",(e=>{"ArrowDown"!==e.key&&"ArrowUp"!==e.key&&t()})),resultsDiv=document.querySelector("#search-results");const n=new URL(location.href).searchParams;n.get("q")&&(field.setAttribute("value",n.get("q")),toggleSearch(),search())}async function search(){let e=field.value.trim();if(!e)return;if(e==lastSearch)return;console.log(`search for ${e}`),window.lastSearch=e,resultsDiv.innerHTML=loadingSvg;let t=offlineSearch(e),n="";if(!t.length){let t=document.createElement("p");return t.innerText=`No results for "${e}"`,resultsDiv.innerHTML="",void resultsDiv.appendChild(t)}n+='<div style="max-width:100%;">',t.forEach((e=>{e.tags&&e.tags.length>0?n+=`<div class="searchresult">\n                    <a class="search-link" href="${e.url}">${e.title}</a>\n                    <div onclick="window.location='${e.url}'">\n                        <div class="header-meta">\n                            <div class="header-tags">\n                                ${e.tags.map((e=>'<a class="tag" href="JavaScript:Void(0);">#'+e+"</a>")).join("")}\n                            </div>\n                        </div>\n                        ${e.content}\n                    </div>\n                </div>`:n+=`<div class="searchresult">\n                    <a class="search-link" href="${e.url}">${e.title}</a>\n                    <div onclick="window.location='${e.url}'">\n                        ${e.content}\n                    </div>\n                </div>`})),n+="</div>",resultsDiv.innerHTML=n}function truncate(e,t){return(e=e.replaceAll(/<[^>]*>/g,"")).length<t?e:e.substring(0,t-3)+"..."}function offlineSearch(e){let t=window.docs,n="#"===e[0]&&e.length>1?index.search(e.substring(1),[{field:"tags"}]):index.search(e,[{field:"title",limit:5},{field:"content",weight:10}]);const a=e=>{const t=n.filter((t=>t.field===e));return 0===t.length?[]:[...t[0].result]};return[...new Set([...a("title"),...a("content"),...a("tags")])].map((e=>{let n=t[e];return n.content=truncate(n.content,400),n.tags=n.tags.filter((e=>"gardenEntry"!=e&&"note"!=e)),n}))}window.lastSearch=""</script>
 <main class="content cm-s-obsidian">
 <header>
 <h1 data-note-icon="">400-Python高级语法</h1>
@@ -2212,7 +2215,7 @@ CTRL + K
 <li>正则表达式</li>
 </ol>
 <div class="transclusion internal-embed is-loaded"><a class="markdown-embed-link" href="/czc//python/python/python/401-with/" aria-label="Open link"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a><div class="markdown-embed">
-<h1 id="写在前面" tabindex="-1">写在前面</h1>
+<h2 id="写在前面" tabindex="-1">写在前面</h2>
 <p>老的文件操作方法：</p>
 <pre><code class="language-python"># 写入模式打开文件
 f = open(&quot;1.txt&quot;, &quot;w&quot;)
@@ -2233,7 +2236,12 @@ f.close()
 <p>由于文件读写时都有可能产生IOError，一旦出错，后面的<strong>f.close()就不会调用</strong>，这里就会造成资源浪费（会占用系统资源）</p>
 <p>对此问题，可以用try...except...语句来解决</p>
 <p>但是最好的方案是使用with语句（高级语法，代码简化）</p>
-<h1 id="with" tabindex="-1">with语句和上下文管理器</h1>
+<h2 id="with" tabindex="-1">with语句和上下文管理器</h2>
+<p>上下文管理器和with语句的定义</p>
+<ul>
+<li>上下文管理器：上下文管理器是Python中的一个协议，用于管理资源的生命周期，例如文件的打开和关闭、数据库的连接和断开等</li>
+<li>with语句：with语句用于管理上下文管理器，在文件操作中，with语句可以自动管理文件的打开和关闭，避免忘记关闭文件导致资源泄露</li>
+</ul>
 <p>Python提供了 with 语句的写法，既简单又安全。</p>
 <p>文件操作的时候使用with语句可以自动调用关闭文件操作，即使出现异常也会自动关闭文件操作。</p>
 <p>使用with方法实现文件操作，如下所示：</p>
@@ -2242,18 +2250,160 @@ with open('1.txt', 'w') as f:
     # 2、读取文件内容
     f.write('Ikun')
 </code></pre>
-<h2 id="上下文管理器" tabindex="-1">上下文管理器</h2>
+<h3 id="上下文管理器" tabindex="-1">上下文管理器</h3>
 <p>当使用with语句后，就会自动创建上文管理器(<code>__enter()__</code>)和下文管理器(<code>__exit()__</code>)</p>
 <p><code>__enter()__</code>：<code>f = open(&quot;1.txt&quot;, &quot;w&quot;)</code><br>
 <code>__exit()__</code>：<code>f.close()</code></p>
 </div></div>
 <div class="transclusion internal-embed is-loaded"><a class="markdown-embed-link" href="/czc//python/python/python/402-python/" aria-label="Open link"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a><div class="markdown-embed">
 <h2 id="生成器是什么" tabindex="-1">生成器是什么</h2>
-<p>根据程序设计者制定的规则循环生成数据，当条件不成立时则生成数据结束<br>
-数据不是一次性全部生成出来，而是使用一个，再生成一个，可以节约大量的内存。</p>
+<p>根据程序设计者制定的规则循环生成数据，当条件不成立时则生成数据结束</p>
+<h3 id="作用" tabindex="-1">作用</h3>
+<p>数据不是一次性全部生成出来，而是使用一个，再生成一个，<strong>可以节约大量的内存，降低程序运行消耗时间</strong>。</p>
 <h2 id="创建生成器的方式" tabindex="-1">创建生成器的方式</h2>
-<p>① 生成器推导式<br>
-② yield 关键字</p>
+<p>① <strong>推导式</strong> 生成器<br>
+② <strong>yield</strong> 关键字生成器</p>
+<h2 id="推导式生成器" tabindex="-1">推导式生成器</h2>
+<p>与<strong>列表推导式</strong>类似，只不过生成器推导式使用小括号。<br>
+<a class="internal-link" target="" data-note-icon="" href="/czc知识库/计算机/Python/python学习/①python基础/109-推导式（数据容器）/">109-推导式（数据容器）</a></p>
+<pre><code class="language-python"># 创建生成器
+my_generator = (i * 2 for i in range(5))
+print(my_generator)
+</code></pre>
+<p><code>(i * 2 for i in range(5))</code>是生成器<br>
+<code>[i * 2 for i in range(5)]</code>是直接生成现成的列表</p>
+<p><code>(i * 2 for i in range(5))</code>本质是一个对象，其中没有02468这些数据，只有数据生成的规则<br>
+如果打印<code>my_generator</code>，那么打印的只是这个对象的内存地址</p>
+<pre><code class="language-python"># next 获取生成器下一个值
+value = next(my_generator)
+print(value)
+</code></pre>
+<ul>
+<li>使用next()函数获取生成器的元素：<br>
+生成器中有一个关键的函数：next()，每调用一次就会根据规则创建一个元素，然后向后移动，再次调用next()函数就会再生成一个元素</li>
+</ul>
+<pre><code># 遍历生成器
+for value in my_generator:
+    print(value)
+</code></pre>
+<ul>
+<li>for 循环遍历生成器中的每一个值</li>
+</ul>
+<h2 id="yield" tabindex="-1">yield生成器</h2>
+<h3 id="yield-1" tabindex="-1">yield生成器是啥</h3>
+<p>重点理解yield生成器的执行流程</p>
+<p>yield生成器结构：</p>
+<ol>
+<li>定义一个函数</li>
+<li>函数内部存在一个yield关键字<br>
+yield 关键字生成器的特征：在def函数中具有yield关键字</li>
+</ol>
+<p>当函数和yield组合在一起就叫做生成器，这个函数就不是函数了，就转变成了对象</p>
+<h3 id="代码演示：" tabindex="-1">代码演示：</h3>
+<h4 id="next" tabindex="-1">用next函数获取生成器的元素</h4>
+<pre><code class="language-python">def generator(n):
+    for i in range(n):
+        print('开始生成数据')
+        yield i  # 暂时可以把yield当成return理解，每次遇到yield，生成器就相当于执行一次（生成循环执行到yield后就暂停，后面在调用就从这里继续执行，意思就是'完成一次数据生成'这句话会在第二次生成的时候打印）
+        print('完成一次数据生成')
+
+# 使用时，由于生成器需要传递参数，所以通常将其赋予给某个变量
+g = generator(5)
+# 如果print(generator(5))，输出的是对象的内存地址
+print(next(g))
+print(next(g))
+print(next(g))
+print(next(g))
+print(next(g))				-----&gt;    正常
+print(next(g))  			-----&gt;    报错
+Traceback (most recent call last):
+  File &quot;/Users/cndws/PycharmProjects/pythonProject/demo.py&quot;, line 14, in &lt;module&gt;
+    print(next(g))
+StopIteration（到达边界）
+但是这里执行第六次next()会把'完成一次数据生成'这句打印出来
+</code></pre>
+<h4 id="for" tabindex="-1">用for循环遍历生成器的元素</h4>
+<p>for循环的好处：可以避免上面出现的到达边界的错误</p>
+<pre><code class="language-python">def generator(n):
+    for i in range(n):
+        print('开始生成...')
+        yield i
+        print('完成一次...')
+        
+g = generator(5)
+for i in g:
+    print(i)
+</code></pre>
+<h4 id="while-try-except" tabindex="-1">使用while循环+try...except语句获取生成器元素</h4>
+<p>这样同样可以避免到达边界的错误</p>
+<pre><code class="language-python">def generator(n):
+    for i in range(n):
+        print('开始生成...')
+        yield i
+        print('完成一次...')
+        
+g = generator(5)
+while True:
+    try:
+        print(next(g))
+    except StopIteration:
+        break
+</code></pre>
+<h3 id="yield-return" tabindex="-1">yield关键字和return关键字</h3>
+<p>如果不太好理解<code>yield</code>，可以先把<code>yield</code>当作<code>return</code>的同胞兄弟来看，他们都在函数中使用，并履行着返回某种结果的职责。</p>
+<p>这两者的区别是：</p>
+<p>有<code>return</code>的函数直接返回所有结果，程序终止不再运行，并销毁局部变量；</p>
+<pre><code class="language-python">def example():
+    x = 1
+    return x
+
+example = example()
+print(example)
+</code></pre>
+<p>而有<code>yield</code>的函数则返回一个可迭代的 generator（生成器）对象，你可以使用for循环或者调用next()方法遍历生成器对象来提取结果。</p>
+<pre><code class="language-python">def example():
+    x = 1
+    y = 10
+    while x &lt; y:
+        yield x
+        x += 1
+
+example = example()
+print(example)
+</code></pre>
+<h2 id="生成器的现实应用案例" tabindex="-1">生成器的现实应用案例</h2>
+<p>斐波那契数列：数学中的一个概念，是一组有规律的数字！<br>
+1 1 2 3 5 8 13 21 34 55 ...<br>
+规律：<br>
+隐藏了一个元素 =&gt; 0<br>
+第1个元素为1<br>
+第2个元素为1，第2个元素为1，实际上是由0 + 1 = 隐藏元素 + 第一个元素<br>
+第3个元素为2 = 1 + 1，第3个元素值 = 第2个元素值 + 第1个元素值<br>
+第4个元素为3 = 2 + 1，第4个元素值 = 第3个元素值 + 第2个元素值<br>
+刚好满足：数据量比较大，而且还要经过大量的计算 =&gt; 符合生成器的使用规则<br>
+0 1 1 2 3 5 8 13 21 34 55 ...<br>
+a变量代表，斐波那契数列中前一个元素，比如a可以代表0<br>
+b变量代表，斐波那契数列中后一个元素，比如b可以代表1<br>
+a,b是相邻的两个元素</p>
+<pre><code class="language-python">def fib(max):  # 求max位斐波那契数列 =&gt; 前max位斐波那契数列的每个值
+    n, a, b = 0, 0, 1
+    while n &lt; max:
+        yield b  # 第一次循环，弹出一个1
+        # 想个办法，让第二次yield b，弹出一个1，第三次yield b，弹出一个2
+        # a = 0， b = 1
+        a, b = b, a + b
+        # a = 1, b = 1
+        n += 1
+
+result = fib(50)
+for i in result:
+    print(i)
+</code></pre>
+<h2 id="使用生成器的注意事项：" tabindex="-1">使用生成器的注意事项：</h2>
+<p>① 代码执行到 yield 会暂停，然后把结果返回出去，下次启动生成器会在暂停的位置继续往下执行</p>
+<p>② 生成器如果把数据生成完成，再次获取生成器中的下一个数据会抛出一个StopIteration 异常，表示停止迭代异常</p>
+<p>③ while 循环内部没有处理异常操作，需要手动添加处理异常操作</p>
+<p>④ for 循环内部自动处理了停止迭代异常，使用起来更加方便，推荐大家使用。</p>
 </div></div>
 </main>
 <aside>
@@ -2302,11 +2452,39 @@ On this page
 <ol>
 <li><a href="#上下文管理器">上下文管理器</a>
 </li>
+</ol>
+</li>
 <li><a href="#生成器是什么">生成器是什么</a>
+<ol>
+<li><a href="#作用">作用</a>
+</li>
+</ol>
 </li>
 <li><a href="#创建生成器的方式">创建生成器的方式</a>
 </li>
+<li><a href="#推导式生成器">推导式生成器</a>
+</li>
+<li><a href="#yield">yield生成器</a>
+<ol>
+<li><a href="#yield-1">yield生成器是啥</a>
+</li>
+<li><a href="#代码演示：">代码演示：</a>
+<ol>
+<li><a href="#next">用next函数获取生成器的元素</a>
+</li>
+<li><a href="#for">用for循环遍历生成器的元素</a>
+</li>
+<li><a href="#while-try-except">使用while循环+try...except语句获取生成器元素</a>
+</li>
 </ol>
+</li>
+<li><a href="#yield-return">yield关键字和return关键字</a>
+</li>
+</ol>
+</li>
+<li><a href="#生成器的现实应用案例">生成器的现实应用案例</a>
+</li>
+<li><a href="#使用生成器的注意事项：">使用生成器的注意事项：</a>
 </li>
 </ol>
 </nav>
@@ -2314,8 +2492,8 @@ On this page
 </div>
 <div class="backlinks">
 <div class="backlink-title" style="margin:4px 0!important">Pages mentioning this page</div>
-<div class="backlink-list"><div class="backlink-card"><i icon-name="link"></i><a href="/czc知识库/计算机/Python/python学习/③python高级/③python高级/" data-note-icon="" class="backlink">③python高级</a>
-</div><div class="backlink-card"><i icon-name="link"></i><a href="/czc知识库/最近更新的笔记/" data-note-icon="" class="backlink">最近更新的笔记</a>
+<div class="backlink-list"><div class="backlink-card"><i icon-name="link"></i><a href="/czc知识库/最近更新的笔记/" data-note-icon="" class="backlink">最近更新的笔记</a>
+</div><div class="backlink-card"><i icon-name="link"></i><a href="/czc知识库/计算机/Python/python学习/③python高级/③python高级/" data-note-icon="" class="backlink">③python高级</a>
 </div></div>
 </div>
 </div>

@@ -579,10 +579,6 @@ CTRL + K
 </div>
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
-<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/硕士研究生/科研/文献阅读笔记/懒人专用ai文献翻译提示词prompt/">懒人专用ai文献翻译提示词prompt </a>
-</div>
-</div>
-<div x-show="isOpen" style="display:none" class="filelist">
 <div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/硕士研究生/科研/文献阅读笔记/文献阅读笔记/">文献阅读笔记 </a>
 </div>
 </div>
@@ -701,6 +697,23 @@ CTRL + K
 <i x-show="isOpen" style="display:none" icon-name="chevron-down"></i>
 <i x-show="!isOpen" icon-name="chevron-right"></i>
 <span class="foldername">笔记</span>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div class="folder inner-folder" x-data="{isOpen: $persist(false).as('czc知识库/笔记/prompt')}" @click.stop="isOpen=!isOpen">
+<div class="foldername-wrapper align-icon">
+<i x-show="isOpen" style="display:none" icon-name="chevron-down"></i>
+<i x-show="!isOpen" icon-name="chevron-right"></i>
+<span class="foldername">prompt</span>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/笔记/prompt/prompt/">prompt </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/笔记/prompt/文献翻译提示词prompt/">文献翻译提示词prompt </a>
+</div>
+</div>
+</div>
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
 <div class="folder inner-folder" x-data="{isOpen: $persist(false).as('czc知识库/笔记/不分类')}" @click.stop="isOpen=!isOpen">
@@ -1350,6 +1363,14 @@ CTRL + K
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
 <div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/计算机/Python/python学习/③python高级/402-Python生成器/">402-Python生成器 </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/计算机/Python/python学习/③python高级/403-Python中的深浅拷贝/">403-Python中的深浅拷贝 </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/计算机/Python/python学习/③python高级/404-正则表达式/">404-正则表达式 </a>
 </div>
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
@@ -2092,28 +2113,6 @@ CTRL + K
 <span class="foldername">编程</span>
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
-<div class="folder inner-folder" x-data="{isOpen: $persist(false).as('czc知识库/计算机/编程/软件开发笔记')}" @click.stop="isOpen=!isOpen">
-<div class="foldername-wrapper align-icon">
-<i x-show="isOpen" style="display:none" icon-name="chevron-down"></i>
-<i x-show="!isOpen" icon-name="chevron-right"></i>
-<span class="foldername">软件开发笔记</span>
-</div>
-<div x-show="isOpen" style="display:none" class="filelist">
-<div class="folder inner-folder" x-data="{isOpen: $persist(false).as('czc知识库/计算机/编程/软件开发笔记/AndroZoo数据集下载器')}" @click.stop="isOpen=!isOpen">
-<div class="foldername-wrapper align-icon">
-<i x-show="isOpen" style="display:none" icon-name="chevron-down"></i>
-<i x-show="!isOpen" icon-name="chevron-right"></i>
-<span class="foldername">AndroZoo数据集下载器</span>
-</div>
-<div x-show="isOpen" style="display:none" class="filelist">
-<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/计算机/编程/软件开发笔记/AndroZoo数据集下载器/笔记：AndroZoo数据集下载程序 筛选超大csv文件 制作下载链接 多线程下载 apk文件 python笔记/">笔记：AndroZoo数据集下载程序 筛选超大csv文件 制作下载链接 多线程下载 apk文件 python笔记 </a>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div x-show="isOpen" style="display:none" class="filelist">
 <div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/计算机/编程/anaconda笔记/">anaconda笔记 </a>
 </div>
 </div>
@@ -2159,6 +2158,10 @@ CTRL + K
 <div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/">主页 </a>
 </div>
 </div>
+<div x-show="isOpen" style="display:none" class="">
+<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/公共类/">公共类 </a>
+</div>
+</div>
 </div>
 </nav>
 </div>
@@ -2182,19 +2185,19 @@ CTRL + K
 </div>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/flexsearch@0.7.21/dist/flexsearch.bundle.js"></script>
-<script>document.addEventListener("DOMContentLoaded",init,!1),document.addEventListener("DOMContentLoaded",setCorrectShortcut,!1),window.toggleSearch=function(){document.getElementById("globalsearch").classList.contains("active")?document.getElementById("globalsearch").classList.remove("active"):(document.getElementById("globalsearch").classList.add("active"),document.getElementById("term").focus())},window.toggleTagSearch=function(e){console.log(e.textContent);const t=e.textContent;t&&(window.document.getElementById("term").value=t.trim(),window.toggleSearch(),window.search())};const loadingSvg='\n    <svg width="100" height="100" viewBox="0 0 45 45" xmlns="http://www.w3.org/2000/svg" stroke="#fff">\n      <g fill="none" fill-rule="evenodd" transform="translate(1 1)" stroke-width="2">\n          <circle cx="22" cy="22" r="6" stroke-opacity="0">\n              <animate attributeName="r"\n                   begin="1.5s" dur="3s"\n                   values="6;22"\n                   calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-opacity"\n                   begin="1.5s" dur="3s"\n                   values="1;0" calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-width"\n                   begin="1.5s" dur="3s"\n                   values="2;0" calcMode="linear"\n                   repeatCount="indefinite" />\n          </circle>\n          <circle cx="22" cy="22" r="6" stroke-opacity="0">\n              <animate attributeName="r"\n                   begin="3s" dur="3s"\n                   values="6;22"\n                   calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-opacity"\n                   begin="3s" dur="3s"\n                   values="1;0" calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-width"\n                   begin="3s" dur="3s"\n                   values="2;0" calcMode="linear"\n                   repeatCount="indefinite" />\n          </circle>\n          <circle cx="22" cy="22" r="8">\n              <animate attributeName="r"\n                   begin="0s" dur="1.5s"\n                   values="6;1;2;3;4;5;6"\n                   calcMode="linear"\n                   repeatCount="indefinite" />\n          </circle>\n      </g>\n  </svg>';function debounce(e,t,n){var a;return function(){var r=this,i=arguments,c=n&&!a;clearTimeout(a),a=setTimeout((function(){a=null,n||e.apply(r,i)}),t),c&&e.apply(r,i)}}function setCorrectShortcut(){navigator.platform.toUpperCase().indexOf("MAC")>=0&&document.querySelectorAll(".search-keys").forEach((e=>e.innerHTML="⌘ + K"))}function createIndex(e){const t=e=>e.toLowerCase().split(/([^a-z]|[^\x00-\x7F])/),n=new FlexSearch.Document({cache:!0,charset:"latin:extra",optimize:!0,index:[{field:"content",tokenize:"reverse",encode:t},{field:"title",tokenize:"forward",encode:t},{field:"tags",tokenize:"forward",encode:t}]});return e.forEach(((e,t)=>{n.add({id:t,title:e.title,content:e.content,tags:e.tags})})),n}async function init(){let e=!0;if(localStorage.getItem("searchIndex")){let{date:t,docs:n}=JSON.parse(localStorage.getItem("searchIndex"));if("2024-12-17T13:36:26.725Z"===t){e=!1;let t=createIndex(n);window.docs=n,window.index=t}}if(e){let e=await(await fetch("/searchIndex.json?v=2024-12-17T13:36:26.725Z")).json(),t=createIndex(e);localStorage.setItem("searchIndex",JSON.stringify({date:"2024-12-17T13:36:26.725Z",docs:e})),window.docs=e,window.index=t}document.addEventListener("keydown",(e=>{if((e.ctrlKey||e.metaKey)&&"k"===e.key&&(e.preventDefault(),toggleSearch()),"Escape"===e.key&&document.getElementById("globalsearch").classList.remove("active"),document.getElementById("globalsearch").classList.contains("active")){if("ArrowDown"===e.key){e.preventDefault();let t=document.querySelector(".searchresult.active");t?(t.classList.remove("active"),t.nextElementSibling?t.nextElementSibling.classList.add("active"):document.querySelector(".searchresult").classList.add("active")):document.querySelector(".searchresult").classList.add("active");let n=document.querySelector(".searchresult.active");n&&n.scrollIntoView({behavior:"smooth",block:"nearest",inline:"start"})}if("ArrowUp"===e.key){e.preventDefault();let t=document.querySelector(".searchresult.active");t?(t.classList.remove("active"),t.previousElementSibling?t.previousElementSibling.classList.add("active"):document.querySelectorAll(".searchresult").forEach((e=>{e.nextElementSibling||e.classList.add("active")}))):document.querySelectorAll(".searchresult").forEach((e=>{e.nextElementSibling&&e.classList.add("active")}));let n=document.querySelector(".searchresult.active");n&&n.scrollIntoView({behavior:"smooth",block:"nearest",inline:"start"})}if("Enter"===e.key){e.preventDefault();let t=document.querySelector(".searchresult.active");t&&(window.location.href=t.querySelector("a").href)}}}));const t=debounce(search,200,!1);field=document.querySelector("#term"),field.addEventListener("keydown",(e=>{"ArrowDown"!==e.key&&"ArrowUp"!==e.key&&t()})),resultsDiv=document.querySelector("#search-results");const n=new URL(location.href).searchParams;n.get("q")&&(field.setAttribute("value",n.get("q")),toggleSearch(),search())}async function search(){let e=field.value.trim();if(!e)return;if(e==lastSearch)return;console.log(`search for ${e}`),window.lastSearch=e,resultsDiv.innerHTML=loadingSvg;let t=offlineSearch(e),n="";if(!t.length){let t=document.createElement("p");return t.innerText=`No results for "${e}"`,resultsDiv.innerHTML="",void resultsDiv.appendChild(t)}n+='<div style="max-width:100%;">',t.forEach((e=>{e.tags&&e.tags.length>0?n+=`<div class="searchresult">\n                    <a class="search-link" href="${e.url}">${e.title}</a>\n                    <div onclick="window.location='${e.url}'">\n                        <div class="header-meta">\n                            <div class="header-tags">\n                                ${e.tags.map((e=>'<a class="tag" href="JavaScript:Void(0);">#'+e+"</a>")).join("")}\n                            </div>\n                        </div>\n                        ${e.content}\n                    </div>\n                </div>`:n+=`<div class="searchresult">\n                    <a class="search-link" href="${e.url}">${e.title}</a>\n                    <div onclick="window.location='${e.url}'">\n                        ${e.content}\n                    </div>\n                </div>`})),n+="</div>",resultsDiv.innerHTML=n}function truncate(e,t){return(e=e.replaceAll(/<[^>]*>/g,"")).length<t?e:e.substring(0,t-3)+"..."}function offlineSearch(e){let t=window.docs,n="#"===e[0]&&e.length>1?index.search(e.substring(1),[{field:"tags"}]):index.search(e,[{field:"title",limit:5},{field:"content",weight:10}]);const a=e=>{const t=n.filter((t=>t.field===e));return 0===t.length?[]:[...t[0].result]};return[...new Set([...a("title"),...a("content"),...a("tags")])].map((e=>{let n=t[e];return n.content=truncate(n.content,400),n.tags=n.tags.filter((e=>"gardenEntry"!=e&&"note"!=e)),n}))}window.lastSearch=""</script>
+<script>document.addEventListener("DOMContentLoaded",init,!1),document.addEventListener("DOMContentLoaded",setCorrectShortcut,!1),window.toggleSearch=function(){document.getElementById("globalsearch").classList.contains("active")?document.getElementById("globalsearch").classList.remove("active"):(document.getElementById("globalsearch").classList.add("active"),document.getElementById("term").focus())},window.toggleTagSearch=function(e){console.log(e.textContent);const t=e.textContent;t&&(window.document.getElementById("term").value=t.trim(),window.toggleSearch(),window.search())};const loadingSvg='\n    <svg width="100" height="100" viewBox="0 0 45 45" xmlns="http://www.w3.org/2000/svg" stroke="#fff">\n      <g fill="none" fill-rule="evenodd" transform="translate(1 1)" stroke-width="2">\n          <circle cx="22" cy="22" r="6" stroke-opacity="0">\n              <animate attributeName="r"\n                   begin="1.5s" dur="3s"\n                   values="6;22"\n                   calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-opacity"\n                   begin="1.5s" dur="3s"\n                   values="1;0" calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-width"\n                   begin="1.5s" dur="3s"\n                   values="2;0" calcMode="linear"\n                   repeatCount="indefinite" />\n          </circle>\n          <circle cx="22" cy="22" r="6" stroke-opacity="0">\n              <animate attributeName="r"\n                   begin="3s" dur="3s"\n                   values="6;22"\n                   calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-opacity"\n                   begin="3s" dur="3s"\n                   values="1;0" calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-width"\n                   begin="3s" dur="3s"\n                   values="2;0" calcMode="linear"\n                   repeatCount="indefinite" />\n          </circle>\n          <circle cx="22" cy="22" r="8">\n              <animate attributeName="r"\n                   begin="0s" dur="1.5s"\n                   values="6;1;2;3;4;5;6"\n                   calcMode="linear"\n                   repeatCount="indefinite" />\n          </circle>\n      </g>\n  </svg>';function debounce(e,t,n){var a;return function(){var r=this,i=arguments,c=n&&!a;clearTimeout(a),a=setTimeout((function(){a=null,n||e.apply(r,i)}),t),c&&e.apply(r,i)}}function setCorrectShortcut(){navigator.platform.toUpperCase().indexOf("MAC")>=0&&document.querySelectorAll(".search-keys").forEach((e=>e.innerHTML="⌘ + K"))}function createIndex(e){const t=e=>e.toLowerCase().split(/([^a-z]|[^\x00-\x7F])/),n=new FlexSearch.Document({cache:!0,charset:"latin:extra",optimize:!0,index:[{field:"content",tokenize:"reverse",encode:t},{field:"title",tokenize:"forward",encode:t},{field:"tags",tokenize:"forward",encode:t}]});return e.forEach(((e,t)=>{n.add({id:t,title:e.title,content:e.content,tags:e.tags})})),n}async function init(){let e=!0;if(localStorage.getItem("searchIndex")){let{date:t,docs:n}=JSON.parse(localStorage.getItem("searchIndex"));if("2024-12-23T06:52:10.978Z"===t){e=!1;let t=createIndex(n);window.docs=n,window.index=t}}if(e){let e=await(await fetch("/searchIndex.json?v=2024-12-23T06:52:10.978Z")).json(),t=createIndex(e);localStorage.setItem("searchIndex",JSON.stringify({date:"2024-12-23T06:52:10.978Z",docs:e})),window.docs=e,window.index=t}document.addEventListener("keydown",(e=>{if((e.ctrlKey||e.metaKey)&&"k"===e.key&&(e.preventDefault(),toggleSearch()),"Escape"===e.key&&document.getElementById("globalsearch").classList.remove("active"),document.getElementById("globalsearch").classList.contains("active")){if("ArrowDown"===e.key){e.preventDefault();let t=document.querySelector(".searchresult.active");t?(t.classList.remove("active"),t.nextElementSibling?t.nextElementSibling.classList.add("active"):document.querySelector(".searchresult").classList.add("active")):document.querySelector(".searchresult").classList.add("active");let n=document.querySelector(".searchresult.active");n&&n.scrollIntoView({behavior:"smooth",block:"nearest",inline:"start"})}if("ArrowUp"===e.key){e.preventDefault();let t=document.querySelector(".searchresult.active");t?(t.classList.remove("active"),t.previousElementSibling?t.previousElementSibling.classList.add("active"):document.querySelectorAll(".searchresult").forEach((e=>{e.nextElementSibling||e.classList.add("active")}))):document.querySelectorAll(".searchresult").forEach((e=>{e.nextElementSibling&&e.classList.add("active")}));let n=document.querySelector(".searchresult.active");n&&n.scrollIntoView({behavior:"smooth",block:"nearest",inline:"start"})}if("Enter"===e.key){e.preventDefault();let t=document.querySelector(".searchresult.active");t&&(window.location.href=t.querySelector("a").href)}}}));const t=debounce(search,200,!1);field=document.querySelector("#term"),field.addEventListener("keydown",(e=>{"ArrowDown"!==e.key&&"ArrowUp"!==e.key&&t()})),resultsDiv=document.querySelector("#search-results");const n=new URL(location.href).searchParams;n.get("q")&&(field.setAttribute("value",n.get("q")),toggleSearch(),search())}async function search(){let e=field.value.trim();if(!e)return;if(e==lastSearch)return;console.log(`search for ${e}`),window.lastSearch=e,resultsDiv.innerHTML=loadingSvg;let t=offlineSearch(e),n="";if(!t.length){let t=document.createElement("p");return t.innerText=`No results for "${e}"`,resultsDiv.innerHTML="",void resultsDiv.appendChild(t)}n+='<div style="max-width:100%;">',t.forEach((e=>{e.tags&&e.tags.length>0?n+=`<div class="searchresult">\n                    <a class="search-link" href="${e.url}">${e.title}</a>\n                    <div onclick="window.location='${e.url}'">\n                        <div class="header-meta">\n                            <div class="header-tags">\n                                ${e.tags.map((e=>'<a class="tag" href="JavaScript:Void(0);">#'+e+"</a>")).join("")}\n                            </div>\n                        </div>\n                        ${e.content}\n                    </div>\n                </div>`:n+=`<div class="searchresult">\n                    <a class="search-link" href="${e.url}">${e.title}</a>\n                    <div onclick="window.location='${e.url}'">\n                        ${e.content}\n                    </div>\n                </div>`})),n+="</div>",resultsDiv.innerHTML=n}function truncate(e,t){return(e=e.replaceAll(/<[^>]*>/g,"")).length<t?e:e.substring(0,t-3)+"..."}function offlineSearch(e){let t=window.docs,n="#"===e[0]&&e.length>1?index.search(e.substring(1),[{field:"tags"}]):index.search(e,[{field:"title",limit:5},{field:"content",weight:10}]);const a=e=>{const t=n.filter((t=>t.field===e));return 0===t.length?[]:[...t[0].result]};return[...new Set([...a("title"),...a("content"),...a("tags")])].map((e=>{let n=t[e];return n.content=truncate(n.content,400),n.tags=n.tags.filter((e=>"gardenEntry"!=e&&"note"!=e)),n}))}window.lastSearch=""</script>
 <main class="content cm-s-obsidian">
 <header>
 <h1 data-note-icon="">②python面向对象</h1>
 <div class="header-meta">
 <div class="header-tags">
 </div>
-<div class="timestamps"><div><i icon-name="calendar-plus"></i> <span class="human-date" data-date="2024-12-08T23:03:03.698+08:00"></span></div><div><i icon-name="calendar-clock"></i> <span class="human-date" data-date="2024-12-17T19:51:22.038+08:00"></span></div></div></div>
+<div class="timestamps"><div><i icon-name="calendar-plus"></i> <span class="human-date" data-date="2024-12-08T23:03:03.698+08:00"></span></div><div><i icon-name="calendar-clock"></i> <span class="human-date" data-date="2024-12-19T14:30:27.142+08:00"></span></div></div></div>
 </header>
-<p>这是czc的python系统学习之python面向对象</p>
+<p>这是czc的python系统学习之python面向对象学习笔记</p>
 <p>一定得深刻理解面向对象的思想，这是核心<br>
 怎么理解？别他妈总看有<a class="internal-link is-unresolved" href="/404" target="">防自学机制</a>的课本，去多实践，用面向对象的思想去编程，同时理解代码底层执行的步骤慢慢就能理解</p>
-<h1 id="笔记" tabindex="-1">笔记</h1>
+<h1 id="笔记目录" tabindex="-1">笔记目录</h1>
 <ul>
 <li><a class="internal-link" target="" data-note-icon="" href="/czc知识库/计算机/Python/python学习/②python面向对象/301-面向对象基本思想/">301-面向对象基本思想</a></li>
 <li><a class="internal-link" target="" data-note-icon="" href="/czc知识库/计算机/Python/python学习/②python面向对象/302-类/">302-类</a></li>
@@ -2207,6 +2210,1179 @@ CTRL + K
 <li><a class="internal-link" target="" data-note-icon="" href="/czc知识库/计算机/Python/python学习/②python面向对象/310-面向对象开发学生管理系统/">310-面向对象开发学生管理系统</a></li>
 <li><a class="internal-link" target="" data-note-icon="" href="/czc知识库/计算机/Python/python学习/②python面向对象/311-面向对象习题/">311-面向对象习题</a></li>
 </ul>
+<hr>
+<h1 id="一、面向对象基本思想" tabindex="-1">一、面向对象基本思想</h1>
+<h1 id="要学会啥？" tabindex="-1">要学会啥？</h1>
+<ul>
+<li>面向对象编程思想</li>
+<li>面向对象基本概念
+<ul>
+<li><strong>对象</strong></li>
+<li><strong>类</strong></li>
+</ul>
+</li>
+<li>添加和获取对象属性</li>
+<li>魔术方法（三个常见的init、str、del）</li>
+</ul>
+<h1 id="面向对象编程思想" tabindex="-1">面向对象编程思想</h1>
+<p>两个时代的两个产物，没有好坏之分，小系统用面向过程，团队开发用面向对象</p>
+<h2 id="编程思想" tabindex="-1">编程思想</h2>
+<p>所谓的编程思想，就是人们利用计算机来解决实际问题的一种思维方式，常见的编程思想有面向过程和面向对象，很多<br>
+计算机语言的语法各不相同，但是它们基本的编程思想却是差不多的，而Python是同时支持面向对象和面向过程的编<br>
+程语言！</p>
+<h2 id="面向过程编程思想" tabindex="-1">面向过程编程思想</h2>
+<p>自顶向下，逐步细化</p>
+<p>学生管理系统→while True→菜单→增删改查→具体def</p>
+<p>面向过程的核心：<strong>函数</strong></p>
+<h2 id="面向对象编程思想-1" tabindex="-1">面向对象编程思想</h2>
+<p>编程的的时候尽可能模拟世界</p>
+<p>面向对象第一步：找对象<br>
+面向对象第二部：找每个对象属性和方法<br>
+面向对象第三步：让对象执行相关功能</p>
+<h1 id="面向过程向面向对象思想迁移" tabindex="-1">面向过程向面向对象思想迁移</h1>
+<p>面向对象的核心思想是：不仅仅是简单的将功能进行封装（封装成函数），更是对调用该功能的主体进行封装，实现某个主体拥有多个功能，在使用的过程中，先得到对应的主体，再使用主体去实现相关的功能！</p>
+<h1 id="面试题：面向过程和面向对象的区别" tabindex="-1">面试题：面向过程和面向对象的区别</h1>
+<p>①都可以实现代码重用和模块化编程，面向对象的模块化更深，<strong>数据也更封闭和安全</strong><br>
+②面向对象的思维方式更加贴近现实生活，更容易解决<strong>大型的复杂的业务逻辑</strong>，适合团队开发<br>
+③从前期开发的角度来看，面向对象比面向过程要<strong>更复杂</strong>，但是从维护和扩展的角度来看，<strong>面向对象要远比面向过程</strong><br>
+<strong>简单</strong>！<br>
+④面向过程的<strong>代码执行效率</strong>比面向对象高（过度封装）</p>
+<h1 id="来个代码例子：" tabindex="-1">来个代码例子：</h1>
+<pre><code class="language-python">#!/usr/bin/env python
+# -*- encoding: utf-8 -*-
+'''
+@File    :   model.py
+@Time    :   2020/07/05 22:07:45
+@Author  :   Yiling He
+@Version :   1.0
+@Contact :   heyilinge0@gmail.com
+@License :   (C)Copyright 2020
+@Desc    :   Define loss, build model, enable train and test. 
+'''
+
+# here put the import lib
+from torch.nn import Sequential as Seq, Linear, ReLU
+from torch_geometric.nn import MessagePassing
+from torch_geometric.utils import remove_self_loops, add_self_loops
+import torch
+import torch.nn.functional as F
+from torch_geometric.data import Data, Batch
+from torch_geometric.data import DataLoader
+from torch_geometric.data import Dataset
+import torch.nn as nn
+import torch_geometric.nn as pyg_nn
+import torch_geometric.utils as pyg_utils
+import torch.optim as optim
+import time
+from datetime import datetime
+from tqdm import tqdm
+import os
+import os.path as osp
+import numpy as np
+import logging
+model_logger = logging.getLogger()
+
+from training.loader import real_batch
+from utils import get_device, fscore, metric2scores
+
+
+class GNNStack(nn.Module):
+    def __init__(self, input_dim, hidden_dim, output_dim, conv_func=None, global_pool=None, train_eps=False, layer_norm=False):
+        super(GNNStack, self).__init__()
+        self.convs = nn.ModuleList()
+        self.conv_func = conv_func
+        self.train_eps = train_eps
+        self.convs.append(self.build_conv_model(input_dim, hidden_dim))
+        self.norm = nn.ModuleList()
+        if layer_norm:
+            self.norm.append(nn.LayerNorm(hidden_dim))
+            self.norm.append(nn.LayerNorm(hidden_dim))
+        else:
+            self.norm.append(pyg_nn.BatchNorm(hidden_dim))
+            self.norm.append(pyg_nn.BatchNorm(hidden_dim))
+
+        for l in range(2):
+            self.convs.append(self.build_conv_model(hidden_dim, hidden_dim))
+        self.global_pool = global_pool
+
+        # post-message-passing
+        if self.global_pool == 'mix':
+            self.post_mp = nn.Sequential(
+                # -&gt; CONV/FC -&gt; BatchNorm -&gt; ReLu(or other activation) -&gt; Dropout -&gt; CONV/FC -&gt;??                # nn.Linear(hidden_dim*2, hidden_dim*2), nn.ReLU(inplace=True), # mix_relu
+                nn.Linear(hidden_dim*2, hidden_dim), nn.Dropout(0.25), 
+                nn.Linear(hidden_dim, output_dim))
+        else:
+            self.post_mp = nn.Sequential(
+                nn.Linear(hidden_dim, hidden_dim), nn.Dropout(0.25), 
+                nn.Linear(hidden_dim, output_dim))
+
+        self.dropout = 0.25
+        self.num_layers = 3
+
+    def build_conv_model(self, input_dim, hidden_dim):
+        if not self.conv_func:
+            return pyg_nn.GINConv(nn.Sequential(nn.Linear(input_dim, hidden_dim), nn.ReLU(),
+                                                nn.Linear(hidden_dim, hidden_dim)), train_eps=self.train_eps)
+        elif self.conv_func == 'GATConv':
+            return pyg_nn.GATConv(input_dim, hidden_dim)
+
+    def forward(self, data):
+        x, edge_index, batch = data.x, data.edge_index, data.batch
+        if data.num_node_features == 0:
+            x = torch.ones(data.num_nodes, 1)
+
+        for i in range(self.num_layers):
+            x = self.convs[i](x, edge_index)
+            x = F.relu(x)
+            x = F.dropout(x, p=self.dropout, training=self.training)
+            if not i == self.num_layers - 1:
+                x = self.norm[i](x)
+
+        if not self.global_pool:
+            x = pyg_nn.global_mean_pool(x, batch)
+        elif self.global_pool == 'max':
+            x = pyg_nn.global_max_pool(x, batch)
+        elif self.global_pool == 'mix':
+            x1 = pyg_nn.global_mean_pool(x, batch)
+            x2 = pyg_nn.global_max_pool(x, batch)
+            x = torch.cat((x1, x2), 1)
+
+        emb = x
+        x = self.post_mp(x)
+        out = F.log_softmax(x, dim=1)
+
+        return emb, out
+    
+    def apk_loss(self, pred, label, position):
+        loss = 0
+        for i in range(len(position)-1):
+            start, end = position[i:i+2]
+            apk_pred = pred[start:end]
+            apk_label = label[start:end]
+            unilabel = set(apk_label.tolist())
+            
+            assert len(unilabel)==1
+            unilabel = list(unilabel)[0]
+            if not unilabel: # Benign
+                apk_loss = F.nll_loss(apk_pred, apk_label)  # log_softmax + nll_loss =&gt; cross_entropy
+                # print('Benign Loss: %f' % apk_loss.item())
+            else:
+                scores = []
+                for j in range(end-start):
+                    scores.append(F.nll_loss(apk_pred[j:j+1], apk_label[j:j+1]))
+                apk_loss = min(scores)
+                # print('Malware Loss: %f' % apk_loss.item())
+            
+            loss += apk_loss
+        return loss
+
+    def apk_hard_loss(self, pred, label, position, weights=True):
+        loss = 0
+        for i in range(len(position)-1):
+            start, end = position[i:i+2]
+            apk_pred = pred[start:end]
+            apk_label = label[start:end]
+            unilabel = set(apk_label.tolist())
+            
+            assert len(unilabel)==1
+            unilabel = list(unilabel)[0]
+            if not unilabel: # Benign
+                apk_loss = F.nll_loss(apk_pred, apk_label)
+                # print('Benign Loss: %f' % apk_loss.item())
+            else:
+                scores = []
+                all_scores = []
+                for j in range(end-start):
+                    single_pred = apk_pred[j:j+1]
+                    single_loss = F.nll_loss(apk_pred[j:j+1], apk_label[j:j+1])
+                    all_scores.append(single_loss)
+                    if single_pred.argmax(dim=1):
+                        scores.append(single_loss)
+                sclen = len(scores)
+                if sclen:
+                    if weights:
+                        w = np.linspace(0, 1, num=sclen+1)
+                        w = (w / sum(w))[1:]
+                        scores.sort(reverse=True) # descending order(larger loss, smaller weight??                        apk_loss = 0
+                        for i in range(len(w)):
+                            apk_loss += scores[i]*w[i]  
+                    else:
+                        apk_loss = sum(scores) / len(scores)
+                else:
+                    apk_loss =  min(all_scores)
+                # print('Malware Loss: %f' % apk_loss.item())
+            
+            loss += apk_loss
+        return loss
+    
+    
+def my_train(loader, test_loader, writer, model_dict, dev=None, lossfunc=0, batch_size=64, num_epoch=1000, start_epoch=0, best=None, conv_func=None, global_pool=None, train_eps=False, dimension=128, layer_norm=False):
+    dev = get_device(dev)
+    model_logger.info('Starting Training')
+    # build model
+    num_classes = 2
+    num_node_features = loader.dataset[0].data[0].x.shape[1]
+    model = GNNStack(num_node_features, dimension, num_classes, conv_func=conv_func, global_pool=global_pool, train_eps=train_eps, layer_norm=layer_norm).to(dev)
+
+    dict_name = model_dict.split('/')[-1]
+    if best is None:
+        if dict_name.startswith('last_epoch_') or (dict_name == '0'):
+            best = [0, 0, 0, 0, 0]
+        else:
+            best = [float(i) for i in dict_name.split('_')]
+    if osp.exists(model_dict):
+        model.load_state_dict(torch.load(model_dict))
+    model_path = '/'.join(model_dict.split('/')[:-1])
+    
+    opt = optim.Adam(model.parameters(), lr=0.001)
+    min_loss = loss_model = None
+    best_model = {i:None for i in range (5)}
+    flag = False
+    
+    try:
+        # train
+        for epoch in range(num_epoch):
+            total_loss = 0
+            model.train()
+            
+            T1 = time.process_time()
+            for batch in tqdm(loader, desc=f'Epoch {epoch}'):
+                opt.zero_grad()
+                batch, position = real_batch(batch)
+                
+                # print('batch traing for %d subgraphs' % len(batch.y))
+                embedding, pred = model(batch.to(dev))
+                label = batch.y
+                if lossfunc == 0:
+                    loss = model.apk_loss(pred, label, position)
+                elif lossfunc == 1:
+                    loss = model.apk_hard_loss(pred, label, position)
+                elif lossfunc == 2:
+                    loss = model.apk_hard_loss(pred, label, position, weights=False)
+        
+                loss.backward()
+                opt.step()
+                total_loss += loss.item()
+                torch.cuda.empty_cache()
+            T2 = time.process_time()
+            model_logger.info(f'[Timer] Epoch@{epoch}: {T2-T1}')
+            
+            del batch, label, embedding, pred, loss
+            torch.cuda.empty_cache()
+                
+            total_loss /= len(loader.dataset) # mean loss of that epoch
+            r_epoch = start_epoch + epoch
+
+            precission, recall, accuracy = my_test(test_loader, model, dev)
+            f1 = fscore(precission, recall, 1) # f1-score
+            f2 = fscore(precission, recall, 2)
+            model_logger.info(&quot;Epoch {}. Loss: {:.4f}. [TEST] precission: {:.4f} recall: {:.4f} accuracy: {:.4f}, F1: {:.4f}&quot;.format(
+                r_epoch, total_loss, precission, recall, accuracy, f1))
+            if epoch % 5 == 0:
+                writer.add_scalar(&quot;Train_Loss&quot;, total_loss, r_epoch)
+                writer.add_scalar(&quot;Test_Precission&quot;, precission, r_epoch)
+                writer.add_scalar(&quot;Test_Recall&quot;, recall, r_epoch)
+                writer.add_scalar(&quot;Test_Accuracy&quot;, accuracy, r_epoch)
+                writer.add_scalar(&quot;Test_F1-score&quot;, f1, r_epoch)
+                writer.add_scalar(&quot;Test_F2-score&quot;, f2, r_epoch)
+
+            if r_epoch &gt; 500 and not sum(best):
+                flag = True
+            if f1 &gt; 0.95 or (flag and f1 &gt; 0.85):
+                store = [precission, recall, accuracy, f1, f2]
+                savename = '%s/%f_%f_%f_%f_%f' % (model_path, precission, recall, accuracy, f1, f2)
+                # save best precission or recall or accuracy or f1 or f2 model
+                for i in range(5):
+                    if store[i] &gt; best[i]:
+                        best[i] = store[i]
+                        if not osp.exists(savename):
+                            torch.save(model.state_dict(), savename)
+                        tmp = best_model[i]
+                        best_model[i] = savename
+                        if tmp is not None:
+                            if osp.exists(tmp) and tmp not in best_model.values():
+                                os.remove(tmp)
+                # save min train loss model (if not in best models)
+                if min_loss is None:
+                    min_loss = total_loss
+                elif total_loss &lt; min_loss:
+                    min_loss = total_loss
+                    if savename not in best_model.values():
+                        if loss_model is not None:
+                            os.remove(loss_model)
+                        torch.save(model.state_dict(), savename)
+                        loss_model = savename
+                        
+    except Exception as e:
+        print(e)
+        model_logger.exception(f'Exception while training batch `{batch}` in No.{epoch} epoch.')
+        epoch -= 1
+    finally:
+        return epoch+1, model
+
+
+def my_test(loader, model, dev=None, is_validation=False, curve=False, emb_=False):
+    &quot;&quot;&quot; confusion matrix 
+    `prediction` and `truth`
+    - 1 and 1 (True Positive)
+    - 1 and 0 (False Positive)
+    - 0 and 0 (True Negative)
+    - 0 and 1 (False Negative)
+    &quot;&quot;&quot;
+    model.eval()
+    if dev is None:
+        dev = get_device(dev)
+        model.to(dev)
+    if is_validation:
+        api_preds = []
+    if curve:
+        apk_labels = []
+        apk_preds = []
+        apk_plabel = []
+    if emb_:
+        embeddings = []
+    
+    TP = TN = FN = FP = 0
+    for data in loader:
+        data, position = real_batch(data)
+        with torch.no_grad():
+            emb, pred = model(data.to(dev))
+            if emb_:
+                embeddings.extend(emb)
+                continue
+            if curve:
+                pred_score = pred[:,1]
+            pred = pred.argmax(dim=1) # 0 or 1
+            label = data.y
+            if is_validation:
+                api_preds += pred.tolist() # api_labels in a batch
+                continue
+            
+        for i in range(len(position)-1):
+            start, end = position[i:i+2]
+            apk_pred = pred[start:end]
+            apk_label = label[start:end]
+            unilabel = set(apk_label.tolist())
+            
+            assert len(unilabel)==1
+            unilabel = list(unilabel)[0]
+            apk_pred = apk_pred.sum().sign().item()
+            # print(&quot;Label: %d \t Prediction:%s&quot; % (unilabel, apk_pred))
+            if curve:
+                apk_pred_score = pred_score[start:end]
+                apk_preds.append(apk_pred_score.max().item())
+                apk_plabel.append(apk_pred)
+                apk_labels.append(unilabel)
+            else:          
+                if apk_pred==unilabel:
+                    if unilabel:
+                        TP += 1
+                    else:
+                        TN += 1
+                else:
+                    if unilabel: # pred=0, label=1
+                        FN += 1
+                    else:
+                        FP += 1
+                    
+    if is_validation:
+        return api_preds
+    elif curve:
+        return apk_preds, apk_labels, apk_plabel
+    elif emb_:
+        return embeddings
+    else:
+        precission, recall, accuracy = metric2scores(TP, FP, TN, FN, f=False)   
+        return precission, recall, accuracy
+
+
+if __name__ == &quot;__main__&quot;:
+    import argparse
+    parser = argparse.ArgumentParser(description='Model Efficiency Analysis')
+    parser.add_argument('--node', '-n', help='node number of dummy input', type=int, default=35)
+    parser.add_argument('--edge', '-e', help='edge number of dummy input', type=int, default=122)
+    parser.add_argument('--feature', '-f', help='feature dimension of dummy input', type=int, default=492)
+    parser.add_argument('--dimension', '-d', help='hidden layer embedding dimension', type=int, default=128)
+    parser.add_argument('--pool', '-p', help='global pooling function', default='mix')
+    parser.add_argument('--layer', '-l', help='set True if you want LayerNorm, else use BatchNorm', default=False)
+    args = parser.parse_args()
+
+    num_edge, num_node, num_node_features = [args.edge, args.node, args.feature]
+    print(f'[INFO] num_node: {num_node}, num_edge: {num_edge}, num_node_features: {num_node_features}')
+    data = Data(x=torch.randn(num_node, num_node_features), edge_index=torch.LongTensor(2*num_edge).random_(0, num_node).reshape(2, num_edge))
+
+    dimension, global_pool, layer_norm = [args.dimension, args.pool, args.layer]
+    print(f'[INFO] embedding dimension: {dimension}\n')
+    model = GNNStack(num_node_features, dimension, 2, global_pool=global_pool, layer_norm=layer_norm)
+
+    data = [data]
+    from thop import profile, clever_format
+    for dummy_input in DataLoader(data, batch_size=len(data)):
+        macs, params = profile(model, inputs=(dummy_input, ))
+        # macs, params = clever_format([macs, params], &quot;%.3f&quot;)
+        print(f'\n[INFO] macs: {macs}, params: {params}')
+    # print(f'[INFO] model structure: \n{model}')
+
+</code></pre>
+<hr>
+<h1 id="二、类" tabindex="-1">二、类</h1>
+<h1 id="面向对象基本概念" tabindex="-1">面向对象基本概念</h1>
+<p>OOA：面向对象分析analysis<br>
+OOD：面向对象设计design<br>
+OOP：面向对象编程programing（面向对象开发）</p>
+<h2 id="对象的概念" tabindex="-1">对象的概念</h2>
+<p>对象，object，业务逻辑的动作实体就对应着OOP编程中的一个对象</p>
+<p>对象：属性（就是变量）、方法（就是函数（未来完成某个功能））<br>
+对象保存数据，方法操作数据</p>
+<p>对象怎么来的？由类实例化产生</p>
+<h2 id="类的概念" tabindex="-1">类的概念</h2>
+<p>python采用类产生对象，用类规定对象的属性和方法</p>
+<p>为什么引入类<br>
+<strong>类是对现实世界的一种模拟，任何实体都有一个类别，类就是具有相同或相似属性和动作的一组实体的集合</strong></p>
+<p>class 人:<br>
+属性：name、age<br>
+方法：吃饭、跑、扯淡</p>
+<p>面向对象：类和对象</p>
+<ul>
+<li>类是一个抽象概念（具有相同或相似属性和动作的一组实体的集合）</li>
+<li>对象是类实例化产生的具体事物</li>
+<li>一个对象的所有应该具有特征特性信息，都是由其所属的类来决定的，但是每个对象又可以具有不同的特征特性信息</li>
+</ul>
+<p>比如，<br>
+我自己（人类）这个对象，名字叫老王，性别男，会写代码，会教书；<br>
+另一个对象（人类）可能叫赵薇，性别女，会演戏，会唱歌！</p>
+<h1 id="类的定义" tabindex="-1">类的定义</h1>
+<p>经典的类（python2）（很少使用了）：</p>
+<pre><code class="language-python">class 类名:
+	属性
+	方法
+</code></pre>
+<p>新的类（python3）：</p>
+<pre><code class="language-python">class 类名(object):
+	属性
+	方法
+</code></pre>
+<p>object：基类</p>
+<p>这就是一个类，只不过里面什么都没有！</p>
+<h2 id="类的创建（实例的模板）" tabindex="-1">类的创建（实例的模板）</h2>
+<p>类是相同或相似属性和方法的一组对象的集合，是一个<strong>抽象概念</strong>。</p>
+<pre><code class="language-python">class Person(object):
+	# 属性  # 属性是什么下下面再讲
+	# 方法
+	def run(self):  # self是啥玩意，后面讲
+		print('跑起来了👌')
+	def eat(self):
+		print('奥里给，干了！💩')
+	def speak(self):
+		print('随安不是同一时间，但是同一撤硕🚾')
+</code></pre>
+<ul>
+<li>其中，类名既可以大写也可以小写，遵守一般的标识符的命名规则（以字母数字和下划线构成，并且不能以数字开头），一般为了和方法名相区分，类名的首字母一般大写！(<strong>大驼峰法</strong>:单词首字母大写)</li>
+<li>类在定义构成中，只是描述了一下未来这个对象所拥有的属性和方法，但是其本身并没有并调用，只有在实例化对象时其才真正执行</li>
+</ul>
+<h2 id="类的实例化--获取对象" tabindex="-1">类的实例化--获取对象</h2>
+<ul>
+<li>类是具有相同或相似属性或方法的一组对象的集合，其是一个抽象概念。要想把其创建为具体的对象，需要经过实例化的过程</li>
+<li>类是一个抽象概念，可以同时产生多个对象</li>
+<li>创建的对象都会有类的属性和方法</li>
+</ul>
+<pre><code class="language-python"># 类的实例化
+p1 = Person()  # p1就是对象
+</code></pre>
+<ul>
+<li>对象的方法的调用<br>
+<code>对象名称.属性</code><br>
+<code>对象名称.方法()</code></li>
+</ul>
+<pre><code class="language-python">p1.eat()
+p1.speak()
+</code></pre>
+<blockquote>
+<p>类是一个抽象概念，在定义时，其并不会真正的占用计算机的内存空间。但是对象是一个具体的事务，所以其要占用计算机的内存空间。</p>
+</blockquote>
+<h2 id="self" tabindex="-1">对象方法中的self关键字</h2>
+<p>self的完整版解释在类的属性里讲</p>
+<p>self参数和实例化产生的对象内存地址一致，代表两者指向相同的内存空间</p>
+<p>self关键字就代表实例化对象本身</p>
+<pre><code class="language-python">class Person(object):
+	<a class="tag" onclick="toggleTagSearch(this)" data-content="#属性">#属性</a>
+	<a class="tag" onclick="toggleTagSearch(this)" data-content="#方法">#方法</a>
+	def speak(self):
+		print(self)
+<a class="tag" onclick="toggleTagSearch(this)" data-content="#实例化p1对象">#实例化p1对象</a>
+p1 = Person()
+print(p1)   # 0x000001CE9D8D2C88
+p1.speak()  # 0x000001CE9D8D2C88
+p2 = Person()
+print(p2)   # 0x00000209498CA448  # 打印的内容是内存地址
+p2.speak()  # 0x00000209498CA448  # 内存地址都是一样的
+</code></pre>
+<p>self是系统参数，调用方法的时候不需要传参</p>
+<h1 id="类的属性" tabindex="-1">类的属性</h1>
+<p>我们既可以在类的<strong>内部</strong>也可以在类的<strong>外部</strong>为其对象<strong>添加</strong>属性或<strong>获得</strong>属性</p>
+<p>添加和获取属性</p>
+<h2 id="类的外部动态添加属性" tabindex="-1">类的外部动态添加属性</h2>
+<p><code>对象名称.属性 = 属性值</code>，如果属性值是一个字符串类型，还需要使用引号引起来！</p>
+<pre><code class="language-python">class Person(object):
+	# 属性
+	# 方法
+	def eat(self):
+		print('chi')
+	def drink(self):
+		print('he')
+# 实例化产生对象
+p1 = Person()
+# 在类外添加属性
+p1.name = 'a'
+p1.age = 1
+# 获取属性
+print(p1.name)
+</code></pre>
+<h2 id="类的内部对外部添加的属性进行获取" tabindex="-1">类的内部对外部添加的属性进行获取</h2>
+<p>类的外部<strong>定义</strong>的属性在内部也是可以获取的</p>
+<pre><code class="language-python"># 定义一个类
+class Person(object):
+	# 定义属性
+	# 定义方法
+	def print_info(self):
+		print(f'name: {self.name}')
+
+# 实例化Person类产生对象
+p1 = Person()
+# 动态为对象添加属性
+p1.name = 'ZhangSan'
+
+p1.print_info()
+</code></pre>
+<blockquote>
+<p>关于上述代码，<code>{self.name}</code>中的<code>name</code>会有警告，因为在类中并没有声明这么一个属性，而是需要外部动态添加，如果在外部没有动态添加，那么这个方法将会无法执行。<br>
+内部声明属性相关内容在下一篇文章里写（魔法方法）</p>
+</blockquote>
+<h3 id="self-1" tabindex="-1">self关键字</h3>
+<p>self到底代表什么：<strong>代表实例化的对象本身</strong></p>
+<p>在类的内部，我们可以通过对象方法中的seLf关键字来实现对自身属性和方法的调用<br>
+①self指向谁？谁实例化这个类，seLf就指向谁（对象）<br>
+②self有何作用？可以通过<code>seLf.属性</code>或者<code>self.方法()</code>形式来实现对自身属性或方法的调用</p>
+<h1 id="目前的问题" tabindex="-1">目前的问题</h1>
+<pre><code class="language-python">class Person(object):
+	# 定义对象方法
+	def eat(self):
+		print('eat')
+	def drink(self):
+		print('drink')
+
+p1 = Person()
+p1.name = 'a'
+p1.age = 50
+
+p2 = Person()
+p2.name = 'b'
+p2.age = 80
+</code></pre>
+<p>对于上述代码，每次实例化一个新的对象，都要一个一个把属性手动添加进对象很麻烦（对象数量大以后，100个对象要添加200个属性，工程量相当大）</p>
+<p>所以需要在类的内部直接描述未来对象拥有的公共属性</p>
+<p>后来python中引入了<strong>魔术方法</strong>来解决这个臭毛病</p>
+<h1 id="面试题" tabindex="-1">面试题</h1>
+<h2 id="请描述什么是对象，什么是类。" tabindex="-1">请描述什么是对象，什么是类。</h2>
+<p>答案：<br>
+在面向对象编程中，类和对象是两个重要的概念，它们具有不同的含义和作用。</p>
+<p>类是一种抽象的概念，用于定义对象的属性和行为。类是一种自定义的数据类型，可以看作是对象的模板或蓝图。它描述了对象具有的共同特征和行为，定义了对象的属性和方法。</p>
+<p>类定义了对象的结构，包括数据成员（属性/实例变量）和函数成员（方法）。通过类，我们可以创建多个相似结构的对象，每个对象都具有相同的属性和方法。</p>
+<p>类通常具有以下特征：</p>
+<ul>
+<li>定义了对象的属性（变量）和方法（函数）。</li>
+<li>可以被实例化为一个或多个对象。</li>
+<li>可以通过继承机制派生出子类。</li>
+<li>提供了封装、继承和多态等面向对象的特性。</li>
+</ul>
+<p>对象是类的实例化结果，是类的具体实体。对象是在内存中分配的一块空间，用于存储数据和执行方法。当我们使用类创建对象时，我们可以访问和操作对象的属性和方法。</p>
+<p>对象具有以下特征：</p>
+<ul>
+<li>具有唯一的标识（在内存中的地址）。</li>
+<li>具有状态（属性值）。</li>
+<li>可以执行类定义的方法。</li>
+</ul>
+<p>简单来说，类是对对象的抽象描述，定义了对象的结构和行为。而对象是类的实例化结果，具体化了类的抽象概念，拥有自己的状态和行为。类是对象的模板，而对象是类的具体实例。</p>
+<p>通过创建不同的对象，我们可以利用面向对象编程的特性，实现代码的复用、封装数据和行为，并且更好地组织和管理程序的逻辑结构。</p>
+<h2 id="请观阅读如下代码，判断是否能正常运行，如果不能正常运行，错误点在哪？" tabindex="-1">请观阅读如下代码，判断是否能正常运行，如果不能正常运行，错误点在哪？</h2>
+<pre><code class="language-language">class Person():
+    def eat(self):
+        print('我喜欢吃零食')
+
+    def drink(this):
+        print('我喜欢喝果汁')
+
+
+p = Person()
+p.drink()
+Person.eat()
+</code></pre>
+<p>答案：<br>
+不可以正常运行，eat()方法的调用存在异常，应该用p对象进行调用，注意，drink(this)方法中写this用于替代self是可以的，不存在问题。</p>
+<hr>
+<h1 id="strong-init-strong-strong-str-strong-strong-del-strong" tabindex="-1">三、魔术方法：<strong>init</strong>()、<strong>str</strong>()、<strong>del</strong>()</h1>
+<pre><code class="language-python">class Person(object):
+	# 定义对象方法
+	def eat(self):
+		print('eat')
+	def drink(self):
+		print('drink')
+
+p1 = Person()
+p1.name = 'a'
+p1.age = 50
+
+p2 = Person()
+p2.name = 'b'
+p2.age = 80
+</code></pre>
+<p>对于上述代码，每次实例化一个新的对象，都要一个一个把属性手动添加进对象很麻烦（对象数量大以后，100个对象要添加200个属性，工程量相当大）</p>
+<p>所以需要在类的内部直接描述未来对象拥有的公共属性</p>
+<p>后来python中引入了<strong>魔术方法</strong>来解决这个臭毛病</p>
+<h1 id="什么是魔术方法" tabindex="-1">什么是魔术方法</h1>
+<p>举栗子：下面这句常用代码👇<br>
+<code>if __name__ == '__main__':</code></p>
+<p><code>__name__</code>这是个变量，没有定义，但是能打印出结果</p>
+<p><code>__name__</code>属于系统中自带的变量，不需要自己定义的</p>
+<hr>
+<p>所以，在python中，左右两边有两个下划线的变量就是<strong>魔术变量</strong>，指的是拥有特殊功能的变量</p>
+<p>同时，这种<code>__xxx__()</code>的函数叫做<strong>魔法方法</strong>，指的是具有特殊功能的函数</p>
+<blockquote>
+<p>学习魔术方法必须掌握两个知识点：①这个方法在什么情况下会被触发②这个方法在实际工作中有何作用</p>
+</blockquote>
+<h1 id="code-init-code" tabindex="-1"><code>__init__()</code>方法（初始化方法或构造方法）</h1>
+<p>在其他语言中叫构造函数，作用是进行初始化工作</p>
+<p>当实例化的时候，就会执行一遍里面的代码</p>
+<h2 id="实际工作应用场景：" tabindex="-1">实际工作应用场景：</h2>
+<p>①在类的定义，用于描述对象未来所拥有的公共属性<br>
+②还可以用于进行系统的初始化工作=》比如文件操作中的打开文件，数据库操作中的连接数据库等等</p>
+<h2 id="魔术方法：" tabindex="-1">魔术方法：</h2>
+<p>①在什么情况下，<code>___init__()</code>会被触发（调用）：</p>
+<ul>
+<li>当实例化对象时，<code>__init__()</code>方法会自动被触发，实例化多少次，<code>__init__()</code>方法就会被调用多少次<br>
+②在实际工作中，主要用于公共属性的初始化或者项目的初始化工作<br>
+举个栗子：让我们Person实例化对象自动拥有name、age以及address三个公共属性</li>
+</ul>
+<pre><code class="language-python"># 1、定义一个类
+class Person():
+    # 初始化实例对象属性
+    def __init__(self, name, age):
+        # 赋予name属性、age属性给实例化对象本身
+        # self.实例化对象属性 = 参数
+        self.name = name
+        self.age = age
+
+# 2、实例化对象并传入初始化属性值
+p1 = Person('张三', 80)
+# 3、调用p1对象自身属性name与age
+print(p1.name)
+print(p1.age)
+</code></pre>
+<p>注意，定义属性的时候不写<code>self.</code>那么<code>__init__</code>方法执行完以后，这个局部变量就会被清除</p>
+<h2 id="code-str-code" tabindex="-1"><code>__str__()</code>方法</h2>
+<p>当使用print输出对象的时候，<strong>默认打印对象的内存地址</strong>。如果类定义了<code>__str__</code>方法，那么就会打印从在这个方法中 return 的数据。(另外要特别注意<code>__str__</code>方法返回<mark>字符串类型</mark>的数据)</p>
+<p>没有使用<code>__str__()</code>方法的类：</p>
+<pre><code class="language-python"># 1、定义一个类
+class Car():
+    # 首先定义一个__init__方法，用于初始化实例对象属性
+    def __init__(self, brand, model, color):
+        self.brand = brand
+        self.model = model
+        self.color = color
+
+    # 定义一个__str__内置魔术方法，用于输出小汽车的相关信息
+    def __str__(self):
+        return f'汽车品牌：{self.brand}，汽车型号：{self.model}，汽车颜色：{self.color}'
+
+# 2、实例化对象c1
+c1 = Car('宝宝巴士', '叮叮车', '蓝色')
+print(c1)
+</code></pre>
+<p>① <code>__str__</code>这个魔术方法是在类的外部，使用print(对象)时，自动被调用的</p>
+<p>② 在类的内部定义<code>__str__</code>方法时，必须使用return返回一个字符串类型的数据</p>
+<h2 id="code-del-code" tabindex="-1"><code>__del__()</code>方法（删除方法或析构方法）</h2>
+<p>当代码执行结束，或者主动清除对象的时候都会自动调用<code>__del__()</code>方法<br>
+（当删除对象时（调用del删除对象或者文件执行结束后），python解释器会自动调用<code>__del__()</code>方法。）</p>
+<pre><code class="language-python">class Person():
+    # 构造函数__init__
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    # 析构方法__del__
+    def __del__(self):
+        print(f'{self}对象已经被删除')
+
+# 实例化对象
+p1 = Person('张三', 10086)
+# 删除对象p1
+del p1
+</code></pre>
+<p><code>__del__()</code>方法在使用过程中，比较简单，但是其在实际开发中，有何作用呢？主要用于关闭文件操作、关闭数据库连接等等。</p>
+<h3 id="code-del-code-1" tabindex="-1"><code>__del__()</code>方法删除对象时的顺序问题</h3>
+<p>版本不同，有些版本时正序删除，有些版本时倒序删除，底层代码不同（大概是3.7.xx开始变成倒序删除）</p>
+<p>3.7.xx之前的版本解析器：正序删除：底层采用队列：先进先出<br>
+3.7.xx之后的版本解析器：倒序删除：底层采用栈：先进后出</p>
+<p>但是，不管正序还是倒序都时一样在内存中删除对象</p>
+<h1 id="debug" tabindex="-1">面向对象照样可以用debug代码调试</h1>
+<p>用<strong>step into</strong>能一步一步进入类的代码里调试</p>
+<h1 id="总结" tabindex="-1">总结</h1>
+<p>提到魔术方法：① 这个方法在什么情况下被触发 ② 这个方法有什么实际的作用</p>
+<p><code>__init__()</code>：初始化方法或者称之为“构造函数”，在对象初始化时执行，其主要作用就是在对象初始化时，对对象进行初始化操作（如赋予属性）</p>
+<p><code>__str__()</code>：对象字符串方法，当我们在类的外部，使用print方法输出对象时被触发，其主要功能就是对对象进行打印输出操作，要求方法必须使用return返回<mark>字符串</mark>格式的数据。</p>
+<p><code>__del__()</code>：删除方法或者称之为“析构方法”，在对象被删除时触发（调用del删除对象或文件执行结束后），其主要作用就是适用于关闭文件、关闭数据库连接等等。</p>
+<h2 id="最后注意" tabindex="-1">最后注意</h2>
+<p>为了<strong>数据安全性</strong>，不建议在类外部直接掉i用自身属性，要调用，通过针对性的方法来实现</p>
+<hr>
+<h1 id="304-1" tabindex="-1">四、304-面向对象三大特性-1.封装</h1>
+<p>名词：公共属性、私有属性、公共方法、私有方法</p>
+<h1 id="三种特性：" tabindex="-1">三种特性：</h1>
+<ul>
+<li><strong>封装性</strong>：
+<ul>
+<li>私有属性和私有方法</li>
+<li>把属性和方法隐藏起来，属性没有特殊要求都用私有属性</li>
+<li><strong>意义</strong>：
+<ul>
+<li>以面向对象的编程思想进行项目开发</li>
+<li>封装数据属性：明确的区分内外，控制外部对隐藏的属性的操作行为(保护数据、过滤掉异常数据)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>继承性</strong>：
+<ul>
+<li>单继承和多继承</li>
+</ul>
+</li>
+<li><strong>多态性</strong></li>
+</ul>
+<p>属性和方法的封装</p>
+<h1 id="1-python" tabindex="-1">1、python中的封装</h1>
+<h2 id="私有属性（属性的封装）（对属性进行隐藏）" tabindex="-1">私有属性（属性的封装）（对属性进行隐藏）</h2>
+<p>通过<code>__</code>定义的属性就是私有属性，<strong>只能在类内部访问</strong>，<strong>外部不能访问</strong></p>
+<p>在实际工作中，理论上所有的属性都应该封装为私有形式，保证数据的安全！</p>
+<pre><code class="language-python">class 类名(object):
+ 	def __init__(self):
+		self.__属性:
+</code></pre>
+<p>所以封装就是把自身的信息隐藏起来，开放对于接口来操作</p>
+<p>具体例子代码：<br>
+获取和设置属性都通过自定义的有限制的方法来操作，<strong>保证数据的安全性</strong></p>
+<pre><code class="language-python">class Ikun(object):
+	def __init__(self, name):
+		self.name = name
+		self.__age = 25
+
+	# 给__age私有属性添加一个访问&quot;接口&quot;
+	def get_age(self):
+		# 获取属性之前
+		# 1、验证用户是否具有查看属性的权限
+		# 2、如果有则返回私有属性；如果没有则进制访问
+		return self.__age
+
+	# 给__age私有属性添加一个设置&quot;接口&quot;
+	def set_age(self, age):
+		# 在设置属性之前
+		# 1、首先对age进行合理性判断
+		if not isinstance(age, int)
+			print('age参数不是整数类型')
+		if age &lt;= 0:
+			print('年龄不对劲')
+</code></pre>
+<h2 id="私有方法" tabindex="-1">私有方法</h2>
+<p><strong>作用：降低程序复杂度</strong></p>
+<p>私有方法不是为了保护数据，而是为了简化程序复杂度</p>
+<p>同样时外部不能调用的方法，只有内部才能调用的方法</p>
+<pre><code class="language-python">class 类名():
+	# 属性
+	# 方法
+	def __方法名(self):
+		# 私有方法
+</code></pre>
+<p>举一个具体栗子：<br>
+atm机取款</p>
+<pre><code class="language-python">class ATM(object):
+	def __card(self):
+		print('插卡')
+	def __auth(self):
+		print('用户验证')
+	def __input(self):
+		print('输入取款金额')
+	def __take_money(self):
+		print('取款')
+	def __print_bill(self):
+		print('打印账单')
+	# 定义一个统一的&quot;接口&quot;，专门用于实现取款操作
+	def withdraw(self):
+		self.__card()
+		self.__auth()
+		self.__input()
+		self.__take_money()
+		self.__print_bill()
+atm = ATM()
+atm.withraw()
+</code></pre>
+<hr>
+<h1 id="2" tabindex="-1">五、面向对象三大特性-2.继承</h1>
+<h1 id="三种特性：-1" tabindex="-1">三种特性：</h1>
+<ul>
+<li><strong>封装性</strong>：
+<ul>
+<li>私有属性和私有方法</li>
+<li>把属性和方法隐藏起来，属性没有特殊要求都用私有属性</li>
+<li><strong>意义</strong>：
+<ul>
+<li>以面向对象的编程思想进行项目开发</li>
+<li>封装数据属性：明确的区分内外，控制外部对隐藏的属性的操作行为(保护数据、过滤掉异常数据)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>继承性</strong>：
+<ul>
+<li>单继承和多继承</li>
+</ul>
+</li>
+<li><strong>多态性</strong></li>
+</ul>
+<h1 id="2-python" tabindex="-1">2、python中的继承</h1>
+<h2 id="什么是继承" tabindex="-1">什么是继承</h2>
+<p>我们接下来来聊聊Python代码中的“继承”：类是用来描述现实世界中同一组事务的共有特性的抽象模型，但是类也有上下级和范围之分，比如：生物 =&gt; 动物</p>
+<h2 id="继承的基本语法" tabindex="-1">继承的基本语法</h2>
+<p>假设A类要继承B类中的所有属性和方法（<strong>私有属性和私有方法除外</strong>）</p>
+<pre><code class="language-python">class B(object):
+    pass
+
+class A(B):
+    pass
+
+a = A()
+a.B中的所有公共属性
+a.B中的所有公共方法
+</code></pre>
+<h3 id="相关名词解释" tabindex="-1">相关名词解释</h3>
+<p>继承：一个类从另一个已有的类获得其成员的相关特性，就叫作继承！</p>
+<p>派生：从一个已有的类产生一个新的类，称为派生！</p>
+<p>很显然，继承和派生其实就是从不同的方向来描述的相同的概念而已，本质上是一样的！</p>
+<p>父类：也叫作基类，就是指已有被继承的类！</p>
+<p>子类：也叫作派生类或扩展类</p>
+<p>扩展：在子类中增加一些自己特有的特性，就叫作扩展，<strong>没有扩展，继承也就没有意义了</strong>！</p>
+<p>单继承：一个类只能继承自一个其他的类，不能继承多个类，单继承也是<strong>大多数</strong>面向对象语言的特性！</p>
+<p>多继承：<strong>一个类同时继承了多个父类</strong>， （C++、<strong>Python</strong>等语言都支持多继承）</p>
+<h2 id="单继承" tabindex="-1">单继承</h2>
+<p>一个类只能继承自一个其他的类，不能同时继承多个类。这个类会有具有父类的属性和方法。</p>
+<p>基本语法：</p>
+<pre><code class="language-python"># 1、定义一个共性类（父类）
+class Person(object):
+    pass
+# 2、定义一个个性类（子类）
+class Student(Person):
+    pass
+</code></pre>
+<p>栗子：</p>
+<pre><code class="language-python"># 定义一个公共类
+class Person(object):
+	def speak(self):
+		print('i can speak')
+
+# 定义学生
+class Student(Person):
+	pass
+# 定义ikun
+class Ikun(Person):
+	pass
+
+ZhangSan = Student()
+ZhangSan.speak()
+</code></pre>
+<h2 id="单继承特性（多层继承）：传递性" tabindex="-1">单继承特性（多层继承）：传递性</h2>
+<p>在Python继承中，如A类继承了B类，B类又继承了C类。则根据继承的传递性，则A类也会自动继承C类中所有属性和方法（公共）</p>
+<pre><code class="language-python">class C(object):
+    def func(self):
+        print('我是C类中的相关方法func')
+
+class B(C):
+    pass
+
+class A(B):
+    pass
+
+a = A()
+a.func()
+</code></pre>
+<h2 id="多继承" tabindex="-1">多继承</h2>
+<p>Python语言是少数支持多继承的一门编程语言，所谓的多继承就是允许一个类同时继承自多个类的特性。</p>
+<p>基本语法：</p>
+<pre><code class="language-python">class B(object):
+    pass
+
+class C(object):
+    pass
+
+class A(B, C):
+    pass
+
+a = A()
+a.B中的所有属性和方法
+a.C中的所有属性和方法
+</code></pre>
+<p>栗子：</p>
+<pre><code class="language-python"># 定义黑子
+class HeiZi(object):
+	def speak(self):
+		print('我们家哥哥')
+# 定义ikun
+class Ikun(Person):
+	def speak(self):
+		print('你干嘛~嗨嗨哎呦')
+
+class ZhenAiFen(Ikun, Heizi):
+	pass
+
+ZhangSan = ZhenAiFen()
+ZhangSan.speak()
+</code></pre>
+<blockquote>
+<p>注意：虽然多继承允许我们同时继承自多个类，但是实际开发中，应尽量避免使用多继承，因为如果两个类中出现了相同的属性和方法就会产生命名冲突。</p>
+</blockquote>
+<p>上面代码中，继承的两个类中都有speak方法，但是子类只调用了<code>Ikun</code>的的speak方法，没有调用HeiZi的speak方法，这里就涉及到<strong>方法解析顺序</strong>，一般的优先级是：本类中定义的方法&gt;排在前面的父类中的方法</p>
+<h2 id="super" tabindex="-1">super()调用父类属性和方法</h2>
+<p>super()：调用父类属性或方法，完整写法：<code>super(当前类名, self).属性或方法()</code>，在Python3以后版本中，调用父类的属性和方法我们只需要使用<code>super().属性或super().方法名()</code>就可以完成调用了。</p>
+<p>案例：Car汽车类、GasolineCar汽油车、ElectricCar电动车</p>
+<pre><code class="language-python">class Car(object):
+    def __init__(self, brand, model, color):
+        self.brand = brand
+        self.model = model
+        self.color = color
+
+    def run(self):
+        print('i can run')
+
+
+class GasolineCar(Car):
+    def run(self):
+        print('i can run with gasoline')
+
+
+class ElectricCar(Car):
+    def __init__(self, brand, model, color, battery):
+        super().__init__(brand, model, color)
+        # 电池属性
+        self.battery = battery
+
+    def run(self):
+        print(f'i can run with electric，i have a {self.battery} + &quot;kwh battery&quot;')
+
+
+bwm = GasolineCar('宝马', 'X5', '白色')
+bwm.run()
+
+tesla = ElectricCar('特斯拉', 'Model S', '红色', 70)
+tesla.run()
+
+
+### MRO属性或MRO方法：方法解析顺序
+
+MRO(Method Resolution Order)：方法解析顺序，我们可以通过`类名.__mro__`或`类名.mro()`获得“类的层次结构”，方法解析顺序也是按照这个“类的层次结构”寻找到。
+
+```python
+class Car(object):
+    def __init__(self, brand, model, color):
+        self.brand = brand
+        self.model = model
+        self.color = color
+
+    def run(self):
+        print('i can run')
+
+
+class GasolineCar(Car):
+    def run(self):
+        print('i can run with gasoline')
+
+
+class ElectricCar(Car):
+    def __init__(self, brand, model, color, battery):
+        super().__init__(brand, model, color)
+        # 电池属性
+        self.battery = battery
+
+    def run(self):
+        print(f'i can run with electric，i has a {self.battery} + &quot;kwh battery&quot;')
+
+print(ElectricCar.__mro__)
+print(ElectricCar.mro())
+</code></pre>
+<p>代码的输出是：</p>
+<pre><code class="language-powershell">D:\Python\Python37\python.exe D:/PycharmProjects/pythonProject/07-Python中的MR0方法解析顺序.py
+(&lt;class '-_main-_.ElectricCar'&gt;, &lt;class '-_main__.Car'&gt;, &lt;class 'object'&gt;)
+[&lt;class '--main_-.Electriccar'&gt;, &lt;class '--main--.Car'&gt;, &lt;class 'object'&gt;]]
+</code></pre>
+<p>说明：有MRO方法解析顺序可知，在类的继承中，当某个类创建了一个对象时，调用属性或方法，首先在自身类中去寻找，如找到，则直接使用，停止后续的查找。如果未找到，继续向上一级继承的类中去寻找，如找到，则直接使用，没有找到则继续向上寻找...直到object类，这就是Python类继承中，其方法解析顺序。</p>
+<blockquote>
+<p>综上：object类还是所有类的基类（因为这个查找关系到object才终止）</p>
+</blockquote>
+<h2 id="常见问题" tabindex="-1">常见问题</h2>
+<p>问题1：在定义类时，其没有遵循类的命名规则</p>
+<p>答：在Python中，类理论上是区分大小写的（在Python中类可以全部大写也可以全部小写）。但是要遵循一定的命名规范：首字母必须是字母或下划线，其中可以包含字母、数字和下划线，而且要求其命名方式采用大驼峰。</p>
+<p>电动汽车：EletricCar</p>
+<p>父类：Father</p>
+<p>子类：Son</p>
+<p>问题2：父类一定要继承object么？Car(object)</p>
+<p>答：在Python面向对象代码中，建议在编写父类时，让其自动继承object类。但是其实不写也可以，因为默认情况下，Python中的所有类都继承自object。</p>
+<p>问题3：打印属性和方法时，不是只能使用print()函数输出，也可以使用return。</p>
+<p>在实际打印对象信息，还建议使用<code>__str__</code></p>
+<pre><code class="language-python">class Person():
+    def __init__(self, name):
+        self.name = name
+
+    def speak(self):
+        print('i can speak')
+
+# 创建对象，打印属性和方法
+p = Person('Tom')
+print(p.name)
+p.speak()
+</code></pre>
+<p>问题4：在定义魔术方法<code>__init__</code>而非<code>__int__</code></p>
+<hr>
+<h1 id="3" tabindex="-1">六、面向对象三大特性-3.多态</h1>
+<h1 id="三种特性：-2" tabindex="-1">三种特性：</h1>
+<ul>
+<li><strong>封装性</strong>：
+<ul>
+<li>私有属性和私有方法</li>
+<li>把属性和方法隐藏起来，属性没有特殊要求都用私有属性</li>
+<li><strong>意义</strong>：
+<ul>
+<li>以面向对象的编程思想进行项目开发</li>
+<li>封装数据属性：明确的区分内外，控制外部对隐藏的属性的操作行为(保护数据、过滤掉异常数据)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>继承性</strong>：
+<ul>
+<li>单继承和多继承</li>
+</ul>
+</li>
+<li><strong>多态性</strong></li>
+</ul>
+<p>属性和方法的封装</p>
+<h1 id="3-1" tabindex="-1">3、多态</h1>
+<h2 id="什么是多态（定义）" tabindex="-1">什么是多态（定义）</h2>
+<p>定义：多态是一种使用对象的方式，子类重写父类方法，调用不同子类对象的相同父类方法，可以产生不同的执行结果<br>
+①多态依赖继承<br>
+②子类方法必须要重写父类方法</p>
+<p>好处：调用灵活，有了多态，更容易编写出通用的代码，做出通用的编程，以适应需求的不断变化！</p>
+<p>示例代码：</p>
+<pre><code class="language-python">'''
+首先定义一个父类，其可能拥有多个子类对象。当我们调用一个公共方法（接口）时，传递的对象不同，则返回的结果不同。
+'''
+class Fruit(object):
+    def makejuice(self):
+        print('i can make juice')
+
+class Apple(Fruit):
+    # 重写父类方法
+    def makejuice(self):
+        print('i can make apple juice')
+
+class Banana(Fruit):
+    # 重写父类方法
+    def makejuice(self):
+        print('i can make banana juice')
+
+class Orange(Fruit):
+    # 重写父类方法
+    def makejuice(self):
+        print('i can make orange juice')
+
+# 定义一个公共接口（专门用于实现榨汁操作）
+def service(obj):
+    # obj要求是一个实例化对象，可以传入苹果对象/香蕉对象
+    obj.makejuice()
+
+# 调用公共方法
+service(Orange())
+</code></pre>
+<div class="callout" data-callout="note"><div class="callout-title"><div class="callout-title-inner"> python中多台的具体案例<br></div></div>
+<div class="callout-content">
+<p>
++ 多态体现</p>
+<p>+加号只有一个，但是不同的对象调用+方法，其返回结果不同。</p>
+<p>如果加号的两边都是数值类型的数据，则加号代表运算符</p>
+<p>如果加号的两边传入的是字符串类型的数据，则加号代表合并操作，返回合并后的字符串</p>
+<p>'a' + 'b' = 'ab'</p>
+<p>如果加号的两边出入序列类型的数据，则加号代表合并操作，返回合并后的序列</p>
+<p>[1, 2, 3] + [4, 5, 6] = [1, 2, 3, 4, 5, 6]</p>
+</div></div>
+<h1 id="七、类属性、类方法、静态方法" tabindex="-1">七、类属性、类方法、静态方法</h1>
+<h1 id="类属性" tabindex="-1">类属性</h1>
+<p>（之前学的属性：对象属性、实例属性、成员属性：每一个实例化对象都拥有属性）</p>
+<p>类属性并不是某个对象所特有的，而是所有对象所共同拥有或一起组成的属性：<br>
+应用栗子：init里实现对象累加计数 调用类属性</p>
+<pre><code class="language-python">class Person():
+	count = 0
+</code></pre>
+<p>类属性的访问：<br>
+<code>类名.属性</code><br>
+<code>对象名.属性</code></p>
+<p>类属性也可以被继承</p>
+<h1 id="类方法" tabindex="-1">类方法</h1>
+<p>装饰器：@classmethod 调用类方法 类方法就是为了操作类属性</p>
+<p>作用：专门用于实现对类属性的调用</p>
+<pre><code class="language-python">class Person():
+	@classmethod  # 第一步添加装饰器
+	def 类方法(cls):  # cls代表类本身
+</code></pre>
+<p>调用：<br>
+<code>类名.方法()</code><br>
+<code>对象名.方法()</code></p>
+<h1 id="静态方法" tabindex="-1">静态方法</h1>
+<p>作用：如果某个方法既不需要调用自身属性也不需要调用自身方法，就可以把其封装为静态方法，静态方法本身没有参数</p>
+<pre><code class="language-python">@staticmethod  # 第一步添加装饰器
+def 静态方法():
+</code></pre>
+<p>什么情况用静态方法<br>
+（例如程序菜单）<br>
+@staticmethod<br>
+怎么调用</p>
+<p>语法糖修饰符<br>
+固定参数 cls</p>
+<pre><code class="language-python">class A(object):
+	count = 0
+	@classmethod  <a class="tag" onclick="toggleTagSearch(this)" data-content="#语法糖修饰符">#语法糖修饰符</a>
+	def fun1(cls):  # 固定参数 cls
+		print(A.count)
+	@staticmethod  <a class="tag" onclick="toggleTagSearch(this)" data-content="#语法糖修饰符">#语法糖修饰符</a>
+	def fun2():  # 无参数
+		print('这是菜单')
+	def __init__(self):
+		count += 1
+</code></pre>
+<hr>
+<h1 id="strong-dict-strong" tabindex="-1">八、魔术方法：<strong>dict</strong>()</h1>
+<p><code>__dict__()</code>方法的作用：</p>
+<ul>
+<li>把对象转化为字典</li>
+<li>把对象的属性转化为字典的键和值</li>
+</ul>
+<p>例如，<strong>把学生信息的对象转成列表后保存成列表再保存到文件</strong></p>
+<pre><code class="language-python">from Student import Student
+
+students = []
+
+s1 = Student('ZhangSan', 23, '10086')
+s2 = Student('LiSi', 24, '10010')
+
+students.append(s1)
+students.append(s2)
+
+students = [i.__dict__ for i in students]
+print(students)
+</code></pre>
 </main>
 <aside>
 <div class="sidebar">
@@ -2248,7 +3424,155 @@ On this page
 <div class="toc-container">
 <nav class="toc">
 <ol>
-<li><a href="#笔记">笔记</a>
+<li><a href="#笔记目录">笔记目录</a>
+</li>
+<li><a href="#一、面向对象基本思想">一、面向对象基本思想</a>
+</li>
+<li><a href="#要学会啥？">要学会啥？</a>
+</li>
+<li><a href="#面向对象编程思想">面向对象编程思想</a>
+<ol>
+<li><a href="#编程思想">编程思想</a>
+</li>
+<li><a href="#面向过程编程思想">面向过程编程思想</a>
+</li>
+<li><a href="#面向对象编程思想-1">面向对象编程思想</a>
+</li>
+</ol>
+</li>
+<li><a href="#面向过程向面向对象思想迁移">面向过程向面向对象思想迁移</a>
+</li>
+<li><a href="#面试题：面向过程和面向对象的区别">面试题：面向过程和面向对象的区别</a>
+</li>
+<li><a href="#来个代码例子：">来个代码例子：</a>
+</li>
+<li><a href="#二、类">二、类</a>
+</li>
+<li><a href="#面向对象基本概念">面向对象基本概念</a>
+<ol>
+<li><a href="#对象的概念">对象的概念</a>
+</li>
+<li><a href="#类的概念">类的概念</a>
+</li>
+</ol>
+</li>
+<li><a href="#类的定义">类的定义</a>
+<ol>
+<li><a href="#类的创建（实例的模板）">类的创建（实例的模板）</a>
+</li>
+<li><a href="#类的实例化--获取对象">类的实例化--获取对象</a>
+</li>
+<li><a href="#self">对象方法中的self关键字</a>
+</li>
+</ol>
+</li>
+<li><a href="#类的属性">类的属性</a>
+<ol>
+<li><a href="#类的外部动态添加属性">类的外部动态添加属性</a>
+</li>
+<li><a href="#类的内部对外部添加的属性进行获取">类的内部对外部添加的属性进行获取</a>
+<ol>
+<li><a href="#self-1">self关键字</a>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li><a href="#目前的问题">目前的问题</a>
+</li>
+<li><a href="#面试题">面试题</a>
+<ol>
+<li><a href="#请描述什么是对象，什么是类。">请描述什么是对象，什么是类。</a>
+</li>
+<li><a href="#请观阅读如下代码，判断是否能正常运行，如果不能正常运行，错误点在哪？">请观阅读如下代码，判断是否能正常运行，如果不能正常运行，错误点在哪？</a>
+</li>
+</ol>
+</li>
+<li><a href="#strong-init-strong-strong-str-strong-strong-del-strong">三、魔术方法：init()、str()、del()</a>
+</li>
+<li><a href="#什么是魔术方法">什么是魔术方法</a>
+</li>
+<li><a href="#code-init-code">__init__()方法（初始化方法或构造方法）</a>
+<ol>
+<li><a href="#实际工作应用场景：">实际工作应用场景：</a>
+</li>
+<li><a href="#魔术方法：">魔术方法：</a>
+</li>
+<li><a href="#code-str-code">__str__()方法</a>
+</li>
+<li><a href="#code-del-code">__del__()方法（删除方法或析构方法）</a>
+<ol>
+<li><a href="#code-del-code-1">__del__()方法删除对象时的顺序问题</a>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li><a href="#debug">面向对象照样可以用debug代码调试</a>
+</li>
+<li><a href="#总结">总结</a>
+<ol>
+<li><a href="#最后注意">最后注意</a>
+</li>
+</ol>
+</li>
+<li><a href="#304-1">四、304-面向对象三大特性-1.封装</a>
+</li>
+<li><a href="#三种特性：">三种特性：</a>
+</li>
+<li><a href="#1-python">1、python中的封装</a>
+<ol>
+<li><a href="#私有属性（属性的封装）（对属性进行隐藏）">私有属性（属性的封装）（对属性进行隐藏）</a>
+</li>
+<li><a href="#私有方法">私有方法</a>
+</li>
+</ol>
+</li>
+<li><a href="#2">五、面向对象三大特性-2.继承</a>
+</li>
+<li><a href="#三种特性：-1">三种特性：</a>
+</li>
+<li><a href="#2-python">2、python中的继承</a>
+<ol>
+<li><a href="#什么是继承">什么是继承</a>
+</li>
+<li><a href="#继承的基本语法">继承的基本语法</a>
+<ol>
+<li><a href="#相关名词解释">相关名词解释</a>
+</li>
+</ol>
+</li>
+<li><a href="#单继承">单继承</a>
+</li>
+<li><a href="#单继承特性（多层继承）：传递性">单继承特性（多层继承）：传递性</a>
+</li>
+<li><a href="#多继承">多继承</a>
+</li>
+<li><a href="#super">super()调用父类属性和方法</a>
+</li>
+<li><a href="#常见问题">常见问题</a>
+</li>
+</ol>
+</li>
+<li><a href="#3">六、面向对象三大特性-3.多态</a>
+</li>
+<li><a href="#三种特性：-2">三种特性：</a>
+</li>
+<li><a href="#3-1">3、多态</a>
+<ol>
+<li><a href="#什么是多态（定义）">什么是多态（定义）</a>
+</li>
+</ol>
+</li>
+<li><a href="#七、类属性、类方法、静态方法">七、类属性、类方法、静态方法</a>
+</li>
+<li><a href="#类属性">类属性</a>
+</li>
+<li><a href="#类方法">类方法</a>
+</li>
+<li><a href="#静态方法">静态方法</a>
+</li>
+<li><a href="#strong-dict-strong">八、魔术方法：dict()</a>
 </li>
 </ol>
 </nav>
@@ -2256,8 +3580,8 @@ On this page
 </div>
 <div class="backlinks">
 <div class="backlink-title" style="margin:4px 0!important">Pages mentioning this page</div>
-<div class="backlink-list"><div class="backlink-card"><i icon-name="link"></i><a href="/czc知识库/计算机/Python/Python/" data-note-icon="" class="backlink">Python</a>
-</div><div class="backlink-card"><i icon-name="link"></i><a href="/czc知识库/最近更新的笔记/" data-note-icon="" class="backlink">最近更新的笔记</a>
+<div class="backlink-list"><div class="backlink-card"><i icon-name="link"></i><a href="/czc知识库/最近更新的笔记/" data-note-icon="" class="backlink">最近更新的笔记</a>
+</div><div class="backlink-card"><i icon-name="link"></i><a href="/czc知识库/计算机/Python/Python/" data-note-icon="" class="backlink">Python</a>
 </div><div class="backlink-card"><i icon-name="link"></i><a href="/" data-note-icon="" class="backlink">主页</a>
 </div></div>
 </div>

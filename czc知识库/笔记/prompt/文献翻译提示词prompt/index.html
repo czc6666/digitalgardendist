@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="zh-CN">
 <head>
-<title>笔记：AndroZoo数据集下载程序 筛选超大csv文件 制作下载链接 多线程下载 apk文件 python笔记</title>
+<title>文献翻译提示词prompt</title>
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <script async type="module">import mermaid from"https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"</script>
 <script async src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js" integrity="sha512-hpZ5pDCF2bRCweL5WoA0/N1elet1KYL5mx3LP555Eg/0ZguaHawxNvEjF6O3rufAChs16HVNhEc6blF/rZoowQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -579,10 +579,6 @@ CTRL + K
 </div>
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
-<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/硕士研究生/科研/文献阅读笔记/懒人专用ai文献翻译提示词prompt/">懒人专用ai文献翻译提示词prompt </a>
-</div>
-</div>
-<div x-show="isOpen" style="display:none" class="filelist">
 <div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/硕士研究生/科研/文献阅读笔记/文献阅读笔记/">文献阅读笔记 </a>
 </div>
 </div>
@@ -701,6 +697,23 @@ CTRL + K
 <i x-show="isOpen" style="display:none" icon-name="chevron-down"></i>
 <i x-show="!isOpen" icon-name="chevron-right"></i>
 <span class="foldername">笔记</span>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div class="folder inner-folder" x-data="{isOpen: $persist(false).as('czc知识库/笔记/prompt')}" @click.stop="isOpen=!isOpen">
+<div class="foldername-wrapper align-icon">
+<i x-show="isOpen" style="display:none" icon-name="chevron-down"></i>
+<i x-show="!isOpen" icon-name="chevron-right"></i>
+<span class="foldername">prompt</span>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/笔记/prompt/prompt/">prompt </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink active-note"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/笔记/prompt/文献翻译提示词prompt/">文献翻译提示词prompt </a>
+</div>
+</div>
+</div>
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
 <div class="folder inner-folder" x-data="{isOpen: $persist(false).as('czc知识库/笔记/不分类')}" @click.stop="isOpen=!isOpen">
@@ -1350,6 +1363,14 @@ CTRL + K
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
 <div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/计算机/Python/python学习/③python高级/402-Python生成器/">402-Python生成器 </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/计算机/Python/python学习/③python高级/403-Python中的深浅拷贝/">403-Python中的深浅拷贝 </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/计算机/Python/python学习/③python高级/404-正则表达式/">404-正则表达式 </a>
 </div>
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
@@ -2092,28 +2113,6 @@ CTRL + K
 <span class="foldername">编程</span>
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
-<div class="folder inner-folder" x-data="{isOpen: $persist(false).as('czc知识库/计算机/编程/软件开发笔记')}" @click.stop="isOpen=!isOpen">
-<div class="foldername-wrapper align-icon">
-<i x-show="isOpen" style="display:none" icon-name="chevron-down"></i>
-<i x-show="!isOpen" icon-name="chevron-right"></i>
-<span class="foldername">软件开发笔记</span>
-</div>
-<div x-show="isOpen" style="display:none" class="filelist">
-<div class="folder inner-folder" x-data="{isOpen: $persist(false).as('czc知识库/计算机/编程/软件开发笔记/AndroZoo数据集下载器')}" @click.stop="isOpen=!isOpen">
-<div class="foldername-wrapper align-icon">
-<i x-show="isOpen" style="display:none" icon-name="chevron-down"></i>
-<i x-show="!isOpen" icon-name="chevron-right"></i>
-<span class="foldername">AndroZoo数据集下载器</span>
-</div>
-<div x-show="isOpen" style="display:none" class="filelist">
-<div @click.stop class="notelink active-note"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/计算机/编程/软件开发笔记/AndroZoo数据集下载器/笔记：AndroZoo数据集下载程序 筛选超大csv文件 制作下载链接 多线程下载 apk文件 python笔记/">笔记：AndroZoo数据集下载程序 筛选超大csv文件 制作下载链接 多线程下载 apk文件 python笔记 </a>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div x-show="isOpen" style="display:none" class="filelist">
 <div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/计算机/编程/anaconda笔记/">anaconda笔记 </a>
 </div>
 </div>
@@ -2159,6 +2158,10 @@ CTRL + K
 <div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/">主页 </a>
 </div>
 </div>
+<div x-show="isOpen" style="display:none" class="">
+<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/公共类/">公共类 </a>
+</div>
+</div>
 </div>
 </nav>
 </div>
@@ -2182,216 +2185,41 @@ CTRL + K
 </div>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/flexsearch@0.7.21/dist/flexsearch.bundle.js"></script>
-<script>document.addEventListener("DOMContentLoaded",init,!1),document.addEventListener("DOMContentLoaded",setCorrectShortcut,!1),window.toggleSearch=function(){document.getElementById("globalsearch").classList.contains("active")?document.getElementById("globalsearch").classList.remove("active"):(document.getElementById("globalsearch").classList.add("active"),document.getElementById("term").focus())},window.toggleTagSearch=function(e){console.log(e.textContent);const t=e.textContent;t&&(window.document.getElementById("term").value=t.trim(),window.toggleSearch(),window.search())};const loadingSvg='\n    <svg width="100" height="100" viewBox="0 0 45 45" xmlns="http://www.w3.org/2000/svg" stroke="#fff">\n      <g fill="none" fill-rule="evenodd" transform="translate(1 1)" stroke-width="2">\n          <circle cx="22" cy="22" r="6" stroke-opacity="0">\n              <animate attributeName="r"\n                   begin="1.5s" dur="3s"\n                   values="6;22"\n                   calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-opacity"\n                   begin="1.5s" dur="3s"\n                   values="1;0" calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-width"\n                   begin="1.5s" dur="3s"\n                   values="2;0" calcMode="linear"\n                   repeatCount="indefinite" />\n          </circle>\n          <circle cx="22" cy="22" r="6" stroke-opacity="0">\n              <animate attributeName="r"\n                   begin="3s" dur="3s"\n                   values="6;22"\n                   calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-opacity"\n                   begin="3s" dur="3s"\n                   values="1;0" calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-width"\n                   begin="3s" dur="3s"\n                   values="2;0" calcMode="linear"\n                   repeatCount="indefinite" />\n          </circle>\n          <circle cx="22" cy="22" r="8">\n              <animate attributeName="r"\n                   begin="0s" dur="1.5s"\n                   values="6;1;2;3;4;5;6"\n                   calcMode="linear"\n                   repeatCount="indefinite" />\n          </circle>\n      </g>\n  </svg>';function debounce(e,t,n){var a;return function(){var r=this,i=arguments,c=n&&!a;clearTimeout(a),a=setTimeout((function(){a=null,n||e.apply(r,i)}),t),c&&e.apply(r,i)}}function setCorrectShortcut(){navigator.platform.toUpperCase().indexOf("MAC")>=0&&document.querySelectorAll(".search-keys").forEach((e=>e.innerHTML="⌘ + K"))}function createIndex(e){const t=e=>e.toLowerCase().split(/([^a-z]|[^\x00-\x7F])/),n=new FlexSearch.Document({cache:!0,charset:"latin:extra",optimize:!0,index:[{field:"content",tokenize:"reverse",encode:t},{field:"title",tokenize:"forward",encode:t},{field:"tags",tokenize:"forward",encode:t}]});return e.forEach(((e,t)=>{n.add({id:t,title:e.title,content:e.content,tags:e.tags})})),n}async function init(){let e=!0;if(localStorage.getItem("searchIndex")){let{date:t,docs:n}=JSON.parse(localStorage.getItem("searchIndex"));if("2024-12-17T13:36:26.725Z"===t){e=!1;let t=createIndex(n);window.docs=n,window.index=t}}if(e){let e=await(await fetch("/searchIndex.json?v=2024-12-17T13:36:26.725Z")).json(),t=createIndex(e);localStorage.setItem("searchIndex",JSON.stringify({date:"2024-12-17T13:36:26.725Z",docs:e})),window.docs=e,window.index=t}document.addEventListener("keydown",(e=>{if((e.ctrlKey||e.metaKey)&&"k"===e.key&&(e.preventDefault(),toggleSearch()),"Escape"===e.key&&document.getElementById("globalsearch").classList.remove("active"),document.getElementById("globalsearch").classList.contains("active")){if("ArrowDown"===e.key){e.preventDefault();let t=document.querySelector(".searchresult.active");t?(t.classList.remove("active"),t.nextElementSibling?t.nextElementSibling.classList.add("active"):document.querySelector(".searchresult").classList.add("active")):document.querySelector(".searchresult").classList.add("active");let n=document.querySelector(".searchresult.active");n&&n.scrollIntoView({behavior:"smooth",block:"nearest",inline:"start"})}if("ArrowUp"===e.key){e.preventDefault();let t=document.querySelector(".searchresult.active");t?(t.classList.remove("active"),t.previousElementSibling?t.previousElementSibling.classList.add("active"):document.querySelectorAll(".searchresult").forEach((e=>{e.nextElementSibling||e.classList.add("active")}))):document.querySelectorAll(".searchresult").forEach((e=>{e.nextElementSibling&&e.classList.add("active")}));let n=document.querySelector(".searchresult.active");n&&n.scrollIntoView({behavior:"smooth",block:"nearest",inline:"start"})}if("Enter"===e.key){e.preventDefault();let t=document.querySelector(".searchresult.active");t&&(window.location.href=t.querySelector("a").href)}}}));const t=debounce(search,200,!1);field=document.querySelector("#term"),field.addEventListener("keydown",(e=>{"ArrowDown"!==e.key&&"ArrowUp"!==e.key&&t()})),resultsDiv=document.querySelector("#search-results");const n=new URL(location.href).searchParams;n.get("q")&&(field.setAttribute("value",n.get("q")),toggleSearch(),search())}async function search(){let e=field.value.trim();if(!e)return;if(e==lastSearch)return;console.log(`search for ${e}`),window.lastSearch=e,resultsDiv.innerHTML=loadingSvg;let t=offlineSearch(e),n="";if(!t.length){let t=document.createElement("p");return t.innerText=`No results for "${e}"`,resultsDiv.innerHTML="",void resultsDiv.appendChild(t)}n+='<div style="max-width:100%;">',t.forEach((e=>{e.tags&&e.tags.length>0?n+=`<div class="searchresult">\n                    <a class="search-link" href="${e.url}">${e.title}</a>\n                    <div onclick="window.location='${e.url}'">\n                        <div class="header-meta">\n                            <div class="header-tags">\n                                ${e.tags.map((e=>'<a class="tag" href="JavaScript:Void(0);">#'+e+"</a>")).join("")}\n                            </div>\n                        </div>\n                        ${e.content}\n                    </div>\n                </div>`:n+=`<div class="searchresult">\n                    <a class="search-link" href="${e.url}">${e.title}</a>\n                    <div onclick="window.location='${e.url}'">\n                        ${e.content}\n                    </div>\n                </div>`})),n+="</div>",resultsDiv.innerHTML=n}function truncate(e,t){return(e=e.replaceAll(/<[^>]*>/g,"")).length<t?e:e.substring(0,t-3)+"..."}function offlineSearch(e){let t=window.docs,n="#"===e[0]&&e.length>1?index.search(e.substring(1),[{field:"tags"}]):index.search(e,[{field:"title",limit:5},{field:"content",weight:10}]);const a=e=>{const t=n.filter((t=>t.field===e));return 0===t.length?[]:[...t[0].result]};return[...new Set([...a("title"),...a("content"),...a("tags")])].map((e=>{let n=t[e];return n.content=truncate(n.content,400),n.tags=n.tags.filter((e=>"gardenEntry"!=e&&"note"!=e)),n}))}window.lastSearch=""</script>
+<script>document.addEventListener("DOMContentLoaded",init,!1),document.addEventListener("DOMContentLoaded",setCorrectShortcut,!1),window.toggleSearch=function(){document.getElementById("globalsearch").classList.contains("active")?document.getElementById("globalsearch").classList.remove("active"):(document.getElementById("globalsearch").classList.add("active"),document.getElementById("term").focus())},window.toggleTagSearch=function(e){console.log(e.textContent);const t=e.textContent;t&&(window.document.getElementById("term").value=t.trim(),window.toggleSearch(),window.search())};const loadingSvg='\n    <svg width="100" height="100" viewBox="0 0 45 45" xmlns="http://www.w3.org/2000/svg" stroke="#fff">\n      <g fill="none" fill-rule="evenodd" transform="translate(1 1)" stroke-width="2">\n          <circle cx="22" cy="22" r="6" stroke-opacity="0">\n              <animate attributeName="r"\n                   begin="1.5s" dur="3s"\n                   values="6;22"\n                   calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-opacity"\n                   begin="1.5s" dur="3s"\n                   values="1;0" calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-width"\n                   begin="1.5s" dur="3s"\n                   values="2;0" calcMode="linear"\n                   repeatCount="indefinite" />\n          </circle>\n          <circle cx="22" cy="22" r="6" stroke-opacity="0">\n              <animate attributeName="r"\n                   begin="3s" dur="3s"\n                   values="6;22"\n                   calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-opacity"\n                   begin="3s" dur="3s"\n                   values="1;0" calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-width"\n                   begin="3s" dur="3s"\n                   values="2;0" calcMode="linear"\n                   repeatCount="indefinite" />\n          </circle>\n          <circle cx="22" cy="22" r="8">\n              <animate attributeName="r"\n                   begin="0s" dur="1.5s"\n                   values="6;1;2;3;4;5;6"\n                   calcMode="linear"\n                   repeatCount="indefinite" />\n          </circle>\n      </g>\n  </svg>';function debounce(e,t,n){var a;return function(){var r=this,i=arguments,c=n&&!a;clearTimeout(a),a=setTimeout((function(){a=null,n||e.apply(r,i)}),t),c&&e.apply(r,i)}}function setCorrectShortcut(){navigator.platform.toUpperCase().indexOf("MAC")>=0&&document.querySelectorAll(".search-keys").forEach((e=>e.innerHTML="⌘ + K"))}function createIndex(e){const t=e=>e.toLowerCase().split(/([^a-z]|[^\x00-\x7F])/),n=new FlexSearch.Document({cache:!0,charset:"latin:extra",optimize:!0,index:[{field:"content",tokenize:"reverse",encode:t},{field:"title",tokenize:"forward",encode:t},{field:"tags",tokenize:"forward",encode:t}]});return e.forEach(((e,t)=>{n.add({id:t,title:e.title,content:e.content,tags:e.tags})})),n}async function init(){let e=!0;if(localStorage.getItem("searchIndex")){let{date:t,docs:n}=JSON.parse(localStorage.getItem("searchIndex"));if("2024-12-23T06:52:10.978Z"===t){e=!1;let t=createIndex(n);window.docs=n,window.index=t}}if(e){let e=await(await fetch("/searchIndex.json?v=2024-12-23T06:52:10.978Z")).json(),t=createIndex(e);localStorage.setItem("searchIndex",JSON.stringify({date:"2024-12-23T06:52:10.978Z",docs:e})),window.docs=e,window.index=t}document.addEventListener("keydown",(e=>{if((e.ctrlKey||e.metaKey)&&"k"===e.key&&(e.preventDefault(),toggleSearch()),"Escape"===e.key&&document.getElementById("globalsearch").classList.remove("active"),document.getElementById("globalsearch").classList.contains("active")){if("ArrowDown"===e.key){e.preventDefault();let t=document.querySelector(".searchresult.active");t?(t.classList.remove("active"),t.nextElementSibling?t.nextElementSibling.classList.add("active"):document.querySelector(".searchresult").classList.add("active")):document.querySelector(".searchresult").classList.add("active");let n=document.querySelector(".searchresult.active");n&&n.scrollIntoView({behavior:"smooth",block:"nearest",inline:"start"})}if("ArrowUp"===e.key){e.preventDefault();let t=document.querySelector(".searchresult.active");t?(t.classList.remove("active"),t.previousElementSibling?t.previousElementSibling.classList.add("active"):document.querySelectorAll(".searchresult").forEach((e=>{e.nextElementSibling||e.classList.add("active")}))):document.querySelectorAll(".searchresult").forEach((e=>{e.nextElementSibling&&e.classList.add("active")}));let n=document.querySelector(".searchresult.active");n&&n.scrollIntoView({behavior:"smooth",block:"nearest",inline:"start"})}if("Enter"===e.key){e.preventDefault();let t=document.querySelector(".searchresult.active");t&&(window.location.href=t.querySelector("a").href)}}}));const t=debounce(search,200,!1);field=document.querySelector("#term"),field.addEventListener("keydown",(e=>{"ArrowDown"!==e.key&&"ArrowUp"!==e.key&&t()})),resultsDiv=document.querySelector("#search-results");const n=new URL(location.href).searchParams;n.get("q")&&(field.setAttribute("value",n.get("q")),toggleSearch(),search())}async function search(){let e=field.value.trim();if(!e)return;if(e==lastSearch)return;console.log(`search for ${e}`),window.lastSearch=e,resultsDiv.innerHTML=loadingSvg;let t=offlineSearch(e),n="";if(!t.length){let t=document.createElement("p");return t.innerText=`No results for "${e}"`,resultsDiv.innerHTML="",void resultsDiv.appendChild(t)}n+='<div style="max-width:100%;">',t.forEach((e=>{e.tags&&e.tags.length>0?n+=`<div class="searchresult">\n                    <a class="search-link" href="${e.url}">${e.title}</a>\n                    <div onclick="window.location='${e.url}'">\n                        <div class="header-meta">\n                            <div class="header-tags">\n                                ${e.tags.map((e=>'<a class="tag" href="JavaScript:Void(0);">#'+e+"</a>")).join("")}\n                            </div>\n                        </div>\n                        ${e.content}\n                    </div>\n                </div>`:n+=`<div class="searchresult">\n                    <a class="search-link" href="${e.url}">${e.title}</a>\n                    <div onclick="window.location='${e.url}'">\n                        ${e.content}\n                    </div>\n                </div>`})),n+="</div>",resultsDiv.innerHTML=n}function truncate(e,t){return(e=e.replaceAll(/<[^>]*>/g,"")).length<t?e:e.substring(0,t-3)+"..."}function offlineSearch(e){let t=window.docs,n="#"===e[0]&&e.length>1?index.search(e.substring(1),[{field:"tags"}]):index.search(e,[{field:"title",limit:5},{field:"content",weight:10}]);const a=e=>{const t=n.filter((t=>t.field===e));return 0===t.length?[]:[...t[0].result]};return[...new Set([...a("title"),...a("content"),...a("tags")])].map((e=>{let n=t[e];return n.content=truncate(n.content,400),n.tags=n.tags.filter((e=>"gardenEntry"!=e&&"note"!=e)),n}))}window.lastSearch=""</script>
 <main class="content cm-s-obsidian">
 <header>
-<h1 data-note-icon="">笔记：AndroZoo数据集下载程序 筛选超大csv文件 制作下载链接 多线程下载 apk文件 python笔记</h1>
+<h1 data-note-icon="">文献翻译提示词prompt</h1>
 <div class="header-meta">
 <div class="header-tags">
 </div>
-<div class="timestamps"><div><i icon-name="calendar-plus"></i> <span class="human-date" data-date="2024-12-07T08:39:46.862+08:00"></span></div><div><i icon-name="calendar-clock"></i> <span class="human-date" data-date="2024-12-08T12:19:40.994+08:00"></span></div></div></div>
+<div class="timestamps"><div><i icon-name="calendar-plus"></i> <span class="human-date" data-date="2024-12-15T20:59:38.527+08:00"></span></div><div><i icon-name="calendar-clock"></i> <span class="human-date" data-date="2024-12-22T15:32:19.449+08:00"></span></div></div></div>
 </header>
-<h1 id="代码功能" tabindex="-1">代码功能</h1>
-<ul>
-<li>pandas读取超大型csv文件（带进度显示）</li>
-<li>数据筛选</li>
-<li>多线程下载</li>
-</ul>
-<h1 id="需求：" tabindex="-1">需求：</h1>
-<ul>
-<li>在AndroZoo申请通过使用权限，获取到官方发给你的api</li>
-<li>下载AndroZoo官网最新的app列表文件：latest.cs</li>
-</ul>
-<h1 id="代码：" tabindex="-1">代码：</h1>
-<p>最新的组合下载链接并多线程下载函数：</p>
-<pre><code class="language-python"># 多线程下载 APK 文件
-def czc_download_apk_multithreaded(apikey, filtered_file, output_dir, target_count=10000, num_threads=200):
-    debug_print('开始多线程下载 APK')
-    filtered_conditions = os.path.splitext(os.path.basename(filtered_file))[0]
-    downloaded_file = os.path.join(output_dir, f'已下载apk_{filtered_conditions}.txt')
-    if not os.path.exists(downloaded_file):
-        open(downloaded_file, 'w').close()
-    with open(filtered_file, 'r') as f:
-        sha256_list = f.readlines()
-    sha256_list = [sha.strip() for sha in sha256_list]
-    def download_task(sha256, pbar):
-        url = f&quot;https://androzoo.uni.lu/api/download?apikey={apikey}&amp;sha256={sha256}&quot;
-        debug_print(f'尝试下载 APK：{sha256}')
-        try:
-            response = requests.get(url, verify=True, timeout=10)
-            if response.status_code == 200:
-                apk_name = sha256 + '.apk'
-                with open(os.path.join(download_dir, apk_name), 'wb') as file:
-                    file.write(response.content)
-                with open(downloaded_file, 'a') as f:
-                    f.write(sha256 + '\n')
-                pbar.update(1)
-                debug_print(f'下载成功：{sha256}')
-            else:
-                debug_print(f'下载失败：{sha256}, 状态码：{response.status_code}')
-        except Exception as e:
-            debug_print(f'下载错误：{sha256}，错误信息：{e}')
-    while True:
-        with open(downloaded_file, 'r') as f:
-            downloaded_list = f.readlines()
-        downloaded_list = [sha.strip() for sha in downloaded_list]
-        if len(downloaded_list) &gt;= target_count:
-            debug_print(f'下载任务完成，已下载 {len(downloaded_list)} 个 APK')
-            break
-        to_download = list(set(sha256_list) - set(downloaded_list))
-        random.shuffle(to_download)
-        download_dir = os.path.join(output_dir, 'apks')
-        os.makedirs(download_dir, exist_ok=True)
-        debug_print(f'下载目录已创建：{download_dir}')
-        with tqdm(total=target_count, desc='下载进度', initial=len(downloaded_list)) as pbar:
-            with ThreadPoolExecutor(max_workers=num_threads) as executor:
-                futures = []
-                while len(downloaded_list) &lt; target_count and to_download:
-                    sha256 = to_download.pop()
-                    future = executor.submit(download_task, sha256, pbar)
-                    futures.append(future)
-                    downloaded_list.append(sha256)
-                for future in futures:
-                    future.result()
-    debug_print('多线程下载完成')
-</code></pre>
-<p>最新的代码在台式里</p>
-<pre><code class="language-python">import os
-import requests
-from datetime import datetime
-import pandas as pd
-from concurrent.futures import ThreadPoolExecutor
-import time
-from tqdm import tqdm
-import gc
+<pre><code>你是一个英文文献翻译官，接下来我会不断发给你文献内容，请你帮我翻译成中文（请注意我的复制的原文没有分段，但是原文是分了段的）  
 
-debug = True
-apikey = '58b1fe025f2e5ab21ebb282515415dea1eeb28985d9083c0a397e7eda08ea8f8'  # czc api
-# apikey = '77aec76df8b564d8b46de4b1ec775764188dcee2c768510a559bd535c88f5cc9'  # zky api
-
-# 带有进度显示的读取csv文件函数
-def czc_read_csv(path, chunksize=100000, parse_dates=['dex_date']):
-    starttime = time.perf_counter()
-    chunks = []
-    for chunk in tqdm(pd.read_csv(path, parse_dates=parse_dates, chunksize=chunksize)):
-        chunks.append(chunk)
-    df = pd.concat(chunks, ignore_index=True)
-    endtime = time.perf_counter()
-    print('读取完毕，用时：', endtime - starttime)
-    return df
-
-# 从读取的到的csv文件按需求随机筛选数据
-def filter_apk(config, output_dir, csv_path='latest.csv', random_selection=False, random_sample_size=0):
-    start_year_filter = config['start_year']
-    end_year_filter = config['end_year']
-    dex_size_limit = config['dex_size_limit']
-    apk_size_limit = config['apk_size_limit']
-    print('文件读取中')
-    df = czc_read_csv(csv_path, parse_dates=['dex_date'])
-    df.set_index('dex_date', inplace=True)
-    # 筛选数据
-    print('筛选 APK 中')
-    filtered_df = df.loc[(df.index.year &gt;= start_year_filter) &amp; (df.index.year &lt;= end_year_filter) &amp; (df['vt_detection'] == 0) &amp; (df['dex_size'] &lt; dex_size_limit) &amp; (df['apk_size'] &lt; apk_size_limit)]
-
-    # 随机抽样
-    if random_selection:
-        if random_sample_size &lt; len(filtered_df):
-            # 仅当随机抽样量小于数据总量时才进行抽样
-            filtered_df = filtered_df.sample(n=random_sample_size)
-    filtered_df.to_csv(os.path.join(output_dir, 'filtered_apks.csv'), index=False)
-    del df  # 删除df释放内存
-    gc.collect()  # 强制进行垃圾回收
-    return filtered_df
-
-# 根据筛选后的数据制作下载链接输出到txt文件
-def generate_download_link(filtered_df, out_dir, split_size=1000000):
-    # 创建下载链接目录
-    links_dir_name = os.path.join(out_dir, 'links')
-    os.makedirs(links_dir_name, exist_ok=True)
-    # 拆分下载链接并保存到多个TXT文件
-    print('链接生成中')
-    num_rows = filtered_df.shape[0]
-    for i in range(0, num_rows, split_size):
-        chunk_df = filtered_df.iloc[i:i + split_size]
-        links_file = os.path.join(links_dir_name, f'links_{i // split_size + 1}.txt')
-        with open(links_file, 'w') as f:
-            for sha_value in chunk_df['sha256']:
-                link = f&quot;https://androzoo.uni.lu/api/download?apikey={apikey}&amp;sha256={sha_value}\n&quot;
-                f.write(link)
-    del filtered_df  # 删除filtered_df释放内存
-    gc.collect()  # 强制进行垃圾回收
-    return links_dir_name
-
-def download_apk(url, download_path, pbar):
-    try:
-        while 1:
-            response = requests.get(url, verify=True)
-            if response.status_code == 200:
-                apk_name = url.split('=')[-1] + '.apk'
-                with open(os.path.join(download_path, apk_name), 'wb') as file:
-                    file.write(response.content)
-                pbar.set_postfix_str(f'已下载: {apk_name}')
-                pbar.update(1)
-                break
-            time.sleep(1)
-    except Exception as e:
-        pbar.set_postfix_str(f'下载错误: {url}: {e}')
-        pbar.update(1)
-
-def download_apk_multithreaded(links_dir, output_dir, num_threads=200):
-    download_dir = os.path.join(output_dir, 'apks')
-    os.makedirs(download_dir, exist_ok=True)
-    all_download_links = []
-    for txt_file in os.listdir(links_dir):
-        with open(os.path.join(links_dir, txt_file), 'r') as file:
-            download_links = file.readlines()
-            all_download_links.extend([link.strip() for link in download_links])
-    with tqdm(total=len(all_download_links), desc='下载进度') as pbar:
-        with ThreadPoolExecutor(max_workers=num_threads) as executor:
-            futures = [executor.submit(download_apk, link, download_dir, pbar) for link in all_download_links]
-            for future in futures:
-                future.result()
-
-def re_download(output_dir, num_threads=1):
-    links_dir = os.path.join(output_dir, 'links')
-    apks_dir = os.path.join(output_dir, 'apks')
-    all_links = []
-    for txt_file in os.listdir(links_dir):
-        with open(os.path.join(links_dir, txt_file), 'r') as file:
-            download_links = file.readlines()
-            all_links += [link.strip()[-64:] for link in download_links]
-    all_apks = [apk[:-4] for apk in os.listdir(apks_dir)]
-    failed_apk_downloads = list(set(all_links).difference(set(all_apks)))
-    failed_apk_downloads_df = pd.DataFrame({'sha256': failed_apk_downloads})
-    print(f'共 {len(failed_apk_downloads)} 个 APK 下载失败')
-    re_download_dir = os.path.join(output_dir, datetime.now().strftime(&quot;%Y_%m_%d_%H_%M_redownload&quot;))
-    os.makedirs(re_download_dir, exist_ok=True)
-    print('重新生成下载链接')
-    re_download_links_dir = generate_download_link(failed_apk_downloads_df, out_dir=re_download_dir)
-    print('开始重新下载')
-    download_apk_multithreaded(re_download_links_dir, re_download_dir, num_threads=num_threads)
-
-def debug_print(a):
-    if debug: print(a)
-  
-if __name__ == '__main__':
-    configs = {
-        'start_year': 2014,
-        'end_year': 2014,
-        'dex_size_limit': 500 * 1024,
-        'apk_size_limit': 1024 * 1024 * 1024
-    }
-    output_dir = datetime.now().strftime(&quot;%Y%m%d&quot;)
-    output_dir += '_' + '_'.join([str(configs[c]) for c in configs])
-    debug_print('生成下载目录名字')
-    os.makedirs(output_dir, exist_ok=True)
-    debug_print('创建下载目录完成')
-    df = filter_apk(configs, output_dir, random_selection=True, random_sample_size=40000)
-    debug_print('apk过滤完成')
-    links_dir = generate_download_link(df, output_dir)
-    debug_print('下载链接txt生成完成')
-    debug_print('开始多线程下载')
-    download_apk_multithreaded(links_dir, output_dir, num_threads=200)
+注意：
+- 所有内容都以markdown源码输出（在开头结尾添加``` ```）
+- 我记录翻译内容是用markdown格式来记录，所以：
+	- 所有你发给我的内容都以markdown原文格式发给我，例如：
+		```
+		# 这是一级标题
+		这是内容
+		## 这是二级标题
+		这是内容
+		```
+	- 文献一般都有各级的标题，请你识别标题并以markdown格式的标题格式发给我
+		- 一级标题： # 一级标题：例如：1 IN ITRODUCTION、2 BASIC SDAC
+		- 二级标题：2.1 API Path Extraction、2.2 API Vector Embedding
+		- 以此类推
+	- 关于公式的地方请写成latex源码格式，例如：  
+		- 例如：我们选择了以下广泛使用的指标，包括准确率（Accuracy）、精确率（Precision）、召回率（Recall）和F1值（F1-Measure）。准确率的计算公式为：$\text{Accuracy} = \frac{TP + TN}{TP + TN + FP + FN}$ 。在以下公式中，精确率为： $\text{Precision} = \frac{TP}{TP + FP}$ ，召回率为： $\text{Recall} = \frac{TP}{TP + FN}$ 。其中TP和TN分别代表正确分类为恶意和良性的样本数量，FP和FN分别代表错误地识别为恶意和良性的样本数量。
+	- 可能我会复制表格内容给你，当你检测到我发送的内容是表格时，请将表格的markdown源代码发给我
+	- 在文中指定图几或表几的时候，将这些内容加粗，例如：
+		- In **Fig. 2**,  
+		- 在**图1**中，a表示是ikun
+		- 在**表3**中，这里是内容
+		- 随机选择的。**表1**展示了我们的数据集
+- 我的文献都是pdf，所以对于分段内容复制出来的英文可能失去分段符，所以你可以在合适的地方为我分段
+- 请在翻译的时候注意文献文字内容的逻辑正确性
 </code></pre>
 </main>
 <aside>
@@ -2425,29 +2253,10 @@ if __name__ == '__main__':
 <span id="full-graph-close" x-on:click="fullGraph = closefullGraph(fullGraph); showFullGraph = false;"><i icon-name="x" aria-hidden="true"></i></span><div id="full-graph-container"></div>
 </div>
 </div>
-<div class="toc">
-<div class="toc-title-container">
-<div class="toc-title">
-On this page
-</div>
-</div>
-<div class="toc-container">
-<nav class="toc">
-<ol>
-<li><a href="#代码功能">代码功能</a>
-</li>
-<li><a href="#需求：">需求：</a>
-</li>
-<li><a href="#代码：">代码：</a>
-</li>
-</ol>
-</nav>
-</div>
-</div>
 <div class="backlinks">
 <div class="backlink-title" style="margin:4px 0!important">Pages mentioning this page</div>
-<div class="backlink-list"><div class="backlink-card">
-<span class="no-backlinks-message">No other pages mentions this page</span>
+<div class="backlink-list"><div class="backlink-card"><i icon-name="link"></i><a href="/czc知识库/最近更新的笔记/" data-note-icon="" class="backlink">最近更新的笔记</a>
+</div><div class="backlink-card"><i icon-name="link"></i><a href="/czc知识库/笔记/prompt/prompt/" data-note-icon="" class="backlink">prompt</a>
 </div></div>
 </div>
 </div>
