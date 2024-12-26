@@ -1467,11 +1467,6 @@
         </url>
     
         <url>
-            <loc>/czc知识库/计算机/Python/python学习/③python高级/360-静态Web服务器/</loc>
-            <lastmod>2024-12-17T13:31:29.545Z</lastmod>
-        </url>
-    
-        <url>
             <loc>/czc知识库/计算机/Python/python学习/③python高级/361-HTTP协议/</loc>
             <lastmod>2024-12-17T13:31:29.545Z</lastmod>
         </url>
@@ -1824,6 +1819,11 @@
         <url>
             <loc>/czc知识库/笔记/知识库搭建/知识库搭建/</loc>
             <lastmod>2024-12-26T04:59:42.173Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/计算机/Python/python学习/③python高级/360-静态Web服务器/</loc>
+            <lastmod>2024-12-26T14:04:39.594Z</lastmod>
         </url>
     
 </urlset>
