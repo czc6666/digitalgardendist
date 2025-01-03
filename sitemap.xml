@@ -182,11 +182,6 @@
         </url>
     
         <url>
-            <loc>/czc知识库/硕士研究生/科研/文献阅读笔记/2-图神经网络/202305.13.GCNs_AMD：基于 GCN 增强函数调用图中节点特征差异的 Android 恶意软件检测方法 An Android Malware Detection Approach to Enhance Node Feature Differences in a Function Call Graph Based on GCNs/</loc>
-            <lastmod>2024-12-12T12:29:17.100Z</lastmod>
-        </url>
-    
-        <url>
             <loc>/czc知识库/硕士研究生/科研/文献阅读笔记/2-图神经网络/202404.FAGnet：使用图神经网络进行基于家庭感知的 Android 恶意软件分析 Family-aware-based android malware analysis using graph neural network/</loc>
             <lastmod>2024-12-12T12:29:17.100Z</lastmod>
         </url>
@@ -1527,11 +1522,6 @@
         </url>
     
         <url>
-            <loc>/czc知识库/硕士研究生/科研/文献阅读笔记/2-语义/202403.GAT_AMD：基于图注意力网络和多模态特征深度融合的Android恶意软件检测方法 Android malware detection method based on graph attention networks and deep fusion of multimodal features（精读）/</loc>
-            <lastmod>2024-12-23T07:05:28.871Z</lastmod>
-        </url>
-    
-        <url>
             <loc>/czc知识库/硕士研究生/科研/文献阅读笔记/z-垃圾&amp;归档文章&amp;其他东西/!-笔记的笔记/202403.GAT_AMD：精读笔记/</loc>
             <lastmod>2024-12-23T07:05:28.871Z</lastmod>
         </url>
@@ -1727,11 +1717,6 @@
         </url>
     
         <url>
-            <loc>/czc知识库/计算机/Python/Python/</loc>
-            <lastmod>2024-12-30T07:32:22.190Z</lastmod>
-        </url>
-    
-        <url>
             <loc>/czc知识库/计算机/Python/python学习/③python高级/350-多任务/</loc>
             <lastmod>2024-12-30T07:32:22.190Z</lastmod>
         </url>
@@ -1762,11 +1747,6 @@
         </url>
     
         <url>
-            <loc>/czc知识库/计算机/Python/python学习/④python高级进阶/402-Python爬虫/</loc>
-            <lastmod>2024-12-30T07:32:22.190Z</lastmod>
-        </url>
-    
-        <url>
             <loc>/czc知识库/计算机/Python/python学习/④python高级进阶/403-数据可视化/</loc>
             <lastmod>2024-12-30T07:32:22.190Z</lastmod>
         </url>
@@ -1787,13 +1767,38 @@
         </url>
     
         <url>
+            <loc>/czc知识库/硕士研究生/科研/文献阅读笔记/2-图神经网络/202305.13.GCNs_AMD：基于 GCN 增强函数调用图中节点特征差异的 Android 恶意软件检测方法 An Android Malware Detection Approach to Enhance Node Feature Differences in a Function Call Graph Based on GCNs/</loc>
+            <lastmod>2025-01-03T12:51:31.253Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/硕士研究生/科研/文献阅读笔记/2-语义/202403.GAT_AMD：基于图注意力网络和多模态特征深度融合的Android恶意软件检测方法 Android malware detection method based on graph attention networks and deep fusion of multimodal features（精读）/</loc>
+            <lastmod>2025-01-03T12:51:31.253Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/计算机/MySQL/MySQL/</loc>
+            <lastmod>2025-01-03T12:51:31.253Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/计算机/Python/Python/</loc>
+            <lastmod>2025-01-03T12:51:31.253Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/计算机/Python/python学习/④python高级进阶/402-Python爬虫/</loc>
+            <lastmod>2025-01-03T12:51:31.253Z</lastmod>
+        </url>
+    
+        <url>
             <loc>/czc知识库/计算机/计算机/</loc>
-            <lastmod>2024-12-30T07:32:22.190Z</lastmod>
+            <lastmod>2025-01-03T12:51:31.253Z</lastmod>
         </url>
     
         <url>
             <loc>/</loc>
-            <lastmod>2024-12-30T07:32:22.190Z</lastmod>
+            <lastmod>2025-01-03T12:51:31.253Z</lastmod>
         </url>
     
 </urlset>
