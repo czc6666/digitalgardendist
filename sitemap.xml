@@ -307,11 +307,6 @@
         </url>
     
         <url>
-            <loc>/czc知识库/笔记/不分类/杂七杂八/</loc>
-            <lastmod>2024-12-12T12:29:17.100Z</lastmod>
-        </url>
-    
-        <url>
             <loc>/czc知识库/笔记/不分类/汽油：不同标号的汽油区别科普/</loc>
             <lastmod>2024-12-12T12:29:17.100Z</lastmod>
         </url>
@@ -1512,11 +1507,6 @@
         </url>
     
         <url>
-            <loc>/czc知识库/硕士研究生/科研/文献阅读笔记/文献阅读笔记/</loc>
-            <lastmod>2024-12-25T13:41:52.456Z</lastmod>
-        </url>
-    
-        <url>
             <loc>/czc知识库/计算机/Python/python学习/①python基础/120-python函数/</loc>
             <lastmod>2024-12-25T13:41:52.456Z</lastmod>
         </url>
@@ -1672,23 +1662,8 @@
         </url>
     
         <url>
-            <loc>/czc知识库/笔记/知识库搭建/知识库搭建/</loc>
-            <lastmod>2024-12-26T04:59:42.173Z</lastmod>
-        </url>
-    
-        <url>
             <loc>/czc知识库/计算机/Python/python学习/③python高级/360-静态Web服务器/</loc>
             <lastmod>2024-12-26T14:04:39.594Z</lastmod>
-        </url>
-    
-        <url>
-            <loc>/czc知识库/笔记/知识库搭建/数字花园/我的数字花园搭建笔记/</loc>
-            <lastmod>2024-12-30T07:32:22.190Z</lastmod>
-        </url>
-    
-        <url>
-            <loc>/czc知识库/笔记/知识库搭建/数字花园/数字花园/</loc>
-            <lastmod>2024-12-30T07:32:22.190Z</lastmod>
         </url>
     
         <url>
@@ -1752,17 +1727,7 @@
         </url>
     
         <url>
-            <loc>/czc知识库/计算机/MySQL/MySQL/</loc>
-            <lastmod>2025-01-09T12:43:17.397Z</lastmod>
-        </url>
-    
-        <url>
             <loc>/czc知识库/计算机/MySQL/学习笔记/001-数据库概述/</loc>
-            <lastmod>2025-01-09T12:43:17.397Z</lastmod>
-        </url>
-    
-        <url>
-            <loc>/czc知识库/计算机/MySQL/学习笔记/002-MySQL数据库/</loc>
             <lastmod>2025-01-09T12:43:17.397Z</lastmod>
         </url>
     
@@ -1787,8 +1752,78 @@
         </url>
     
         <url>
+            <loc>/beechat调查/</loc>
+            <lastmod>2025-02-08T06:11:05.284Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/硕士研究生/科研/文献阅读笔记/z-垃圾&amp;归档文章&amp;其他东西/5-垃圾文章/BiLSTM SPPNet_AMD：教科书？Hybrid Malware Detection Based on Bi-LSTM and SPP-Net for Smart IoT/</loc>
+            <lastmod>2025-02-08T06:11:05.284Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/硕士研究生/科研/文献阅读笔记/z-垃圾&amp;归档文章&amp;其他东西/5-垃圾文章/LSTM GAN_AMD：Leveraging LSTM and GAN for Modern Malware Detection LSTM和GAN结合模型检测恶意软件 垃圾文章/</loc>
+            <lastmod>2025-02-08T06:11:05.284Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/硕士研究生/科研/文献阅读笔记/文献阅读笔记/</loc>
+            <lastmod>2025-02-08T06:11:05.284Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/笔记/不分类/TTS文本转语音 。基于Bert-VITS2的原神 崩铁全角色文本转语音实现/</loc>
+            <lastmod>2025-02-08T06:11:05.284Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/笔记/不分类/杂七杂八/</loc>
+            <lastmod>2025-02-08T06:11:05.284Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/笔记/知识库搭建/数字花园/我的数字花园搭建笔记/</loc>
+            <lastmod>2025-02-08T06:11:05.284Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/笔记/知识库搭建/数字花园/数字花园/</loc>
+            <lastmod>2025-02-08T06:11:05.284Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/笔记/知识库搭建/数字花园/本地构建 云服务器部署数字花园/</loc>
+            <lastmod>2025-02-08T06:11:05.294Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/笔记/知识库搭建/数字花园/本地构建 云服务器部署数字花园plus/</loc>
+            <lastmod>2025-02-08T06:11:05.294Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/笔记/知识库搭建/知识库搭建/</loc>
+            <lastmod>2025-02-08T06:11:05.294Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/计算机/MySQL/MySQL/</loc>
+            <lastmod>2025-02-08T06:11:05.294Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/计算机/MySQL/学习笔记/002-MySQL数据库/</loc>
+            <lastmod>2025-02-08T06:11:05.294Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/计算机/MySQL/学习笔记/003-MySQL数据库操作/</loc>
+            <lastmod>2025-02-08T06:11:05.294Z</lastmod>
+        </url>
+    
+        <url>
             <loc>/</loc>
-            <lastmod>2025-01-09T13:56:11.658Z</lastmod>
+            <lastmod>2025-02-08T06:11:05.294Z</lastmod>
         </url>
     
 </urlset>
