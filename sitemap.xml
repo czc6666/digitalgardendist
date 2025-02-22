@@ -1592,11 +1592,6 @@
         </url>
     
         <url>
-            <loc>/czc知识库/计算机/Python/python学习/②python面向对象/203-魔术方法：__init__()、__str__()、__del__()/</loc>
-            <lastmod>2024-12-25T13:41:52.456Z</lastmod>
-        </url>
-    
-        <url>
             <loc>/czc知识库/计算机/Python/python学习/②python面向对象/204-面向对象三大特性-1.封装/</loc>
             <lastmod>2024-12-25T13:41:52.456Z</lastmod>
         </url>
@@ -1742,11 +1737,6 @@
         </url>
     
         <url>
-            <loc>/czc知识库/计算机/计算机/</loc>
-            <lastmod>2025-01-09T12:43:17.397Z</lastmod>
-        </url>
-    
-        <url>
             <loc>/czc知识库/硕士研究生/科研/论文/论文思路/</loc>
             <lastmod>2025-01-09T13:56:11.658Z</lastmod>
         </url>
@@ -1807,23 +1797,43 @@
         </url>
     
         <url>
-            <loc>/czc知识库/计算机/MySQL/MySQL/</loc>
-            <lastmod>2025-02-08T06:11:05.294Z</lastmod>
-        </url>
-    
-        <url>
             <loc>/czc知识库/计算机/MySQL/学习笔记/002-MySQL数据库/</loc>
             <lastmod>2025-02-08T06:11:05.294Z</lastmod>
         </url>
     
         <url>
+            <loc>/czc知识库/计算机/MySQL/MySQL/</loc>
+            <lastmod>2025-02-22T06:12:41.962Z</lastmod>
+        </url>
+    
+        <url>
             <loc>/czc知识库/计算机/MySQL/学习笔记/003-MySQL数据库操作/</loc>
-            <lastmod>2025-02-08T06:11:05.294Z</lastmod>
+            <lastmod>2025-02-22T06:12:41.962Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/计算机/MySQL/学习笔记/004-数据库查询练习/</loc>
+            <lastmod>2025-02-22T06:12:41.962Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/计算机/Python/python学习/②python面向对象/203-魔术方法：__init__()、__str__()、__del__()/</loc>
+            <lastmod>2025-02-22T06:12:41.962Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/计算机/计算机/</loc>
+            <lastmod>2025-02-22T06:12:41.962Z</lastmod>
         </url>
     
         <url>
             <loc>/</loc>
-            <lastmod>2025-02-08T06:11:05.294Z</lastmod>
+            <lastmod>2025-02-22T06:12:41.962Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/谷歌不用手机号创建新号/</loc>
+            <lastmod>2025-02-22T06:12:41.962Z</lastmod>
         </url>
     
 </urlset>
