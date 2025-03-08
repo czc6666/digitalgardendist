@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="zh-CN">
 <head>
-<title>hadoop离线day04--Hadoop MapReduce、YARN、HA</title>
+<title>8-Apache Hive函数高阶应用、性能调优</title>
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <script async type="module">import mermaid from"https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"</script>
 <script async src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js" integrity="sha512-hpZ5pDCF2bRCweL5WoA0/N1elet1KYL5mx3LP555Eg/0ZguaHawxNvEjF6O3rufAChs16HVNhEc6blF/rZoowQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -945,27 +945,36 @@ CTRL + K
 <span class="foldername">Hadoop技术栈</span>
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
-<div class="folder inner-folder" x-data="{isOpen: $persist(false).as('czc知识库/计算机/Hadoop技术栈/Hadoop')}" @click.stop="isOpen=!isOpen">
+<div class="folder inner-folder" x-data="{isOpen: $persist(false).as('czc知识库/计算机/Hadoop技术栈/笔记')}" @click.stop="isOpen=!isOpen">
 <div class="foldername-wrapper align-icon">
 <i x-show="isOpen" style="display:none" icon-name="chevron-down"></i>
 <i x-show="!isOpen" icon-name="chevron-right"></i>
-<span class="foldername">Hadoop</span>
+<span class="foldername">笔记</span>
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
-<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/计算机/Hadoop技术栈/Hadoop/hadoop面试题/">hadoop面试题 </a>
-</div>
-</div>
-</div>
-</div>
-<div x-show="isOpen" style="display:none" class="filelist">
-<div class="folder inner-folder" x-data="{isOpen: $persist(false).as('czc知识库/计算机/Hadoop技术栈/linux基础')}" @click.stop="isOpen=!isOpen">
+<div class="folder inner-folder" x-data="{isOpen: $persist(false).as('czc知识库/计算机/Hadoop技术栈/笔记/linux基础')}" @click.stop="isOpen=!isOpen">
 <div class="foldername-wrapper align-icon">
 <i x-show="isOpen" style="display:none" icon-name="chevron-down"></i>
 <i x-show="!isOpen" icon-name="chevron-right"></i>
 <span class="foldername">linux基础</span>
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
-<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/计算机/Hadoop技术栈/linux基础/1-基础/">1-基础 </a>
+<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/计算机/Hadoop技术栈/笔记/linux基础/1-基础/">1-基础 </a>
+</div>
+</div>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div class="folder inner-folder" x-data="{isOpen: $persist(false).as('czc知识库/计算机/Hadoop技术栈/笔记/习题')}" @click.stop="isOpen=!isOpen">
+<div class="foldername-wrapper align-icon">
+<i x-show="isOpen" style="display:none" icon-name="chevron-down"></i>
+<i x-show="!isOpen" icon-name="chevron-right"></i>
+<span class="foldername">习题</span>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/计算机/Hadoop技术栈/笔记/习题/hadoop面试题/">hadoop面试题 </a>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -991,35 +1000,35 @@ CTRL + K
 </div>
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
-<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/计算机/Hadoop技术栈/课程资料笔记/hadoop离线day01--大数据导论、Apache Zookeeper/">hadoop离线day01--大数据导论、Apache Zookeeper </a>
+<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/计算机/Hadoop技术栈/课程资料笔记/1-大数据导论、Apache Zookeeper/">1-大数据导论、Apache Zookeeper </a>
 </div>
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
-<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/计算机/Hadoop技术栈/课程资料笔记/hadoop离线day02--Apache Hadoop/">hadoop离线day02--Apache Hadoop </a>
+<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/计算机/Hadoop技术栈/课程资料笔记/2-Apache Hadoop/">2-Apache Hadoop </a>
 </div>
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
-<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/计算机/Hadoop技术栈/课程资料笔记/hadoop离线day03--Hadoop HDFS/">hadoop离线day03--Hadoop HDFS </a>
+<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/计算机/Hadoop技术栈/课程资料笔记/3-Hadoop HDFS/">3-Hadoop HDFS </a>
 </div>
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
-<div @click.stop class="notelink active-note"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/计算机/Hadoop技术栈/课程资料笔记/hadoop离线day04--Hadoop MapReduce、YARN、HA/">hadoop离线day04--Hadoop MapReduce、YARN、HA </a>
+<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/计算机/Hadoop技术栈/课程资料笔记/4-Hadoop MapReduce、YARN、HA/">4-Hadoop MapReduce、YARN、HA </a>
 </div>
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
-<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/计算机/Hadoop技术栈/课程资料笔记/hadoop离线day05--数据仓库、Apache Hive/">hadoop离线day05--数据仓库、Apache Hive </a>
+<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/计算机/Hadoop技术栈/课程资料笔记/5-数据仓库、Apache Hive/">5-数据仓库、Apache Hive </a>
 </div>
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
-<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/计算机/Hadoop技术栈/课程资料笔记/hadoop离线day06-Apache Hive SQL-DDL、DML/">hadoop离线day06-Apache Hive SQL-DDL、DML </a>
+<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/计算机/Hadoop技术栈/课程资料笔记/6-Apache Hive SQL-DDL、DML/">6-Apache Hive SQL-DDL、DML </a>
 </div>
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
-<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/计算机/Hadoop技术栈/课程资料笔记/hadoop离线day07-Apache Hive SQL DQL、参数配置与函数/">hadoop离线day07-Apache Hive SQL DQL、参数配置与函数 </a>
+<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/计算机/Hadoop技术栈/课程资料笔记/7-Apache Hive SQL DQL、参数配置与函数/">7-Apache Hive SQL DQL、参数配置与函数 </a>
 </div>
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
-<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/计算机/Hadoop技术栈/课程资料笔记/hadoop离线day08-Apache Hive函数高阶应用、性能调优/">hadoop离线day08-Apache Hive函数高阶应用、性能调优 </a>
+<div @click.stop class="notelink active-note"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/计算机/Hadoop技术栈/课程资料笔记/8-Apache Hive函数高阶应用、性能调优/">8-Apache Hive函数高阶应用、性能调优 </a>
 </div>
 </div>
 </div>
@@ -2327,685 +2336,1178 @@ CTRL + K
 </div>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/flexsearch@0.7.21/dist/flexsearch.bundle.js"></script>
-<script>document.addEventListener("DOMContentLoaded",init,!1),document.addEventListener("DOMContentLoaded",setCorrectShortcut,!1),window.toggleSearch=function(){document.getElementById("globalsearch").classList.contains("active")?document.getElementById("globalsearch").classList.remove("active"):(document.getElementById("globalsearch").classList.add("active"),document.getElementById("term").focus())},window.toggleTagSearch=function(e){console.log(e.textContent);const t=e.textContent;t&&(window.document.getElementById("term").value=t.trim(),window.toggleSearch(),window.search())};const loadingSvg='\n    <svg width="100" height="100" viewBox="0 0 45 45" xmlns="http://www.w3.org/2000/svg" stroke="#fff">\n      <g fill="none" fill-rule="evenodd" transform="translate(1 1)" stroke-width="2">\n          <circle cx="22" cy="22" r="6" stroke-opacity="0">\n              <animate attributeName="r"\n                   begin="1.5s" dur="3s"\n                   values="6;22"\n                   calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-opacity"\n                   begin="1.5s" dur="3s"\n                   values="1;0" calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-width"\n                   begin="1.5s" dur="3s"\n                   values="2;0" calcMode="linear"\n                   repeatCount="indefinite" />\n          </circle>\n          <circle cx="22" cy="22" r="6" stroke-opacity="0">\n              <animate attributeName="r"\n                   begin="3s" dur="3s"\n                   values="6;22"\n                   calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-opacity"\n                   begin="3s" dur="3s"\n                   values="1;0" calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-width"\n                   begin="3s" dur="3s"\n                   values="2;0" calcMode="linear"\n                   repeatCount="indefinite" />\n          </circle>\n          <circle cx="22" cy="22" r="8">\n              <animate attributeName="r"\n                   begin="0s" dur="1.5s"\n                   values="6;1;2;3;4;5;6"\n                   calcMode="linear"\n                   repeatCount="indefinite" />\n          </circle>\n      </g>\n  </svg>';function debounce(e,t,n){var a;return function(){var r=this,i=arguments,c=n&&!a;clearTimeout(a),a=setTimeout((function(){a=null,n||e.apply(r,i)}),t),c&&e.apply(r,i)}}function setCorrectShortcut(){navigator.platform.toUpperCase().indexOf("MAC")>=0&&document.querySelectorAll(".search-keys").forEach((e=>e.innerHTML="⌘ + K"))}function createIndex(e){const t=e=>e.toLowerCase().split(/([^a-z]|[^\x00-\x7F])/),n=new FlexSearch.Document({cache:!0,charset:"latin:extra",optimize:!0,index:[{field:"content",tokenize:"reverse",encode:t},{field:"title",tokenize:"forward",encode:t},{field:"tags",tokenize:"forward",encode:t}]});return e.forEach(((e,t)=>{n.add({id:t,title:e.title,content:e.content,tags:e.tags})})),n}async function init(){let e=!0;if(localStorage.getItem("searchIndex")){let{date:t,docs:n}=JSON.parse(localStorage.getItem("searchIndex"));if("2025-03-08T09:01:49.970Z"===t){e=!1;let t=createIndex(n);window.docs=n,window.index=t}}if(e){let e=await(await fetch("/searchIndex.json?v=2025-03-08T09:01:49.970Z")).json(),t=createIndex(e);localStorage.setItem("searchIndex",JSON.stringify({date:"2025-03-08T09:01:49.970Z",docs:e})),window.docs=e,window.index=t}document.addEventListener("keydown",(e=>{if((e.ctrlKey||e.metaKey)&&"k"===e.key&&(e.preventDefault(),toggleSearch()),"Escape"===e.key&&document.getElementById("globalsearch").classList.remove("active"),document.getElementById("globalsearch").classList.contains("active")){if("ArrowDown"===e.key){e.preventDefault();let t=document.querySelector(".searchresult.active");t?(t.classList.remove("active"),t.nextElementSibling?t.nextElementSibling.classList.add("active"):document.querySelector(".searchresult").classList.add("active")):document.querySelector(".searchresult").classList.add("active");let n=document.querySelector(".searchresult.active");n&&n.scrollIntoView({behavior:"smooth",block:"nearest",inline:"start"})}if("ArrowUp"===e.key){e.preventDefault();let t=document.querySelector(".searchresult.active");t?(t.classList.remove("active"),t.previousElementSibling?t.previousElementSibling.classList.add("active"):document.querySelectorAll(".searchresult").forEach((e=>{e.nextElementSibling||e.classList.add("active")}))):document.querySelectorAll(".searchresult").forEach((e=>{e.nextElementSibling&&e.classList.add("active")}));let n=document.querySelector(".searchresult.active");n&&n.scrollIntoView({behavior:"smooth",block:"nearest",inline:"start"})}if("Enter"===e.key){e.preventDefault();let t=document.querySelector(".searchresult.active");t&&(window.location.href=t.querySelector("a").href)}}}));const t=debounce(search,200,!1);field=document.querySelector("#term"),field.addEventListener("keydown",(e=>{"ArrowDown"!==e.key&&"ArrowUp"!==e.key&&t()})),resultsDiv=document.querySelector("#search-results");const n=new URL(location.href).searchParams;n.get("q")&&(field.setAttribute("value",n.get("q")),toggleSearch(),search())}async function search(){let e=field.value.trim();if(!e)return;if(e==lastSearch)return;console.log(`search for ${e}`),window.lastSearch=e,resultsDiv.innerHTML=loadingSvg;let t=offlineSearch(e),n="";if(!t.length){let t=document.createElement("p");return t.innerText=`No results for "${e}"`,resultsDiv.innerHTML="",void resultsDiv.appendChild(t)}n+='<div style="max-width:100%;">',t.forEach((e=>{e.tags&&e.tags.length>0?n+=`<div class="searchresult">\n                    <a class="search-link" href="${e.url}">${e.title}</a>\n                    <div onclick="window.location='${e.url}'">\n                        <div class="header-meta">\n                            <div class="header-tags">\n                                ${e.tags.map((e=>'<a class="tag" href="JavaScript:Void(0);">#'+e+"</a>")).join("")}\n                            </div>\n                        </div>\n                        ${e.content}\n                    </div>\n                </div>`:n+=`<div class="searchresult">\n                    <a class="search-link" href="${e.url}">${e.title}</a>\n                    <div onclick="window.location='${e.url}'">\n                        ${e.content}\n                    </div>\n                </div>`})),n+="</div>",resultsDiv.innerHTML=n}function truncate(e,t){return(e=e.replaceAll(/<[^>]*>/g,"")).length<t?e:e.substring(0,t-3)+"..."}function offlineSearch(e){let t=window.docs,n="#"===e[0]&&e.length>1?index.search(e.substring(1),[{field:"tags"}]):index.search(e,[{field:"title",limit:5},{field:"content",weight:10}]);const a=e=>{const t=n.filter((t=>t.field===e));return 0===t.length?[]:[...t[0].result]};return[...new Set([...a("title"),...a("content"),...a("tags")])].map((e=>{let n=t[e];return n.content=truncate(n.content,400),n.tags=n.tags.filter((e=>"gardenEntry"!=e&&"note"!=e)),n}))}window.lastSearch=""</script>
+<script>document.addEventListener("DOMContentLoaded",init,!1),document.addEventListener("DOMContentLoaded",setCorrectShortcut,!1),window.toggleSearch=function(){document.getElementById("globalsearch").classList.contains("active")?document.getElementById("globalsearch").classList.remove("active"):(document.getElementById("globalsearch").classList.add("active"),document.getElementById("term").focus())},window.toggleTagSearch=function(e){console.log(e.textContent);const t=e.textContent;t&&(window.document.getElementById("term").value=t.trim(),window.toggleSearch(),window.search())};const loadingSvg='\n    <svg width="100" height="100" viewBox="0 0 45 45" xmlns="http://www.w3.org/2000/svg" stroke="#fff">\n      <g fill="none" fill-rule="evenodd" transform="translate(1 1)" stroke-width="2">\n          <circle cx="22" cy="22" r="6" stroke-opacity="0">\n              <animate attributeName="r"\n                   begin="1.5s" dur="3s"\n                   values="6;22"\n                   calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-opacity"\n                   begin="1.5s" dur="3s"\n                   values="1;0" calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-width"\n                   begin="1.5s" dur="3s"\n                   values="2;0" calcMode="linear"\n                   repeatCount="indefinite" />\n          </circle>\n          <circle cx="22" cy="22" r="6" stroke-opacity="0">\n              <animate attributeName="r"\n                   begin="3s" dur="3s"\n                   values="6;22"\n                   calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-opacity"\n                   begin="3s" dur="3s"\n                   values="1;0" calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-width"\n                   begin="3s" dur="3s"\n                   values="2;0" calcMode="linear"\n                   repeatCount="indefinite" />\n          </circle>\n          <circle cx="22" cy="22" r="8">\n              <animate attributeName="r"\n                   begin="0s" dur="1.5s"\n                   values="6;1;2;3;4;5;6"\n                   calcMode="linear"\n                   repeatCount="indefinite" />\n          </circle>\n      </g>\n  </svg>';function debounce(e,t,n){var a;return function(){var r=this,i=arguments,c=n&&!a;clearTimeout(a),a=setTimeout((function(){a=null,n||e.apply(r,i)}),t),c&&e.apply(r,i)}}function setCorrectShortcut(){navigator.platform.toUpperCase().indexOf("MAC")>=0&&document.querySelectorAll(".search-keys").forEach((e=>e.innerHTML="⌘ + K"))}function createIndex(e){const t=e=>e.toLowerCase().split(/([^a-z]|[^\x00-\x7F])/),n=new FlexSearch.Document({cache:!0,charset:"latin:extra",optimize:!0,index:[{field:"content",tokenize:"reverse",encode:t},{field:"title",tokenize:"forward",encode:t},{field:"tags",tokenize:"forward",encode:t}]});return e.forEach(((e,t)=>{n.add({id:t,title:e.title,content:e.content,tags:e.tags})})),n}async function init(){let e=!0;if(localStorage.getItem("searchIndex")){let{date:t,docs:n}=JSON.parse(localStorage.getItem("searchIndex"));if("2025-03-08T11:35:40.187Z"===t){e=!1;let t=createIndex(n);window.docs=n,window.index=t}}if(e){let e=await(await fetch("/searchIndex.json?v=2025-03-08T11:35:40.187Z")).json(),t=createIndex(e);localStorage.setItem("searchIndex",JSON.stringify({date:"2025-03-08T11:35:40.187Z",docs:e})),window.docs=e,window.index=t}document.addEventListener("keydown",(e=>{if((e.ctrlKey||e.metaKey)&&"k"===e.key&&(e.preventDefault(),toggleSearch()),"Escape"===e.key&&document.getElementById("globalsearch").classList.remove("active"),document.getElementById("globalsearch").classList.contains("active")){if("ArrowDown"===e.key){e.preventDefault();let t=document.querySelector(".searchresult.active");t?(t.classList.remove("active"),t.nextElementSibling?t.nextElementSibling.classList.add("active"):document.querySelector(".searchresult").classList.add("active")):document.querySelector(".searchresult").classList.add("active");let n=document.querySelector(".searchresult.active");n&&n.scrollIntoView({behavior:"smooth",block:"nearest",inline:"start"})}if("ArrowUp"===e.key){e.preventDefault();let t=document.querySelector(".searchresult.active");t?(t.classList.remove("active"),t.previousElementSibling?t.previousElementSibling.classList.add("active"):document.querySelectorAll(".searchresult").forEach((e=>{e.nextElementSibling||e.classList.add("active")}))):document.querySelectorAll(".searchresult").forEach((e=>{e.nextElementSibling&&e.classList.add("active")}));let n=document.querySelector(".searchresult.active");n&&n.scrollIntoView({behavior:"smooth",block:"nearest",inline:"start"})}if("Enter"===e.key){e.preventDefault();let t=document.querySelector(".searchresult.active");t&&(window.location.href=t.querySelector("a").href)}}}));const t=debounce(search,200,!1);field=document.querySelector("#term"),field.addEventListener("keydown",(e=>{"ArrowDown"!==e.key&&"ArrowUp"!==e.key&&t()})),resultsDiv=document.querySelector("#search-results");const n=new URL(location.href).searchParams;n.get("q")&&(field.setAttribute("value",n.get("q")),toggleSearch(),search())}async function search(){let e=field.value.trim();if(!e)return;if(e==lastSearch)return;console.log(`search for ${e}`),window.lastSearch=e,resultsDiv.innerHTML=loadingSvg;let t=offlineSearch(e),n="";if(!t.length){let t=document.createElement("p");return t.innerText=`No results for "${e}"`,resultsDiv.innerHTML="",void resultsDiv.appendChild(t)}n+='<div style="max-width:100%;">',t.forEach((e=>{e.tags&&e.tags.length>0?n+=`<div class="searchresult">\n                    <a class="search-link" href="${e.url}">${e.title}</a>\n                    <div onclick="window.location='${e.url}'">\n                        <div class="header-meta">\n                            <div class="header-tags">\n                                ${e.tags.map((e=>'<a class="tag" href="JavaScript:Void(0);">#'+e+"</a>")).join("")}\n                            </div>\n                        </div>\n                        ${e.content}\n                    </div>\n                </div>`:n+=`<div class="searchresult">\n                    <a class="search-link" href="${e.url}">${e.title}</a>\n                    <div onclick="window.location='${e.url}'">\n                        ${e.content}\n                    </div>\n                </div>`})),n+="</div>",resultsDiv.innerHTML=n}function truncate(e,t){return(e=e.replaceAll(/<[^>]*>/g,"")).length<t?e:e.substring(0,t-3)+"..."}function offlineSearch(e){let t=window.docs,n="#"===e[0]&&e.length>1?index.search(e.substring(1),[{field:"tags"}]):index.search(e,[{field:"title",limit:5},{field:"content",weight:10}]);const a=e=>{const t=n.filter((t=>t.field===e));return 0===t.length?[]:[...t[0].result]};return[...new Set([...a("title"),...a("content"),...a("tags")])].map((e=>{let n=t[e];return n.content=truncate(n.content,400),n.tags=n.tags.filter((e=>"gardenEntry"!=e&&"note"!=e)),n}))}window.lastSearch=""</script>
 <main class="content cm-s-obsidian">
 <header>
-<h1 data-note-icon="">hadoop离线day04--Hadoop MapReduce、YARN、HA</h1>
+<h1 data-note-icon="">8-Apache Hive函数高阶应用、性能调优</h1>
 <div class="header-meta">
 <div class="header-tags">
 </div>
-<div class="timestamps"><div><i icon-name="calendar-plus"></i> <span class="human-date" data-date="2025-02-25T15:33:26.641+08:00"></span></div><div><i icon-name="calendar-clock"></i> <span class="human-date" data-date="2025-03-05T23:20:46.000+08:00"></span></div></div></div>
+<div class="timestamps"><div><i icon-name="calendar-plus"></i> <span class="human-date" data-date="2025-02-25T15:33:27.224+08:00"></span></div><div><i icon-name="calendar-clock"></i> <span class="human-date" data-date="2025-03-05T23:21:01.000+08:00"></span></div></div></div>
 </header>
-<h3 id="hadoop-day04-hadoop-map-reduce-yarn-ha" tabindex="-1">hadoop离线day04--Hadoop MapReduce、YARN、HA</h3>
+<h3 id="hadoop-day08-apache-hive" tabindex="-1">hadoop离线day08-Apache Hive函数高阶应用、性能调优</h3>
 <hr>
 <h4 id="今日课程学习目标" tabindex="-1">今日课程学习目标</h4>
-<pre><code>理解分布式计算分而治之的思想
-学会提交MapReduce程序
-掌握MapReduce执行流程
-掌握YARN功能与架构组件
-掌握程序提交YARN交互流程
-理解YARN调度策略
-掌握Hadoop HA实现原理
+<pre><code class="language-shell">掌握explode函数、侧视图使用
+掌握行列转换、json数据处理
+掌握窗口函数的使用
+知道Hive数据压缩、文件存储格式
+掌握Hive通用调优（重要的见下述大纲）
 </code></pre>
 <h4 id="今日课程内容大纲" tabindex="-1">今日课程内容大纲</h4>
-<pre><code class="language-shell"><a class="tag" onclick="toggleTagSearch(this)" data-content="#1、初识MapReduce">#1、初识MapReduce</a>
-	MapReduce背后的思想	先分再合，分而治之
-	MapReduce设计构思
-	官方MapReduce示例
-    MapReduce Python接口
-    	
-<a class="tag" onclick="toggleTagSearch(this)" data-content="#2、MapReduce基本原理">#2、MapReduce基本原理</a>
-	整体流程梳理
-	map阶段执行流程
-	reduce阶段执行流程
-	shuffle机制
-	
-<a class="tag" onclick="toggleTagSearch(this)" data-content="#3、Hadoop">#3、Hadoop</a> YARN
-	介绍：集群资源管理 任务调度
-	3大组件 架构
-	程序在yarn运行流程：以mr程序提交为例
-	yarn调度器
-    
-<a class="tag" onclick="toggleTagSearch(this)" data-content="#4、Hadoop">#4、Hadoop</a> HA集群
-	高可用概念：持续可用 一直可用
-		解决单点故障问题  主备集群
-	Hadoop HDFS HA实现方案--QJM、YARN HA
-	搭建HA集群
+<pre><code class="language-shell"><a class="tag" onclick="toggleTagSearch(this)" data-content="#Hive函数高阶应用（面试笔试、开发高频区域）">#Hive函数高阶应用（面试笔试、开发高频区域）</a>
+	explode(UDTF)函数功能
+	lateral view 侧视图
+	行列转换
+	json格式数据解析
+	窗口函数（Window function）开窗函数
+		分组TopN、级联累加问题、连续登陆
+<a class="tag" onclick="toggleTagSearch(this)" data-content="#Hive的性能调优">#Hive的性能调优</a>
+	hive的数据文件格式  数据压缩
+		行式存储 列式存储（ORC parquet）
+	hive通用调优	
+		*join优化
+		*group by数据倾斜优化
+		*task并行度问题
+		其他通用调优	
 </code></pre>
 <hr>
-<h4 id="01-hadoop-map-reduce" tabindex="-1">知识点01：Hadoop MapReduce--理解分而治之的思想</h4>
+<h4 id="01-apache-hive-explode-udtf" tabindex="-1">知识点01：Apache Hive--explode函数的使用与限制（UDTF表生成函数）</h4>
 <ul>
 <li>
-<p>核心：<mark><strong>先分再合，分而治之</strong></mark>。</p>
-<p>![image-20210921164038462](/img/user/czc知识库/计算机/Hadoop技术栈/课程资料笔记/源/hadoop离线day04--Hadoop MapReduce、YARN、HA/1、笔记、总结/hadoop离线day04--Hadoop MapReduce、YARN、HA.assets/image-20210921164038462.png)</p>
+<p><mark>explode属于UDTF函数</mark>，表生成函数，输入一行数据输出多行数据。</p>
 </li>
 <li>
-<p>使用场景：面对复杂的任务、庞大的任务如何高效处理？</p>
-</li>
-<li>
-<p>步骤</p>
-<ul>
-<li>
-<p>分的阶段（<mark><strong>局部并行计算</strong></mark>）--map</p>
-<pre><code class="language-shell">把复杂的任务拆分成若干个小的任务。
-拆分的目的以并行方式处理小任务提高效率。
+<p>功能：</p>
+<pre><code class="language-sql">explode() takes in an array (or a map) as an input and outputs the elements of the array (map) as separate rows.
 
-<a class="tag" onclick="toggleTagSearch(this)" data-content="#前提：任务可以拆分，拆分之后没有依赖关系。">#前提：任务可以拆分，拆分之后没有依赖关系。</a>
-结果：每个任务处理完都是一个局部的结果。
- 
-map侧重于映射（对应关系）  任务1--&gt;结果1  任务2--&gt;结果2
+--explode接收map array类型的参数 把map或者array的元素输出，一行一个元素。
+
+explode(array(11,22,33))         11
+	                             22
+	                             33
+	                             
+	                             
+select explode(`array`(11,22,33,44,55));
+select explode(`map`(&quot;id&quot;,10086,&quot;name&quot;,&quot;allen&quot;,&quot;age&quot;,18));	                             
 </code></pre>
 </li>
 <li>
-<p>汇总阶段（<strong><mark>全局汇总计算</mark></strong>）--reduce</p>
-<pre><code>把上一个分的阶段局部结果进行全局汇总 得到最终结果。
-
-reduce指的是结果数量的减少 汇总。
-</code></pre>
-</li>
-</ul>
-</li>
-</ul>
-<hr>
-<h4 id="02-hadoop-map-reduce" tabindex="-1">知识点02：Hadoop MapReduce--官方团队设计构思</h4>
-<ul>
-<li>
-<p>如何面对大数据场景</p>
-<pre><code class="language-shell"><a class="tag" onclick="toggleTagSearch(this)" data-content="#使用MapReduce思路来处理大数据。">#使用MapReduce思路来处理大数据。</a>
-
-先把数据集拆分若干个小的数据集，前提是可以拆分并且拆分之后没有依赖。
-拆分之后可以并行计算提高计算。
-
-再通过全局汇总计算得出最终结果。
-</code></pre>
-</li>
-<li>
-<p>构建了函数式编程模型Map Reduce</p>
-<pre><code class="language-shell"><a class="tag" onclick="toggleTagSearch(this)" data-content="#函数本质就是映射。">#函数本质就是映射。</a>
-f(x)=2x+1
-	当x=1 f(1)=3
-	当x=2 f(2)=5
-x--&gt;f(x) 一一对应的映射关系。	
-
-<a class="tag" onclick="toggleTagSearch(this)" data-content="#对应MapReduce来说">#对应MapReduce来说</a> 每个阶段都是输入数据经过处理对应着输出。
- MapReduce处理的数据类型是&lt;key,value&gt;键值对。
- 实际使用中 考虑每个阶段输入输出 key value是什么。
-</code></pre>
-</li>
-<li>
-<p>统一构架，隐藏系统层细节</p>
-<pre><code>精准的把技术问题和业务问题区分。  技术是通用的 业务不通用的。
-	hadoop实现了底层所有的技术问题。 ---&gt;90%代码   怎么做(how to do)
-	用户实现业务问题               ---&gt;10%代码    做什么(what need to do)
-	
-使用简单不代表技术简单 只能说MapReduce底层封装太漂亮。
-</code></pre>
-</li>
-</ul>
-<hr>
-<h4 id="03-hadoop-map-reduce-mr-yarn" tabindex="-1">知识点03：Hadoop MapReduce官方示例--计算圆周率（如何提交mr到yarn）</h4>
+<p>栗子</p>
 <blockquote>
-<p>最终MR程序需要用户的代码和Hadoop自己实现的代码整合在一起 才能叫做完整MR程序。</p>
-<p>由于当下企业中MapReduce计算引擎已经日薄西山，所以很少涉及到MapReduce编程了。</p>
-<p>可以通过官方提供的示例来感受MapReduce。</p>
+<p>将NBA总冠军球队数据使用explode进行拆分，并且根据夺冠年份进行倒序排序。</p>
 </blockquote>
-<hr>
-<p>![image-20210921165418451](/img/user/czc知识库/计算机/Hadoop技术栈/课程资料笔记/源/hadoop离线day04--Hadoop MapReduce、YARN、HA/1、笔记、总结/hadoop离线day04--Hadoop MapReduce、YARN、HA.assets/image-20210921165418451.png)</p>
-<ul>
-<li>
-<p>提交程序</p>
-<pre><code class="language-shell">[root@node1 mapreduce]# pwd
-/export/server/hadoop-3.3.0/share/hadoop/mapreduce
+<pre><code class="language-sql">--step1:建表
+create table the_nba_championship(
+           team_name string,
+           champion_year array&lt;string&gt;
+) row format delimited
+fields terminated by ','
+collection items terminated by '|';
 
-[root@node1 mapreduce]# hadoop jar hadoop-mapreduce-examples-3.3.0.jar pi 10 50
+--step2:加载数据文件到表中
+load data local inpath '/root/hivedata/The_NBA_Championship.txt' into table the_nba_championship;
 
+--step3:验证
+select * from the_nba_championship;
 
-<a class="tag" onclick="toggleTagSearch(this)" data-content="#第一个参数：pi表示MapReduce程序执行圆周率计算任务；">#第一个参数：pi表示MapReduce程序执行圆周率计算任务；</a>
-<a class="tag" onclick="toggleTagSearch(this)" data-content="#第二个参数：用于指定map阶段运行的任务task次数，并发度，这里是10；">#第二个参数：用于指定map阶段运行的任务task次数，并发度，这里是10；</a>
-<a class="tag" onclick="toggleTagSearch(this)" data-content="#第三个参数：用于指定每个map任务取样的个数，这里是50。">#第三个参数：用于指定每个map任务取样的个数，这里是50。</a>
+--step4:使用explode函数对champion_year进行拆分 俗称炸开
+select explode(champion_year) from the_nba_championship;
+
+--想法是正确的 sql执行确实错误的
+select team_name,explode(champion_year) from the_nba_championship;
+--错误信息
+UDTF's are not supported outside the SELECT clause, nor nested in expressions
+UDTF 在 SELECT 子句之外不受支持，也不在表达式中嵌套？？？
 </code></pre>
 </li>
 <li>
-<p>执行过程日志观察与梳理</p>
-<pre><code class="language-shell"><a class="tag" onclick="toggleTagSearch(this)" data-content="#mr程序的执行需要硬件资源（cpu">#mr程序的执行需要硬件资源（cpu</a> ram） 而yarn正好管理这些资源 所以第一步首先连接yarn申请资源
+<p>如果数据不是map或者array 如何使用explode函数呢？</p>
+<blockquote>
+<p>想法设法使用split subsrt regex_replace等函数组合使用 把数据变成array或者map.</p>
+</blockquote>
+<pre><code class="language-sql">create table the_nba_championship_str(
+           team_name string,
+           champion_year string
+) row format delimited
+fields terminated by ',';
 
-<a class="tag" onclick="toggleTagSearch(this)" data-content="#mr程序分为两步">#mr程序分为两步</a>
-  - map阶段
-  - reduce阶段
-
-<a class="tag" onclick="toggleTagSearch(this)" data-content="#每个阶段都会运行task任务">#每个阶段都会运行task任务</a>
-	map阶段的任务叫做maptask
-	reduce阶段的任务叫做reducetask.
+load data local inpath '/root/hivedata/The_NBA_Championship.txt' into table the_nba_championship_str;
 </code></pre>
 </li>
 </ul>
 <hr>
-<h4 id="04-hadoop-map-reduce-word-count" tabindex="-1">知识点04：Hadoop MapReduce官方示例--单词统计(WordCount)需求剖析</h4>
+<h4 id="02-apache-hive-lateral-view" tabindex="-1">知识点02：Apache Hive--lateral view侧视图的使用</h4>
+<blockquote>
+<p>侧视图的原理是<mark>将UDTF的结果构建成一个类似于视图的表，然后将原表中的每一行和UDTF函数输出的每一行进行连接，生成一张新的虚拟表</mark></p>
+</blockquote>
 <ul>
 <li>
 <p>背景</p>
-<pre><code>网页倒排索引 统计关键字在页面中出现的次数。
-</code></pre>
-</li>
-<li>
-<p>业务需求</p>
-<pre><code>统计文件中每个单词出现的总次数。
-</code></pre>
-<p>![image-20210921165840419](/img/user/czc知识库/计算机/Hadoop技术栈/课程资料笔记/源/hadoop离线day04--Hadoop MapReduce、YARN、HA/1、笔记、总结/hadoop离线day04--Hadoop MapReduce、YARN、HA.assets/image-20210921165840419.png)</p>
-</li>
-<li>
-<p>实现思路</p>
-<p>![image-20210730201523040](/img/user/czc知识库/计算机/Hadoop技术栈/课程资料笔记/源/hadoop离线day04--Hadoop MapReduce、YARN、HA/1、笔记、总结/hadoop离线day04--Hadoop MapReduce、YARN、HA.assets/image-20210730201523040.png)</p>
-</li>
-</ul>
-<pre><code class="language-shell"><a class="tag" onclick="toggleTagSearch(this)" data-content="#map阶段的核心：把输入的数据经过切割，全部标记1，因此输出就是">#map阶段的核心：把输入的数据经过切割，全部标记1，因此输出就是</a>&lt;单词，1&gt;。
-
-<a class="tag" onclick="toggleTagSearch(this)" data-content="#shuffle阶段核心：经过默认的排序分区分组，key相同的单词会作为一组数据构成新的kv对。">#shuffle阶段核心：经过默认的排序分区分组，key相同的单词会作为一组数据构成新的kv对。</a>
-
-<a class="tag" onclick="toggleTagSearch(this)" data-content="#reduce阶段核心：处理shuffle完的一组数据，该组数据就是该单词所有的键值对。对所有的1进行累加求和，就是单词的总次数。">#reduce阶段核心：处理shuffle完的一组数据，该组数据就是该单词所有的键值对。对所有的1进行累加求和，就是单词的总次数。</a>
-
-<a class="tag" onclick="toggleTagSearch(this)" data-content="#读取数据组件">#读取数据组件</a>  写出数据组件MR框架已经封装好（自带）
-</code></pre>
 <ul>
 <li>
-<p>程序提交</p>
-<pre><code class="language-shell"><a class="tag" onclick="toggleTagSearch(this)" data-content="#上传课程资料中的文本文件1">#上传课程资料中的文本文件1</a>.txt到HDFS文件系统的/input目录下，如果没有这个目录，使用shell创建
-	hadoop fs -mkdir /input	
-	hadoop fs -put 1.txt /input
-
-<a class="tag" onclick="toggleTagSearch(this)" data-content="#准备好之后，执行官方MapReduce实例，对上述文件进行单词次数统计">#准备好之后，执行官方MapReduce实例，对上述文件进行单词次数统计</a>
-	第一个参数：wordcount表示执行单词统计任务；
-	第二个参数：指定输入文件的路径；
-	第三个参数：指定输出结果的路径（该路径不能已存在）
-	
-
-[root@node1 mapreduce]# pwd
-/export/server/hadoop-3.3.0/share/hadoop/mapreduce
-
-[root@node1 mapreduce]# hadoop jar hadoop-mapreduce-examples-3.3.0.jar wordcount /input /output
+<p>UDTF函数生成的结果可以当成一张虚拟的表，但是无法和原始表进行组合查询</p>
+<pre><code class="language-sql">select name,explode(location) from test_message;
+--这个sql就是错误的  相当于执行组合查询 
 </code></pre>
+</li>
+<li>
+<p>从理论层面推导，对两份数据进行join就可以了</p>
+</li>
+<li>
+<p>但是，hive专门推出了lateral view侧视图的语，满足上述需要。</p>
 </li>
 </ul>
-<hr>
-<h4 id="05-hadoop-map-reduce-wordcount-java" tabindex="-1">知识点05：Hadoop MapReduce官方示例--Wordcount--java代码梳理</h4>
-<ul>
-<li>
-<p>mapper</p>
-<pre><code class="language-java">public class WordCountMapper extends Mapper&lt;LongWritable, Text,Text, IntWritable&gt; {
-    @Override
-    protected void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
-        //每一次读取到一行内容
-        String line = value.toString();
-        //根据分隔符进行切割
-        String[] words = line.split(&quot;\\s+&quot;);
-        //遍历单词数组
-        for (String word : words) {
-            //输出数据 把每个单词标记1   &lt;单词，1&gt;
-            //使用框架提供的上下文对象 进行数据的输出
-            context.write(new Text(word),new IntWritable(1));
-        }
-    }
-}
-</code></pre>
 </li>
 <li>
-<p>reducer</p>
-<pre><code class="language-java">public class WordCountReducer extends Reducer&lt;Text, IntWritable,Text,IntWritable&gt; {
-    /**
-     * Q: 当所有的数据来到reducer之后 内部有什么行为？
-     *    &lt;hello,1&gt;&lt;hadoop,1&gt;&lt;hello,1&gt;&lt;hello,1&gt;&lt;hadoop,1&gt;
-          
-          1、所有的数据排序  排序规则：key的字典序  a-z
-     *    &lt;hadoop,1&gt;&lt;hadoop,1&gt;&lt;hello,1&gt;&lt;hello,1&gt;&lt;hello,1&gt;
-     *
-          2、分组grouping  分组规则：key相同的分为一组
-     *      &lt;hadoop,1&gt;&lt;hadoop,1&gt;
-     *      &lt;hello,1&gt;&lt;hello,1&gt;&lt;hello,1&gt;
-          
-          3、每组构成一个新的kv对 去调用reduce方法
-     *      新key: 该组共同的key
-     *      新value: 该组所有的value组成的一个迭代器Iterable（理解为类似于集合数据结构）
-     *      &lt;hadoop,1&gt;&lt;hadoop,1&gt;       ----&gt;  &lt;hadoop,Iterable[1,1]&gt;
-     *      &lt;hello,1&gt;&lt;hello,1&gt;&lt;hello,1&gt; ---&gt;  &lt;hello,Iterable[1,1,1]&gt;
-     */
-    @Override
-    protected void reduce(Text key, Iterable&lt;IntWritable&gt; values, Context context) throws IOException, InterruptedException {
-        //定义个统计变量
-        int count = 0;
-        //遍历迭代器
-        for (IntWritable value : values) {
-            //累加
-            count += value.get();
-        }
-        //使用上下文输出结果
-        context.write(key,new IntWritable(count));
-        }
-}
+<p>功能：<mark>把UDTF函数生成的结果和原始表进行关联，便于用户在select时间组合查询</mark>、 lateral view是UDTf的好基友好搭档，实际中经常配合使用。</p>
+</li>
+<li>
+<p>语法：</p>
+<pre><code class="language-sql">--lateral view侧视图基本语法如下
+select …… from tabelA lateral view UDTF(xxx) 别名 as col1,col2,col3……;
 
+--针对上述NBA冠军球队年份排名案例，使用explode函数+lateral view侧视图，可以完美解决
+select a.team_name ,b.year
+from the_nba_championship a lateral view explode(champion_year) b as year;
+
+--根据年份倒序排序
+select a.team_name ,b.year
+from the_nba_championship a lateral view explode(champion_year) b as year
+order by b.year desc;
+
+--统计每个球队获取总冠军的次数 并且根据倒序排序
+select a.team_name ,count(*) as nums
+from the_nba_championship a lateral view explode(champion_year) b as year
+group by a.team_name
+order by nums desc;
 </code></pre>
 </li>
 </ul>
 <hr>
-<h4 id="06-hadoop-map-reduce-python" tabindex="-1">知识点06：Hadoop MapReduce--python接口接入</h4>
-<pre><code class="language-shell"><a class="tag" onclick="toggleTagSearch(this)" data-content="#虽然Hadoop是用Java编写的一个框架">#虽然Hadoop是用Java编写的一个框架</a>, 但是并不意味着他只能使用Java语言来操作；
-
-<a class="tag" onclick="toggleTagSearch(this)" data-content="#在Hadoop-0">#在Hadoop-0</a>.14.1版本后, Hadoop支持了Python和C++语言;
-
-<a class="tag" onclick="toggleTagSearch(this)" data-content="#在Python中的sys包中存在stdin和stdout（输入输出流）">#在Python中的sys包中存在stdin和stdout（输入输出流）</a>, 可以利用这个方式来进行MapReduce的编写；
-
-<a class="tag" onclick="toggleTagSearch(this)" data-content="#在Hadoop的文档中提到了Hadoop">#在Hadoop的文档中提到了Hadoop</a> Streaming, 可以使用流的方式来操作它；
-	https://hadoop.apache.org/docs/r3.3.0/hadoop-streaming/HadoopStreaming.html
-</code></pre>
+<h4 id="03-apache-hive-collect-list-concat-ws" tabindex="-1">知识点03：Apache Hive--行列转换--多行转单列（collect_list、concat_ws）</h4>
 <ul>
 <li>
-<p><a href="http://mapper.py" target="_blank" class="external-link">mapper.py</a></p>
-<pre><code class="language-python">import sys
-
-for line in sys.stdin:
-    # 捕获输入流
-    line = line.strip()
-    # 根据分隔符切割单词
-    words = line.split()
-    # 遍历单词列表 每个标记1
-    for word in words:
-        print(&quot;%s\t%s&quot; % (word, 1))
+<p><mark><strong>数据收集函数</strong></mark></p>
+<pre><code class="language-sql">collect_set --把多行数据收集为一行  返回set集合  去重无序
+collect_list --把多行数据收集为一行  返回list集合  不去重有序
 </code></pre>
 </li>
 <li>
-<p><a href="http://reducer.py" target="_blank" class="external-link">reducer.py</a></p>
-<pre><code class="language-python">import sys
-# 保存单词次数的字典 key:单词 value：总次数
-word_dict = {}
+<p>字符串拼接函数</p>
+<pre><code class="language-sql">concat  --直接拼接字符串
+concat_ws --指定分隔符拼接
 
-for line in sys.stdin:
+select concat(&quot;it&quot;,&quot;cast&quot;,&quot;And&quot;,&quot;heima&quot;);
+select concat(&quot;it&quot;,&quot;cast&quot;,&quot;And&quot;,null);
 
-    line = line.strip()
-    word, count = line.split('\t')
-
-    # count类型转换
-    try:
-        count = int(count)
-    except ValueError:
-        continue
-    # 如果单词位于字典中 +1，如果不存在 保存并设初始值1
-    if word in word_dict:
-        word_dict[word] += 1
-    else:
-        word_dict.setdefault(word, 1)
-# 结果遍历输出
-for k, v in word_dict.items():
-    print('%s\t%s' % (k, v))
-</code></pre>
-</li>
-</ul>
-<hr>
-<h4 id="07-hadoop-map-reduce-hadoop-streaing-python" tabindex="-1">知识点07：Hadoop MapReduce--Hadoop Streaing提交python脚本</h4>
-<ul>
-<li>
-<p>Python3在Linux安装</p>
-<pre><code class="language-shell"><a class="tag" onclick="toggleTagSearch(this)" data-content="#1、安装编译相关工具">#1、安装编译相关工具</a>
-yum -y groupinstall &quot;Development tools&quot;
-
-yum -y install zlib-devel bzip2-devel openssl-devel ncurses-devel sqlite-devel readline-devel tk-devel gdbm-devel db4-devel libpcap-devel xz-devel
-
-yum install libffi-devel -y
-
-<a class="tag" onclick="toggleTagSearch(this)" data-content="#2、解压Python安装包">#2、解压Python安装包</a>
-tar -zxvf  Python-3.8.5.tgz
-
-<a class="tag" onclick="toggleTagSearch(this)" data-content="#3、编译、安装Python">#3、编译、安装Python</a>
-mkdir /usr/local/python3 <a class="tag" onclick="toggleTagSearch(this)" data-content="#创建编译安装目录">#创建编译安装目录</a>
-cd Python-3.8.5
-./configure --prefix=/usr/local/python3
-make &amp;&amp; make install  <a class="tag" onclick="toggleTagSearch(this)" data-content="#make编译c源码">#make编译c源码</a> make install 编译后的安装
-
-<a class="tag" onclick="toggleTagSearch(this)" data-content="#安装过，出现下面两行就成功了">#安装过，出现下面两行就成功了</a>
-Installing collected packages: setuptools, pip
-Successfully installed pip-20.1.1 setuptools-47.1.0
-
-
-<a class="tag" onclick="toggleTagSearch(this)" data-content="#4、创建软连接">#4、创建软连接</a>
-# 查看当前python软连接
-[root@node2 Python-3.8.5]# ll /usr/bin/ |grep python
--rwxr-xr-x.   1 root root      11232 Aug 13  2019 abrt-action-analyze-python
-lrwxrwxrwx.   1 root root          7 May 17 11:36 python -&gt; python2
-lrwxrwxrwx.   1 root root          9 May 17 11:36 python2 -&gt; python2.7
--rwxr-xr-x.   1 root root       7216 Aug  7  2019 python2.7
-
-
-<a class="tag" onclick="toggleTagSearch(this)" data-content="#默认系统安装的是python2">#默认系统安装的是python2</a>.7 删除python软连接
-rm -rf /usr/bin/python
-
-<a class="tag" onclick="toggleTagSearch(this)" data-content="#配置软连接为python3">#配置软连接为python3</a>
-ln -s /usr/local/python3/bin/python3 /usr/bin/python
-
-<a class="tag" onclick="toggleTagSearch(this)" data-content="#这个时候看下python默认版本">#这个时候看下python默认版本</a>
-python -V
-
-<a class="tag" onclick="toggleTagSearch(this)" data-content="#删除默认pip软连接，并添加pip3新的软连接">#删除默认pip软连接，并添加pip3新的软连接</a>
-rm -rf /usr/bin/pip
-ln -s /usr/local/python3/bin/pip3 /usr/bin/pip
-
-
-<a class="tag" onclick="toggleTagSearch(this)" data-content="#5、更改yum配置">#5、更改yum配置</a>
-<a class="tag" onclick="toggleTagSearch(this)" data-content="#因为yum要用到python2才能执行，否则会导致yum不能正常使用（不管安装">#因为yum要用到python2才能执行，否则会导致yum不能正常使用（不管安装</a> python3的那个版本，都必须要做的）
-vi /usr/bin/yum 
-把 #! /usr/bin/python 修改为 #! /usr/bin/python2 
-
-vi /usr/libexec/urlgrabber-ext-down 
-把 #! /usr/bin/python 修改为 #! /usr/bin/python2
-
-vi /usr/bin/yum-config-manager
-#!/usr/bin/python 改为 #!/usr/bin/python2
+select concat_ws(&quot;-&quot;,&quot;itcast&quot;,&quot;And&quot;,&quot;heima&quot;);
+select concat_ws(&quot;-&quot;,&quot;itcast&quot;,&quot;And&quot;,null);
 </code></pre>
 </li>
 <li>
-<p>代码的本地测试</p>
-<pre><code class="language-shell"><a class="tag" onclick="toggleTagSearch(this)" data-content="#上传待处理文件">#上传待处理文件</a> 和Python脚本到Linux上
-[root@node2 ~]# pwd
-/root
-[root@node2 ~]# ll
--rw-r--r--  1 root  root        105 May 18 15:12 1.txt
--rwxr--r--  1 root  root        340 Jul 21 16:16 mapper.py
--rwxr--r--  1 root  root        647 Jul 21 16:18 reducer.py
+<p>栗子</p>
+<pre><code class="language-sql">--原表
++----------------+----------------+----------------+--+
+| row2col2.col1  | row2col2.col2  | row2col2.col3  |
++----------------+----------------+----------------+--+
+| a              | b              | 1              |
+| a              | b              | 2              |
+| a              | b              | 3              |
+| c              | d              | 4              |
+| c              | d              | 5              |
+| c              | d              | 6              |
++----------------+----------------+----------------+--+
 
+--目标表
++-------+-------+--------+--+
+| col1  | col2  |  col3  |
++-------+-------+--------+--+
+| a     | b     | 1-2-3  |
+| c     | d     | 4-5-6  |
++-------+-------+--------+--+
 
-<a class="tag" onclick="toggleTagSearch(this)" data-content="#使用shell管道符运行脚本测试">#使用shell管道符运行脚本测试</a>
-[root@node2 ~]# cat 1.txt | python mapper.py |sort|python reducer.py 
-allen   4
-apple   3
-hadoop  1
-hello   5
-mac     1
-spark   2
-tom     2
-</code></pre>
-</li>
-<li>
-<p>代码提交集群执行</p>
-<pre><code class="language-shell"><a class="tag" onclick="toggleTagSearch(this)" data-content="#上传处理的文件到hdfs">#上传处理的文件到hdfs</a>
-<a class="tag" onclick="toggleTagSearch(this)" data-content="#上传Python脚本到linux">#上传Python脚本到linux</a>
+--建表
+create table row2col2(
+                         col1 string,
+                         col2 string,
+                         col3 int
+)row format delimited fields terminated by '\t';
 
-<a class="tag" onclick="toggleTagSearch(this)" data-content="#提交程序执行">#提交程序执行</a>
-hadoop jar /export/server/hadoop-3.3.0/share/hadoop/tools/lib/hadoop-streaming-3.3.0.jar \
--D mapred.reduce.tasks=1 \
--mapper &quot;python mapper.py&quot; \
--reducer &quot;python reducer.py&quot; \
--file mapper.py -file reducer.py \
--input /wordcount/input/* \
--output /wordcount/outpy
+--加载数据到表中
+load data local inpath '/root/hivedata/r2c2.txt' into table row2col2;
+select * from row2col2;
+
+--最终SQL实现
+select
+    col1,
+    col2,
+    concat_ws(',', collect_list(cast(col3 as string))) as col3
+from
+    row2col2
+group by
+    col1, col2;
 </code></pre>
 </li>
 </ul>
 <hr>
-<h4 id="08-hadoop-map-reduce" tabindex="-1">知识点08：Hadoop MapReduce--输入输出路径及注意事项</h4>
+<h4 id="04-apache-hive-explode-lateral-view" tabindex="-1">知识点04：Apache Hive--行列转换--单列转多行（explode、lateral view）</h4>
 <ul>
 <li>
-<p>数据都是以&lt;key,value&gt;键值对的形式存在的。不管是输入还是输出。</p>
+<p>技术原理： explode+lateral view</p>
 </li>
 <li>
-<p>关于inputpath</p>
-<ul>
-<li>指向的是一个文件，mr就处理这一个文件</li>
-<li>指向的是一个目录，mr就处理该目录下所有的文件 整体当做数据集处理。</li>
-</ul>
-</li>
-<li>
-<p>关于outputpath</p>
-<ul>
-<li>要求指定的目录为空目录 不能够存储 否则执行校验失败</li>
-</ul>
-<pre><code>FileAlreadyExistsException: Output directory file:/D:/datasets/wordcount/output already exists
+<p>例子</p>
+<pre><code class="language-sql">--原表
++-------+-------+--------+--+
+| col1  | col2  |  col3  |
++-------+-------+--------+--+
+| a     | b     | 1,2,3  |
+| c     | d     | 4,5,6  |
++-------+-------+--------+--+
+
+--目标表
++----------------+----------------+----------------+--+
+| row2col2.col1  | row2col2.col2  | row2col2.col3  |
++----------------+----------------+----------------+--+
+| a              | b              | 1              |
+| a              | b              | 2              |
+| a              | b              | 3              |
+| c              | d              | 4              |
+| c              | d              | 5              |
+| c              | d              | 6              |
++----------------+----------------+----------------+--+
+
+--创建表
+create table col2row2(
+                         col1 string,
+                         col2 string,
+                         col3 string
+)row format delimited fields terminated by '\t';
+
+--加载数据
+load data local inpath '/root/hivedata/c2r2.txt' into table col2row2;
+
+select * from col2row2;
+
+select explode(split(col3,',')) from col2row2;
+
+--SQL最终实现
+select
+    col1,
+    col2,
+    lv.col3 as col3
+from
+    col2row2
+        lateral view
+            explode(split(col3, ',')) lv as col3;
 </code></pre>
 </li>
 </ul>
 <hr>
-<h4 id="09-hadoop-map-reduce-map" tabindex="-1">知识点09：Hadoop MapReduce--工作机制--map阶段执行流程</h4>
-<p>![image-20210730224715586](/img/user/czc知识库/计算机/Hadoop技术栈/课程资料笔记/源/hadoop离线day04--Hadoop MapReduce、YARN、HA/1、笔记、总结/hadoop离线day04--Hadoop MapReduce、YARN、HA.assets/image-20210730224715586.png)map阶段流程</p>
-<p>![image-20210730224727842](/img/user/czc知识库/计算机/Hadoop技术栈/课程资料笔记/源/hadoop离线day04--Hadoop MapReduce、YARN、HA/1、笔记、总结/hadoop离线day04--Hadoop MapReduce、YARN、HA.assets/image-20210730224727842.png)</p>
+<h4 id="05-apache-hive-json" tabindex="-1">知识点05：Apache Hive--json格式数据处理</h4>
 <ul>
 <li>
-<p>maptask并行度个数机制：逻辑切片机制。</p>
+<p>在hive中，没有json类的存在，一般使<mark>用string类型来修饰</mark>，叫做json字符串，简称<mark>json串</mark>。</p>
 </li>
 <li>
-<p>影响maptask个数的因素有</p>
-<pre><code>文件的个数
-文件的大小
-split size=block size  切片的大小受数据块的大小控制 
+<p>在hive中，处理json数据的两种方式</p>
+<ul>
+<li>
+<p>hive内置了两个用于<mark>解析json的函数</mark></p>
+<pre><code class="language-sql">json_tuple
+--是UDTF 表生成函数  输入一行，输出多行  一次提取读个值  可以单独使用 也可以配合lateral view侧视图使用
+
+get_json_object
+--是UDF普通函数，输入一行 输出一行 一次只能提取一个值 多次提取多次使用
+</code></pre>
+</li>
+<li>
+<p>使用==<a href="https://cwiki.apache.org/confluence/display/Hive/LanguageManual+DDL#LanguageManualDDL-JSON" target="_blank" class="external-link">JsonSerDe</a> 类解析==，在加载json数据到表中的时候完成解析动作</p>
+</li>
+</ul>
+</li>
+<li>
+<p>栗子</p>
+<pre><code class="language-sql">--创建表
+create table tb_json_test1 (
+    json string
+);
+
+--加载数据
+load data local inpath '/root/hivedata/device.json' into table tb_json_test1;
+
+select * from tb_json_test1;
+
+-- get_json_object UDF函数 最大弊端是一次只能解析提取一个字段
+select
+    --获取设备名称
+    get_json_object(json,&quot;$.device&quot;) as device,
+    --获取设备类型
+    get_json_object(json,&quot;$.deviceType&quot;) as deviceType,
+    --获取设备信号强度
+    get_json_object(json,&quot;$.signal&quot;) as signal,
+    --获取时间
+    get_json_object(json,&quot;$.time&quot;) as stime
+from tb_json_test1;
+
+--json_tuple 这是一个UDTF函数 可以一次解析提取多个字段
+--单独使用 解析所有字段
+select
+    json_tuple(json,&quot;device&quot;,&quot;deviceType&quot;,&quot;signal&quot;,&quot;time&quot;) as (device,deviceType,signal,stime)
+from tb_json_test1;
+
+--搭配侧视图使用
+select
+    json,device,deviceType,signal,stime
+from tb_json_test1
+         lateral view json_tuple(json,&quot;device&quot;,&quot;deviceType&quot;,&quot;signal&quot;,&quot;time&quot;) b
+         as device,deviceType,signal,stime;
+
+
+--方式2： 使用JsonSerDe类在建表的时候解析数据
+--建表的时候直接使用JsonSerDe解析
+create table tb_json_test2 (
+                               device string,
+                               deviceType string,
+                               signal double,
+                               `time` string
+)
+    ROW FORMAT SERDE 'org.apache.hive.hcatalog.data.JsonSerDe'
+    STORED AS TEXTFILE;
+
+load data local inpath '/root/hivedata/device.json' into table tb_json_test2;
+
+select * from tb_json_test2;
 </code></pre>
 </li>
 </ul>
 <hr>
-<h4 id="10-hadoop-map-reduce-reduce" tabindex="-1">知识点10：Hadoop MapReduce--工作机制--reduce阶段执行流程</h4>
-<p>![image-20210730224735604](/img/user/czc知识库/计算机/Hadoop技术栈/课程资料笔记/源/hadoop离线day04--Hadoop MapReduce、YARN、HA/1、笔记、总结/hadoop离线day04--Hadoop MapReduce、YARN、HA.assets/image-20210730224735604.png)</p>
+<h4 id="06-apache-hive" tabindex="-1">知识点06：Apache Hive--窗口函数--快速理解与语法规则</h4>
+<p>1、快速理解窗口函数功能</p>
 <ul>
 <li>
-<p>影响reducetask个数的因素</p>
-<ul>
-<li>
-<p>只要用户不设置 永远默认1个</p>
+<p>window function 窗口函数、开窗函数、olap分析函数。</p>
 </li>
 <li>
-<p>用户也可以通过代码进行设置 设置为几 就是几</p>
-<pre><code>当reducetask&gt;=2，数据就会分区了。
+<p>窗口：可以理解为操作数据的范围，窗口有大有小，本窗口中操作的数据有多有少。</p>
+</li>
+<li>
+<p>可以简单地解释为类似于聚合函数的计算函数，但是通过GROUP BY子句组合的常规聚合会隐藏正在聚合的各个行，最终输出一行；而<mark>窗口函数聚合后还可以访问当中</mark><mark>的各个行，并且可以将这些行中的某些属性添加到结果集中</mark>。</p>
+</li>
+</ul>
+<pre><code class="language-sql">--建表加载数据
+CREATE TABLE employee(
+       id int,
+       name string,
+       deg string,
+       salary int,
+       dept string
+) row format delimited
+    fields terminated by ',';
+
+load data local inpath '/root/hivedata/employee.txt' into table employee;
+
+select * from employee;
+
+----sum+group by普通常规聚合操作------------
+select dept,sum(salary) as total from employee group by dept;
+
+select id,dept,sum(salary) as total from employee group by dept; --添加id至结果，错误sql
+
++-------+---------+
+| dept  |  total  |
++-------+---------+
+| AC    | 60000   |
+| TP    | 120000  |
++-------+---------+
+
+----sum+窗口函数聚合操作------------
+select id,name,deg,salary,dept,sum(salary) over(partition by dept) as total from employee;
+
++-------+-----------+----------+---------+-------+---------+
+|  id   |   name    |   deg    | salary  | dept  |  total  |
++-------+-----------+----------+---------+-------+---------+
+| 1204  | prasanth  | dev      | 30000   | AC    | 60000   |
+| 1203  | khalil    | dev      | 30000   | AC    | 60000   |
+| 1206  | kranthi   | admin    | 20000   | TP    | 120000  |
+| 1202  | manisha   | cto      | 50000   | TP    | 120000  |
+| 1201  | gopal     | manager  | 50000   | TP    | 120000  |
++-------+-----------+----------+---------+-------+---------+
+</code></pre>
+<hr>
+<p>2、窗口函数语法规则</p>
+<blockquote>
+<h5 id="mark-over-mark" tabindex="-1">具有<mark>OVER语句</mark>的函数叫做窗口函数。</h5>
+</blockquote>
+<pre><code class="language-sql">Function OVER ([PARTITION BY &lt;...&gt;] [ORDER BY &lt;....&gt;] [&lt;window_expression&gt;])
+
+--1、Function可以是下面分类中的任意一个
+	--聚合函数：比如sum、max、avg、max、min等
+    --排序函数：比如rank、row_number等
+    --分析函数：比如lead、lag、first_value等
+
+--2、OVER 窗口函数语法关键字与标识
+
+--3、PARTITION BY &lt;...&gt;功能类似于group by，用于指定分组，相同的分为一组。如果没有指定PARTITION BY，那么整张表的所有行就是一组；
+
+--4、ORDER BY &lt;....&gt; 用于指定每个分组内的数据排序规则 ，默认是升序ASC，支持ASC、DESC；
+
+--5、window_expression window表达式，也叫window子句，用于指定每个窗口中操作的数据范围
+</code></pre>
+<ul>
+<li>建表加载数据 后续练习使用</li>
+</ul>
+<pre><code class="language-sql">---建表并且加载数据
+create table website_pv_info(
+   cookieid string,
+   createtime string,   --day
+   pv int
+) row format delimited
+fields terminated by ',';
+
+create table website_url_info (
+    cookieid string,
+    createtime string,  --访问时间
+    url string       --访问页面
+) row format delimited
+fields terminated by ',';
+
+
+load data local inpath '/root/hivedata/website_pv_info.txt' into table website_pv_info;
+load data local inpath '/root/hivedata/website_url_info.txt' into table website_url_info;
+
+select * from website_pv_info;
+select * from website_url_info;
+</code></pre>
+<hr>
+<h4 id="07-apache-hive" tabindex="-1">知识点07：Apache Hive--窗口函数--聚合函数</h4>
+<ul>
+<li>
+<p>语法</p>
+<pre><code class="language-sql">sum|max|min|avg  OVER ([PARTITION BY &lt;...&gt;] [ORDER BY &lt;....&gt;] [&lt;window_expression&gt;])
+</code></pre>
+</li>
+<li>
+<p>重点：<mark><strong>有PARTITION BY 没有PARTITION BY的区别；有ORDER BY没有ORDER BY的区别</strong></mark>。</p>
+<ul>
+<li>有没有partition by 影响的是全局聚合 还是分组之后 每个组内聚合。</li>
+<li>有没有==<strong>order by的区别</strong>==：
+<ul>
+<li>没有order by，默认是rows between，首行到最后行，这里的&quot;行&quot;是物理上的行；</li>
+<li>有order by，默认是range between，首行到当前行，这里的&quot;行&quot;是逻辑上的行，由字段的值的区间range来划分范围。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>栗子</p>
+<pre><code class="language-sql">--1、求出每个用户总pv数  sum+group by普通常规聚合操作
+select cookieid,sum(pv) as total_pv from website_pv_info group by cookieid;
++-----------+-----------+
+| cookieid  | total_pv  |
++-----------+-----------+
+| cookie1   | 26        |
+| cookie2   | 35        |
++-----------+-----------+
+
+
+--2、sum+窗口函数 
+需要注意：这里都没有使用window子句指定范围，那么默认值是rows还是range呢？？？
+
+--当没有order by也没有window子句的时候，默认是rows between,从第一行到最后一行，即分组内的所有行聚合。
+--sum(...) over( )
+select cookieid,createtime,pv,
+       sum(pv) over() as total_pv
+from website_pv_info;
+
+--sum(...) over( partition by... )
+select cookieid,createtime,pv,
+       sum(pv) over(partition by cookieid) as total_pv 
+from website_pv_info;
+
+
+--当有order by但是缺失window子句的时候，默认是range between，为第一行的值到当前行的值构成的区间
+--sum(...) over( partition by... order by ... )
+select cookieid,createtime,pv,
+       sum(pv) over(partition by cookieid order by createtime) as current_total_pv
+from website_pv_info;
+
+--上述是根据creattime排序，因此range区间是由createtime的字段值来划分，第一行到当前行。
+
+
+
+--下面是根据pv排序，因此range区间是由pv的字段值来划分，第一行到当前行。
+--下面两个sql等价
+select cookieid,createtime,pv,
+       sum(pv) over(partition by cookieid order by pv) as current_total_pv
+from website_pv_info; --这属于有order by没有 window子句 默认range
+
+select cookieid,createtime,pv,
+       sum(pv) over(partition by cookieid order by pv range between unbounded preceding and current row) as current_total_pv
+from website_pv_info;
+
+
+--这是手动指定根据rows来划分范围
+select cookieid,createtime,pv,
+       sum(pv) over(partition by cookieid order by pv rows between unbounded preceding and current row ) as current_total_pv
+from website_pv_info;
+</code></pre>
+</li>
+</ul>
+<hr>
+<h4 id="08-apache-hive-window" tabindex="-1">知识点08：Apache Hive--窗口函数--window子句</h4>
+<blockquote>
+<h5 id="window-window" tabindex="-1">直译叫做window表达式 ，通俗叫法称之为window子句。</h5>
+</blockquote>
+<ul>
+<li>
+<p>功能：控制窗口操作的范围。</p>
+</li>
+<li>
+<p>语法</p>
+<pre><code class="language-ini">unbounded 无边界
+preceding 往前
+following 往后
+unbounded preceding 往前所有行，即初始行
+n preceding 往前n行
+unbounded following 往后所有行，即末尾行
+n following 往后n行
+current row 当前行
+ 
+语法
+(ROWS | RANGE) BETWEEN (UNBOUNDED | [num]) PRECEDING AND ([num] PRECEDING | CURRENT ROW | (UNBOUNDED | [num]) FOLLOWING)
+
+(ROWS | RANGE) BETWEEN CURRENT ROW AND (CURRENT ROW | (UNBOUNDED | [num]) FOLLOWING)
+(ROWS | RANGE) BETWEEN [num] FOLLOWING AND (UNBOUNDED | [num]) FOLLOWING
+</code></pre>
+</li>
+<li>
+<p>栗子</p>
+<blockquote>
+<p>这里以rows between为例来讲解窗口范围的划分，rows表示物理层面上的行，跟字段值没关系。</p>
+</blockquote>
+<pre><code class="language-sql">--默认从第一行到当前行
+select cookieid,createtime,pv,
+       sum(pv) over(partition by cookieid order by createtime) as pv1  
+from website_pv_info;
+
+--第一行到当前行 等效于rows between不写 默认就是第一行到当前行
+select cookieid,createtime,pv,
+       sum(pv) over(partition by cookieid order by createtime rows between unbounded preceding and current row) as pv2
+from website_pv_info;
+
+--向前3行至当前行
+select cookieid,createtime,pv,
+       sum(pv) over(partition by cookieid order by createtime rows between 3 preceding and current row) as pv4
+from website_pv_info;
+
+--向前3行 向后1行
+select cookieid,createtime,pv,
+       sum(pv) over(partition by cookieid order by createtime rows between 3 preceding and 1 following) as pv5
+from website_pv_info;
+
+--当前行至最后一行
+select cookieid,createtime,pv,
+       sum(pv) over(partition by cookieid order by createtime rows between current row and unbounded following) as pv6
+from website_pv_info;
+
+--第一行到最后一行 也就是分组内的所有行
+select cookieid,createtime,pv,
+       sum(pv) over(partition by cookieid order by createtime rows between unbounded preceding  and unbounded following) as pv6
+from website_pv_info;
+</code></pre>
+</li>
+</ul>
+<hr>
+<h4 id="09-apache-hive-row-number" tabindex="-1">知识点09：Apache Hive--窗口函数--排序函数（row_number等）</h4>
+<ul>
+<li>
+<p>功能：主要对数据分组排序之后，组内顺序标号。</p>
+</li>
+<li>
+<p>核心函数：<mark><strong>row_number</strong></mark>、rank、dense_rank</p>
+</li>
+<li>
+<p>适合场景：<mark><strong>分组TopN问题</strong></mark>（注意哦 不是全局topN）</p>
+</li>
+<li>
+<p>栗子</p>
+<pre><code class="language-sql">SELECT
+    cookieid,
+    createtime,
+    pv,
+    RANK() OVER(PARTITION BY cookieid ORDER BY pv desc) AS rn1,
+    DENSE_RANK() OVER(PARTITION BY cookieid ORDER BY pv desc) AS rn2,
+    ROW_NUMBER() OVER(PARTITION BY cookieid ORDER BY pv DESC) AS rn3
+FROM website_pv_info;
+
+--需求：找出每个用户访问pv最多的Top3 重复并列的不考虑
+SELECT * from
+(SELECT
+    cookieid,
+    createtime,
+    pv,
+    ROW_NUMBER() OVER(PARTITION BY cookieid ORDER BY pv DESC) AS seq
+FROM website_pv_info) tmp where tmp.seq &lt;4;
+</code></pre>
+</li>
+<li>
+<p><mark>ntile</mark>函数</p>
+<ul>
+<li>
+<p>功能：将分组排序之后的数据分成指定的若干个部分（若干个桶）</p>
+</li>
+<li>
+<p>规则：尽量平均分配 ，优先满足最小的桶，彼此最多不相差1个。</p>
+</li>
+<li>
+<p>栗子</p>
+<pre><code class="language-sql">--把每个分组内的数据分为3桶
+SELECT
+    cookieid,
+    createtime,
+    pv,
+    NTILE(3) OVER(PARTITION BY cookieid ORDER BY createtime) AS rn2
+FROM website_pv_info
+ORDER BY cookieid,createtime;
+
+--需求：统计每个用户pv数最多的前3分之1天。
+--理解：将数据根据cookieid分 根据pv倒序排序 排序之后分为3个部分 取第一部分
+SELECT * from
+(SELECT
+     cookieid,
+     createtime,
+     pv,
+     NTILE(3) OVER(PARTITION BY cookieid ORDER BY pv DESC) AS rn
+ FROM website_pv_info) tmp where rn =1;
 </code></pre>
 </li>
 </ul>
 </li>
 </ul>
 <hr>
-<h4 id="11-hadoop-map-reduce-shuffle" tabindex="-1">知识点11：Hadoop MapReduce--工作机制--shuffle机制</h4>
-<p>![image-20210730224743959](/img/user/czc知识库/计算机/Hadoop技术栈/课程资料笔记/源/hadoop离线day04--Hadoop MapReduce、YARN、HA/1、笔记、总结/hadoop离线day04--Hadoop MapReduce、YARN、HA.assets/image-20210730224743959.png)</p>
+<h4 id="10-apache-hive-lag-lead" tabindex="-1">知识点10：Apache Hive--窗口函数--lag、lead函数</h4>
+<pre><code class="language-sql">--LAG 用于统计窗口内往上第n行值
+SELECT cookieid,
+       createtime,
+       url,
+       ROW_NUMBER() OVER(PARTITION BY cookieid ORDER BY createtime) AS rn,
+       LAG(createtime,1,'1970-01-01 00:00:00') OVER(PARTITION BY cookieid ORDER BY createtime) AS last_1_time,
+       LAG(createtime,2) OVER(PARTITION BY cookieid ORDER BY createtime) AS last_2_time
+FROM website_url_info;
+
+
+--LEAD 用于统计窗口内往下第n行值
+SELECT cookieid,
+       createtime,
+       url,
+       ROW_NUMBER() OVER(PARTITION BY cookieid ORDER BY createtime) AS rn,
+       LEAD(createtime,1,'1970-01-01 00:00:00') OVER(PARTITION BY cookieid ORDER BY createtime) AS next_1_time,
+       LEAD(createtime,2) OVER(PARTITION BY cookieid ORDER BY createtime) AS next_2_time
+FROM website_url_info;
+
+--FIRST_VALUE 取分组内排序后，截止到当前行，第一个值
+SELECT cookieid,
+       createtime,
+       url,
+       ROW_NUMBER() OVER(PARTITION BY cookieid ORDER BY createtime) AS rn,
+       FIRST_VALUE(url) OVER(PARTITION BY cookieid ORDER BY createtime) AS first1
+FROM website_url_info;
+
+--LAST_VALUE  取分组内排序后，截止到当前行，最后一个值
+SELECT cookieid,
+       createtime,
+       url,
+       ROW_NUMBER() OVER(PARTITION BY cookieid ORDER BY createtime) AS rn,
+       LAST_VALUE(url) OVER(PARTITION BY cookieid ORDER BY createtime) AS last1
+FROM website_url_info;
+</code></pre>
 <hr>
-<h4 id="12-hadoop-yarn" tabindex="-1">知识点12：Hadoop YARN--功能职责概述</h4>
+<h4 id="11-apache-hive-text-orc-parquet" tabindex="-1">知识点11：Apache Hive--文件存储格式（text、ORC、parquet）</h4>
 <ul>
 <li>
-<p>yarn是一个<mark>通用资源管理系统</mark>和<mark>调度平台</mark>。</p>
-<pre><code>资源指的跟程序运行相关的硬件资源  比如：CPU RAM 
+<p>列式存储、行式存储</p>
+<ul>
+<li>数据最终在文件中底层以什么样的形成保存。</li>
+</ul>
+</li>
+<li>
+<p>Hive中表的数据存储格式，不是只支持text文本格式，还支持其他很多格式。</p>
+</li>
+<li>
+<p>hive表的文件格式是如何指定的呢？ 建表的时候通过<mark>STORED AS 语法指定。如果没有指定默认都是textfile</mark>。</p>
+</li>
+<li>
+<p>Hive中主流的几种文件格式。</p>
+<ul>
+<li>
+<p>textfile 文件格式</p>
+</li>
+<li>
+<p><mark>ORC</mark>、Parquet 列式存储格式。</p>
+<pre><code>都是列式存储格式，底层是以二进制形式存储。数据存储效率极高，对于查询贼方便。
+二进制意味着肉眼无法直接解析，hive可以自解析。
+</code></pre>
+</li>
+<li>
+<p>栗子</p>
+<blockquote>
+<p>分别使用3种不同格式存储数据，去HDFS上查看底层文件存储空间的差异。</p>
+</blockquote>
+<pre><code class="language-sql">--1、创建表，存储数据格式为TEXTFILE
+create table log_text (
+track_time string,
+url string,
+session_id string,
+referer string,
+ip string,
+end_user_id string,
+city_id string
+)
+ROW FORMAT DELIMITED FIELDS TERMINATED BY '\t'
+STORED AS TEXTFILE;  --如果不写stored as textfile 默认就是textfile
+
+--加载数据
+load data local inpath '/root/hivedata/log.data' into table log_text;
+
+--2、创建表，存储数据格式为ORC
+create table log_orc(
+track_time string,
+url string,
+session_id string,
+referer string,
+ip string,
+end_user_id string,
+city_id string
+)
+ROW FORMAT DELIMITED FIELDS TERMINATED BY '\t'
+STORED AS orc ;
+
+--向表中插入数据 思考为什么不能使用load命令加载？ 因为load是纯复制移动操作 不会调整文件格式。
+insert into table log_orc select * from log_text;
+
+--3、创建表，存储数据格式为parquet
+create table log_parquet(
+track_time string,
+url string,
+session_id string,
+referer string,
+ip string,
+end_user_id string,
+city_id string
+)
+ROW FORMAT DELIMITED FIELDS TERMINATED BY '\t'
+STORED AS PARQUET ;
+
+--向表中插入数据 
+insert into table log_parquet select * from log_text ;
 </code></pre>
 </li>
 </ul>
-<p>![image-20210921173212023](/img/user/czc知识库/计算机/Hadoop技术栈/课程资料笔记/源/hadoop离线day04--Hadoop MapReduce、YARN、HA/1、笔记、总结/hadoop离线day04--Hadoop MapReduce、YARN、HA.assets/image-20210921173212023.png)</p>
+</li>
+</ul>
 <hr>
-<h4 id="13-hadoop-yarn-yarn3" tabindex="-1">知识点13：Hadoop YARN--集群架构、yarn3大组件</h4>
-<p>![image-20210921173320913](/img/user/czc知识库/计算机/Hadoop技术栈/课程资料笔记/源/hadoop离线day04--Hadoop MapReduce、YARN、HA/1、笔记、总结/hadoop离线day04--Hadoop MapReduce、YARN、HA.assets/image-20210921173320913.png)</p>
+<h4 id="12-apache-hive-orc-snappy" tabindex="-1">知识点12：Apache Hive--数据压缩和文件格式搭配（ORC+snappy）</h4>
 <ul>
 <li>
-<p>物理层面上-2个组件</p>
-<ul>
+<p>Hive的默认执行引擎是MapReduce，因此通常所说的<mark>Hive压缩指的是MapReduce的压缩</mark>。</p>
+</li>
 <li>
-<p>主角色 <mark>resourcemanager</mark> RM</p>
-<pre><code>ResourceManager 负责整个集群的资源管理和分配，是一个全局的资源管理系统。
-是程序申请资源的唯一入口 负载调度。
+<p>压缩是指通过<mark>算法对数据进行重新编排</mark>，降低存储空间。无损压缩。</p>
+</li>
+<li>
+<p>MapReduce可以在两个阶段进行数据压缩</p>
+<ul>
+<li>map的输出
+<ul>
+<li><mark>减少shuffle的数据量</mark> 提高shuffle时网络IO的效率</li>
+</ul>
+</li>
+<li>reduce的输出
+<ul>
+<li>减少输出文件的大小 <mark>降低磁盘的存储空间</mark></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>压缩的弊端</p>
+<ul>
+<li>浪费时间</li>
+<li>消耗CPU、内存</li>
+<li>某些优秀的压缩算法需要钱</li>
+</ul>
+</li>
+<li>
+<p>压缩的算法（<mark>推荐使用snappy</mark>）</p>
+<pre><code>Snappy
+org.apache.hadoop.io.compress.SnappyCodec
 </code></pre>
 </li>
 <li>
-<p>从角色 <mark>nodemanager</mark> NM</p>
-<pre><code>nodemanager 负责每台机器上具体的资源管理 负责启动 关闭container容器
+<p>Hive中压缩的设置：注意 本质还是指的是MapReduce的压缩</p>
+<pre><code class="language-sql">--设置Hive的中间压缩 也就是map的输出压缩
+1）开启 hive 中间传输数据压缩功能
+set hive.exec.compress.intermediate=true;
+2）开启 mapreduce 中 map 输出压缩功能
+set mapreduce.map.output.compress=true;
+3）设置 mapreduce 中 map 输出数据的压缩方式
+set mapreduce.map.output.compress.codec = org.apache.hadoop.io.compress.SnappyCodec;
+
+--设置Hive的最终输出压缩，也就是Reduce输出压缩
+1）开启 hive 最终输出数据压缩功能
+set hive.exec.compress.output=true;
+2）开启 mapreduce 最终输出数据压缩
+set mapreduce.output.fileoutputformat.compress=true;
+3）设置 mapreduce 最终数据输出压缩方式
+set mapreduce.output.fileoutputformat.compress.codec =org.apache.hadoop.io.compress.SnappyCodec;
+4）设置 mapreduce 最终数据输出压缩为块压缩  还可以指定RECORD
+set mapreduce.output.fileoutputformat.compress.type=BLOCK;  
+</code></pre>
+<pre><code class="language-sql">--设置完毕之后  只有当HiveSQL底层通过MapReduce程序执行 才会涉及压缩。
+--已有普通格式的表
+select * from student_hdfs ;
+
+--ctas语句
+create table student_snappy as select * from student_hdfs ;
 </code></pre>
 </li>
-</ul>
-</li>
 <li>
-<p>程序内部--1个组件</p>
-<ul>
-<li><mark>ApplicationMaster</mark> AM</li>
-</ul>
-<pre><code class="language-shell">yarn作为通用资源管理系统 不关心程序的种类和程序内部的执行情况？
+<p>在实际开发中，可以根据需求选择不同的文件格式并且搭配不同的压缩算法。可以得到更好的存储效果。</p>
+<pre><code class="language-sql">--不指定压缩格式 代表什么呢？
+--orc 存储文件默认采用ZLIB 压缩。比 snappy 压缩的小
+STORED AS orc;   --2.78M
 
-谁来关心程序内部执行情况？
-比如MapReduce程序来说，先maptask 再运行reducetask.
+--以ORC格式存储 不压缩
+STORED AS orc tblproperties (&quot;orc.compress&quot;=&quot;NONE&quot;);  --7.69M
 
-需要一个组件来管理程序执行情况  程序内部的资源申请 各阶段执行情况的监督
-
-<a class="tag" onclick="toggleTagSearch(this)" data-content="#为了解决这个问题">#为了解决这个问题</a> yarn提供了第三个组件 applicationmaster 
-(男)主人，雇主; 主宰; 主人; 有控制力的人; 能手; 擅长…者;
-
-<a class="tag" onclick="toggleTagSearch(this)" data-content="#把applicationmaster称之为程序内部的老大角色">#把applicationmaster称之为程序内部的老大角色</a> 负责程序内部的执行情况
-
-<a class="tag" onclick="toggleTagSearch(this)" data-content="#AM针对不同类型的程序有不同的具体实现">#AM针对不同类型的程序有不同的具体实现</a>
-yarn默认实现了MapReduce的AM  名字叫做MrAppMaster.
-其他软件比如spark flink需要实现自己的AM 才能在yarn运行。
-
-
-<a class="tag" onclick="toggleTagSearch(this)" data-content="#结论：在上述设计模式下">#结论：在上述设计模式下</a>  任何种类程序在yarn运行，首先都是申请资源运行AM角色，然后由AM控制程序内部具体的执行。
-</code></pre>
-</li>
-</ul>
-<hr>
-<h4 id="14-hadoop-yarn-mr-yarn" tabindex="-1">知识点14：Hadoop YARN--mr程序提交yarn流程</h4>
-<p>![image-20210730224812277](/img/user/czc知识库/计算机/Hadoop技术栈/课程资料笔记/源/hadoop离线day04--Hadoop MapReduce、YARN、HA/1、笔记、总结/hadoop离线day04--Hadoop MapReduce、YARN、HA.assets/image-20210730224812277.png)</p>
-<hr>
-<h4 id="15-hadoop-yarn-scheduler" tabindex="-1">知识点15：Hadoop YARN--scheduler调度策略</h4>
-<ul>
-<li>
-<p>所谓的调度器指的是当集群繁忙的时候 如何给申请资源的程序分配资源</p>
-</li>
-<li>
-<p>scheduler属于ResourceManager功能</p>
-</li>
-<li>
-<p>YARN3大调度策略</p>
-<ul>
-<li>FIFO Scheduler 先进先出策略</li>
-<li><strong><mark>capacity Scheduler 容量调度策略</mark></strong></li>
-<li>Fair Sheduler 公平调度策略</li>
-</ul>
-</li>
-<li>
-<p>Apache Hadoop版本默认策略是capacity 。CDH商业版本默认策略是Fair。</p>
-<ul>
-<li>默认情况下，整个yarn集群在capacity策略下，划分为一个队列 名字叫做default，占整个集群资源的100.</li>
-</ul>
-</li>
-<li>
-<p>决定调度策略的参数</p>
-<pre><code class="language-shell"><a class="tag" onclick="toggleTagSearch(this)" data-content="#yarn-site">#yarn-site</a>.xml
-
-yarn.resourcemanager.scheduler.class=org.apache.hadoop.yarn.server.resourcemanager.scheduler.capacity.CapacityScheduler
-
-<a class="tag" onclick="toggleTagSearch(this)" data-content="#还可以在yarn">#还可以在yarn</a> 8088页面查看
+--以ORC格式存储  使用snappy压缩
+STORED AS orc tblproperties (&quot;orc.compress&quot;=&quot;SNAPPY&quot;); --3.78M
 </code></pre>
 </li>
 </ul>
 <hr>
-<h4 id="16-hadoop-yarn-capacity" tabindex="-1">知识点16：Hadoop YARN--capacity配置示例说明</h4>
-<ul>
-<li>prod 生产环境 线上环境</li>
-<li>dev 开发环境</li>
-</ul>
-<p>![image-20210921172135028](/img/user/czc知识库/计算机/Hadoop技术栈/课程资料笔记/源/hadoop离线day04--Hadoop MapReduce、YARN、HA/1、笔记、总结/hadoop离线day04--Hadoop MapReduce、YARN、HA.assets/image-20210921172135028.png)</p>
-<hr>
-<h4 id="17-hadoop-ha" tabindex="-1">知识点17：Hadoop HA集群--什么是高可用、实现高可用注意事项</h4>
-<p>![image-20210921173435657](/img/user/czc知识库/计算机/Hadoop技术栈/课程资料笔记/源/hadoop离线day04--Hadoop MapReduce、YARN、HA/1、笔记、总结/hadoop离线day04--Hadoop MapReduce、YARN、HA.assets/image-20210921173435657.png)</p>
-<h4 id="18-hadoop-ha-hdfs-ha-qjm" tabindex="-1">知识点18：Hadoop HA集群--HDFS HA--QJM实现原理</h4>
+<h4 id="13-apache-hive-fetch-mr" tabindex="-1">知识点13：Apache Hive--通用调优--fetch抓取机制、MR本地模式</h4>
+<p>Fetch抓取机制</p>
 <ul>
 <li>
-<p>Hadoop中单点故障</p>
-<ul>
-<li>NameNode</li>
-<li>Resourcemanager</li>
-</ul>
+<p>功能：在执行sql的时候，<mark>能不走</mark><mark>MapReduce程序处理就尽量不走MapReduce程序处理</mark>。</p>
 </li>
 <li>
-<p>NameNode HA ---<mark>QJM共享日志集群方案</mark></p>
-<ul>
-<li>zkfc 实现主备切换避免脑裂</li>
-<li>jn集群 editslog编辑日志同步</li>
-</ul>
-</li>
-</ul>
-<p>![image-20210921173452718](/img/user/czc知识库/计算机/Hadoop技术栈/课程资料笔记/源/hadoop离线day04--Hadoop MapReduce、YARN、HA/1、笔记、总结/hadoop离线day04--Hadoop MapReduce、YARN、HA.assets/image-20210921173452718.png)</p>
-<hr>
-<h4 id="19-hadoop-ha-yarn-ha" tabindex="-1">知识点19：Hadoop HA集群--YARN HA</h4>
-<ul>
-<li>
-<p>Resourcemanager HA --基于zk实现</p>
-<ul>
-<li>RM需要维护的数据量很少 不像NN需要同步文件系统大量的元数据。直接基于zk即可完成</li>
-<li>别忘了 zk也是一个分布式小文件存储系统。</li>
-</ul>
+<p>尽量直接去操作数据文件。</p>
 </li>
 <li>
-<p>Hadoop HA集群搭建 难点就是配置文件的编写</p>
-</li>
-</ul>
-<p>![image-20210921173504825](/img/user/czc知识库/计算机/Hadoop技术栈/课程资料笔记/源/hadoop离线day04--Hadoop MapReduce、YARN、HA/1、笔记、总结/hadoop离线day04--Hadoop MapReduce、YARN、HA.assets/image-20210921173504825.png)</p>
-<hr>
-<ul>
-<li>
-<p>关于HA集群，听懂原理 可以不搭建 <mark>后续课程依然使用非HA集群</mark>。（主要考虑资源不足）</p>
-<ul>
-<li>针对当下集群进行逻辑删除 备份</li>
-<li>使用新的安装包进行编辑</li>
-</ul>
+<p>设置： hive.fetch.task.conversion= more。</p>
+<pre><code class="language-sql">--在下述3种情况下 sql不走mr程序
+
+--全局查找
+select * from student;
+--字段查找
+select num,name from student;
+--limit 查找
+select num,name from student limit 2;
+</code></pre>
 </li>
 </ul>
 <hr>
-<h4 id="今日作业" tabindex="-1">今日作业</h4>
-<pre><code class="language-shell"><a class="tag" onclick="toggleTagSearch(this)" data-content="#理解分布式计算分而治之的思想">#理解分布式计算分而治之的思想</a>
-	分为几步 每步做什么
-    如何理解map单词 如何理解reduce单词
+<p>mapreduce本地模式</p>
+<ul>
+<li>
+<p>功能：如果非要执行<mark>MapReduce程序，能够本地执行的，尽量不提交yarn上执行</mark>。</p>
+</li>
+<li>
+<p>默认是关闭的。意味着只要走MapReduce就提交yarn执行。</p>
+<pre><code>mapreduce.framework.name = local 本地模式
+mapreduce.framework.name = yarn 集群模式 
+</code></pre>
+</li>
+<li>
+<p>Hive提供了一个参数，自动切换MapReduce程序为本地模式，如果不满足条件，就执行yarn模式。</p>
+<pre><code class="language-sql">set hive.exec.mode.local.auto = true;
+ 
+--3个条件必须都满足 自动切换本地模式
+The total input size of the job is lower than: hive.exec.mode.local.auto.inputbytes.max (128MB by default)  --数据量小于128M
+
+The total number of map-tasks is less than: hive.exec.mode.local.auto.tasks.max (4 by default)  --maptask个数少于4个
+
+The total number of reduce tasks required is 1 or 0.  --reducetask个数是0 或者 1
+</code></pre>
+</li>
+<li>
+<p>切换Hive的执行引擎</p>
+<pre><code>WARNING: Hive-on-MR is deprecated in Hive 2 and may not be available in the future versions. Consider using a different execution engine (i.e. spark, tez) or using Hive 1.X releases.
+
+如果针对Hive的调优依然无法满足你的需求 还是效率低， 尝试使用spark计算引擎 或者Tez.
+</code></pre>
+</li>
+</ul>
+<hr>
+<h4 id="14-apache-hive-join" tabindex="-1">知识点14：Apache Hive--通用调优--join优化</h4>
+<blockquote>
+<p>底层还是MapReduce的join优化</p>
+</blockquote>
+<ul>
+<li>
+<p>map join</p>
+<blockquote>
+<p>适合于<mark>小表join大表</mark>或者<mark>小表Join小表</mark></p>
+</blockquote>
+<p>![image-20210921215332809](/img/user/czc知识库/计算机/Hadoop技术栈/课程资料笔记/源/hadoop离线day08--Apache Hive函数高阶应用、性能调优/1、笔记、总结/hadoop离线day08-Apache Hive函数高阶应用、性能调优.assets/image-20210921215332809.png)</p>
+<pre><code class="language-shell"><a class="tag" onclick="toggleTagSearch(this)" data-content="#是否开启自动转为mapjoin">#是否开启自动转为mapjoin</a> 在满足条件的情况下 默认true
+hive.auto.convert.join=true
+
+Hive老版本
+<a class="tag" onclick="toggleTagSearch(this)" data-content="#如果参与的一个表大小满足条件">#如果参与的一个表大小满足条件</a> 转换为map join
+hive.mapjoin.smalltable.filesize=25000000  
+
+
+Hive2.0之后版本
+<a class="tag" onclick="toggleTagSearch(this)" data-content="#是否启用基于输入文件的大小，将reduce">#是否启用基于输入文件的大小，将reduce</a> join转化为Map join的优化机制。假设参与join的表(或分区)有N个，如果打开这个参数，并且有N-1个表(或分区)的大小总和小于hive.auto.convert.join.noconditionaltask.size参数指定的值，那么会直接将join转为Map join。
+hive.auto.convert.join.noconditionaltask=true 
+hive.auto.convert.join.noconditionaltask.size=512000000 
+</code></pre>
+</li>
+<li>
+<p>reduce join</p>
+<blockquote>
+<p>适合于大表Join大表</p>
+</blockquote>
+</li>
+<li>
+<p>bucket join</p>
+<blockquote>
+<p>适合于大表Join大表</p>
+</blockquote>
+<ul>
+<li>
+<p>方式1：Bucktet Map Join</p>
+<pre><code class="language-properties">语法: clustered by colName(参与join的字段)
+参数: set hive.optimize.bucketmapjoin = true
+要求: 分桶字段 = Join字段 ，分桶的个数相等或者成倍数，必须是在map join中
+</code></pre>
+</li>
+<li>
+<p>方式2：Sort Merge Bucket Join（SMB）</p>
+<pre><code class="language-properties">基于有序的数据Join
+语法:clustered by colName sorted by (colName)
+参数
+	set hive.optimize.bucketmapjoin = true;
+	set hive.auto.convert.sortmerge.join=true;
+    set hive.optimize.bucketmapjoin.sortedmerge = true;
+    set hive.auto.convert.sortmerge.join.noconditionaltask=true;
     
-<a class="tag" onclick="toggleTagSearch(this)" data-content="#学会提交MapReduce程序">#学会提交MapReduce程序</a>
-	hadoop jar 
-	yarn jar
-	
-<a class="tag" onclick="toggleTagSearch(this)" data-content="#掌握MapReduce执行流程">#掌握MapReduce执行流程</a>  重要
-	map阶段
-		1、maptask个数如何决定的
-		2、读文件组件textinputFormat 读数据行为是?
-		3、map处理完数据进行分区  分区是什么  默认分区规则是啥
-		4、缓冲区作用 0.8 100M
-		5、spill 溢写
-		6、sort排序 行为是什么
-		7、merge 合并
-		
-	reduce阶段
-		0、reducetask个数如何决定的 默认1 手动设置
-		1、copy主动拉取自己的数据
-		2、merge合并
-		3、sort排序
-		4、分组 行为
-		5、默认输出组件textoutputFormat
-		
-	shuffle机制
-		什么是shuffle 缺点是什么
-		map端shuffle有哪些步骤
-		reduce端shuffle有哪些步骤
-		
-<a class="tag" onclick="toggleTagSearch(this)" data-content="#MR程序中maptask个数、reducetask个数怎么决定的">#MR程序中maptask个数、reducetask个数怎么决定的</a>		
-	maptask影响因素（并行度个数）
-	
-	reducetask影响因素（并行度个数）
-		人干预
-	
-<a class="tag" onclick="toggleTagSearch(this)" data-content="#掌握YARN功能与架构组件">#掌握YARN功能与架构组件</a>
-	3个组件
-		RM
-		NM
-		AM
-
-<a class="tag" onclick="toggleTagSearch(this)" data-content="#掌握程序提交YARN交互流程">#掌握程序提交YARN交互流程</a>  重要
-	申请资源就找RM
-	程序内部首先启动AM
-
-<a class="tag" onclick="toggleTagSearch(this)" data-content="#理解YARN调度策略">#理解YARN调度策略</a>
-	几个策略 默认是谁  优缺点是啥
-	FIFO
-	Capacity
-	Fair
-
-<a class="tag" onclick="toggleTagSearch(this)" data-content="#掌握Hadoop">#掌握Hadoop</a> HA实现原理
-	HA相关名称
-	设计角度：如何顺利实现HA系统？
-		如何避免脑裂？  脑裂的后果是什么？  追求的是什么？
-		如何实现主备数据状态同步？
-	
-    NN HA---QJM
-    	zkfc是啥功能
-    	jn是啥
+要求: 分桶字段 = Join字段 = 排序字段,分桶的个数相等或者成倍数
 </code></pre>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h4 id="15-apache-hive" tabindex="-1">知识点15：Apache Hive--通用调优--数据倾斜优化</h4>
+<ul>
+<li>
+<p>group by数据倾斜</p>
+<ul>
+<li>
+<p>方案一：开启Map端聚合</p>
+<pre><code class="language-shell">hive.map.aggr=true;
+<a class="tag" onclick="toggleTagSearch(this)" data-content="#是否在Hive">#是否在Hive</a> Group By 查询中使用map端聚合。
+<a class="tag" onclick="toggleTagSearch(this)" data-content="#这个设置可以将顶层的部分聚合操作放在Map阶段执行，从而减轻清洗阶段数据传输和Reduce阶段的执行时间，提升总体性能。但是指标不治本。">#这个设置可以将顶层的部分聚合操作放在Map阶段执行，从而减轻清洗阶段数据传输和Reduce阶段的执行时间，提升总体性能。但是指标不治本。</a>
+</code></pre>
+</li>
+<li>
+<p>方案二：实现随机分区</p>
+<pre><code>实现随机分区
+select * from table distribute by rand();
+</code></pre>
+</li>
+<li>
+<p>方案三：数据倾斜时<mark>自动负载均衡</mark></p>
+<pre><code class="language-shell">hive.groupby.skewindata=true;
+
+<a class="tag" onclick="toggleTagSearch(this)" data-content="#开启该参数以后，当前程序会自动通过两个MapReduce来运行">#开启该参数以后，当前程序会自动通过两个MapReduce来运行</a>
+
+<a class="tag" onclick="toggleTagSearch(this)" data-content="#第一个MapReduce自动进行随机分布到Reducer中，每个Reducer做部分聚合操作，输出结果">#第一个MapReduce自动进行随机分布到Reducer中，每个Reducer做部分聚合操作，输出结果</a>
+
+<a class="tag" onclick="toggleTagSearch(this)" data-content="#第二个MapReduce将上一步聚合的结果再按照业务（group">#第二个MapReduce将上一步聚合的结果再按照业务（group</a> by key）进行处理，保证相同的分布到一起，最终聚合得到结果
+</code></pre>
+</li>
+</ul>
+</li>
+<li>
+<p>join数据倾斜</p>
+<ul>
+<li>
+<p>方案一：提前过滤，将大数据变成小数据，实现Map Join</p>
+</li>
+<li>
+<p>方案二：使用Bucket Join</p>
+</li>
+<li>
+<p>方案三：使用Skew Join</p>
+<pre><code class="language-shell"><a class="tag" onclick="toggleTagSearch(this)" data-content="#将Map">#将Map</a> Join和Reduce Join进行合并，如果某个值出现了数据倾斜，就会将产生数据倾斜的数据单独使用Map Join来实现
+
+<a class="tag" onclick="toggleTagSearch(this)" data-content="#其他没有产生数据倾斜的数据由Reduce">#其他没有产生数据倾斜的数据由Reduce</a> Join来实现，这样就避免了Reduce Join中产生数据倾斜的问题
+
+<a class="tag" onclick="toggleTagSearch(this)" data-content="#最终将Map">#最终将Map</a> Join的结果和Reduce Join的结果进行Union合并
+
+<a class="tag" onclick="toggleTagSearch(this)" data-content="#开启运行过程中skewjoin">#开启运行过程中skewjoin</a>
+set hive.optimize.skewjoin=true;
+<a class="tag" onclick="toggleTagSearch(this)" data-content="#如果这个key的出现的次数超过这个范围">#如果这个key的出现的次数超过这个范围</a>
+set hive.skewjoin.key=100000;
+<a class="tag" onclick="toggleTagSearch(this)" data-content="#在编译时判断是否会产生数据倾斜">#在编译时判断是否会产生数据倾斜</a>
+set hive.optimize.skewjoin.compiletime=true;
+set hive.optimize.union.remove=true;
+<a class="tag" onclick="toggleTagSearch(this)" data-content="#如果Hive的底层走的是MapReduce，必须开启这个属性，才能实现不合并">#如果Hive的底层走的是MapReduce，必须开启这个属性，才能实现不合并</a>
+set mapreduce.input.fileinputformat.input.dir.recursive=true;
+
+</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h4 id="16-apache-hive-mr-task" tabindex="-1">知识点16：Apache Hive--通用调优--MR程序task个数调整</h4>
+<ul>
+<li>
+<p>maptask个数</p>
+<ul>
+<li>
+<p>如果是在MapReduce中 maptask是通过<mark>逻辑切片</mark>机制决定的。</p>
+</li>
+<li>
+<p>但是在hive中，影响的因素很多。比如逻辑切片机制，文件是否压缩、压缩之后是否支持切割。</p>
+</li>
+<li>
+<p>因此在<mark>Hive中，调整MapTask的个数，直接去HDFS调整文件的大小和个数，效率较高</mark>。</p>
+<pre><code>如果小文件多，就进行小文件的合并  合并的大小最好=block size
+如果大文件多，就调整blocl size
+</code></pre>
+</li>
+</ul>
+</li>
+<li>
+<p>reducetask个数</p>
+<ul>
+<li>
+<p>如果在MapReduce中，通过代码可以直接指定 job.setNumReduceTasks(N)</p>
+</li>
+<li>
+<p>在Hive中，reducetask个数受以下几个条件控制的</p>
+<pre><code class="language-sql">（1）每个 Reduce 处理的数据量默认是 256MB
+hive.exec.reducers.bytes.per.reducer=256000000
+（2）每个任务最大的 reduce 数，默认为 1009
+hive.exec.reducsers.max=1009
+（3）mapreduce.job.reduces
+该值默认为-1，由 hive 自己根据任务情况进行判断。
+
+
+--如果用户用户不设置 hive将会根据数据量或者sql需求自己评估reducetask个数。
+--用户可以自己通过参数设置reducetask的个数
+  set mapreduce.job.reduces = N
+--用户设置的不一定生效，如果用户设置的和sql执行逻辑有冲突，比如order by，在sql编译期间，hive又会将reducetask设置为合理的个数。  
+
+Number of reduce tasks determined at compile time: 1
+</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h4 id="17-apache-hive" tabindex="-1">知识点17：Apache Hive--通用调优--执行计划</h4>
+<ul>
+<li>
+<p>通过执行计划可以看出<mark>hive接下来是如何打算执行这条sql的</mark>。</p>
+</li>
+<li>
+<p>语法格式：explain + sql语句</p>
+</li>
+<li>
+<p>栗子</p>
+<pre><code class="language-sql">explain select * from student;
+
++----------------------------------------------------+
+|                      Explain                       |
++----------------------------------------------------+
+| STAGE DEPENDENCIES:                                |
+|   Stage-0 is a root stage                          |
+|                                                    |
+| STAGE PLANS:                                       |
+|   Stage: Stage-0                                   |
+|     Fetch Operator                                 |
+|       limit: -1                                    |
+|       Processor Tree:                              |
+|         TableScan                                  |
+|           alias: student                           |
+|           Statistics: Num rows: 1 Data size: 5260 Basic stats: COMPLETE Column stats: NONE |
+|           Select Operator                          |
+|             expressions: num (type: int), name (type: string), sex (type: string), age (type: int), dept (type: string) |
+|             outputColumnNames: _col0, _col1, _col2, _col3, _col4 |
+|             Statistics: Num rows: 1 Data size: 5260 Basic stats: COMPLETE Column stats: NONE |
+|             ListSink                               |
+|                                                    |
++----------------------------------------------------+
+</code></pre>
+</li>
+</ul>
+<hr>
+<h4 id="18-apache-hive" tabindex="-1">知识点18：Apache Hive--通用调优--并行机制、推测执行机制</h4>
+<ul>
+<li>
+<p>并行执行机制</p>
+<ul>
+<li>
+<p>如果hivesql的底层某些stage阶段可以并行执行，就可以提高执行效率。</p>
+</li>
+<li>
+<p>前提是<mark>stage之间没有依赖</mark> 并行的弊端是瞬时服务器压力变大。</p>
+</li>
+<li>
+<p>参数</p>
+<pre><code class="language-sql">set hive.exec.parallel=true; --是否并行执行作业。适用于可以并行运行的 MapReduce 作业，例如在多次插入期间移动文件以插入目标
+set hive.exec.parallel.thread.number=16; --最多可以并行执行多少个作业。默认为8。
+</code></pre>
+</li>
+</ul>
+</li>
+<li>
+<p>Hive的严格模式</p>
+<ul>
+<li>
+<p>注意。不要和动态分区的严格模式搞混淆。</p>
+</li>
+<li>
+<p>这里的严格模式指的是开启之后 <mark>hive会禁止一些用户都影响不到的错误包括效率低下的操作</mark>，不允许运行一些有风险的查询。</p>
+</li>
+<li>
+<p>设置</p>
+<pre><code class="language-sql">set hive.mapred.mode = strict --默认是严格模式  nonstrict
+</code></pre>
+</li>
+<li>
+<p>解释</p>
+<pre><code>1、如果是分区表，没有where进行分区裁剪 禁止执行
+2、order by语句必须+limit限制
+</code></pre>
+</li>
+</ul>
+</li>
+<li>
+<p>推测执行机制</p>
+<ul>
+<li>MapReduce中task的一个机制。</li>
+<li>功能：
+<ul>
+<li>一个job底层可能有多个task执行，如果某些拖后腿的task执行慢，可能会导致最终job失败。</li>
+<li>所谓的<mark>推测执行机制就是通过算法找出拖后腿的task,为其启动备份的task</mark>。</li>
+<li>两个task同时处理一份数据，谁先处理完，谁的结果作为最终结果。</li>
+</ul>
+</li>
+<li>推测执行机制默认是开启的，但是在企业生产环境中<mark>建议关闭</mark>。</li>
+</ul>
+</li>
+</ul>
 </main>
 <aside>
 <div class="sidebar">
@@ -3047,51 +3549,55 @@ On this page
 <div class="toc-container">
 <nav class="toc">
 <ol>
-<li><a href="#hadoop-day04-hadoop-map-reduce-yarn-ha">hadoop离线day04--Hadoop MapReduce、YARN、HA</a>
+<li><a href="#hadoop-day08-apache-hive">hadoop离线day08-Apache Hive函数高阶应用、性能调优</a>
 <ol>
 <li><a href="#今日课程学习目标">今日课程学习目标</a>
 </li>
 <li><a href="#今日课程内容大纲">今日课程内容大纲</a>
 </li>
-<li><a href="#01-hadoop-map-reduce">知识点01：Hadoop MapReduce--理解分而治之的思想</a>
+<li><a href="#01-apache-hive-explode-udtf">知识点01：Apache Hive--explode函数的使用与限制（UDTF表生成函数）</a>
 </li>
-<li><a href="#02-hadoop-map-reduce">知识点02：Hadoop MapReduce--官方团队设计构思</a>
+<li><a href="#02-apache-hive-lateral-view">知识点02：Apache Hive--lateral view侧视图的使用</a>
 </li>
-<li><a href="#03-hadoop-map-reduce-mr-yarn">知识点03：Hadoop MapReduce官方示例--计算圆周率（如何提交mr到yarn）</a>
+<li><a href="#03-apache-hive-collect-list-concat-ws">知识点03：Apache Hive--行列转换--多行转单列（collect_list、concat_ws）</a>
 </li>
-<li><a href="#04-hadoop-map-reduce-word-count">知识点04：Hadoop MapReduce官方示例--单词统计(WordCount)需求剖析</a>
+<li><a href="#04-apache-hive-explode-lateral-view">知识点04：Apache Hive--行列转换--单列转多行（explode、lateral view）</a>
 </li>
-<li><a href="#05-hadoop-map-reduce-wordcount-java">知识点05：Hadoop MapReduce官方示例--Wordcount--java代码梳理</a>
+<li><a href="#05-apache-hive-json">知识点05：Apache Hive--json格式数据处理</a>
 </li>
-<li><a href="#06-hadoop-map-reduce-python">知识点06：Hadoop MapReduce--python接口接入</a>
+<li><a href="#06-apache-hive">知识点06：Apache Hive--窗口函数--快速理解与语法规则</a>
+<ol>
+<li><a href="#mark-over-mark">具有OVER语句的函数叫做窗口函数。</a>
 </li>
-<li><a href="#07-hadoop-map-reduce-hadoop-streaing-python">知识点07：Hadoop MapReduce--Hadoop Streaing提交python脚本</a>
+</ol>
 </li>
-<li><a href="#08-hadoop-map-reduce">知识点08：Hadoop MapReduce--输入输出路径及注意事项</a>
+<li><a href="#07-apache-hive">知识点07：Apache Hive--窗口函数--聚合函数</a>
 </li>
-<li><a href="#09-hadoop-map-reduce-map">知识点09：Hadoop MapReduce--工作机制--map阶段执行流程</a>
+<li><a href="#08-apache-hive-window">知识点08：Apache Hive--窗口函数--window子句</a>
+<ol>
+<li><a href="#window-window">直译叫做window表达式 ，通俗叫法称之为window子句。</a>
 </li>
-<li><a href="#10-hadoop-map-reduce-reduce">知识点10：Hadoop MapReduce--工作机制--reduce阶段执行流程</a>
+</ol>
 </li>
-<li><a href="#11-hadoop-map-reduce-shuffle">知识点11：Hadoop MapReduce--工作机制--shuffle机制</a>
+<li><a href="#09-apache-hive-row-number">知识点09：Apache Hive--窗口函数--排序函数（row_number等）</a>
 </li>
-<li><a href="#12-hadoop-yarn">知识点12：Hadoop YARN--功能职责概述</a>
+<li><a href="#10-apache-hive-lag-lead">知识点10：Apache Hive--窗口函数--lag、lead函数</a>
 </li>
-<li><a href="#13-hadoop-yarn-yarn3">知识点13：Hadoop YARN--集群架构、yarn3大组件</a>
+<li><a href="#11-apache-hive-text-orc-parquet">知识点11：Apache Hive--文件存储格式（text、ORC、parquet）</a>
 </li>
-<li><a href="#14-hadoop-yarn-mr-yarn">知识点14：Hadoop YARN--mr程序提交yarn流程</a>
+<li><a href="#12-apache-hive-orc-snappy">知识点12：Apache Hive--数据压缩和文件格式搭配（ORC+snappy）</a>
 </li>
-<li><a href="#15-hadoop-yarn-scheduler">知识点15：Hadoop YARN--scheduler调度策略</a>
+<li><a href="#13-apache-hive-fetch-mr">知识点13：Apache Hive--通用调优--fetch抓取机制、MR本地模式</a>
 </li>
-<li><a href="#16-hadoop-yarn-capacity">知识点16：Hadoop YARN--capacity配置示例说明</a>
+<li><a href="#14-apache-hive-join">知识点14：Apache Hive--通用调优--join优化</a>
 </li>
-<li><a href="#17-hadoop-ha">知识点17：Hadoop HA集群--什么是高可用、实现高可用注意事项</a>
+<li><a href="#15-apache-hive">知识点15：Apache Hive--通用调优--数据倾斜优化</a>
 </li>
-<li><a href="#18-hadoop-ha-hdfs-ha-qjm">知识点18：Hadoop HA集群--HDFS HA--QJM实现原理</a>
+<li><a href="#16-apache-hive-mr-task">知识点16：Apache Hive--通用调优--MR程序task个数调整</a>
 </li>
-<li><a href="#19-hadoop-ha-yarn-ha">知识点19：Hadoop HA集群--YARN HA</a>
+<li><a href="#17-apache-hive">知识点17：Apache Hive--通用调优--执行计划</a>
 </li>
-<li><a href="#今日作业">今日作业</a>
+<li><a href="#18-apache-hive">知识点18：Apache Hive--通用调优--并行机制、推测执行机制</a>
 </li>
 </ol>
 </li>

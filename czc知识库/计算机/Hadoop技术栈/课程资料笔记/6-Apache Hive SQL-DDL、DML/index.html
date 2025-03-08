@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="zh-CN">
 <head>
-<title>hadoop离线day07-Apache Hive SQL DQL、参数配置与函数</title>
+<title>6-Apache Hive SQL-DDL、DML</title>
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <script async type="module">import mermaid from"https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"</script>
 <script async src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js" integrity="sha512-hpZ5pDCF2bRCweL5WoA0/N1elet1KYL5mx3LP555Eg/0ZguaHawxNvEjF6O3rufAChs16HVNhEc6blF/rZoowQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -945,27 +945,36 @@ CTRL + K
 <span class="foldername">Hadoop技术栈</span>
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
-<div class="folder inner-folder" x-data="{isOpen: $persist(false).as('czc知识库/计算机/Hadoop技术栈/Hadoop')}" @click.stop="isOpen=!isOpen">
+<div class="folder inner-folder" x-data="{isOpen: $persist(false).as('czc知识库/计算机/Hadoop技术栈/笔记')}" @click.stop="isOpen=!isOpen">
 <div class="foldername-wrapper align-icon">
 <i x-show="isOpen" style="display:none" icon-name="chevron-down"></i>
 <i x-show="!isOpen" icon-name="chevron-right"></i>
-<span class="foldername">Hadoop</span>
+<span class="foldername">笔记</span>
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
-<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/计算机/Hadoop技术栈/Hadoop/hadoop面试题/">hadoop面试题 </a>
-</div>
-</div>
-</div>
-</div>
-<div x-show="isOpen" style="display:none" class="filelist">
-<div class="folder inner-folder" x-data="{isOpen: $persist(false).as('czc知识库/计算机/Hadoop技术栈/linux基础')}" @click.stop="isOpen=!isOpen">
+<div class="folder inner-folder" x-data="{isOpen: $persist(false).as('czc知识库/计算机/Hadoop技术栈/笔记/linux基础')}" @click.stop="isOpen=!isOpen">
 <div class="foldername-wrapper align-icon">
 <i x-show="isOpen" style="display:none" icon-name="chevron-down"></i>
 <i x-show="!isOpen" icon-name="chevron-right"></i>
 <span class="foldername">linux基础</span>
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
-<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/计算机/Hadoop技术栈/linux基础/1-基础/">1-基础 </a>
+<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/计算机/Hadoop技术栈/笔记/linux基础/1-基础/">1-基础 </a>
+</div>
+</div>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div class="folder inner-folder" x-data="{isOpen: $persist(false).as('czc知识库/计算机/Hadoop技术栈/笔记/习题')}" @click.stop="isOpen=!isOpen">
+<div class="foldername-wrapper align-icon">
+<i x-show="isOpen" style="display:none" icon-name="chevron-down"></i>
+<i x-show="!isOpen" icon-name="chevron-right"></i>
+<span class="foldername">习题</span>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/计算机/Hadoop技术栈/笔记/习题/hadoop面试题/">hadoop面试题 </a>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -991,35 +1000,35 @@ CTRL + K
 </div>
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
-<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/计算机/Hadoop技术栈/课程资料笔记/hadoop离线day01--大数据导论、Apache Zookeeper/">hadoop离线day01--大数据导论、Apache Zookeeper </a>
+<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/计算机/Hadoop技术栈/课程资料笔记/1-大数据导论、Apache Zookeeper/">1-大数据导论、Apache Zookeeper </a>
 </div>
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
-<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/计算机/Hadoop技术栈/课程资料笔记/hadoop离线day02--Apache Hadoop/">hadoop离线day02--Apache Hadoop </a>
+<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/计算机/Hadoop技术栈/课程资料笔记/2-Apache Hadoop/">2-Apache Hadoop </a>
 </div>
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
-<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/计算机/Hadoop技术栈/课程资料笔记/hadoop离线day03--Hadoop HDFS/">hadoop离线day03--Hadoop HDFS </a>
+<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/计算机/Hadoop技术栈/课程资料笔记/3-Hadoop HDFS/">3-Hadoop HDFS </a>
 </div>
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
-<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/计算机/Hadoop技术栈/课程资料笔记/hadoop离线day04--Hadoop MapReduce、YARN、HA/">hadoop离线day04--Hadoop MapReduce、YARN、HA </a>
+<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/计算机/Hadoop技术栈/课程资料笔记/4-Hadoop MapReduce、YARN、HA/">4-Hadoop MapReduce、YARN、HA </a>
 </div>
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
-<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/计算机/Hadoop技术栈/课程资料笔记/hadoop离线day05--数据仓库、Apache Hive/">hadoop离线day05--数据仓库、Apache Hive </a>
+<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/计算机/Hadoop技术栈/课程资料笔记/5-数据仓库、Apache Hive/">5-数据仓库、Apache Hive </a>
 </div>
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
-<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/计算机/Hadoop技术栈/课程资料笔记/hadoop离线day06-Apache Hive SQL-DDL、DML/">hadoop离线day06-Apache Hive SQL-DDL、DML </a>
+<div @click.stop class="notelink active-note"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/计算机/Hadoop技术栈/课程资料笔记/6-Apache Hive SQL-DDL、DML/">6-Apache Hive SQL-DDL、DML </a>
 </div>
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
-<div @click.stop class="notelink active-note"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/计算机/Hadoop技术栈/课程资料笔记/hadoop离线day07-Apache Hive SQL DQL、参数配置与函数/">hadoop离线day07-Apache Hive SQL DQL、参数配置与函数 </a>
+<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/计算机/Hadoop技术栈/课程资料笔记/7-Apache Hive SQL DQL、参数配置与函数/">7-Apache Hive SQL DQL、参数配置与函数 </a>
 </div>
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
-<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/计算机/Hadoop技术栈/课程资料笔记/hadoop离线day08-Apache Hive函数高阶应用、性能调优/">hadoop离线day08-Apache Hive函数高阶应用、性能调优 </a>
+<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/计算机/Hadoop技术栈/课程资料笔记/8-Apache Hive函数高阶应用、性能调优/">8-Apache Hive函数高阶应用、性能调优 </a>
 </div>
 </div>
 </div>
@@ -2327,1259 +2336,1101 @@ CTRL + K
 </div>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/flexsearch@0.7.21/dist/flexsearch.bundle.js"></script>
-<script>document.addEventListener("DOMContentLoaded",init,!1),document.addEventListener("DOMContentLoaded",setCorrectShortcut,!1),window.toggleSearch=function(){document.getElementById("globalsearch").classList.contains("active")?document.getElementById("globalsearch").classList.remove("active"):(document.getElementById("globalsearch").classList.add("active"),document.getElementById("term").focus())},window.toggleTagSearch=function(e){console.log(e.textContent);const t=e.textContent;t&&(window.document.getElementById("term").value=t.trim(),window.toggleSearch(),window.search())};const loadingSvg='\n    <svg width="100" height="100" viewBox="0 0 45 45" xmlns="http://www.w3.org/2000/svg" stroke="#fff">\n      <g fill="none" fill-rule="evenodd" transform="translate(1 1)" stroke-width="2">\n          <circle cx="22" cy="22" r="6" stroke-opacity="0">\n              <animate attributeName="r"\n                   begin="1.5s" dur="3s"\n                   values="6;22"\n                   calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-opacity"\n                   begin="1.5s" dur="3s"\n                   values="1;0" calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-width"\n                   begin="1.5s" dur="3s"\n                   values="2;0" calcMode="linear"\n                   repeatCount="indefinite" />\n          </circle>\n          <circle cx="22" cy="22" r="6" stroke-opacity="0">\n              <animate attributeName="r"\n                   begin="3s" dur="3s"\n                   values="6;22"\n                   calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-opacity"\n                   begin="3s" dur="3s"\n                   values="1;0" calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-width"\n                   begin="3s" dur="3s"\n                   values="2;0" calcMode="linear"\n                   repeatCount="indefinite" />\n          </circle>\n          <circle cx="22" cy="22" r="8">\n              <animate attributeName="r"\n                   begin="0s" dur="1.5s"\n                   values="6;1;2;3;4;5;6"\n                   calcMode="linear"\n                   repeatCount="indefinite" />\n          </circle>\n      </g>\n  </svg>';function debounce(e,t,n){var a;return function(){var r=this,i=arguments,c=n&&!a;clearTimeout(a),a=setTimeout((function(){a=null,n||e.apply(r,i)}),t),c&&e.apply(r,i)}}function setCorrectShortcut(){navigator.platform.toUpperCase().indexOf("MAC")>=0&&document.querySelectorAll(".search-keys").forEach((e=>e.innerHTML="⌘ + K"))}function createIndex(e){const t=e=>e.toLowerCase().split(/([^a-z]|[^\x00-\x7F])/),n=new FlexSearch.Document({cache:!0,charset:"latin:extra",optimize:!0,index:[{field:"content",tokenize:"reverse",encode:t},{field:"title",tokenize:"forward",encode:t},{field:"tags",tokenize:"forward",encode:t}]});return e.forEach(((e,t)=>{n.add({id:t,title:e.title,content:e.content,tags:e.tags})})),n}async function init(){let e=!0;if(localStorage.getItem("searchIndex")){let{date:t,docs:n}=JSON.parse(localStorage.getItem("searchIndex"));if("2025-03-08T09:01:49.970Z"===t){e=!1;let t=createIndex(n);window.docs=n,window.index=t}}if(e){let e=await(await fetch("/searchIndex.json?v=2025-03-08T09:01:49.970Z")).json(),t=createIndex(e);localStorage.setItem("searchIndex",JSON.stringify({date:"2025-03-08T09:01:49.970Z",docs:e})),window.docs=e,window.index=t}document.addEventListener("keydown",(e=>{if((e.ctrlKey||e.metaKey)&&"k"===e.key&&(e.preventDefault(),toggleSearch()),"Escape"===e.key&&document.getElementById("globalsearch").classList.remove("active"),document.getElementById("globalsearch").classList.contains("active")){if("ArrowDown"===e.key){e.preventDefault();let t=document.querySelector(".searchresult.active");t?(t.classList.remove("active"),t.nextElementSibling?t.nextElementSibling.classList.add("active"):document.querySelector(".searchresult").classList.add("active")):document.querySelector(".searchresult").classList.add("active");let n=document.querySelector(".searchresult.active");n&&n.scrollIntoView({behavior:"smooth",block:"nearest",inline:"start"})}if("ArrowUp"===e.key){e.preventDefault();let t=document.querySelector(".searchresult.active");t?(t.classList.remove("active"),t.previousElementSibling?t.previousElementSibling.classList.add("active"):document.querySelectorAll(".searchresult").forEach((e=>{e.nextElementSibling||e.classList.add("active")}))):document.querySelectorAll(".searchresult").forEach((e=>{e.nextElementSibling&&e.classList.add("active")}));let n=document.querySelector(".searchresult.active");n&&n.scrollIntoView({behavior:"smooth",block:"nearest",inline:"start"})}if("Enter"===e.key){e.preventDefault();let t=document.querySelector(".searchresult.active");t&&(window.location.href=t.querySelector("a").href)}}}));const t=debounce(search,200,!1);field=document.querySelector("#term"),field.addEventListener("keydown",(e=>{"ArrowDown"!==e.key&&"ArrowUp"!==e.key&&t()})),resultsDiv=document.querySelector("#search-results");const n=new URL(location.href).searchParams;n.get("q")&&(field.setAttribute("value",n.get("q")),toggleSearch(),search())}async function search(){let e=field.value.trim();if(!e)return;if(e==lastSearch)return;console.log(`search for ${e}`),window.lastSearch=e,resultsDiv.innerHTML=loadingSvg;let t=offlineSearch(e),n="";if(!t.length){let t=document.createElement("p");return t.innerText=`No results for "${e}"`,resultsDiv.innerHTML="",void resultsDiv.appendChild(t)}n+='<div style="max-width:100%;">',t.forEach((e=>{e.tags&&e.tags.length>0?n+=`<div class="searchresult">\n                    <a class="search-link" href="${e.url}">${e.title}</a>\n                    <div onclick="window.location='${e.url}'">\n                        <div class="header-meta">\n                            <div class="header-tags">\n                                ${e.tags.map((e=>'<a class="tag" href="JavaScript:Void(0);">#'+e+"</a>")).join("")}\n                            </div>\n                        </div>\n                        ${e.content}\n                    </div>\n                </div>`:n+=`<div class="searchresult">\n                    <a class="search-link" href="${e.url}">${e.title}</a>\n                    <div onclick="window.location='${e.url}'">\n                        ${e.content}\n                    </div>\n                </div>`})),n+="</div>",resultsDiv.innerHTML=n}function truncate(e,t){return(e=e.replaceAll(/<[^>]*>/g,"")).length<t?e:e.substring(0,t-3)+"..."}function offlineSearch(e){let t=window.docs,n="#"===e[0]&&e.length>1?index.search(e.substring(1),[{field:"tags"}]):index.search(e,[{field:"title",limit:5},{field:"content",weight:10}]);const a=e=>{const t=n.filter((t=>t.field===e));return 0===t.length?[]:[...t[0].result]};return[...new Set([...a("title"),...a("content"),...a("tags")])].map((e=>{let n=t[e];return n.content=truncate(n.content,400),n.tags=n.tags.filter((e=>"gardenEntry"!=e&&"note"!=e)),n}))}window.lastSearch=""</script>
+<script>document.addEventListener("DOMContentLoaded",init,!1),document.addEventListener("DOMContentLoaded",setCorrectShortcut,!1),window.toggleSearch=function(){document.getElementById("globalsearch").classList.contains("active")?document.getElementById("globalsearch").classList.remove("active"):(document.getElementById("globalsearch").classList.add("active"),document.getElementById("term").focus())},window.toggleTagSearch=function(e){console.log(e.textContent);const t=e.textContent;t&&(window.document.getElementById("term").value=t.trim(),window.toggleSearch(),window.search())};const loadingSvg='\n    <svg width="100" height="100" viewBox="0 0 45 45" xmlns="http://www.w3.org/2000/svg" stroke="#fff">\n      <g fill="none" fill-rule="evenodd" transform="translate(1 1)" stroke-width="2">\n          <circle cx="22" cy="22" r="6" stroke-opacity="0">\n              <animate attributeName="r"\n                   begin="1.5s" dur="3s"\n                   values="6;22"\n                   calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-opacity"\n                   begin="1.5s" dur="3s"\n                   values="1;0" calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-width"\n                   begin="1.5s" dur="3s"\n                   values="2;0" calcMode="linear"\n                   repeatCount="indefinite" />\n          </circle>\n          <circle cx="22" cy="22" r="6" stroke-opacity="0">\n              <animate attributeName="r"\n                   begin="3s" dur="3s"\n                   values="6;22"\n                   calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-opacity"\n                   begin="3s" dur="3s"\n                   values="1;0" calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-width"\n                   begin="3s" dur="3s"\n                   values="2;0" calcMode="linear"\n                   repeatCount="indefinite" />\n          </circle>\n          <circle cx="22" cy="22" r="8">\n              <animate attributeName="r"\n                   begin="0s" dur="1.5s"\n                   values="6;1;2;3;4;5;6"\n                   calcMode="linear"\n                   repeatCount="indefinite" />\n          </circle>\n      </g>\n  </svg>';function debounce(e,t,n){var a;return function(){var r=this,i=arguments,c=n&&!a;clearTimeout(a),a=setTimeout((function(){a=null,n||e.apply(r,i)}),t),c&&e.apply(r,i)}}function setCorrectShortcut(){navigator.platform.toUpperCase().indexOf("MAC")>=0&&document.querySelectorAll(".search-keys").forEach((e=>e.innerHTML="⌘ + K"))}function createIndex(e){const t=e=>e.toLowerCase().split(/([^a-z]|[^\x00-\x7F])/),n=new FlexSearch.Document({cache:!0,charset:"latin:extra",optimize:!0,index:[{field:"content",tokenize:"reverse",encode:t},{field:"title",tokenize:"forward",encode:t},{field:"tags",tokenize:"forward",encode:t}]});return e.forEach(((e,t)=>{n.add({id:t,title:e.title,content:e.content,tags:e.tags})})),n}async function init(){let e=!0;if(localStorage.getItem("searchIndex")){let{date:t,docs:n}=JSON.parse(localStorage.getItem("searchIndex"));if("2025-03-08T11:35:40.187Z"===t){e=!1;let t=createIndex(n);window.docs=n,window.index=t}}if(e){let e=await(await fetch("/searchIndex.json?v=2025-03-08T11:35:40.187Z")).json(),t=createIndex(e);localStorage.setItem("searchIndex",JSON.stringify({date:"2025-03-08T11:35:40.187Z",docs:e})),window.docs=e,window.index=t}document.addEventListener("keydown",(e=>{if((e.ctrlKey||e.metaKey)&&"k"===e.key&&(e.preventDefault(),toggleSearch()),"Escape"===e.key&&document.getElementById("globalsearch").classList.remove("active"),document.getElementById("globalsearch").classList.contains("active")){if("ArrowDown"===e.key){e.preventDefault();let t=document.querySelector(".searchresult.active");t?(t.classList.remove("active"),t.nextElementSibling?t.nextElementSibling.classList.add("active"):document.querySelector(".searchresult").classList.add("active")):document.querySelector(".searchresult").classList.add("active");let n=document.querySelector(".searchresult.active");n&&n.scrollIntoView({behavior:"smooth",block:"nearest",inline:"start"})}if("ArrowUp"===e.key){e.preventDefault();let t=document.querySelector(".searchresult.active");t?(t.classList.remove("active"),t.previousElementSibling?t.previousElementSibling.classList.add("active"):document.querySelectorAll(".searchresult").forEach((e=>{e.nextElementSibling||e.classList.add("active")}))):document.querySelectorAll(".searchresult").forEach((e=>{e.nextElementSibling&&e.classList.add("active")}));let n=document.querySelector(".searchresult.active");n&&n.scrollIntoView({behavior:"smooth",block:"nearest",inline:"start"})}if("Enter"===e.key){e.preventDefault();let t=document.querySelector(".searchresult.active");t&&(window.location.href=t.querySelector("a").href)}}}));const t=debounce(search,200,!1);field=document.querySelector("#term"),field.addEventListener("keydown",(e=>{"ArrowDown"!==e.key&&"ArrowUp"!==e.key&&t()})),resultsDiv=document.querySelector("#search-results");const n=new URL(location.href).searchParams;n.get("q")&&(field.setAttribute("value",n.get("q")),toggleSearch(),search())}async function search(){let e=field.value.trim();if(!e)return;if(e==lastSearch)return;console.log(`search for ${e}`),window.lastSearch=e,resultsDiv.innerHTML=loadingSvg;let t=offlineSearch(e),n="";if(!t.length){let t=document.createElement("p");return t.innerText=`No results for "${e}"`,resultsDiv.innerHTML="",void resultsDiv.appendChild(t)}n+='<div style="max-width:100%;">',t.forEach((e=>{e.tags&&e.tags.length>0?n+=`<div class="searchresult">\n                    <a class="search-link" href="${e.url}">${e.title}</a>\n                    <div onclick="window.location='${e.url}'">\n                        <div class="header-meta">\n                            <div class="header-tags">\n                                ${e.tags.map((e=>'<a class="tag" href="JavaScript:Void(0);">#'+e+"</a>")).join("")}\n                            </div>\n                        </div>\n                        ${e.content}\n                    </div>\n                </div>`:n+=`<div class="searchresult">\n                    <a class="search-link" href="${e.url}">${e.title}</a>\n                    <div onclick="window.location='${e.url}'">\n                        ${e.content}\n                    </div>\n                </div>`})),n+="</div>",resultsDiv.innerHTML=n}function truncate(e,t){return(e=e.replaceAll(/<[^>]*>/g,"")).length<t?e:e.substring(0,t-3)+"..."}function offlineSearch(e){let t=window.docs,n="#"===e[0]&&e.length>1?index.search(e.substring(1),[{field:"tags"}]):index.search(e,[{field:"title",limit:5},{field:"content",weight:10}]);const a=e=>{const t=n.filter((t=>t.field===e));return 0===t.length?[]:[...t[0].result]};return[...new Set([...a("title"),...a("content"),...a("tags")])].map((e=>{let n=t[e];return n.content=truncate(n.content,400),n.tags=n.tags.filter((e=>"gardenEntry"!=e&&"note"!=e)),n}))}window.lastSearch=""</script>
 <main class="content cm-s-obsidian">
 <header>
-<h1 data-note-icon="">hadoop离线day07-Apache Hive SQL DQL、参数配置与函数</h1>
+<h1 data-note-icon="">6-Apache Hive SQL-DDL、DML</h1>
 <div class="header-meta">
 <div class="header-tags">
 </div>
-<div class="timestamps"><div><i icon-name="calendar-plus"></i> <span class="human-date" data-date="2025-02-25T15:33:27.140+08:00"></span></div><div><i icon-name="calendar-clock"></i> <span class="human-date" data-date="2025-03-05T23:20:57.000+08:00"></span></div></div></div>
+<div class="timestamps"><div><i icon-name="calendar-plus"></i> <span class="human-date" data-date="2025-02-25T15:33:27.051+08:00"></span></div><div><i icon-name="calendar-clock"></i> <span class="human-date" data-date="2025-03-05T23:20:53.000+08:00"></span></div></div></div>
 </header>
-<h3 id="hadoop-day07-apache-hive-sql-dql" tabindex="-1">hadoop离线day07-Apache Hive SQL DQL、参数配置与函数</h3>
+<h3 id="hadoop-day06-apache-hive-sql-ddl-dml" tabindex="-1">hadoop离线day06-Apache Hive SQL-DDL、DML</h3>
 <hr>
 <h4 id="今日课程学习目标" tabindex="-1">今日课程学习目标</h4>
-<pre><code class="language-shell"><a class="tag" onclick="toggleTagSearch(this)" data-content="#掌握HiveQL">#掌握HiveQL</a> DQL查询语句
-	基础select查询语法和MySQL一样 
-	侧重记忆不一样的（见下面大纲）
-<a class="tag" onclick="toggleTagSearch(this)" data-content="#掌握HiveSQL">#掌握HiveSQL</a> join查询
-	重点是内关联、左关联
-<a class="tag" onclick="toggleTagSearch(this)" data-content="#学会Hive">#学会Hive</a> shell命令行与参数配置
-<a class="tag" onclick="toggleTagSearch(this)" data-content="#理解函数分类标准">#理解函数分类标准</a>(UDF、UDTF、UDAF)
-	根据函数输入和输出的行数
-		一进一出
-		一进多出
-		多进一出
-<a class="tag" onclick="toggleTagSearch(this)" data-content="#掌握常用函数的使用">#掌握常用函数的使用</a>
-	见多识广，多用多会，不用就忘
+<pre><code class="language-shell"><a class="tag" onclick="toggleTagSearch(this)" data-content="#掌握HQL">#掌握HQL</a> DDL建表语句
+	理解Hive SerDe机制、分隔符语法
+	掌握内外部表、分区表、分桶表创建使用
+<a class="tag" onclick="toggleTagSearch(this)" data-content="#理解HQL">#理解HQL</a> DDL其他语句
+	修改、删除
+<a class="tag" onclick="toggleTagSearch(this)" data-content="#学会常见show语法使用">#学会常见show语法使用</a>
+<a class="tag" onclick="toggleTagSearch(this)" data-content="#掌握HQL">#掌握HQL</a> load、insert加载插入语句
 </code></pre>
 <h4 id="今日课程内容大纲" tabindex="-1">今日课程内容大纲</h4>
-<pre><code class="language-shell"><a class="tag" onclick="toggleTagSearch(this)" data-content="#1、PyCharm|IDEA">#1、PyCharm|IDEA</a> Hive插件
-	支持HQL语法，作为客户端访问HS2
-<a class="tag" onclick="toggleTagSearch(this)" data-content="#2、HQL">#2、HQL</a> DQL 数据查询语言
-	cluster by
-	distribute by+sort by
-	order by
-	union
-	CTE
-	Hive的join语法
-<a class="tag" onclick="toggleTagSearch(this)" data-content="#3、hive的shell命令行和参数配置方式">#3、hive的shell命令行和参数配置方式</a>
-<a class="tag" onclick="toggleTagSearch(this)" data-content="#4、Hive的函数">#4、Hive的函数</a>
-	函数分类：内置函数、用户定义函数
-	UDF、UDTF、UDAF
+<pre><code class="language-shell"><a class="tag" onclick="toggleTagSearch(this)" data-content="#1、HQL">#1、HQL</a> DDL 数据定义语言 针对表的
+ 核心：建表语句   直接决定了表和文件之间能否映射成功
+ 	数据类型
+ 	SerDe序列化机制
+ 	分隔符语法
+ 	内部表、外部表
+ 	数据存储路径
+ 	分区表
+ 	分桶表
+  alter修改表
+
+<a class="tag" onclick="toggleTagSearch(this)" data-content="#2、HQL">#2、HQL</a> DML 数据操纵语言  针对表的数据
+	load加载数据
+	insert插入数据   insert+select
+		多重插入
+		动态分区插入
+		数据导出
+		
+<a class="tag" onclick="toggleTagSearch(this)" data-content="#3、HQL常用的show语法">#3、HQL常用的show语法</a>		
 </code></pre>
 <hr>
-<h4 id="01-hive-sql-dql" tabindex="-1">知识点01：Hive SQL--DQL--基础查询语句及其注意事项</h4>
-<p>1.1、select语法树</p>
-<pre><code class="language-sql">SELECT [ALL | DISTINCT] select_expr, select_expr, ...
-FROM table_reference
-JOIN table_other ON expr
-[WHERE where_condition]
-[GROUP BY col_list [HAVING condition]]
-[CLUSTER BY col_list
-| [DISTRIBUTE BY col_list] [SORT BY| ORDER BY col_list]
-]
-[LIMIT number]
+<h4 id="01-apache-hive-ddl" tabindex="-1">知识点01：Apache Hive--DDL--概念与语法树介绍</h4>
+<p>![image-20210921211129630](/img/user/czc知识库/计算机/Hadoop技术栈/课程资料笔记/源/hadoop离线day06--Apache Hive SQL-DDL、DML/1、笔记、总结/hadoop离线day06-Apache Hive SQL-DDL、DML.assets/image-20210921211129630.png)</p>
+<pre><code class="language-properties">蓝色字体是建表语法的关键字，用于指定某些功能。
+[ ]中括号的语法表示可选。
+|表示使用的时候，左右语法二选一。
+建表语句中的语法顺序要和语法树中顺序保持一致。
+
 </code></pre>
+<hr>
+<h4 id="02-apache-hive-ddl" tabindex="-1">知识点02：Apache Hive--DDL--建表语句--表存在忽略异常</h4>
+<p><mark>IF NOT EXISTS</mark></p>
 <ul>
 <li>
-<p>不管是写select语句还是看select语句，==<strong>from关键字</strong>==及后面的表是最重要；</p>
-</li>
-<li>
-<p>其后面的表可能是一张真实物理存在的表，也可能是虚拟的表（查询的结果 视图view）</p>
-</li>
-<li>
-<p>select基础语法</p>
-<ul>
-<li><strong><mark>where语句中为什么不能使用聚合函数？</mark></strong></li>
-<li><strong><mark>Having和where的区别？</mark></strong></li>
-<li><strong><mark>group by语法中的查询字段的限制？为什么要求是分组字段或者是聚合函数应用的字段</mark></strong></li>
-<li><strong><mark>梳理执行顺序？</mark></strong></li>
-</ul>
+<p>建表的时候，如果表名已经存在，默认会报错，通过<mark>IF NOT EXISTS关键字可以忽略异常</mark>。</p>
+<pre><code class="language-sql">--第一次创建表
+0: jdbc:hive2://node1:10000&gt; create table t_1(id int,name string,age int);
+--再次执行
+0: jdbc:hive2://node1:10000&gt; create table t_1(id int,name string,age int);
+Error: Error while processing statement: FAILED: Execution Error, return code 1 from org.apache.hadoop.hive.ql.exec.DDLTask. AlreadyExistsException(message:Table t_1 already exists) (state=08S01,code=1)
+--Error while processing statement 执行期间的错误 往往就是逻辑错误
+
+--加上if not exists忽略异常
+0: jdbc:hive2://node1:10000&gt; create table if not exists t_1(id int,name string,age int);
+
+0: jdbc:hive2://node1:10000&gt; creatf table t_1(id int,name string,age int);
+Error: Error while compiling statement: FAILED: ParseException line 1:0 cannot recognize input near 'creatf' 'table' 't_1' (state=42000,code=40000)
+0: jdbc:hive2://node1:10000&gt; 
+--Error while compiling statement 编译期间的错误  SQL语法问题
+
+hivesql --&gt;编译---&gt;执行
+</code></pre>
 </li>
 </ul>
 <hr>
-<h4 id="02-hive-sql-dql-cluster-distribute-sort" tabindex="-1">知识点02：Hive SQL--DQL--高阶查询--cluster、distribute、sort</h4>
-<p><mark>CLUSTER BY 分桶查询</mark></p>
+<h4 id="03-apache-hive-ddl" tabindex="-1">知识点03：Apache Hive--DDL--建表语句--数据类型</h4>
 <blockquote>
-<p>为了探究底层细节，建议使用beeline客户端练习 方面查看查询过程日志。</p>
+<p><a href="https://cwiki.apache.org/confluence/display/Hive/LanguageManual+Types" target="_blank" class="external-link">https://cwiki.apache.org/confluence/display/Hive/LanguageManual+Types</a></p>
 </blockquote>
 <ul>
 <li>
-<p>语法</p>
-<pre><code class="language-sql">select * from student;  --普桶查询
-select * from student cluster by num; --分桶查询 根据学生编号进行分桶查询
-
---Q:分为几个部分？ 分的规则是什么？
-分为几个部分取决于reducetask个数
-分的规则和分桶表的规则一样 hashfunc(字段)  %  reducetask个数
-</code></pre>
+<p>Hive除了支持SQL类型之外，<mark>还支持java数据类型</mark>；</p>
 </li>
 <li>
-<p>reducetask个数是如何确定的？ reducetask个数就决定了最终数据分为几桶。</p>
-<pre><code class="language-sql">--如果用户没有设置,不指定reduce task个数。则hive根据表输入数据量自己评估
---日志显示：Number of reduce tasks not specified. Estimated from input data size: 1
-select * from student cluster by num;
-
---手动设置reduce task个数
---日志显示：Number of reduce tasks not specified. Defaulting to jobconf value of: 2
-set mapreduce.job.reduces =2;
-select * from student cluster by num;
-----分桶查询的结果真的根据reduce tasks个数分为了两个部分，并且每个部分中还根据了字段进行了排序。
-
---总结：cluster by xx  分且排序的功能
-	  分为几个部分 取决于reducetask个数
-	  排序只能是正序 用户无法改变
-	   
---需求：把student表数据根据num分为两个部分，每个部分中根据年龄age倒序排序。	
-set mapreduce.job.reduces =2;
-select  * from student cluster by num order by age desc;
-select  * from student cluster by num sort by age desc;
---FAILED: SemanticException 1:50 Cannot have both CLUSTER BY and SORT BY clauses
-
-</code></pre>
-</li>
-</ul>
-<p><mark>DISTRIBUTE BY+SORT BY</mark></p>
+<p>Hive除了支持基础数据类型之外，还<mark>支持复合类型</mark>（array数组 map映射）；</p>
 <ul>
-<li>
-<p>功能：相当于把cluster by的功能一分为二。</p>
-<ul>
-<li>distribute by只负责分;</li>
-<li>sort by只负责分之后的每个部分排序。</li>
-<li>并且分和排序的字段可以不一样。</li>
+<li>针对复合类型的数据 要想直接从文件中解析成功 还必须配合分隔符指定的语法。</li>
 </ul>
-<pre><code class="language-sql">--当后面分和排序的字段是同一个字段 加起来就相等于cluster by
-CLUSTER BY(分且排序) = DISTRIBUTE BY（分）+SORT BY（排序） 
-
---下面两个功能一样的
-select  * from student cluster by num;
-select  * from student distribute by num sort by num;
-
---最终实现
-select  * from student distribute by num sort by age desc;
-</code></pre>
 </li>
 <li>
-<p>ORDER BY</p>
-<pre><code class="language-sql">--首先我们设置一下reducetask个数，随便设置
---根据之前的探讨，貌似用户设置几个，结果就是几个，但是实际情况如何呢？
-set mapreduce.job.reduces =2;
-select  * from student order by age desc;
-
---执行中日志显示
-Number of reduce tasks determined at compile time: 1 --不是设置了为2吗 
-
---原因：order by是全局排序。全局排序意味着数据只能输出在一个文件中。因此也只能有一个reducetask.
---在order by出现的情况下，不管用户设置几个reducetask,在编译执行期间都会变为一个，满足全局。
-</code></pre>
+<p>Hive中大小写不敏感；</p>
+</li>
+<li>
+<p>在建表的时候，最好<mark>表的字段类型要和文件中的类型保持一致</mark>，</p>
 <ul>
-<li>order by 和sort by
-<ul>
-<li>order by负责<mark>全局排序</mark> 意味着整个mr作业只有一个reducetask 不管用户设置几个 编译期间hive都会把它设置为1。</li>
-<li>sort by负责分完之后 局部排序。</li>
+<li>如果不一致，Hive会尝试进行<mark>类型隐式转换</mark>，不保证转换成功，如果不成功，显示null;</li>
 </ul>
 </li>
-</ul>
+<li>
+<p>栗子</p>
+<pre><code class="language-sql">--创建数据库并切换使用
+create database if not exists itheima;
+use itheima;
+
+--建表
+create table t_archer(
+      id int comment &quot;ID&quot;,
+      name string comment &quot;英雄名称&quot;,
+      hp_max int comment &quot;最大生命&quot;,
+      mp_max int comment &quot;最大法力&quot;,
+      attack_max int comment &quot;最高物攻&quot;,
+      defense_max int comment &quot;最大物防&quot;,
+      attack_range string comment &quot;攻击范围&quot;,
+      role_main string comment &quot;主要定位&quot;,
+      role_assist string comment &quot;次要定位&quot;
+) comment &quot;王者荣耀射手信息&quot;
+row format delimited
+fields terminated by &quot;\t&quot;;
+
+--查看表数据 查看表的元数据信息
+select * from t_archer;
+desc formatted t_archer;
+
+--上传文件到表对应的HDFS目录下
+[root@node1 hivedata]# hadoop fs -put archer.txt /user/hive/warehouse/itheima.db/t_archer
+
+[root@node1 hiedata]# pwd
+/root/hivedata
+</code></pre>
 </li>
 </ul>
 <hr>
-<h4 id="03-hive-sql-dql-union" tabindex="-1">知识点03：Hive SQL--DQL--高阶查询--Union联合查询</h4>
-<p>完整版select语法树</p>
-<pre><code class="language-sql">[WITH CommonTableExpression (, CommonTableExpression)*]
-SELECT [ALL | DISTINCT] select_expr, select_expr, ...
-  FROM table_reference
-  [WHERE where_condition]
-  [GROUP BY col_list]
-  [ORDER BY col_list]
-  [CLUSTER BY col_list
-    | [DISTRIBUTE BY col_list] [SORT BY col_list]
-  ]
- [LIMIT [offset,] rows];
-</code></pre>
-<ul>
-<li>union联合查询</li>
-</ul>
-<blockquote>
-<p>UNION用于将来自<mark>多个SELECT语句的结果合并为一个结果集</mark>。</p>
-</blockquote>
-<pre><code class="language-sql">--语法规则
-select_statement UNION [ DISTINCT|ALL ] select_statement UNION [ALL | DISTINCT] select_statement ...;
-
---使用DISTINCT关键字与使用UNION默认值效果一样，都会删除重复行。
-select num,name from student_local
-UNION
-select num,name from student_hdfs;
---和上面一样
-select num,name from student_local
-UNION DISTINCT
-select num,name from student_hdfs;
-
---使用ALL关键字会保留重复行。
-select num,name from student_local
-UNION ALL
-select num,name from student_hdfs limit 2;
-
---如果要将ORDER BY，SORT BY，CLUSTER BY，DISTRIBUTE BY或LIMIT应用于单个SELECT
---请将子句放在括住SELECT的括号内
-SELECT num,name FROM (select num,name from student_local LIMIT 2)  subq1
-UNION
-SELECT num,name FROM (select num,name from student_hdfs LIMIT 3) subq2;
-
---如果要将ORDER BY，SORT BY，CLUSTER BY，DISTRIBUTE BY或LIMIT子句应用于整个UNION结果
---请将ORDER BY，SORT BY，CLUSTER BY，DISTRIBUTE BY或LIMIT放在最后一个之后。
-select num,name from student_local
-UNION
-select num,name from student_hdfs
-order by num desc;
-</code></pre>
-<hr>
-<h4 id="04-hive-sql-dql-cte" tabindex="-1">知识点04：Hive SQL--DQL--高阶查询--CTE表达式</h4>
-<blockquote>
-<p>通用表表达式（CTE）是一个临时结果集，该结果集是从<mark>WITH子句中指定的简单查询</mark><br>
-<mark>派生而来的</mark>，该查询紧接在SELECT或INSERT关键字之前。</p>
-<p>通俗解释：sql开始前定义一个SQL片断，该SQL片断可以被后续整个SQL语句所用到，并且可以多次使用。</p>
-</blockquote>
-<pre><code class="language-sql">--select语句中的CTE
-with q1 as (select num,name,age from student where num = 95002)
-select *
-from q1;
-
--- from风格
-with q1 as (select num,name,age from student where num = 95002)
-from q1
-select *;
-
--- chaining CTEs 链式
-with q1 as ( select * from student where num = 95002),
-     q2 as ( select num,name,age from q1)
-select * from (select num from q2) a;
-
--- union
-with q1 as (select * from student where num = 95002),
-     q2 as (select * from student where num = 95004)
-select * from q1 union all select * from q2;
-
--- ctas  
--- creat table as select 创建一张表来自于后面的查询语句  表的字段个数 名字 顺序和数据行数都取决于查询
--- create table t_ctas as select num,name from student limit 2;
-
-create table s2 as
-with q1 as ( select * from student where num = 95002)
-select * from q1;
-
--- view
-create view v1 as
-with q1 as ( select * from student where num = 95002)
-select * from q1;
-
-select * from v1;
-</code></pre>
-<hr>
-<h4 id="05-hive-sql-dql-join-inner-left" tabindex="-1">知识点05：Hive SQL--DQL--Join语法及其使用（侧重inner、left）</h4>
-<blockquote>
-<p>数据库《三大范式设计》</p>
-</blockquote>
-<pre><code class="language-sql">--为什么在SQL类语言中有join语法出现？
-基于sql业务的实际使用，针对不同的业务创建不同的表，数据保存在不同的表中。
-有的业务需求基于多份数据共同组合查询才能返回，基于多张表进行查询，所以有了join关联查询。
-</code></pre>
+<h4 id="04-apache-hive-ddl-ser-de" tabindex="-1">知识点04：Apache Hive--DDL--建表语句--SerDe机制、分隔符指定语法</h4>
 <ul>
 <li>
-<p>语法树</p>
-<pre><code class="language-sql">join_table:
-    table_reference [INNER] JOIN table_factor [join_condition]
-  | table_reference {LEFT|RIGHT|FULL} [OUTER] JOIN table_reference join_condition
-  | table_reference LEFT SEMI JOIN table_reference join_condition
-  | table_reference CROSS JOIN table_reference [join_condition] (as of Hive 0.10)
+<p>机制：<mark>SerDe（Serializer and Deserializer）序列化机制</mark></p>
+</li>
+<li>
+<p>Hive使用SerDe机制读写HDFS上文件</p>
+</li>
+<li>
+<p>读文件</p>
+<ul>
+<li>
+<p>HDFS files --&gt; InputFileFormat --&gt; &lt;key, value&gt; --&gt; <mark>Deserializer</mark> --&gt; Row object</p>
+<pre><code class="language-shell"><a class="tag" onclick="toggleTagSearch(this)" data-content="#1、使用InputFileFormat（默认实现TextInputFormat）读取hdfs上文件">#1、使用InputFileFormat（默认实现TextInputFormat）读取hdfs上文件</a>
+    一行一行读取数据，返回&lt;k，v&gt;键值对类型
+<a class="tag" onclick="toggleTagSearch(this)" data-content="#2、返回">#2、返回</a>&lt;key, value&gt;，其中数据存储在value中
+
+<a class="tag" onclick="toggleTagSearch(this)" data-content="#3、使用Deserializer反序列化动作读取value">#3、使用Deserializer反序列化动作读取value</a>  解析成为对象（Row object）
+    默认的序列化类LazysimpleSerDe
+</code></pre>
+</li>
+</ul>
+</li>
+<li>
+<p>写文件</p>
+<ul>
+<li>Row object --&gt; <mark>Serializer</mark> --&gt; &lt;key, value&gt; --&gt; OutputFileFormat --&gt; HDFS files</li>
+</ul>
+</li>
+<li>
+<p>分隔符指定语法</p>
+<ul>
+<li>
+<p>语法格式</p>
+<pre><code>ROW FORMAT DELIMITED | SERDE
+
+ROW FORMAT DELIMITED  表示使用LazySimpleSerDe类进行序列化解析数据
  
-join_condition:
-    ON expression
+ROW FORMAT SERDE      表示使用其他SerDe类进行序列化解析数据
 </code></pre>
 </li>
 <li>
-<p>具体6种join方式，重点掌握 <mark>inner 和left join</mark>。</p>
+<p>ROW FORMAT DELIMITED具体的子语法</p>
+<pre><code class="language-shell">row format delimited
+[fields terminated by char]  <a class="tag" onclick="toggleTagSearch(this)" data-content="#指定字段之间的分隔符">#指定字段之间的分隔符</a>
+[collection items terminated by char]  <a class="tag" onclick="toggleTagSearch(this)" data-content="#指定集合元素之间的分隔符">#指定集合元素之间的分隔符</a>
+[map keys terminated by char]         <a class="tag" onclick="toggleTagSearch(this)" data-content="#指定map类型kv之间的分隔符">#指定map类型kv之间的分隔符</a>
+[lines terminated by char]            <a class="tag" onclick="toggleTagSearch(this)" data-content="#指定换行符">#指定换行符</a>
+</code></pre>
+</li>
+<li>
+<p>课堂练习sql</p>
+<pre><code class="language-sql">create table t_hot_skin_1(
+id int,
+name string,
+win_rate int,
+skin_price string
+)
+row format delimited
+fields terminated by ',';
+
+
+create table t_hot_skin_2(
+id int,
+name string,
+win_rate int,
+skin_price map&lt;string,int&gt;
+)
+row format delimited
+fields terminated by ','
+collection items terminated by '-'
+map keys terminated by ':';
+</code></pre>
 </li>
 </ul>
-<pre><code class="language-sql">--Join语法练习 建表
-drop table if exists employee_address;
-drop table if exists employee_connection;
-drop table if exists employee;
+</li>
+</ul>
+<hr>
+<h4 id="05-apache-hive-ddl" tabindex="-1">知识点05：Apache Hive--DDL--建表语句--默认分隔符</h4>
+<ul>
+<li>
+<p>默认分隔符</p>
+<ul>
+<li>Hive在建表的时候，如果没有row format语法，则该表使用==\001默认分隔符==进行字段分割；</li>
+<li>如果此时文件中的数据字段之间的分隔符也是\001 ，那么就可以直接映射成功。</li>
+<li><mark>针对默认分隔符，其是一个不可见分隔符，在代码层面是\001表示</mark></li>
+<li>在vim编辑器中，连续输入ctrl+v 、ctrl+a；</li>
+<li>在实际工作中，Hive最喜欢的就是\001分隔符，在清洗数据的时候，<mark>有意识</mark>的把数据之间的分隔符指定为\001;</li>
+</ul>
+</li>
+<li>
+<p>栗子</p>
+<pre><code class="language-sql">--建表
+create table t_hot_hero_skin_price(
+      id int,
+      name string,
+      win_rate int,
+      skin_price map&lt;string,int&gt;
+)
+row format delimited
+fields terminated by ',' --字段之间分隔符
+collection items terminated by '-'  --集合元素之间分隔符
+map keys terminated by ':'; --集合元素kv之间分隔符;
 
---table1: 员工表
-CREATE TABLE employee(
+--上传数据
+hadoop fs -put hot_hero_skin_price.txt /user/hive/warehouse/itheima.db/t_hot_hero_skin_price 
+
+select *
+from t_hot_hero_skin_price;
+
+
+--有点想法： 就把map数据类型当成字符串映射如何？
+create table t_hot_hero_skin_price_str(
+      id int,
+      name string,
+      win_rate int,
+      skin_price string
+)
+row format delimited
+fields terminated by ',';
+
+hadoop fs -put hot_hero_skin_price.txt /user/hive/warehouse/itheima.db/t_hot_hero_skin_price_str 
+
+--结论 
+	·1、不管使用map还是使用string来定义数据 都能解析映射成功
+	 2、区别在于使用的过程中 一个是针对map类型数据处理  一个是针对string类型的数据处理
+	 
+	 
+select skin_price from t_hot_hero_skin_price;	 
+select skin_price from t_hot_hero_skin_price_str;
+
+
+select skin_price[&quot;至尊宝&quot;] from t_hot_hero_skin_price limit 1;	 
+select skin_price[&quot;至尊宝&quot;] from t_hot_hero_skin_price_str limit 1; --语法错误
+
+
+--建表 不指定分隔符
+create table t_team_ace_player(
+   id int,
+   team_name string,
+   ace_player_name string
+); --没有指定row format语句 此时采用的是默认的\001作为字段的分隔符
+
+hadoop fs -put team_ace_player.txt /user/hive/warehouse/itheima.db/t_team_ace_player
+
+select * from t_team_ace_player;
+</code></pre>
+</li>
+</ul>
+<hr>
+<h4 id="06-apache-hive-ddl" tabindex="-1">知识点06：Apache Hive--DDL--建表语句--内部表、外部表</h4>
+<pre><code class="language-sql">--创建内部表
+create table student_inner(Sno int,Sname string,Sex string,Sage int,Sdept string) row format delimited fields terminated by ',';
+
+--创建外部表 关键字external
+create external table student_external(Sno int,Sname string,Sex string,Sage int,Sdept string) row format delimited fields terminated by ',';
+
+--上传文件到内部表、外部表中
+hadoop fs -put students.txt /user/hive/warehouse/itheima.db/student_inner
+hadoop fs -put students.txt /user/hive/warehouse/itheima.db/student_external
+
+--好像没啥区别 都能映射成功 数据也都在HDFS上
+
+--针对内部表、外部表 进行drop删除操作
+drop table student_inner;  --内部表在删除的时候 元数据和数据都会被删除
+drop table student_external; --外部表在删除的时候 只删除元数据  而HDFS上的数据文件不会动
+</code></pre>
+<ul>
+<li>
+<p>外部表有什么好处</p>
+<pre><code>最大的好处是防止误操作删除表的时候 把表的数据一起删除。
+</code></pre>
+</li>
+<li>
+<p>可以通过命令去查询表的元数据信息 获取表的类型</p>
+<pre><code class="language-sql">desc formatted table_name;
+
+MANAGED_TABLE     内部表、受控表(所谓的受控指定是表对应的HDFS上的数据受到我的控制)
+EXTERNAL_TABLE    外部表
+</code></pre>
+</li>
+</ul>
+<hr>
+<h4 id="07-apache-hive-ddl-location" tabindex="-1">知识点07：Apache Hive--DDL--建表语句--location存储位置</h4>
+<blockquote>
+<p>存储路径由hive.metastore.warehouse.dir 属性指定。<mark>默认值是：/user/hive/warehouse</mark></p>
+</blockquote>
+<ul>
+<li>
+<p>不管是内部表，还是外部表，在HDFS上的路径如下：</p>
+<pre><code>/user/hive/warehouse/itcast.db/t_array
+
+/user/hive/warehouse/数据库名.db/表名
+</code></pre>
+</li>
+<li>
+<p>栗子</p>
+<pre><code class="language-sql">--在建表的时候 可以使用location关键字指定表的路径在HDFS任意位置
+create table t_team_ace_player_location(
+ id int,
+ team_name string,
+ ace_player_name string)
+ location '/aaa'; --使用location关键字指定本张表数据在hdfs上的存储路径
+ 
+--此时再上传数据 就必须上传到指定的目录下 否则就解析映射失败了
+</code></pre>
+</li>
+<li>
+<p>在实际开发中，最好集中维护管理Hive表数据，避免文件在HDFS随意存放。</p>
+</li>
+</ul>
+<hr>
+<h4 id="08-apache-hive-ddl" tabindex="-1">知识点08：Apache Hive--DDL--建表语句--分区表创建、静态数据加载、分区裁剪</h4>
+<ul>
+<li>分区表的引入背景</li>
+</ul>
+<pre><code class="language-sql">create table t_all_hero(
    id int,
    name string,
-   deg string,
-   salary int,
-   dept string
- ) row format delimited
-fields terminated by ',';
+   hp_max int,
+   mp_max int,
+   attack_max int,
+   defense_max int,
+   attack_range string,
+   role_main string,
+   role_assist string
+)
+row format delimited
+fields terminated by &quot;\t&quot;;
 
---table2:员工家庭住址信息表
-CREATE TABLE employee_address (
+--上传文件
+hadoop fs -put archer.txt assassin.txt mage.txt support.txt tank.txt warrior.txt /user/hive/warehouse/itheima.db/t_all_hero
+
+select * from t_all_hero;
+
+
+--查询role_main主要定位是射手并且hp_max最大生命大于6000的有几个
+
+select count(*) from t_all_hero where role_main=&quot;archer&quot; and hp_max &gt;6000;
+
+--思考：上述查询sql底层应该如何去查询数据？ 要不要全表扫描？
+
+--问题：要进行过滤 就需要全表扫描 不全表扫描呢 又得不出正确结果？性能如何优化呢？
+--优化要求  如何才能够减少全表扫描 而结果又正确。
+</code></pre>
+<ul>
+<li>分区表的创建</li>
+</ul>
+<pre><code class="language-sql">--经过大脑分析 我们认为应该根据角色主定位进行分区 所以分区的字段就是role_main
+create table t_all_hero_part(
+   id int,
+   name string,
+   hp_max int,
+   mp_max int,
+   attack_max int,
+   defense_max int,
+   attack_range string,
+   role_main string,
+   role_assist string
+)
+partitioned by(role_main string)
+row format delimited
+fields terminated by &quot;\t&quot;;
+
+
+
+--错误说 分区字段重复了 好家伙
+Error: Error while compiling statement: FAILED: SemanticException [Error 10035]: Column repeated in partitioning columns (state=42000,code=10035)
+
+
+--分区表建表 
+create table t_all_hero_part(
+   id int,
+   name string,
+   hp_max int,
+   mp_max int,
+   attack_max int,
+   defense_max int,
+   attack_range string,
+   role_main string,
+   role_assist string
+) partitioned by (juesedingwei string)--注意哦 这里是分区字段
+row format delimited
+fields terminated by &quot;\t&quot;;
+
+--查询分区表 发现分区字段也显示出来了
+select * from t_all_hero_part;
+</code></pre>
+<ul>
+<li>分区表的数据加载--静态分区加载</li>
+</ul>
+<pre><code class="language-sql">--静态加载分区表数据
+load data local inpath '/root/hivedata/archer.txt' into table t_all_hero_part partition(juesedingwei='sheshou');
+
+load data local inpath '/root/hivedata/assassin.txt' into table t_all_hero_part partition(juesedingwei='cike');
+load data local inpath '/root/hivedata/mage.txt' into table t_all_hero_part partition(juesedingwei='fashi');
+load data local inpath '/root/hivedata/support.txt' into table t_all_hero_part partition(juesedingwei='fuzhu');
+load data local inpath '/root/hivedata/tank.txt' into table t_all_hero_part partition(juesedingwei='tanke');
+load data local inpath '/root/hivedata/warrior.txt' into table t_all_hero_part partition(juesedingwei='zhanshi');
+
+--查询一下验证是否加载成功
+select * from t_all_hero_part;
+
+load data local inpath '/root/hivedata/warrior.txt' into table t_all_hero_part partition(juesedingwei='666');
+
+</code></pre>
+<blockquote>
+<p>思考：如果分区很多 一个一个加载，效率如何？</p>
+<p>因为静态分区的时候 分区值是用户手动写死的 有写错的风险。</p>
+</blockquote>
+<hr>
+<h4 id="09-apache-hive-ddl" tabindex="-1">知识点09：Apache Hive--DDL--建表语句--动态分区插入数据</h4>
+<ul>
+<li>
+<p>设置允许动态分区、设置动态分区模式</p>
+<pre><code class="language-sql">--动态分区
+set hive.exec.dynamic.partition=true; --注意hive3已经默认开启了
+set hive.exec.dynamic.partition.mode=nonstrict;
+
+--模式分为strict严格模式  nonstrict非严格模式
+严格模式要求 分区字段中至少有一个分区是静态分区。
+
+
+--举个栗子
+set hive.exec.dynamic.partition.mode=strict;  --设置为严格模式
+
+
+Error: Error while compiling statement: FAILED: SemanticException [Error 10096]: Dynamic partition strict mode requires at least one static partition column. To turn this off set hive.exec.dynamic.partition.mode=nonstrict (state=42000,code=10096)
+
+--说动态分区在严格模式下 要求至少有一个分区字段为静态分区字段  
+--如果不想这么做  就必须把模式设置为非严格
+
+
+t_1(xxxx) partitioned by (month string,day string);
+
+insert into t_1  partition(month=&quot;202112&quot;,day=&quot;18&quot;) -- 两个分区字段都是静态
+insert into t_1  partition(month=&quot;202112&quot;,day)
+insert into t_1  partition(month,day=&quot;18&quot;)   --至少一个是静态的
+insert into t_1  partition(month,day)  --都是动态的
+</code></pre>
+</li>
+<li>
+<p>动态分区加载数据</p>
+<blockquote>
+<p><mark>insert + select</mark></p>
+<p>插入的数据来自于后面的查询语句返回的结果。</p>
+<p>查询返回的内容，其字段类型、顺序、个数要和待插入的表保持一致。</p>
+</blockquote>
+<pre><code class="language-sql">--创建一张新的分区表 t_all_hero_part_dynamic
+create table t_all_hero_part_dynamic(
     id int,
-    hno string,
-    street string,
-    city string
-) row format delimited
-fields terminated by ',';
+    name string,
+    hp_max int,
+    mp_max int,
+    attack_max int,
+    defense_max int,
+    attack_range string,
+    role_main string,
+    role_assist string
+) partitioned by (role_dong string)
+row format delimited
+fields terminated by &quot;\t&quot;;
 
---table3:员工联系方式信息表
-CREATE TABLE employee_connection (
-    id int,
-    phno string,
-    email string
-) row format delimited
-fields terminated by ',';
-
---加载数据到表中
-load data local inpath '/root/hivedata/employee.txt' into table employee;
-load data local inpath '/root/hivedata/employee_address.txt' into table employee_address;
-load data local inpath '/root/hivedata/employee_connection.txt' into table employee_connection;
-
-select * from employee;
-+--------------+----------------+---------------+------------------+----------------+
-| employee.id  | employee.name  | employee.deg  | employee.salary  | employee.dept  |
-+--------------+----------------+---------------+------------------+----------------+
-| 1201         | gopal          | manager       | 50000            | TP             |
-| 1202         | manisha        | cto           | 50000            | TP             |
-| 1203         | khalil         | dev           | 30000            | AC             |
-| 1204         | prasanth       | dev           | 30000            | AC             |
-| 1206         | kranthi        | admin         | 20000            | TP             |
-| 1201         | gopal          | manager       | 50000            | TP             |
-| 1202         | manisha        | cto           | 50000            | TP             |
-| 1203         | khalil         | dev           | 30000            | AC             |
-| 1204         | prasanth       | dev           | 30000            | AC             |
-| 1206         | kranthi        | admin         | 20000            | TP             |
-+--------------+----------------+---------------+------------------+----------------+
-
-select * from employee_address;
+--执行动态分区插入  --注意 分区值并没有手动写死指定
+insert into table t_all_hero_part_dynamic partition(role_dong) 
+select tmp.*,tmp.role_main from t_all_hero tmp; --查询返回10个字段
 
 
-select * from employee_connection;
+--查询验证结果
+select * from t_all_hero_part_dynamic;
 
+---严格模式下报错信息
+Dynamic partition strict mode requires at least one static partition column. To turn this off set hive.exec.dynamic.partition.mode=nonstrict
 </code></pre>
-<pre><code class="language-sql">--1、内连接  inner join == join
-  返回左右两边同时满足条件的数据
-  
-select e.*,e_a.*
-from employee e inner join employee_address e_a
-on e.id =e_a.id;
+<blockquote>
+<p>在执行动态分区插入数据的时候，如果是严格模式strict，要求至少一个分区为静态分区？</p>
+<p>partition(guojia=&quot;zhongguo&quot;,sheng) --第一个分区写死了（静态） 符合严格模式。</p>
+<p>partition(guojia,sheng) --两个分区都是动态确定的 需要非严格模式</p>
+</blockquote>
+</li>
+<li>
+<p>分区表的使用--分区裁剪</p>
+</li>
+</ul>
+<pre><code class="language-sql">--非分区表 全表扫描过滤查询
+select count(*) from t_all_hero where role_main=&quot;archer&quot; and hp_max &gt;6000;
 
---等价于 inner join
-select e.*,e_a.*
-from employee e join employee_address e_a
-on e.id =e_a.id;
-
---等价于 隐式连接表示法
-select e.*,e_a.*
-from employee e , employee_address e_a
-where e.id =e_a.id;
-
-  
---2、左连接  left join  ==  left OUTER join
-  左表为准，左表全部显示，右表与之关联 满足条件的返回，不满足条件显示null
-  
-select e.*,e_conn.*
-from employee e left join employee_connection e_conn
-on e.id =e_conn.id;
-
---等价于 left outer join 左外连接
-select e.id,e.*,e_conn.*
-from employee e left outer join  employee_connection e_conn
-on e.id =e_conn.id;  
-  
---3、右连接  right join  ==  right OUTER join 右外连接
-  右表为准，右表全部显示，左表与之关联 满足条件的返回，不满足条件显示null
- 
-select e.id,e.*,e_conn.*
-from employee e right join employee_connection e_conn
-on e.id =e_conn.id;
-
---等价于 right outer join
-select e.id,e.*,e_conn.*
-from employee e right outer join employee_connection e_conn
-on e.id =e_conn.id;
-
---4、外连接 全外连接 full join == full outer join
-FULL OUTER JOIN 关键字只要左表（table1）和右表（table2）其中一个表中存在匹配，则返回行.
-FULL OUTER JOIN 关键字结合了 LEFT JOIN 和 RIGHT JOIN 的结果。
-
-select e.*,e_a.*
-from employee e full outer join employee_address e_a
-on e.id =e_a.id;
---等价于
-select e.*,e_a.*
-from employee e full join employee_address e_a
-on e.id =e_a.id;
-
---5、左半连接 left semi join
-
-select *
-from employee e left semi join employee_address e_addr
-on e.id =e_addr.id;
-
---相当于 inner join,但是只返回左表全部数据， 只不过效率高一些
-select e.*
-from employee e inner join employee_address e_addr
-on e.id =e_addr.id;
-
---6、交叉连接cross join
-将会返回被连接的两个表的笛卡尔积，返回结果的行数等于两个表行数的乘积。对于大表来说，cross join慎用。
-在SQL标准中定义的cross join就是无条件的inner join。返回两个表的笛卡尔积,无需指
-定关联键。
-在HiveSQL语法中，cross join 后面可以跟where子句进行过滤，或者on条件过滤。
+--分区表 先基于分区过滤 再查询
+select count(*) from t_all_hero_part where juesedingwei=&quot;sheshou&quot; and hp_max &gt;6000;
 </code></pre>
 <hr>
-<h4 id="06-hive-sql-dql-join" tabindex="-1">知识点06：Hive SQL--DQL--Join语法注意事项</h4>
+<h4 id="10-apache-hive-ddl" tabindex="-1">知识点10：Apache Hive--DDL--建表语句--多重分区及分区表注意事项</h4>
+<p>分区表注意事项</p>
 <ul>
 <li>
-<p>优化方式在最后一天调优课程中学习；</p>
+<p><mark>分区表的字段不能是表中已有的字段</mark>；分区的字段也会显示在查询结果上；</p>
 </li>
 <li>
-<p>允许使用复杂的联接表达式；</p>
+<p>分区的字段是虚拟的字段，出现在表所有字段的后面，其值来自于加载数据到表中的时候手动指定。</p>
 </li>
 <li>
-<p>同一查询中可以连接2个以上的表；</p>
-</li>
-<li>
-<p>如果每个表在联接子句中使用相同的列，则Hive将多个表上的联接转换为单个MR作业</p>
-</li>
-<li>
-<p>join时的最后一个表会通过reducer流式传输，并在其中缓冲之前的其他表，因此，将大表放置在最后有助于减少reducer阶段缓存数据所需要的内存</p>
-</li>
-<li>
-<p>在join的时候，可以通过语法STREAMTABLE提示指定要流式传输的表。如果省略STREAMTABLE提示，则Hive将流式传输最右边的表。</p>
+<p>分区在底层的形式就是<mark>以文件夹管理不同的文件</mark>；不同文件夹就是表不同分区；文件夹的名字：</p>
+<pre><code class="language-shell"></code></pre>
 </li>
 </ul>
-<hr>
-<h4 id="07-hive-sql" tabindex="-1">知识点07：Hive SQL--第一代客户端的功能</h4>
-<blockquote>
-<p><mark>批处理</mark>：一次连接，一次交互， 执行结束断开连接<br>
-<mark>交互式处理</mark>：保持持续连接， 一直交互</p>
-<p>注意：如果说hive的shell客户端 指的是第一代客户端bin/hive</p>
-<p>而第二代客户端bin/beeline属于JDBC客户端 不是shell。</p>
-</blockquote>
-<p><mark><strong>bin/hive</strong></mark></p>
-<ul>
-<li>
-<p>功能1：作为<mark>第一代客户端</mark> 连接访问<mark>metastore服务</mark>，使用Hive。交互式方式</p>
-</li>
-<li>
-<p>功能2：启动hive服务</p>
-<pre><code class="language-shell">/export/server/apache-hive-3.1.2-bin/bin/hive --service metastore 
-/export/server/apache-hive-3.1.2-bin/bin/hive --service hiveserver2 
-</code></pre>
-</li>
-<li>
-<p>功能3：批处理执行Hive SQL</p>
-<pre><code class="language-shell"><a class="tag" onclick="toggleTagSearch(this)" data-content="#-e">#-e</a> 执行后面的sql语句
-/export/server/apache-hive-3.1.2-bin/bin/hive  -e 'select * from itheima.student'
-
-<a class="tag" onclick="toggleTagSearch(this)" data-content="#-f">#-f</a> 执行后面的sql文件
-vim hive.sql
-select * from itheima.student limit 2
-
-/export/server/apache-hive-3.1.2-bin/bin/hive  -f hive.sql
-
-<a class="tag" onclick="toggleTagSearch(this)" data-content="#sql文件不一定是">#sql文件不一定是</a>.sql 要保证文件中是正确的HQL语法。
-
-<a class="tag" onclick="toggleTagSearch(this)" data-content="#-f调用sql文件执行的方式">#-f调用sql文件执行的方式</a> 是企业中hive生产环境主流的调用方式。
-</code></pre>
-</li>
-</ul>
-<hr>
-<h4 id="08-hive-sql" tabindex="-1">知识点08：Hive SQL--参数配置方式与优先级范围</h4>
-<ul>
-<li>
-<p>有哪些参数可以配置？</p>
-<pre><code>https://cwiki.apache.org/confluence/display/Hive/Configuration+Properties
-</code></pre>
-</li>
-<li>
-<p>配置方式有哪些？ 注意配置方式影响范围影响时间是怎样？</p>
-<ul>
-<li>
-<p>方式1：配置文件 con/<mark>hive-site.xml</mark></p>
-<pre><code>影响的是基于这个安装包的任何使用方式。
-</code></pre>
-</li>
-<li>
-<p>方式2：配置参数 <mark>--hiveconf</mark></p>
-<pre><code class="language-shell">/export/server/apache-hive-3.1.2-bin/bin/hive --service metastore  
-
-/export/server/apache-hive-3.1.2-bin/bin/hive --service hiveserver2  --hiveconf hive.root.logger=DEBUG,console
-
-<a class="tag" onclick="toggleTagSearch(this)" data-content="#影响的是session会话级别的">#影响的是session会话级别的</a>
-</code></pre>
-</li>
-<li>
-<p>方式3：<mark>set命令</mark></p>
-<pre><code>session会话级别的 设置完之后将会对后面的sql执行生效。
-session结束 set设置的参数将失效。
-
-也是推荐搭建使用的设置参数方式。  谁需要 谁设置 谁生效
-</code></pre>
-</li>
-</ul>
-</li>
-<li>
-<p>总结</p>
-<ul>
-<li>从方式1到方式3 <mark>影响的范围是越来越小的</mark>。</li>
-<li>从方式1到方式3 优先级越来越高。set命令设置的会覆盖其他的。</li>
-<li>Hive作为的基于Hadoop的数仓，也会<mark>把Hadoop 的相关配置 解析加载</mark>进来。</li>
-</ul>
-</li>
-</ul>
-<hr>
-<h4 id="09-hive-sql" tabindex="-1">知识点09：Hive SQL--内置常见运算符</h4>
-<ul>
-<li>
-<p>官方链接：<a href="https://cwiki.apache.org/confluence/display/Hive/LanguageManual+UDF" target="_blank" class="external-link">https://cwiki.apache.org/confluence/display/Hive/LanguageManual+UDF</a></p>
-</li>
-<li>
-<p>查看运算符和函数的帮助手册</p>
-</li>
-<li>
-<p>可以使用课程资料中中文版参考手册</p>
-<pre><code class="language-sql">--显示所有的函数和运算符
-show functions;
---查看运算符或者函数的使用说明
-describe function +;
---使用extended 可以查看更加详细的使用说明
-describe function extended +;
-</code></pre>
-</li>
-<li>
-<p>具体分类</p>
-<ul>
-<li>关系运算符</li>
-<li>算术运算符</li>
-<li>逻辑运算符</li>
-</ul>
-</li>
-</ul>
-<pre><code class="language-sql">--1、创建表dual
-create table dual(id string);
---2、加载一个文件dual.txt到dual表中
---dual.txt只有一行内容：内容为一个空格
-load data local inpath '/root/hivedata/dual.txt' into table dual;
---3、在select查询语句中使用dual表完成运算符、函数功能测试
-select 1+1 from dual;
-
-select 1+1;
-
-----------------Hive中关系运算符--------------------------
---is null空值判断
-select 1 from dual where 'itcast' is null;
-
---is not null 非空值判断
-select 1 from dual where 'itcast' is not null;
-
---like比较： _表示任意单个字符 %表示任意数量字符
---否定比较： NOT A like B
-select 1 from dual where 'itcast' like 'it_';
-select 1 from dual where 'itcast' like 'it%';
-select 1 from dual where  'itcast' not like 'hadoo_';
-select 1 from dual where  not 'itcast' like 'hadoo_';
-
---rlike：确定字符串是否匹配正则表达式，是REGEXP_LIKE()的同义词。
-select 1 from dual where 'itcast' rlike '^i.*t
-
------
-
-#### 知识点10：Hive SQL--函数及分类标准（UDF、UDAF、UDTF）
-
-内置的函数（==build in func==）
-
-&gt; 所谓的内置指的是hive开发好，可以直接上手使用的；
-
-- 内置函数往往根据函数的应用功能类型来分类
-- 日期函数、数字函数、字符串函数、集合函数、条件函数....
-
-
-
-用户定义函数（==user-defined function==）
-
-&gt; 用户编程实现函数的逻辑在hive中使用。
-
-- UDF根据函数==输入行数和输出行数==进行分类
-
-- UDF 、UDAF、UDTF
-
-  ```shell
-  <a class="tag" onclick="toggleTagSearch(this)" data-content="#1、UDF（User-Defined-Function）普通函数">#1、UDF（User-Defined-Function）普通函数</a> 一进一出  输入一行数据输出一行数据
-  
-  0: jdbc:hive2://node1:10000&gt; select split(&quot;allen woon hadoop&quot;,&quot; &quot;);
-  +----------------------------+--+
-  |            _c0             |
-  +----------------------------+--+
-  | [&quot;allen&quot;,&quot;woon&quot;,&quot;hadoop&quot;]  |
-  +----------------------------+--+
-  
-  <a class="tag" onclick="toggleTagSearch(this)" data-content="#2、UDAF（User-Defined">#2、UDAF（User-Defined</a> Aggregation Function）聚合函数，多进一出 输入多行输出一行
-  
-  count sum max  min  avg
-  
-  <a class="tag" onclick="toggleTagSearch(this)" data-content="#3、UDTF（User-Defined">#3、UDTF（User-Defined</a> Table-Generating Functions）表生成函数 一进多出 输入一行输出多行
-  
-  explode 、parse_url_tuple
-</code></pre>
-<p><mark><strong>UDF分类标准的扩大化</strong></mark></p>
-<ul>
-<li>本来，udf/udtf/udaf3个标准是针对用户自定义函数分类的；</li>
-<li>但是，现在可以将这个分类标准扩大到<mark>hive中所有的函数，包括内置函数和自定义函数</mark>；</li>
-<li>不要被UD这两个字母所影响。 Built-in Aggregate Functions (UDAF).</li>
-</ul>
-<p>函数相关的常用帮助命令</p>
-<pre><code class="language-sql">--显示所有的函数和运算符
-show functions;
---查看运算符或者函数的使用说明
-describe function +;
-desc function 
---使用extended 可以查看更加详细的使用说明
-describe function extended count;
-</code></pre>
-<hr>
-<h4 id="11-hive-sql" tabindex="-1">知识点11：Hive SQL--内置函数梳理--字符串函数</h4>
-<pre><code class="language-sql">--字符串截取函数：substr(str, pos[, len]) 或者  substring(str, pos[, len])
-select substr(&quot;angelababy&quot;,-2); --pos是从1开始的索引，如果为负数则倒着数
-select substr(&quot;angelababy&quot;,2,2);
-
---正则表达式替换函数：regexp_replace(str, regexp, rep)
-select regexp_replace('100-200', '(\\d+)', 'num'); --正则分组
-
---正则表达式解析函数：regexp_extract(str, regexp[, idx]) 提取正则匹配到的指定组内容
-select regexp_extract('100-200', '(\\d+)-(\\d+)', 2);
-
---URL解析函数：parse_url 注意要想一次解析出多个 可以使用parse_url_tuple这个UDTF函数
-select parse_url('http://www.itcast.cn/path/p1.php?query=1', 'HOST');
-
---分割字符串函数: split(str, regex)
-select split('apache hive', '\\s+');--匹配一个或者多个空白符
-
---json解析函数：get_json_object(json_txt, path)
---$表示json对象
-select get_json_object('[{&quot;website&quot;:&quot;www.itcast.cn&quot;,&quot;name&quot;:&quot;allenwoon&quot;}, {&quot;website&quot;:&quot;cloud.itcast.com&quot;,&quot;name&quot;:&quot;carbondata 中文文档&quot;}]', '$.[1].website');
-
-</code></pre>
-<hr>
-<h4 id="12-hive-sql" tabindex="-1">知识点12：Hive SQL--内置函数梳理--时间日期、数值</h4>
-<p>Date Functions 日期函数</p>
-<blockquote>
-<p>日期和时间戳数字之间的转换</p>
-<p><mark>unix_timestamp</mark> 日期转unix时间戳</p>
-<p><mark>from_unixtime</mark> unix时间戳转日期</p>
-<p><mark>date_add</mark></p>
-<p><mark>date_sub</mark></p>
-<p><mark>datediff</mark></p>
-</blockquote>
-<pre><code class="language-sql">--获取当前日期: current_date
-select current_date();
---获取当前时间戳: current_timestamp
---同一查询中对current_timestamp的所有调用均返回相同的值。
-select current_timestamp();
---获取当前UNIX时间戳函数: unix_timestamp
-select unix_timestamp();
---日期转UNIX时间戳函数: unix_timestamp
-select unix_timestamp(&quot;2011-12-07 13:01:03&quot;);
---指定格式日期转UNIX时间戳函数: unix_timestamp
-select unix_timestamp('20111207 13:01:03','yyyyMMdd HH:mm:ss');
---UNIX时间戳转日期函数: from_unixtime
-select from_unixtime(1620723323);
-select from_unixtime(0, 'yyyy-MM-dd HH:mm:ss');
---日期比较函数: datediff  日期格式要求'yyyy-MM-dd HH:mm:ss' or 'yyyy-MM-dd'
-select datediff('2012-12-08','2012-05-09');
---日期增加函数: date_add
-select date_add('2012-02-28',10);
---日期减少函数: date_sub
-select date_sub('2012-01-1',10);
-</code></pre>
-<hr>
-<p>Mathematical Functions 数学函数</p>
-<blockquote>
-<p><mark>round</mark> 取整</p>
-<p><mark>rand</mark> 取随机值</p>
-</blockquote>
-<pre><code class="language-sql">--取整函数: round  返回double类型的整数值部分 （遵循四舍五入）
-select round(3.1415926);
---指定精度取整函数: round(double a, int d) 返回指定精度d的double类型
-select round(3.1415926,4);
---向下取整函数: floor
-select floor(3.1415926);
-select floor(-3.1415926);
---向上取整函数: ceil
-select ceil(3.1415926);
-select ceil(-3.1415926);
---取随机数函数: rand 每次执行都不一样 返回一个0到1范围内的随机数
-select rand();
---指定种子取随机数函数: rand(int seed) 得到一个稳定的随机数序列
-select rand(5);
-</code></pre>
-<hr>
-<h4 id="13-hive-sql" tabindex="-1">知识点13：Hive SQL--内置函数梳理--条件转换、集合、加密</h4>
-<p>Conditional Functions 条件函数</p>
-<blockquote>
-<p><mark>都重要</mark>。尤其是case when</p>
-</blockquote>
-<pre><code class="language-sql">--if条件判断: if(boolean testCondition, T valueTrue, T valueFalseOrNull)
-select if(1=2,100,200);
-select if(sex ='男','M','W') from student limit 3;
-
---空判断函数: isnull( a )
-select isnull(&quot;allen&quot;);
-select isnull(null);
-
---非空判断函数: isnotnull ( a )
-select isnotnull(&quot;allen&quot;);
-select isnotnull(null);
-
---空值转换函数: nvl(T value, T default_value)
-select nvl(&quot;allen&quot;,&quot;itcast&quot;);
-select nvl(null,&quot;itcast&quot;);
-
---非空查找函数: COALESCE(T v1, T v2, ...)
---返回参数中的第一个非空值；如果所有值都为NULL，那么返回NULL
-select COALESCE(null,11,22,33);
-select COALESCE(null,null,null,33);
-select COALESCE(null,null,null);
-
---条件转换函数: CASE a WHEN b THEN c [WHEN d THEN e]* [ELSE f] END
-select case 100 when 50 then 'tom' when 100 then 'mary' else 'tim' end;
-select case sex when '男' then 'male' else 'female' end from student limit 3;
-</code></pre>
-<hr>
-<p>Type Conversion Functions 类型转换函数</p>
-<ul>
-<li>
-<p>前置知识：Hive中支持类型的隐式转换 有限制 自动转换 不保证成功 就显示null</p>
-</li>
-<li>
-<p><mark>cast显示类型转换函数</mark></p>
-<pre><code class="language-sql">--任意数据类型之间转换:cast
-select cast(12.14 as bigint);
-select cast(12.14 as string);
-select cast(&quot;hello&quot; as int);
-+-------+
-|  _c0  |
-+-------+
-| NULL  |
-+-------+
-</code></pre>
-</li>
-</ul>
-<hr>
-<p>Data Masking Functions 数据脱敏函数</p>
-<blockquote>
-<p>mask脱敏 掩码处理</p>
-<p>数据脱敏：<mark>让敏感数据不敏感</mark> 13455667788 ---&gt;134****7788</p>
-</blockquote>
-<pre><code class="language-sql">--mask
---将查询回的数据，大写字母转换为X，小写字母转换为x，数字转换为n。
-select mask(&quot;abc123DEF&quot;);
-select mask(&quot;abc123DEF&quot;,'-','.','^'); --自定义替换的字母
-
---mask_first_n(string str[, int n]
---对前n个进行脱敏替换
-select mask_first_n(&quot;abc123DEF&quot;,4);
-
---mask_last_n(string str[, int n])
-select mask_last_n(&quot;abc123DEF&quot;,4);
-
---mask_show_first_n(string str[, int n])
---除了前n个字符，其余进行掩码处理
-select mask_show_first_n(&quot;abc123DEF&quot;,4);
-
---mask_show_last_n(string str[, int n])
-select mask_show_last_n(&quot;abc123DEF&quot;,4);
-
---mask_hash(string|char|varchar str)
---返回字符串的hash编码。
-select mask_hash(&quot;abc123DEF&quot;);
-
-</code></pre>
-<hr>
-<p>Misc. Functions 其他杂项函数、加密函数</p>
-<pre><code class="language-sql">--如果你要调用的java方法所在的jar包不是hive自带的 可以使用add jar添加进来
---hive调用java方法: java_method(class, method[, arg1[, arg2..]])
-select java_method(&quot;java.lang.Math&quot;,&quot;max&quot;,11,22);
-
---反射函数: reflect(class, method[, arg1[, arg2..]])
-select reflect(&quot;java.lang.Math&quot;,&quot;max&quot;,11,22);
-
---取哈希值函数:hash
-select hash(&quot;allen&quot;);
-
---current_user()、logged_in_user()、current_database()、version()
-
---SHA-1加密: sha1(string/binary)
-select sha1(&quot;allen&quot;);
-
---SHA-2家族算法加密：sha2(string/binary, int)  (SHA-224, SHA-256, SHA-384, SHA-512)
-select sha2(&quot;allen&quot;,224);
-select sha2(&quot;allen&quot;,512);
-
---crc32加密:
-select crc32(&quot;allen&quot;);
-
---MD5加密: md5(string/binary)
-select md5(&quot;allen&quot;);
-</code></pre>
-<p>;<br>
-select 1 from dual where '123456' rlike '^\d+</p>
-<hr>
-<h4 id="10-hive-sql-udf-udaf-udtf" tabindex="-1">知识点10：Hive SQL--函数及分类标准（UDF、UDAF、UDTF）</h4>
-<p>内置的函数（<mark>build in func</mark>）</p>
-<blockquote>
-<p>所谓的内置指的是hive开发好，可以直接上手使用的；</p>
-</blockquote>
-<ul>
-<li>内置函数往往根据函数的应用功能类型来分类</li>
-<li>日期函数、数字函数、字符串函数、集合函数、条件函数....</li>
-</ul>
-<p>用户定义函数（<mark>user-defined function</mark>）</p>
-<blockquote>
-<p>用户编程实现函数的逻辑在hive中使用。</p>
-</blockquote>
-<ul>
-<li>
-<p>UDF根据函数<mark>输入行数和输出行数</mark>进行分类</p>
-</li>
-<li>
-<p>UDF 、UDAF、UDTF</p>
-<p>{{CODE_BLOCK_22}}</p>
-</li>
-</ul>
-<p><mark><strong>UDF分类标准的扩大化</strong></mark></p>
-<ul>
-<li>本来，udf/udtf/udaf3个标准是针对用户自定义函数分类的；</li>
-<li>但是，现在可以将这个分类标准扩大到<mark>hive中所有的函数，包括内置函数和自定义函数</mark>；</li>
-<li>不要被UD这两个字母所影响。 Built-in Aggregate Functions (UDAF).</li>
-</ul>
-<p>函数相关的常用帮助命令</p>
-<p>{{CODE_BLOCK_23}}</p>
-<hr>
-<h4 id="11-hive-sql-1" tabindex="-1">知识点11：Hive SQL--内置函数梳理--字符串函数</h4>
-<p>{{CODE_BLOCK_24}}</p>
-<hr>
-<h4 id="12-hive-sql-1" tabindex="-1">知识点12：Hive SQL--内置函数梳理--时间日期、数值</h4>
-<p>Date Functions 日期函数</p>
-<blockquote>
-<p>日期和时间戳数字之间的转换</p>
-<p><mark>unix_timestamp</mark> 日期转unix时间戳</p>
-<p><mark>from_unixtime</mark> unix时间戳转日期</p>
-<p><mark>date_add</mark></p>
-<p><mark>date_sub</mark></p>
-<p><mark>datediff</mark></p>
-</blockquote>
-<p>{{CODE_BLOCK_25}}</p>
-<hr>
-<p>Mathematical Functions 数学函数</p>
-<blockquote>
-<p><mark>round</mark> 取整</p>
-<p><mark>rand</mark> 取随机值</p>
-</blockquote>
-<p>{{CODE_BLOCK_26}}</p>
-<hr>
-<h4 id="13-hive-sql-1" tabindex="-1">知识点13：Hive SQL--内置函数梳理--条件转换、集合、加密</h4>
-<p>Conditional Functions 条件函数</p>
-<blockquote>
-<p><mark>都重要</mark>。尤其是case when</p>
-</blockquote>
-<p>{{CODE_BLOCK_27}}</p>
-<hr>
-<p>Type Conversion Functions 类型转换函数</p>
-<ul>
-<li>
-<p>前置知识：Hive中支持类型的隐式转换 有限制 自动转换 不保证成功 就显示null</p>
-</li>
-<li>
-<p><mark>cast显示类型转换函数</mark></p>
-<p>{{CODE_BLOCK_28}}</p>
-</li>
-</ul>
-<hr>
-<p>Data Masking Functions 数据脱敏函数</p>
-<blockquote>
-<p>mask脱敏 掩码处理</p>
-<p>数据脱敏：<mark>让敏感数据不敏感</mark> 13455667788 ---&gt;134****7788</p>
-</blockquote>
-<p>{{CODE_BLOCK_29}}</p>
-<hr>
-<p>Misc. Functions 其他杂项函数、加密函数</p>
-<p>{{CODE_BLOCK_30}}</p>
-<p>; --判断是否全为数字<br>
-select 1 from dual where '123456aa' rlike '^\d+</p>
-<hr>
-<h4 id="10-hive-sql-udf-udaf-udtf-1" tabindex="-1">知识点10：Hive SQL--函数及分类标准（UDF、UDAF、UDTF）</h4>
-<p>内置的函数（<mark>build in func</mark>）</p>
-<blockquote>
-<p>所谓的内置指的是hive开发好，可以直接上手使用的；</p>
-</blockquote>
-<ul>
-<li>内置函数往往根据函数的应用功能类型来分类</li>
-<li>日期函数、数字函数、字符串函数、集合函数、条件函数....</li>
-</ul>
-<p>用户定义函数（<mark>user-defined function</mark>）</p>
-<blockquote>
-<p>用户编程实现函数的逻辑在hive中使用。</p>
-</blockquote>
-<ul>
-<li>
-<p>UDF根据函数<mark>输入行数和输出行数</mark>进行分类</p>
-</li>
-<li>
-<p>UDF 、UDAF、UDTF</p>
-<p>{{CODE_BLOCK_22}}</p>
-</li>
-</ul>
-<p><mark><strong>UDF分类标准的扩大化</strong></mark></p>
-<ul>
-<li>本来，udf/udtf/udaf3个标准是针对用户自定义函数分类的；</li>
-<li>但是，现在可以将这个分类标准扩大到<mark>hive中所有的函数，包括内置函数和自定义函数</mark>；</li>
-<li>不要被UD这两个字母所影响。 Built-in Aggregate Functions (UDAF).</li>
-</ul>
-<p>函数相关的常用帮助命令</p>
-<p>{{CODE_BLOCK_23}}</p>
-<hr>
-<h4 id="11-hive-sql-2" tabindex="-1">知识点11：Hive SQL--内置函数梳理--字符串函数</h4>
-<p>{{CODE_BLOCK_24}}</p>
-<hr>
-<h4 id="12-hive-sql-2" tabindex="-1">知识点12：Hive SQL--内置函数梳理--时间日期、数值</h4>
-<p>Date Functions 日期函数</p>
-<blockquote>
-<p>日期和时间戳数字之间的转换</p>
-<p><mark>unix_timestamp</mark> 日期转unix时间戳</p>
-<p><mark>from_unixtime</mark> unix时间戳转日期</p>
-<p><mark>date_add</mark></p>
-<p><mark>date_sub</mark></p>
-<p><mark>datediff</mark></p>
-</blockquote>
-<p>{{CODE_BLOCK_25}}</p>
-<hr>
-<p>Mathematical Functions 数学函数</p>
-<blockquote>
-<p><mark>round</mark> 取整</p>
-<p><mark>rand</mark> 取随机值</p>
-</blockquote>
-<p>{{CODE_BLOCK_26}}</p>
-<hr>
-<h4 id="13-hive-sql-2" tabindex="-1">知识点13：Hive SQL--内置函数梳理--条件转换、集合、加密</h4>
-<p>Conditional Functions 条件函数</p>
-<blockquote>
-<p><mark>都重要</mark>。尤其是case when</p>
-</blockquote>
-<p>{{CODE_BLOCK_27}}</p>
-<hr>
-<p>Type Conversion Functions 类型转换函数</p>
-<ul>
-<li>
-<p>前置知识：Hive中支持类型的隐式转换 有限制 自动转换 不保证成功 就显示null</p>
-</li>
-<li>
-<p><mark>cast显示类型转换函数</mark></p>
-<p>{{CODE_BLOCK_28}}</p>
-</li>
-</ul>
-<hr>
-<p>Data Masking Functions 数据脱敏函数</p>
-<blockquote>
-<p>mask脱敏 掩码处理</p>
-<p>数据脱敏：<mark>让敏感数据不敏感</mark> 13455667788 ---&gt;134****7788</p>
-</blockquote>
-<p>{{CODE_BLOCK_29}}</p>
-<hr>
-<p>Misc. Functions 其他杂项函数、加密函数</p>
-<p>{{CODE_BLOCK_30}}</p>
-<p>;</p>
-<p>--regexp：功能与rlike相同 用于判断字符串是否匹配正则表达式<br>
-select 1 from dual where 'itcast' regexp '^i.*t</p>
-<hr>
-<h4 id="10-hive-sql-udf-udaf-udtf-2" tabindex="-1">知识点10：Hive SQL--函数及分类标准（UDF、UDAF、UDTF）</h4>
-<p>内置的函数（<mark>build in func</mark>）</p>
-<blockquote>
-<p>所谓的内置指的是hive开发好，可以直接上手使用的；</p>
-</blockquote>
-<ul>
-<li>内置函数往往根据函数的应用功能类型来分类</li>
-<li>日期函数、数字函数、字符串函数、集合函数、条件函数....</li>
-</ul>
-<p>用户定义函数（<mark>user-defined function</mark>）</p>
-<blockquote>
-<p>用户编程实现函数的逻辑在hive中使用。</p>
-</blockquote>
-<ul>
-<li>
-<p>UDF根据函数<mark>输入行数和输出行数</mark>进行分类</p>
-</li>
-<li>
-<p>UDF 、UDAF、UDTF</p>
-<p>{{CODE_BLOCK_22}}</p>
-</li>
-</ul>
-<p><mark><strong>UDF分类标准的扩大化</strong></mark></p>
-<ul>
-<li>本来，udf/udtf/udaf3个标准是针对用户自定义函数分类的；</li>
-<li>但是，现在可以将这个分类标准扩大到<mark>hive中所有的函数，包括内置函数和自定义函数</mark>；</li>
-<li>不要被UD这两个字母所影响。 Built-in Aggregate Functions (UDAF).</li>
-</ul>
-<p>函数相关的常用帮助命令</p>
-<p>{{CODE_BLOCK_23}}</p>
-<hr>
-<h4 id="11-hive-sql-3" tabindex="-1">知识点11：Hive SQL--内置函数梳理--字符串函数</h4>
-<p>{{CODE_BLOCK_24}}</p>
-<hr>
-<h4 id="12-hive-sql-3" tabindex="-1">知识点12：Hive SQL--内置函数梳理--时间日期、数值</h4>
-<p>Date Functions 日期函数</p>
-<blockquote>
-<p>日期和时间戳数字之间的转换</p>
-<p><mark>unix_timestamp</mark> 日期转unix时间戳</p>
-<p><mark>from_unixtime</mark> unix时间戳转日期</p>
-<p><mark>date_add</mark></p>
-<p><mark>date_sub</mark></p>
-<p><mark>datediff</mark></p>
-</blockquote>
-<p>{{CODE_BLOCK_25}}</p>
-<hr>
-<p>Mathematical Functions 数学函数</p>
-<blockquote>
-<p><mark>round</mark> 取整</p>
-<p><mark>rand</mark> 取随机值</p>
-</blockquote>
-<p>{{CODE_BLOCK_26}}</p>
-<hr>
-<h4 id="13-hive-sql-3" tabindex="-1">知识点13：Hive SQL--内置函数梳理--条件转换、集合、加密</h4>
-<p>Conditional Functions 条件函数</p>
-<blockquote>
-<p><mark>都重要</mark>。尤其是case when</p>
-</blockquote>
-<p>{{CODE_BLOCK_27}}</p>
-<hr>
-<p>Type Conversion Functions 类型转换函数</p>
-<ul>
-<li>
-<p>前置知识：Hive中支持类型的隐式转换 有限制 自动转换 不保证成功 就显示null</p>
-</li>
-<li>
-<p><mark>cast显示类型转换函数</mark></p>
-<p>{{CODE_BLOCK_28}}</p>
-</li>
-</ul>
-<hr>
-<p>Data Masking Functions 数据脱敏函数</p>
-<blockquote>
-<p>mask脱敏 掩码处理</p>
-<p>数据脱敏：<mark>让敏感数据不敏感</mark> 13455667788 ---&gt;134****7788</p>
-</blockquote>
-<p>{{CODE_BLOCK_29}}</p>
-<hr>
-<p>Misc. Functions 其他杂项函数、加密函数</p>
-<p>{{CODE_BLOCK_30}}</p>
-<p>;</p>
-<p>-------------------Hive中算术运算符---------------------------------<br>
---取整操作: div 给出将A除以B所得的整数部分。例如17 div 3得出5。<br>
-select 17 div 3;</p>
-<p>--取余操作: % 也叫做取模mod A除以B所得的余数部分<br>
-select 17 % 3;</p>
-<p>--位与操作: &amp; A和B按位进行与操作的结果。 与表示两个都为1则结果为1<br>
-select 4 &amp; 8 from dual; --4转换二进制：0100 8转换二进制：1000<br>
-select 6 &amp; 4 from dual; --4转换二进制：0100 6转换二进制：0110</p>
-<p>--位或操作: | A和B按位进行或操作的结果 或表示有一个为1则结果为1<br>
-select 4 | 8 from dual;<br>
-select 6 | 4 from dual;</p>
-<p>--位异或操作: ^ A和B按位进行异或操作的结果 异或表示两者的值不同,则结果为1<br>
-select 4 ^ 8 from dual;<br>
-select 6 ^ 4 from dual;</p>
-<p>--3、Hive逻辑运算符<br>
---与操作: A AND B 如果A和B均为TRUE，则为TRUE，否则为FALSE。如果A或B为NULL，则为NULL。<br>
-select 1 from dual where 3&gt;1 and 2&gt;1;<br>
---或操作: A OR B 如果A或B或两者均为TRUE，则为TRUE，否则为FALSE。<br>
-select 1 from dual where 3&gt;1 or 2!=2;<br>
---非操作: NOT A 、!A 如果A为FALSE，则为TRUE；如果A为NULL，则为NULL。否则为FALSE。<br>
-select 1 from dual where not 2&gt;1;<br>
-select 1 from dual where !2=1;</p>
-<p>--在:A IN (val1, val2, ...) 如果A等于任何值，则为TRUE。<br>
-select 1 from dual where 11 in(11,22,33);<br>
---不在:A NOT IN (val1, val2, ...) 如果A不等于任何值，则为TRUE<br>
-select 1 from dual where 11 not in(22,33,44);</p>
+<p>/user/hive/warehouse/数据库.db/表<br>
+/分区字段=分区值1<br>
+xxxx.txt<br>
+/分区字段=分区值2<br>
+zzzz.txt</p>
 <pre><code>
------
+- 分区表是一种优化表，建表的时候可以不使用，但是，当==创建分区表之后，使用分区字段查询可以减少全表扫描，提高查询的效率==。
 
-#### 知识点10：Hive SQL--函数及分类标准（UDF、UDAF、UDTF）
+- 企业中常用的分区字段
 
-内置的函数（==build in func==）
-
-&gt; 所谓的内置指的是hive开发好，可以直接上手使用的；
-
-- 内置函数往往根据函数的应用功能类型来分类
-- 日期函数、数字函数、字符串函数、集合函数、条件函数....
-
-
-
-用户定义函数（==user-defined function==）
-
-&gt; 用户编程实现函数的逻辑在hive中使用。
-
-- UDF根据函数==输入行数和输出行数==进行分类
-
-- UDF 、UDAF、UDTF
-
-  {{CODE_BLOCK_22}}
-
-
-
-==**UDF分类标准的扩大化**==
-
-- 本来，udf/udtf/udaf3个标准是针对用户自定义函数分类的；
-- 但是，现在可以将这个分类标准扩大到==hive中所有的函数，包括内置函数和自定义函数==；
-- 不要被UD这两个字母所影响。  Built-in Aggregate Functions (UDAF).
-
-
-
-函数相关的常用帮助命令
-
-{{CODE_BLOCK_23}}
-
--------
-
-#### 知识点11：Hive SQL--内置函数梳理--字符串函数
-
-{{CODE_BLOCK_24}}
-
------
-
-#### 知识点12：Hive SQL--内置函数梳理--时间日期、数值
-
-Date Functions 日期函数
-
-&gt; 日期和时间戳数字之间的转换 
-&gt;
-&gt; ==unix_timestamp==  日期转unix时间戳
-&gt;
-&gt; ==from_unixtime==  unix时间戳转日期
-&gt;
-&gt; ==date_add== 
-&gt;
-&gt; ==date_sub==  
-&gt;
-&gt; ==datediff==
-
-{{CODE_BLOCK_25}}
-
----
-
-Mathematical Functions 数学函数
-
-&gt; ==round== 取整
-&gt;
-&gt; ==rand== 取随机值
-
-{{CODE_BLOCK_26}}
-
------
-
-#### 知识点13：Hive SQL--内置函数梳理--条件转换、集合、加密
-
-Conditional Functions 条件函数
-
-&gt; ==都重要==。尤其是case when
-
-{{CODE_BLOCK_27}}
-
------
-
-Type Conversion Functions 类型转换函数
-
-- 前置知识：Hive中支持类型的隐式转换  有限制  自动转换  不保证成功  就显示null
-
-- ==cast显示类型转换函数==
-
-  {{CODE_BLOCK_28}}
+- 地域维度：省，市
+- 时间维度：day,month,year
 
 ----
 
-Data Masking Functions 数据脱敏函数  
-
-&gt; mask脱敏 掩码处理
-&gt;
-&gt; 数据脱敏：==让敏感数据不敏感==   13455667788 ---&gt;134****7788
-
-{{CODE_BLOCK_29}}
-
------
-
-Misc. Functions 其他杂项函数、加密函数
-
-{{CODE_BLOCK_30}}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+多重分区表
+
+- 分区表支持基于多个字段进行分区
+
+</code></pre>
+<p>partitioned by(字段1 ，字段2....)</p>
+<pre><code>
+- 多个分区之间是一种==递进关系==，可以理解为在==前一个分区的基础上继续分区==；从底层来说就是文件夹下面继续划分子文件夹；
+
+- ==常见的多分区就是2个分区==；
+
+```sql
+--以国家、省创建分区表
+create table t_user_double_p(id int,name string,country string) partitioned by(guojia string,sheng string) row format delimited fields terminated by  ',';
+
+--加载数据到多分区表中
+load data local inpath '/root/hivedata/china_sh.txt'  into table t_user_double_p partition(guojia=&quot;zhongguo&quot;,sheng=&quot;shanghai&quot;);
+
+load data local inpath '/root/hivedata/china_sz.txt'  into table t_user_double_p partition(guojia=&quot;zhongguo&quot;,sheng=&quot;shenzhen&quot;);
+
+load data local inpath '/root/hivedata/usa_dezhou.txt'  into table t_user_double_p partition(guojia=&quot;meiguo&quot;,sheng=&quot;dezhou&quot;);
+
+--查询来自于中国深圳的用户有哪些？
+select * from t_user_double_p where guojia=&quot;zhongguo&quot;and sheng=&quot;shenzhen&quot;;
+</code></pre>
+<hr>
+<h4 id="11-apache-hive-ddl" tabindex="-1">知识点11：Apache Hive--DDL--建表语句--分桶表语法、创建、加载</h4>
+<ul>
+<li>从语法层面解析分桶含义</li>
+</ul>
+<pre><code class="language-sql">CLUSTERED BY xxx INTO N BUCKETS
+--根据xxx字段把数据分成N桶
+--根据表中的字段把数据文件成为N个部分
+
+t_user(id int,name string);
+--1、根据谁分？
+ CLUSTERED BY xxx ；  xxx必须是表中的字段
+--2、分成几桶？
+ N BUCKETS   ；N的值就是分桶的个数
+--3、分桶的规则？
+clustered by id into 3 bucket
+
+hashfunc(分桶字段)  %  N bucket  余数相同的来到同一个桶中
+1、如果分桶的字段是数字类型的字段，hashfunc(分桶字段)=分桶字段本身
+2、如果分桶的字段是字符串或者其他字段，hashfunc(分桶字段) = 分桶字段.hashcode
+</code></pre>
+<ul>
+<li>分桶的创建</li>
+</ul>
+<pre><code class="language-sql">CREATE TABLE itheima.t_usa_covid19_bucket(
+      count_date string,
+      county string,
+      state string,
+      fips int,
+      cases int,
+      deaths int)
+CLUSTERED BY(state) INTO 5 BUCKETS; --分桶的字段一定要是表中已经存在的字段
+
+--根据state州分为5桶 每个桶内根据cases确诊病例数倒序排序
+CREATE TABLE itheima.t_usa_covid19_bucket_sort(
+     count_date string,
+     county string,
+     state string,
+     fips int,
+     cases int,
+     deaths int)
+CLUSTERED BY(state)
+sorted by (cases desc) INTO 5 BUCKETS;--指定每个分桶内部根据 cases倒序排序
+</code></pre>
+<ul>
+<li>分桶表的数据加载</li>
+</ul>
+<pre><code class="language-sql">--step1:开启分桶的功能 从Hive2.0开始不再需要设置
+set hive.enforce.bucketing=true;
+
+--step2:把源数据加载到普通hive表中
+CREATE TABLE itheima.t_usa_covid19(
+       count_date string,
+       county string,
+       state string,
+       fips int,
+       cases int,
+       deaths int)
+row format delimited fields terminated by &quot;,&quot;;
+
+--将源数据上传到HDFS，t_usa_covid19表对应的路径下
+hadoop fs -put us-covid19-counties.dat /user/hive/warehouse/itheima.db/t_usa_covid19
+
+--step3:使用insert+select语法将数据加载到分桶表中
+insert into t_usa_covid19_bucket select * from t_usa_covid19;
+
+select * from t_usa_covid19_bucket limit 10;
+</code></pre>
+<ul>
+<li>分桶表的使用</li>
+</ul>
+<pre><code class="language-sql">--基于分桶字段state查询来自于New York州的数据
+--不再需要进行全表扫描过滤
+--根据分桶的规则hash_function(New York) mod 5计算出分桶编号
+--查询指定分桶里面的数据 就可以找出结果  此时是分桶扫描而不是全表扫描
+select *
+from t_usa_covid19_bucket where state=&quot;New York&quot;;
+</code></pre>
+<hr>
+<h4 id="12-apache-hive-ddl" tabindex="-1">知识点12：Apache Hive--DDL--建表语句--分桶表的好处、注意事项</h4>
+<ul>
+<li>分桶表也是一种优化表，可以**<mark>减少join查询时笛卡尔积的数量</mark>**、<mark>提高抽样查询的效率</mark>。</li>
+<li>分桶表的字段必须是表中已有的字段；</li>
+<li>分桶表需要使用间接的方式才能把数据加载进入：insert+select</li>
+<li>在join的时候，针对join的字段进行分桶，可以提高join的效率 减少笛卡尔积数量。</li>
+</ul>
+<hr>
+<h4 id="13-apache-hive-ddl" tabindex="-1">知识点13：Apache Hive--DDL--库、表、分区其他操作</h4>
+<blockquote>
+<p>因为Hive建表、加载数据及其方便高效；在实际的应用中，<mark>如果建表有问题，通常可以直接drop删除重新创建加载数据</mark>。时间成本极低。</p>
+<p>如果表是外部表的话，更加完美了。</p>
+</blockquote>
+<ul>
+<li>Database 数据库 DDL操作</li>
+</ul>
+<pre><code class="language-sql">--创建数据库
+create database if not exists itcast
+comment &quot;this is my first db&quot;
+with dbproperties ('createdBy'='Allen');
+
+--描述数据库信息
+describe database itcast;
+describe database extended itcast;
+desc database extended itcast;
+
+--切换数据库
+use default;
+use itcast;
+create table t_1(id int);
+
+--删除数据库
+--注意 CASCADE关键字慎重使用
+DROP (DATABASE|SCHEMA) [IF EXISTS] database_name [RESTRICT|CASCADE];
+drop database itcast cascade ;
+
+
+--更改数据库属性
+ALTER (DATABASE|SCHEMA) database_name SET DBPROPERTIES (property_name=property_value, ...);
+--更改数据库所有者
+ALTER (DATABASE|SCHEMA) database_name SET OWNER [USER|ROLE] user_or_role;
+--更改数据库位置
+ALTER (DATABASE|SCHEMA) database_name SET LOCATION hdfs_path;
+</code></pre>
+<ul>
+<li>Table 表 DDL操作</li>
+</ul>
+<pre><code class="language-sql">
+--下面这两个需要记住
+--查询指定表的元数据信息
+desc formatted itheima.t_all_hero_part;
+show create table t_all_hero_part;
+
+--1、更改表名
+ALTER TABLE table_name RENAME TO new_table_name;
+--2、更改表属性
+ALTER TABLE table_name SET TBLPROPERTIES (property_name = property_value, ... );
+--更改表注释
+ALTER TABLE student SET TBLPROPERTIES ('comment' = &quot;new comment for student table&quot;);
+--3、更改SerDe属性
+ALTER TABLE table_name SET SERDE serde_class_name [WITH SERDEPROPERTIES (property_name = property_value, ... )];
+ALTER TABLE table_name [PARTITION partition_spec] SET SERDEPROPERTIES serde_properties;
+ALTER TABLE table_name SET SERDEPROPERTIES ('field.delim' = ',');
+--移除SerDe属性
+ALTER TABLE table_name [PARTITION partition_spec] UNSET SERDEPROPERTIES (property_name, ... );
+
+--4、更改表的文件存储格式 该操作仅更改表元数据。现有数据的任何转换都必须在Hive之外进行。
+ALTER TABLE table_name  SET FILEFORMAT file_format;
+--5、更改表的存储位置路径
+ALTER TABLE table_name SET LOCATION &quot;new location&quot;;
+
+--6、更改列名称/类型/位置/注释
+CREATE TABLE test_change (a int, b int, c int);
+// First change column a's name to a1.
+ALTER TABLE test_change CHANGE a a1 INT;
+// Next change column a1's name to a2, its data type to string, and put it after column b.
+ALTER TABLE test_change CHANGE a1 a2 STRING AFTER b;
+// The new table's structure is:  b int, a2 string, c int.
+// Then change column c's name to c1, and put it as the first column.
+ALTER TABLE test_change CHANGE c c1 INT FIRST;
+// The new table's structure is:  c1 int, b int, a2 string.
+// Add a comment to column a1
+ALTER TABLE test_change CHANGE a1 a1 INT COMMENT 'this is column a1';
+
+--7、添加/替换列
+--使用ADD COLUMNS，您可以将新列添加到现有列的末尾但在分区列之前。
+--REPLACE COLUMNS 将删除所有现有列，并添加新的列集。
+ALTER TABLE table_name ADD|REPLACE COLUMNS (col_name data_type,...);
+</code></pre>
+<ul>
+<li>Partition分区 DDL操作</li>
+</ul>
+<blockquote>
+<p>比较重要的是<mark>增加分区</mark>、<mark>删除分区</mark>操作</p>
+</blockquote>
+<pre><code class="language-sql">--1、增加分区
+--step1: 创建表 手动加载分区数据
+drop table if exists t_user_province;
+create table t_user_province (
+    num int,
+    name string,
+    sex string,
+    age int,
+    dept string) partitioned by (province string);
+
+load data local inpath '/root/hivedata/students.txt' into table t_user_province partition(province =&quot;SH&quot;);
+
+
+--step2:手动创建分区的文件夹 且手动上传文件到分区中 绕开了hive操作  发现hive无法识别新分区
+hadoop fs -mkdir /user/hive/warehouse/itheima.db/t_user_province/province=XM
+hadoop fs -put students.txt /user/hive/warehouse/itheima.db/t_user_province/province=XM
+
+
+--step3：修改hive的分区，添加一个分区元数据
+ALTER TABLE t_user_province ADD PARTITION (province='XM') location
+    '/user/hive/warehouse/itheima.db/t_user_province/province=XM';
+
+
+----此外还支持一次添加多个分区
+ALTER TABLE table_name ADD PARTITION (dt='2008-08-08', country='us') location '/path/to/us/part080808'
+    PARTITION (dt='2008-08-09', country='us') location '/path/to/us/part080809';
+
+
+--2、重命名分区
+ALTER TABLE t_user_province PARTITION (province =&quot;SH&quot;) RENAME TO PARTITION (province =&quot;Shanghai&quot;);
+
+--3、删除分区
+ALTER TABLE table_name DROP [IF EXISTS] PARTITION (dt='2008-08-08', country='us');
+ALTER TABLE table_name DROP [IF EXISTS] PARTITION (dt='2008-08-08', country='us') PURGE; --直接删除数据 不进垃圾桶 有点像skipTrash
+
+--4、修复分区
+MSCK [REPAIR] TABLE table_name [ADD/DROP/SYNC PARTITIONS];
+--详细使用见课件资料
+
+--5、修改分区
+--更改分区文件存储格式
+ALTER TABLE table_name PARTITION (dt='2008-08-09') SET FILEFORMAT file_format;
+--更改分区位置
+ALTER TABLE table_name PARTITION (dt='2008-08-09') SET LOCATION &quot;new location&quot;;
+</code></pre>
+<hr>
+<h4 id="14-apache-hive-show" tabindex="-1">知识点14：Apache Hive--常见的show语法</h4>
+<blockquote>
+<p>show databases 数据库</p>
+<p>show tables 表</p>
+<p>show partitions 表的所有分区 注意必须是分区表才可以执行该语法</p>
+<p><mark>desc formatted table_name; 查看表的元数据信息</mark></p>
+<p>show create table table_name; 获取表的DDL建表语句</p>
+<p>show functions; 函数方法</p>
+</blockquote>
+<pre><code class="language-sql">--1、显示所有数据库 SCHEMAS和DATABASES的用法 功能一样
+show databases;
+show schemas;
+
+--2、显示当前数据库所有表/视图/物化视图/分区/索引
+show tables;
+SHOW TABLES [IN database_name]; --指定某个数据库
+
+--3、显示当前数据库下所有视图
+--视图相当于没有数据临时表  虚拟表
+Show Views;
+SHOW VIEWS 'test_*'; -- show all views that start with &quot;test_&quot;
+SHOW VIEWS FROM test1; -- show views from database test1
+SHOW VIEWS [IN/FROM database_name];
+
+--4、显示当前数据库下所有物化视图
+SHOW MATERIALIZED VIEWS [IN/FROM database_name];
+
+--5、显示表分区信息，分区按字母顺序列出，不是分区表执行该语句会报错
+show partitions table_name;
+show partitions itheima.student_partition;
+
+--6、显示表/分区的扩展信息
+SHOW TABLE EXTENDED [IN|FROM database_name] LIKE table_name;
+show table extended like student;
+describe formatted itheima.student;
+
+--7、显示表的属性信息
+SHOW TBLPROPERTIES table_name;
+show tblproperties student;
+
+--8、显示表、视图的创建语句
+SHOW CREATE TABLE ([db_name.]table_name|view_name);
+show create table student;
+
+--9、显示表中的所有列，包括分区列。
+SHOW COLUMNS (FROM|IN) table_name [(FROM|IN) db_name];
+show columns  in student;
+
+--10、显示当前支持的所有自定义和内置的函数
+show functions;
+
+--11、Describe desc
+--查看表信息
+desc extended table_name;
+--查看表信息（格式化美观）
+desc formatted table_name;
+--查看数据库相关信息
+describe database database_name;
+</code></pre>
+<hr>
+<h4 id="15-apache-hive-dml-load-local" tabindex="-1">知识点15：Apache Hive--DML--load加载数据（注意local含义）</h4>
+<ul>
+<li>
+<p>功能：load加载操作是将数据文件移动到与 Hive表对应的位置的<mark>纯复制/移动</mark>操作.</p>
+<pre><code class="language-shell"><a class="tag" onclick="toggleTagSearch(this)" data-content="#1、如何理解这个纯字？">#1、如何理解这个纯字？</a>
+load命令是单纯数据搬运移到动作，移到加载的过程中，不会对数据进行任何修改操作。
+
+<a class="tag" onclick="toggleTagSearch(this)" data-content="#2、有的是移动操作，有的是复制操作">#2、有的是移动操作，有的是复制操作</a>
+</code></pre>
+</li>
+<li>
+<p>语法</p>
+<pre><code class="language-sql">LOAD DATA [LOCAL] INPATH 'filepath' [OVERWRITE] INTO
+TABLE tablename [PARTITION (partcol1=val1, partcol2=val2 ...)]
+</code></pre>
+</li>
+<li>
+<p>Local关键字的含义</p>
+<ul>
+<li>local表示是从本地文件系统加载数据到Hive的表中；</li>
+<li>如果没有local表示的是从HDFS文件系统加载数据到Hive表中；</li>
+<li><mark>问本地指的是哪个本地</mark>？ HS2本地的文件系统</li>
+</ul>
+</li>
+<li>
+<p>演示</p>
+<pre><code class="language-sql">--step1:建表
+--建表student_local 用于演示从本地加载数据
+create table student_local(num int,name string,sex string,age int,dept string) row format delimited fields terminated by ',';
+--建表student_HDFS  用于演示从HDFS加载数据到非分区表
+create table student_HDFS(num int,name string,sex string,age int,dept string) row format delimited fields terminated by ',';
+--建表student_HDFS_p 用于演示从HDFS加载数据到分区表
+create table student_HDFS_p(num int,name string,sex string,age int,dept string) partitioned by(country string) row format delimited fields terminated by ',';
+
+--step2:加载数据
+-- 从本地加载数据  数据位于HS2（node1）本地文件系统  本质是hadoop fs -put上传操作
+--Loading data to table itheima.student_local from file:/root/hivedata/students.txt
+LOAD DATA LOCAL INPATH '/root/hivedata/students.txt' INTO TABLE student_local;
+
+--从HDFS加载数据  数据位于HDFS文件系统根目录下  本质是hadoop fs -mv 移动操作
+--Loading data to table itheima.student_hdfs from hdfs://node1:8020/stu/students.txt
+
+--先把数据上传到HDFS上  hadoop fs -put /root/hivedata/students.txt /
+LOAD DATA INPATH '/students.txt' INTO TABLE student_HDFS;
+
+----从HDFS加载数据到分区表中并指定分区  数据位于HDFS文件系统根目录下
+--先把数据上传到HDFS上 hadoop fs -put /root/hivedata/students.txt /
+LOAD DATA INPATH '/students.txt' INTO TABLE student_HDFS_p partition(country =&quot;China&quot;);
+</code></pre>
+</li>
+<li>
+<p>总结：<mark>建议在HIve中使用load命令加载数据到表中</mark>，这也是Hive比Mysql加载数据高效地方所在。</p>
+</li>
+<li>
+<p>其实不管是使用load还是直接使用hadoop fs,目标就是把文件放置在表对应的目录下。</p>
+</li>
+</ul>
+<hr>
+<h4 id="16-apache-hive-dml-insert" tabindex="-1">知识点16：Apache Hive--DML--insert插入语法</h4>
+<ul>
+<li>
+<p>探讨</p>
+<pre><code class="language-sql">--如果使用操作Mysql的思维来玩Hive会如何  使用insert+values的方式插入数据。
+
+create table t_insert(id int,name string);
+
+insert into table t_insert values(1,&quot;allen&quot;);
+
+--可以执行 但是效率极低 因为底层是通过MapReduce插入数据的  因此实际中推荐使用load加载数据
+</code></pre>
+</li>
+</ul>
+<p><strong><mark>insert+select</mark></strong></p>
+<blockquote>
+<p><mark>在hive中，insert主要是结合 select 查询语句使用，将查询结果插入到表中</mark>。</p>
+</blockquote>
+<ul>
+<li>保证后面select<strong>查询语句返回的结果字段个数、类型、顺序和待插入表一致</strong>；</li>
+<li>如果不一致，Hive会尝试帮你转换，但是不保证成功；</li>
+<li>insert+select也是在数仓中ETL数据常见的操作。</li>
+</ul>
+<pre><code class="language-sql">--step1:创建一张源表student
+drop table if exists student;
+create table student(num int,name string,sex string,age int,dept string)
+row format delimited
+fields terminated by ',';
+--加载数据
+load data local inpath '/root/hivedata/students.txt' into table student;
+
+select * from student;
+
+--step2：创建一张目标表  只有两个字段
+create table student_from_insert(sno int,sname string);
+--使用insert+select插入数据到新表中
+insert into table student_from_insert
+select num,name from student;
+
+select *
+from student_from_insert;
+</code></pre>
+<p>Multi Inserts <mark>多重插入</mark></p>
+<ul>
+<li>
+<p>功能：<mark><strong>一次扫描，多次插入</strong></mark></p>
+</li>
+<li>
+<p>栗子</p>
+<pre><code class="language-sql">create table source_table (id int, name string) row format delimited fields terminated by ',';
+
+create table test_insert1 (id int) row format delimited fields terminated by ',';
+create table test_insert2 (name string) row format delimited fields terminated by ',';
+
+
+--普通插入：
+insert into table test_insert1 select id from source_table;
+insert into table test_insert2 select name from source_table;
+
+--在上述需求实现中 从同一张表扫描了2次 分别插入不同的目标表中 性能低下。
+
+--多重插入：
+from source_table                     
+insert overwrite table test_insert1 
+select id
+insert overwrite table test_insert2
+select name;
+--只需要扫描一次表  分别把不同字段插入到不同的表中即可 减少扫描次数 提高效率
+</code></pre>
+</li>
+</ul>
+<p>Dynamic partition inserts <mark>动态分区插入</mark></p>
+<ul>
+<li>
+<p>何谓动态分区，静态分区</p>
+<pre><code class="language-sql">针对的是分区表。
+--问题：分区表中分区字段值是如何确定的？
+
+1、如果是在加载数据的时候人手动写死指定的  叫做静态分区 
+load data local inpath '/root/hivedata/usa_dezhou.txt'  into table t_user_double_p partition(guojia=&quot;meiguo&quot;,sheng=&quot;dezhou&quot;);
+
+2、如果是通过insert+select 动态确定分区值的，叫做动态分区
+insert table partition (分区字段) +select 
+</code></pre>
+</li>
+<li>
+<p>栗子</p>
+<pre><code class="language-sql">--1、首先设置动态分区模式为非严格模式 默认已经开启了动态分区功能
+set hive.exec.dynamic.partition = true;
+set hive.exec.dynamic.partition.mode = nonstrict;
+
+--2、当前库下已有一张表student
+select * from student;
+
+--3、创建分区表 以sdept作为分区字段
+create table student_partition(Sno int,Sname string,Sex string,Sage int) partitioned by(Sdept string);
+
+--4、执行动态分区插入操作
+insert into table student_partition partition(Sdept)
+select num,name,sex,age,dept from student;
+--其中，num,name,sex,age作为表的字段内容插入表中
+--dept作为分区字段值
+
+select *
+from student_partition;
+
+show partitions student_partition;
+</code></pre>
+</li>
+</ul>
+<hr>
+<h4 id="17-apache-hive-dml-insert" tabindex="-1">知识点17：Apache Hive--DML--insert导出数据操作</h4>
+<ul>
+<li>
+<p>功能：把select查询的结果导出成为一个文件。</p>
+</li>
+<li>
+<p>注意：<strong><mark>导出操作是一个overwrite操作</mark></strong>，可能会让你凉凉。慎重！！！！</p>
+</li>
+<li>
+<p>语法</p>
+<pre><code class="language-sql">--当前库下已有一张表student
+select * from student_hdfs;
+
+--1、导出查询结果到HDFS指定目录下
+insert overwrite directory '/tmp/hive_export/e1' select num,name,age from student_hdfs limit 2;   --默认导出数据字段之间的分隔符是\001
+
+--2、导出时指定分隔符和文件存储格式
+insert overwrite directory '/tmp/hive_export/e2' row format delimited fields terminated by ','
+stored as orc
+select num,name,age from student_hdfs limit 2;
+
+--3、导出数据到本地文件系统指定目录下
+insert overwrite local directory '/root/hive_export/e1' select num,name,age from student_hdfs limit 2;
+</code></pre>
+</li>
+</ul>
+<hr>
+<h4 id="今日课程作业" tabindex="-1">今日课程作业</h4>
+<pre><code class="language-shell"><a class="tag" onclick="toggleTagSearch(this)" data-content="#1、Hive">#1、Hive</a> DDL 建表语句  重点之重点
+	数据类型
+	SerDe序列化机制（Hive怎么读写HDFS文件的）
+	分隔符指定
+	默认分隔符
+	内外部表
+	存储路径location
+	
+	分区表
+	分桶表
+		分区、分桶是什么
+		解决了什么问题
+		如何创建
+		如何加载
+		如何使用
+		注意事项
+<a class="tag" onclick="toggleTagSearch(this)" data-content="#2、Hive">#2、Hive</a> DDL Alter
+	partition的增加、修改、修复
+
+<a class="tag" onclick="toggleTagSearch(this)" data-content="#3、常见的show">#3、常见的show</a>
+	库  
+	表
+	分区
+	建表语句
+	表元数据信息
+	函数方法
+    
+<a class="tag" onclick="toggleTagSearch(this)" data-content="#4、hive">#4、hive</a> DML  重点之重点
+	load
+		local本地是哪里？
+		如何理解load是一个纯操作？纯是什么意思？
+		什么时候是复制  什么时候是加载
+	insert
+		insert+select
+		多重插入  优化
+		动态分区插入   <a class="tag" onclick="toggleTagSearch(this)" data-content="#这个很重要">#这个很重要</a>
+			什么叫动态 静态
+			动态分区的严格模式  非严格模式是啥
+		数据导出操作
+			注意overwrite覆盖
 </code></pre>
 </main>
 <aside>
@@ -3622,59 +3473,47 @@ On this page
 <div class="toc-container">
 <nav class="toc">
 <ol>
-<li><a href="#hadoop-day07-apache-hive-sql-dql">hadoop离线day07-Apache Hive SQL DQL、参数配置与函数</a>
+<li><a href="#hadoop-day06-apache-hive-sql-ddl-dml">hadoop离线day06-Apache Hive SQL-DDL、DML</a>
 <ol>
 <li><a href="#今日课程学习目标">今日课程学习目标</a>
 </li>
 <li><a href="#今日课程内容大纲">今日课程内容大纲</a>
 </li>
-<li><a href="#01-hive-sql-dql">知识点01：Hive SQL--DQL--基础查询语句及其注意事项</a>
+<li><a href="#01-apache-hive-ddl">知识点01：Apache Hive--DDL--概念与语法树介绍</a>
 </li>
-<li><a href="#02-hive-sql-dql-cluster-distribute-sort">知识点02：Hive SQL--DQL--高阶查询--cluster、distribute、sort</a>
+<li><a href="#02-apache-hive-ddl">知识点02：Apache Hive--DDL--建表语句--表存在忽略异常</a>
 </li>
-<li><a href="#03-hive-sql-dql-union">知识点03：Hive SQL--DQL--高阶查询--Union联合查询</a>
+<li><a href="#03-apache-hive-ddl">知识点03：Apache Hive--DDL--建表语句--数据类型</a>
 </li>
-<li><a href="#04-hive-sql-dql-cte">知识点04：Hive SQL--DQL--高阶查询--CTE表达式</a>
+<li><a href="#04-apache-hive-ddl-ser-de">知识点04：Apache Hive--DDL--建表语句--SerDe机制、分隔符指定语法</a>
 </li>
-<li><a href="#05-hive-sql-dql-join-inner-left">知识点05：Hive SQL--DQL--Join语法及其使用（侧重inner、left）</a>
+<li><a href="#05-apache-hive-ddl">知识点05：Apache Hive--DDL--建表语句--默认分隔符</a>
 </li>
-<li><a href="#06-hive-sql-dql-join">知识点06：Hive SQL--DQL--Join语法注意事项</a>
+<li><a href="#06-apache-hive-ddl">知识点06：Apache Hive--DDL--建表语句--内部表、外部表</a>
 </li>
-<li><a href="#07-hive-sql">知识点07：Hive SQL--第一代客户端的功能</a>
+<li><a href="#07-apache-hive-ddl-location">知识点07：Apache Hive--DDL--建表语句--location存储位置</a>
 </li>
-<li><a href="#08-hive-sql">知识点08：Hive SQL--参数配置方式与优先级范围</a>
+<li><a href="#08-apache-hive-ddl">知识点08：Apache Hive--DDL--建表语句--分区表创建、静态数据加载、分区裁剪</a>
 </li>
-<li><a href="#09-hive-sql">知识点09：Hive SQL--内置常见运算符</a>
+<li><a href="#09-apache-hive-ddl">知识点09：Apache Hive--DDL--建表语句--动态分区插入数据</a>
 </li>
-<li><a href="#11-hive-sql">知识点11：Hive SQL--内置函数梳理--字符串函数</a>
+<li><a href="#10-apache-hive-ddl">知识点10：Apache Hive--DDL--建表语句--多重分区及分区表注意事项</a>
 </li>
-<li><a href="#12-hive-sql">知识点12：Hive SQL--内置函数梳理--时间日期、数值</a>
+<li><a href="#11-apache-hive-ddl">知识点11：Apache Hive--DDL--建表语句--分桶表语法、创建、加载</a>
 </li>
-<li><a href="#13-hive-sql">知识点13：Hive SQL--内置函数梳理--条件转换、集合、加密</a>
+<li><a href="#12-apache-hive-ddl">知识点12：Apache Hive--DDL--建表语句--分桶表的好处、注意事项</a>
 </li>
-<li><a href="#10-hive-sql-udf-udaf-udtf">知识点10：Hive SQL--函数及分类标准（UDF、UDAF、UDTF）</a>
+<li><a href="#13-apache-hive-ddl">知识点13：Apache Hive--DDL--库、表、分区其他操作</a>
 </li>
-<li><a href="#11-hive-sql-1">知识点11：Hive SQL--内置函数梳理--字符串函数</a>
+<li><a href="#14-apache-hive-show">知识点14：Apache Hive--常见的show语法</a>
 </li>
-<li><a href="#12-hive-sql-1">知识点12：Hive SQL--内置函数梳理--时间日期、数值</a>
+<li><a href="#15-apache-hive-dml-load-local">知识点15：Apache Hive--DML--load加载数据（注意local含义）</a>
 </li>
-<li><a href="#13-hive-sql-1">知识点13：Hive SQL--内置函数梳理--条件转换、集合、加密</a>
+<li><a href="#16-apache-hive-dml-insert">知识点16：Apache Hive--DML--insert插入语法</a>
 </li>
-<li><a href="#10-hive-sql-udf-udaf-udtf-1">知识点10：Hive SQL--函数及分类标准（UDF、UDAF、UDTF）</a>
+<li><a href="#17-apache-hive-dml-insert">知识点17：Apache Hive--DML--insert导出数据操作</a>
 </li>
-<li><a href="#11-hive-sql-2">知识点11：Hive SQL--内置函数梳理--字符串函数</a>
-</li>
-<li><a href="#12-hive-sql-2">知识点12：Hive SQL--内置函数梳理--时间日期、数值</a>
-</li>
-<li><a href="#13-hive-sql-2">知识点13：Hive SQL--内置函数梳理--条件转换、集合、加密</a>
-</li>
-<li><a href="#10-hive-sql-udf-udaf-udtf-2">知识点10：Hive SQL--函数及分类标准（UDF、UDAF、UDTF）</a>
-</li>
-<li><a href="#11-hive-sql-3">知识点11：Hive SQL--内置函数梳理--字符串函数</a>
-</li>
-<li><a href="#12-hive-sql-3">知识点12：Hive SQL--内置函数梳理--时间日期、数值</a>
-</li>
-<li><a href="#13-hive-sql-3">知识点13：Hive SQL--内置函数梳理--条件转换、集合、加密</a>
+<li><a href="#今日课程作业">今日课程作业</a>
 </li>
 </ol>
 </li>
