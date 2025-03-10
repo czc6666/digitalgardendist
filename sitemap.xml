@@ -1887,22 +1887,12 @@
         </url>
     
         <url>
-            <loc>/czc知识库/计算机/Hadoop技术栈/Hadoop技术栈/</loc>
-            <lastmod>2025-03-10T08:42:56.000Z</lastmod>
-        </url>
-    
-        <url>
             <loc>/czc知识库/计算机/Hadoop技术栈/笔记/HDFS写入文件流程/</loc>
             <lastmod>2025-03-10T08:42:56.000Z</lastmod>
         </url>
     
         <url>
             <loc>/czc知识库/计算机/Hadoop技术栈/笔记/checkpoint过程/</loc>
-            <lastmod>2025-03-10T08:42:56.000Z</lastmod>
-        </url>
-    
-        <url>
-            <loc>/czc知识库/计算机/Hadoop技术栈/笔记/习题/hadoop面试题/</loc>
             <lastmod>2025-03-10T08:42:56.000Z</lastmod>
         </url>
     
@@ -1918,16 +1908,6 @@
     
         <url>
             <loc>/czc知识库/计算机/Hadoop技术栈/课程资料笔记/3-HDFS/</loc>
-            <lastmod>2025-03-10T08:42:56.000Z</lastmod>
-        </url>
-    
-        <url>
-            <loc>/czc知识库/计算机/Hadoop技术栈/课程资料笔记/4-MapReduce、YARN、HA/</loc>
-            <lastmod>2025-03-10T08:42:56.000Z</lastmod>
-        </url>
-    
-        <url>
-            <loc>/czc知识库/计算机/计算机/</loc>
             <lastmod>2025-03-10T08:42:56.000Z</lastmod>
         </url>
     
@@ -1959,6 +1939,31 @@
         <url>
             <loc>/</loc>
             <lastmod>2025-03-10T08:42:56.000Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/计算机/Hadoop技术栈/Hadoop技术栈/</loc>
+            <lastmod>2025-03-10T15:33:03.612Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/计算机/Hadoop技术栈/笔记/习题/HDFS面试题/</loc>
+            <lastmod>2025-03-10T15:33:03.612Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/计算机/Hadoop技术栈/笔记/习题/MapReduce习题/</loc>
+            <lastmod>2025-03-10T15:33:03.612Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/计算机/Hadoop技术栈/课程资料笔记/4-MapReduce、YARN、HA/</loc>
+            <lastmod>2025-03-10T15:33:03.612Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/计算机/计算机/</loc>
+            <lastmod>2025-03-10T15:33:03.612Z</lastmod>
         </url>
     
 </urlset>

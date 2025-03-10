@@ -997,7 +997,11 @@ CTRL + K
 <span class="foldername">习题</span>
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
-<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/计算机/Hadoop技术栈/笔记/习题/hadoop面试题/">hadoop面试题 </a>
+<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/计算机/Hadoop技术栈/笔记/习题/HDFS面试题/">HDFS面试题 </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/计算机/Hadoop技术栈/笔记/习题/MapReduce习题/">MapReduce习题 </a>
 </div>
 </div>
 </div>
@@ -2409,14 +2413,14 @@ CTRL + K
 </div>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/flexsearch@0.7.21/dist/flexsearch.bundle.js"></script>
-<script>document.addEventListener("DOMContentLoaded",init,!1),document.addEventListener("DOMContentLoaded",setCorrectShortcut,!1),window.toggleSearch=function(){document.getElementById("globalsearch").classList.contains("active")?document.getElementById("globalsearch").classList.remove("active"):(document.getElementById("globalsearch").classList.add("active"),document.getElementById("term").focus())},window.toggleTagSearch=function(e){console.log(e.textContent);const t=e.textContent;t&&(window.document.getElementById("term").value=t.trim(),window.toggleSearch(),window.search())};const loadingSvg='\n    <svg width="100" height="100" viewBox="0 0 45 45" xmlns="http://www.w3.org/2000/svg" stroke="#fff">\n      <g fill="none" fill-rule="evenodd" transform="translate(1 1)" stroke-width="2">\n          <circle cx="22" cy="22" r="6" stroke-opacity="0">\n              <animate attributeName="r"\n                   begin="1.5s" dur="3s"\n                   values="6;22"\n                   calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-opacity"\n                   begin="1.5s" dur="3s"\n                   values="1;0" calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-width"\n                   begin="1.5s" dur="3s"\n                   values="2;0" calcMode="linear"\n                   repeatCount="indefinite" />\n          </circle>\n          <circle cx="22" cy="22" r="6" stroke-opacity="0">\n              <animate attributeName="r"\n                   begin="3s" dur="3s"\n                   values="6;22"\n                   calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-opacity"\n                   begin="3s" dur="3s"\n                   values="1;0" calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-width"\n                   begin="3s" dur="3s"\n                   values="2;0" calcMode="linear"\n                   repeatCount="indefinite" />\n          </circle>\n          <circle cx="22" cy="22" r="8">\n              <animate attributeName="r"\n                   begin="0s" dur="1.5s"\n                   values="6;1;2;3;4;5;6"\n                   calcMode="linear"\n                   repeatCount="indefinite" />\n          </circle>\n      </g>\n  </svg>';function debounce(e,t,n){var a;return function(){var r=this,i=arguments,c=n&&!a;clearTimeout(a),a=setTimeout((function(){a=null,n||e.apply(r,i)}),t),c&&e.apply(r,i)}}function setCorrectShortcut(){navigator.platform.toUpperCase().indexOf("MAC")>=0&&document.querySelectorAll(".search-keys").forEach((e=>e.innerHTML="⌘ + K"))}function createIndex(e){const t=e=>e.toLowerCase().split(/([^a-z]|[^\x00-\x7F])/),n=new FlexSearch.Document({cache:!0,charset:"latin:extra",optimize:!0,index:[{field:"content",tokenize:"reverse",encode:t},{field:"title",tokenize:"forward",encode:t},{field:"tags",tokenize:"forward",encode:t}]});return e.forEach(((e,t)=>{n.add({id:t,title:e.title,content:e.content,tags:e.tags})})),n}async function init(){let e=!0;if(localStorage.getItem("searchIndex")){let{date:t,docs:n}=JSON.parse(localStorage.getItem("searchIndex"));if("2025-03-10T08:43:00.646Z"===t){e=!1;let t=createIndex(n);window.docs=n,window.index=t}}if(e){let e=await(await fetch("/searchIndex.json?v=2025-03-10T08:43:00.646Z")).json(),t=createIndex(e);localStorage.setItem("searchIndex",JSON.stringify({date:"2025-03-10T08:43:00.646Z",docs:e})),window.docs=e,window.index=t}document.addEventListener("keydown",(e=>{if((e.ctrlKey||e.metaKey)&&"k"===e.key&&(e.preventDefault(),toggleSearch()),"Escape"===e.key&&document.getElementById("globalsearch").classList.remove("active"),document.getElementById("globalsearch").classList.contains("active")){if("ArrowDown"===e.key){e.preventDefault();let t=document.querySelector(".searchresult.active");t?(t.classList.remove("active"),t.nextElementSibling?t.nextElementSibling.classList.add("active"):document.querySelector(".searchresult").classList.add("active")):document.querySelector(".searchresult").classList.add("active");let n=document.querySelector(".searchresult.active");n&&n.scrollIntoView({behavior:"smooth",block:"nearest",inline:"start"})}if("ArrowUp"===e.key){e.preventDefault();let t=document.querySelector(".searchresult.active");t?(t.classList.remove("active"),t.previousElementSibling?t.previousElementSibling.classList.add("active"):document.querySelectorAll(".searchresult").forEach((e=>{e.nextElementSibling||e.classList.add("active")}))):document.querySelectorAll(".searchresult").forEach((e=>{e.nextElementSibling&&e.classList.add("active")}));let n=document.querySelector(".searchresult.active");n&&n.scrollIntoView({behavior:"smooth",block:"nearest",inline:"start"})}if("Enter"===e.key){e.preventDefault();let t=document.querySelector(".searchresult.active");t&&(window.location.href=t.querySelector("a").href)}}}));const t=debounce(search,200,!1);field=document.querySelector("#term"),field.addEventListener("keydown",(e=>{"ArrowDown"!==e.key&&"ArrowUp"!==e.key&&t()})),resultsDiv=document.querySelector("#search-results");const n=new URL(location.href).searchParams;n.get("q")&&(field.setAttribute("value",n.get("q")),toggleSearch(),search())}async function search(){let e=field.value.trim();if(!e)return;if(e==lastSearch)return;console.log(`search for ${e}`),window.lastSearch=e,resultsDiv.innerHTML=loadingSvg;let t=offlineSearch(e),n="";if(!t.length){let t=document.createElement("p");return t.innerText=`No results for "${e}"`,resultsDiv.innerHTML="",void resultsDiv.appendChild(t)}n+='<div style="max-width:100%;">',t.forEach((e=>{e.tags&&e.tags.length>0?n+=`<div class="searchresult">\n                    <a class="search-link" href="${e.url}">${e.title}</a>\n                    <div onclick="window.location='${e.url}'">\n                        <div class="header-meta">\n                            <div class="header-tags">\n                                ${e.tags.map((e=>'<a class="tag" href="JavaScript:Void(0);">#'+e+"</a>")).join("")}\n                            </div>\n                        </div>\n                        ${e.content}\n                    </div>\n                </div>`:n+=`<div class="searchresult">\n                    <a class="search-link" href="${e.url}">${e.title}</a>\n                    <div onclick="window.location='${e.url}'">\n                        ${e.content}\n                    </div>\n                </div>`})),n+="</div>",resultsDiv.innerHTML=n}function truncate(e,t){return(e=e.replaceAll(/<[^>]*>/g,"")).length<t?e:e.substring(0,t-3)+"..."}function offlineSearch(e){let t=window.docs,n="#"===e[0]&&e.length>1?index.search(e.substring(1),[{field:"tags"}]):index.search(e,[{field:"title",limit:5},{field:"content",weight:10}]);const a=e=>{const t=n.filter((t=>t.field===e));return 0===t.length?[]:[...t[0].result]};return[...new Set([...a("title"),...a("content"),...a("tags")])].map((e=>{let n=t[e];return n.content=truncate(n.content,400),n.tags=n.tags.filter((e=>"gardenEntry"!=e&&"note"!=e)),n}))}window.lastSearch=""</script>
+<script>document.addEventListener("DOMContentLoaded",init,!1),document.addEventListener("DOMContentLoaded",setCorrectShortcut,!1),window.toggleSearch=function(){document.getElementById("globalsearch").classList.contains("active")?document.getElementById("globalsearch").classList.remove("active"):(document.getElementById("globalsearch").classList.add("active"),document.getElementById("term").focus())},window.toggleTagSearch=function(e){console.log(e.textContent);const t=e.textContent;t&&(window.document.getElementById("term").value=t.trim(),window.toggleSearch(),window.search())};const loadingSvg='\n    <svg width="100" height="100" viewBox="0 0 45 45" xmlns="http://www.w3.org/2000/svg" stroke="#fff">\n      <g fill="none" fill-rule="evenodd" transform="translate(1 1)" stroke-width="2">\n          <circle cx="22" cy="22" r="6" stroke-opacity="0">\n              <animate attributeName="r"\n                   begin="1.5s" dur="3s"\n                   values="6;22"\n                   calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-opacity"\n                   begin="1.5s" dur="3s"\n                   values="1;0" calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-width"\n                   begin="1.5s" dur="3s"\n                   values="2;0" calcMode="linear"\n                   repeatCount="indefinite" />\n          </circle>\n          <circle cx="22" cy="22" r="6" stroke-opacity="0">\n              <animate attributeName="r"\n                   begin="3s" dur="3s"\n                   values="6;22"\n                   calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-opacity"\n                   begin="3s" dur="3s"\n                   values="1;0" calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-width"\n                   begin="3s" dur="3s"\n                   values="2;0" calcMode="linear"\n                   repeatCount="indefinite" />\n          </circle>\n          <circle cx="22" cy="22" r="8">\n              <animate attributeName="r"\n                   begin="0s" dur="1.5s"\n                   values="6;1;2;3;4;5;6"\n                   calcMode="linear"\n                   repeatCount="indefinite" />\n          </circle>\n      </g>\n  </svg>';function debounce(e,t,n){var a;return function(){var r=this,i=arguments,c=n&&!a;clearTimeout(a),a=setTimeout((function(){a=null,n||e.apply(r,i)}),t),c&&e.apply(r,i)}}function setCorrectShortcut(){navigator.platform.toUpperCase().indexOf("MAC")>=0&&document.querySelectorAll(".search-keys").forEach((e=>e.innerHTML="⌘ + K"))}function createIndex(e){const t=e=>e.toLowerCase().split(/([^a-z]|[^\x00-\x7F])/),n=new FlexSearch.Document({cache:!0,charset:"latin:extra",optimize:!0,index:[{field:"content",tokenize:"reverse",encode:t},{field:"title",tokenize:"forward",encode:t},{field:"tags",tokenize:"forward",encode:t}]});return e.forEach(((e,t)=>{n.add({id:t,title:e.title,content:e.content,tags:e.tags})})),n}async function init(){let e=!0;if(localStorage.getItem("searchIndex")){let{date:t,docs:n}=JSON.parse(localStorage.getItem("searchIndex"));if("2025-03-10T15:33:07.882Z"===t){e=!1;let t=createIndex(n);window.docs=n,window.index=t}}if(e){let e=await(await fetch("/searchIndex.json?v=2025-03-10T15:33:07.882Z")).json(),t=createIndex(e);localStorage.setItem("searchIndex",JSON.stringify({date:"2025-03-10T15:33:07.882Z",docs:e})),window.docs=e,window.index=t}document.addEventListener("keydown",(e=>{if((e.ctrlKey||e.metaKey)&&"k"===e.key&&(e.preventDefault(),toggleSearch()),"Escape"===e.key&&document.getElementById("globalsearch").classList.remove("active"),document.getElementById("globalsearch").classList.contains("active")){if("ArrowDown"===e.key){e.preventDefault();let t=document.querySelector(".searchresult.active");t?(t.classList.remove("active"),t.nextElementSibling?t.nextElementSibling.classList.add("active"):document.querySelector(".searchresult").classList.add("active")):document.querySelector(".searchresult").classList.add("active");let n=document.querySelector(".searchresult.active");n&&n.scrollIntoView({behavior:"smooth",block:"nearest",inline:"start"})}if("ArrowUp"===e.key){e.preventDefault();let t=document.querySelector(".searchresult.active");t?(t.classList.remove("active"),t.previousElementSibling?t.previousElementSibling.classList.add("active"):document.querySelectorAll(".searchresult").forEach((e=>{e.nextElementSibling||e.classList.add("active")}))):document.querySelectorAll(".searchresult").forEach((e=>{e.nextElementSibling&&e.classList.add("active")}));let n=document.querySelector(".searchresult.active");n&&n.scrollIntoView({behavior:"smooth",block:"nearest",inline:"start"})}if("Enter"===e.key){e.preventDefault();let t=document.querySelector(".searchresult.active");t&&(window.location.href=t.querySelector("a").href)}}}));const t=debounce(search,200,!1);field=document.querySelector("#term"),field.addEventListener("keydown",(e=>{"ArrowDown"!==e.key&&"ArrowUp"!==e.key&&t()})),resultsDiv=document.querySelector("#search-results");const n=new URL(location.href).searchParams;n.get("q")&&(field.setAttribute("value",n.get("q")),toggleSearch(),search())}async function search(){let e=field.value.trim();if(!e)return;if(e==lastSearch)return;console.log(`search for ${e}`),window.lastSearch=e,resultsDiv.innerHTML=loadingSvg;let t=offlineSearch(e),n="";if(!t.length){let t=document.createElement("p");return t.innerText=`No results for "${e}"`,resultsDiv.innerHTML="",void resultsDiv.appendChild(t)}n+='<div style="max-width:100%;">',t.forEach((e=>{e.tags&&e.tags.length>0?n+=`<div class="searchresult">\n                    <a class="search-link" href="${e.url}">${e.title}</a>\n                    <div onclick="window.location='${e.url}'">\n                        <div class="header-meta">\n                            <div class="header-tags">\n                                ${e.tags.map((e=>'<a class="tag" href="JavaScript:Void(0);">#'+e+"</a>")).join("")}\n                            </div>\n                        </div>\n                        ${e.content}\n                    </div>\n                </div>`:n+=`<div class="searchresult">\n                    <a class="search-link" href="${e.url}">${e.title}</a>\n                    <div onclick="window.location='${e.url}'">\n                        ${e.content}\n                    </div>\n                </div>`})),n+="</div>",resultsDiv.innerHTML=n}function truncate(e,t){return(e=e.replaceAll(/<[^>]*>/g,"")).length<t?e:e.substring(0,t-3)+"..."}function offlineSearch(e){let t=window.docs,n="#"===e[0]&&e.length>1?index.search(e.substring(1),[{field:"tags"}]):index.search(e,[{field:"title",limit:5},{field:"content",weight:10}]);const a=e=>{const t=n.filter((t=>t.field===e));return 0===t.length?[]:[...t[0].result]};return[...new Set([...a("title"),...a("content"),...a("tags")])].map((e=>{let n=t[e];return n.content=truncate(n.content,400),n.tags=n.tags.filter((e=>"gardenEntry"!=e&&"note"!=e)),n}))}window.lastSearch=""</script>
 <main class="content cm-s-obsidian">
 <header>
 <h1 data-note-icon="">4-MapReduce、YARN、HA</h1>
 <div class="header-meta">
 <div class="header-tags">
 </div>
-<div class="timestamps"><div><i icon-name="calendar-plus"></i> <span class="human-date" data-date="2025-02-25T15:33:26.641+08:00"></span></div><div><i icon-name="calendar-clock"></i> <span class="human-date" data-date="2025-03-10T14:45:24.418+08:00"></span></div></div></div>
+<div class="timestamps"><div><i icon-name="calendar-plus"></i> <span class="human-date" data-date="2025-02-25T15:33:26.641+08:00"></span></div><div><i icon-name="calendar-clock"></i> <span class="human-date" data-date="2025-03-10T22:38:36.116+08:00"></span></div></div></div>
 </header>
 <h3 id="hadoop-day04-hadoop-map-reduce-yarn-ha" tabindex="-1">hadoop离线day04--Hadoop MapReduce、YARN、HA</h3>
 <hr>
@@ -2879,27 +2883,74 @@ split size=block size  切片的大小受数据块的大小控制
 <p><picture src="/img/user/czc%E7%9F%A5%E8%AF%86%E5%BA%93/%E8%AE%A1%E7%AE%97%E6%9C%BA/Hadoop%E6%8A%80%E6%9C%AF%E6%A0%88/%E8%AF%BE%E7%A8%8B%E8%B5%84%E6%96%99%E7%AC%94%E8%AE%B0/%E6%BA%90/hadoop%E7%A6%BB%E7%BA%BFday04--Hadoop%20MapReduce%E3%80%81YARN%E3%80%81HA/1%E3%80%81%E7%AC%94%E8%AE%B0%E3%80%81%E6%80%BB%E7%BB%93/hadoop%E7%A6%BB%E7%BA%BFday04--Hadoop%20MapReduce%E3%80%81YARN%E3%80%81HA.assets/image-20210730224735604.png" alt="image-20210730224735604.png"><source media="(max-width:480px)" srcset="/img/optimized/ojGY5VjCjK-500.webp" type="image/webp">
 <source media="(max-width:480px)" srcset="/img/optimized/ojGY5VjCjK-500.jpeg">
 <source media="(max-width:1920px)" srcset="/img/optimized/ojGY5VjCjK-700.webp" type="image/webp"><source media="(max-width:1920px)" srcset="/img/optimized/ojGY5VjCjK-700.jpeg"><img class="" src="/img/user/czc%E7%9F%A5%E8%AF%86%E5%BA%93/%E8%AE%A1%E7%AE%97%E6%9C%BA/Hadoop%E6%8A%80%E6%9C%AF%E6%A0%88/%E8%AF%BE%E7%A8%8B%E8%B5%84%E6%96%99%E7%AC%94%E8%AE%B0/%E6%BA%90/hadoop%E7%A6%BB%E7%BA%BFday04--Hadoop%20MapReduce%E3%80%81YARN%E3%80%81HA/1%E3%80%81%E7%AC%94%E8%AE%B0%E3%80%81%E6%80%BB%E7%BB%93/hadoop%E7%A6%BB%E7%BA%BFday04--Hadoop%20MapReduce%E3%80%81YARN%E3%80%81HA.assets/image-20210730224735604.png" alt="image-20210730224735604.png" width=""></picture></p>
+<p><picture src="/img/user/czc%E7%9F%A5%E8%AF%86%E5%BA%93/%E6%9D%82%E4%B8%83%E6%9D%82%E5%85%AB/9-%E9%99%84%E4%BB%B6/%E9%99%84%E4%BB%B6/4-MapReduce%E3%80%81YARN%E3%80%81HA_image-3.png" alt="4-MapReduce、YARN、HA_image-3.png"><source media="(max-width:480px)" srcset="/img/optimized/XKwqlCEAzV-500.webp" type="image/webp">
+<source media="(max-width:480px)" srcset="/img/optimized/XKwqlCEAzV-500.jpeg">
+<source media="(max-width:1920px)" srcset="/img/optimized/XKwqlCEAzV-700.webp" type="image/webp"><source media="(max-width:1920px)" srcset="/img/optimized/XKwqlCEAzV-700.jpeg"><img class="" src="/img/user/czc%E7%9F%A5%E8%AF%86%E5%BA%93/%E6%9D%82%E4%B8%83%E6%9D%82%E5%85%AB/9-%E9%99%84%E4%BB%B6/%E9%99%84%E4%BB%B6/4-MapReduce%E3%80%81YARN%E3%80%81HA_image-3.png" alt="4-MapReduce、YARN、HA_image-3.png" width=""></picture></p>
+<p>1、拉取复制数据<br>
+2、拉取来的数据进行merge合并、sort排序<br>
+规则：key的字典序排序a--z<br>
+3、排序之后的数据进行分组<br>
+分组规则：key相同的分为一组<br>
+4、一组去调用-次reduce方法进行聚合处理<br>
+业务逻辑处理<br>
+5、TextOutPutFormat默认的输出数据组件</p>
+<hr>
+<p>探究：<br>
+1、reducetask个数能否改变，难道只能有--个吗？<br>
+2、rcducctask个数改变和最终输出的结果文件个数有啥关系。<br>
+默认情况下，MR程序永远只有-一个reducetask</p>
 <ul>
-<li>
-<p>影响reducetask个数的因素</p>
+<li>影响reducetask个数的因素
 <ul>
 <li>
 <p>只要用户不设置 永远默认1个</p>
 </li>
 <li>
 <p>用户也可以通过代码进行设置 设置为几 就是几</p>
-<pre><code>当reducetask&gt;=2，数据就会分区了。
+<pre><code>
+当reducetask&gt;=2，数据就会分区了。
+
 </code></pre>
 </li>
 </ul>
 </li>
 </ul>
+<p>MR的分区（partition）问题：<br>
+当MR程序中，reducetask个数&gt;=2个的时候，对于	maptask就会涉及到一个棘手的问题：<br>
+其输出的结果应该交给哪一个reducetask来处理？<br>
+这个问题就是MR的分区问题Partition。</p>
+<p>关键就是分区的规则：<br>
+分区的关键就是分区规则默认规则<strong>HashPartitioner哈希取模</strong><br>
+&lt;key,value&gt;<br>
+key.hashcode % ReduceTask个数 == 余数 == 分区编号<br>
+默认这个规则不会保证数据平均分区，	但是会保证，只要map输出的key-样就会到同一个分区中</p>
 <hr>
 <h4 id="11-hadoop-map-reduce-shuffle" tabindex="-1">知识点11：Hadoop MapReduce--工作机制--shuffle机制</h4>
+<ul>
+<li>Shuffle的本意是洗牌、混洗的意思，把一组有规则的数据尽量打乱成无规则的数据。</li>
+<li>而在MapReduce中，Shuffle更像是洗牌的逆过程，指的是将map端的无规则输出按指定的规则“打乱”成具有一定规则的数据，以便reduce端接收处理。</li>
+<li>shuffle是Mapreduce的核心，它分布在Mapreduce的map阶段和reduce阶段。</li>
+<li>一般把从Map产生输出开始到Reduce取得数据作为输入之前的过程称作shuffle。</li>
+</ul>
 <p><picture src="/img/user/czc%E7%9F%A5%E8%AF%86%E5%BA%93/%E8%AE%A1%E7%AE%97%E6%9C%BA/Hadoop%E6%8A%80%E6%9C%AF%E6%A0%88/%E8%AF%BE%E7%A8%8B%E8%B5%84%E6%96%99%E7%AC%94%E8%AE%B0/%E6%BA%90/hadoop%E7%A6%BB%E7%BA%BFday04--Hadoop%20MapReduce%E3%80%81YARN%E3%80%81HA/1%E3%80%81%E7%AC%94%E8%AE%B0%E3%80%81%E6%80%BB%E7%BB%93/hadoop%E7%A6%BB%E7%BA%BFday04--Hadoop%20MapReduce%E3%80%81YARN%E3%80%81HA.assets/image-20210730224743959.png" alt="image-20210730224743959.png"><source media="(max-width:480px)" srcset="/img/optimized/PZIL6XIIRG-500.webp" type="image/webp">
 <source media="(max-width:480px)" srcset="/img/optimized/PZIL6XIIRG-500.jpeg">
 <source media="(max-width:1920px)" srcset="/img/optimized/PZIL6XIIRG-700.webp" type="image/webp"><source media="(max-width:1920px)" srcset="/img/optimized/PZIL6XIIRG-700.jpeg"><img class="" src="/img/user/czc%E7%9F%A5%E8%AF%86%E5%BA%93/%E8%AE%A1%E7%AE%97%E6%9C%BA/Hadoop%E6%8A%80%E6%9C%AF%E6%A0%88/%E8%AF%BE%E7%A8%8B%E8%B5%84%E6%96%99%E7%AC%94%E8%AE%B0/%E6%BA%90/hadoop%E7%A6%BB%E7%BA%BFday04--Hadoop%20MapReduce%E3%80%81YARN%E3%80%81HA/1%E3%80%81%E7%AC%94%E8%AE%B0%E3%80%81%E6%80%BB%E7%BB%93/hadoop%E7%A6%BB%E7%BA%BFday04--Hadoop%20MapReduce%E3%80%81YARN%E3%80%81HA.assets/image-20210730224743959.png" alt="image-20210730224743959.png" width=""></picture></p>
+<p>Map端Shuffle<br>
+Collect阶段：将MapTask的结果收集输出到默认大小为100M的环形缓冲区，保存之前会对key进行分区的计算，默<br>
+认Hash分区。<br>
+Spill阶段：当内存中的数据量达到一定的阀值的时候，就会将数据写入本地磁盘，在将数据写入磁盘之前需要对<br>
+数据进行一次排序的操作，如果配置了combiner，还会将有相同分区号和key的数据进行排序。<br>
+Merge阶段：把所有溢出的临时文件进行一次合并操作，以确保一个MapTask最终只产生一个中间数据文件。<br>
+Reducer端shuffle<br>
+Copy阶段：ReduceTask启动Fetcher线程到已经完成MapTask的节点上复制一份属于自己的数据。<br>
+Merge阶段：在ReduceTask远程复制数据的同时，会在后台开启两个线程对内存到本地的数据文件进行合并操作。<br>
+Sort阶段：在对数据进行合并的同时，会进行排序操作，由于MapTask阶段已经对数据进行了局部的排序，	ReduceTask只需保证Copy的数据的最终整体有效性即可。<br>
+shuffle的弊端<br>
+Shuffle是MapReduce程序的核心与精髓，是MapReduce的灵魂所在。<br>
+Shuffle也是MapReduce被垢病最多的地方所在。MapReduce相比较于Spark、Flink计算引l擎慢的原因，跟Shuffle机制有很大的关系。<br>
+suffle中频繁涉及到数据在内存、磁盘之间的多次往复</p>
 <hr>
+<h4 id="---------------------------------" tabindex="-1">---------------------------------</h4>
 <h4 id="12-hadoop-yarn" tabindex="-1">知识点12：Hadoop YARN--功能职责概述</h4>
 <ul>
 <li>
@@ -2907,13 +2958,32 @@ split size=block size  切片的大小受数据块的大小控制
 <pre><code>资源指的跟程序运行相关的硬件资源  比如：CPU RAM 
 </code></pre>
 </li>
+<li>
+<p>资源管理系统：集群的硬件资源，和程序运行相关，比如内存、CPU等。</p>
+</li>
+<li>
+<p>调度平台：多个程序同时申请计算资源如何分配，调度的规则（算法）。</p>
+</li>
+<li>
+<p>通用：不仅仅支持MapReduce程序，理论上支持各种计算程序。YARN不关心你干什么，只关心你要资源，在有的情况下给你，用完之后还我。</p>
+</li>
+</ul>
+<p><strong>简介</strong></p>
+<ul>
+<li>可以把HadoopYARN理解为相当于一个分布式的操作系统平台，而MapReduce等计算程序则相当于运行于操作系统之上的应用程序，YARN为这些程序提供运算所需的资源（内存、CPU等）。</li>
+<li>Hadoop能有今天这个地位，YARN可以说是功不可没。因为有了YARN，更多计算框架可以接入到HDFS中，而不单单是MapReduce，正式因为YARN的包容，使得其他计算框架能专注于计算性能的提升。</li>
+<li>HDFS可能不是最优秀的大数据存储系统，但却是应用最广泛的大数据存储系统，YARN功不可没。</li>
 </ul>
 <p><picture src="/img/user/czc%E7%9F%A5%E8%AF%86%E5%BA%93/%E8%AE%A1%E7%AE%97%E6%9C%BA/Hadoop%E6%8A%80%E6%9C%AF%E6%A0%88/%E8%AF%BE%E7%A8%8B%E8%B5%84%E6%96%99%E7%AC%94%E8%AE%B0/%E6%BA%90/hadoop%E7%A6%BB%E7%BA%BFday04--Hadoop%20MapReduce%E3%80%81YARN%E3%80%81HA/1%E3%80%81%E7%AC%94%E8%AE%B0%E3%80%81%E6%80%BB%E7%BB%93/hadoop%E7%A6%BB%E7%BA%BFday04--Hadoop%20MapReduce%E3%80%81YARN%E3%80%81HA.assets/image-20210921173212023.png" alt="image-20210921173212023.png"><source media="(max-width:480px)" srcset="/img/optimized/2S_Yxvf96P-500.webp" type="image/webp">
 <source media="(max-width:480px)" srcset="/img/optimized/2S_Yxvf96P-500.jpeg">
 <source media="(max-width:1920px)" srcset="/img/optimized/2S_Yxvf96P-700.webp" type="image/webp"><source media="(max-width:1920px)" srcset="/img/optimized/2S_Yxvf96P-700.jpeg"><img class="" src="/img/user/czc%E7%9F%A5%E8%AF%86%E5%BA%93/%E8%AE%A1%E7%AE%97%E6%9C%BA/Hadoop%E6%8A%80%E6%9C%AF%E6%A0%88/%E8%AF%BE%E7%A8%8B%E8%B5%84%E6%96%99%E7%AC%94%E8%AE%B0/%E6%BA%90/hadoop%E7%A6%BB%E7%BA%BFday04--Hadoop%20MapReduce%E3%80%81YARN%E3%80%81HA/1%E3%80%81%E7%AC%94%E8%AE%B0%E3%80%81%E6%80%BB%E7%BB%93/hadoop%E7%A6%BB%E7%BA%BFday04--Hadoop%20MapReduce%E3%80%81YARN%E3%80%81HA.assets/image-20210921173212023.png" alt="image-20210921173212023.png" width=""></picture></p>
+<p><picture src="/img/user/czc%E7%9F%A5%E8%AF%86%E5%BA%93/%E6%9D%82%E4%B8%83%E6%9D%82%E5%85%AB/9-%E9%99%84%E4%BB%B6/%E9%99%84%E4%BB%B6/4-MapReduce%E3%80%81YARN%E3%80%81HA_image-4.png" alt="4-MapReduce、YARN、HA_image-4.png"><source media="(max-width:480px)" srcset="/img/optimized/4kCUsIi7_k-500.webp" type="image/webp">
+<source media="(max-width:480px)" srcset="/img/optimized/4kCUsIi7_k-500.jpeg">
+<source media="(max-width:1920px)" srcset="/img/optimized/4kCUsIi7_k-666.webp" type="image/webp"><source media="(max-width:1920px)" srcset="/img/optimized/4kCUsIi7_k-666.jpeg"><img class="" src="/img/user/czc%E7%9F%A5%E8%AF%86%E5%BA%93/%E6%9D%82%E4%B8%83%E6%9D%82%E5%85%AB/9-%E9%99%84%E4%BB%B6/%E9%99%84%E4%BB%B6/4-MapReduce%E3%80%81YARN%E3%80%81HA_image-4.png" alt="4-MapReduce、YARN、HA_image-4.png" width=""></picture></p>
 <hr>
 <h4 id="13-hadoop-yarn-yarn3" tabindex="-1">知识点13：Hadoop YARN--集群架构、yarn3大组件</h4>
-<p><picture src="/img/user/czc%E7%9F%A5%E8%AF%86%E5%BA%93/%E8%AE%A1%E7%AE%97%E6%9C%BA/Hadoop%E6%8A%80%E6%9C%AF%E6%A0%88/%E8%AF%BE%E7%A8%8B%E8%B5%84%E6%96%99%E7%AC%94%E8%AE%B0/%E6%BA%90/hadoop%E7%A6%BB%E7%BA%BFday04--Hadoop%20MapReduce%E3%80%81YARN%E3%80%81HA/1%E3%80%81%E7%AC%94%E8%AE%B0%E3%80%81%E6%80%BB%E7%BB%93/hadoop%E7%A6%BB%E7%BA%BFday04--Hadoop%20MapReduce%E3%80%81YARN%E3%80%81HA.assets/image-20210921173320913.png" alt="image-20210921173320913.png"><source media="(max-width:480px)" srcset="/img/optimized/uLjNjNoj2G-500.webp" type="image/webp">
+<p>官方给的图↓<br>
+<picture src="/img/user/czc%E7%9F%A5%E8%AF%86%E5%BA%93/%E8%AE%A1%E7%AE%97%E6%9C%BA/Hadoop%E6%8A%80%E6%9C%AF%E6%A0%88/%E8%AF%BE%E7%A8%8B%E8%B5%84%E6%96%99%E7%AC%94%E8%AE%B0/%E6%BA%90/hadoop%E7%A6%BB%E7%BA%BFday04--Hadoop%20MapReduce%E3%80%81YARN%E3%80%81HA/1%E3%80%81%E7%AC%94%E8%AE%B0%E3%80%81%E6%80%BB%E7%BB%93/hadoop%E7%A6%BB%E7%BA%BFday04--Hadoop%20MapReduce%E3%80%81YARN%E3%80%81HA.assets/image-20210921173320913.png" alt="image-20210921173320913.png"><source media="(max-width:480px)" srcset="/img/optimized/uLjNjNoj2G-500.webp" type="image/webp">
 <source media="(max-width:480px)" srcset="/img/optimized/uLjNjNoj2G-500.jpeg">
 <source media="(max-width:1920px)" srcset="/img/optimized/uLjNjNoj2G-700.webp" type="image/webp"><source media="(max-width:1920px)" srcset="/img/optimized/uLjNjNoj2G-700.jpeg"><img class="" src="/img/user/czc%E7%9F%A5%E8%AF%86%E5%BA%93/%E8%AE%A1%E7%AE%97%E6%9C%BA/Hadoop%E6%8A%80%E6%9C%AF%E6%A0%88/%E8%AF%BE%E7%A8%8B%E8%B5%84%E6%96%99%E7%AC%94%E8%AE%B0/%E6%BA%90/hadoop%E7%A6%BB%E7%BA%BFday04--Hadoop%20MapReduce%E3%80%81YARN%E3%80%81HA/1%E3%80%81%E7%AC%94%E8%AE%B0%E3%80%81%E6%80%BB%E7%BB%93/hadoop%E7%A6%BB%E7%BA%BFday04--Hadoop%20MapReduce%E3%80%81YARN%E3%80%81HA.assets/image-20210921173320913.png" alt="image-20210921173320913.png" width=""></picture></p>
 <ul>
@@ -2922,14 +2992,12 @@ split size=block size  切片的大小受数据块的大小控制
 <ul>
 <li>
 <p>主角色 <mark>resourcemanager</mark> RM</p>
-<pre><code>ResourceManager 负责整个集群的资源管理和分配，是一个全局的资源管理系统。
-是程序申请资源的唯一入口 负载调度。
-</code></pre>
+<p>ResourceManager 负责整个集群的资源管理和分配，是一个全局的资源管理系统。<br>
+是程序申请资源的唯一入口 负载调度。</p>
 </li>
 <li>
 <p>从角色 <mark>nodemanager</mark> NM</p>
-<pre><code>nodemanager 负责每台机器上具体的资源管理 负责启动 关闭container容器
-</code></pre>
+<p>nodemanager 负责每台机器上具体的资源管理 负责启动 关闭container容器</p>
 </li>
 </ul>
 </li>
@@ -2959,11 +3027,35 @@ yarn默认实现了MapReduce的AM  名字叫做MrAppMaster.
 </code></pre>
 </li>
 </ul>
+<p><picture src="/img/user/czc%E7%9F%A5%E8%AF%86%E5%BA%93/%E6%9D%82%E4%B8%83%E6%9D%82%E5%85%AB/9-%E9%99%84%E4%BB%B6/%E9%99%84%E4%BB%B6/4-MapReduce%E3%80%81YARN%E3%80%81HA_image-5.png" alt="4-MapReduce、YARN、HA_image-5.png"><source media="(max-width:480px)" srcset="/img/optimized/NKXOVXXpbM-500.webp" type="image/webp">
+<source media="(max-width:480px)" srcset="/img/optimized/NKXOVXXpbM-500.jpeg">
+<source media="(max-width:1920px)" srcset="/img/optimized/NKXOVXXpbM-700.webp" type="image/webp"><source media="(max-width:1920px)" srcset="/img/optimized/NKXOVXXpbM-700.jpeg"><img class="" src="/img/user/czc%E7%9F%A5%E8%AF%86%E5%BA%93/%E6%9D%82%E4%B8%83%E6%9D%82%E5%85%AB/9-%E9%99%84%E4%BB%B6/%E9%99%84%E4%BB%B6/4-MapReduce%E3%80%81YARN%E3%80%81HA_image-5.png" alt="4-MapReduce、YARN、HA_image-5.png" width=""></picture></p>
 <hr>
-<h4 id="14-hadoop-yarn-mr-yarn" tabindex="-1">知识点14：Hadoop YARN--mr程序提交yarn流程</h4>
+<h4 id="14-hadoop-yarn-mr-yarn" tabindex="-1">知识点14：Hadoop YARN--MR程序提交YARN流程</h4>
 <p><picture src="/img/user/czc%E7%9F%A5%E8%AF%86%E5%BA%93/%E8%AE%A1%E7%AE%97%E6%9C%BA/Hadoop%E6%8A%80%E6%9C%AF%E6%A0%88/%E8%AF%BE%E7%A8%8B%E8%B5%84%E6%96%99%E7%AC%94%E8%AE%B0/%E6%BA%90/hadoop%E7%A6%BB%E7%BA%BFday04--Hadoop%20MapReduce%E3%80%81YARN%E3%80%81HA/1%E3%80%81%E7%AC%94%E8%AE%B0%E3%80%81%E6%80%BB%E7%BB%93/hadoop%E7%A6%BB%E7%BA%BFday04--Hadoop%20MapReduce%E3%80%81YARN%E3%80%81HA.assets/image-20210730224812277.png" alt="image-20210730224812277.png"><source media="(max-width:480px)" srcset="/img/optimized/vzRrhabMRC-500.webp" type="image/webp">
 <source media="(max-width:480px)" srcset="/img/optimized/vzRrhabMRC-500.jpeg">
 <source media="(max-width:1920px)" srcset="/img/optimized/vzRrhabMRC-700.webp" type="image/webp"><source media="(max-width:1920px)" srcset="/img/optimized/vzRrhabMRC-700.jpeg"><img class="" src="/img/user/czc%E7%9F%A5%E8%AF%86%E5%BA%93/%E8%AE%A1%E7%AE%97%E6%9C%BA/Hadoop%E6%8A%80%E6%9C%AF%E6%A0%88/%E8%AF%BE%E7%A8%8B%E8%B5%84%E6%96%99%E7%AC%94%E8%AE%B0/%E6%BA%90/hadoop%E7%A6%BB%E7%BA%BFday04--Hadoop%20MapReduce%E3%80%81YARN%E3%80%81HA/1%E3%80%81%E7%AC%94%E8%AE%B0%E3%80%81%E6%80%BB%E7%BB%93/hadoop%E7%A6%BB%E7%BA%BFday04--Hadoop%20MapReduce%E3%80%81YARN%E3%80%81HA.assets/image-20210730224812277.png" alt="image-20210730224812277.png" width=""></picture></p>
+<p><strong>流程</strong></p>
+<ol>
+<li>客户端提交，客户端连接resourceManager请求资源运行本次程序的AM（Application是 Manager）</li>
+<li>RM指定NM预留资源，配合客户端启动容器container（图中MR App Mstr）客户端到指定的NM上，通过和NM的配合启动容器运行AM进程</li>
+<li>AM启动向RM进行注册，保持通信</li>
+<li>NM根据切片个数，向RM申请与之对应的容器运行MapTask
+<ol>
+<li>Resource Scheduler：申请安排至调度队列中，根据调度策略该你执行你猜执行</li>
+</ol>
+</li>
+<li>AM根据申请的容器到各个机器上和NM配合启动容器运行MapTask并监督其执行情况</li>
+<li>AM根据ReduceTask个数申请容器运行，过程同上</li>
+<li>整个MR程序执行过程中，都是AM在申请资源、监督执行，并且把执行的情况汇报给RM（所以网页里才看得到）</li>
+<li>程序运行完毕AM向RM申请回收资源，并且申请注销自己</li>
+</ol>
+<p><strong>注意：</strong><br>
+1、YARN只负责分配资源回收资源不负责程序内部的逻辑<br>
+2、不管是客户端、还是AM，只要想申请新的资源，必须找RM，因为RM才是资源分配的唯一仲裁者<br>
+3、真正负责操心程序内部执行情况的是AM，每个程序都有自己的AM<br>
+MR ---&gt; MrAppMaster<br>
+SparkFlink叫什么呢？后面好好学习。</p>
 <hr>
 <h4 id="15-hadoop-yarn-scheduler" tabindex="-1">知识点15：Hadoop YARN--scheduler调度策略</h4>
 <ul>
@@ -2976,9 +3068,17 @@ yarn默认实现了MapReduce的AM  名字叫做MrAppMaster.
 <li>
 <p>YARN3大调度策略</p>
 <ul>
-<li>FIFO Scheduler 先进先出策略</li>
-<li><strong><mark>capacity Scheduler 容量调度策略</mark></strong></li>
-<li>Fair Sheduler 公平调度策略</li>
+<li>FIFO Scheduler 先进先出策略：绝对公平，不适合共享<picture src="/img/user/czc%E7%9F%A5%E8%AF%86%E5%BA%93/%E6%9D%82%E4%B8%83%E6%9D%82%E5%85%AB/9-%E9%99%84%E4%BB%B6/%E9%99%84%E4%BB%B6/4-MapReduce%E3%80%81YARN%E3%80%81HA_image-7.png" alt="4-MapReduce、YARN、HA_image-7.png"><source media="(max-width:480px)" srcset="/img/optimized/GWp2JtKklq-500.webp" type="image/webp">
+<source media="(max-width:480px)" srcset="/img/optimized/GWp2JtKklq-500.jpeg">
+<source media="(max-width:1920px)" srcset="/img/optimized/GWp2JtKklq-700.webp" type="image/webp"><source media="(max-width:1920px)" srcset="/img/optimized/GWp2JtKklq-700.jpeg"><img class="" src="/img/user/czc%E7%9F%A5%E8%AF%86%E5%BA%93/%E6%9D%82%E4%B8%83%E6%9D%82%E5%85%AB/9-%E9%99%84%E4%BB%B6/%E9%99%84%E4%BB%B6/4-MapReduce%E3%80%81YARN%E3%80%81HA_image-7.png" alt="4-MapReduce、YARN、HA_image-7.png" width=""></picture></li>
+<li><strong><mark>capacity Scheduler 容量调度策略</mark></strong>：默认策略，队列内部依旧是先进先出，没大程序的时候，大程序队列就浪费了<picture src="/img/user/czc%E7%9F%A5%E8%AF%86%E5%BA%93/%E6%9D%82%E4%B8%83%E6%9D%82%E5%85%AB/9-%E9%99%84%E4%BB%B6/%E9%99%84%E4%BB%B6/4-MapReduce%E3%80%81YARN%E3%80%81HA_image-8.png" alt="4-MapReduce、YARN、HA_image-8.png"><source media="(max-width:480px)" srcset="/img/optimized/PgGrOG_GC5-500.webp" type="image/webp">
+<source media="(max-width:480px)" srcset="/img/optimized/PgGrOG_GC5-500.jpeg">
+<source media="(max-width:1920px)" srcset="/img/optimized/PgGrOG_GC5-700.webp" type="image/webp"><source media="(max-width:1920px)" srcset="/img/optimized/PgGrOG_GC5-700.jpeg"><img class="" src="/img/user/czc%E7%9F%A5%E8%AF%86%E5%BA%93/%E6%9D%82%E4%B8%83%E6%9D%82%E5%85%AB/9-%E9%99%84%E4%BB%B6/%E9%99%84%E4%BB%B6/4-MapReduce%E3%80%81YARN%E3%80%81HA_image-8.png" alt="4-MapReduce、YARN、HA_image-8.png" width=""></picture></li>
+<li>Fair Sheduler 公平调度策略：<picture src="/img/user/czc%E7%9F%A5%E8%AF%86%E5%BA%93/%E6%9D%82%E4%B8%83%E6%9D%82%E5%85%AB/9-%E9%99%84%E4%BB%B6/%E9%99%84%E4%BB%B6/4-MapReduce%E3%80%81YARN%E3%80%81HA_image-9.png" alt="4-MapReduce、YARN、HA_image-9.png"><source media="(max-width:480px)" srcset="/img/optimized/YWMnuooin4-500.webp" type="image/webp">
+<source media="(max-width:480px)" srcset="/img/optimized/YWMnuooin4-500.jpeg">
+<source media="(max-width:1920px)" srcset="/img/optimized/YWMnuooin4-700.webp" type="image/webp"><source media="(max-width:1920px)" srcset="/img/optimized/YWMnuooin4-700.jpeg"><img class="" src="/img/user/czc%E7%9F%A5%E8%AF%86%E5%BA%93/%E6%9D%82%E4%B8%83%E6%9D%82%E5%85%AB/9-%E9%99%84%E4%BB%B6/%E9%99%84%E4%BB%B6/4-MapReduce%E3%80%81YARN%E3%80%81HA_image-9.png" alt="4-MapReduce、YARN、HA_image-9.png" width=""></picture><picture src="/img/user/czc%E7%9F%A5%E8%AF%86%E5%BA%93/%E6%9D%82%E4%B8%83%E6%9D%82%E5%85%AB/9-%E9%99%84%E4%BB%B6/%E9%99%84%E4%BB%B6/4-MapReduce%E3%80%81YARN%E3%80%81HA_image-10.png" alt="4-MapReduce、YARN、HA_image-10.png"><source media="(max-width:480px)" srcset="/img/optimized/wD8x_IbTIq-500.webp" type="image/webp">
+<source media="(max-width:480px)" srcset="/img/optimized/wD8x_IbTIq-500.jpeg">
+<source media="(max-width:1920px)" srcset="/img/optimized/wD8x_IbTIq-700.webp" type="image/webp"><source media="(max-width:1920px)" srcset="/img/optimized/wD8x_IbTIq-700.jpeg"><img class="" src="/img/user/czc%E7%9F%A5%E8%AF%86%E5%BA%93/%E6%9D%82%E4%B8%83%E6%9D%82%E5%85%AB/9-%E9%99%84%E4%BB%B6/%E9%99%84%E4%BB%B6/4-MapReduce%E3%80%81YARN%E3%80%81HA_image-10.png" alt="4-MapReduce、YARN、HA_image-10.png" width=""></picture></li>
 </ul>
 </li>
 <li>
@@ -3003,10 +3103,14 @@ yarn.resourcemanager.scheduler.class=org.apache.hadoop.yarn.server.resourcemanag
 <li>prod 生产环境 线上环境</li>
 <li>dev 开发环境</li>
 </ul>
-<p>![image-20210921172135028](/img/user/czc知识库/计算机/Hadoop技术栈/课程资料笔记/源/hadoop离线day04--Hadoop MapReduce、YARN、HA/1、笔记、总结/hadoop离线day04--Hadoop MapReduce、YARN、HA.assets/image-20210921172135028.png)</p>
+<p><picture src="/img/user/czc%E7%9F%A5%E8%AF%86%E5%BA%93/%E8%AE%A1%E7%AE%97%E6%9C%BA/Hadoop%E6%8A%80%E6%9C%AF%E6%A0%88/%E8%AF%BE%E7%A8%8B%E8%B5%84%E6%96%99%E7%AC%94%E8%AE%B0/%E6%BA%90/hadoop%E7%A6%BB%E7%BA%BFday04--Hadoop%20MapReduce%E3%80%81YARN%E3%80%81HA/1%E3%80%81%E7%AC%94%E8%AE%B0%E3%80%81%E6%80%BB%E7%BB%93/hadoop%E7%A6%BB%E7%BA%BFday04--Hadoop%20MapReduce%E3%80%81YARN%E3%80%81HA.assets/image-20210921172135028.png" alt="image-20210921172135028.png"><source media="(max-width:480px)" srcset="/img/optimized/QCulflRkvJ-498.webp" type="image/webp">
+<source media="(max-width:480px)" srcset="/img/optimized/QCulflRkvJ-498.jpeg">
+<img class="" src="/img/user/czc%E7%9F%A5%E8%AF%86%E5%BA%93/%E8%AE%A1%E7%AE%97%E6%9C%BA/Hadoop%E6%8A%80%E6%9C%AF%E6%A0%88/%E8%AF%BE%E7%A8%8B%E8%B5%84%E6%96%99%E7%AC%94%E8%AE%B0/%E6%BA%90/hadoop%E7%A6%BB%E7%BA%BFday04--Hadoop%20MapReduce%E3%80%81YARN%E3%80%81HA/1%E3%80%81%E7%AC%94%E8%AE%B0%E3%80%81%E6%80%BB%E7%BB%93/hadoop%E7%A6%BB%E7%BA%BFday04--Hadoop%20MapReduce%E3%80%81YARN%E3%80%81HA.assets/image-20210921172135028.png" alt="image-20210921172135028.png" width=""></picture></p>
 <hr>
 <h4 id="17-hadoop-ha" tabindex="-1">知识点17：Hadoop HA集群--什么是高可用、实现高可用注意事项</h4>
-<p>![image-20210921173435657](/img/user/czc知识库/计算机/Hadoop技术栈/课程资料笔记/源/hadoop离线day04--Hadoop MapReduce、YARN、HA/1、笔记、总结/hadoop离线day04--Hadoop MapReduce、YARN、HA.assets/image-20210921173435657.png)</p>
+<p><picture src="/img/user/czc%E7%9F%A5%E8%AF%86%E5%BA%93/%E8%AE%A1%E7%AE%97%E6%9C%BA/Hadoop%E6%8A%80%E6%9C%AF%E6%A0%88/%E8%AF%BE%E7%A8%8B%E8%B5%84%E6%96%99%E7%AC%94%E8%AE%B0/%E6%BA%90/hadoop%E7%A6%BB%E7%BA%BFday04--Hadoop%20MapReduce%E3%80%81YARN%E3%80%81HA/1%E3%80%81%E7%AC%94%E8%AE%B0%E3%80%81%E6%80%BB%E7%BB%93/hadoop%E7%A6%BB%E7%BA%BFday04--Hadoop%20MapReduce%E3%80%81YARN%E3%80%81HA.assets/image-20210921173435657.png" alt="image-20210921173435657.png"><source media="(max-width:480px)" srcset="/img/optimized/bhbxR6VUQw-500.webp" type="image/webp">
+<source media="(max-width:480px)" srcset="/img/optimized/bhbxR6VUQw-500.jpeg">
+<source media="(max-width:1920px)" srcset="/img/optimized/bhbxR6VUQw-700.webp" type="image/webp"><source media="(max-width:1920px)" srcset="/img/optimized/bhbxR6VUQw-700.jpeg"><img class="" src="/img/user/czc%E7%9F%A5%E8%AF%86%E5%BA%93/%E8%AE%A1%E7%AE%97%E6%9C%BA/Hadoop%E6%8A%80%E6%9C%AF%E6%A0%88/%E8%AF%BE%E7%A8%8B%E8%B5%84%E6%96%99%E7%AC%94%E8%AE%B0/%E6%BA%90/hadoop%E7%A6%BB%E7%BA%BFday04--Hadoop%20MapReduce%E3%80%81YARN%E3%80%81HA/1%E3%80%81%E7%AC%94%E8%AE%B0%E3%80%81%E6%80%BB%E7%BB%93/hadoop%E7%A6%BB%E7%BA%BFday04--Hadoop%20MapReduce%E3%80%81YARN%E3%80%81HA.assets/image-20210921173435657.png" alt="image-20210921173435657.png" width=""></picture></p>
 <h4 id="18-hadoop-ha-hdfs-ha-qjm" tabindex="-1">知识点18：Hadoop HA集群--HDFS HA--QJM实现原理</h4>
 <ul>
 <li>
@@ -3024,7 +3128,9 @@ yarn.resourcemanager.scheduler.class=org.apache.hadoop.yarn.server.resourcemanag
 </ul>
 </li>
 </ul>
-<p>![image-20210921173452718](/img/user/czc知识库/计算机/Hadoop技术栈/课程资料笔记/源/hadoop离线day04--Hadoop MapReduce、YARN、HA/1、笔记、总结/hadoop离线day04--Hadoop MapReduce、YARN、HA.assets/image-20210921173452718.png)</p>
+<p><picture src="/img/user/czc%E7%9F%A5%E8%AF%86%E5%BA%93/%E8%AE%A1%E7%AE%97%E6%9C%BA/Hadoop%E6%8A%80%E6%9C%AF%E6%A0%88/%E8%AF%BE%E7%A8%8B%E8%B5%84%E6%96%99%E7%AC%94%E8%AE%B0/%E6%BA%90/hadoop%E7%A6%BB%E7%BA%BFday04--Hadoop%20MapReduce%E3%80%81YARN%E3%80%81HA/1%E3%80%81%E7%AC%94%E8%AE%B0%E3%80%81%E6%80%BB%E7%BB%93/hadoop%E7%A6%BB%E7%BA%BFday04--Hadoop%20MapReduce%E3%80%81YARN%E3%80%81HA.assets/image-20210921173452718.png" alt="image-20210921173452718.png"><source media="(max-width:480px)" srcset="/img/optimized/n0HOPIQwG3-500.webp" type="image/webp">
+<source media="(max-width:480px)" srcset="/img/optimized/n0HOPIQwG3-500.jpeg">
+<source media="(max-width:1920px)" srcset="/img/optimized/n0HOPIQwG3-662.webp" type="image/webp"><source media="(max-width:1920px)" srcset="/img/optimized/n0HOPIQwG3-662.jpeg"><img class="" src="/img/user/czc%E7%9F%A5%E8%AF%86%E5%BA%93/%E8%AE%A1%E7%AE%97%E6%9C%BA/Hadoop%E6%8A%80%E6%9C%AF%E6%A0%88/%E8%AF%BE%E7%A8%8B%E8%B5%84%E6%96%99%E7%AC%94%E8%AE%B0/%E6%BA%90/hadoop%E7%A6%BB%E7%BA%BFday04--Hadoop%20MapReduce%E3%80%81YARN%E3%80%81HA/1%E3%80%81%E7%AC%94%E8%AE%B0%E3%80%81%E6%80%BB%E7%BB%93/hadoop%E7%A6%BB%E7%BA%BFday04--Hadoop%20MapReduce%E3%80%81YARN%E3%80%81HA.assets/image-20210921173452718.png" alt="image-20210921173452718.png" width=""></picture></p>
 <hr>
 <h4 id="19-hadoop-ha-yarn-ha" tabindex="-1">知识点19：Hadoop HA集群--YARN HA</h4>
 <ul>
@@ -3039,7 +3145,9 @@ yarn.resourcemanager.scheduler.class=org.apache.hadoop.yarn.server.resourcemanag
 <p>Hadoop HA集群搭建 难点就是配置文件的编写</p>
 </li>
 </ul>
-<p>![image-20210921173504825](/img/user/czc知识库/计算机/Hadoop技术栈/课程资料笔记/源/hadoop离线day04--Hadoop MapReduce、YARN、HA/1、笔记、总结/hadoop离线day04--Hadoop MapReduce、YARN、HA.assets/image-20210921173504825.png)</p>
+<p><picture src="/img/user/czc%E7%9F%A5%E8%AF%86%E5%BA%93/%E8%AE%A1%E7%AE%97%E6%9C%BA/Hadoop%E6%8A%80%E6%9C%AF%E6%A0%88/%E8%AF%BE%E7%A8%8B%E8%B5%84%E6%96%99%E7%AC%94%E8%AE%B0/%E6%BA%90/hadoop%E7%A6%BB%E7%BA%BFday04--Hadoop%20MapReduce%E3%80%81YARN%E3%80%81HA/1%E3%80%81%E7%AC%94%E8%AE%B0%E3%80%81%E6%80%BB%E7%BB%93/hadoop%E7%A6%BB%E7%BA%BFday04--Hadoop%20MapReduce%E3%80%81YARN%E3%80%81HA.assets/image-20210921173504825.png" alt="image-20210921173504825.png"><source media="(max-width:480px)" srcset="/img/optimized/Bp_P1Qrgc--500.webp" type="image/webp">
+<source media="(max-width:480px)" srcset="/img/optimized/Bp_P1Qrgc--500.jpeg">
+<source media="(max-width:1920px)" srcset="/img/optimized/Bp_P1Qrgc--585.webp" type="image/webp"><source media="(max-width:1920px)" srcset="/img/optimized/Bp_P1Qrgc--585.jpeg"><img class="" src="/img/user/czc%E7%9F%A5%E8%AF%86%E5%BA%93/%E8%AE%A1%E7%AE%97%E6%9C%BA/Hadoop%E6%8A%80%E6%9C%AF%E6%A0%88/%E8%AF%BE%E7%A8%8B%E8%B5%84%E6%96%99%E7%AC%94%E8%AE%B0/%E6%BA%90/hadoop%E7%A6%BB%E7%BA%BFday04--Hadoop%20MapReduce%E3%80%81YARN%E3%80%81HA/1%E3%80%81%E7%AC%94%E8%AE%B0%E3%80%81%E6%80%BB%E7%BB%93/hadoop%E7%A6%BB%E7%BA%BFday04--Hadoop%20MapReduce%E3%80%81YARN%E3%80%81HA.assets/image-20210921173504825.png" alt="image-20210921173504825.png" width=""></picture></p>
 <hr>
 <ul>
 <li>
@@ -3184,11 +3292,13 @@ On this page
 </li>
 <li><a href="#11-hadoop-map-reduce-shuffle">知识点11：Hadoop MapReduce--工作机制--shuffle机制</a>
 </li>
+<li><a href="#---------------------------------">---------------------------------</a>
+</li>
 <li><a href="#12-hadoop-yarn">知识点12：Hadoop YARN--功能职责概述</a>
 </li>
 <li><a href="#13-hadoop-yarn-yarn3">知识点13：Hadoop YARN--集群架构、yarn3大组件</a>
 </li>
-<li><a href="#14-hadoop-yarn-mr-yarn">知识点14：Hadoop YARN--mr程序提交yarn流程</a>
+<li><a href="#14-hadoop-yarn-mr-yarn">知识点14：Hadoop YARN--MR程序提交YARN流程</a>
 </li>
 <li><a href="#15-hadoop-yarn-scheduler">知识点15：Hadoop YARN--scheduler调度策略</a>
 </li>
