@@ -154,6 +154,53 @@ CTRL + K
 </div>
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
+<div class="folder inner-folder" x-data="{isOpen: $persist(false).as('czc知识库/搞钱/家教')}" @click.stop="isOpen=!isOpen">
+<div class="foldername-wrapper align-icon">
+<i x-show="isOpen" style="display:none" icon-name="chevron-down"></i>
+<i x-show="!isOpen" icon-name="chevron-right"></i>
+<span class="foldername">家教</span>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div class="folder inner-folder" x-data="{isOpen: $persist(false).as('czc知识库/搞钱/家教/小程序项目')}" @click.stop="isOpen=!isOpen">
+<div class="foldername-wrapper align-icon">
+<i x-show="isOpen" style="display:none" icon-name="chevron-down"></i>
+<i x-show="!isOpen" icon-name="chevron-right"></i>
+<span class="foldername">小程序项目</span>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/搞钱/家教/小程序项目/001-小程序开发需要干什么/">001-小程序开发需要干什么 </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/搞钱/家教/小程序项目/文档/">文档 </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/搞钱/家教/小程序项目/相关平台信息/">相关平台信息 </a>
+</div>
+</div>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div class="folder inner-folder" x-data="{isOpen: $persist(false).as('czc知识库/搞钱/家教/杂')}" @click.stop="isOpen=!isOpen">
+<div class="foldername-wrapper align-icon">
+<i x-show="isOpen" style="display:none" icon-name="chevron-down"></i>
+<i x-show="!isOpen" icon-name="chevron-right"></i>
+<span class="foldername">杂</span>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/搞钱/家教/杂/家教经验/">家教经验 </a>
+</div>
+</div>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/搞钱/家教/家教/">家教 </a>
+</div>
+</div>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
 <div class="folder inner-folder" x-data="{isOpen: $persist(false).as('czc知识库/搞钱/电商相关')}" @click.stop="isOpen=!isOpen">
 <div class="foldername-wrapper align-icon">
 <i x-show="isOpen" style="display:none" icon-name="chevron-down"></i>
@@ -435,6 +482,10 @@ CTRL + K
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
 <div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/硕士研究生/科研/文献阅读笔记/2-语义/202410.基于主题模型的Android恶意软件检测_Topic Model Based Android Malware Detection/">202410.基于主题模型的Android恶意软件检测_Topic Model Based Android Malware Detection </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/硕士研究生/科研/文献阅读笔记/2-语义/GSEDroid：GNN-based Android malware detection framework using lightweight semantic embedding/">GSEDroid：GNN-based Android malware detection framework using lightweight semantic embedding </a>
 </div>
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
@@ -997,17 +1048,13 @@ CTRL + K
 <span class="foldername">习题</span>
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
-<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/计算机/Hadoop技术栈/笔记/习题/HDFS面试题/">HDFS面试题 </a>
+<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/计算机/Hadoop技术栈/笔记/习题/01-HDFS面试题/">01-HDFS面试题 </a>
 </div>
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
-<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/计算机/Hadoop技术栈/笔记/习题/MapReduce习题/">MapReduce习题 </a>
+<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/计算机/Hadoop技术栈/笔记/习题/02-MapReduce、YARN、HA习题/">02-MapReduce、YARN、HA习题 </a>
 </div>
 </div>
-</div>
-</div>
-<div x-show="isOpen" style="display:none" class="filelist">
-<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/计算机/Hadoop技术栈/笔记/checkpoint过程/">checkpoint过程 </a>
 </div>
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
@@ -1029,10 +1076,6 @@ CTRL + K
 <i x-show="isOpen" style="display:none" icon-name="chevron-down"></i>
 <i x-show="!isOpen" icon-name="chevron-right"></i>
 <span class="foldername">源</span>
-</div>
-<div x-show="isOpen" style="display:none" class="filelist">
-<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/计算机/Hadoop技术栈/课程资料笔记/源/源-czcbook/">源-czcbook </a>
-</div>
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
 <div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/计算机/Hadoop技术栈/课程资料笔记/源/源/">源 </a>
@@ -1072,10 +1115,6 @@ CTRL + K
 <div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/计算机/Hadoop技术栈/课程资料笔记/8-Apache Hive函数高阶应用、性能调优/">8-Apache Hive函数高阶应用、性能调优 </a>
 </div>
 </div>
-</div>
-</div>
-<div x-show="isOpen" style="display:none" class="filelist">
-<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/计算机/Hadoop技术栈/Hadoop技术栈-czcbook/">Hadoop技术栈-czcbook </a>
 </div>
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
@@ -1236,10 +1275,10 @@ CTRL + K
 <div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/计算机/MySQL/学习笔记/003-MySQL数据库操作/">003-MySQL数据库操作 </a>
 </div>
 </div>
+</div>
+</div>
 <div x-show="isOpen" style="display:none" class="filelist">
-<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/计算机/MySQL/学习笔记/004-数据库查询练习/">004-数据库查询练习 </a>
-</div>
-</div>
+<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/计算机/MySQL/004-数据库查询练习/">004-数据库查询练习 </a>
 </div>
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
@@ -1614,80 +1653,97 @@ CTRL + K
 </div>
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
-<div class="folder inner-folder" x-data="{isOpen: $persist(false).as('czc知识库/计算机/Python/python日常笔记')}" @click.stop="isOpen=!isOpen">
+<div class="folder inner-folder" x-data="{isOpen: $persist(false).as('czc知识库/计算机/Python/Python日常笔记')}" @click.stop="isOpen=!isOpen">
 <div class="foldername-wrapper align-icon">
 <i x-show="isOpen" style="display:none" icon-name="chevron-down"></i>
 <i x-show="!isOpen" icon-name="chevron-right"></i>
-<span class="foldername">python日常笔记</span>
+<span class="foldername">Python日常笔记</span>
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
-<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/计算机/Python/python日常笔记/pip安装 修改清华大学源 python库 pip命令秒安装sklearn库 pip install 清华源/">pip安装 修改清华大学源 python库 pip命令秒安装sklearn库 pip install 清华源 </a>
-</div>
-</div>
-<div x-show="isOpen" style="display:none" class="filelist">
-<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/计算机/Python/python日常笔记/python class类编程 面向对象编程/">python class类编程 面向对象编程 </a>
+<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/计算机/Python/Python日常笔记/pip安装 修改清华大学源 python库 pip命令秒安装sklearn库 pip install 清华源/">pip安装 修改清华大学源 python库 pip命令秒安装sklearn库 pip install 清华源 </a>
 </div>
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
-<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/计算机/Python/python日常笔记/python windows反斜杠的问题/">python windows反斜杠的问题 </a>
+<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/计算机/Python/Python日常笔记/python class类编程 面向对象编程/">python class类编程 面向对象编程 </a>
 </div>
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
-<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/计算机/Python/python日常笔记/python关键字：with/">python关键字：with </a>
+<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/计算机/Python/Python日常笔记/python windows反斜杠的问题/">python windows反斜杠的问题 </a>
 </div>
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
-<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/计算机/Python/python日常笔记/python基础学习笔记 蟒蛇书/">python基础学习笔记 蟒蛇书 </a>
+<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/计算机/Python/Python日常笔记/python关键字：with/">python关键字：with </a>
 </div>
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
-<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/计算机/Python/python日常笔记/Python的内置函数或内置方法/">Python的内置函数或内置方法 </a>
+<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/计算机/Python/Python日常笔记/python基础学习笔记 蟒蛇书/">python基础学习笔记 蟒蛇书 </a>
 </div>
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
-<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/计算机/Python/python日常笔记/python的字典/">python的字典 </a>
+<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/计算机/Python/Python日常笔记/Python的内置函数或内置方法/">Python的内置函数或内置方法 </a>
 </div>
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
-<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/计算机/Python/python日常笔记/python笔记/">python笔记 </a>
+<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/计算机/Python/Python日常笔记/python的字典/">python的字典 </a>
 </div>
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
-<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/计算机/Python/python日常笔记/python：检查路径是否存在，不存在就递归创建此路径/">python：检查路径是否存在，不存在就递归创建此路径 </a>
+<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/计算机/Python/Python日常笔记/python笔记/">python笔记 </a>
 </div>
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
-<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/计算机/Python/python日常笔记/requirement文件安装环境命令 python 配置/">requirement文件安装环境命令 python 配置 </a>
+<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/计算机/Python/Python日常笔记/python：检查路径是否存在，不存在就递归创建此路径/">python：检查路径是否存在，不存在就递归创建此路径 </a>
 </div>
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
-<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/计算机/Python/python日常笔记/with语句/">with语句 </a>
+<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/计算机/Python/Python日常笔记/requirement文件安装环境命令 python 配置/">requirement文件安装环境命令 python 配置 </a>
 </div>
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
-<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/计算机/Python/python日常笔记/什么是python对象/">什么是python对象 </a>
+<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/计算机/Python/Python日常笔记/with语句/">with语句 </a>
 </div>
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
-<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/计算机/Python/python日常笔记/关闭jupyter服务器 在pycharm中/">关闭jupyter服务器 在pycharm中 </a>
+<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/计算机/Python/Python日常笔记/什么是python对象/">什么是python对象 </a>
 </div>
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
-<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/计算机/Python/python日常笔记/可迭代的对象/">可迭代的对象 </a>
+<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/计算机/Python/Python日常笔记/关闭jupyter服务器 在pycharm中/">关闭jupyter服务器 在pycharm中 </a>
 </div>
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
-<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/计算机/Python/python日常笔记/多线程编程 python/">多线程编程 python </a>
+<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/计算机/Python/Python日常笔记/可迭代的对象/">可迭代的对象 </a>
 </div>
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
-<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/计算机/Python/python日常笔记/程序中添加可视化进图条/">程序中添加可视化进图条 </a>
+<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/计算机/Python/Python日常笔记/多线程编程 python/">多线程编程 python </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/计算机/Python/Python日常笔记/程序中添加可视化进图条/">程序中添加可视化进图条 </a>
 </div>
 </div>
 </div>
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
 <div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/计算机/Python/Python/">Python </a>
+</div>
+</div>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div class="folder inner-folder" x-data="{isOpen: $persist(false).as('czc知识库/计算机/Web')}" @click.stop="isOpen=!isOpen">
+<div class="foldername-wrapper align-icon">
+<i x-show="isOpen" style="display:none" icon-name="chevron-down"></i>
+<i x-show="!isOpen" icon-name="chevron-right"></i>
+<span class="foldername">Web</span>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/计算机/Web/Nginx/">Nginx </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/计算机/Web/反向代理/">反向代理 </a>
 </div>
 </div>
 </div>
@@ -2344,10 +2400,6 @@ CTRL + K
 <div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/计算机/软件开发笔记/AndroZoo数据集下载器/AndroZoo数据集下载工具/">AndroZoo数据集下载工具 </a>
 </div>
 </div>
-<div x-show="isOpen" style="display:none" class="filelist">
-<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/计算机/软件开发笔记/AndroZoo数据集下载器/笔记：AndroZoo数据集下载程序 筛选超大csv文件 制作下载链接 多线程下载 apk文件 python笔记/">笔记：AndroZoo数据集下载程序 筛选超大csv文件 制作下载链接 多线程下载 apk文件 python笔记 </a>
-</div>
-</div>
 </div>
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
@@ -2425,360 +2477,16 @@ CTRL + K
 </div>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/flexsearch@0.7.21/dist/flexsearch.bundle.js"></script>
-<script>document.addEventListener("DOMContentLoaded",init,!1),document.addEventListener("DOMContentLoaded",setCorrectShortcut,!1),window.toggleSearch=function(){document.getElementById("globalsearch").classList.contains("active")?document.getElementById("globalsearch").classList.remove("active"):(document.getElementById("globalsearch").classList.add("active"),document.getElementById("term").focus())},window.toggleTagSearch=function(e){console.log(e.textContent);const t=e.textContent;t&&(window.document.getElementById("term").value=t.trim(),window.toggleSearch(),window.search())};const loadingSvg='\n    <svg width="100" height="100" viewBox="0 0 45 45" xmlns="http://www.w3.org/2000/svg" stroke="#fff">\n      <g fill="none" fill-rule="evenodd" transform="translate(1 1)" stroke-width="2">\n          <circle cx="22" cy="22" r="6" stroke-opacity="0">\n              <animate attributeName="r"\n                   begin="1.5s" dur="3s"\n                   values="6;22"\n                   calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-opacity"\n                   begin="1.5s" dur="3s"\n                   values="1;0" calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-width"\n                   begin="1.5s" dur="3s"\n                   values="2;0" calcMode="linear"\n                   repeatCount="indefinite" />\n          </circle>\n          <circle cx="22" cy="22" r="6" stroke-opacity="0">\n              <animate attributeName="r"\n                   begin="3s" dur="3s"\n                   values="6;22"\n                   calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-opacity"\n                   begin="3s" dur="3s"\n                   values="1;0" calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-width"\n                   begin="3s" dur="3s"\n                   values="2;0" calcMode="linear"\n                   repeatCount="indefinite" />\n          </circle>\n          <circle cx="22" cy="22" r="8">\n              <animate attributeName="r"\n                   begin="0s" dur="1.5s"\n                   values="6;1;2;3;4;5;6"\n                   calcMode="linear"\n                   repeatCount="indefinite" />\n          </circle>\n      </g>\n  </svg>';function debounce(e,t,n){var a;return function(){var r=this,i=arguments,c=n&&!a;clearTimeout(a),a=setTimeout((function(){a=null,n||e.apply(r,i)}),t),c&&e.apply(r,i)}}function setCorrectShortcut(){navigator.platform.toUpperCase().indexOf("MAC")>=0&&document.querySelectorAll(".search-keys").forEach((e=>e.innerHTML="⌘ + K"))}function createIndex(e){const t=e=>e.toLowerCase().split(/([^a-z]|[^\x00-\x7F])/),n=new FlexSearch.Document({cache:!0,charset:"latin:extra",optimize:!0,index:[{field:"content",tokenize:"reverse",encode:t},{field:"title",tokenize:"forward",encode:t},{field:"tags",tokenize:"forward",encode:t}]});return e.forEach(((e,t)=>{n.add({id:t,title:e.title,content:e.content,tags:e.tags})})),n}async function init(){let e=!0;if(localStorage.getItem("searchIndex")){let{date:t,docs:n}=JSON.parse(localStorage.getItem("searchIndex"));if("2025-03-12T05:37:56.441Z"===t){e=!1;let t=createIndex(n);window.docs=n,window.index=t}}if(e){let e=await(await fetch("/searchIndex.json?v=2025-03-12T05:37:56.441Z")).json(),t=createIndex(e);localStorage.setItem("searchIndex",JSON.stringify({date:"2025-03-12T05:37:56.441Z",docs:e})),window.docs=e,window.index=t}document.addEventListener("keydown",(e=>{if((e.ctrlKey||e.metaKey)&&"k"===e.key&&(e.preventDefault(),toggleSearch()),"Escape"===e.key&&document.getElementById("globalsearch").classList.remove("active"),document.getElementById("globalsearch").classList.contains("active")){if("ArrowDown"===e.key){e.preventDefault();let t=document.querySelector(".searchresult.active");t?(t.classList.remove("active"),t.nextElementSibling?t.nextElementSibling.classList.add("active"):document.querySelector(".searchresult").classList.add("active")):document.querySelector(".searchresult").classList.add("active");let n=document.querySelector(".searchresult.active");n&&n.scrollIntoView({behavior:"smooth",block:"nearest",inline:"start"})}if("ArrowUp"===e.key){e.preventDefault();let t=document.querySelector(".searchresult.active");t?(t.classList.remove("active"),t.previousElementSibling?t.previousElementSibling.classList.add("active"):document.querySelectorAll(".searchresult").forEach((e=>{e.nextElementSibling||e.classList.add("active")}))):document.querySelectorAll(".searchresult").forEach((e=>{e.nextElementSibling&&e.classList.add("active")}));let n=document.querySelector(".searchresult.active");n&&n.scrollIntoView({behavior:"smooth",block:"nearest",inline:"start"})}if("Enter"===e.key){e.preventDefault();let t=document.querySelector(".searchresult.active");t&&(window.location.href=t.querySelector("a").href)}}}));const t=debounce(search,200,!1);field=document.querySelector("#term"),field.addEventListener("keydown",(e=>{"ArrowDown"!==e.key&&"ArrowUp"!==e.key&&t()})),resultsDiv=document.querySelector("#search-results");const n=new URL(location.href).searchParams;n.get("q")&&(field.setAttribute("value",n.get("q")),toggleSearch(),search())}async function search(){let e=field.value.trim();if(!e)return;if(e==lastSearch)return;console.log(`search for ${e}`),window.lastSearch=e,resultsDiv.innerHTML=loadingSvg;let t=offlineSearch(e),n="";if(!t.length){let t=document.createElement("p");return t.innerText=`No results for "${e}"`,resultsDiv.innerHTML="",void resultsDiv.appendChild(t)}n+='<div style="max-width:100%;">',t.forEach((e=>{e.tags&&e.tags.length>0?n+=`<div class="searchresult">\n                    <a class="search-link" href="${e.url}">${e.title}</a>\n                    <div onclick="window.location='${e.url}'">\n                        <div class="header-meta">\n                            <div class="header-tags">\n                                ${e.tags.map((e=>'<a class="tag" href="JavaScript:Void(0);">#'+e+"</a>")).join("")}\n                            </div>\n                        </div>\n                        ${e.content}\n                    </div>\n                </div>`:n+=`<div class="searchresult">\n                    <a class="search-link" href="${e.url}">${e.title}</a>\n                    <div onclick="window.location='${e.url}'">\n                        ${e.content}\n                    </div>\n                </div>`})),n+="</div>",resultsDiv.innerHTML=n}function truncate(e,t){return(e=e.replaceAll(/<[^>]*>/g,"")).length<t?e:e.substring(0,t-3)+"..."}function offlineSearch(e){let t=window.docs,n="#"===e[0]&&e.length>1?index.search(e.substring(1),[{field:"tags"}]):index.search(e,[{field:"title",limit:5},{field:"content",weight:10}]);const a=e=>{const t=n.filter((t=>t.field===e));return 0===t.length?[]:[...t[0].result]};return[...new Set([...a("title"),...a("content"),...a("tags")])].map((e=>{let n=t[e];return n.content=truncate(n.content,400),n.tags=n.tags.filter((e=>"gardenEntry"!=e&&"note"!=e)),n}))}window.lastSearch=""</script>
+<script>document.addEventListener("DOMContentLoaded",init,!1),document.addEventListener("DOMContentLoaded",setCorrectShortcut,!1),window.toggleSearch=function(){document.getElementById("globalsearch").classList.contains("active")?document.getElementById("globalsearch").classList.remove("active"):(document.getElementById("globalsearch").classList.add("active"),document.getElementById("term").focus())},window.toggleTagSearch=function(e){console.log(e.textContent);const t=e.textContent;t&&(window.document.getElementById("term").value=t.trim(),window.toggleSearch(),window.search())};const loadingSvg='\n    <svg width="100" height="100" viewBox="0 0 45 45" xmlns="http://www.w3.org/2000/svg" stroke="#fff">\n      <g fill="none" fill-rule="evenodd" transform="translate(1 1)" stroke-width="2">\n          <circle cx="22" cy="22" r="6" stroke-opacity="0">\n              <animate attributeName="r"\n                   begin="1.5s" dur="3s"\n                   values="6;22"\n                   calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-opacity"\n                   begin="1.5s" dur="3s"\n                   values="1;0" calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-width"\n                   begin="1.5s" dur="3s"\n                   values="2;0" calcMode="linear"\n                   repeatCount="indefinite" />\n          </circle>\n          <circle cx="22" cy="22" r="6" stroke-opacity="0">\n              <animate attributeName="r"\n                   begin="3s" dur="3s"\n                   values="6;22"\n                   calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-opacity"\n                   begin="3s" dur="3s"\n                   values="1;0" calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-width"\n                   begin="3s" dur="3s"\n                   values="2;0" calcMode="linear"\n                   repeatCount="indefinite" />\n          </circle>\n          <circle cx="22" cy="22" r="8">\n              <animate attributeName="r"\n                   begin="0s" dur="1.5s"\n                   values="6;1;2;3;4;5;6"\n                   calcMode="linear"\n                   repeatCount="indefinite" />\n          </circle>\n      </g>\n  </svg>';function debounce(e,t,n){var a;return function(){var r=this,i=arguments,c=n&&!a;clearTimeout(a),a=setTimeout((function(){a=null,n||e.apply(r,i)}),t),c&&e.apply(r,i)}}function setCorrectShortcut(){navigator.platform.toUpperCase().indexOf("MAC")>=0&&document.querySelectorAll(".search-keys").forEach((e=>e.innerHTML="⌘ + K"))}function createIndex(e){const t=e=>e.toLowerCase().split(/([^a-z]|[^\x00-\x7F])/),n=new FlexSearch.Document({cache:!0,charset:"latin:extra",optimize:!0,index:[{field:"content",tokenize:"reverse",encode:t},{field:"title",tokenize:"forward",encode:t},{field:"tags",tokenize:"forward",encode:t}]});return e.forEach(((e,t)=>{n.add({id:t,title:e.title,content:e.content,tags:e.tags})})),n}async function init(){let e=!0;if(localStorage.getItem("searchIndex")){let{date:t,docs:n}=JSON.parse(localStorage.getItem("searchIndex"));if("2025-03-25T05:52:08.923Z"===t){e=!1;let t=createIndex(n);window.docs=n,window.index=t}}if(e){let e=await(await fetch("/searchIndex.json?v=2025-03-25T05:52:08.923Z")).json(),t=createIndex(e);localStorage.setItem("searchIndex",JSON.stringify({date:"2025-03-25T05:52:08.923Z",docs:e})),window.docs=e,window.index=t}document.addEventListener("keydown",(e=>{if((e.ctrlKey||e.metaKey)&&"k"===e.key&&(e.preventDefault(),toggleSearch()),"Escape"===e.key&&document.getElementById("globalsearch").classList.remove("active"),document.getElementById("globalsearch").classList.contains("active")){if("ArrowDown"===e.key){e.preventDefault();let t=document.querySelector(".searchresult.active");t?(t.classList.remove("active"),t.nextElementSibling?t.nextElementSibling.classList.add("active"):document.querySelector(".searchresult").classList.add("active")):document.querySelector(".searchresult").classList.add("active");let n=document.querySelector(".searchresult.active");n&&n.scrollIntoView({behavior:"smooth",block:"nearest",inline:"start"})}if("ArrowUp"===e.key){e.preventDefault();let t=document.querySelector(".searchresult.active");t?(t.classList.remove("active"),t.previousElementSibling?t.previousElementSibling.classList.add("active"):document.querySelectorAll(".searchresult").forEach((e=>{e.nextElementSibling||e.classList.add("active")}))):document.querySelectorAll(".searchresult").forEach((e=>{e.nextElementSibling&&e.classList.add("active")}));let n=document.querySelector(".searchresult.active");n&&n.scrollIntoView({behavior:"smooth",block:"nearest",inline:"start"})}if("Enter"===e.key){e.preventDefault();let t=document.querySelector(".searchresult.active");t&&(window.location.href=t.querySelector("a").href)}}}));const t=debounce(search,200,!1);field=document.querySelector("#term"),field.addEventListener("keydown",(e=>{"ArrowDown"!==e.key&&"ArrowUp"!==e.key&&t()})),resultsDiv=document.querySelector("#search-results");const n=new URL(location.href).searchParams;n.get("q")&&(field.setAttribute("value",n.get("q")),toggleSearch(),search())}async function search(){let e=field.value.trim();if(!e)return;if(e==lastSearch)return;console.log(`search for ${e}`),window.lastSearch=e,resultsDiv.innerHTML=loadingSvg;let t=offlineSearch(e),n="";if(!t.length){let t=document.createElement("p");return t.innerText=`No results for "${e}"`,resultsDiv.innerHTML="",void resultsDiv.appendChild(t)}n+='<div style="max-width:100%;">',t.forEach((e=>{e.tags&&e.tags.length>0?n+=`<div class="searchresult">\n                    <a class="search-link" href="${e.url}">${e.title}</a>\n                    <div onclick="window.location='${e.url}'">\n                        <div class="header-meta">\n                            <div class="header-tags">\n                                ${e.tags.map((e=>'<a class="tag" href="JavaScript:Void(0);">#'+e+"</a>")).join("")}\n                            </div>\n                        </div>\n                        ${e.content}\n                    </div>\n                </div>`:n+=`<div class="searchresult">\n                    <a class="search-link" href="${e.url}">${e.title}</a>\n                    <div onclick="window.location='${e.url}'">\n                        ${e.content}\n                    </div>\n                </div>`})),n+="</div>",resultsDiv.innerHTML=n}function truncate(e,t){return(e=e.replaceAll(/<[^>]*>/g,"")).length<t?e:e.substring(0,t-3)+"..."}function offlineSearch(e){let t=window.docs,n="#"===e[0]&&e.length>1?index.search(e.substring(1),[{field:"tags"}]):index.search(e,[{field:"title",limit:5},{field:"content",weight:10}]);const a=e=>{const t=n.filter((t=>t.field===e));return 0===t.length?[]:[...t[0].result]};return[...new Set([...a("title"),...a("content"),...a("tags")])].map((e=>{let n=t[e];return n.content=truncate(n.content,400),n.tags=n.tags.filter((e=>"gardenEntry"!=e&&"note"!=e)),n}))}window.lastSearch=""</script>
 <main class="content cm-s-obsidian">
 <header>
 <h1 data-note-icon="">Hadoop技术栈</h1>
 <div class="header-meta">
 <div class="header-tags">
 </div>
-<div class="timestamps"><div><i icon-name="calendar-plus"></i> <span class="human-date" data-date="2025-03-05T23:21:15.302+08:00"></span></div><div><i icon-name="calendar-clock"></i> <span class="human-date" data-date="2025-03-12T13:29:43.112+08:00"></span></div></div></div>
+<div class="timestamps"><div><i icon-name="calendar-plus"></i> <span class="human-date" data-date="2025-03-05T23:21:15.302+08:00"></span></div><div><i icon-name="calendar-clock"></i> <span class="human-date" data-date="2025-03-21T17:03:35.000+08:00"></span></div></div></div>
 </header>
-<h1 id="important" tabindex="-1">important：</h1>
-<div class="transclusion internal-embed is-loaded"><a class="markdown-embed-link" href="/czc//hadoop///hdfs/" aria-label="Open link"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a><div class="markdown-embed">
-<h2 id="hdfs" tabindex="-1">HDFS阶段</h2>
-<p>单元练习5</p>
-<div class="callout is-collapsible is-collapsed" data-callout="note"><div class="callout-title"><div class="callout-title-inner"> 请简述HDFS是什么？它的出现目的是要解决什么问题？<br></div><div class="callout-fold"><i icon-name="chevron-down"></i></div></div>
-<div class="callout-content">
-<p>
-1，HDFS是Hadoop Distribute File System 的简称，即：Hadoop分布式文件系统。</p>
-<p>2，Hadoop分布式文件系统解决的是大数据存储问题，它们是横跨在多台计算机上的存储系统，为存储和处理超大规模数据提供所需的扩展能力。</p>
-</div></div>
-<div class="callout is-collapsible is-collapsed" data-callout="note"><div class="callout-title"><div class="callout-title-inner"> HDFS的设计目的是什么？</div><div class="callout-fold"><i icon-name="chevron-down"></i></div></div>
-<div class="callout-content">
-<p>
-</p><ol>
-<li>
-<p>硬件故障是常态， HDFS将有成百上千的服务器组成，每一个组成部分都有可能出现故障。因此故障的检测和自动快速恢复是HDFS的核心架构目标。</p>
-</li>
-<li>
-<p>HDFS上的应用与一般的应用不同，它们主要是以流式读取数据。HDFS被设计成适合批量处理，而不是用户交互式的。相较于数据访问的反应时间，更注重数据访问的高吞吐量。</p>
-</li>
-<li>
-<p>典型的HDFS文件大小是GB到TB的级别。所以，HDFS被调整成支持大文件。它应该提供很高的聚合数据带宽，一个集群中支持数百个节点，一个集群中还应该支持千万级别的文件。</p>
-</li>
-<li>
-<p>大部分HDFS应用对文件要求的是write-one-read-many访问模型。一个文件一旦创建、写入、关闭之后就不需要修改了。这一假设简化了数据一致性问题，使高吞吐量的数据访问成为可能。</p>
-</li>
-<li>
-<p>移动计算的代价比之移动数据的代价低。一个应用请求的计算，离它操作的数据越近就越高效，这在数据达到海量级别的时候更是如此。将计算移动到数据附近，比之将数据移动到应用所在显然更好。</p>
-</li>
-<li>
-<p>在异构的硬件和软件平台上的可移植性。这将推动需要大数据集的应用更广泛地采用HDFS作为平台。</p>
-</li>
-</ol>
-<p></p></div></div>
-<div class="callout is-collapsible is-collapsed" data-callout="note"><div class="callout-title"><div class="callout-title-inner"> 根据以下要求，编写相关指令：<br></div><div class="callout-fold"><i icon-name="chevron-down"></i></div></div>
-<div class="callout-content">
-<p>
-1，将本地itcast.txt文件上传至HDFS（node1节点8020端口）的itcast文件夹下<br>
-2，从HDFS的itcast文件夹，下载itcast.txt文件</p>
-<hr>
-<p>1，将本地itcast.txt文件上传至HDFS（node1节点8020端口）的itcast文件夹下</p>
-<pre><code>hadoop fs -put file:///root/itcast.txt hdfs://node1:8020/itcast
-</code></pre>
-<p>2，从HDFS的itcast文件夹，下载itcast.txt文件</p>
-<pre><code>hadoop fs -get hdfs://node1:8020/itcast/itcast.txt file:///root/
-</code></pre>
-</div></div>
-<div class="callout is-collapsible is-collapsed" data-callout="note"><div class="callout-title"><div class="callout-title-inner"> 通过HDFS指令完成如下需求：<br></div><div class="callout-fold"><i icon-name="chevron-down"></i></div></div>
-<div class="callout-content">
-<p>
-1，HDFS创建small文件夹<br>
-2，centos本地上传itheima.txt，itcast.txt，boxuegu.txt三个文件至HDFS的small文件夹下。<br>
-3，将刚才上传的三个文件进行合并，合并的结果依然存储在small文件夹下，合并文件名称为merge.txt</p>
-<hr>
-<pre><code class="language-shell">#  创建3个小文件
-echo itheima &gt;&gt; itheima.txt
-echo itcast &gt;&gt; itcast.txt
-echo boxuegu &gt;&gt; boxuegu.txt
-
-# hdfs中创建/small目录
-hadoop fs -mkdir /small
-# 上传小文件的到samll目录
-hadoop fs -put *.txt /small
-# 合并并下载文件到本地目录
-hadoop fs -getmerge /small merge.txt
-# 上传合并的文件到/small
-hadoop fs -put merge.txt /small
-</code></pre>
-</div></div>
-<p>单元练习6</p>
-<div class="callout is-collapsible is-collapsed" data-callout="note"><div class="callout-title"><div class="callout-title-inner"> 请描述DataNode的作用</div><div class="callout-fold"><i icon-name="chevron-down"></i></div></div>
-<div class="callout-content">
-<p>
-</p><ul>
-<li>DataNode负责将实际数据存储在HDFS中。（必答，不答扣分）</li>
-<li>DataNode也称为Slave。（必答，不答扣分）</li>
-<li>NameNode和DataNode会保持不断通信。（必答，不答扣分）</li>
-<li>DataNode启动时，它将自己发布到NameNode并汇报自己负责持有的块列表。（必答，不答扣分）</li>
-<li>当某个DataNode关闭时，它不会影响数据或群集的可用性。NameNode将安排由其他DataNode管理的块进行副本复制。（必答，不答扣分）</li>
-<li>DataNode所在机器通常配置有大量的硬盘空间。因为实际数据存储在DataNode中。（必答，不答扣分）</li>
-<li>DataNode会定期（dfs.heartbeat.interval配置项配置，默认是3秒）向NameNode发送心跳，如果NameNode长时间没有接受到DataNode发送的心跳， NameNode就会认为该DataNode失效。</li>
-<li>block汇报时间间隔取参数dfs.blockreport.intervalMsec,参数未配置的话默认为6小时.</li>
-</ul>
-<p></p></div></div>
-<div class="callout is-collapsible is-collapsed" data-callout="note"><div class="callout-title"><div class="callout-title-inner"> 请描述HDFS下载文件流程<br></div><div class="callout-fold"><i icon-name="chevron-down"></i></div></div>
-<div class="callout-content">
-<p>
-1、HDFS客户端创建FileSystem对象实例DistributedFileSystem， FileSystem封装了与文件系统操作的相关方法。调用DistributedFileSystem对象的open()方法来打开希望读取的文件。</p>
-<p>2、DistributedFileSystem使用RPC调用namenode来确定文件中前几个块的块位置（分批次读取）信息。</p>
-<p>对于每个块，namenode返回具有该块所有副本的datanode位置地址列表，并且该地址列表是排序好的，与客户端的网络拓扑距离近的排序靠前。</p>
-<p>3、DistributedFileSystem将FSDataInputStream输入流返回到客户端以供其读取数据。</p>
-<p>4、客户端在FSDataInputStream输入流上调用read()方法。然后，已存储DataNode地址的InputStream连接到文件中第一个块的最近的DataNode。数据从DataNode流回客户端，结果客户端可以在流上重复调用read（）。</p>
-<p>5、当该块结束时，InputStream将关闭与DataNode的连接，然后寻找下一个块的最佳datanode。这些操作对用户来说是透明的。所以用户感觉起来它一直在读取一个连续的流。客户端从流中读取数据时，也会根据需要询问NameNode来检索下一批数据块的DataNode位置信息。</p>
-<p>6、一旦客户端完成读取，就对FSDataInputStream调用close()方法。</p>
-</div></div>
-<div class="callout is-collapsible is-collapsed" data-callout="note"><div class="callout-title"><div class="callout-title-inner"> 请描述NameNode和DataNode通信机制</div><div class="callout-fold"><i icon-name="chevron-down"></i></div></div>
-<div class="callout-content">
-<p>
-</p><p><strong>给的答案：</strong></p>
-<p>启动时，DataNode需要向NameNode注册自己并汇报自己持有的数据块信息；</p>
-<p>工作时，主从之间有心跳机制，数据块汇报机制；</p>
-<ul>
-<li>
-<p>DataNode会定期（dfs.heartbeat.interval配置项配置，默认是3秒）向NameNode发送心跳，如果NameNode长时间没有接受到DataNode发送的心跳， NameNode就会认为该DataNode失效。</p>
-</li>
-<li>
-<p>DataNode会定期向NameNode进行自己持有的数据块信息汇报，汇报时间间隔取参数dfs.blockreport.intervalMsec,参数未配置的话默认为6小时。</p>
-</li>
-</ul>
-<p><strong>我自己写的：</strong><br>
-namenode和datanode之间通过rpc协议进行通信<br>
-通信的内容包括：</p>
-<ul>
-<li>心跳机制：datanode定期向namenode进行心跳，表明自己处于活跃状态</li>
-<li>块报告：定期想namenode发送块报告，汇报自己存储的所有块信息，namenode根据块报告跟新元数据，确保文件系统的完整性。如果有块丢失了或不满足设置的备份数，namenode会准备进行块复制</li>
-<li>数据块操作：namenode根据客户端或系统需求想datanode发送数据块操作指令</li>
-<li>负载均衡</li>
-</ul>
-<p>通信流程：</p>
-<ul>
-<li>datanode启动时向namenode注册，并发送自己的存储容量、已用空间、块信息等，namenode将datanode的信息记录到元数据中</li>
-<li>datanode运行是定期向namenode发送心跳和块报告，namenode更具心跳和块报告更新元数据，并向datanode发送数据块操作指令</li>
-<li>datanode失效时如果namenode检测到，将会标记为四节点，并将其上的数据块备份复制到其他的datanode</li>
-</ul>
-</div></div>
-<p>章测试2</p>
-<div class="callout is-collapsible is-collapsed" data-callout="note"><div class="callout-title"><div class="callout-title-inner"> 请说明数据存储的几个单位以及转换关系<br></div><div class="callout-fold"><i icon-name="chevron-down"></i></div></div>
-<div class="callout-content">
-<p>
-我的回答：</p>
-<ul>
-<li>
-<p>基本单位：Bit（比特，二进制的0和1）、Byte（字节，数据存储的基本单位，1Byte=8Bit）</p>
-</li>
-<li>
-<p>数据存储常用的单位从小到大有b、kb、mb、gb、tb、pb、eb。<br>
-其大小关系一般都是后者是前者的1024倍，在硬盘的容量统计中按照1000倍计算</p>
-</li>
-</ul>
-<p>参考答案</p>
-<p>存储的单位： KB、MB、GB、TB、PB、EB、ZB、YB、BB 单位直由小到大。转换比例逐级都是1024。</p>
-</div></div>
-<div class="callout is-collapsible is-collapsed" data-callout="note"><div class="callout-title"><div class="callout-title-inner"> 请简述主从、主备架构模式<br></div><div class="callout-fold"><i icon-name="chevron-down"></i></div></div>
-<div class="callout-content">
-<p>
-<strong>您的答案</strong><br>
-主从架构：</p>
-<ul>
-<li>多个机器之间有主从关系，主机器和从机器可以理解成奴隶和奴隶主的关系，主机器控制管理从机器的行为</li>
-<li>主：一般有一台机器作为主节点，负责从外界接受执行再控制下面的从节点完成相应的操作，但是主节点失效后会造成单点故障，也就是这个集群停止运行</li>
-<li>从：从节点听命于主节点，完成主节点的指令，从节点的失效不影响整个集群的运行</li>
-</ul>
-<p>主备架构：</p>
-<ul>
-<li>主备架构是为了解决单点故障，对一台机器做一台或多台机器的备份，当主机器停止正常运行后，立刻由备用机器立即顶替上，保证服务不中断</li>
-</ul>
-<p><strong>参考答案</strong></p>
-<p>主从架构： 分为master角色以及slave角色，一般是1主多从，这里面主角色主要用于协调与控制，而slave角色主要是完成工作任务，主从角色各司其职，互相共同配合 对外提供完整的服务。</p>
-<p>主备架构: 分为主角色与备份角色，主角色一般是active状态，表示活动状态 ，对外提供服务。备份角色一般是standy状态，备用角色。一般配置都是一主一备。主备架构主要用于解决单点故障问题。当主节点故障，备节点升级成主节点对外提供服务。保证集群的稳定性。</p>
-<p>一般情况，我们会主备，主从一起使用。 例如我们可以把主从架构中，对主节点再做主备，防止主节点出现单点故障。</p>
-</div></div>
-<div class="callout is-collapsible is-collapsed" data-callout="note"><div class="callout-title"><div class="callout-title-inner"> 请列举出hadoop的特点有那些<br></div><div class="callout-fold"><i icon-name="chevron-down"></i></div></div>
-<div class="callout-content">
-<p>
-您的答案</p>
-<ul>
-<li>分布式</li>
-<li>可用低成本计算机构建集群</li>
-<li>易扩容</li>
-<li>使用简单</li>
-<li>高效率、支持高并发</li>
-<li>稳定可靠</li>
-<li>通用</li>
-</ul>
-<p>参考答案</p>
-<p>规则如下：</p>
-<p>① 分布式，扩容能力强</p>
-<p>② 高效，并发能力强</p>
-<p>③ 可靠性</p>
-<p>④ 通用性</p>
-</div></div>
-<div class="callout is-collapsible is-collapsed" data-callout="note"><div class="callout-title"><div class="callout-title-inner"> 请说明hadoop的部署模式分别有那些？<br></div><div class="callout-fold"><i icon-name="chevron-down"></i></div></div>
-<div class="callout-content">
-<p>
-您的答案</p>
-<ul>
-<li>单机：所有角色都在同一个机器的同一个java进程运行</li>
-<li>伪分布：所有角色在同一个机器的不同进程中运行</li>
-<li>分布式：有多台机器，每个角色在不同的机器中进行部署</li>
-<li>HA集群：具有主备架构的hadoop集群，具有对抗单点故障的能力</li>
-</ul>
-<p>参考答案</p>
-<ol>
-<li>单机模式 standalone 一台机器，所有的角色在一个java进程中运行。 适合体验</li>
-<li>伪分布模式 一台机器 每个角色单独的java进程。 适合测试</li>
-<li>分布式 cluster模式 多台机器 每个角色运行在不同的机器上 生产测试都可以</li>
-<li>高可用HA模式 在分布式的模式下 给主角色设置备份角色 实现了容错的功能 解决了单点故障 保证集群持续可用性。</li>
-</ol>
-</div></div>
-<div class="callout is-collapsible is-collapsed" data-callout="note"><div class="callout-title"><div class="callout-title-inner"> namennode的格式化方式命令是什么？多次格式问题如何解决？<br></div><div class="callout-fold"><i icon-name="chevron-down"></i></div></div>
-<div class="callout-content">
-<p>
-您的答案</p>
-<p>hdfs namenode -format<br>
-多次格式数据会丢失，需要关闭hdfs，删除 DataNode 的存储目录，再重新启动</p>
-<p>参考答案</p>
-<p>再node1节点也就是namenode节点，执行格式化命令。 命令: hadoop namenode -format,注意，命令仅执行一次。如果出现多次格式，那么删除每台机器上hadoop.tmp.dir配置指定的文件夹/export/data/hadoop-3.3.0后，重新进行format格式化。</p>
-</div></div>
-<div class="callout is-collapsible is-collapsed" data-callout="note"><div class="callout-title"><div class="callout-title-inner"> 请描述HDFS中包含那些特性，都有那些作用？<br></div><div class="callout-fold"><i icon-name="chevron-down"></i></div></div>
-<div class="callout-content">
-<p>
-您的答案</p>
-<ul>
-<li>采用主从架构
-<ul>
-<li>主节点为namenode，负责管理命名空间、存储元数据</li>
-</ul>
-</li>
-<li>文件分块存储，可以将任意大的文件拆分成默认128mb大小的文件块存储</li>
-<li>多副本存储，将每个块默认存三份保障数据的安全不丢失</li>
-<li>一次写入多次读取，不具备文件修改功能</li>
-</ul>
-<p>参考答案</p>
-<ul>
-<li>master|slaves 主从架构</li>
-</ul>
-<pre><code>主角色：namenode  管理维护着元数据：目录树结构 文件 大小 副本 备份 位置信息
-从角色：datanode  存储着最终的数据块
-</code></pre>
-<ul>
-<li>分块存储</li>
-</ul>
-<pre><code>  物理上把文件分开了。
-  
-  block size =128M  134217728   hadoop2.x (hadoop1.x 64M)
-  
-  e.g:
-      1.txt 300M
-          blk-1  0--128
-          blk-2  128-256
-          blk-3  256-300
-      
-      2.txt 100M
-          blk-4  0--100
-</code></pre>
-<ul>
-<li>副本机制</li>
-</ul>
-<pre><code>  默认是3副本。
-  
-  1+2=3  本身一份 额外两份 最终3副本。
-</code></pre>
-<ul>
-<li>namespace 名字空间 命名空间</li>
-</ul>
-<pre><code>  <a class="tag" onclick="toggleTagSearch(this)" data-content="#namespace即“命名空间”，也称“名称空间”">#namespace即“命名空间”，也称“名称空间”</a> 
-  
-  层次感结构  兼顾传统对应文件系统的认知  目录树结构
-  用户可以针对目录树进行文件夹、文件的增删改查。
-  统一的抽象目录树。
-</code></pre>
-<ul>
-<li>metadata 元数据</li>
-</ul>
-<pre><code>  元数据：记录数据的数据 描述性数据、解释性数据
-  
-  对于HDFS来说，目录结构及文件分块位置信息叫做元数据。
-  元数据是有namenode维护的。
-</code></pre>
-<ul>
-<li>write one read many</li>
-</ul>
-<pre><code>  hdfs的模式是一次写入多次读取  
-  hdfs没有随机修改编辑的操作  只能对已有的数据进行追加。
-  设计目标是这么决定的。
-  
-  侧重于数据吞吐量 不注重实时交互性  意味着hdfs操作延迟很高。
-</code></pre>
-</div></div>
-<div class="callout is-collapsible is-collapsed" data-callout="note"><div class="callout-title"><div class="callout-title-inner"> 通过HDFS指令完成如下需求：<br></div><div class="callout-fold"><i icon-name="chevron-down"></i></div></div>
-<div class="callout-content">
-<p>
-centos本地创建文件itheima.txt，itcast.txt，boxuegu.txt，分别写入itheima，itcast，boxuegu三段文本内容，将boxuegu.txt上传至HDFS，后将itheima.txt和itcast.txt中的内容，追加在boxuegu.txt文本内容后。</p>
-<hr>
-<p>您的答案</p>
-<pre><code>[root@node1 ~]# echo 123 &gt; itheima.txt
-[root@node1 ~]# echo 123 &gt; itcast.txt
-[root@node1 ~]# echo 123 &gt; boxuegu.txt
-[root@node1 ~]# hadoop fs -put boxuegu.txt /
-[root@node1 ~]# hadoop fs -appendToFile itheima.txt itcast.txt /boxuegu.txt
-</code></pre>
-<p>参考答案</p>
-<pre><code class="language-language">[root@node3 ~]# echo itheima &gt;&gt; itheima.txt
-[root@node3 ~]# echo itcast &gt;&gt; itcast.txt
-[root@node3 ~]# echo boxuegu &gt;&gt; boxuegu.txt
-
-[root@node3 ~]# hadoop fs -put boxuegu.txt /
-[root@node3 ~]# hadoop fs -appendToFile itheima.txt itcast.txt /boxuegu.txt
-</code></pre>
-</div></div>
-<div class="callout is-collapsible is-collapsed" data-callout="note"><div class="callout-title"><div class="callout-title-inner"> 请描述NameNode的作用。<br></div><div class="callout-fold"><i icon-name="chevron-down"></i></div></div>
-<div class="callout-content">
-<p>
-您的答案</p>
-<ul>
-<li>namenode是hdfs的主角色，负责控制存储在datanode中的数据的读取写入备份等工作</li>
-<li>namenode负责和datanode保持通信，接受在datanode启动时汇报的持有块列表，某个datanode意外断开会自动安排其他datanode进行副本复制</li>
-<li>定期接受datanode的心跳确保集群的datanode节点存活</li>
-</ul>
-<p>参考答案</p>
-<ul>
-<li>NameNode是HDFS的核心。</li>
-<li>NameNode也称为Master。（必答，不答扣分）</li>
-<li>NameNode仅存储HDFS的元数据：文件系统中所有文件的目录树，并跟踪整个集群中的文件。（必答，不答扣分）</li>
-<li>NameNode不存储实际数据或数据集。（必答，不答扣分）</li>
-<li>NameNode知道HDFS中任何给定文件的块列表及其位置。使用此信息NameNode知道如何从块中构建文件。（必答，不答扣分）</li>
-<li>NameNode并不持久化存储每个文件中各个块所在的DataNode的位置信息，这些信息会在系统启动时从数据节点重建。（必答，不答扣分）</li>
-<li>NameNode对于HDFS至关重要，当NameNode关闭时，HDFS / Hadoop集群无法访问。</li>
-<li>NameNode是Hadoop集群中的单点故障。（必答，不答扣分）</li>
-<li>NameNode所在机器通常会配置有大量内存（RAM）。</li>
-</ul>
-</div></div>
-<div class="callout is-collapsible is-collapsed" data-callout="note"><div class="callout-title"><div class="callout-title-inner"> 请描述HDFS上传文件流程（要求图文并茂）。</div><div class="callout-fold"><i icon-name="chevron-down"></i></div></div>
-<div class="callout-content">
-<p>
-</p><ul>
-<li>client提交上传文件请求，通过rpc协议与namenode建立通讯</li>
-<li>namenode根据配置文件进行block分配并发送给client，默认是所有块存三个副本
-<ul>
-<li>如果写请求所在机器有datanode，则在本地存一份</li>
-<li>第二份存放于另一个机架</li>
-<li>第三份存放于另一个机架的不同节点中</li>
-</ul>
-</li>
-<li>数据上传过程：文件拆分的每一个块都会完整执行以下的步骤上传
-<ul>
-<li>管道建立：client根据namenode给出的datanode的拓扑距离选择最近且心跳不超时的datanode（A），通过rpc调用建立管道pipeline，A接收到请求继续建立管道A→B，B接着建立管道B→C</li>
-<li>数据传输：将块数据拆分成packet（默认64k），一个一个packet向A传输，A收到后传给B，B收到后传给C，在A每传一个packet会放入一个应答队列等待应答</li>
-<li>命令正确应答：在packet传输到C后，C沿管道反方向发送ack（命令正确应答），最终ack由A发送给client，代表这个块传输完毕</li>
-<li>下一个块的传输：重复上述流程</li>
-</ul>
-</li>
-</ul>
-<p></p></div></div>
-</div></div>
+<p><a class="internal-link is-unresolved" href="/404" target="">hadoop技术栈思维导图</a></p>
 <h1 id="文件目录" tabindex="-1">文件目录</h1>
 <ul>
 <li><strong>笔记</strong>
@@ -2786,11 +2494,12 @@ centos本地创建文件itheima.txt，itcast.txt，boxuegu.txt，分别写入ith
 <li><a class="internal-link is-unresolved" href="/404" target="">分布式、集群概念</a></li>
 <li><strong>习题</strong>
 <ul>
-<li><a class="internal-link" target="" data-note-icon="" href="/czc知识库/计算机/Hadoop技术栈/笔记/习题/HDFS面试题/">HDFS面试题</a></li>
-<li><a class="internal-link" target="" data-note-icon="" href="/czc知识库/计算机/Hadoop技术栈/笔记/习题/MapReduce习题/">MapReduce习题</a></li>
+<li><a class="internal-link" target="" data-note-icon="" href="/czc知识库/计算机/Hadoop技术栈/笔记/习题/01-HDFS面试题/">01-HDFS面试题</a></li>
+<li><a class="internal-link" target="" data-note-icon="" href="/czc知识库/计算机/Hadoop技术栈/笔记/习题/02-MapReduce、YARN、HA习题/">02-MapReduce、YARN、HA习题</a></li>
+<li><a class="internal-link is-unresolved" href="/404" target="">03-数仓、Hive</a></li>
+<li><a class="internal-link is-unresolved" href="/404" target="">05-HIVESQL-DDL</a></li>
 </ul>
 </li>
-<li><a class="internal-link" target="" data-note-icon="" href="/czc知识库/计算机/Hadoop技术栈/笔记/checkpoint过程/">checkpoint过程</a></li>
 <li><a class="internal-link is-unresolved" href="/404" target="">Hadoop3.3.0Linux编译安装配置启动详细步骤</a></li>
 <li><a class="internal-link is-unresolved" href="/404" target="">HDFS</a></li>
 <li><a class="internal-link" target="" data-note-icon="" href="/czc知识库/计算机/Hadoop技术栈/笔记/HDFS写入文件流程/">HDFS写入文件流程</a></li>
@@ -2815,7 +2524,6 @@ centos本地创建文件itheima.txt，itcast.txt，boxuegu.txt，分别写入ith
 <li><strong><a class="internal-link" target="" data-note-icon="" href="/czc知识库/计算机/Hadoop技术栈/课程资料笔记/源/源/">源</a></strong></li>
 </ul>
 </li>
-<li><a class="internal-link" target="" data-note-icon="" href="/czc知识库/计算机/Hadoop技术栈/Hadoop技术栈-czcbook/">Hadoop技术栈-czcbook</a></li>
 </ul>
 </main>
 <aside>
@@ -2830,12 +2538,6 @@ On this page
 <div class="toc-container">
 <nav class="toc">
 <ol>
-<li><a href="#important">important：</a>
-<ol>
-<li><a href="#hdfs">HDFS阶段</a>
-</li>
-</ol>
-</li>
 <li><a href="#文件目录">文件目录</a>
 </li>
 </ol>

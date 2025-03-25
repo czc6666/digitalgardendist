@@ -937,76 +937,6 @@
         </url>
     
         <url>
-            <loc>/czc知识库/计算机/Python/python日常笔记/Python的内置函数或内置方法/</loc>
-            <lastmod>2024-12-17T13:31:29.545Z</lastmod>
-        </url>
-    
-        <url>
-            <loc>/czc知识库/计算机/Python/python日常笔记/pip安装 修改清华大学源 python库 pip命令秒安装sklearn库 pip install 清华源/</loc>
-            <lastmod>2024-12-17T13:31:29.545Z</lastmod>
-        </url>
-    
-        <url>
-            <loc>/czc知识库/计算机/Python/python日常笔记/python class类编程 面向对象编程/</loc>
-            <lastmod>2024-12-17T13:31:29.545Z</lastmod>
-        </url>
-    
-        <url>
-            <loc>/czc知识库/计算机/Python/python日常笔记/python windows反斜杠的问题/</loc>
-            <lastmod>2024-12-17T13:31:29.545Z</lastmod>
-        </url>
-    
-        <url>
-            <loc>/czc知识库/计算机/Python/python日常笔记/python关键字：with/</loc>
-            <lastmod>2024-12-17T13:31:29.545Z</lastmod>
-        </url>
-    
-        <url>
-            <loc>/czc知识库/计算机/Python/python日常笔记/python基础学习笔记 蟒蛇书/</loc>
-            <lastmod>2024-12-17T13:31:29.545Z</lastmod>
-        </url>
-    
-        <url>
-            <loc>/czc知识库/计算机/Python/python日常笔记/python的字典/</loc>
-            <lastmod>2024-12-17T13:31:29.545Z</lastmod>
-        </url>
-    
-        <url>
-            <loc>/czc知识库/计算机/Python/python日常笔记/python笔记/</loc>
-            <lastmod>2024-12-17T13:31:29.545Z</lastmod>
-        </url>
-    
-        <url>
-            <loc>/czc知识库/计算机/Python/python日常笔记/requirement文件安装环境命令 python 配置/</loc>
-            <lastmod>2024-12-17T13:31:29.545Z</lastmod>
-        </url>
-    
-        <url>
-            <loc>/czc知识库/计算机/Python/python日常笔记/with语句/</loc>
-            <lastmod>2024-12-17T13:31:29.545Z</lastmod>
-        </url>
-    
-        <url>
-            <loc>/czc知识库/计算机/Python/python日常笔记/什么是python对象/</loc>
-            <lastmod>2024-12-17T13:31:29.545Z</lastmod>
-        </url>
-    
-        <url>
-            <loc>/czc知识库/计算机/Python/python日常笔记/关闭jupyter服务器 在pycharm中/</loc>
-            <lastmod>2024-12-17T13:31:29.545Z</lastmod>
-        </url>
-    
-        <url>
-            <loc>/czc知识库/计算机/Python/python日常笔记/多线程编程 python/</loc>
-            <lastmod>2024-12-17T13:31:29.545Z</lastmod>
-        </url>
-    
-        <url>
-            <loc>/czc知识库/计算机/Python/python日常笔记/程序中添加可视化进图条/</loc>
-            <lastmod>2024-12-17T13:31:29.545Z</lastmod>
-        </url>
-    
-        <url>
             <loc>/czc知识库/笔记/prompt/prompt/</loc>
             <lastmod>2024-12-23T06:52:04.163Z</lastmod>
         </url>
@@ -1077,11 +1007,6 @@
         </url>
     
         <url>
-            <loc>/czc知识库/计算机/Python/python日常笔记/可迭代的对象/</loc>
-            <lastmod>2024-12-30T07:32:22.190Z</lastmod>
-        </url>
-    
-        <url>
             <loc>/czc知识库/硕士研究生/科研/文献阅读笔记/2-图神经网络/202305.13.GCNs_AMD：基于 GCN 增强函数调用图中节点特征差异的 Android 恶意软件检测方法 An Android Malware Detection Approach to Enhance Node Feature Differences in a Function Call Graph Based on GCNs/</loc>
             <lastmod>2025-01-03T12:51:31.253Z</lastmod>
         </url>
@@ -1122,11 +1047,6 @@
         </url>
     
         <url>
-            <loc>/czc知识库/计算机/MySQL/学习笔记/004-数据库查询练习/</loc>
-            <lastmod>2025-02-22T06:12:41.962Z</lastmod>
-        </url>
-    
-        <url>
             <loc>/czc知识库/硕士研究生/科研/文献阅读笔记/2-图神经网络/202305.1.MSDROID：Identifying Malicious Snippets for Android Malware Detection/</loc>
             <lastmod>2025-02-22T06:18:44.444Z</lastmod>
         </url>
@@ -1147,22 +1067,12 @@
         </url>
     
         <url>
-            <loc>/czc知识库/硕士研究生/科研/文献阅读笔记/2-语义/MalBERT：利用transformer双向编码器表示进行恶意软件检测 Malware Detection using Bidirectional Encoder  Representations from Transformers/</loc>
-            <lastmod>2025-03-05T15:23:06.647Z</lastmod>
-        </url>
-    
-        <url>
             <loc>/czc知识库/硕士研究生/科研/文献阅读笔记/2-语义/基于fastText和BERT的恶意软件检测与分类 Malware Detection and Classification Using fastText and BERT/</loc>
             <lastmod>2025-03-05T15:23:06.647Z</lastmod>
         </url>
     
         <url>
             <loc>/czc知识库/计算机/MySQL/学习笔记/003-MySQL数据库操作/</loc>
-            <lastmod>2025-03-05T15:23:06.647Z</lastmod>
-        </url>
-    
-        <url>
-            <loc>/czc知识库/计算机/Python/Python/</loc>
             <lastmod>2025-03-05T15:23:06.647Z</lastmod>
         </url>
     
@@ -1322,11 +1232,6 @@
         </url>
     
         <url>
-            <loc>/czc知识库/计算机/Python/python学习/④python高级进阶/402-Python爬虫/</loc>
-            <lastmod>2025-03-05T15:23:06.647Z</lastmod>
-        </url>
-    
-        <url>
             <loc>/czc知识库/计算机/Python/python学习/④python高级进阶/404-Logging日志模块/</loc>
             <lastmod>2025-03-05T15:23:06.647Z</lastmod>
         </url>
@@ -1357,37 +1262,12 @@
         </url>
     
         <url>
-            <loc>/czc知识库/计算机/Hadoop技术栈/Hadoop技术栈-czcbook/</loc>
-            <lastmod>2025-03-12T05:36:28.433Z</lastmod>
-        </url>
-    
-        <url>
-            <loc>/czc知识库/计算机/Hadoop技术栈/Hadoop技术栈/</loc>
-            <lastmod>2025-03-12T05:36:28.433Z</lastmod>
-        </url>
-    
-        <url>
             <loc>/czc知识库/计算机/Hadoop技术栈/笔记/HDFS写入文件流程/</loc>
             <lastmod>2025-03-12T05:36:28.433Z</lastmod>
         </url>
     
         <url>
-            <loc>/czc知识库/计算机/Hadoop技术栈/笔记/checkpoint过程/</loc>
-            <lastmod>2025-03-12T05:36:28.433Z</lastmod>
-        </url>
-    
-        <url>
             <loc>/czc知识库/计算机/Hadoop技术栈/笔记/linux基础/1-基础/</loc>
-            <lastmod>2025-03-12T05:36:28.433Z</lastmod>
-        </url>
-    
-        <url>
-            <loc>/czc知识库/计算机/Hadoop技术栈/笔记/习题/HDFS面试题/</loc>
-            <lastmod>2025-03-12T05:36:28.433Z</lastmod>
-        </url>
-    
-        <url>
-            <loc>/czc知识库/计算机/Hadoop技术栈/笔记/习题/MapReduce习题/</loc>
             <lastmod>2025-03-12T05:36:28.433Z</lastmod>
         </url>
     
@@ -1402,37 +1282,12 @@
         </url>
     
         <url>
-            <loc>/czc知识库/计算机/Hadoop技术栈/课程资料笔记/3-HDFS/</loc>
-            <lastmod>2025-03-12T05:36:28.433Z</lastmod>
-        </url>
-    
-        <url>
             <loc>/czc知识库/计算机/Hadoop技术栈/课程资料笔记/4-MapReduce、YARN、HA/</loc>
             <lastmod>2025-03-12T05:36:28.433Z</lastmod>
         </url>
     
         <url>
-            <loc>/czc知识库/计算机/Hadoop技术栈/课程资料笔记/5-数据仓库、Apache Hive/</loc>
-            <lastmod>2025-03-12T05:36:28.433Z</lastmod>
-        </url>
-    
-        <url>
-            <loc>/czc知识库/计算机/Hadoop技术栈/课程资料笔记/6-Apache Hive SQL-DDL、DML/</loc>
-            <lastmod>2025-03-12T05:36:28.433Z</lastmod>
-        </url>
-    
-        <url>
             <loc>/czc知识库/计算机/Hadoop技术栈/课程资料笔记/8-Apache Hive函数高阶应用、性能调优/</loc>
-            <lastmod>2025-03-12T05:36:28.433Z</lastmod>
-        </url>
-    
-        <url>
-            <loc>/czc知识库/计算机/Hadoop技术栈/课程资料笔记/源/源-czcbook/</loc>
-            <lastmod>2025-03-12T05:36:28.433Z</lastmod>
-        </url>
-    
-        <url>
-            <loc>/czc知识库/计算机/Hadoop技术栈/课程资料笔记/源/源/</loc>
             <lastmod>2025-03-12T05:36:28.433Z</lastmod>
         </url>
     
@@ -1462,11 +1317,6 @@
         </url>
     
         <url>
-            <loc>/czc知识库/计算机/计算机/</loc>
-            <lastmod>2025-03-12T05:36:28.444Z</lastmod>
-        </url>
-    
-        <url>
             <loc>/czc知识库/计算机/软件开发笔记/AndroZoo数据集下载器/AndroZoo数据集下载工具/</loc>
             <lastmod>2025-03-12T05:36:28.444Z</lastmod>
         </url>
@@ -1483,11 +1333,6 @@
     
         <url>
             <loc>/czc知识库/计算机/软件开发笔记/校园网AP隔离破解/校园网AP隔离破解/</loc>
-            <lastmod>2025-03-12T05:36:28.444Z</lastmod>
-        </url>
-    
-        <url>
-            <loc>/</loc>
             <lastmod>2025-03-12T05:36:28.444Z</lastmod>
         </url>
     
@@ -1627,11 +1472,6 @@
         </url>
     
         <url>
-            <loc>/czc知识库/硕士研究生/科研/文献阅读笔记/文献阅读笔记/</loc>
-            <lastmod>2025-03-12T05:37:49.531Z</lastmod>
-        </url>
-    
-        <url>
             <loc>/czc知识库/硕士研究生/科研/论文/论文思路/</loc>
             <lastmod>2025-03-12T05:37:49.531Z</lastmod>
         </url>
@@ -1693,11 +1533,6 @@
     
         <url>
             <loc>/czc知识库/计算机/Linux/折腾笔记ubuntu/vim编辑器/</loc>
-            <lastmod>2025-03-12T05:37:49.531Z</lastmod>
-        </url>
-    
-        <url>
-            <loc>/czc知识库/计算机/MySQL/MySQL/</loc>
             <lastmod>2025-03-12T05:37:49.531Z</lastmod>
         </url>
     
@@ -1828,11 +1663,6 @@
     
         <url>
             <loc>/czc知识库/计算机/Python/python学习/④python高级进阶/403-数据可视化/</loc>
-            <lastmod>2025-03-12T05:37:49.531Z</lastmod>
-        </url>
-    
-        <url>
-            <loc>/czc知识库/计算机/Python/python日常笔记/python：检查路径是否存在，不存在就递归创建此路径/</loc>
             <lastmod>2025-03-12T05:37:49.531Z</lastmod>
         </url>
     
@@ -1972,13 +1802,203 @@
         </url>
     
         <url>
-            <loc>/czc知识库/计算机/软件开发笔记/AndroZoo数据集下载器/笔记：AndroZoo数据集下载程序 筛选超大csv文件 制作下载链接 多线程下载 apk文件 python笔记/</loc>
+            <loc>/未命名 6/</loc>
             <lastmod>2025-03-12T05:37:49.541Z</lastmod>
         </url>
     
         <url>
-            <loc>/未命名 6/</loc>
-            <lastmod>2025-03-12T05:37:49.541Z</lastmod>
+            <loc>/czc知识库/搞钱/家教/家教/</loc>
+            <lastmod>2025-03-25T05:51:59.082Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/搞钱/家教/小程序项目/001-小程序开发需要干什么/</loc>
+            <lastmod>2025-03-25T05:51:59.082Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/搞钱/家教/小程序项目/文档/</loc>
+            <lastmod>2025-03-25T05:51:59.082Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/搞钱/家教/小程序项目/相关平台信息/</loc>
+            <lastmod>2025-03-25T05:51:59.082Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/搞钱/家教/杂/家教经验/</loc>
+            <lastmod>2025-03-25T05:51:59.082Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/硕士研究生/科研/文献阅读笔记/2-语义/GSEDroid：GNN-based Android malware detection framework using lightweight semantic embedding/</loc>
+            <lastmod>2025-03-25T05:51:59.082Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/硕士研究生/科研/文献阅读笔记/2-语义/MalBERT：利用transformer双向编码器表示进行恶意软件检测 Malware Detection using Bidirectional Encoder  Representations from Transformers/</loc>
+            <lastmod>2025-03-25T05:51:59.082Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/硕士研究生/科研/文献阅读笔记/文献阅读笔记/</loc>
+            <lastmod>2025-03-25T05:51:59.082Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/计算机/Hadoop技术栈/Hadoop技术栈/</loc>
+            <lastmod>2025-03-25T05:51:59.082Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/计算机/Hadoop技术栈/笔记/习题/01-HDFS面试题/</loc>
+            <lastmod>2025-03-25T05:51:59.082Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/计算机/Hadoop技术栈/笔记/习题/02-MapReduce、YARN、HA习题/</loc>
+            <lastmod>2025-03-25T05:51:59.082Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/计算机/Hadoop技术栈/课程资料笔记/3-HDFS/</loc>
+            <lastmod>2025-03-25T05:51:59.082Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/计算机/Hadoop技术栈/课程资料笔记/5-数据仓库、Apache Hive/</loc>
+            <lastmod>2025-03-25T05:51:59.082Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/计算机/Hadoop技术栈/课程资料笔记/6-Apache Hive SQL-DDL、DML/</loc>
+            <lastmod>2025-03-25T05:51:59.082Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/计算机/Hadoop技术栈/课程资料笔记/源/源/</loc>
+            <lastmod>2025-03-25T05:51:59.082Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/计算机/MySQL/004-数据库查询练习/</loc>
+            <lastmod>2025-03-25T05:51:59.082Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/计算机/MySQL/MySQL/</loc>
+            <lastmod>2025-03-25T05:51:59.092Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/计算机/Python/Python/</loc>
+            <lastmod>2025-03-25T05:51:59.092Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/计算机/Python/Python日常笔记/Python的内置函数或内置方法/</loc>
+            <lastmod>2025-03-25T05:51:59.092Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/计算机/Python/Python日常笔记/pip安装 修改清华大学源 python库 pip命令秒安装sklearn库 pip install 清华源/</loc>
+            <lastmod>2025-03-25T05:51:59.092Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/计算机/Python/Python日常笔记/python class类编程 面向对象编程/</loc>
+            <lastmod>2025-03-25T05:51:59.092Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/计算机/Python/Python日常笔记/python windows反斜杠的问题/</loc>
+            <lastmod>2025-03-25T05:51:59.092Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/计算机/Python/Python日常笔记/python关键字：with/</loc>
+            <lastmod>2025-03-25T05:51:59.092Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/计算机/Python/Python日常笔记/python基础学习笔记 蟒蛇书/</loc>
+            <lastmod>2025-03-25T05:51:59.092Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/计算机/Python/Python日常笔记/python的字典/</loc>
+            <lastmod>2025-03-25T05:51:59.092Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/计算机/Python/Python日常笔记/python笔记/</loc>
+            <lastmod>2025-03-25T05:51:59.092Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/计算机/Python/Python日常笔记/python：检查路径是否存在，不存在就递归创建此路径/</loc>
+            <lastmod>2025-03-25T05:51:59.092Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/计算机/Python/Python日常笔记/requirement文件安装环境命令 python 配置/</loc>
+            <lastmod>2025-03-25T05:51:59.092Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/计算机/Python/Python日常笔记/with语句/</loc>
+            <lastmod>2025-03-25T05:51:59.092Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/计算机/Python/Python日常笔记/什么是python对象/</loc>
+            <lastmod>2025-03-25T05:51:59.092Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/计算机/Python/Python日常笔记/关闭jupyter服务器 在pycharm中/</loc>
+            <lastmod>2025-03-25T05:51:59.092Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/计算机/Python/Python日常笔记/可迭代的对象/</loc>
+            <lastmod>2025-03-25T05:51:59.092Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/计算机/Python/Python日常笔记/多线程编程 python/</loc>
+            <lastmod>2025-03-25T05:51:59.092Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/计算机/Python/Python日常笔记/程序中添加可视化进图条/</loc>
+            <lastmod>2025-03-25T05:51:59.092Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/计算机/Python/python学习/④python高级进阶/402-Python爬虫/</loc>
+            <lastmod>2025-03-25T05:51:59.092Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/计算机/Web/Nginx/</loc>
+            <lastmod>2025-03-25T05:51:59.092Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/计算机/Web/反向代理/</loc>
+            <lastmod>2025-03-25T05:51:59.092Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/计算机/计算机/</loc>
+            <lastmod>2025-03-25T05:51:59.092Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/</loc>
+            <lastmod>2025-03-25T05:51:59.092Z</lastmod>
         </url>
     
 </urlset>
