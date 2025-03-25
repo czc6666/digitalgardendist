@@ -1807,26 +1807,6 @@
         </url>
     
         <url>
-            <loc>/czc知识库/搞钱/家教/家教/</loc>
-            <lastmod>2025-03-25T05:51:59.082Z</lastmod>
-        </url>
-    
-        <url>
-            <loc>/czc知识库/搞钱/家教/小程序项目/001-小程序开发需要干什么/</loc>
-            <lastmod>2025-03-25T05:51:59.082Z</lastmod>
-        </url>
-    
-        <url>
-            <loc>/czc知识库/搞钱/家教/小程序项目/文档/</loc>
-            <lastmod>2025-03-25T05:51:59.082Z</lastmod>
-        </url>
-    
-        <url>
-            <loc>/czc知识库/搞钱/家教/小程序项目/相关平台信息/</loc>
-            <lastmod>2025-03-25T05:51:59.082Z</lastmod>
-        </url>
-    
-        <url>
             <loc>/czc知识库/搞钱/家教/杂/家教经验/</loc>
             <lastmod>2025-03-25T05:51:59.082Z</lastmod>
         </url>
@@ -1884,11 +1864,6 @@
         <url>
             <loc>/czc知识库/计算机/MySQL/004-数据库查询练习/</loc>
             <lastmod>2025-03-25T05:51:59.082Z</lastmod>
-        </url>
-    
-        <url>
-            <loc>/czc知识库/计算机/MySQL/MySQL/</loc>
-            <lastmod>2025-03-25T05:51:59.092Z</lastmod>
         </url>
     
         <url>
@@ -1997,8 +1972,133 @@
         </url>
     
         <url>
+            <loc>/czc知识库/搞钱/家教/小程序项目/杂/地图接口调用方法/</loc>
+            <lastmod>2025-03-25T08:16:30.544Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/搞钱/家教/小程序项目/杂/常见问题/优秀老师心得/</loc>
+            <lastmod>2025-03-25T08:16:30.544Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/搞钱/家教/小程序项目/杂/常见问题/家长吐槽/</loc>
+            <lastmod>2025-03-25T08:16:30.544Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/搞钱/家教/小程序项目/杂/常见问题/接单必读/</loc>
+            <lastmod>2025-03-25T08:16:30.544Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/搞钱/家教/小程序项目/杂/常见问题/注意事项/</loc>
+            <lastmod>2025-03-25T08:16:30.544Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/搞钱/家教/小程序项目/杂/常见问题/用户必读/</loc>
+            <lastmod>2025-03-25T08:16:30.544Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/搞钱/家教/小程序项目/杂/科目列表/</loc>
+            <lastmod>2025-03-25T08:16:30.544Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/搞钱/家教/小程序项目/杂/薪酬参考信息/</loc>
+            <lastmod>2025-03-25T08:16:30.554Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/搞钱/家教/小程序项目/杂/身份证自动认证/</loc>
+            <lastmod>2025-03-25T08:16:30.554Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/搞钱/家教/小程序项目/相关平台信息/</loc>
+            <lastmod>2025-03-25T08:16:30.554Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/搞钱/家教创业项目/家教创业项目/</loc>
+            <lastmod>2025-03-25T08:16:30.554Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/搞钱/家教创业项目/小程序项目/001-小程序开发需要干什么/</loc>
+            <lastmod>2025-03-25T08:16:30.554Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/搞钱/家教创业项目/小程序项目/002-小程序文档/</loc>
+            <lastmod>2025-03-25T08:16:30.554Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/搞钱/家教创业项目/小程序项目/杂/地图接口调用方法/</loc>
+            <lastmod>2025-03-25T08:16:30.554Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/搞钱/家教创业项目/小程序项目/杂/常见问题/优秀老师心得/</loc>
+            <lastmod>2025-03-25T08:16:30.554Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/搞钱/家教创业项目/小程序项目/杂/常见问题/家长吐槽/</loc>
+            <lastmod>2025-03-25T08:16:30.554Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/搞钱/家教创业项目/小程序项目/杂/常见问题/接单必读/</loc>
+            <lastmod>2025-03-25T08:16:30.554Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/搞钱/家教创业项目/小程序项目/杂/常见问题/注意事项/</loc>
+            <lastmod>2025-03-25T08:16:30.554Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/搞钱/家教创业项目/小程序项目/杂/常见问题/用户必读/</loc>
+            <lastmod>2025-03-25T08:16:30.554Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/搞钱/家教创业项目/小程序项目/杂/科目列表/</loc>
+            <lastmod>2025-03-25T08:16:30.554Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/搞钱/家教创业项目/小程序项目/杂/薪酬参考信息/</loc>
+            <lastmod>2025-03-25T08:16:30.554Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/搞钱/家教创业项目/小程序项目/杂/身份证自动认证/</loc>
+            <lastmod>2025-03-25T08:16:30.554Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/搞钱/家教创业项目/小程序项目/相关平台信息/</loc>
+            <lastmod>2025-03-25T08:16:30.554Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/搞钱/家教创业项目/杂/家教经验/</loc>
+            <lastmod>2025-03-25T08:16:30.563Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/计算机/MySQL/MySQL/</loc>
+            <lastmod>2025-03-25T08:16:30.563Z</lastmod>
+        </url>
+    
+        <url>
             <loc>/</loc>
-            <lastmod>2025-03-25T05:51:59.092Z</lastmod>
+            <lastmod>2025-03-25T08:16:30.563Z</lastmod>
         </url>
     
 </urlset>
