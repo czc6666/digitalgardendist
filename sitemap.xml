@@ -977,11 +977,6 @@
         </url>
     
         <url>
-            <loc>/czc知识库/硕士研究生/科研/文献阅读笔记/2-语义/MalBERTv2：基于代码感知bert的恶意软件识别模型 Code Aware BERT-Based Model for Malware Identification/</loc>
-            <lastmod>2025-03-05T15:23:06.647Z</lastmod>
-        </url>
-    
-        <url>
             <loc>/czc知识库/硕士研究生/科研/文献阅读笔记/2-语义/基于fastText和BERT的恶意软件检测与分类 Malware Detection and Classification Using fastText and BERT/</loc>
             <lastmod>2025-03-05T15:23:06.647Z</lastmod>
         </url>
@@ -1243,16 +1238,6 @@
     
         <url>
             <loc>/czc知识库/硕士研究生/科研/数据集/其他/Virus-MNIST：基准恶意软件数据集 （图像分类数据集）/</loc>
-            <lastmod>2025-03-12T05:37:49.521Z</lastmod>
-        </url>
-    
-        <url>
-            <loc>/czc知识库/硕士研究生/科研/数据集/恶意软件检测数据集/</loc>
-            <lastmod>2025-03-12T05:37:49.521Z</lastmod>
-        </url>
-    
-        <url>
-            <loc>/czc知识库/硕士研究生/科研/数据集/自己的数据集/</loc>
             <lastmod>2025-03-12T05:37:49.521Z</lastmod>
         </url>
     
@@ -1777,56 +1762,6 @@
         </url>
     
         <url>
-            <loc>/czc知识库/搞钱/家教创业项目/小程序项目/杂/科目列表/</loc>
-            <lastmod>2025-04-18T07:11:08.668Z</lastmod>
-        </url>
-    
-        <url>
-            <loc>/czc知识库/杂七杂八/谷歌不用手机号创建新号/</loc>
-            <lastmod>2025-04-18T07:11:08.668Z</lastmod>
-        </url>
-    
-        <url>
-            <loc>/czc知识库/硕士研究生/科研/主题模型/</loc>
-            <lastmod>2025-04-18T07:11:08.668Z</lastmod>
-        </url>
-    
-        <url>
-            <loc>/czc知识库/硕士研究生/科研/学术常识/关于ISI、SCI、EI、IEEE、Elsevier、Springer的区别/</loc>
-            <lastmod>2025-04-18T07:11:08.668Z</lastmod>
-        </url>
-    
-        <url>
-            <loc>/czc知识库/硕士研究生/科研/文献阅读笔记/0-翻译来发csdn/2022.03.SDAC：使用基于语义距离的 API 集群进行 Android 恶意软件检测的慢老化解决方案/</loc>
-            <lastmod>2025-04-18T07:11:08.668Z</lastmod>
-        </url>
-    
-        <url>
-            <loc>/czc知识库/硕士研究生/科研/文献阅读笔记/0-翻译来发csdn/2024.02.一种基于API语义提取的Android恶意软件检测方法/</loc>
-            <lastmod>2025-04-18T07:11:08.668Z</lastmod>
-        </url>
-    
-        <url>
-            <loc>/czc知识库/硕士研究生/科研/文献阅读笔记/0-翻译来发csdn/2024.11.用于 Android 恶意软件检测的混合 ML-DL 方法/</loc>
-            <lastmod>2025-04-18T07:11:08.668Z</lastmod>
-        </url>
-    
-        <url>
-            <loc>/czc知识库/硕士研究生/科研/文献阅读笔记/1-恶意代码经典论文/Drebin/</loc>
-            <lastmod>2025-04-18T07:11:08.668Z</lastmod>
-        </url>
-    
-        <url>
-            <loc>/czc知识库/硕士研究生/科研/文献阅读笔记/2-图神经网络/202301.DeepCatra：学习基于流程和图表的 Android 恶意软件检测行为/</loc>
-            <lastmod>2025-04-18T07:11:08.668Z</lastmod>
-        </url>
-    
-        <url>
-            <loc>/czc知识库/硕士研究生/科研/文献阅读笔记/2-图神经网络/202305.13.GCNs_AMD：基于 GCN 增强函数调用图中节点特征差异的 Android 恶意软件检测方法 An Android Malware Detection Approach to Enhance Node Feature Differences in a Function Call Graph Based on GCNs/</loc>
-            <lastmod>2025-04-18T07:11:08.668Z</lastmod>
-        </url>
-    
-        <url>
             <loc>/czc知识库/硕士研究生/科研/文献阅读笔记/2-异构图/GHGDroid(异构图)：Global heterogeneous graph-based android malware detection/</loc>
             <lastmod>2025-04-18T07:11:08.668Z</lastmod>
         </url>
@@ -1837,57 +1772,12 @@
         </url>
     
         <url>
-            <loc>/czc知识库/硕士研究生/科研/文献阅读笔记/202402.SynDroid：一种基于CTGAN-SVM的自适应增强Android恶意软件分类方法/</loc>
-            <lastmod>2025-04-18T07:11:08.668Z</lastmod>
-        </url>
-    
-        <url>
-            <loc>/czc知识库/硕士研究生/科研/文献阅读笔记/202406.CNN-BiLSTM_AMD：基于CNN-BiLSTM的恶意软件检测与分类系统：Malware Detection and Classification System Based on CNN-BiLSTM/</loc>
-            <lastmod>2025-04-18T07:11:08.668Z</lastmod>
-        </url>
-    
-        <url>
-            <loc>/czc知识库/硕士研究生/科研/文献阅读笔记/5-未未未未分类/基于CNN的安卓恶意软件检测：Deep Android Malware Detection/</loc>
-            <lastmod>2025-04-18T07:11:08.668Z</lastmod>
-        </url>
-    
-        <url>
-            <loc>/czc知识库/硕士研究生/科研/文献阅读笔记/5-未未未未分类/顶刊：基于注意力的 API 恶意软件定位技术（动态分析）（Attention-Based API Locating for Malware Techniques）/</loc>
-            <lastmod>2025-04-18T07:11:08.668Z</lastmod>
-        </url>
-    
-        <url>
-            <loc>/czc知识库/硕士研究生/科研/文献阅读笔记/z-垃圾&amp;归档文章&amp;其他东西/5-垃圾文章/LSTM GAN_AMD：Leveraging LSTM and GAN for Modern Malware Detection LSTM和GAN结合模型检测恶意软件 垃圾文章/</loc>
-            <lastmod>2025-04-18T07:11:08.678Z</lastmod>
-        </url>
-    
-        <url>
-            <loc>/czc知识库/硕士研究生/科研/文献阅读笔记/z-垃圾&amp;归档文章&amp;其他东西/垃圾：基于深度可分离卷积的多神经网络恶意代码检测模型/</loc>
-            <lastmod>2025-04-18T07:11:08.678Z</lastmod>
-        </url>
-    
-        <url>
             <loc>/czc知识库/硕士研究生/科研/文献阅读笔记/文献阅读笔记/</loc>
             <lastmod>2025-04-18T07:11:08.678Z</lastmod>
         </url>
     
         <url>
-            <loc>/czc知识库/硕士研究生/科研/论文/初稿/v4/101-初稿/</loc>
-            <lastmod>2025-04-18T07:11:08.678Z</lastmod>
-        </url>
-    
-        <url>
             <loc>/czc知识库/笔记/知识库搭建/1-obsidian笔记/obdisian多栏实现方法/</loc>
-            <lastmod>2025-04-18T07:11:08.678Z</lastmod>
-        </url>
-    
-        <url>
-            <loc>/czc知识库/笔记/知识库搭建/子文件夹/dataview插件教程笔记/</loc>
-            <lastmod>2025-04-18T07:11:08.678Z</lastmod>
-        </url>
-    
-        <url>
-            <loc>/czc知识库/笔记/知识库搭建/数字花园/本地构建 云服务器部署数字花园/</loc>
             <lastmod>2025-04-18T07:11:08.678Z</lastmod>
         </url>
     
@@ -1912,27 +1802,12 @@
         </url>
     
         <url>
-            <loc>/czc知识库/计算机/Hadoop技术栈/笔记/习题/02-MapReduce、YARN、HA习题/</loc>
-            <lastmod>2025-04-18T07:11:08.678Z</lastmod>
-        </url>
-    
-        <url>
             <loc>/czc知识库/计算机/Hadoop技术栈/课程资料笔记/7-Apache Hive SQL DQL、参数配置与函数/</loc>
             <lastmod>2025-04-18T07:11:08.678Z</lastmod>
         </url>
     
         <url>
             <loc>/czc知识库/计算机/Hadoop技术栈/课程资料笔记/8-Apache Hive函数高阶应用、性能调优/</loc>
-            <lastmod>2025-04-18T07:11:08.678Z</lastmod>
-        </url>
-    
-        <url>
-            <loc>/czc知识库/计算机/Hadoop技术栈/课程资料笔记/源/源/</loc>
-            <lastmod>2025-04-18T07:11:08.678Z</lastmod>
-        </url>
-    
-        <url>
-            <loc>/czc知识库/计算机/Java/java笔记/公共类/</loc>
             <lastmod>2025-04-18T07:11:08.678Z</lastmod>
         </url>
     
@@ -1962,87 +1837,12 @@
         </url>
     
         <url>
-            <loc>/czc知识库/计算机/Python/Python日常笔记/Python的内置函数或内置方法/</loc>
-            <lastmod>2025-04-18T07:11:08.678Z</lastmod>
-        </url>
-    
-        <url>
-            <loc>/czc知识库/计算机/Python/Python日常笔记/python关键字：with/</loc>
-            <lastmod>2025-04-18T07:11:08.678Z</lastmod>
-        </url>
-    
-        <url>
-            <loc>/czc知识库/计算机/Python/Python日常笔记/python基础学习笔记 蟒蛇书/</loc>
-            <lastmod>2025-04-18T07:11:08.678Z</lastmod>
-        </url>
-    
-        <url>
-            <loc>/czc知识库/计算机/Python/Python日常笔记/python笔记/</loc>
-            <lastmod>2025-04-18T07:11:08.678Z</lastmod>
-        </url>
-    
-        <url>
-            <loc>/czc知识库/计算机/Python/Python日常笔记/python：检查路径是否存在，不存在就递归创建此路径/</loc>
-            <lastmod>2025-04-18T07:11:08.678Z</lastmod>
-        </url>
-    
-        <url>
-            <loc>/czc知识库/计算机/Python/Python日常笔记/with语句/</loc>
-            <lastmod>2025-04-18T07:11:08.678Z</lastmod>
-        </url>
-    
-        <url>
-            <loc>/czc知识库/计算机/Python/python学习/①python基础/001-基本概念/</loc>
-            <lastmod>2025-04-18T07:11:08.678Z</lastmod>
-        </url>
-    
-        <url>
-            <loc>/czc知识库/计算机/Python/python学习/①python基础/130-文件和文件夹操作（os模块）/</loc>
-            <lastmod>2025-04-18T07:11:08.678Z</lastmod>
-        </url>
-    
-        <url>
-            <loc>/czc知识库/计算机/Python/python学习/①python基础/①python基础/</loc>
-            <lastmod>2025-04-18T07:11:08.678Z</lastmod>
-        </url>
-    
-        <url>
-            <loc>/czc知识库/计算机/Python/python学习/②python面向对象/201-面向对象基本思想/</loc>
-            <lastmod>2025-04-18T07:11:08.678Z</lastmod>
-        </url>
-    
-        <url>
-            <loc>/czc知识库/计算机/Python/python学习/②python面向对象/203-魔术方法：__init__()、__str__()、__del__()/</loc>
-            <lastmod>2025-04-18T07:11:08.678Z</lastmod>
-        </url>
-    
-        <url>
-            <loc>/czc知识库/计算机/其他/ELF文件详解—初步认识 （物联网）/</loc>
-            <lastmod>2025-04-18T07:11:08.678Z</lastmod>
-        </url>
-    
-        <url>
-            <loc>/czc知识库/计算机/搞机/Android/api和库的区别/</loc>
-            <lastmod>2025-04-18T07:11:08.678Z</lastmod>
-        </url>
-    
-        <url>
-            <loc>/czc知识库/计算机/搞机/Hardware/Hardware/</loc>
-            <lastmod>2025-04-18T07:11:08.678Z</lastmod>
-        </url>
-    
-        <url>
             <loc>/czc知识库/计算机/搞机/Linux搞机相关/linux安装ollama/</loc>
             <lastmod>2025-04-18T07:11:08.678Z</lastmod>
         </url>
     
         <url>
             <loc>/czc知识库/计算机/搞机/Linux搞机相关/全部转移到Linux大类中去了/</loc>
-            <lastmod>2025-04-18T07:11:08.678Z</lastmod>
-        </url>
-    
-        <url>
-            <loc>/czc知识库/计算机/搞机/Windows/SMB局域网共享文件 技巧 smb协议/</loc>
             <lastmod>2025-04-18T07:11:08.678Z</lastmod>
         </url>
     
@@ -2064,6 +1864,206 @@
         <url>
             <loc>/</loc>
             <lastmod>2025-04-18T07:11:08.678Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/搞钱/家教创业项目/小程序项目/杂/科目列表/</loc>
+            <lastmod>2025-04-18T14:03:05.884Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/杂七杂八/谷歌不用手机号创建新号/</loc>
+            <lastmod>2025-04-18T14:03:05.884Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/硕士研究生/科研/主题模型/</loc>
+            <lastmod>2025-04-18T14:03:05.884Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/硕士研究生/科研/学术常识/关于ISI、SCI、EI、IEEE、Elsevier、Springer的区别/</loc>
+            <lastmod>2025-04-18T14:03:05.884Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/硕士研究生/科研/数据集/恶意软件检测数据集/</loc>
+            <lastmod>2025-04-18T14:03:05.884Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/硕士研究生/科研/数据集/自己的数据集/</loc>
+            <lastmod>2025-04-18T14:03:05.884Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/硕士研究生/科研/文献阅读笔记/0-翻译来发csdn/2022.03.SDAC：使用基于语义距离的 API 集群进行 Android 恶意软件检测的慢老化解决方案/</loc>
+            <lastmod>2025-04-18T14:03:05.884Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/硕士研究生/科研/文献阅读笔记/0-翻译来发csdn/2024.02.一种基于API语义提取的Android恶意软件检测方法/</loc>
+            <lastmod>2025-04-18T14:03:05.884Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/硕士研究生/科研/文献阅读笔记/0-翻译来发csdn/2024.11.用于 Android 恶意软件检测的混合 ML-DL 方法/</loc>
+            <lastmod>2025-04-18T14:03:05.884Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/硕士研究生/科研/文献阅读笔记/1-恶意代码经典论文/Drebin/</loc>
+            <lastmod>2025-04-18T14:03:05.884Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/硕士研究生/科研/文献阅读笔记/2-图神经网络/202301.DeepCatra：学习基于流程和图表的 Android 恶意软件检测行为/</loc>
+            <lastmod>2025-04-18T14:03:05.884Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/硕士研究生/科研/文献阅读笔记/2-图神经网络/202305.13.GCNs_AMD：基于 GCN 增强函数调用图中节点特征差异的 Android 恶意软件检测方法 An Android Malware Detection Approach to Enhance Node Feature Differences in a Function Call Graph Based on GCNs/</loc>
+            <lastmod>2025-04-18T14:03:05.884Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/硕士研究生/科研/文献阅读笔记/2-语义/MalBERTv2：基于代码感知bert的恶意软件识别模型 Code Aware BERT-Based Model for Malware Identification/</loc>
+            <lastmod>2025-04-18T14:03:05.884Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/硕士研究生/科研/文献阅读笔记/202402.SynDroid：一种基于CTGAN-SVM的自适应增强Android恶意软件分类方法/</loc>
+            <lastmod>2025-04-18T14:03:05.884Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/硕士研究生/科研/文献阅读笔记/202406.CNN-BiLSTM_AMD：基于CNN-BiLSTM的恶意软件检测与分类系统：Malware Detection and Classification System Based on CNN-BiLSTM/</loc>
+            <lastmod>2025-04-18T14:03:05.884Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/硕士研究生/科研/文献阅读笔记/5-未未未未分类/基于CNN的安卓恶意软件检测：Deep Android Malware Detection/</loc>
+            <lastmod>2025-04-18T14:03:05.884Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/硕士研究生/科研/文献阅读笔记/5-未未未未分类/顶刊：基于注意力的 API 恶意软件定位技术（动态分析）（Attention-Based API Locating for Malware Techniques）/</loc>
+            <lastmod>2025-04-18T14:03:05.884Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/硕士研究生/科研/文献阅读笔记/z-垃圾&amp;归档文章&amp;其他东西/5-垃圾文章/LSTM GAN_AMD：Leveraging LSTM and GAN for Modern Malware Detection LSTM和GAN结合模型检测恶意软件 垃圾文章/</loc>
+            <lastmod>2025-04-18T14:03:05.884Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/硕士研究生/科研/文献阅读笔记/z-垃圾&amp;归档文章&amp;其他东西/垃圾：基于深度可分离卷积的多神经网络恶意代码检测模型/</loc>
+            <lastmod>2025-04-18T14:03:05.884Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/硕士研究生/科研/论文/初稿/v4/101-初稿/</loc>
+            <lastmod>2025-04-18T14:03:05.884Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/笔记/知识库搭建/子文件夹/dataview插件教程笔记/</loc>
+            <lastmod>2025-04-18T14:03:05.894Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/笔记/知识库搭建/数字花园/本地构建 云服务器部署数字花园/</loc>
+            <lastmod>2025-04-18T14:03:05.894Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/计算机/Hadoop技术栈/笔记/习题/02-MapReduce、YARN、HA习题/</loc>
+            <lastmod>2025-04-18T14:03:05.894Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/计算机/Hadoop技术栈/课程资料笔记/源/源/</loc>
+            <lastmod>2025-04-18T14:03:05.894Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/计算机/Java/java笔记/公共类/</loc>
+            <lastmod>2025-04-18T14:03:05.894Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/计算机/Python/Python日常笔记/Python的内置函数或内置方法/</loc>
+            <lastmod>2025-04-18T14:03:05.894Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/计算机/Python/Python日常笔记/python关键字：with/</loc>
+            <lastmod>2025-04-18T14:03:05.894Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/计算机/Python/Python日常笔记/python基础学习笔记 蟒蛇书/</loc>
+            <lastmod>2025-04-18T14:03:05.894Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/计算机/Python/Python日常笔记/python笔记/</loc>
+            <lastmod>2025-04-18T14:03:05.894Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/计算机/Python/Python日常笔记/python：检查路径是否存在，不存在就递归创建此路径/</loc>
+            <lastmod>2025-04-18T14:03:05.894Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/计算机/Python/Python日常笔记/with语句/</loc>
+            <lastmod>2025-04-18T14:03:05.894Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/计算机/Python/python学习/①python基础/001-基本概念/</loc>
+            <lastmod>2025-04-18T14:03:05.894Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/计算机/Python/python学习/①python基础/130-文件和文件夹操作（os模块）/</loc>
+            <lastmod>2025-04-18T14:03:05.894Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/计算机/Python/python学习/①python基础/①python基础/</loc>
+            <lastmod>2025-04-18T14:03:05.894Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/计算机/Python/python学习/②python面向对象/201-面向对象基本思想/</loc>
+            <lastmod>2025-04-18T14:03:05.894Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/计算机/Python/python学习/②python面向对象/203-魔术方法：__init__()、__str__()、__del__()/</loc>
+            <lastmod>2025-04-18T14:03:05.894Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/计算机/其他/ELF文件详解—初步认识 （物联网）/</loc>
+            <lastmod>2025-04-18T14:03:05.894Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/计算机/搞机/Android/api和库的区别/</loc>
+            <lastmod>2025-04-18T14:03:05.894Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/计算机/搞机/Hardware/Hardware/</loc>
+            <lastmod>2025-04-18T14:03:05.894Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/计算机/搞机/Windows/SMB局域网共享文件 技巧 smb协议/</loc>
+            <lastmod>2025-04-18T14:03:05.894Z</lastmod>
         </url>
     
 </urlset>
