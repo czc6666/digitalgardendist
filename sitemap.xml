@@ -192,11 +192,6 @@
         </url>
     
         <url>
-            <loc>/czc知识库/硕士研究生/科研/文献阅读笔记/2-图神经网络/202305.13.GCNs_AMD：基于 GCN 增强函数调用图中节点特征差异的 Android 恶意软件检测方法 An Android Malware Detection Approach to Enhance Node Feature Differences in a Function Call Graph Based on GCNs/</loc>
-            <lastmod>2025-03-29T03:13:43.147Z</lastmod>
-        </url>
-    
-        <url>
             <loc>/czc知识库/硕士研究生/科研/文献阅读笔记/2-图神经网络/202404.FAGnet：使用图神经网络进行基于家庭感知的 Android 恶意软件分析 Family-aware-based android malware analysis using graph neural network/</loc>
             <lastmod>2025-03-29T03:13:43.147Z</lastmod>
         </url>
@@ -1597,11 +1592,6 @@
         </url>
     
         <url>
-            <loc>/101-czc/</loc>
-            <lastmod>2025-04-19T03:23:46.107Z</lastmod>
-        </url>
-    
-        <url>
             <loc>/czc知识库/搞钱/家教创业项目/小程序项目/杂/地图接口调用方法/</loc>
             <lastmod>2025-04-19T03:23:46.107Z</lastmod>
         </url>
@@ -2064,6 +2054,16 @@
         <url>
             <loc>/czc知识库/计算机/软件开发笔记/校园网AP隔离破解/校园网AP隔离破解/</loc>
             <lastmod>2025-04-19T03:23:46.118Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/101-czc/</loc>
+            <lastmod>2025-04-19T05:32:19.338Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/硕士研究生/科研/文献阅读笔记/2-图神经网络/202305.13.GCNs_AMD：基于 GCN 增强函数调用图中节点特征差异的 Android 恶意软件检测方法 An Android Malware Detection Approach to Enhance Node Feature Differences in a Function Call Graph Based on GCNs/</loc>
+            <lastmod>2025-04-19T05:32:19.338Z</lastmod>
         </url>
     
 </urlset>
