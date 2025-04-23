@@ -447,11 +447,6 @@
         </url>
     
         <url>
-            <loc>/czc知识库/硕士研究生/科研/文献阅读笔记/文献阅读笔记/</loc>
-            <lastmod>2025-04-20T06:15:02.952Z</lastmod>
-        </url>
-    
-        <url>
             <loc>/czc知识库/硕士研究生/科研/组会汇报/20250222/</loc>
             <lastmod>2025-04-20T06:15:02.952Z</lastmod>
         </url>
@@ -883,11 +878,6 @@
     
         <url>
             <loc>/czc知识库/计算机/MySQL/004-数据库查询练习/</loc>
-            <lastmod>2025-04-20T06:15:02.962Z</lastmod>
-        </url>
-    
-        <url>
-            <loc>/czc知识库/计算机/MySQL/MySQL/</loc>
             <lastmod>2025-04-20T06:15:02.962Z</lastmod>
         </url>
     
@@ -2052,13 +2042,33 @@
         </url>
     
         <url>
-            <loc>/</loc>
+            <loc>/未命名 6/</loc>
             <lastmod>2025-04-20T06:15:02.982Z</lastmod>
         </url>
     
         <url>
-            <loc>/未命名 6/</loc>
-            <lastmod>2025-04-20T06:15:02.982Z</lastmod>
+            <loc>/czc知识库/硕士研究生/科研/文献阅读笔记/3-ClusterComputing的文章/FEDroid/</loc>
+            <lastmod>2025-04-23T15:53:12.764Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/硕士研究生/科研/文献阅读笔记/文献阅读笔记/</loc>
+            <lastmod>2025-04-23T15:53:12.764Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/硕士研究生/科研/论文/初稿/v4/101-初稿/</loc>
+            <lastmod>2025-04-23T15:53:12.764Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/计算机/MySQL/MySQL/</loc>
+            <lastmod>2025-04-23T15:53:12.764Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/</loc>
+            <lastmod>2025-04-23T15:53:12.764Z</lastmod>
         </url>
     
 </urlset>
