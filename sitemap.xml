@@ -552,11 +552,6 @@
         </url>
     
         <url>
-            <loc>/czc知识库/计算机/Hadoop技术栈/Hadoop技术栈/</loc>
-            <lastmod>2025-06-04T04:25:47.039Z</lastmod>
-        </url>
-    
-        <url>
             <loc>/czc知识库/计算机/Hadoop技术栈/笔记/HDFS写入文件流程/</loc>
             <lastmod>2025-06-04T04:25:47.039Z</lastmod>
         </url>
@@ -573,31 +568,6 @@
     
         <url>
             <loc>/czc知识库/计算机/Hadoop技术栈/笔记/习题/02-MapReduce、YARN、HA习题/</loc>
-            <lastmod>2025-06-04T04:25:47.039Z</lastmod>
-        </url>
-    
-        <url>
-            <loc>/czc知识库/计算机/Hadoop技术栈/课程资料笔记/3-HDFS/</loc>
-            <lastmod>2025-06-04T04:25:47.039Z</lastmod>
-        </url>
-    
-        <url>
-            <loc>/czc知识库/计算机/Hadoop技术栈/课程资料笔记/4-MapReduce、YARN、HA/</loc>
-            <lastmod>2025-06-04T04:25:47.039Z</lastmod>
-        </url>
-    
-        <url>
-            <loc>/czc知识库/计算机/Hadoop技术栈/课程资料笔记/6-Apache Hive SQL-DDL、DML/</loc>
-            <lastmod>2025-06-04T04:25:47.039Z</lastmod>
-        </url>
-    
-        <url>
-            <loc>/czc知识库/计算机/Hadoop技术栈/课程资料笔记/8-Apache Hive函数高阶应用、性能调优/</loc>
-            <lastmod>2025-06-04T04:25:47.039Z</lastmod>
-        </url>
-    
-        <url>
-            <loc>/czc知识库/计算机/Hadoop技术栈/课程资料笔记/源/源/</loc>
             <lastmod>2025-06-04T04:25:47.039Z</lastmod>
         </url>
     
@@ -1377,11 +1347,6 @@
         </url>
     
         <url>
-            <loc>/czc知识库/计算机/计算机/</loc>
-            <lastmod>2025-06-04T04:25:47.063Z</lastmod>
-        </url>
-    
-        <url>
             <loc>/czc知识库/计算机/软件开发笔记/学习辅助工具/v1.0 readme/</loc>
             <lastmod>2025-06-04T04:25:47.063Z</lastmod>
         </url>
@@ -1752,26 +1717,6 @@
         </url>
     
         <url>
-            <loc>/czc知识库/计算机/Hadoop技术栈/课程资料笔记/1-大数据导论、Apache Zookeeper/</loc>
-            <lastmod>2025-06-04T04:32:34.061Z</lastmod>
-        </url>
-    
-        <url>
-            <loc>/czc知识库/计算机/Hadoop技术栈/课程资料笔记/2-Apache Hadoop/</loc>
-            <lastmod>2025-06-04T04:32:34.061Z</lastmod>
-        </url>
-    
-        <url>
-            <loc>/czc知识库/计算机/Hadoop技术栈/课程资料笔记/5-数据仓库、Apache Hive/</loc>
-            <lastmod>2025-06-04T04:32:34.065Z</lastmod>
-        </url>
-    
-        <url>
-            <loc>/czc知识库/计算机/Hadoop技术栈/课程资料笔记/7-Apache Hive SQL DQL、参数配置与函数/</loc>
-            <lastmod>2025-06-04T04:32:34.065Z</lastmod>
-        </url>
-    
-        <url>
             <loc>/czc知识库/计算机/Java/java笔记/java包的命名规则/</loc>
             <lastmod>2025-06-04T04:32:34.065Z</lastmod>
         </url>
@@ -2114,6 +2059,61 @@
         <url>
             <loc>/</loc>
             <lastmod>2025-06-04T06:09:30.162Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/计算机/Hadoop技术栈/Hadoop技术栈/</loc>
+            <lastmod>2025-06-04T06:34:24.929Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/计算机/Hadoop技术栈/资料讲义/1-大数据导论、Apache Zookeeper/</loc>
+            <lastmod>2025-06-04T06:34:24.929Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/计算机/Hadoop技术栈/资料讲义/2-Apache Hadoop/</loc>
+            <lastmod>2025-06-04T06:34:24.929Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/计算机/Hadoop技术栈/资料讲义/3-HDFS/</loc>
+            <lastmod>2025-06-04T06:34:24.929Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/计算机/Hadoop技术栈/资料讲义/4-MapReduce、YARN、HA/</loc>
+            <lastmod>2025-06-04T06:34:24.929Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/计算机/Hadoop技术栈/资料讲义/5-数据仓库、Apache Hive/</loc>
+            <lastmod>2025-06-04T06:34:24.929Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/计算机/Hadoop技术栈/资料讲义/6-Apache Hive SQL-DDL、DML/</loc>
+            <lastmod>2025-06-04T06:34:24.929Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/计算机/Hadoop技术栈/资料讲义/7-Apache Hive SQL DQL、参数配置与函数/</loc>
+            <lastmod>2025-06-04T06:34:24.929Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/计算机/Hadoop技术栈/资料讲义/8-Apache Hive函数高阶应用、性能调优/</loc>
+            <lastmod>2025-06-04T06:34:24.929Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/计算机/Hadoop技术栈/资料讲义/源/源/</loc>
+            <lastmod>2025-06-04T06:34:24.933Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/计算机/计算机/</loc>
+            <lastmod>2025-06-04T06:34:24.933Z</lastmod>
         </url>
     
 </urlset>
