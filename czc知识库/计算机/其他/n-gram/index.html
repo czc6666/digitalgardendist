@@ -24,7 +24,7 @@
 <style></style>
 <style></style>
 </head>
-<body class="theme-light markdown-preview-view markdown-rendered markdown-preview-section css-settings-manager mod-windows is-frameless is-maximized is-hidden-frameless is-focused obsidian-app theme-light show-inline-title show-ribbon show-view-header css-settings-manager theme-default line-style-solid folder-default blockquote-normal callout-normal checkbox-default tag-default link-default heading-default responsive-tile-height oz-show-all-num">
+<body class="theme-dark markdown-preview-view markdown-rendered markdown-preview-section css-settings-manager mod-windows is-frameless is-maximized is-hidden-frameless is-focused obsidian-app theme-light show-inline-title show-ribbon show-view-header css-settings-manager theme-default line-style-solid folder-default blockquote-normal callout-normal checkbox-default tag-default link-default heading-default responsive-tile-height oz-show-all-num">
 <div x-init="isDesktop = (window.innerWidth>=1400) ? true: false;" x-on:resize.window="isDesktop = (window.innerWidth>=1400) ? true : false;" x-data="{isDesktop: true, showFilesMobile: false}">
 <div x-show.important="!isDesktop" style="display:none">
 <nav class="navbar">
@@ -72,6 +72,23 @@ CTRL + K
 <i x-show="isOpen" style="display:none" icon-name="chevron-down"></i>
 <i x-show="!isOpen" icon-name="chevron-right"></i>
 <span class="foldername">czc知识库</span>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div class="folder inner-folder" x-data="{isOpen: $persist(false).as('czc知识库/AI笔记')}" @click.stop="isOpen=!isOpen">
+<div class="foldername-wrapper align-icon">
+<i x-show="isOpen" style="display:none" icon-name="chevron-down"></i>
+<i x-show="!isOpen" icon-name="chevron-right"></i>
+<span class="foldername">AI笔记</span>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/AI笔记/chatGPT使用笔记 提示词收集 api/">chatGPT使用笔记 提示词收集 api </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/AI笔记/deepseek本地部署/">deepseek本地部署 </a>
+</div>
+</div>
+</div>
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
 <div class="folder inner-folder" x-data="{isOpen: $persist(false).as('czc知识库/Books')}" @click.stop="isOpen=!isOpen">
@@ -150,128 +167,150 @@ CTRL + K
 </div>
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
-<div class="folder inner-folder" x-data="{isOpen: $persist(false).as('czc知识库/搞钱/名词解释')}" @click.stop="isOpen=!isOpen">
+<div class="folder inner-folder" x-data="{isOpen: $persist(false).as('czc知识库/搞钱/99-归档')}" @click.stop="isOpen=!isOpen">
+<div class="foldername-wrapper align-icon">
+<i x-show="isOpen" style="display:none" icon-name="chevron-down"></i>
+<i x-show="!isOpen" icon-name="chevron-right"></i>
+<span class="foldername">99-归档</span>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div class="folder inner-folder" x-data="{isOpen: $persist(false).as('czc知识库/搞钱/99-归档/名词解释')}" @click.stop="isOpen=!isOpen">
 <div class="foldername-wrapper align-icon">
 <i x-show="isOpen" style="display:none" icon-name="chevron-down"></i>
 <i x-show="!isOpen" icon-name="chevron-right"></i>
 <span class="foldername">名词解释</span>
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
-<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/搞钱/名词解释/A股、B股、H股、N股、S股 是什么/">A股、B股、H股、N股、S股 是什么 </a>
+<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/搞钱/99-归档/名词解释/A股、B股、H股、N股、S股 是什么/">A股、B股、H股、N股、S股 是什么 </a>
 </div>
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
-<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/搞钱/名词解释/金交所是什么/">金交所是什么 </a>
+<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/搞钱/99-归档/名词解释/金交所是什么/">金交所是什么 </a>
 </div>
 </div>
 </div>
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
-<div class="folder inner-folder" x-data="{isOpen: $persist(false).as('czc知识库/搞钱/家教创业项目')}" @click.stop="isOpen=!isOpen">
+<div class="folder inner-folder" x-data="{isOpen: $persist(false).as('czc知识库/搞钱/99-归档/家教创业项目')}" @click.stop="isOpen=!isOpen">
 <div class="foldername-wrapper align-icon">
 <i x-show="isOpen" style="display:none" icon-name="chevron-down"></i>
 <i x-show="!isOpen" icon-name="chevron-right"></i>
 <span class="foldername">家教创业项目</span>
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
-<div class="folder inner-folder" x-data="{isOpen: $persist(false).as('czc知识库/搞钱/家教创业项目/初期模式')}" @click.stop="isOpen=!isOpen">
+<div class="folder inner-folder" x-data="{isOpen: $persist(false).as('czc知识库/搞钱/99-归档/家教创业项目/初期模式')}" @click.stop="isOpen=!isOpen">
 <div class="foldername-wrapper align-icon">
 <i x-show="isOpen" style="display:none" icon-name="chevron-down"></i>
 <i x-show="!isOpen" icon-name="chevron-right"></i>
 <span class="foldername">初期模式</span>
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
-<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/搞钱/家教创业项目/初期模式/初期模式/">初期模式 </a>
+<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/搞钱/99-归档/家教创业项目/初期模式/初期模式/">初期模式 </a>
 </div>
 </div>
 </div>
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
-<div class="folder inner-folder" x-data="{isOpen: $persist(false).as('czc知识库/搞钱/家教创业项目/小程序项目')}" @click.stop="isOpen=!isOpen">
+<div class="folder inner-folder" x-data="{isOpen: $persist(false).as('czc知识库/搞钱/99-归档/家教创业项目/小程序项目')}" @click.stop="isOpen=!isOpen">
 <div class="foldername-wrapper align-icon">
 <i x-show="isOpen" style="display:none" icon-name="chevron-down"></i>
 <i x-show="!isOpen" icon-name="chevron-right"></i>
 <span class="foldername">小程序项目</span>
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
-<div class="folder inner-folder" x-data="{isOpen: $persist(false).as('czc知识库/搞钱/家教创业项目/小程序项目/杂')}" @click.stop="isOpen=!isOpen">
+<div class="folder inner-folder" x-data="{isOpen: $persist(false).as('czc知识库/搞钱/99-归档/家教创业项目/小程序项目/杂')}" @click.stop="isOpen=!isOpen">
 <div class="foldername-wrapper align-icon">
 <i x-show="isOpen" style="display:none" icon-name="chevron-down"></i>
 <i x-show="!isOpen" icon-name="chevron-right"></i>
 <span class="foldername">杂</span>
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
-<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/搞钱/家教创业项目/小程序项目/杂/地图接口调用方法/">地图接口调用方法 </a>
+<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/搞钱/99-归档/家教创业项目/小程序项目/杂/地图接口调用方法/">地图接口调用方法 </a>
 </div>
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
-<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/搞钱/家教创业项目/小程序项目/杂/科目列表/">科目列表 </a>
+<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/搞钱/99-归档/家教创业项目/小程序项目/杂/科目列表/">科目列表 </a>
 </div>
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
-<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/搞钱/家教创业项目/小程序项目/杂/薪酬参考信息/">薪酬参考信息 </a>
+<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/搞钱/99-归档/家教创业项目/小程序项目/杂/薪酬参考信息/">薪酬参考信息 </a>
 </div>
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
-<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/搞钱/家教创业项目/小程序项目/杂/身份证自动认证/">身份证自动认证 </a>
-</div>
-</div>
-</div>
-</div>
-<div x-show="isOpen" style="display:none" class="filelist">
-<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/搞钱/家教创业项目/小程序项目/001-小程序开发需要干什么/">001-小程序开发需要干什么 </a>
-</div>
-</div>
-<div x-show="isOpen" style="display:none" class="filelist">
-<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/搞钱/家教创业项目/小程序项目/002-小程序文档/">002-小程序文档 </a>
-</div>
-</div>
-<div x-show="isOpen" style="display:none" class="filelist">
-<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/搞钱/家教创业项目/小程序项目/002-小程序文档v2/">002-小程序文档v2 </a>
-</div>
-</div>
-<div x-show="isOpen" style="display:none" class="filelist">
-<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/搞钱/家教创业项目/小程序项目/相关平台信息/">相关平台信息 </a>
+<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/搞钱/99-归档/家教创业项目/小程序项目/杂/身份证自动认证/">身份证自动认证 </a>
 </div>
 </div>
 </div>
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
-<div class="folder inner-folder" x-data="{isOpen: $persist(false).as('czc知识库/搞钱/家教创业项目/杂')}" @click.stop="isOpen=!isOpen">
+<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/搞钱/99-归档/家教创业项目/小程序项目/001-小程序开发需要干什么/">001-小程序开发需要干什么 </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/搞钱/99-归档/家教创业项目/小程序项目/002-小程序文档/">002-小程序文档 </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/搞钱/99-归档/家教创业项目/小程序项目/002-小程序文档v2/">002-小程序文档v2 </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/搞钱/99-归档/家教创业项目/小程序项目/相关平台信息/">相关平台信息 </a>
+</div>
+</div>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div class="folder inner-folder" x-data="{isOpen: $persist(false).as('czc知识库/搞钱/99-归档/家教创业项目/杂')}" @click.stop="isOpen=!isOpen">
 <div class="foldername-wrapper align-icon">
 <i x-show="isOpen" style="display:none" icon-name="chevron-down"></i>
 <i x-show="!isOpen" icon-name="chevron-right"></i>
 <span class="foldername">杂</span>
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
-<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/搞钱/家教创业项目/杂/家教经验/">家教经验 </a>
+<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/搞钱/99-归档/家教创业项目/杂/家教经验/">家教经验 </a>
 </div>
 </div>
 </div>
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
-<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/搞钱/家教创业项目/家教创业项目/">家教创业项目 </a>
+<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/搞钱/99-归档/家教创业项目/家教创业项目/">家教创业项目 </a>
 </div>
 </div>
 </div>
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
-<div class="folder inner-folder" x-data="{isOpen: $persist(false).as('czc知识库/搞钱/电商相关')}" @click.stop="isOpen=!isOpen">
+<div class="folder inner-folder" x-data="{isOpen: $persist(false).as('czc知识库/搞钱/99-归档/电商相关')}" @click.stop="isOpen=!isOpen">
 <div class="foldername-wrapper align-icon">
 <i x-show="isOpen" style="display:none" icon-name="chevron-down"></i>
 <i x-show="!isOpen" icon-name="chevron-right"></i>
 <span class="foldername">电商相关</span>
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
-<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/搞钱/电商相关/什么是ToA、ToB、ToC/">什么是ToA、ToB、ToC </a>
+<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/搞钱/99-归档/电商相关/什么是ToA、ToB、ToC/">什么是ToA、ToB、ToC </a>
 </div>
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
-<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/搞钱/电商相关/电商/">电商 </a>
+<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/搞钱/99-归档/电商相关/电商/">电商 </a>
 </div>
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
-<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/搞钱/电商相关/自热电商/">自热电商 </a>
+<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/搞钱/99-归档/电商相关/自热电商/">自热电商 </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div class="folder inner-folder" x-data="{isOpen: $persist(false).as('czc知识库/搞钱/生财有术')}" @click.stop="isOpen=!isOpen">
+<div class="foldername-wrapper align-icon">
+<i x-show="isOpen" style="display:none" icon-name="chevron-down"></i>
+<i x-show="!isOpen" icon-name="chevron-right"></i>
+<span class="foldername">生财有术</span>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/搞钱/生财有术/生财有术帖子收藏/">生财有术帖子收藏 </a>
 </div>
 </div>
 </div>
@@ -290,6 +329,14 @@ CTRL + K
 </div>
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/杂七杂八/chatgpt如何提交超过字数限制的文本/">chatgpt如何提交超过字数限制的文本 </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/杂七杂八/TTS文本转语音 。基于Bert-VITS2的原神 崩铁全角色文本转语音实现/">TTS文本转语音 。基于Bert-VITS2的原神 崩铁全角色文本转语音实现 </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
 <div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/杂七杂八/博客收藏/">博客收藏 </a>
 </div>
 </div>
@@ -298,513 +345,23 @@ CTRL + K
 </div>
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/杂七杂八/效率提升-学习方法/">效率提升-学习方法 </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/杂七杂八/杂七杂八/">杂七杂八 </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/杂七杂八/汽油：不同标号的汽油区别科普/">汽油：不同标号的汽油区别科普 </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/杂七杂八/精确度、准确度、精密度区别，准确性、精确性/">精确度、准确度、精密度区别，准确性、精确性 </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
 <div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/杂七杂八/谷歌不用手机号创建新号/">谷歌不用手机号创建新号 </a>
-</div>
-</div>
-</div>
-</div>
-<div x-show="isOpen" style="display:none" class="filelist">
-<div class="folder inner-folder" x-data="{isOpen: $persist(false).as('czc知识库/硕士研究生')}" @click.stop="isOpen=!isOpen">
-<div class="foldername-wrapper align-icon">
-<i x-show="isOpen" style="display:none" icon-name="chevron-down"></i>
-<i x-show="!isOpen" icon-name="chevron-right"></i>
-<span class="foldername">硕士研究生</span>
-</div>
-<div x-show="isOpen" style="display:none" class="filelist">
-<div class="folder inner-folder" x-data="{isOpen: $persist(false).as('czc知识库/硕士研究生/科研')}" @click.stop="isOpen=!isOpen">
-<div class="foldername-wrapper align-icon">
-<i x-show="isOpen" style="display:none" icon-name="chevron-down"></i>
-<i x-show="!isOpen" icon-name="chevron-right"></i>
-<span class="foldername">科研</span>
-</div>
-<div x-show="isOpen" style="display:none" class="filelist">
-<div class="folder inner-folder" x-data="{isOpen: $persist(false).as('czc知识库/硕士研究生/科研/学术常识')}" @click.stop="isOpen=!isOpen">
-<div class="foldername-wrapper align-icon">
-<i x-show="isOpen" style="display:none" icon-name="chevron-down"></i>
-<i x-show="!isOpen" icon-name="chevron-right"></i>
-<span class="foldername">学术常识</span>
-</div>
-<div x-show="isOpen" style="display:none" class="filelist">
-<div class="folder inner-folder" x-data="{isOpen: $persist(false).as('czc知识库/硕士研究生/科研/学术常识/子')}" @click.stop="isOpen=!isOpen">
-<div class="foldername-wrapper align-icon">
-<i x-show="isOpen" style="display:none" icon-name="chevron-down"></i>
-<i x-show="!isOpen" icon-name="chevron-right"></i>
-<span class="foldername">子</span>
-</div>
-<div x-show="isOpen" style="display:none" class="filelist">
-<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/硕士研究生/科研/学术常识/子/SCI的影响因子（if）有多少才算高分值/">SCI的影响因子（if）有多少才算高分值 </a>
-</div>
-</div>
-<div x-show="isOpen" style="display:none" class="filelist">
-<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/硕士研究生/科研/学术常识/子/中国计算机学会 ccf等级 分级 期刊 分区/">中国计算机学会 ccf等级 分级 期刊 分区 </a>
-</div>
-</div>
-<div x-show="isOpen" style="display:none" class="filelist">
-<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/硕士研究生/科研/学术常识/子/信息安全领域 四大顶会/">信息安全领域 四大顶会 </a>
-</div>
-</div>
-<div x-show="isOpen" style="display:none" class="filelist">
-<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/硕士研究生/科研/学术常识/子/查文献网站/">查文献网站 </a>
-</div>
-</div>
-</div>
-</div>
-<div x-show="isOpen" style="display:none" class="filelist">
-<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/硕士研究生/科研/学术常识/sci写作和经验分享 组会 知乎：羊驼舍.txt/">sci写作和经验分享 组会 知乎：羊驼舍.txt </a>
-</div>
-</div>
-<div x-show="isOpen" style="display:none" class="filelist">
-<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/硕士研究生/科研/学术常识/什么是影响因子（IF）SCIIF/">什么是影响因子（IF）SCIIF </a>
-</div>
-</div>
-<div x-show="isOpen" style="display:none" class="filelist">
-<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/硕士研究生/科研/学术常识/会议期刊笔记汇总/">会议期刊笔记汇总 </a>
-</div>
-</div>
-<div x-show="isOpen" style="display:none" class="filelist">
-<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/硕士研究生/科研/学术常识/关于ISI、SCI、EI、IEEE、Elsevier、Springer的区别/">关于ISI、SCI、EI、IEEE、Elsevier、Springer的区别 </a>
-</div>
-</div>
-<div x-show="isOpen" style="display:none" class="filelist">
-<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/硕士研究生/科研/学术常识/写论文笔记.txt/">写论文笔记.txt </a>
-</div>
-</div>
-<div x-show="isOpen" style="display:none" class="filelist">
-<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/硕士研究生/科研/学术常识/收藏-专利检索及分析 搜索 国家知识产权局 下载.txt/">收藏-专利检索及分析 搜索 国家知识产权局 下载.txt </a>
-</div>
-</div>
-<div x-show="isOpen" style="display:none" class="filelist">
-<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/硕士研究生/科研/学术常识/研究生怎么读/">研究生怎么读 </a>
-</div>
-</div>
-<div x-show="isOpen" style="display:none" class="filelist">
-<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/硕士研究生/科研/学术常识/科研大牛们怎么读文献/">科研大牛们怎么读文献 </a>
-</div>
-</div>
-<div x-show="isOpen" style="display:none" class="filelist">
-<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/硕士研究生/科研/学术常识/论文绘图工具-流程图/">论文绘图工具-流程图 </a>
-</div>
-</div>
-</div>
-</div>
-<div x-show="isOpen" style="display:none" class="filelist">
-<div class="folder inner-folder" x-data="{isOpen: $persist(false).as('czc知识库/硕士研究生/科研/数据集')}" @click.stop="isOpen=!isOpen">
-<div class="foldername-wrapper align-icon">
-<i x-show="isOpen" style="display:none" icon-name="chevron-down"></i>
-<i x-show="!isOpen" icon-name="chevron-right"></i>
-<span class="foldername">数据集</span>
-</div>
-<div x-show="isOpen" style="display:none" class="filelist">
-<div class="folder inner-folder" x-data="{isOpen: $persist(false).as('czc知识库/硕士研究生/科研/数据集/其他')}" @click.stop="isOpen=!isOpen">
-<div class="foldername-wrapper align-icon">
-<i x-show="isOpen" style="display:none" icon-name="chevron-down"></i>
-<i x-show="!isOpen" icon-name="chevron-right"></i>
-<span class="foldername">其他</span>
-</div>
-<div x-show="isOpen" style="display:none" class="filelist">
-<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/硕士研究生/科研/数据集/其他/Virus-MNIST：基准恶意软件数据集 （图像分类数据集）/">Virus-MNIST：基准恶意软件数据集 （图像分类数据集） </a>
-</div>
-</div>
-</div>
-</div>
-<div x-show="isOpen" style="display:none" class="filelist">
-<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/硕士研究生/科研/数据集/恶意软件检测数据集/">恶意软件检测数据集 </a>
-</div>
-</div>
-<div x-show="isOpen" style="display:none" class="filelist">
-<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/硕士研究生/科研/数据集/自己的数据集/">自己的数据集 </a>
-</div>
-</div>
-</div>
-</div>
-<div x-show="isOpen" style="display:none" class="filelist">
-<div class="folder inner-folder" x-data="{isOpen: $persist(false).as('czc知识库/硕士研究生/科研/文献阅读笔记')}" @click.stop="isOpen=!isOpen">
-<div class="foldername-wrapper align-icon">
-<i x-show="isOpen" style="display:none" icon-name="chevron-down"></i>
-<i x-show="!isOpen" icon-name="chevron-right"></i>
-<span class="foldername">文献阅读笔记</span>
-</div>
-<div x-show="isOpen" style="display:none" class="filelist">
-<div class="folder inner-folder" x-data="{isOpen: $persist(false).as('czc知识库/硕士研究生/科研/文献阅读笔记/0-翻译来发csdn')}" @click.stop="isOpen=!isOpen">
-<div class="foldername-wrapper align-icon">
-<i x-show="isOpen" style="display:none" icon-name="chevron-down"></i>
-<i x-show="!isOpen" icon-name="chevron-right"></i>
-<span class="foldername">0-翻译来发csdn</span>
-</div>
-<div x-show="isOpen" style="display:none" class="filelist">
-<div class="folder inner-folder" x-data="{isOpen: $persist(false).as('czc知识库/硕士研究生/科研/文献阅读笔记/0-翻译来发csdn/邹德清 吴月明系列')}" @click.stop="isOpen=!isOpen">
-<div class="foldername-wrapper align-icon">
-<i x-show="isOpen" style="display:none" icon-name="chevron-down"></i>
-<i x-show="!isOpen" icon-name="chevron-right"></i>
-<span class="foldername">邹德清 吴月明系列</span>
-</div>
-<div x-show="isOpen" style="display:none" class="filelist">
-<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/硕士研究生/科研/文献阅读笔记/0-翻译来发csdn/邹德清 吴月明系列/2021.07.吴月明3.IntDroid：基于API亲密度分析的Android恶意软件检测/">2021.07.吴月明3.IntDroid：基于API亲密度分析的Android恶意软件检测 </a>
-</div>
-</div>
-<div x-show="isOpen" style="display:none" class="filelist">
-<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/硕士研究生/科研/文献阅读笔记/0-翻译来发csdn/邹德清 吴月明系列/HomDroid：吴月明2/">HomDroid：吴月明2 </a>
-</div>
-</div>
-<div x-show="isOpen" style="display:none" class="filelist">
-<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/硕士研究生/科研/文献阅读笔记/0-翻译来发csdn/邹德清 吴月明系列/MalScan：吴月明1/">MalScan：吴月明1 </a>
-</div>
-</div>
-</div>
-</div>
-<div x-show="isOpen" style="display:none" class="filelist">
-<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/硕士研究生/科研/文献阅读笔记/0-翻译来发csdn/2022.03.SDAC：使用基于语义距离的 API 集群进行 Android 恶意软件检测的慢老化解决方案/">2022.03.SDAC：使用基于语义距离的 API 集群进行 Android 恶意软件检测的慢老化解决方案 </a>
-</div>
-</div>
-<div x-show="isOpen" style="display:none" class="filelist">
-<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/硕士研究生/科研/文献阅读笔记/0-翻译来发csdn/2024.02.一种基于API语义提取的Android恶意软件检测方法/">2024.02.一种基于API语义提取的Android恶意软件检测方法 </a>
-</div>
-</div>
-<div x-show="isOpen" style="display:none" class="filelist">
-<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/硕士研究生/科研/文献阅读笔记/0-翻译来发csdn/2024.11.用于 Android 恶意软件检测的混合 ML-DL 方法/">2024.11.用于 Android 恶意软件检测的混合 ML-DL 方法 </a>
-</div>
-</div>
-</div>
-</div>
-<div x-show="isOpen" style="display:none" class="filelist">
-<div class="folder inner-folder" x-data="{isOpen: $persist(false).as('czc知识库/硕士研究生/科研/文献阅读笔记/1-恶意代码经典论文')}" @click.stop="isOpen=!isOpen">
-<div class="foldername-wrapper align-icon">
-<i x-show="isOpen" style="display:none" icon-name="chevron-down"></i>
-<i x-show="!isOpen" icon-name="chevron-right"></i>
-<span class="foldername">1-恶意代码经典论文</span>
-</div>
-<div x-show="isOpen" style="display:none" class="filelist">
-<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/硕士研究生/科研/文献阅读笔记/1-恶意代码经典论文/Drebin/">Drebin </a>
-</div>
-</div>
-<div x-show="isOpen" style="display:none" class="filelist">
-<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/硕士研究生/科研/文献阅读笔记/1-恶意代码经典论文/MAMADROID：Detecting Android Malware by Building Markov Chains of Behavioral Models/">MAMADROID：Detecting Android Malware by Building Markov Chains of Behavioral Models </a>
-</div>
-</div>
-</div>
-</div>
-<div x-show="isOpen" style="display:none" class="filelist">
-<div class="folder inner-folder" x-data="{isOpen: $persist(false).as('czc知识库/硕士研究生/科研/文献阅读笔记/2-图神经网络')}" @click.stop="isOpen=!isOpen">
-<div class="foldername-wrapper align-icon">
-<i x-show="isOpen" style="display:none" icon-name="chevron-down"></i>
-<i x-show="!isOpen" icon-name="chevron-right"></i>
-<span class="foldername">2-图神经网络</span>
-</div>
-<div x-show="isOpen" style="display:none" class="filelist">
-<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/硕士研究生/科研/文献阅读笔记/2-图神经网络/202012.GNN_AMD：基于图神经网络调用图的 Android 恶意软件检测 Android Malware Detection based on Call Graph via Graph Neural Network/">202012.GNN_AMD：基于图神经网络调用图的 Android 恶意软件检测 Android Malware Detection based on Call Graph via Graph Neural Network </a>
-</div>
-</div>
-<div x-show="isOpen" style="display:none" class="filelist">
-<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/硕士研究生/科研/文献阅读笔记/2-图神经网络/202107.GDroid：Android malware detection and classification with graph convolutional network/">202107.GDroid：Android malware detection and classification with graph convolutional network </a>
-</div>
-</div>
-<div x-show="isOpen" style="display:none" class="filelist">
-<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/硕士研究生/科研/文献阅读笔记/2-图神经网络/202301.DeepCatra：学习基于流程和图表的 Android 恶意软件检测行为/">202301.DeepCatra：学习基于流程和图表的 Android 恶意软件检测行为 </a>
-</div>
-</div>
-<div x-show="isOpen" style="display:none" class="filelist">
-<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/硕士研究生/科研/文献阅读笔记/2-图神经网络/202301.SriDroid：图卷积网络的抗混淆安卓恶意软件检测，吴月明/">202301.SriDroid：图卷积网络的抗混淆安卓恶意软件检测，吴月明 </a>
-</div>
-</div>
-<div x-show="isOpen" style="display:none" class="filelist">
-<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/硕士研究生/科研/文献阅读笔记/2-图神经网络/202305.1.MSDROID：Identifying Malicious Snippets for Android Malware Detection/">202305.1.MSDROID：Identifying Malicious Snippets for Android Malware Detection </a>
-</div>
-</div>
-<div x-show="isOpen" style="display:none" class="filelist">
-<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/硕士研究生/科研/文献阅读笔记/2-图神经网络/202305.13.GCNs_AMD：基于 GCN 增强函数调用图中节点特征差异的 Android 恶意软件检测方法 An Android Malware Detection Approach to Enhance Node Feature Differences in a Function Call Graph Based on GCNs/">202305.13.GCNs_AMD：基于 GCN 增强函数调用图中节点特征差异的 Android 恶意软件检测方法 An Android Malware Detection Approach to Enhance Node Feature Differences in a Function Call Graph Based on GCNs </a>
-</div>
-</div>
-<div x-show="isOpen" style="display:none" class="filelist">
-<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/硕士研究生/科研/文献阅读笔记/2-图神经网络/202404.FAGnet：使用图神经网络进行基于家庭感知的 Android 恶意软件分析 Family-aware-based android malware analysis using graph neural network/">202404.FAGnet：使用图神经网络进行基于家庭感知的 Android 恶意软件分析 Family-aware-based android malware analysis using graph neural network </a>
-</div>
-</div>
-</div>
-</div>
-<div x-show="isOpen" style="display:none" class="filelist">
-<div class="folder inner-folder" x-data="{isOpen: $persist(false).as('czc知识库/硕士研究生/科研/文献阅读笔记/2-异构图')}" @click.stop="isOpen=!isOpen">
-<div class="foldername-wrapper align-icon">
-<i x-show="isOpen" style="display:none" icon-name="chevron-down"></i>
-<i x-show="!isOpen" icon-name="chevron-right"></i>
-<span class="foldername">2-异构图</span>
-</div>
-<div x-show="isOpen" style="display:none" class="filelist">
-<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/硕士研究生/科研/文献阅读笔记/2-异构图/GHGDroid(异构图)：Global heterogeneous graph-based android malware detection/">GHGDroid(异构图)：Global heterogeneous graph-based android malware detection </a>
-</div>
-</div>
-</div>
-</div>
-<div x-show="isOpen" style="display:none" class="filelist">
-<div class="folder inner-folder" x-data="{isOpen: $persist(false).as('czc知识库/硕士研究生/科研/文献阅读笔记/2-语义')}" @click.stop="isOpen=!isOpen">
-<div class="foldername-wrapper align-icon">
-<i x-show="isOpen" style="display:none" icon-name="chevron-down"></i>
-<i x-show="!isOpen" icon-name="chevron-right"></i>
-<span class="foldername">2-语义</span>
-</div>
-<div x-show="isOpen" style="display:none" class="filelist">
-<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/硕士研究生/科研/文献阅读笔记/2-语义/202402.一种基于APl语义提取的Android恶意软件检测方法 A novel Android malware detection method with API semantics extraction/">202402.一种基于APl语义提取的Android恶意软件检测方法 A novel Android malware detection method with API semantics extraction </a>
-</div>
-</div>
-<div x-show="isOpen" style="display:none" class="filelist">
-<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/硕士研究生/科研/文献阅读笔记/2-语义/202403.GAT_AMD：基于图注意力网络和多模态特征深度融合的Android恶意软件检测方法 Android malware detection method based on graph attention networks and deep fusion of multimodal features（精读）/">202403.GAT_AMD：基于图注意力网络和多模态特征深度融合的Android恶意软件检测方法 Android malware detection method based on graph attention networks and deep fusion of multimodal features（精读） </a>
-</div>
-</div>
-<div x-show="isOpen" style="display:none" class="filelist">
-<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/硕士研究生/科研/文献阅读笔记/2-语义/202410.基于主题模型的Android恶意软件检测_Topic Model Based Android Malware Detection/">202410.基于主题模型的Android恶意软件检测_Topic Model Based Android Malware Detection </a>
-</div>
-</div>
-<div x-show="isOpen" style="display:none" class="filelist">
-<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/硕士研究生/科研/文献阅读笔记/2-语义/GSEDroid：GNN-based Android malware detection framework using lightweight semantic embedding/">GSEDroid：GNN-based Android malware detection framework using lightweight semantic embedding </a>
-</div>
-</div>
-<div x-show="isOpen" style="display:none" class="filelist">
-<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/硕士研究生/科研/文献阅读笔记/2-语义/MalBERTv2：基于代码感知bert的恶意软件识别模型 Code Aware BERT-Based Model for Malware Identification/">MalBERTv2：基于代码感知bert的恶意软件识别模型 Code Aware BERT-Based Model for Malware Identification </a>
-</div>
-</div>
-<div x-show="isOpen" style="display:none" class="filelist">
-<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/硕士研究生/科研/文献阅读笔记/2-语义/MalBERT：利用transformer双向编码器表示进行恶意软件检测 Malware Detection using Bidirectional Encoder  Representations from Transformers/">MalBERT：利用transformer双向编码器表示进行恶意软件检测 Malware Detection using Bidirectional Encoder Representations from Transformers </a>
-</div>
-</div>
-<div x-show="isOpen" style="display:none" class="filelist">
-<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/硕士研究生/科研/文献阅读笔记/2-语义/基于fastText和BERT的恶意软件检测与分类 Malware Detection and Classification Using fastText and BERT/">基于fastText和BERT的恶意软件检测与分类 Malware Detection and Classification Using fastText and BERT </a>
-</div>
-</div>
-</div>
-</div>
-<div x-show="isOpen" style="display:none" class="filelist">
-<div class="folder inner-folder" x-data="{isOpen: $persist(false).as('czc知识库/硕士研究生/科研/文献阅读笔记/3-ClusterComputing的文章')}" @click.stop="isOpen=!isOpen">
-<div class="foldername-wrapper align-icon">
-<i x-show="isOpen" style="display:none" icon-name="chevron-down"></i>
-<i x-show="!isOpen" icon-name="chevron-right"></i>
-<span class="foldername">3-ClusterComputing的文章</span>
-</div>
-<div x-show="isOpen" style="display:none" class="filelist">
-<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/硕士研究生/科研/文献阅读笔记/3-ClusterComputing的文章/FEDroid/">FEDroid </a>
-</div>
-</div>
-</div>
-</div>
-<div x-show="isOpen" style="display:none" class="filelist">
-<div class="folder inner-folder" x-data="{isOpen: $persist(false).as('czc知识库/硕士研究生/科研/文献阅读笔记/5-未未未未分类')}" @click.stop="isOpen=!isOpen">
-<div class="foldername-wrapper align-icon">
-<i x-show="isOpen" style="display:none" icon-name="chevron-down"></i>
-<i x-show="!isOpen" icon-name="chevron-right"></i>
-<span class="foldername">5-未未未未分类</span>
-</div>
-<div x-show="isOpen" style="display:none" class="filelist">
-<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/硕士研究生/科研/文献阅读笔记/5-未未未未分类/202402.FACILE：具有更少胶囊和更丰富分层信息的胶囊网络（capsule network）👉FACILE： A capsule network with fewer capsules and richer hierarchical information for malware image classification/">202402.FACILE：具有更少胶囊和更丰富分层信息的胶囊网络（capsule network）👉FACILE： A capsule network with fewer capsules and richer hierarchical information for malware image classification </a>
-</div>
-</div>
-<div x-show="isOpen" style="display:none" class="filelist">
-<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/硕士研究生/科研/文献阅读笔记/5-未未未未分类/基于CNN的安卓恶意软件检测：Deep Android Malware Detection/">基于CNN的安卓恶意软件检测：Deep Android Malware Detection </a>
-</div>
-</div>
-<div x-show="isOpen" style="display:none" class="filelist">
-<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/硕士研究生/科研/文献阅读笔记/5-未未未未分类/概念漂移处理：Efficient Concept Drift Handling for Batch Android Malware Detection Models/">概念漂移处理：Efficient Concept Drift Handling for Batch Android Malware Detection Models </a>
-</div>
-</div>
-<div x-show="isOpen" style="display:none" class="filelist">
-<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/硕士研究生/科研/文献阅读笔记/5-未未未未分类/顶刊：基于注意力的 API 恶意软件定位技术（动态分析）（Attention-Based API Locating for Malware Techniques）/">顶刊：基于注意力的 API 恶意软件定位技术（动态分析）（Attention-Based API Locating for Malware Techniques） </a>
-</div>
-</div>
-</div>
-</div>
-<div x-show="isOpen" style="display:none" class="filelist">
-<div class="folder inner-folder" x-data="{isOpen: $persist(false).as('czc知识库/硕士研究生/科研/文献阅读笔记/6-人工智能的理论文章')}" @click.stop="isOpen=!isOpen">
-<div class="foldername-wrapper align-icon">
-<i x-show="isOpen" style="display:none" icon-name="chevron-down"></i>
-<i x-show="!isOpen" icon-name="chevron-right"></i>
-<span class="foldername">6-人工智能的理论文章</span>
-</div>
-<div x-show="isOpen" style="display:none" class="filelist">
-<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/硕士研究生/科研/文献阅读笔记/6-人工智能的理论文章/202405.KAN：Kolmogorov–Arnold Networks/">202405.KAN：Kolmogorov–Arnold Networks </a>
-</div>
-</div>
-</div>
-</div>
-<div x-show="isOpen" style="display:none" class="filelist">
-<div class="folder inner-folder" x-data="{isOpen: $persist(false).as('czc知识库/硕士研究生/科研/文献阅读笔记/8-恶意代码检测综述类')}" @click.stop="isOpen=!isOpen">
-<div class="foldername-wrapper align-icon">
-<i x-show="isOpen" style="display:none" icon-name="chevron-down"></i>
-<i x-show="!isOpen" icon-name="chevron-right"></i>
-<span class="foldername">8-恶意代码检测综述类</span>
-</div>
-<div x-show="isOpen" style="display:none" class="filelist">
-<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/硕士研究生/科研/文献阅读笔记/8-恶意代码检测综述类/202009.综述：GNN图神经网络研究：Graph neural networks：A review of methods and applications/">202009.综述：GNN图神经网络研究：Graph neural networks：A review of methods and applications </a>
-</div>
-</div>
-<div x-show="isOpen" style="display:none" class="filelist">
-<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/硕士研究生/科研/文献阅读笔记/8-恶意代码检测综述类/202301.十个检测研究分析：Towards a fair comparison and realistic evaluation framework of android malware detectors based on static analysis and machine learning/">202301.十个检测研究分析：Towards a fair comparison and realistic evaluation framework of android malware detectors based on static analysis and machine learning </a>
-</div>
-</div>
-<div x-show="isOpen" style="display:none" class="filelist">
-<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/硕士研究生/科研/文献阅读笔记/8-恶意代码检测综述类/202301.综述：物联网联邦学习综述：IoT Malware Analysis Using Federated Learning： A Comprehensive Survey/">202301.综述：物联网联邦学习综述：IoT Malware Analysis Using Federated Learning： A Comprehensive Survey </a>
-</div>
-</div>
-<div x-show="isOpen" style="display:none" class="filelist">
-<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/硕士研究生/科研/文献阅读笔记/8-恶意代码检测综述类/202306.综述：基于人工智能的物联网恶意代码检测的文献综述/">202306.综述：基于人工智能的物联网恶意代码检测的文献综述 </a>
-</div>
-</div>
-<div x-show="isOpen" style="display:none" class="filelist">
-<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/硕士研究生/科研/文献阅读笔记/8-恶意代码检测综述类/202308.综述：安卓恶意软件：Deep Learning for Android Malware Defenses：a Systematic Literature Review/">202308.综述：安卓恶意软件：Deep Learning for Android Malware Defenses：a Systematic Literature Review </a>
-</div>
-</div>
-<div x-show="isOpen" style="display:none" class="filelist">
-<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/硕士研究生/科研/文献阅读笔记/8-恶意代码检测综述类/202403.综述： Android 任务完成了？（Machine Learning for Android Malware Detection：Mission Accomplished？A Comprehensive Review of Open Challenges and Future Perspectives） ccfb/">202403.综述： Android 任务完成了？（Machine Learning for Android Malware Detection：Mission Accomplished？A Comprehensive Review of Open Challenges and Future Perspectives） ccfb </a>
-</div>
-</div>
-</div>
-</div>
-<div x-show="isOpen" style="display:none" class="filelist">
-<div class="folder inner-folder" x-data="{isOpen: $persist(false).as('czc知识库/硕士研究生/科研/文献阅读笔记/z-垃圾&amp;归档文章&amp;其他东西')}" @click.stop="isOpen=!isOpen">
-<div class="foldername-wrapper align-icon">
-<i x-show="isOpen" style="display:none" icon-name="chevron-down"></i>
-<i x-show="!isOpen" icon-name="chevron-right"></i>
-<span class="foldername">z-垃圾&amp;归档文章&amp;其他东西</span>
-</div>
-<div x-show="isOpen" style="display:none" class="filelist">
-<div class="folder inner-folder" x-data="{isOpen: $persist(false).as('czc知识库/硕士研究生/科研/文献阅读笔记/z-垃圾&amp;归档文章&amp;其他东西/!-笔记的笔记')}" @click.stop="isOpen=!isOpen">
-<div class="foldername-wrapper align-icon">
-<i x-show="isOpen" style="display:none" icon-name="chevron-down"></i>
-<i x-show="!isOpen" icon-name="chevron-right"></i>
-<span class="foldername">!-笔记的笔记</span>
-</div>
-<div x-show="isOpen" style="display:none" class="filelist">
-<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/硕士研究生/科研/文献阅读笔记/z-垃圾&amp;归档文章&amp;其他东西/!-笔记的笔记/202403.GAT_AMD：精读笔记/">202403.GAT_AMD：精读笔记 </a>
-</div>
-</div>
-</div>
-</div>
-<div x-show="isOpen" style="display:none" class="filelist">
-<div class="folder inner-folder" x-data="{isOpen: $persist(false).as('czc知识库/硕士研究生/科研/文献阅读笔记/z-垃圾&amp;归档文章&amp;其他东西/3-其他相关东西')}" @click.stop="isOpen=!isOpen">
-<div class="foldername-wrapper align-icon">
-<i x-show="isOpen" style="display:none" icon-name="chevron-down"></i>
-<i x-show="!isOpen" icon-name="chevron-right"></i>
-<span class="foldername">3-其他相关东西</span>
-</div>
-<div x-show="isOpen" style="display:none" class="filelist">
-<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/硕士研究生/科研/文献阅读笔记/z-垃圾&amp;归档文章&amp;其他东西/3-其他相关东西/FAGnet的simpletex扫描pdf转latex： ConvertedMD/">FAGnet的simpletex扫描pdf转latex： ConvertedMD </a>
-</div>
-</div>
-</div>
-</div>
-<div x-show="isOpen" style="display:none" class="filelist">
-<div class="folder inner-folder" x-data="{isOpen: $persist(false).as('czc知识库/硕士研究生/科研/文献阅读笔记/z-垃圾&amp;归档文章&amp;其他东西/5-垃圾文章')}" @click.stop="isOpen=!isOpen">
-<div class="foldername-wrapper align-icon">
-<i x-show="isOpen" style="display:none" icon-name="chevron-down"></i>
-<i x-show="!isOpen" icon-name="chevron-right"></i>
-<span class="foldername">5-垃圾文章</span>
-</div>
-<div x-show="isOpen" style="display:none" class="filelist">
-<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/硕士研究生/科研/文献阅读笔记/z-垃圾&amp;归档文章&amp;其他东西/5-垃圾文章/BiLSTM SPPNet_AMD：教科书？Hybrid Malware Detection Based on Bi-LSTM and SPP-Net for Smart IoT/">BiLSTM SPPNet_AMD：教科书？Hybrid Malware Detection Based on Bi-LSTM and SPP-Net for Smart IoT </a>
-</div>
-</div>
-<div x-show="isOpen" style="display:none" class="filelist">
-<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/硕士研究生/科研/文献阅读笔记/z-垃圾&amp;归档文章&amp;其他东西/5-垃圾文章/LSTM GAN_AMD：Leveraging LSTM and GAN for Modern Malware Detection LSTM和GAN结合模型检测恶意软件 垃圾文章/">LSTM GAN_AMD：Leveraging LSTM and GAN for Modern Malware Detection LSTM和GAN结合模型检测恶意软件 垃圾文章 </a>
-</div>
-</div>
-</div>
-</div>
-<div x-show="isOpen" style="display:none" class="filelist">
-<div class="folder inner-folder" x-data="{isOpen: $persist(false).as('czc知识库/硕士研究生/科研/文献阅读笔记/z-垃圾&amp;归档文章&amp;其他东西/7-物联网恶意代码检测')}" @click.stop="isOpen=!isOpen">
-<div class="foldername-wrapper align-icon">
-<i x-show="isOpen" style="display:none" icon-name="chevron-down"></i>
-<i x-show="!isOpen" icon-name="chevron-right"></i>
-<span class="foldername">7-物联网恶意代码检测</span>
-</div>
-<div x-show="isOpen" style="display:none" class="filelist">
-<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/硕士研究生/科研/文献阅读笔记/z-垃圾&amp;归档文章&amp;其他东西/7-物联网恶意代码检测/MDABP：A Novel Approach to Detect Cross-Architecture IoT Malware Based on PaaS/">MDABP：A Novel Approach to Detect Cross-Architecture IoT Malware Based on PaaS </a>
-</div>
-</div>
-</div>
-</div>
-<div x-show="isOpen" style="display:none" class="filelist">
-<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/硕士研究生/科研/文献阅读笔记/z-垃圾&amp;归档文章&amp;其他东西/垃圾：基于深度可分离卷积的多神经网络恶意代码检测模型/">垃圾：基于深度可分离卷积的多神经网络恶意代码检测模型 </a>
-</div>
-</div>
-</div>
-</div>
-<div x-show="isOpen" style="display:none" class="filelist">
-<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/硕士研究生/科研/文献阅读笔记/202105.MLDroid：使用机器学习技术进行 Android 恶意软件检测的框架/">202105.MLDroid：使用机器学习技术进行 Android 恶意软件检测的框架 </a>
-</div>
-</div>
-<div x-show="isOpen" style="display:none" class="filelist">
-<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/硕士研究生/科研/文献阅读笔记/202402.SynDroid：一种基于CTGAN-SVM的自适应增强Android恶意软件分类方法/">202402.SynDroid：一种基于CTGAN-SVM的自适应增强Android恶意软件分类方法 </a>
-</div>
-</div>
-<div x-show="isOpen" style="display:none" class="filelist">
-<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/硕士研究生/科研/文献阅读笔记/202406.CNN-BiLSTM_AMD：基于CNN-BiLSTM的恶意软件检测与分类系统：Malware Detection and Classification System Based on CNN-BiLSTM/">202406.CNN-BiLSTM_AMD：基于CNN-BiLSTM的恶意软件检测与分类系统：Malware Detection and Classification System Based on CNN-BiLSTM </a>
-</div>
-</div>
-<div x-show="isOpen" style="display:none" class="filelist">
-<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/硕士研究生/科研/文献阅读笔记/20240911.DroidEvoler/">20240911.DroidEvoler </a>
-</div>
-</div>
-<div x-show="isOpen" style="display:none" class="filelist">
-<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/硕士研究生/科研/文献阅读笔记/CNN-DNN_AMD：基于CNN和DNN Bybrid机制的Android恶意软件检测方法 Android Malware Detection Method Based on CNN and DNN Bybrid Mechanism/">CNN-DNN_AMD：基于CNN和DNN Bybrid机制的Android恶意软件检测方法 Android Malware Detection Method Based on CNN and DNN Bybrid Mechanism </a>
-</div>
-</div>
-<div x-show="isOpen" style="display:none" class="filelist">
-<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/硕士研究生/科研/文献阅读笔记/GraphSAGE 图神经网络算法（GNN）/">GraphSAGE 图神经网络算法（GNN） </a>
-</div>
-</div>
-<div x-show="isOpen" style="display:none" class="filelist">
-<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/硕士研究生/科研/文献阅读笔记/文献阅读笔记/">文献阅读笔记 </a>
-</div>
-</div>
-</div>
-</div>
-<div x-show="isOpen" style="display:none" class="filelist">
-<div class="folder inner-folder" x-data="{isOpen: $persist(false).as('czc知识库/硕士研究生/科研/组会汇报')}" @click.stop="isOpen=!isOpen">
-<div class="foldername-wrapper align-icon">
-<i x-show="isOpen" style="display:none" icon-name="chevron-down"></i>
-<i x-show="!isOpen" icon-name="chevron-right"></i>
-<span class="foldername">组会汇报</span>
-</div>
-<div x-show="isOpen" style="display:none" class="filelist">
-<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/硕士研究生/科研/组会汇报/20250222/">20250222 </a>
-</div>
-</div>
-</div>
-</div>
-<div x-show="isOpen" style="display:none" class="filelist">
-<div class="folder inner-folder" x-data="{isOpen: $persist(false).as('czc知识库/硕士研究生/科研/论文')}" @click.stop="isOpen=!isOpen">
-<div class="foldername-wrapper align-icon">
-<i x-show="isOpen" style="display:none" icon-name="chevron-down"></i>
-<i x-show="!isOpen" icon-name="chevron-right"></i>
-<span class="foldername">论文</span>
-</div>
-<div x-show="isOpen" style="display:none" class="filelist">
-<div class="folder inner-folder" x-data="{isOpen: $persist(false).as('czc知识库/硕士研究生/科研/论文/初稿')}" @click.stop="isOpen=!isOpen">
-<div class="foldername-wrapper align-icon">
-<i x-show="isOpen" style="display:none" icon-name="chevron-down"></i>
-<i x-show="!isOpen" icon-name="chevron-right"></i>
-<span class="foldername">初稿</span>
-</div>
-<div x-show="isOpen" style="display:none" class="filelist">
-<div class="folder inner-folder" x-data="{isOpen: $persist(false).as('czc知识库/硕士研究生/科研/论文/初稿/v4')}" @click.stop="isOpen=!isOpen">
-<div class="foldername-wrapper align-icon">
-<i x-show="isOpen" style="display:none" icon-name="chevron-down"></i>
-<i x-show="!isOpen" icon-name="chevron-right"></i>
-<span class="foldername">v4</span>
-</div>
-<div x-show="isOpen" style="display:none" class="filelist">
-<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/硕士研究生/科研/论文/初稿/v4/101-初稿/">101-初稿 </a>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div x-show="isOpen" style="display:none" class="filelist">
-<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/硕士研究生/科研/论文/论文思路/">论文思路 </a>
-</div>
-</div>
-</div>
-</div>
-<div x-show="isOpen" style="display:none" class="filelist">
-<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/硕士研究生/科研/主题模型/">主题模型 </a>
-</div>
-</div>
 </div>
 </div>
 </div>
@@ -829,43 +386,6 @@ CTRL + K
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
 <div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/笔记/prompt/文献翻译提示词prompt/">文献翻译提示词prompt </a>
-</div>
-</div>
-</div>
-</div>
-<div x-show="isOpen" style="display:none" class="filelist">
-<div class="folder inner-folder" x-data="{isOpen: $persist(false).as('czc知识库/笔记/不分类')}" @click.stop="isOpen=!isOpen">
-<div class="foldername-wrapper align-icon">
-<i x-show="isOpen" style="display:none" icon-name="chevron-down"></i>
-<i x-show="!isOpen" icon-name="chevron-right"></i>
-<span class="foldername">不分类</span>
-</div>
-<div x-show="isOpen" style="display:none" class="filelist">
-<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/笔记/不分类/chatGPT使用笔记 提示词收集 api/">chatGPT使用笔记 提示词收集 api </a>
-</div>
-</div>
-<div x-show="isOpen" style="display:none" class="filelist">
-<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/笔记/不分类/chatgpt如何提交超过字数限制的文本/">chatgpt如何提交超过字数限制的文本 </a>
-</div>
-</div>
-<div x-show="isOpen" style="display:none" class="filelist">
-<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/笔记/不分类/TTS文本转语音 。基于Bert-VITS2的原神 崩铁全角色文本转语音实现/">TTS文本转语音 。基于Bert-VITS2的原神 崩铁全角色文本转语音实现 </a>
-</div>
-</div>
-<div x-show="isOpen" style="display:none" class="filelist">
-<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/笔记/不分类/效率提升-学习方法/">效率提升-学习方法 </a>
-</div>
-</div>
-<div x-show="isOpen" style="display:none" class="filelist">
-<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/笔记/不分类/杂七杂八/">杂七杂八 </a>
-</div>
-</div>
-<div x-show="isOpen" style="display:none" class="filelist">
-<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/笔记/不分类/汽油：不同标号的汽油区别科普/">汽油：不同标号的汽油区别科普 </a>
-</div>
-</div>
-<div x-show="isOpen" style="display:none" class="filelist">
-<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/笔记/不分类/精确度、准确度、精密度区别，准确性、精确性/">精确度、准确度、精密度区别，准确性、精确性 </a>
 </div>
 </div>
 </div>
@@ -1119,19 +639,6 @@ CTRL + K
 <i x-show="isOpen" style="display:none" icon-name="chevron-down"></i>
 <i x-show="!isOpen" icon-name="chevron-right"></i>
 <span class="foldername">计算机</span>
-</div>
-<div x-show="isOpen" style="display:none" class="filelist">
-<div class="folder inner-folder" x-data="{isOpen: $persist(false).as('czc知识库/计算机/AI大模型')}" @click.stop="isOpen=!isOpen">
-<div class="foldername-wrapper align-icon">
-<i x-show="isOpen" style="display:none" icon-name="chevron-down"></i>
-<i x-show="!isOpen" icon-name="chevron-right"></i>
-<span class="foldername">AI大模型</span>
-</div>
-<div x-show="isOpen" style="display:none" class="filelist">
-<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/计算机/AI大模型/deepseek本地部署/">deepseek本地部署 </a>
-</div>
-</div>
-</div>
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
 <div class="folder inner-folder" x-data="{isOpen: $persist(false).as('czc知识库/计算机/Hadoop技术栈')}" @click.stop="isOpen=!isOpen">
@@ -2409,6 +1916,10 @@ CTRL + K
 </div>
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/计算机/搞机/Windows/x86-64、amd64、arm、aarch64 都是些什么？/">x86-64、amd64、arm、aarch64 都是些什么？ </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
 <div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/计算机/搞机/Windows/右键菜单添加新建选项添加自定义项目 typora 右键新建md文件/">右键菜单添加新建选项添加自定义项目 typora 右键新建md文件 </a>
 </div>
 </div>
@@ -2429,6 +1940,10 @@ CTRL + K
 </div>
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/计算机/搞机/Windows/校园网AP隔离解决方案笔记-解决校园网设备无法互相通信的臭毛病-附破解程序/">校园网AP隔离解决方案笔记-解决校园网设备无法互相通信的臭毛病-附破解程序 </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
 <div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/计算机/搞机/Windows/禁用和开启虚拟化cmd命令 关闭开机自动加载hyperv 解决vmware冲突/">禁用和开启虚拟化cmd命令 关闭开机自动加载hyperv 解决vmware冲突 </a>
 </div>
 </div>
@@ -2442,6 +1957,10 @@ CTRL + K
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
 <div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/计算机/搞机/Windows/虚拟磁盘空间压缩 磁盘清理vhdx（记得要有hyperv）/">虚拟磁盘空间压缩 磁盘清理vhdx（记得要有hyperv） </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/计算机/搞机/Windows/计算机常识 - MB、Mb、MBps、Mbps区别/">计算机常识 - MB、Mb、MBps、Mbps区别 </a>
 </div>
 </div>
 </div>
@@ -2473,18 +1992,6 @@ CTRL + K
 <div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/计算机/搞机/WSL/wsl虚拟磁盘空间压缩/">wsl虚拟磁盘空间压缩 </a>
 </div>
 </div>
-</div>
-</div>
-<div x-show="isOpen" style="display:none" class="filelist">
-<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/计算机/搞机/x86-64、amd64、arm、aarch64 都是些什么？/">x86-64、amd64、arm、aarch64 都是些什么？ </a>
-</div>
-</div>
-<div x-show="isOpen" style="display:none" class="filelist">
-<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/计算机/搞机/校园网AP隔离解决方案笔记-解决校园网设备无法互相通信的臭毛病-附破解程序/">校园网AP隔离解决方案笔记-解决校园网设备无法互相通信的臭毛病-附破解程序 </a>
-</div>
-</div>
-<div x-show="isOpen" style="display:none" class="filelist">
-<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/czc知识库/计算机/搞机/计算机常识 - MB、Mb、MBps、Mbps区别/">计算机常识 - MB、Mb、MBps、Mbps区别 </a>
 </div>
 </div>
 </div>
@@ -2579,11 +2086,626 @@ CTRL + K
 </div>
 </div>
 <div x-show="isOpen" style="display:none" class="">
-<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/">主页 </a>
+<div class="folder inner-folder" x-data="{isOpen: $persist(false).as('硕士研究生')}" @click.stop="isOpen=!isOpen">
+<div class="foldername-wrapper align-icon">
+<i x-show="isOpen" style="display:none" icon-name="chevron-down"></i>
+<i x-show="!isOpen" icon-name="chevron-right"></i>
+<span class="foldername">硕士研究生</span>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div class="folder inner-folder" x-data="{isOpen: $persist(false).as('硕士研究生/科研')}" @click.stop="isOpen=!isOpen">
+<div class="foldername-wrapper align-icon">
+<i x-show="isOpen" style="display:none" icon-name="chevron-down"></i>
+<i x-show="!isOpen" icon-name="chevron-right"></i>
+<span class="foldername">科研</span>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div class="folder inner-folder" x-data="{isOpen: $persist(false).as('硕士研究生/科研/学术常识')}" @click.stop="isOpen=!isOpen">
+<div class="foldername-wrapper align-icon">
+<i x-show="isOpen" style="display:none" icon-name="chevron-down"></i>
+<i x-show="!isOpen" icon-name="chevron-right"></i>
+<span class="foldername">学术常识</span>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div class="folder inner-folder" x-data="{isOpen: $persist(false).as('硕士研究生/科研/学术常识/子')}" @click.stop="isOpen=!isOpen">
+<div class="foldername-wrapper align-icon">
+<i x-show="isOpen" style="display:none" icon-name="chevron-down"></i>
+<i x-show="!isOpen" icon-name="chevron-right"></i>
+<span class="foldername">子</span>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/硕士研究生/科研/学术常识/子/SCI的影响因子（if）有多少才算高分值/">SCI的影响因子（if）有多少才算高分值 </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/硕士研究生/科研/学术常识/子/中国计算机学会 ccf等级 分级 期刊 分区/">中国计算机学会 ccf等级 分级 期刊 分区 </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/硕士研究生/科研/学术常识/子/信息安全领域 四大顶会/">信息安全领域 四大顶会 </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/硕士研究生/科研/学术常识/子/查文献网站/">查文献网站 </a>
+</div>
+</div>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/硕士研究生/科研/学术常识/sci写作和经验分享 组会 知乎：羊驼舍.txt/">sci写作和经验分享 组会 知乎：羊驼舍.txt </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/硕士研究生/科研/学术常识/什么是影响因子（IF）SCIIF/">什么是影响因子（IF）SCIIF </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/硕士研究生/科研/学术常识/会议期刊笔记汇总/">会议期刊笔记汇总 </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/硕士研究生/科研/学术常识/关于ISI、SCI、EI、IEEE、Elsevier、Springer的区别/">关于ISI、SCI、EI、IEEE、Elsevier、Springer的区别 </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/硕士研究生/科研/学术常识/写论文笔记.txt/">写论文笔记.txt </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/硕士研究生/科研/学术常识/收藏-专利检索及分析 搜索 国家知识产权局 下载.txt/">收藏-专利检索及分析 搜索 国家知识产权局 下载.txt </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/硕士研究生/科研/学术常识/研究生怎么读/">研究生怎么读 </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/硕士研究生/科研/学术常识/科研大牛们怎么读文献/">科研大牛们怎么读文献 </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/硕士研究生/科研/学术常识/论文绘图工具-流程图/">论文绘图工具-流程图 </a>
+</div>
+</div>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div class="folder inner-folder" x-data="{isOpen: $persist(false).as('硕士研究生/科研/数据集')}" @click.stop="isOpen=!isOpen">
+<div class="foldername-wrapper align-icon">
+<i x-show="isOpen" style="display:none" icon-name="chevron-down"></i>
+<i x-show="!isOpen" icon-name="chevron-right"></i>
+<span class="foldername">数据集</span>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div class="folder inner-folder" x-data="{isOpen: $persist(false).as('硕士研究生/科研/数据集/其他')}" @click.stop="isOpen=!isOpen">
+<div class="foldername-wrapper align-icon">
+<i x-show="isOpen" style="display:none" icon-name="chevron-down"></i>
+<i x-show="!isOpen" icon-name="chevron-right"></i>
+<span class="foldername">其他</span>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/硕士研究生/科研/数据集/其他/Virus-MNIST：基准恶意软件数据集 （图像分类数据集）/">Virus-MNIST：基准恶意软件数据集 （图像分类数据集） </a>
+</div>
+</div>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/硕士研究生/科研/数据集/自己的数据集/">自己的数据集 </a>
+</div>
+</div>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div class="folder inner-folder" x-data="{isOpen: $persist(false).as('硕士研究生/科研/文献阅读笔记')}" @click.stop="isOpen=!isOpen">
+<div class="foldername-wrapper align-icon">
+<i x-show="isOpen" style="display:none" icon-name="chevron-down"></i>
+<i x-show="!isOpen" icon-name="chevron-right"></i>
+<span class="foldername">文献阅读笔记</span>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div class="folder inner-folder" x-data="{isOpen: $persist(false).as('硕士研究生/科研/文献阅读笔记/0-翻译来发csdn')}" @click.stop="isOpen=!isOpen">
+<div class="foldername-wrapper align-icon">
+<i x-show="isOpen" style="display:none" icon-name="chevron-down"></i>
+<i x-show="!isOpen" icon-name="chevron-right"></i>
+<span class="foldername">0-翻译来发csdn</span>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div class="folder inner-folder" x-data="{isOpen: $persist(false).as('硕士研究生/科研/文献阅读笔记/0-翻译来发csdn/邹德清 吴月明系列')}" @click.stop="isOpen=!isOpen">
+<div class="foldername-wrapper align-icon">
+<i x-show="isOpen" style="display:none" icon-name="chevron-down"></i>
+<i x-show="!isOpen" icon-name="chevron-right"></i>
+<span class="foldername">邹德清 吴月明系列</span>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/硕士研究生/科研/文献阅读笔记/0-翻译来发csdn/邹德清 吴月明系列/2021.07.吴月明3.IntDroid：基于API亲密度分析的Android恶意软件检测/">2021.07.吴月明3.IntDroid：基于API亲密度分析的Android恶意软件检测 </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/硕士研究生/科研/文献阅读笔记/0-翻译来发csdn/邹德清 吴月明系列/HomDroid：吴月明2/">HomDroid：吴月明2 </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/硕士研究生/科研/文献阅读笔记/0-翻译来发csdn/邹德清 吴月明系列/MalScan：吴月明1/">MalScan：吴月明1 </a>
+</div>
+</div>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/硕士研究生/科研/文献阅读笔记/0-翻译来发csdn/2022.03.SDAC：使用基于语义距离的 API 集群进行 Android 恶意软件检测的慢老化解决方案/">2022.03.SDAC：使用基于语义距离的 API 集群进行 Android 恶意软件检测的慢老化解决方案 </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/硕士研究生/科研/文献阅读笔记/0-翻译来发csdn/2024.02.一种基于API语义提取的Android恶意软件检测方法/">2024.02.一种基于API语义提取的Android恶意软件检测方法 </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/硕士研究生/科研/文献阅读笔记/0-翻译来发csdn/2024.11.用于 Android 恶意软件检测的混合 ML-DL 方法/">2024.11.用于 Android 恶意软件检测的混合 ML-DL 方法 </a>
+</div>
+</div>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div class="folder inner-folder" x-data="{isOpen: $persist(false).as('硕士研究生/科研/文献阅读笔记/1-恶意代码经典论文')}" @click.stop="isOpen=!isOpen">
+<div class="foldername-wrapper align-icon">
+<i x-show="isOpen" style="display:none" icon-name="chevron-down"></i>
+<i x-show="!isOpen" icon-name="chevron-right"></i>
+<span class="foldername">1-恶意代码经典论文</span>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/硕士研究生/科研/文献阅读笔记/1-恶意代码经典论文/Drebin/">Drebin </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/硕士研究生/科研/文献阅读笔记/1-恶意代码经典论文/MAMADROID：Detecting Android Malware by Building Markov Chains of Behavioral Models/">MAMADROID：Detecting Android Malware by Building Markov Chains of Behavioral Models </a>
+</div>
+</div>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div class="folder inner-folder" x-data="{isOpen: $persist(false).as('硕士研究生/科研/文献阅读笔记/2-图神经网络')}" @click.stop="isOpen=!isOpen">
+<div class="foldername-wrapper align-icon">
+<i x-show="isOpen" style="display:none" icon-name="chevron-down"></i>
+<i x-show="!isOpen" icon-name="chevron-right"></i>
+<span class="foldername">2-图神经网络</span>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/硕士研究生/科研/文献阅读笔记/2-图神经网络/202012.GNN_AMD：基于图神经网络调用图的 Android 恶意软件检测 Android Malware Detection based on Call Graph via Graph Neural Network/">202012.GNN_AMD：基于图神经网络调用图的 Android 恶意软件检测 Android Malware Detection based on Call Graph via Graph Neural Network </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/硕士研究生/科研/文献阅读笔记/2-图神经网络/202107.GDroid：Android malware detection and classification with graph convolutional network/">202107.GDroid：Android malware detection and classification with graph convolutional network </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/硕士研究生/科研/文献阅读笔记/2-图神经网络/202301.DeepCatra：学习基于流程和图表的 Android 恶意软件检测行为/">202301.DeepCatra：学习基于流程和图表的 Android 恶意软件检测行为 </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/硕士研究生/科研/文献阅读笔记/2-图神经网络/202301.SriDroid：图卷积网络的抗混淆安卓恶意软件检测，吴月明/">202301.SriDroid：图卷积网络的抗混淆安卓恶意软件检测，吴月明 </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/硕士研究生/科研/文献阅读笔记/2-图神经网络/202305.1.MSDROID：Identifying Malicious Snippets for Android Malware Detection/">202305.1.MSDROID：Identifying Malicious Snippets for Android Malware Detection </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/硕士研究生/科研/文献阅读笔记/2-图神经网络/202305.13.GCNs_AMD：基于 GCN 增强函数调用图中节点特征差异的 Android 恶意软件检测方法 An Android Malware Detection Approach to Enhance Node Feature Differences in a Function Call Graph Based on GCNs/">202305.13.GCNs_AMD：基于 GCN 增强函数调用图中节点特征差异的 Android 恶意软件检测方法 An Android Malware Detection Approach to Enhance Node Feature Differences in a Function Call Graph Based on GCNs </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/硕士研究生/科研/文献阅读笔记/2-图神经网络/202404.FAGnet：使用图神经网络进行基于家庭感知的 Android 恶意软件分析 Family-aware-based android malware analysis using graph neural network/">202404.FAGnet：使用图神经网络进行基于家庭感知的 Android 恶意软件分析 Family-aware-based android malware analysis using graph neural network </a>
+</div>
+</div>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div class="folder inner-folder" x-data="{isOpen: $persist(false).as('硕士研究生/科研/文献阅读笔记/2-异构图')}" @click.stop="isOpen=!isOpen">
+<div class="foldername-wrapper align-icon">
+<i x-show="isOpen" style="display:none" icon-name="chevron-down"></i>
+<i x-show="!isOpen" icon-name="chevron-right"></i>
+<span class="foldername">2-异构图</span>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/硕士研究生/科研/文献阅读笔记/2-异构图/GHGDroid(异构图)：Global heterogeneous graph-based android malware detection/">GHGDroid(异构图)：Global heterogeneous graph-based android malware detection </a>
+</div>
+</div>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div class="folder inner-folder" x-data="{isOpen: $persist(false).as('硕士研究生/科研/文献阅读笔记/2-语义')}" @click.stop="isOpen=!isOpen">
+<div class="foldername-wrapper align-icon">
+<i x-show="isOpen" style="display:none" icon-name="chevron-down"></i>
+<i x-show="!isOpen" icon-name="chevron-right"></i>
+<span class="foldername">2-语义</span>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/硕士研究生/科研/文献阅读笔记/2-语义/202402.一种基于APl语义提取的Android恶意软件检测方法 A novel Android malware detection method with API semantics extraction/">202402.一种基于APl语义提取的Android恶意软件检测方法 A novel Android malware detection method with API semantics extraction </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/硕士研究生/科研/文献阅读笔记/2-语义/202403.GAT_AMD：基于图注意力网络和多模态特征深度融合的Android恶意软件检测方法 Android malware detection method based on graph attention networks and deep fusion of multimodal features（精读）/">202403.GAT_AMD：基于图注意力网络和多模态特征深度融合的Android恶意软件检测方法 Android malware detection method based on graph attention networks and deep fusion of multimodal features（精读） </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/硕士研究生/科研/文献阅读笔记/2-语义/202410.基于主题模型的Android恶意软件检测_Topic Model Based Android Malware Detection/">202410.基于主题模型的Android恶意软件检测_Topic Model Based Android Malware Detection </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/硕士研究生/科研/文献阅读笔记/2-语义/GSEDroid：GNN-based Android malware detection framework using lightweight semantic embedding/">GSEDroid：GNN-based Android malware detection framework using lightweight semantic embedding </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/硕士研究生/科研/文献阅读笔记/2-语义/MalBERTv2：基于代码感知bert的恶意软件识别模型 Code Aware BERT-Based Model for Malware Identification/">MalBERTv2：基于代码感知bert的恶意软件识别模型 Code Aware BERT-Based Model for Malware Identification </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/硕士研究生/科研/文献阅读笔记/2-语义/MalBERT：利用transformer双向编码器表示进行恶意软件检测 Malware Detection using Bidirectional Encoder  Representations from Transformers/">MalBERT：利用transformer双向编码器表示进行恶意软件检测 Malware Detection using Bidirectional Encoder Representations from Transformers </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/硕士研究生/科研/文献阅读笔记/2-语义/基于fastText和BERT的恶意软件检测与分类 Malware Detection and Classification Using fastText and BERT/">基于fastText和BERT的恶意软件检测与分类 Malware Detection and Classification Using fastText and BERT </a>
+</div>
+</div>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div class="folder inner-folder" x-data="{isOpen: $persist(false).as('硕士研究生/科研/文献阅读笔记/3-ClusterComputing的文章')}" @click.stop="isOpen=!isOpen">
+<div class="foldername-wrapper align-icon">
+<i x-show="isOpen" style="display:none" icon-name="chevron-down"></i>
+<i x-show="!isOpen" icon-name="chevron-right"></i>
+<span class="foldername">3-ClusterComputing的文章</span>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/硕士研究生/科研/文献阅读笔记/3-ClusterComputing的文章/FEDroid/">FEDroid </a>
+</div>
+</div>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div class="folder inner-folder" x-data="{isOpen: $persist(false).as('硕士研究生/科研/文献阅读笔记/5-未未未未分类')}" @click.stop="isOpen=!isOpen">
+<div class="foldername-wrapper align-icon">
+<i x-show="isOpen" style="display:none" icon-name="chevron-down"></i>
+<i x-show="!isOpen" icon-name="chevron-right"></i>
+<span class="foldername">5-未未未未分类</span>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/硕士研究生/科研/文献阅读笔记/5-未未未未分类/202402.FACILE：具有更少胶囊和更丰富分层信息的胶囊网络（capsule network）👉FACILE： A capsule network with fewer capsules and richer hierarchical information for malware image classification/">202402.FACILE：具有更少胶囊和更丰富分层信息的胶囊网络（capsule network）👉FACILE： A capsule network with fewer capsules and richer hierarchical information for malware image classification </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/硕士研究生/科研/文献阅读笔记/5-未未未未分类/基于CNN的安卓恶意软件检测：Deep Android Malware Detection/">基于CNN的安卓恶意软件检测：Deep Android Malware Detection </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/硕士研究生/科研/文献阅读笔记/5-未未未未分类/概念漂移处理：Efficient Concept Drift Handling for Batch Android Malware Detection Models/">概念漂移处理：Efficient Concept Drift Handling for Batch Android Malware Detection Models </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/硕士研究生/科研/文献阅读笔记/5-未未未未分类/顶刊：基于注意力的 API 恶意软件定位技术（动态分析）（Attention-Based API Locating for Malware Techniques）/">顶刊：基于注意力的 API 恶意软件定位技术（动态分析）（Attention-Based API Locating for Malware Techniques） </a>
+</div>
+</div>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div class="folder inner-folder" x-data="{isOpen: $persist(false).as('硕士研究生/科研/文献阅读笔记/6-人工智能的理论文章')}" @click.stop="isOpen=!isOpen">
+<div class="foldername-wrapper align-icon">
+<i x-show="isOpen" style="display:none" icon-name="chevron-down"></i>
+<i x-show="!isOpen" icon-name="chevron-right"></i>
+<span class="foldername">6-人工智能的理论文章</span>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/硕士研究生/科研/文献阅读笔记/6-人工智能的理论文章/202405.KAN：Kolmogorov–Arnold Networks/">202405.KAN：Kolmogorov–Arnold Networks </a>
+</div>
+</div>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div class="folder inner-folder" x-data="{isOpen: $persist(false).as('硕士研究生/科研/文献阅读笔记/8-恶意代码检测综述类')}" @click.stop="isOpen=!isOpen">
+<div class="foldername-wrapper align-icon">
+<i x-show="isOpen" style="display:none" icon-name="chevron-down"></i>
+<i x-show="!isOpen" icon-name="chevron-right"></i>
+<span class="foldername">8-恶意代码检测综述类</span>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/硕士研究生/科研/文献阅读笔记/8-恶意代码检测综述类/202009.综述：GNN图神经网络研究：Graph neural networks：A review of methods and applications/">202009.综述：GNN图神经网络研究：Graph neural networks：A review of methods and applications </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/硕士研究生/科研/文献阅读笔记/8-恶意代码检测综述类/202301.十个检测研究分析：Towards a fair comparison and realistic evaluation framework of android malware detectors based on static analysis and machine learning/">202301.十个检测研究分析：Towards a fair comparison and realistic evaluation framework of android malware detectors based on static analysis and machine learning </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/硕士研究生/科研/文献阅读笔记/8-恶意代码检测综述类/202301.综述：物联网联邦学习综述：IoT Malware Analysis Using Federated Learning： A Comprehensive Survey/">202301.综述：物联网联邦学习综述：IoT Malware Analysis Using Federated Learning： A Comprehensive Survey </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/硕士研究生/科研/文献阅读笔记/8-恶意代码检测综述类/202306.综述：基于人工智能的物联网恶意代码检测的文献综述/">202306.综述：基于人工智能的物联网恶意代码检测的文献综述 </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/硕士研究生/科研/文献阅读笔记/8-恶意代码检测综述类/202308.综述：安卓恶意软件：Deep Learning for Android Malware Defenses：a Systematic Literature Review/">202308.综述：安卓恶意软件：Deep Learning for Android Malware Defenses：a Systematic Literature Review </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/硕士研究生/科研/文献阅读笔记/8-恶意代码检测综述类/202403.综述： Android 任务完成了？（Machine Learning for Android Malware Detection：Mission Accomplished？A Comprehensive Review of Open Challenges and Future Perspectives） ccfb/">202403.综述： Android 任务完成了？（Machine Learning for Android Malware Detection：Mission Accomplished？A Comprehensive Review of Open Challenges and Future Perspectives） ccfb </a>
+</div>
+</div>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div class="folder inner-folder" x-data="{isOpen: $persist(false).as('硕士研究生/科研/文献阅读笔记/z-垃圾&amp;归档文章&amp;其他东西')}" @click.stop="isOpen=!isOpen">
+<div class="foldername-wrapper align-icon">
+<i x-show="isOpen" style="display:none" icon-name="chevron-down"></i>
+<i x-show="!isOpen" icon-name="chevron-right"></i>
+<span class="foldername">z-垃圾&amp;归档文章&amp;其他东西</span>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div class="folder inner-folder" x-data="{isOpen: $persist(false).as('硕士研究生/科研/文献阅读笔记/z-垃圾&amp;归档文章&amp;其他东西/!-笔记的笔记')}" @click.stop="isOpen=!isOpen">
+<div class="foldername-wrapper align-icon">
+<i x-show="isOpen" style="display:none" icon-name="chevron-down"></i>
+<i x-show="!isOpen" icon-name="chevron-right"></i>
+<span class="foldername">!-笔记的笔记</span>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/硕士研究生/科研/文献阅读笔记/z-垃圾&amp;归档文章&amp;其他东西/!-笔记的笔记/202403.GAT_AMD：精读笔记/">202403.GAT_AMD：精读笔记 </a>
+</div>
+</div>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div class="folder inner-folder" x-data="{isOpen: $persist(false).as('硕士研究生/科研/文献阅读笔记/z-垃圾&amp;归档文章&amp;其他东西/3-其他相关东西')}" @click.stop="isOpen=!isOpen">
+<div class="foldername-wrapper align-icon">
+<i x-show="isOpen" style="display:none" icon-name="chevron-down"></i>
+<i x-show="!isOpen" icon-name="chevron-right"></i>
+<span class="foldername">3-其他相关东西</span>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/硕士研究生/科研/文献阅读笔记/z-垃圾&amp;归档文章&amp;其他东西/3-其他相关东西/FAGnet的simpletex扫描pdf转latex： ConvertedMD/">FAGnet的simpletex扫描pdf转latex： ConvertedMD </a>
+</div>
+</div>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div class="folder inner-folder" x-data="{isOpen: $persist(false).as('硕士研究生/科研/文献阅读笔记/z-垃圾&amp;归档文章&amp;其他东西/5-垃圾文章')}" @click.stop="isOpen=!isOpen">
+<div class="foldername-wrapper align-icon">
+<i x-show="isOpen" style="display:none" icon-name="chevron-down"></i>
+<i x-show="!isOpen" icon-name="chevron-right"></i>
+<span class="foldername">5-垃圾文章</span>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/硕士研究生/科研/文献阅读笔记/z-垃圾&amp;归档文章&amp;其他东西/5-垃圾文章/BiLSTM SPPNet_AMD：教科书？Hybrid Malware Detection Based on Bi-LSTM and SPP-Net for Smart IoT/">BiLSTM SPPNet_AMD：教科书？Hybrid Malware Detection Based on Bi-LSTM and SPP-Net for Smart IoT </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/硕士研究生/科研/文献阅读笔记/z-垃圾&amp;归档文章&amp;其他东西/5-垃圾文章/LSTM GAN_AMD：Leveraging LSTM and GAN for Modern Malware Detection LSTM和GAN结合模型检测恶意软件 垃圾文章/">LSTM GAN_AMD：Leveraging LSTM and GAN for Modern Malware Detection LSTM和GAN结合模型检测恶意软件 垃圾文章 </a>
+</div>
+</div>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div class="folder inner-folder" x-data="{isOpen: $persist(false).as('硕士研究生/科研/文献阅读笔记/z-垃圾&amp;归档文章&amp;其他东西/7-物联网恶意代码检测')}" @click.stop="isOpen=!isOpen">
+<div class="foldername-wrapper align-icon">
+<i x-show="isOpen" style="display:none" icon-name="chevron-down"></i>
+<i x-show="!isOpen" icon-name="chevron-right"></i>
+<span class="foldername">7-物联网恶意代码检测</span>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/硕士研究生/科研/文献阅读笔记/z-垃圾&amp;归档文章&amp;其他东西/7-物联网恶意代码检测/MDABP：A Novel Approach to Detect Cross-Architecture IoT Malware Based on PaaS/">MDABP：A Novel Approach to Detect Cross-Architecture IoT Malware Based on PaaS </a>
+</div>
+</div>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/硕士研究生/科研/文献阅读笔记/z-垃圾&amp;归档文章&amp;其他东西/垃圾：基于深度可分离卷积的多神经网络恶意代码检测模型/">垃圾：基于深度可分离卷积的多神经网络恶意代码检测模型 </a>
+</div>
+</div>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/硕士研究生/科研/文献阅读笔记/202105.MLDroid：使用机器学习技术进行 Android 恶意软件检测的框架/">202105.MLDroid：使用机器学习技术进行 Android 恶意软件检测的框架 </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/硕士研究生/科研/文献阅读笔记/202402.SynDroid：一种基于CTGAN-SVM的自适应增强Android恶意软件分类方法/">202402.SynDroid：一种基于CTGAN-SVM的自适应增强Android恶意软件分类方法 </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/硕士研究生/科研/文献阅读笔记/202406.CNN-BiLSTM_AMD：基于CNN-BiLSTM的恶意软件检测与分类系统：Malware Detection and Classification System Based on CNN-BiLSTM/">202406.CNN-BiLSTM_AMD：基于CNN-BiLSTM的恶意软件检测与分类系统：Malware Detection and Classification System Based on CNN-BiLSTM </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/硕士研究生/科研/文献阅读笔记/20240911.DroidEvoler/">20240911.DroidEvoler </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/硕士研究生/科研/文献阅读笔记/CNN-DNN_AMD：基于CNN和DNN Bybrid机制的Android恶意软件检测方法 Android Malware Detection Method Based on CNN and DNN Bybrid Mechanism/">CNN-DNN_AMD：基于CNN和DNN Bybrid机制的Android恶意软件检测方法 Android Malware Detection Method Based on CNN and DNN Bybrid Mechanism </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/硕士研究生/科研/文献阅读笔记/GraphSAGE 图神经网络算法（GNN）/">GraphSAGE 图神经网络算法（GNN） </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/硕士研究生/科研/文献阅读笔记/文献阅读笔记/">文献阅读笔记 </a>
+</div>
+</div>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div class="folder inner-folder" x-data="{isOpen: $persist(false).as('硕士研究生/科研/组会汇报')}" @click.stop="isOpen=!isOpen">
+<div class="foldername-wrapper align-icon">
+<i x-show="isOpen" style="display:none" icon-name="chevron-down"></i>
+<i x-show="!isOpen" icon-name="chevron-right"></i>
+<span class="foldername">组会汇报</span>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/硕士研究生/科研/组会汇报/20250222/">20250222 </a>
+</div>
+</div>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div class="folder inner-folder" x-data="{isOpen: $persist(false).as('硕士研究生/科研/论文')}" @click.stop="isOpen=!isOpen">
+<div class="foldername-wrapper align-icon">
+<i x-show="isOpen" style="display:none" icon-name="chevron-down"></i>
+<i x-show="!isOpen" icon-name="chevron-right"></i>
+<span class="foldername">论文</span>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/硕士研究生/科研/论文/论文思路/">论文思路 </a>
+</div>
+</div>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/硕士研究生/科研/主题模型/">主题模型 </a>
+</div>
+</div>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div class="folder inner-folder" x-data="{isOpen: $persist(false).as('硕士研究生/竞赛')}" @click.stop="isOpen=!isOpen">
+<div class="foldername-wrapper align-icon">
+<i x-show="isOpen" style="display:none" icon-name="chevron-down"></i>
+<i x-show="!isOpen" icon-name="chevron-right"></i>
+<span class="foldername">竞赛</span>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div class="folder inner-folder" x-data="{isOpen: $persist(false).as('硕士研究生/竞赛/2024年全国大学生英语翻译大赛')}" @click.stop="isOpen=!isOpen">
+<div class="foldername-wrapper align-icon">
+<i x-show="isOpen" style="display:none" icon-name="chevron-down"></i>
+<i x-show="!isOpen" icon-name="chevron-right"></i>
+<span class="foldername">2024年全国大学生英语翻译大赛</span>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div class="folder inner-folder" x-data="{isOpen: $persist(false).as('硕士研究生/竞赛/2024年全国大学生英语翻译大赛/题目')}" @click.stop="isOpen=!isOpen">
+<div class="foldername-wrapper align-icon">
+<i x-show="isOpen" style="display:none" icon-name="chevron-down"></i>
+<i x-show="!isOpen" icon-name="chevron-right"></i>
+<span class="foldername">题目</span>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/硕士研究生/竞赛/2024年全国大学生英语翻译大赛/题目/题目 a题 中译英/">题目 a题 中译英 </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/硕士研究生/竞赛/2024年全国大学生英语翻译大赛/题目/题目 a题 英译中/">题目 a题 英译中 </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div class="folder inner-folder" x-data="{isOpen: $persist(false).as('硕士研究生/竞赛/华为杯研究生数学建模国赛 旱地小纵队')}" @click.stop="isOpen=!isOpen">
+<div class="foldername-wrapper align-icon">
+<i x-show="isOpen" style="display:none" icon-name="chevron-down"></i>
+<i x-show="!isOpen" icon-name="chevron-right"></i>
+<span class="foldername">华为杯研究生数学建模国赛 旱地小纵队</span>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div class="folder inner-folder" x-data="{isOpen: $persist(false).as('硕士研究生/竞赛/华为杯研究生数学建模国赛 旱地小纵队/2024华为杯数学建模')}" @click.stop="isOpen=!isOpen">
+<div class="foldername-wrapper align-icon">
+<i x-show="isOpen" style="display:none" icon-name="chevron-down"></i>
+<i x-show="!isOpen" icon-name="chevron-right"></i>
+<span class="foldername">2024华为杯数学建模</span>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div class="folder inner-folder" x-data="{isOpen: $persist(false).as('硕士研究生/竞赛/华为杯研究生数学建模国赛 旱地小纵队/2024华为杯数学建模/赛中')}" @click.stop="isOpen=!isOpen">
+<div class="foldername-wrapper align-icon">
+<i x-show="isOpen" style="display:none" icon-name="chevron-down"></i>
+<i x-show="!isOpen" icon-name="chevron-right"></i>
+<span class="foldername">赛中</span>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div class="folder inner-folder" x-data="{isOpen: $persist(false).as('硕士研究生/竞赛/华为杯研究生数学建模国赛 旱地小纵队/2024华为杯数学建模/赛中/临时')}" @click.stop="isOpen=!isOpen">
+<div class="foldername-wrapper align-icon">
+<i x-show="isOpen" style="display:none" icon-name="chevron-down"></i>
+<i x-show="!isOpen" icon-name="chevron-right"></i>
+<span class="foldername">临时</span>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/硕士研究生/竞赛/华为杯研究生数学建模国赛 旱地小纵队/2024华为杯数学建模/赛中/临时/pso伪代码/">pso伪代码 </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/硕士研究生/竞赛/华为杯研究生数学建模国赛 旱地小纵队/2024华为杯数学建模/赛中/临时/图像处理需求/">图像处理需求 </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/硕士研究生/竞赛/华为杯研究生数学建模国赛 旱地小纵队/2024华为杯数学建模/赛中/临时/自己 的步骤/">自己 的步骤 </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/硕士研究生/竞赛/华为杯研究生数学建模国赛 旱地小纵队/2024华为杯数学建模/赛中/临时/问题四监控覆盖设置/">问题四监控覆盖设置 </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div class="folder inner-folder" x-data="{isOpen: $persist(false).as('硕士研究生/竞赛/华为杯研究生数学建模国赛 旱地小纵队/2024华为杯数学建模/赛前')}" @click.stop="isOpen=!isOpen">
+<div class="foldername-wrapper align-icon">
+<i x-show="isOpen" style="display:none" icon-name="chevron-down"></i>
+<i x-show="!isOpen" icon-name="chevron-right"></i>
+<span class="foldername">赛前</span>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/硕士研究生/竞赛/华为杯研究生数学建模国赛 旱地小纵队/2024华为杯数学建模/赛前/22年E题/">22年E题 </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/硕士研究生/竞赛/华为杯研究生数学建模国赛 旱地小纵队/2024华为杯数学建模/赛前/华为杯数学建模学习笔记 题目分类/">华为杯数学建模学习笔记 题目分类 </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/硕士研究生/竞赛/华为杯研究生数学建模国赛 旱地小纵队/2024华为杯数学建模/赛前/模型学习/">模型学习 </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div class="folder inner-folder" x-data="{isOpen: $persist(false).as('硕士研究生/论文')}" @click.stop="isOpen=!isOpen">
+<div class="foldername-wrapper align-icon">
+<i x-show="isOpen" style="display:none" icon-name="chevron-down"></i>
+<i x-show="!isOpen" icon-name="chevron-right"></i>
+<span class="foldername">论文</span>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div class="folder inner-folder" x-data="{isOpen: $persist(false).as('硕士研究生/论文/初稿')}" @click.stop="isOpen=!isOpen">
+<div class="foldername-wrapper align-icon">
+<i x-show="isOpen" style="display:none" icon-name="chevron-down"></i>
+<i x-show="!isOpen" icon-name="chevron-right"></i>
+<span class="foldername">初稿</span>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div class="folder inner-folder" x-data="{isOpen: $persist(false).as('硕士研究生/论文/初稿/v4')}" @click.stop="isOpen=!isOpen">
+<div class="foldername-wrapper align-icon">
+<i x-show="isOpen" style="display:none" icon-name="chevron-down"></i>
+<i x-show="!isOpen" icon-name="chevron-right"></i>
+<span class="foldername">v4</span>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/硕士研究生/论文/初稿/v4/101-初稿/">101-初稿 </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
 </div>
 </div>
 <div x-show="isOpen" style="display:none" class="">
-<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/未命名 6/">未命名 6 </a>
+<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/">主页 </a>
 </div>
 </div>
 </div>
@@ -2609,14 +2731,14 @@ CTRL + K
 </div>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/flexsearch@0.7.21/dist/flexsearch.bundle.js"></script>
-<script>document.addEventListener("DOMContentLoaded",init,!1),document.addEventListener("DOMContentLoaded",setCorrectShortcut,!1),window.toggleSearch=function(){document.getElementById("globalsearch").classList.contains("active")?document.getElementById("globalsearch").classList.remove("active"):(document.getElementById("globalsearch").classList.add("active"),document.getElementById("term").focus())},window.toggleTagSearch=function(e){console.log(e.textContent);const t=e.textContent;t&&(window.document.getElementById("term").value=t.trim(),window.toggleSearch(),window.search())};const loadingSvg='\n    <svg width="100" height="100" viewBox="0 0 45 45" xmlns="http://www.w3.org/2000/svg" stroke="#fff">\n      <g fill="none" fill-rule="evenodd" transform="translate(1 1)" stroke-width="2">\n          <circle cx="22" cy="22" r="6" stroke-opacity="0">\n              <animate attributeName="r"\n                   begin="1.5s" dur="3s"\n                   values="6;22"\n                   calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-opacity"\n                   begin="1.5s" dur="3s"\n                   values="1;0" calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-width"\n                   begin="1.5s" dur="3s"\n                   values="2;0" calcMode="linear"\n                   repeatCount="indefinite" />\n          </circle>\n          <circle cx="22" cy="22" r="6" stroke-opacity="0">\n              <animate attributeName="r"\n                   begin="3s" dur="3s"\n                   values="6;22"\n                   calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-opacity"\n                   begin="3s" dur="3s"\n                   values="1;0" calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-width"\n                   begin="3s" dur="3s"\n                   values="2;0" calcMode="linear"\n                   repeatCount="indefinite" />\n          </circle>\n          <circle cx="22" cy="22" r="8">\n              <animate attributeName="r"\n                   begin="0s" dur="1.5s"\n                   values="6;1;2;3;4;5;6"\n                   calcMode="linear"\n                   repeatCount="indefinite" />\n          </circle>\n      </g>\n  </svg>';function debounce(e,t,n){var a;return function(){var r=this,i=arguments,c=n&&!a;clearTimeout(a),a=setTimeout((function(){a=null,n||e.apply(r,i)}),t),c&&e.apply(r,i)}}function setCorrectShortcut(){navigator.platform.toUpperCase().indexOf("MAC")>=0&&document.querySelectorAll(".search-keys").forEach((e=>e.innerHTML="⌘ + K"))}function createIndex(e){const t=e=>e.toLowerCase().split(/([^a-z]|[^\x00-\x7F])/),n=new FlexSearch.Document({cache:!0,charset:"latin:extra",optimize:!0,index:[{field:"content",tokenize:"reverse",encode:t},{field:"title",tokenize:"forward",encode:t},{field:"tags",tokenize:"forward",encode:t}]});return e.forEach(((e,t)=>{n.add({id:t,title:e.title,content:e.content,tags:e.tags})})),n}async function init(){let e=!0;if(localStorage.getItem("searchIndex")){let{date:t,docs:n}=JSON.parse(localStorage.getItem("searchIndex"));if("2025-05-19T07:13:40.823Z"===t){e=!1;let t=createIndex(n);window.docs=n,window.index=t}}if(e){let e=await(await fetch("/searchIndex.json?v=2025-05-19T07:13:40.823Z")).json(),t=createIndex(e);localStorage.setItem("searchIndex",JSON.stringify({date:"2025-05-19T07:13:40.823Z",docs:e})),window.docs=e,window.index=t}document.addEventListener("keydown",(e=>{if((e.ctrlKey||e.metaKey)&&"k"===e.key&&(e.preventDefault(),toggleSearch()),"Escape"===e.key&&document.getElementById("globalsearch").classList.remove("active"),document.getElementById("globalsearch").classList.contains("active")){if("ArrowDown"===e.key){e.preventDefault();let t=document.querySelector(".searchresult.active");t?(t.classList.remove("active"),t.nextElementSibling?t.nextElementSibling.classList.add("active"):document.querySelector(".searchresult").classList.add("active")):document.querySelector(".searchresult").classList.add("active");let n=document.querySelector(".searchresult.active");n&&n.scrollIntoView({behavior:"smooth",block:"nearest",inline:"start"})}if("ArrowUp"===e.key){e.preventDefault();let t=document.querySelector(".searchresult.active");t?(t.classList.remove("active"),t.previousElementSibling?t.previousElementSibling.classList.add("active"):document.querySelectorAll(".searchresult").forEach((e=>{e.nextElementSibling||e.classList.add("active")}))):document.querySelectorAll(".searchresult").forEach((e=>{e.nextElementSibling&&e.classList.add("active")}));let n=document.querySelector(".searchresult.active");n&&n.scrollIntoView({behavior:"smooth",block:"nearest",inline:"start"})}if("Enter"===e.key){e.preventDefault();let t=document.querySelector(".searchresult.active");t&&(window.location.href=t.querySelector("a").href)}}}));const t=debounce(search,200,!1);field=document.querySelector("#term"),field.addEventListener("keydown",(e=>{"ArrowDown"!==e.key&&"ArrowUp"!==e.key&&t()})),resultsDiv=document.querySelector("#search-results");const n=new URL(location.href).searchParams;n.get("q")&&(field.setAttribute("value",n.get("q")),toggleSearch(),search())}async function search(){let e=field.value.trim();if(!e)return;if(e==lastSearch)return;console.log(`search for ${e}`),window.lastSearch=e,resultsDiv.innerHTML=loadingSvg;let t=offlineSearch(e),n="";if(!t.length){let t=document.createElement("p");return t.innerText=`No results for "${e}"`,resultsDiv.innerHTML="",void resultsDiv.appendChild(t)}n+='<div style="max-width:100%;">',t.forEach((e=>{e.tags&&e.tags.length>0?n+=`<div class="searchresult">\n                    <a class="search-link" href="${e.url}">${e.title}</a>\n                    <div onclick="window.location='${e.url}'">\n                        <div class="header-meta">\n                            <div class="header-tags">\n                                ${e.tags.map((e=>'<a class="tag" href="JavaScript:Void(0);">#'+e+"</a>")).join("")}\n                            </div>\n                        </div>\n                        ${e.content}\n                    </div>\n                </div>`:n+=`<div class="searchresult">\n                    <a class="search-link" href="${e.url}">${e.title}</a>\n                    <div onclick="window.location='${e.url}'">\n                        ${e.content}\n                    </div>\n                </div>`})),n+="</div>",resultsDiv.innerHTML=n}function truncate(e,t){return(e=e.replaceAll(/<[^>]*>/g,"")).length<t?e:e.substring(0,t-3)+"..."}function offlineSearch(e){let t=window.docs,n="#"===e[0]&&e.length>1?index.search(e.substring(1),[{field:"tags"}]):index.search(e,[{field:"title",limit:5},{field:"content",weight:10}]);const a=e=>{const t=n.filter((t=>t.field===e));return 0===t.length?[]:[...t[0].result]};return[...new Set([...a("title"),...a("content"),...a("tags")])].map((e=>{let n=t[e];return n.content=truncate(n.content,400),n.tags=n.tags.filter((e=>"gardenEntry"!=e&&"note"!=e)),n}))}window.lastSearch=""</script>
+<script>document.addEventListener("DOMContentLoaded",init,!1),document.addEventListener("DOMContentLoaded",setCorrectShortcut,!1),window.toggleSearch=function(){document.getElementById("globalsearch").classList.contains("active")?document.getElementById("globalsearch").classList.remove("active"):(document.getElementById("globalsearch").classList.add("active"),document.getElementById("term").focus())},window.toggleTagSearch=function(e){console.log(e.textContent);const t=e.textContent;t&&(window.document.getElementById("term").value=t.trim(),window.toggleSearch(),window.search())};const loadingSvg='\n    <svg width="100" height="100" viewBox="0 0 45 45" xmlns="http://www.w3.org/2000/svg" stroke="#fff">\n      <g fill="none" fill-rule="evenodd" transform="translate(1 1)" stroke-width="2">\n          <circle cx="22" cy="22" r="6" stroke-opacity="0">\n              <animate attributeName="r"\n                   begin="1.5s" dur="3s"\n                   values="6;22"\n                   calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-opacity"\n                   begin="1.5s" dur="3s"\n                   values="1;0" calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-width"\n                   begin="1.5s" dur="3s"\n                   values="2;0" calcMode="linear"\n                   repeatCount="indefinite" />\n          </circle>\n          <circle cx="22" cy="22" r="6" stroke-opacity="0">\n              <animate attributeName="r"\n                   begin="3s" dur="3s"\n                   values="6;22"\n                   calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-opacity"\n                   begin="3s" dur="3s"\n                   values="1;0" calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-width"\n                   begin="3s" dur="3s"\n                   values="2;0" calcMode="linear"\n                   repeatCount="indefinite" />\n          </circle>\n          <circle cx="22" cy="22" r="8">\n              <animate attributeName="r"\n                   begin="0s" dur="1.5s"\n                   values="6;1;2;3;4;5;6"\n                   calcMode="linear"\n                   repeatCount="indefinite" />\n          </circle>\n      </g>\n  </svg>';function debounce(e,t,n){var a;return function(){var r=this,i=arguments,c=n&&!a;clearTimeout(a),a=setTimeout((function(){a=null,n||e.apply(r,i)}),t),c&&e.apply(r,i)}}function setCorrectShortcut(){navigator.platform.toUpperCase().indexOf("MAC")>=0&&document.querySelectorAll(".search-keys").forEach((e=>e.innerHTML="⌘ + K"))}function createIndex(e){const t=e=>e.toLowerCase().split(/([^a-z]|[^\x00-\x7F])/),n=new FlexSearch.Document({cache:!0,charset:"latin:extra",optimize:!0,index:[{field:"content",tokenize:"reverse",encode:t},{field:"title",tokenize:"forward",encode:t},{field:"tags",tokenize:"forward",encode:t}]});return e.forEach(((e,t)=>{n.add({id:t,title:e.title,content:e.content,tags:e.tags})})),n}async function init(){let e=!0;if(localStorage.getItem("searchIndex")){let{date:t,docs:n}=JSON.parse(localStorage.getItem("searchIndex"));if("2025-06-04T04:32:37.417Z"===t){e=!1;let t=createIndex(n);window.docs=n,window.index=t}}if(e){let e=await(await fetch("/searchIndex.json?v=2025-06-04T04:32:37.417Z")).json(),t=createIndex(e);localStorage.setItem("searchIndex",JSON.stringify({date:"2025-06-04T04:32:37.417Z",docs:e})),window.docs=e,window.index=t}document.addEventListener("keydown",(e=>{if((e.ctrlKey||e.metaKey)&&"k"===e.key&&(e.preventDefault(),toggleSearch()),"Escape"===e.key&&document.getElementById("globalsearch").classList.remove("active"),document.getElementById("globalsearch").classList.contains("active")){if("ArrowDown"===e.key){e.preventDefault();let t=document.querySelector(".searchresult.active");t?(t.classList.remove("active"),t.nextElementSibling?t.nextElementSibling.classList.add("active"):document.querySelector(".searchresult").classList.add("active")):document.querySelector(".searchresult").classList.add("active");let n=document.querySelector(".searchresult.active");n&&n.scrollIntoView({behavior:"smooth",block:"nearest",inline:"start"})}if("ArrowUp"===e.key){e.preventDefault();let t=document.querySelector(".searchresult.active");t?(t.classList.remove("active"),t.previousElementSibling?t.previousElementSibling.classList.add("active"):document.querySelectorAll(".searchresult").forEach((e=>{e.nextElementSibling||e.classList.add("active")}))):document.querySelectorAll(".searchresult").forEach((e=>{e.nextElementSibling&&e.classList.add("active")}));let n=document.querySelector(".searchresult.active");n&&n.scrollIntoView({behavior:"smooth",block:"nearest",inline:"start"})}if("Enter"===e.key){e.preventDefault();let t=document.querySelector(".searchresult.active");t&&(window.location.href=t.querySelector("a").href)}}}));const t=debounce(search,200,!1);field=document.querySelector("#term"),field.addEventListener("keydown",(e=>{"ArrowDown"!==e.key&&"ArrowUp"!==e.key&&t()})),resultsDiv=document.querySelector("#search-results");const n=new URL(location.href).searchParams;n.get("q")&&(field.setAttribute("value",n.get("q")),toggleSearch(),search())}async function search(){let e=field.value.trim();if(!e)return;if(e==lastSearch)return;console.log(`search for ${e}`),window.lastSearch=e,resultsDiv.innerHTML=loadingSvg;let t=offlineSearch(e),n="";if(!t.length){let t=document.createElement("p");return t.innerText=`No results for "${e}"`,resultsDiv.innerHTML="",void resultsDiv.appendChild(t)}n+='<div style="max-width:100%;">',t.forEach((e=>{e.tags&&e.tags.length>0?n+=`<div class="searchresult">\n                    <a class="search-link" href="${e.url}">${e.title}</a>\n                    <div onclick="window.location='${e.url}'">\n                        <div class="header-meta">\n                            <div class="header-tags">\n                                ${e.tags.map((e=>'<a class="tag" href="JavaScript:Void(0);">#'+e+"</a>")).join("")}\n                            </div>\n                        </div>\n                        ${e.content}\n                    </div>\n                </div>`:n+=`<div class="searchresult">\n                    <a class="search-link" href="${e.url}">${e.title}</a>\n                    <div onclick="window.location='${e.url}'">\n                        ${e.content}\n                    </div>\n                </div>`})),n+="</div>",resultsDiv.innerHTML=n}function truncate(e,t){return(e=e.replaceAll(/<[^>]*>/g,"")).length<t?e:e.substring(0,t-3)+"..."}function offlineSearch(e){let t=window.docs,n="#"===e[0]&&e.length>1?index.search(e.substring(1),[{field:"tags"}]):index.search(e,[{field:"title",limit:5},{field:"content",weight:10}]);const a=e=>{const t=n.filter((t=>t.field===e));return 0===t.length?[]:[...t[0].result]};return[...new Set([...a("title"),...a("content"),...a("tags")])].map((e=>{let n=t[e];return n.content=truncate(n.content,400),n.tags=n.tags.filter((e=>"gardenEntry"!=e&&"note"!=e)),n}))}window.lastSearch=""</script>
 <main class="content cm-s-obsidian">
 <header>
 <h1 data-note-icon="">n-gram</h1>
 <div class="header-meta">
 <div class="header-tags">
 </div>
-<div class="timestamps"><div><i icon-name="calendar-plus"></i> <span class="human-date" data-date="2025-01-07T12:03:11.736+08:00"></span></div><div><i icon-name="calendar-clock"></i> <span class="human-date" data-date="2024-12-08T12:26:42.000+08:00"></span></div></div></div>
+<div class="timestamps"><div><i icon-name="calendar-plus"></i> <span class="human-date" data-date="2024-09-02T16:37:21.917+08:00"></span></div><div><i icon-name="calendar-clock"></i> <span class="human-date" data-date="2024-12-08T12:26:42.544+08:00"></span></div></div></div>
 </header>
 <p>N-gram 简介<br>
 N-gram 是自然语言处理和文本分析中常用的一种技术。<br>
@@ -2634,13 +2756,21 @@ N-gram 在很多方面都有重要的应用：<br>
 <div class="sidebar-container">
 <div class="backlinks">
 <div class="backlink-title" style="margin:4px 0!important">Pages mentioning this page</div>
-<div class="backlink-list"><div class="backlink-card"><i icon-name="link"></i><a href="/czc知识库/硕士研究生/科研/文献阅读笔记/2-语义/202403.GAT_AMD：基于图注意力网络和多模态特征深度融合的Android恶意软件检测方法 Android malware detection method based on graph attention networks and deep fusion of multimodal features（精读）/" data-note-icon="" class="backlink">202403.GAT_AMD：基于图注意力网络和多模态特征深度融合的Android恶意软件检测方法 Android malware detection method based on graph attention networks and deep fusion of multimodal features（精读）</a>
-</div><div class="backlink-card"><i icon-name="link"></i><a href="/czc知识库/计算机/计算机/" data-note-icon="" class="backlink">计算机</a>
+<div class="backlink-list"><div class="backlink-card"><i icon-name="link"></i><a href="/czc知识库/计算机/计算机/" data-note-icon="" class="backlink">计算机</a>
+</div><div class="backlink-card"><i icon-name="link"></i><a href="/硕士研究生/科研/文献阅读笔记/2-语义/202403.GAT_AMD：基于图注意力网络和多模态特征深度融合的Android恶意软件检测方法 Android malware detection method based on graph attention networks and deep fusion of multimodal features（精读）/" data-note-icon="" class="backlink">202403.GAT_AMD：基于图注意力网络和多模态特征深度融合的Android恶意软件检测方法 Android malware detection method based on graph attention networks and deep fusion of multimodal features（精读）</a>
 </div></div>
 </div>
 </div>
 </div>
 </aside>
+<style>#tooltip-wrapper{background:var(--background-primary);padding:1em;border-radius:4px;overflow:hidden;position:fixed;width:80%;max-width:400px;height:auto;max-height:300px;font-size:.8em;box-shadow:0 5px 10px rgba(0,0,0,.1);opacity:0;transition:opacity .1s;unicode-bidi:plaintext;overflow-y:scroll;z-index:10}#tooltip-wrapper:after{content:"";position:absolute;z-index:1;bottom:0;left:0;pointer-events:none;width:100%;unicode-bidi:plaintext;height:75px}</style>
+<div style="opacity:0;display:none" id="tooltip-wrapper">
+<div id="tooltip-content">
+</div>
+</div>
+<iframe style="display:none;height:0;width:0" id="link-preview-iframe" src="">
+</iframe>
+<script>var opacityTimeout,contentTimeout,transitionDurationMs=100,iframe=document.getElementById("link-preview-iframe"),tooltipWrapper=document.getElementById("tooltip-wrapper"),tooltipContent=document.getElementById("tooltip-content"),linkHistories={};function hideTooltip(){opacityTimeout=setTimeout((function(){tooltipWrapper.style.opacity=0,contentTimeout=setTimeout((function(){tooltipContent.innerHTML="",tooltipWrapper.style.display="none"}),transitionDurationMs+1)}),transitionDurationMs)}function showTooltip(t){var e=t.target,o=e.getClientRects()[e.getClientRects().length-1],i=window.pageYOffset||document.documentElement.scrollTop,n=t.target.getAttribute("href");if(-1===n.indexOf("http")||-1!==n.indexOf(window.location.host)){let t=n.split("#")[0];linkHistories[t]?(tooltipContent.innerHTML=linkHistories[t],tooltipWrapper.style.display="block",setTimeout((function(){if(tooltipWrapper.style.opacity=1,-1!=n.indexOf("#")){let t=n.split("#")[1];const e=tooltipWrapper.querySelector(`[id='${t}']`);e.classList.add("referred"),e.scrollIntoView({behavior:"smooth"},!0)}else tooltipWrapper.scroll(0,0)}),1)):(iframe.src=t,iframe.onload=function(){tooltipContentHtml="",tooltipContentHtml+='<div style="font-weight: bold; unicode-bidi: plaintext;">'+iframe.contentWindow.document.querySelector("h1").innerHTML+"</div>",tooltipContentHtml+=iframe.contentWindow.document.querySelector(".content").innerHTML,tooltipContent.innerHTML=tooltipContentHtml,linkHistories[t]=tooltipContentHtml,tooltipWrapper.style.display="block",tooltipWrapper.scrollTop=0,setTimeout((function(){if(tooltipWrapper.style.opacity=1,-1!=n.indexOf("#")){let t=n.split("#")[1];const e=tooltipWrapper.querySelector(`[id='${t}']`);e.classList.add("referred"),console.log(e),e.scrollIntoView({behavior:"smooth"},!0)}else tooltipWrapper.scroll(0,0)}),1)}),tooltipWrapper.style.left=o.left-tooltipWrapper.offsetWidth/2+o.width/2+"px",window.innerHeight-o.top<tooltipWrapper.offsetHeight?tooltipWrapper.style.top=o.top+i-tooltipWrapper.offsetHeight-10+"px":window.innerHeight-o.top>tooltipWrapper.offsetHeight&&(tooltipWrapper.style.top=o.top+i+35+"px"),o.left+o.width/2<tooltipWrapper.offsetWidth/2?tooltipWrapper.style.left="10px":document.body.clientWidth-o.left-o.width/2<tooltipWrapper.offsetWidth/2&&(tooltipWrapper.style.left=document.body.clientWidth-tooltipWrapper.offsetWidth-20+"px")}}function setupListeners(t){t.addEventListener("mouseleave",(function(t){hideTooltip()})),tooltipWrapper.addEventListener("mouseleave",(function(t){hideTooltip()})),t.addEventListener("mouseenter",(function(t){clearTimeout(opacityTimeout),clearTimeout(contentTimeout),showTooltip(t)})),tooltipWrapper.addEventListener("mouseenter",(function(t){clearTimeout(opacityTimeout),clearTimeout(contentTimeout)}))}window.addEventListener("load",(function(t){document.querySelectorAll(".internal-link").forEach(setupListeners),document.querySelectorAll(".backlink-card a").forEach(setupListeners)}))</script>
 <script>window.location.hash&&document.getElementById(window.location.hash.slice(1)).classList.add("referred"),window.addEventListener("hashchange",(e=>{const t=e.oldURL.split("#");t[1]&&document.getElementById(t[1]).classList.remove("referred");const n=e.newURL.split("#");n[1]&&document.getElementById(n[1]).classList.add("referred")}),!1);const url_parts=window.location.href.split("#"),url=url_parts[0],referrence=url_parts[1];document.querySelectorAll(".cm-s-obsidian > *[id]").forEach((function(e){e.ondblclick=function(e){const t=url+"#"+e.target.id;navigator.clipboard.writeText(t)}}))</script>
 <script src="https://fastly.jsdelivr.net/npm/luxon@3.2.1/build/global/luxon.min.js"></script>
 <script defer="defer">TIMESTAMP_FORMAT="MMM dd, yyyy h:mm a",document.querySelectorAll(".human-date").forEach((function(e){date=e.getAttribute("data-date")||e.innerText,parsed_date=luxon.DateTime.fromISO(date),null!=parsed_date.invalid&&(parsed_date=luxon.DateTime.fromSQL(date)),null!=parsed_date.invalid&&(parsed_date=luxon.DateTime.fromHTML(date)),e.innerHTML=parsed_date.toFormat(TIMESTAMP_FORMAT)}))</script>
