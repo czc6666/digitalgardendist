@@ -642,11 +642,6 @@
         </url>
     
         <url>
-            <loc>/czc知识库/计算机/MySQL/MySQL/</loc>
-            <lastmod>2025-06-04T04:25:47.043Z</lastmod>
-        </url>
-    
-        <url>
             <loc>/czc知识库/计算机/MySQL/学习笔记/001-数据库概述/</loc>
             <lastmod>2025-06-04T04:25:47.043Z</lastmod>
         </url>
@@ -2112,8 +2107,13 @@
         </url>
     
         <url>
+            <loc>/czc知识库/计算机/MySQL/MySQL/</loc>
+            <lastmod>2025-06-04T13:33:27.231Z</lastmod>
+        </url>
+    
+        <url>
             <loc>/</loc>
-            <lastmod>2025-06-04T09:02:59.209Z</lastmod>
+            <lastmod>2025-06-04T13:33:27.231Z</lastmod>
         </url>
     
 </urlset>
