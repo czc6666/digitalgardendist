@@ -17,11 +17,6 @@
         </url>
     
         <url>
-            <loc>/czc知识库/笔记/prompt/prompt/</loc>
-            <lastmod>2025-04-28T06:16:18.188Z</lastmod>
-        </url>
-    
-        <url>
             <loc>/czc知识库/笔记/心理学/人性最大的恶就是，恨人有，笑人无，嫌你穷，怕你富 ---胡适/</loc>
             <lastmod>2025-04-28T06:16:18.188Z</lastmod>
         </url>
@@ -418,11 +413,6 @@
     
         <url>
             <loc>/czc知识库/搞钱/99-归档/电商相关/自热电商/</loc>
-            <lastmod>2025-06-04T04:25:47.035Z</lastmod>
-        </url>
-    
-        <url>
-            <loc>/czc知识库/搞钱/生财有术/生财有术帖子收藏/</loc>
             <lastmod>2025-06-04T04:25:47.035Z</lastmod>
         </url>
     
@@ -1662,11 +1652,6 @@
         </url>
     
         <url>
-            <loc>/czc知识库/笔记/prompt/文献翻译提示词prompt/</loc>
-            <lastmod>2025-06-04T04:32:34.061Z</lastmod>
-        </url>
-    
-        <url>
             <loc>/czc知识库/笔记/知识库搭建/1-obsidian笔记/obsidian 发布共享 搭建网站 数字花园/</loc>
             <lastmod>2025-06-04T04:32:34.061Z</lastmod>
         </url>
@@ -2057,11 +2042,6 @@
         </url>
     
         <url>
-            <loc>/</loc>
-            <lastmod>2025-06-04T06:09:30.162Z</lastmod>
-        </url>
-    
-        <url>
             <loc>/czc知识库/计算机/Hadoop技术栈/Hadoop技术栈/</loc>
             <lastmod>2025-06-04T06:34:24.929Z</lastmod>
         </url>
@@ -2114,6 +2094,26 @@
         <url>
             <loc>/czc知识库/计算机/计算机/</loc>
             <lastmod>2025-06-04T06:34:24.933Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/AI笔记/prompt/prompt/</loc>
+            <lastmod>2025-06-04T07:30:37.877Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/AI笔记/prompt/文献翻译提示词prompt/</loc>
+            <lastmod>2025-06-04T07:30:37.877Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/czc知识库/搞钱/生财有术/生财有术帖子收藏/</loc>
+            <lastmod>2025-06-04T07:30:37.881Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/</loc>
+            <lastmod>2025-06-04T07:30:37.881Z</lastmod>
         </url>
     
 </urlset>
