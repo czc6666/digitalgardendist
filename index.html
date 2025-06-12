@@ -63,7 +63,7 @@ CTRL + K
 </div>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/flexsearch@0.7.21/dist/flexsearch.bundle.js"></script>
-<script>document.addEventListener("DOMContentLoaded",init,!1),document.addEventListener("DOMContentLoaded",setCorrectShortcut,!1),window.toggleSearch=function(){document.getElementById("globalsearch").classList.contains("active")?document.getElementById("globalsearch").classList.remove("active"):(document.getElementById("globalsearch").classList.add("active"),document.getElementById("term").focus())},window.toggleTagSearch=function(e){console.log(e.textContent);const t=e.textContent;t&&(window.document.getElementById("term").value=t.trim(),window.toggleSearch(),window.search())};const loadingSvg='\n    <svg width="100" height="100" viewBox="0 0 45 45" xmlns="http://www.w3.org/2000/svg" stroke="#fff">\n      <g fill="none" fill-rule="evenodd" transform="translate(1 1)" stroke-width="2">\n          <circle cx="22" cy="22" r="6" stroke-opacity="0">\n              <animate attributeName="r"\n                   begin="1.5s" dur="3s"\n                   values="6;22"\n                   calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-opacity"\n                   begin="1.5s" dur="3s"\n                   values="1;0" calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-width"\n                   begin="1.5s" dur="3s"\n                   values="2;0" calcMode="linear"\n                   repeatCount="indefinite" />\n          </circle>\n          <circle cx="22" cy="22" r="6" stroke-opacity="0">\n              <animate attributeName="r"\n                   begin="3s" dur="3s"\n                   values="6;22"\n                   calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-opacity"\n                   begin="3s" dur="3s"\n                   values="1;0" calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-width"\n                   begin="3s" dur="3s"\n                   values="2;0" calcMode="linear"\n                   repeatCount="indefinite" />\n          </circle>\n          <circle cx="22" cy="22" r="8">\n              <animate attributeName="r"\n                   begin="0s" dur="1.5s"\n                   values="6;1;2;3;4;5;6"\n                   calcMode="linear"\n                   repeatCount="indefinite" />\n          </circle>\n      </g>\n  </svg>';function debounce(e,t,n){var a;return function(){var r=this,i=arguments,c=n&&!a;clearTimeout(a),a=setTimeout((function(){a=null,n||e.apply(r,i)}),t),c&&e.apply(r,i)}}function setCorrectShortcut(){navigator.platform.toUpperCase().indexOf("MAC")>=0&&document.querySelectorAll(".search-keys").forEach((e=>e.innerHTML="⌘ + K"))}function createIndex(e){const t=e=>e.toLowerCase().split(/([^a-z]|[^\x00-\x7F])/),n=new FlexSearch.Document({cache:!0,charset:"latin:extra",optimize:!0,index:[{field:"content",tokenize:"reverse",encode:t},{field:"title",tokenize:"forward",encode:t},{field:"tags",tokenize:"forward",encode:t}]});return e.forEach(((e,t)=>{n.add({id:t,title:e.title,content:e.content,tags:e.tags})})),n}async function init(){let e=!0;if(localStorage.getItem("searchIndex")){let{date:t,docs:n}=JSON.parse(localStorage.getItem("searchIndex"));if("2025-06-04T13:41:18.385Z"===t){e=!1;let t=createIndex(n);window.docs=n,window.index=t}}if(e){let e=await(await fetch("/searchIndex.json?v=2025-06-04T13:41:18.385Z")).json(),t=createIndex(e);localStorage.setItem("searchIndex",JSON.stringify({date:"2025-06-04T13:41:18.385Z",docs:e})),window.docs=e,window.index=t}document.addEventListener("keydown",(e=>{if((e.ctrlKey||e.metaKey)&&"k"===e.key&&(e.preventDefault(),toggleSearch()),"Escape"===e.key&&document.getElementById("globalsearch").classList.remove("active"),document.getElementById("globalsearch").classList.contains("active")){if("ArrowDown"===e.key){e.preventDefault();let t=document.querySelector(".searchresult.active");t?(t.classList.remove("active"),t.nextElementSibling?t.nextElementSibling.classList.add("active"):document.querySelector(".searchresult").classList.add("active")):document.querySelector(".searchresult").classList.add("active");let n=document.querySelector(".searchresult.active");n&&n.scrollIntoView({behavior:"smooth",block:"nearest",inline:"start"})}if("ArrowUp"===e.key){e.preventDefault();let t=document.querySelector(".searchresult.active");t?(t.classList.remove("active"),t.previousElementSibling?t.previousElementSibling.classList.add("active"):document.querySelectorAll(".searchresult").forEach((e=>{e.nextElementSibling||e.classList.add("active")}))):document.querySelectorAll(".searchresult").forEach((e=>{e.nextElementSibling&&e.classList.add("active")}));let n=document.querySelector(".searchresult.active");n&&n.scrollIntoView({behavior:"smooth",block:"nearest",inline:"start"})}if("Enter"===e.key){e.preventDefault();let t=document.querySelector(".searchresult.active");t&&(window.location.href=t.querySelector("a").href)}}}));const t=debounce(search,200,!1);field=document.querySelector("#term"),field.addEventListener("keydown",(e=>{"ArrowDown"!==e.key&&"ArrowUp"!==e.key&&t()})),resultsDiv=document.querySelector("#search-results");const n=new URL(location.href).searchParams;n.get("q")&&(field.setAttribute("value",n.get("q")),toggleSearch(),search())}async function search(){let e=field.value.trim();if(!e)return;if(e==lastSearch)return;console.log(`search for ${e}`),window.lastSearch=e,resultsDiv.innerHTML=loadingSvg;let t=offlineSearch(e),n="";if(!t.length){let t=document.createElement("p");return t.innerText=`No results for "${e}"`,resultsDiv.innerHTML="",void resultsDiv.appendChild(t)}n+='<div style="max-width:100%;">',t.forEach((e=>{e.tags&&e.tags.length>0?n+=`<div class="searchresult">\n                    <a class="search-link" href="${e.url}">${e.title}</a>\n                    <div onclick="window.location='${e.url}'">\n                        <div class="header-meta">\n                            <div class="header-tags">\n                                ${e.tags.map((e=>'<a class="tag" href="JavaScript:Void(0);">#'+e+"</a>")).join("")}\n                            </div>\n                        </div>\n                        ${e.content}\n                    </div>\n                </div>`:n+=`<div class="searchresult">\n                    <a class="search-link" href="${e.url}">${e.title}</a>\n                    <div onclick="window.location='${e.url}'">\n                        ${e.content}\n                    </div>\n                </div>`})),n+="</div>",resultsDiv.innerHTML=n}function truncate(e,t){return(e=e.replaceAll(/<[^>]*>/g,"")).length<t?e:e.substring(0,t-3)+"..."}function offlineSearch(e){let t=window.docs,n="#"===e[0]&&e.length>1?index.search(e.substring(1),[{field:"tags"}]):index.search(e,[{field:"title",limit:5},{field:"content",weight:10}]);const a=e=>{const t=n.filter((t=>t.field===e));return 0===t.length?[]:[...t[0].result]};return[...new Set([...a("title"),...a("content"),...a("tags")])].map((e=>{let n=t[e];return n.content=truncate(n.content,400),n.tags=n.tags.filter((e=>"gardenEntry"!=e&&"note"!=e)),n}))}window.lastSearch=""</script>
+<script>document.addEventListener("DOMContentLoaded",init,!1),document.addEventListener("DOMContentLoaded",setCorrectShortcut,!1),window.toggleSearch=function(){document.getElementById("globalsearch").classList.contains("active")?document.getElementById("globalsearch").classList.remove("active"):(document.getElementById("globalsearch").classList.add("active"),document.getElementById("term").focus())},window.toggleTagSearch=function(e){console.log(e.textContent);const t=e.textContent;t&&(window.document.getElementById("term").value=t.trim(),window.toggleSearch(),window.search())};const loadingSvg='\n    <svg width="100" height="100" viewBox="0 0 45 45" xmlns="http://www.w3.org/2000/svg" stroke="#fff">\n      <g fill="none" fill-rule="evenodd" transform="translate(1 1)" stroke-width="2">\n          <circle cx="22" cy="22" r="6" stroke-opacity="0">\n              <animate attributeName="r"\n                   begin="1.5s" dur="3s"\n                   values="6;22"\n                   calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-opacity"\n                   begin="1.5s" dur="3s"\n                   values="1;0" calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-width"\n                   begin="1.5s" dur="3s"\n                   values="2;0" calcMode="linear"\n                   repeatCount="indefinite" />\n          </circle>\n          <circle cx="22" cy="22" r="6" stroke-opacity="0">\n              <animate attributeName="r"\n                   begin="3s" dur="3s"\n                   values="6;22"\n                   calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-opacity"\n                   begin="3s" dur="3s"\n                   values="1;0" calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-width"\n                   begin="3s" dur="3s"\n                   values="2;0" calcMode="linear"\n                   repeatCount="indefinite" />\n          </circle>\n          <circle cx="22" cy="22" r="8">\n              <animate attributeName="r"\n                   begin="0s" dur="1.5s"\n                   values="6;1;2;3;4;5;6"\n                   calcMode="linear"\n                   repeatCount="indefinite" />\n          </circle>\n      </g>\n  </svg>';function debounce(e,t,n){var a;return function(){var r=this,i=arguments,c=n&&!a;clearTimeout(a),a=setTimeout((function(){a=null,n||e.apply(r,i)}),t),c&&e.apply(r,i)}}function setCorrectShortcut(){navigator.platform.toUpperCase().indexOf("MAC")>=0&&document.querySelectorAll(".search-keys").forEach((e=>e.innerHTML="⌘ + K"))}function createIndex(e){const t=e=>e.toLowerCase().split(/([^a-z]|[^\x00-\x7F])/),n=new FlexSearch.Document({cache:!0,charset:"latin:extra",optimize:!0,index:[{field:"content",tokenize:"reverse",encode:t},{field:"title",tokenize:"forward",encode:t},{field:"tags",tokenize:"forward",encode:t}]});return e.forEach(((e,t)=>{n.add({id:t,title:e.title,content:e.content,tags:e.tags})})),n}async function init(){let e=!0;if(localStorage.getItem("searchIndex")){let{date:t,docs:n}=JSON.parse(localStorage.getItem("searchIndex"));if("2025-06-12T10:51:47.393Z"===t){e=!1;let t=createIndex(n);window.docs=n,window.index=t}}if(e){let e=await(await fetch("/searchIndex.json?v=2025-06-12T10:51:47.393Z")).json(),t=createIndex(e);localStorage.setItem("searchIndex",JSON.stringify({date:"2025-06-12T10:51:47.393Z",docs:e})),window.docs=e,window.index=t}document.addEventListener("keydown",(e=>{if((e.ctrlKey||e.metaKey)&&"k"===e.key&&(e.preventDefault(),toggleSearch()),"Escape"===e.key&&document.getElementById("globalsearch").classList.remove("active"),document.getElementById("globalsearch").classList.contains("active")){if("ArrowDown"===e.key){e.preventDefault();let t=document.querySelector(".searchresult.active");t?(t.classList.remove("active"),t.nextElementSibling?t.nextElementSibling.classList.add("active"):document.querySelector(".searchresult").classList.add("active")):document.querySelector(".searchresult").classList.add("active");let n=document.querySelector(".searchresult.active");n&&n.scrollIntoView({behavior:"smooth",block:"nearest",inline:"start"})}if("ArrowUp"===e.key){e.preventDefault();let t=document.querySelector(".searchresult.active");t?(t.classList.remove("active"),t.previousElementSibling?t.previousElementSibling.classList.add("active"):document.querySelectorAll(".searchresult").forEach((e=>{e.nextElementSibling||e.classList.add("active")}))):document.querySelectorAll(".searchresult").forEach((e=>{e.nextElementSibling&&e.classList.add("active")}));let n=document.querySelector(".searchresult.active");n&&n.scrollIntoView({behavior:"smooth",block:"nearest",inline:"start"})}if("Enter"===e.key){e.preventDefault();let t=document.querySelector(".searchresult.active");t&&(window.location.href=t.querySelector("a").href)}}}));const t=debounce(search,200,!1);field=document.querySelector("#term"),field.addEventListener("keydown",(e=>{"ArrowDown"!==e.key&&"ArrowUp"!==e.key&&t()})),resultsDiv=document.querySelector("#search-results");const n=new URL(location.href).searchParams;n.get("q")&&(field.setAttribute("value",n.get("q")),toggleSearch(),search())}async function search(){let e=field.value.trim();if(!e)return;if(e==lastSearch)return;console.log(`search for ${e}`),window.lastSearch=e,resultsDiv.innerHTML=loadingSvg;let t=offlineSearch(e),n="";if(!t.length){let t=document.createElement("p");return t.innerText=`No results for "${e}"`,resultsDiv.innerHTML="",void resultsDiv.appendChild(t)}n+='<div style="max-width:100%;">',t.forEach((e=>{e.tags&&e.tags.length>0?n+=`<div class="searchresult">\n                    <a class="search-link" href="${e.url}">${e.title}</a>\n                    <div onclick="window.location='${e.url}'">\n                        <div class="header-meta">\n                            <div class="header-tags">\n                                ${e.tags.map((e=>'<a class="tag" href="JavaScript:Void(0);">#'+e+"</a>")).join("")}\n                            </div>\n                        </div>\n                        ${e.content}\n                    </div>\n                </div>`:n+=`<div class="searchresult">\n                    <a class="search-link" href="${e.url}">${e.title}</a>\n                    <div onclick="window.location='${e.url}'">\n                        ${e.content}\n                    </div>\n                </div>`})),n+="</div>",resultsDiv.innerHTML=n}function truncate(e,t){return(e=e.replaceAll(/<[^>]*>/g,"")).length<t?e:e.substring(0,t-3)+"..."}function offlineSearch(e){let t=window.docs,n="#"===e[0]&&e.length>1?index.search(e.substring(1),[{field:"tags"}]):index.search(e,[{field:"title",limit:5},{field:"content",weight:10}]);const a=e=>{const t=n.filter((t=>t.field===e));return 0===t.length?[]:[...t[0].result]};return[...new Set([...a("title"),...a("content"),...a("tags")])].map((e=>{let n=t[e];return n.content=truncate(n.content,400),n.tags=n.tags.filter((e=>"gardenEntry"!=e&&"note"!=e)),n}))}window.lastSearch=""</script>
 <main class="content cm-s-obsidian">
 <header>
 <h1></h1>
@@ -87,102 +87,31 @@ CTRL + K
 </li>
 <li>📲<a class="internal-link is-unresolved" href="/404" target="">科研</a>
 <ul>
-<li><a class="internal-link" target="" data-note-icon="" href="/硕士研究生/科研/论文/论文思路/">论文思路</a> | <a class="internal-link is-unresolved" href="/404" target="">初稿</a> | <a class="internal-link" target="" data-note-icon="" href="/硕士研究生/科研/文献阅读笔记/文献阅读笔记/">文献阅读笔记</a> | <a class="internal-link is-unresolved" href="/404" target="">论文复现</a></li>
+<li><a class="internal-link is-unresolved" href="/404" target="">论文思路</a> | <a class="internal-link is-unresolved" href="/404" target="">初稿</a> | <a class="internal-link" target="" data-note-icon="" href="/硕士研究生/科研/恶意软件检测文献阅读/恶意软件检测文献阅读/">恶意软件检测文献阅读</a> | <a class="internal-link is-unresolved" href="/404" target="">论文复现</a></li>
 </ul>
 </li>
 <li><a class="internal-link is-unresolved" href="/404" target="">搞钱</a>
 <ul>
-<li><a class="internal-link is-unresolved" href="/404" target="">BeeChat</a> | <a class="internal-link" target="" data-note-icon="" href="/czc知识库/搞钱/99-归档/家教创业项目/家教创业项目/">家教创业项目</a> | <a class="internal-link is-unresolved" href="/404" target="">生财有术</a></li>
+<li><a class="internal-link is-unresolved" href="/404" target="">BeeChat</a> | <a class="internal-link" target="" data-note-icon="" href="/czc知识库/搞钱/9999-归档/家教创业项目/家教创业项目/">家教创业项目</a> | <a class="internal-link is-unresolved" href="/404" target="">生财有术</a></li>
 </ul>
 </li>
 <li>🐄🐎<a class="internal-link is-unresolved" href="/404" target="">就业</a></li>
 <li>📚<a class="internal-link" target="" data-note-icon="" href="/czc知识库/笔记/知识库搭建/知识库搭建/">知识库搭建</a>
 <ul>
-<li><a class="internal-link" target="" data-note-icon="" href="/czc知识库/笔记/知识库搭建/markdown/">markdown</a> | <a class="internal-link" target="" data-note-icon="" href="/czc知识库/笔记/知识库搭建/1-obsidian笔记/obsidian/">obsidian</a> | <a class="internal-link" target="" data-note-icon="" href="/czc知识库/笔记/知识库搭建/typora/typora/">typora</a> | <a class="internal-link" target="" data-note-icon="" href="/czc知识库/笔记/知识库搭建/数字花园/我的数字花园搭建笔记/">我的数字花园搭建笔记</a></li>
+<li><a class="internal-link" target="" data-note-icon="" href="/czc知识库/笔记/知识库搭建/markdown/">markdown</a> | <a class="internal-link" target="" data-note-icon="" href="/czc知识库/笔记/知识库搭建/1-obsidian笔记/obsidian/">obsidian</a> | <a class="internal-link" target="" data-note-icon="" href="/czc知识库/笔记/知识库搭建/typora/typora/">typora</a></li>
 </ul>
 </li>
-<li>📖<a class="internal-link" target="" data-note-icon="" href="/czc知识库/Books/读书笔记/读书笔记/">读书笔记</a> | 🖼️<a class="internal-link" target="" data-note-icon="" href="/czc知识库/杂七杂八/博客收藏/">博客收藏</a> | 🌐<a class="internal-link is-unresolved" href="/404" target="">网站收藏</a></li>
+<li><a class="internal-link" target="" data-note-icon="" href="/czc知识库/计算机/Web/Web/">Web</a>
+<ul>
+<li><a class="internal-link" target="" data-note-icon="" href="/czc知识库/笔记/知识库搭建/数字花园/我的数字花园搭建笔记/">我的数字花园搭建笔记</a> | <a class="internal-link" target="" data-note-icon="" href="/czc知识库/计算机/Web/网站搭建笔记/个人网站搭建笔记v1/">个人网站搭建笔记v1</a></li>
+</ul>
+</li>
+<li>📖<a class="internal-link" target="" data-note-icon="" href="/czc知识库/Books/读书笔记/读书笔记/">读书笔记</a> | 🖼️<a class="internal-link is-unresolved" href="/404" target="">博客收藏</a> | 🌐<a class="internal-link" target="" data-note-icon="" href="/czc知识库/计算机/Web/Web收藏/">Web收藏</a> | <a class="internal-link is-unresolved" href="/404" target="">AI工具集合</a></li>
 <li><a class="internal-link is-unresolved" href="/404" target="">心理学</a> | <a class="internal-link is-unresolved" href="/404" target="">营养学</a> | <a class="internal-link is-unresolved" href="/404" target="">摄影</a> | <a class="internal-link is-unresolved" href="/404" target="">思想</a> | <a class="internal-link" target="" data-note-icon="" href="/czc知识库/笔记/设计/设计/">设计</a> | <a class="internal-link" target="" data-note-icon="" href="/czc知识库/笔记/游戏/游戏/">游戏</a></li>
-<li><a class="internal-link is-unresolved" href="/404" target="">AI工具集合</a></li>
 </ul>
 <hr>
-<h1 id="ai" tabindex="-1">AI圈最近一周资讯（自动更新）</h1>
-<div class="callout is-collapsible is-collapsed" data-callout="note"><div class="callout-title"><div class="callout-title-inner"> 技术突破与基础设施更新</div><div class="callout-fold"><i icon-name="chevron-down"></i></div></div>
-<div class="callout-content">
-<p>
-</p><p><strong>容智信息推出Agent-100与Hyper Agent平台</strong></p>
-<ul>
-<li>5月16日，容智发布Agent-100智能体平台和Hyper Agent智能体开发平台，提供100多个预置行业智能体</li>
-<li>Hyper Agent平台实现&quot;一句话生成AI Agent&quot;，采用模块化设计，可灵活组合200多个可复用组件</li>
-<li>兼容MCP Server，打造企业服务与AI应用的无缝集成方案</li>
-</ul>
-<p><strong>MCP协议进一步完善与普及</strong></p>
-<ul>
-<li>Microsoft Windows 11集成MCP作为&quot;代理型操作系统&quot;的基础协议</li>
-<li>Microsoft Copilot Studio已全面支持MCP集成，允许连接外部数据与工具</li>
-<li>多家企业（Cloudflare、AWS、Google）发布MCP服务器，促进AI Agent开发生态建设</li>
-</ul>
-<p><strong>Claude 3.7 Sonnet发布高级推理与Agent功能</strong></p>
-<ul>
-<li>新增&quot;扩展思考与工具使用&quot;模式，可交替使用推理和工具</li>
-<li>引入并行工具执行功能，提高Agent工作效率</li>
-<li>推出Claude Code增强型编程能力</li>
-</ul>
-</div></div>
-<div class="callout is-collapsible is-collapsed" data-callout="note"><div class="callout-title"><div class="callout-title-inner"> 新兴应用场景与实践案例</div><div class="callout-fold"><i icon-name="chevron-down"></i></div></div>
-<div class="callout-content">
-<p>
-</p><p><strong>企业知识管理与跨系统协作</strong></p>
-<ul>
-<li>Atlassian开发的远程MCP服务器使Claude能查询Jira问题并创建Confluence页面</li>
-<li>企业文档管理系统与AI Agent的集成显示60%的信息检索时间节省</li>
-</ul>
-<p><strong>数据库分析与RAG增强</strong></p>
-<ul>
-<li>通过PostgreSQL、MySQL和MongoDB MCP服务器将自然语言查询转化为SQL</li>
-<li>结合向量数据库进行语义搜索，提升RAG准确性</li>
-</ul>
-<p><strong>AI指导化学研究</strong></p>
-<ul>
-<li>北京大学研究团队开发CAGE-Proxvivo技术，实现对活体小鼠中蛋白质的精准激活</li>
-<li>AI引导的机器学习辅助遗传密码扩展技术，推动药物开发研究</li>
-</ul>
-<p><strong>云基础设施自动化</strong></p>
-<ul>
-<li>AWS Lambda、ECS、EKS服务器与Azure和Google Cloud MCP端点结合，实现统一基础架构控制</li>
-<li>基于Agent的基础设施部署时间减少70%，同时优化成本</li>
-</ul>
-</div></div>
-<div class="callout is-collapsible is-collapsed" data-callout="note"><div class="callout-title"><div class="callout-title-inner"> 行业内重要观点与趋势</div><div class="callout-fold"><i icon-name="chevron-down"></i></div></div>
-<div class="callout-content">
-<p>
-</p><p><strong>AI Agent进入全面整合阶段</strong></p>
-<ul>
-<li>行业正从开放式框架向智能工作流转变，提高效率与可用性</li>
-<li>多代理协作系统成为主流，同时通信架构不断发展</li>
-</ul>
-<p><strong>MCP成为AI集成标准协议</strong></p>
-<ul>
-<li>被称为&quot;AI的USB-C&quot;，解决工具集成碎片化问题</li>
-<li>标准化接口使不同AI应用可更容易地集成和扩展</li>
-</ul>
-<p><strong>企业应用转向可视化代理开发</strong></p>
-<ul>
-<li>阿里云AppBuilder、科大讯飞星辰AGENT、Dify平台都已兼容MCP协议</li>
-<li>低代码/零代码平台降低AI Agent开发门槛</li>
-</ul>
-<p><strong>从单体Agent到多Agent生态系统</strong></p>
-<ul>
-<li>Agent间协作趋势明显，从单一大型模型转向专业化Agent协作</li>
-<li>谷歌开发Agent2Agent (A2A)协议与MCP互补，增强Agent间通信能力</li>
-</ul>
-</div></div>
-<blockquote>
-<p>最近一周AI Agent领域展现出快速整合与标准化的趋势，MCP协议的广泛采用推动了多系统互操作性的提升。技术突破集中在代理协同性、工具使用能力和企业集成方面。新兴应用场景涵盖企业知识管理、数据分析、研发自动化和基础设施管理。</p>
-<p>企业可利用新推出的预构建Agent平台低成本验证AI Agent应用场景，逐步推进智能化转型。随着标准协议和开发工具的成熟，AI Agent应用将进一步降低开发门槛，实现更广泛的落地。</p>
-</blockquote>
 <h1 id="信息收集" tabindex="-1">信息收集</h1>
-<div class="callout" data-callout="question"><div class="callout-title"><div class="callout-title-inner"> <a href="https://mp.weixin.qq.com/s/UNPjMuimJbhWbsSFkNfTiw" target="_blank" class="external-link">下一个万亿机会，正在出现 | 红杉6小时AI闭门会</a></div></div>
+<div class="callout is-collapsible" data-callout="question"><div class="callout-title"><div class="callout-title-inner"> <a href="https://mp.weixin.qq.com/s/UNPjMuimJbhWbsSFkNfTiw" target="_blank" class="external-link">下一个万亿机会，正在出现 | 红杉6小时AI闭门会</a></div><div class="callout-fold"><i icon-name="chevron-down"></i></div></div>
 <div class="callout-content">
 <p>
 </p><p>一上来，红杉资本的合伙人Pat Grady，就给出了一个判断。 这波AI转型，所能撬动的市场规模，大概是万亿级别。 凭什么这么说？ 技术浪潮的演进，往往是层层叠加、不断放大的。 每一波新的技术，都会站在前一波技术的肩膀上，爆发出更强的能量。AI，就站在了移动互联网、云计算这些“巨人”的肩膀上。全球数十亿的互联网用户，几乎人手一部智能终端，社交媒体病毒式传播，能让AI应用一夜触达数亿用户。<br>
@@ -219,27 +148,82 @@ CTRL + K
 <p><strong>让我们在这个无限可能的新时代，一起拥抱变化，肆意生长。</strong></p>
 </div></div>
 </div></div>
-<div class="callout" data-callout="note"><div class="callout-title"><div class="callout-title-inner"> <a href="https://mp.weixin.qq.com/s/fj0q3OBG7aZ89qRG0-Wd0w" target="_blank" class="external-link">衡量一个人思考质量的最佳方式，就是回答这个问题</a><br></div></div>
+<div class="callout is-collapsible is-collapsed" data-callout="note"><div class="callout-title"><div class="callout-title-inner"> <a href="https://36kr.com/p/3320213130308101" target="_blank" class="external-link">硅谷女王的复出，一篇340页的AI 报告，让人彻夜难眠。</a></div><div class="callout-fold"><i icon-name="chevron-down"></i></div></div>
+<div class="callout-content">
+<p>
+</p><p>这份报告最震撼的发现不是AI有多厉害，而是变化的速度本身成为了最大的变量。报告显示，从ChatGPT达到1亿用户只用了2个月，而Netflix用了10年。这不仅仅是技术采用的加速，而是整个创新-资本-市场反馈循环的根本性压缩。</p>
+<h2 id="三个被低估的结构性变化" tabindex="-1">三个被低估的结构性变化</h2>
+<h3 id="1-ai-ai" tabindex="-1">1. AI数据中心实际上是“AI工厂”</h3>
+<p>报告中最有趣的数据是全球数据中心CapEx在2024年达到4550亿美元，但更重要的是Jensen Huang的观点：“AI数据中心实际上是AI工厂”。这意味着我们正在构建的不是传统意义上的计算基础设施，而是一个全球分布的“认知制造系统”。这个转变的深层含义是：智能将成为像电力一样的基础设施，而不是某个特定应用的功能。这将根本性地改变价值创造的逻辑。</p>
+<h3 id="2-vs" tabindex="-1">2. 开源 vs. 闭源的新冷战</h3>
+<p>报告显示中国在开源AI模型方面的快速崛起（DeepSeek等），这不仅仅是技术路线之争，而是两种不同的技术治理哲学的对抗：</p>
+<ul>
+<li>
+<p><strong>美国模式</strong>：高投入、闭源、通过API商业化</p>
+</li>
+<li>
+<p><strong>中国模式</strong>：快速迭代、开源、通过应用层变现</p>
+</li>
+</ul>
+<p>更深层的问题是：<strong>开源模式是否会最终瓦解现有的AI价值链？</strong> 当模型性能趋于收敛而成本急剧下降时，真正的护城河在哪里？</p>
+<h3 id="3-agent-first-internet" tabindex="-1">3. “Agent-first Internet”的潜在颠覆</h3>
+<p>报告提到全球还有26亿人没有上网，而他们上网时将直接接触AI Agent而非传统浏览器。这可能导致一个根本性的问题：如果新用户跳过了“应用时代”直接进入“Agent时代”，现有的互联网价值分配体系还适用吗？</p>
+<h2 id="三个关键的不确定性" tabindex="-1">三个关键的不确定性</h2>
+<h3 id="1" tabindex="-1">1. 经济模型的可持续性</h3>
+<p>报告显示OpenAI2024年收入37亿美元，但计算开支50亿美元。这个“先烧钱后盈利”的模式在历史上确实有成功案例（Amazon、Tesla），但AI的特殊性在于：</p>
+<ul>
+<li>
+<p>训练成本呈指数级增长</p>
+</li>
+<li>
+<p>推理成本在快速下降</p>
+</li>
+<li>
+<p>竞争者数量爆炸式增长</p>
+</li>
+</ul>
+<p>关键问题是：当所有人都在同时烧钱时，谁能最先实现可持续的商业模式？</p>
+<h3 id="2" tabindex="-1">2. 地缘政治的技术化</h3>
+<p>中美AI竞争已经超越了纯粹的商业竞争，成为国家战略的核心。报告显示美国在顶级科技公司市值中占83%，但中国在工业机器人装机量上已经超越世界其他地区总和。</p>
+<p>真正的问题是：技术发展的全球化逻辑与地缘政治的本土化逻辑能否长期共存？</p>
+<h3 id="3" tabindex="-1">3. 工作的重新定义</h3>
+<p>报告显示AI相关职位增长448%，而非AI IT职位下降9%。但这个表面数据掩盖了一个更深层的变化：工作本身的性质正在改变。Shopify CEO的内部备忘录说“反射性AI使用现在是基本期望”。这意味着我们可能正在进入一个**“AI素养”成为基本职业技能的时代**，就像今天的计算机素养一样。</p>
+<h2 id="对未来的三个预判" tabindex="-1">对未来的三个预判</h2>
+<ol>
+<li>
+<p><strong>2025-2027将是AI商业模式的“大洗牌期”</strong>：当前的高估值和高烧钱率不可持续，市场将迫使厂商找到真正可行的盈利路径。</p>
+</li>
+<li>
+<p><strong>开源AI将重新定义技术创新的地理分布</strong>：不再是硅谷主导全球，而是多个技术中心并行发展，各有特色。</p>
+</li>
+<li>
+<p><strong>“AI-first”将从企业战略变成社会基础设施</strong>：就像今天我们无法想象没有互联网的世界，10年后我们也无法想象没有AI的世界。</p>
+</li>
+</ol>
+<h2 id="一个更根本的问题" tabindex="-1">一个更根本的问题</h2>
+<p>这份报告展现了一个前所未有的技术-资本-地缘政治的复合加速度。但它也提出了一个哲学层面的问题：当机器的学习速度超越人类的适应速度时，我们如何确保技术发展仍然服务于人类福祉？这不仅仅是一个技术问题，更是一个关于我们希望创造什么样的未来的根本性选择。</p>
+</div></div>
+<div class="callout is-collapsible" data-callout="note"><div class="callout-title"><div class="callout-title-inner"> <a href="https://mp.weixin.qq.com/s/fj0q3OBG7aZ89qRG0-Wd0w" target="_blank" class="external-link">衡量一个人思考质量的最佳方式，就是回答这个问题</a><br></div><div class="callout-fold"><i icon-name="chevron-down"></i></div></div>
 <div class="callout-content">
 <p>
 人类能做的最令人印象深刻之事，就是思考。这或许是世间所能做的最了不起的事情。而最好的思考，或者更确切地说，证明一个人思考透彻的最佳方式，就是创造出美好的新事物。</p>
 </div></div>
-<div class="callout" data-callout="quote"><div class="callout-title"><div class="callout-title-inner"> <a href="https://mp.weixin.qq.com/s/O_wX1OFEWwAFZFJhLl36Pw" target="_blank" class="external-link">真格基金戴雨森：长聊 AI Agent，各行业都会遭遇「李世石时刻」（下）</a><br></div></div>
+<div class="callout is-collapsible" data-callout="quote"><div class="callout-title"><div class="callout-title-inner"> <a href="https://mp.weixin.qq.com/s/O_wX1OFEWwAFZFJhLl36Pw" target="_blank" class="external-link">真格基金戴雨森：长聊 AI Agent，各行业都会遭遇「李世石时刻」（下）</a><br></div><div class="callout-fold"><i icon-name="chevron-down"></i></div></div>
 <div class="callout-content">
 <p>
 2025 年，AI 在特定领域超越人类的现象将愈发普遍，这一变革将如何重塑未来，带来哪些机遇与挑战？ 新技术最终是要惠及大众、全人类的，这样才有真正的价值，而不是只掌握在少数有钱人或者少数公司手里。</p>
 </div></div>
-<div class="callout" data-callout="example"><div class="callout-title"><div class="callout-title-inner"> <a href="https://mp.weixin.qq.com/s/VgY-Lx_VDwccpXgsruWoRg" target="_blank" class="external-link">如何发现一个20岁时就值得投资的人</a><br></div></div>
+<div class="callout is-collapsible" data-callout="example"><div class="callout-title"><div class="callout-title-inner"> <a href="https://mp.weixin.qq.com/s/VgY-Lx_VDwccpXgsruWoRg" target="_blank" class="external-link">如何发现一个20岁时就值得投资的人</a><br></div><div class="callout-fold"><i icon-name="chevron-down"></i></div></div>
 <div class="callout-content">
 <p>
 大多数年轻人，并不是没有潜力，而是被三种看不见的力量困住了：<strong>认知受限、缺乏勇气、方向迷失</strong>。他们不是不聪明，只是没跳出主流路径，不敢承担失败，或在理想与现实的碰撞中逐渐放弃。真正具备结构外生长力的年轻人，恰恰是那些已经在突破这些障碍的人。</p>
 </div></div>
-<div class="callout" data-callout="tip"><div class="callout-title"><div class="callout-title-inner"> <a href="https://mp.weixin.qq.com/s/Z4Tpii5QztL4al2Qc8Ua3w" target="_blank" class="external-link">一张图读懂：产品的本质是什么？（专业收藏文）</a><br></div></div>
+<div class="callout is-collapsible" data-callout="tip"><div class="callout-title"><div class="callout-title-inner"> <a href="https://mp.weixin.qq.com/s/Z4Tpii5QztL4al2Qc8Ua3w" target="_blank" class="external-link">一张图读懂：产品的本质是什么？（专业收藏文）</a><br></div><div class="callout-fold"><i icon-name="chevron-down"></i></div></div>
 <div class="callout-content">
 <p>
 什么是企业经营的最高境界，就是产品总是能够在此时此刻比他人更好的满足和创造客户需求，甚至总是能够制造和激发消费者的欲望与激情。</p>
 </div></div>
-<div class="callout" data-callout="tip"><div class="callout-title"><div class="callout-title-inner">Tip</div></div>
+<div class="callout is-collapsible" data-callout="tip"><div class="callout-title"><div class="callout-title-inner">Tip</div><div class="callout-fold"><i icon-name="chevron-down"></i></div></div>
 <div class="callout-content">
 <p>
 赚钱的‬本质是创造并释放价值，坚持利他，成己达人，帮助别人成‬就自己。 慢慢的‬赚不到钱的‬原因，一定是自‬私战胜了‬利他，该分配的利益没‬分配，该帮扶的‬没帮扶，该给予‬的不给予，最后所‬有人都会慢‬慢远离你。 这个世‬界是圆的，你怎么‬想，最终就获得怎样的结局。</p>
@@ -247,32 +231,30 @@ CTRL + K
 <div class="callout is-collapsible is-collapsed" data-callout="quote"><div class="callout-title"><div class="callout-title-inner">Quote</div><div class="callout-fold"><i icon-name="chevron-down"></i></div></div>
 <div class="callout-content">
 <p>
-</p><ol>
-<li>不要对着庄稼大喊大叫。--情绪稳定</li>
-<li>不要责怪庄稼长得不够快。--尊重规律</li>
-<li>不要在庄稼长成之前，就将其连根拔起。--耐心与等待</li>
-<li>选择最适合土壤的植物。--找对赛道</li>
-<li>灌溉并施肥。--用心与勤奋</li>
-<li>定期清除杂草。--第一性原理，抓大放小</li>
-<li>适时休憩</li>
-</ol>
-<p></p></div></div>
-<div class="callout" data-callout="quote"><div class="callout-title"><div class="callout-title-inner"> <a href="https://mp.weixin.qq.com/s/RBXFBUYtIKgePTsQ5vjSpg" target="_blank" class="external-link">读段永平：做对的事情</a><br></div></div>
+4. 不要对着庄稼大喊大叫。--情绪稳定<br>
+5. 不要责怪庄稼长得不够快。--尊重规律<br>
+6. 不要在庄稼长成之前，就将其连根拔起。--耐心与等待<br>
+7. 选择最适合土壤的植物。--找对赛道<br>
+8. 灌溉并施肥。--用心与勤奋<br>
+9. 定期清除杂草。--第一性原理，抓大放小<br>
+10. 适时休憩</p>
+</div></div>
+<div class="callout is-collapsible" data-callout="quote"><div class="callout-title"><div class="callout-title-inner"> <a href="https://mp.weixin.qq.com/s/RBXFBUYtIKgePTsQ5vjSpg" target="_blank" class="external-link">读段永平：做对的事情</a><br></div><div class="callout-fold"><i icon-name="chevron-down"></i></div></div>
 <div class="callout-content">
 <p>
 做对的事情有多重要？段永平说：“勤奋和天赋其实都没那么重要，做对的事情最重要。”</p>
 </div></div>
-<div class="callout" data-callout="note"><div class="callout-title"><div class="callout-title-inner"> <a href="https://mp.weixin.qq.com/s/yXLiV8S1TMHl2VCZ0oNlwQ" target="_blank" class="external-link">买在对手被迫时</a><br></div></div>
+<div class="callout is-collapsible" data-callout="note"><div class="callout-title"><div class="callout-title-inner"> <a href="https://mp.weixin.qq.com/s/yXLiV8S1TMHl2VCZ0oNlwQ" target="_blank" class="external-link">买在对手被迫时</a><br></div><div class="callout-fold"><i icon-name="chevron-down"></i></div></div>
 <div class="callout-content">
 <p>
 巴菲特说：投资的秘密在于买，而不是卖。 买也是两个秘密：买底层有长期价值的，买在对手被迫时。</p>
 </div></div>
-<div class="callout" data-callout="note"><div class="callout-title"><div class="callout-title-inner"> <a href="https://mp.weixin.qq.com/s/1-c9zh3YM-bblxmJZzxJRw" target="_blank" class="external-link">一定要学会辨别身边成长极快的人</a><br></div></div>
+<div class="callout is-collapsible" data-callout="note"><div class="callout-title"><div class="callout-title-inner"> <a href="https://mp.weixin.qq.com/s/1-c9zh3YM-bblxmJZzxJRw" target="_blank" class="external-link">一定要学会辨别身边成长极快的人</a><br></div><div class="callout-fold"><i icon-name="chevron-down"></i></div></div>
 <div class="callout-content">
 <p>
 杀死过去的自己。 这才是我们从成长极快的人身上最应该效仿和学习的最终价值观再落地。 这是一场场接连不断的自我认知革命。 这是一次次不断打破自己固有经验暴政的突围战役。</p>
 </div></div>
-<div class="callout" data-callout="warning"><div class="callout-title"><div class="callout-title-inner"> <a href="https://mp.weixin.qq.com/s/FYMe18-9CKwZsfsX6kfG0A" target="_blank" class="external-link">独立开发者的黄金时代</a><br></div></div>
+<div class="callout is-collapsible" data-callout="warning"><div class="callout-title"><div class="callout-title-inner"> <a href="https://mp.weixin.qq.com/s/FYMe18-9CKwZsfsX6kfG0A" target="_blank" class="external-link">独立开发者的黄金时代</a><br></div><div class="callout-fold"><i icon-name="chevron-down"></i></div></div>
 <div class="callout-content">
 <p>
 1）<strong>独立开发者</strong>是新时代的创作者，像早期地下摇滚乐手，追求自由表达和解决特定需求；<br>
@@ -281,7 +263,7 @@ CTRL + K
 4）独立开发者的成功不仅是商业回报，更追求“<strong>三种自由</strong>”：生存自由、生活自由和生命体验自由；<br>
 5）在AI时代，“<strong>小而美</strong>”的产品有机会长成“大而美”，通过解决用户痛点获得更大发展。</p>
 </div></div>
-<div class="callout" data-callout="warning"><div class="callout-title"><div class="callout-title-inner">Warning</div></div>
+<div class="callout is-collapsible" data-callout="warning"><div class="callout-title"><div class="callout-title-inner">Warning</div><div class="callout-fold"><i icon-name="chevron-down"></i></div></div>
 <div class="callout-content">
 <p>
 “模型即Agent，Agent即工具。ChatGPT就是AI时代的OS。未来的AI竞争，是立体型的竞争，是OS级别的竞争。” “一款强大的AI工具几乎会吞噬一切工具软件，包括写作、笔记、图像处理、编程工具等，这有点像iPhone的出现吞噬了MP3播放器、相机、录音笔、移动电话等设备。ChatGPT正在展现这种趋势。”<br>
@@ -289,17 +271,17 @@ CTRL + K
 <strong>因为，PC时代有了Windows，才催生了Office、</strong> <strong>Photoshop</strong> <strong>等无数应用软件；移动时代有了iOS和Android，才有了我们手机里五花八门的App。</strong><br>
 AI时代，很可能也会遵循类似的逻辑。机会，就藏在那些细分的垂直应用中。</p>
 </div></div>
-<div class="callout" data-callout="tip"><div class="callout-title"><div class="callout-title-inner"> <a href="https://mp.weixin.qq.com/s/n5FeaZ4khGFOWiwL9K-Tpg" target="_blank" class="external-link">拆解Bible Chat AI：简单套壳如何在24个月从0做到月入30万美元</a><br></div></div>
+<div class="callout is-collapsible" data-callout="tip"><div class="callout-title"><div class="callout-title-inner"> <a href="https://mp.weixin.qq.com/s/n5FeaZ4khGFOWiwL9K-Tpg" target="_blank" class="external-link">拆解Bible Chat AI：简单套壳如何在24个月从0做到月入30万美元</a><br></div><div class="callout-fold"><i icon-name="chevron-down"></i></div></div>
 <div class="callout-content">
 <p>
 有时候，最成功的产品不是那些技术上最复杂或最尖端的，而是那些准确地解决了特定人群明确需求的产品。在AI应用泛滥的今天，找到一个特定的利基市场并完美地满足他们的需求，可能比试图创造一个&quot;革命性&quot;产品更有效。</p>
 </div></div>
-<div class="callout" data-callout="quote"><div class="callout-title"><div class="callout-title-inner"> <a href="https://mp.weixin.qq.com/s/nbW4OuLovDCn60JR9OfSKQ" target="_blank" class="external-link">苹果 AI 的崩塌真相：从乔布斯愿景，到高管失误的困局</a><br></div></div>
+<div class="callout is-collapsible" data-callout="quote"><div class="callout-title"><div class="callout-title-inner"> <a href="https://mp.weixin.qq.com/s/nbW4OuLovDCn60JR9OfSKQ" target="_blank" class="external-link">苹果 AI 的崩塌真相：从乔布斯愿景，到高管失误的困局</a><br></div><div class="callout-fold"><i icon-name="chevron-down"></i></div></div>
 <div class="callout-content">
 <p>
 在当时苹果官方发布的新闻稿里，库克表示「机器学习和 AI 对于苹果公司的未来发展至关重要，它不仅会彻底改变人们与技术进行交互的方式，而且已经为用户的生活带来了显著改善。能够与 John 携手并肩，我们感到非常幸运。作为 AI 领域的领军人物，他必将能够推动我们在这一关键领域的长足发展。」 然而，七年后回看，这种期望和乐观已荡然无存。苹果的 AI 不仅没有起色，反而落后得更远。 核心问题是： 高管们对 AI 的路线认知不统一。</p>
 </div></div>
-<div class="callout" data-callout="note"><div class="callout-title"><div class="callout-title-inner">Note</div></div>
+<div class="callout is-collapsible" data-callout="note"><div class="callout-title"><div class="callout-title-inner">Note</div><div class="callout-fold"><i icon-name="chevron-down"></i></div></div>
 <div class="callout-content">
 <p>
 </p><blockquote>
@@ -311,10 +293,11 @@ AI时代，很可能也会遵循类似的逻辑。机会，就藏在那些细分
 <p></p></div></div>
 <hr>
 <ul>
-<li><a class="internal-link" target="" data-note-icon="" href="/czc知识库/笔记/知识库搭建/数字花园/数字花园/">数字花园</a>：<a href="http://www.czchx.cc" target="_blank" class="external-link">czchx.cc</a></li>
-<li>CSDN：<a href="https://blog.csdn.net/qq_25177949?type=blog" target="_blank" class="external-link">我叫czc-CSDN博客</a></li>
-<li>github：<a href="https://github.com/czc6666" target="_blank" class="external-link">czc6666 (czc) · GitHub</a></li>
-<li>文件小网盘：<a href="http://czchx.cc/file" target="_blank" class="external-link">目录</a></li>
+<li><a href="https://czchx.cc" target="_blank" class="external-link">我的数字花园</a></li>
+<li><a href="https://game.czchx.cc" target="_blank" class="external-link">我的小游戏站</a></li>
+<li><a href="https://blog.csdn.net/qq_25177949?type=blog" target="_blank" class="external-link">我的CSDN博客</a></li>
+<li><a href="https://github.com/czc6666" target="_blank" class="external-link">我的github</a></li>
+<li><a href="https://czchx.cc/file" target="_blank" class="external-link">一个简单的小网盘</a></li>
 </ul>
 <hr>
 </main>
@@ -332,9 +315,33 @@ On this page
 <ol>
 <li><a href="#个人知识库导航🧭">个人知识库导航🧭</a>
 </li>
-<li><a href="#ai">AI圈最近一周资讯（自动更新）</a>
-</li>
 <li><a href="#信息收集">信息收集</a>
+<ol>
+<li><a href="#三个被低估的结构性变化">三个被低估的结构性变化</a>
+<ol>
+<li><a href="#1-ai-ai">1. AI数据中心实际上是“AI工厂”</a>
+</li>
+<li><a href="#2-vs">2. 开源 vs. 闭源的新冷战</a>
+</li>
+<li><a href="#3-agent-first-internet">3. “Agent-first Internet”的潜在颠覆</a>
+</li>
+</ol>
+</li>
+<li><a href="#三个关键的不确定性">三个关键的不确定性</a>
+<ol>
+<li><a href="#1">1. 经济模型的可持续性</a>
+</li>
+<li><a href="#2">2. 地缘政治的技术化</a>
+</li>
+<li><a href="#3">3. 工作的重新定义</a>
+</li>
+</ol>
+</li>
+<li><a href="#对未来的三个预判">对未来的三个预判</a>
+</li>
+<li><a href="#一个更根本的问题">一个更根本的问题</a>
+</li>
+</ol>
 </li>
 </ol>
 </nav>

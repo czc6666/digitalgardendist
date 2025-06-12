@@ -1,0 +1,296 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<title>202306.综述：基于人工智能的物联网恶意代码检测的文献综述</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<script async type="module">import mermaid from"https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"</script>
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js" integrity="sha512-hpZ5pDCF2bRCweL5WoA0/N1elet1KYL5mx3LP555Eg/0ZguaHawxNvEjF6O3rufAChs16HVNhEc6blF/rZoowQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/plugins/autoloader/prism-autoloader.min.js" integrity="sha512-sv0slik/5O0JIPdLBCR2A3XDg/1U3WuDEheZfI/DI5n8Yqc3h5kjrnr46FGBNiUAJF7rE4LHKwQ/SoSLRKAxEA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script async src="https://cdn.jsdelivr.net/npm/lucide@0.115.0/dist/umd/lucide.min.js"></script>
+<script>window.addEventListener("load",(()=>{document.querySelectorAll(".callout").forEach((e=>{const t=getComputedStyle(e).getPropertyValue("--callout-icon"),l=t&&t.trim().replace(/^lucide-/,"");if(l){const t=e.querySelector(".callout-title");if(t){const e=document.createElement("div"),c=document.createElement("i");e.appendChild(c),c.setAttribute("icon-name",l),e.setAttribute("class","callout-icon"),t.insertBefore(e,t.firstChild)}}})),lucide.createIcons(),Array.from(document.querySelectorAll(".callout.is-collapsible")).forEach((e=>{e.querySelector(".callout-title").addEventListener("click",(t=>{e.classList.contains("is-collapsed")?e.classList.remove("is-collapsed"):e.classList.add("is-collapsed")}))}))}))</script>
+<script async src="https://fastly.jsdelivr.net/npm/force-graph@1.43.0/dist/force-graph.min.js"></script>
+<script async src="https://fastly.jsdelivr.net/npm/@alpinejs/persist@3.11.1/dist/cdn.min.js"></script>
+<script src="https://fastly.jsdelivr.net/npm/alpinejs@3.11.1/dist/cdn.min.js" async></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-okaidia.min.css" integrity="sha512-mIs9kKbaw6JZFfSuo+MovjU+Ntggfoj8RwAmJbVXQ5mkAX5LlgETQEweFPI18humSPHymTb5iikEOKWF7I8ncQ==" crossorigin="anonymous" referrerpolicy="no-referrer" async>
+<script src="https://fastly.jsdelivr.net/npm/whatwg-fetch@3.6.2/dist/fetch.umd.min.js" crossorigin="anonymous" referrerpolicy="no-referrer" async></script>
+<link href="/styles/digital-garden-base.css" rel="stylesheet">
+<link href="/styles/obsidian-base.css" rel="stylesheet">
+<link href="/styles/_theme.74516f71.css" rel="stylesheet">
+<link href="/styles/custom-style.css" rel="stylesheet">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<style></style>
+<style></style>
+</head>
+<body class="theme-light markdown-preview-view markdown-rendered markdown-preview-section css-settings-manager mod-windows is-frameless is-maximized is-hidden-frameless is-focused obsidian-app theme-light show-inline-title show-ribbon show-view-header css-settings-manager theme-default line-style-solid folder-default blockquote-normal callout-normal checkbox-default tag-default link-default heading-default responsive-tile-height oz-show-all-num">
+<nav class="navbar">
+<div class="navbar-inner">
+<a href="/" style="text-decoration:none">
+<h1 style="margin:15px!important">czc&#39;s digital garden</h1>
+</a>
+</div>
+<div class="search-button align-icon" onclick="toggleSearch()">
+<span class="search-icon">
+<i icon-name="search"></i>
+</span>
+<span class="search-text">
+<span>Search</span>
+<span style="font-size:.6rem;padding:2px 2px 0 6px;text-align:center;transform:translateY(4px)" class="search-keys">
+CTRL + K
+</span>
+</span>
+</div>
+</nav>
+<div class="search-container" id="globalsearch" onclick="toggleSearch()">
+<div class="search-box">
+<input type="search" id="term" placeholder="Start typing...">
+<div id="search-results"></div>
+<footer class="search-box-footer">
+<div class="navigation-hint">
+<span>Enter to select</span>
+</div>
+<div class="navigation-hint align-icon">
+<i icon-name="arrow-up" aria-hidden="true"></i>
+<i icon-name="arrow-down" aria-hidden="true"></i>
+<span>to navigate</span>
+</div>
+<div class="navigation-hint">
+<span>ESC to close</span>
+</div>
+</footer>
+</div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/flexsearch@0.7.21/dist/flexsearch.bundle.js"></script>
+<script>document.addEventListener("DOMContentLoaded",init,!1),document.addEventListener("DOMContentLoaded",setCorrectShortcut,!1),window.toggleSearch=function(){document.getElementById("globalsearch").classList.contains("active")?document.getElementById("globalsearch").classList.remove("active"):(document.getElementById("globalsearch").classList.add("active"),document.getElementById("term").focus())},window.toggleTagSearch=function(e){console.log(e.textContent);const t=e.textContent;t&&(window.document.getElementById("term").value=t.trim(),window.toggleSearch(),window.search())};const loadingSvg='\n    <svg width="100" height="100" viewBox="0 0 45 45" xmlns="http://www.w3.org/2000/svg" stroke="#fff">\n      <g fill="none" fill-rule="evenodd" transform="translate(1 1)" stroke-width="2">\n          <circle cx="22" cy="22" r="6" stroke-opacity="0">\n              <animate attributeName="r"\n                   begin="1.5s" dur="3s"\n                   values="6;22"\n                   calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-opacity"\n                   begin="1.5s" dur="3s"\n                   values="1;0" calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-width"\n                   begin="1.5s" dur="3s"\n                   values="2;0" calcMode="linear"\n                   repeatCount="indefinite" />\n          </circle>\n          <circle cx="22" cy="22" r="6" stroke-opacity="0">\n              <animate attributeName="r"\n                   begin="3s" dur="3s"\n                   values="6;22"\n                   calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-opacity"\n                   begin="3s" dur="3s"\n                   values="1;0" calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-width"\n                   begin="3s" dur="3s"\n                   values="2;0" calcMode="linear"\n                   repeatCount="indefinite" />\n          </circle>\n          <circle cx="22" cy="22" r="8">\n              <animate attributeName="r"\n                   begin="0s" dur="1.5s"\n                   values="6;1;2;3;4;5;6"\n                   calcMode="linear"\n                   repeatCount="indefinite" />\n          </circle>\n      </g>\n  </svg>';function debounce(e,t,n){var a;return function(){var r=this,i=arguments,c=n&&!a;clearTimeout(a),a=setTimeout((function(){a=null,n||e.apply(r,i)}),t),c&&e.apply(r,i)}}function setCorrectShortcut(){navigator.platform.toUpperCase().indexOf("MAC")>=0&&document.querySelectorAll(".search-keys").forEach((e=>e.innerHTML="⌘ + K"))}function createIndex(e){const t=e=>e.toLowerCase().split(/([^a-z]|[^\x00-\x7F])/),n=new FlexSearch.Document({cache:!0,charset:"latin:extra",optimize:!0,index:[{field:"content",tokenize:"reverse",encode:t},{field:"title",tokenize:"forward",encode:t},{field:"tags",tokenize:"forward",encode:t}]});return e.forEach(((e,t)=>{n.add({id:t,title:e.title,content:e.content,tags:e.tags})})),n}async function init(){let e=!0;if(localStorage.getItem("searchIndex")){let{date:t,docs:n}=JSON.parse(localStorage.getItem("searchIndex"));if("2025-06-12T10:51:47.393Z"===t){e=!1;let t=createIndex(n);window.docs=n,window.index=t}}if(e){let e=await(await fetch("/searchIndex.json?v=2025-06-12T10:51:47.393Z")).json(),t=createIndex(e);localStorage.setItem("searchIndex",JSON.stringify({date:"2025-06-12T10:51:47.393Z",docs:e})),window.docs=e,window.index=t}document.addEventListener("keydown",(e=>{if((e.ctrlKey||e.metaKey)&&"k"===e.key&&(e.preventDefault(),toggleSearch()),"Escape"===e.key&&document.getElementById("globalsearch").classList.remove("active"),document.getElementById("globalsearch").classList.contains("active")){if("ArrowDown"===e.key){e.preventDefault();let t=document.querySelector(".searchresult.active");t?(t.classList.remove("active"),t.nextElementSibling?t.nextElementSibling.classList.add("active"):document.querySelector(".searchresult").classList.add("active")):document.querySelector(".searchresult").classList.add("active");let n=document.querySelector(".searchresult.active");n&&n.scrollIntoView({behavior:"smooth",block:"nearest",inline:"start"})}if("ArrowUp"===e.key){e.preventDefault();let t=document.querySelector(".searchresult.active");t?(t.classList.remove("active"),t.previousElementSibling?t.previousElementSibling.classList.add("active"):document.querySelectorAll(".searchresult").forEach((e=>{e.nextElementSibling||e.classList.add("active")}))):document.querySelectorAll(".searchresult").forEach((e=>{e.nextElementSibling&&e.classList.add("active")}));let n=document.querySelector(".searchresult.active");n&&n.scrollIntoView({behavior:"smooth",block:"nearest",inline:"start"})}if("Enter"===e.key){e.preventDefault();let t=document.querySelector(".searchresult.active");t&&(window.location.href=t.querySelector("a").href)}}}));const t=debounce(search,200,!1);field=document.querySelector("#term"),field.addEventListener("keydown",(e=>{"ArrowDown"!==e.key&&"ArrowUp"!==e.key&&t()})),resultsDiv=document.querySelector("#search-results");const n=new URL(location.href).searchParams;n.get("q")&&(field.setAttribute("value",n.get("q")),toggleSearch(),search())}async function search(){let e=field.value.trim();if(!e)return;if(e==lastSearch)return;console.log(`search for ${e}`),window.lastSearch=e,resultsDiv.innerHTML=loadingSvg;let t=offlineSearch(e),n="";if(!t.length){let t=document.createElement("p");return t.innerText=`No results for "${e}"`,resultsDiv.innerHTML="",void resultsDiv.appendChild(t)}n+='<div style="max-width:100%;">',t.forEach((e=>{e.tags&&e.tags.length>0?n+=`<div class="searchresult">\n                    <a class="search-link" href="${e.url}">${e.title}</a>\n                    <div onclick="window.location='${e.url}'">\n                        <div class="header-meta">\n                            <div class="header-tags">\n                                ${e.tags.map((e=>'<a class="tag" href="JavaScript:Void(0);">#'+e+"</a>")).join("")}\n                            </div>\n                        </div>\n                        ${e.content}\n                    </div>\n                </div>`:n+=`<div class="searchresult">\n                    <a class="search-link" href="${e.url}">${e.title}</a>\n                    <div onclick="window.location='${e.url}'">\n                        ${e.content}\n                    </div>\n                </div>`})),n+="</div>",resultsDiv.innerHTML=n}function truncate(e,t){return(e=e.replaceAll(/<[^>]*>/g,"")).length<t?e:e.substring(0,t-3)+"..."}function offlineSearch(e){let t=window.docs,n="#"===e[0]&&e.length>1?index.search(e.substring(1),[{field:"tags"}]):index.search(e,[{field:"title",limit:5},{field:"content",weight:10}]);const a=e=>{const t=n.filter((t=>t.field===e));return 0===t.length?[]:[...t[0].result]};return[...new Set([...a("title"),...a("content"),...a("tags")])].map((e=>{let n=t[e];return n.content=truncate(n.content,400),n.tags=n.tags.filter((e=>"gardenEntry"!=e&&"note"!=e)),n}))}window.lastSearch=""</script>
+<main class="content cm-s-obsidian">
+<header>
+<h1 data-note-icon="">202306.综述：基于人工智能的物联网恶意代码检测的文献综述</h1>
+<div class="header-meta">
+<div class="header-tags">
+</div>
+<div class="timestamps"><div><i icon-name="calendar-plus"></i> <span class="human-date" data-date="2025-06-09T10:31:00.215+08:00"></span></div><div><i icon-name="calendar-clock"></i> <span class="human-date" data-date="2024-12-08T12:30:21.000+08:00"></span></div></div></div>
+</header>
+<hr>
+<ul>
+<li>时间:: 2023</li>
+<li>作者:: 刘奇旭, 刘嘉熹, 靳泽, 刘心宇, 肖聚鑫, 陈艳辉, 谭耀康</li>
+<li>URL:: <a href="https://kns.cnki.net/kcms2/article/abstract?v=AnuRcxOpZiEZSPlVE9c9xgWFA3ybNpNaaaksB3isLDhMBa9QaN6WRxi2CYYpwCDWhQdWrKInxEQhDkiXyfq48V6pcvGV_qnmYbpknG87zDT-7CEoaj_N_BM9DaQ-TkVH&amp;uniplatform=NZKPT&amp;language=gb" target="_blank" class="external-link">知网</a></li>
+<li>DOI::</li>
+<li>pdf链接:：<a href="%E5%9F%BA%E4%BA%8E%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E7%9A%84%E7%89%A9%E8%81%94%E7%BD%91%E6%81%B6%E6%84%8F%E4%BB%A3%E7%A0%81%E6%A3%80%E6%B5%8B%E7%BB%BC%E8%BF%B0_2023_%E5%88%98%E5%A5%87%E6%97%AD%20et%20al.pdf" target="_blank" class="external-link">基于人工智能的物联网恶意代码检测综述_2023_刘奇旭 et al.pdf</a></li>
+<li>zotero链接:： <a href="zotero://open-pdf/library/items/MPQVAJV3" target="_blank" class="external-link">基于人工智能的物联网恶意代码检测综述_2023_刘奇旭 et al.pdf</a></li>
+<li>标签:: <a class="tag" onclick="toggleTagSearch(this)" data-content="#机器学习">#机器学习</a> <a class="tag" onclick="toggleTagSearch(this)" data-content="#物联网">#物联网</a> <a class="tag" onclick="toggleTagSearch(this)" data-content="#综述">#综述</a> <a class="tag" onclick="toggleTagSearch(this)" data-content="#恶意代码检测">#恶意代码检测</a></li>
+</ul>
+<hr>
+<div class="callout is-collapsible is-collapsed" data-callout="note"><div class="callout-title"><div class="callout-title-inner"> 来源：不知道</div><div class="callout-fold"><i icon-name="chevron-down"></i></div></div></div>
+<p>计算机研究与发展<br>
+这篇文章也是三区的文章<br>
+一般视为等同于<strong>SCI3区</strong>。</p>
+<hr>
+<p>参考文献48，物联网恶意代码分析联邦学习综述，下来看<br>
+笔记</p>
+<p>参考文献72，三区的啊，不看？，下来看看：20231229<br>
+MDABP: A novel approach to detect crossarchitecture  IoT  malware  based  on  PaaS<br>
+笔记</p>
+<p>参考文献111，中科院双一区，Hybrid malware detection based on BiLSTM  and  SPP-Net  for  smart  IoT<br>
+这篇不错啊感觉，，<br>
+ccfa，顶刊（CCF推荐中文科技期刊目录——A类）</p>
+<hr>
+<p>20231217组会汇报的<br>
+这篇文章哪找的？不记得了<br>
+一篇基于人工智能的物联网恶意代码检测的文献综述（中科院信息工程研究所）</p>
+<p>这篇综述通过对2018年以来在网络与信息安全领域顶级会议和期刊上发表的物联网恶意代码检测相关研究的调研，详细分析了这些研究工作的问题、贡献、采用的机器学习和深度学习算法、物联网恶意代码数据集以及检测效果。然后这篇综述研究提出了一种新的分类方法，从物联网检测研究的主要动机的角度出发，区分了两大类研究，一类侧重于解决物联网设备特有的架构和资源限制引发的恶意代码检测挑战，另一类致力于提高检测模型的性能（准确率）。</p>
+<h2 id="abstract" tabindex="-1">Abstract</h2>
+<p>近年来，随着物联网（Internet of things, IoT）设备的大规模部署，针对物联网设备的恶意代码也不断出现，物联网安全面临来自恶意代码的巨大威胁，亟需对物联网恶意代码检测技术进行综合研究.随着人工智能（artificial intelligence, AI）在计算机视觉和自然语言处理等领域取得了举世瞩目的成就，物联网安全领域也出现了许多基于人工智能的恶意代码检测工作.通过跟进相关研究成果，从物联网环境和设备的特性出发，提出了基于该领域研究主要动机的分类方法，从面向物联网设备限制缓解的恶意代码检测和面向性能提升的物联网恶意代码检测2方面分析该领域的研究发展现状.该分类方法涵盖了物联网恶意代码检测的相关研究，充分体现了物联网设备独有的特性以及当前该领域研究存在的不足.最后通过总结现有研究，深入讨论了目前基于人工智能的恶意代码检测研究中存在的问题，为该领域未来的研究提出了结合大模型实现物联网恶意代码检测，提高检测模型安全性以及结合零信任架构3个可能的发展方向.</p>
+<h1 id="0" tabindex="-1">0 介绍</h1>
+<h2 id="strong-strong" tabindex="-1"><strong>本文的物联网领域恶意代码检测分类：</strong></h2>
+<ul>
+<li>面向物联网设备限制缓解的恶意代码检测</li>
+<li>面向性能提升的物联网恶意代码检测</li>
+</ul>
+<h2 id="strong-strong-1" tabindex="-1"><strong>物联网设备安全问题</strong>：</h2>
+<p>使用弱口令、不及时更新安全补丁</p>
+<h2 id="传统和现代物联网恶意代码检测技术方法区别" tabindex="-1">传统和现代物联网恶意代码检测技术方法区别</h2>
+<p><strong>传统物联网恶意代码检测</strong>：特征库的积累和恶意软件分析人员的人工分析<br>
+<strong>现在物联网恶意代码检测</strong>：人工智能应用于恶意代码检测</p>
+<blockquote>
+<p>传 统 的 物 联 网 恶 意 代 码 检 测 和 设 备 保护方法主要依靠特征库的积累和恶意软件分析人 员的人工分析，但是由于恶意软件的爆发式增长[4,6–10]， 传 统 方 式 缺 乏 效 率 且 难 以 应 对 未 知 的 安 全 风 险. 安 全研究人员开始尝试将在图像分类、文本分析等领 域取得了巨大成功的人工智能（artificial intelligence, AI） 技 术 应 用 于 恶 意 代 码 检 测 领 域 并 得 到 了 很 好 的 效 果[11– 14]. 目前，基于人工智能技术的物联网恶意代码 检测研究逐渐成为主流. 但是，相较于传统的台式机、 服 务 器 等 设 备 ， 物 联 网 设 备 上 的 恶 意 代 码 检 测 技 术 不仅面临着基于人工智能的恶意代码检测技术普遍 需 求 更 高 检 测 准 确 率 等 问 题 ， 而 且 要 应 对 物 联 网 设 备自身特性引发的 2 大挑战[15]：1）物联网恶意代码能 够感染使用多种不同 CPU 架构的设备，而不同 CPU 架 构 的 指 令 集 不 同 ， 导 致 无 法 将 基 本 使 用 相 同 架 构 的传统设备中成熟的恶意代码特征提取和检测方法 直 接 应 用 到 物 联 网 恶 意 代 码 的 检 测 中. 2）由 于 物 联 网 设 备 一 般 体 积 较 小 ， 需 要 部 署 在 各 种 不 同 的 环 境 中，物联网设备受到内存空间小、电量少等资源限制， 需 要 部 署 相 对 于 传 统 设 备 更 轻 量 级 的 检 测 系 统. 因 此基于人工智能的物联网恶意代码检测研究在提高 模 型 的 检 测 效 果 的 同 时 ， 需 要 解 决 当 前 物 联 网 设 备 自身的特性带来的独特挑战<br>
+<a href="%E5%9F%BA%E4%BA%8E%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E7%9A%84%E7%89%A9%E8%81%94%E7%BD%91%E6%81%B6%E6%84%8F%E4%BB%A3%E7%A0%81%E6%A3%80%E6%B5%8B%E7%BB%BC%E8%BF%B0_2023_%E5%88%98%E5%A5%87%E6%97%AD%20et%20al.pdf#page=2&amp;selection=144,0,201,0" target="_blank" class="external-link">传统和现代物联网恶意代码检测技术方法区别</a></p>
+</blockquote>
+<h2 id="strong-strong-2" tabindex="-1"><strong>物联网设备恶意代码检测面临的问题：</strong></h2>
+<ul>
+<li>需求更高检测准确率</li>
+<li>物联网设备使用多种cpu架构（常用的有十多种），指令集不同</li>
+<li>物联网设备资源限制，需要轻量级检测系统</li>
+</ul>
+<h1 id="1" tabindex="-1">1 研究背景</h1>
+<h2 id="1-1" tabindex="-1">1.1 物联网相关概念及特性</h2>
+<p>物联网系统分为：感知层、网络层、应用层</p>
+<p><picture src="/img/user/czc%E7%9F%A5%E8%AF%86%E5%BA%93/%E6%9D%82%E4%B8%83%E6%9D%82%E5%85%AB/9-%E9%99%84%E4%BB%B6/%E9%99%84%E4%BB%B6/%E5%9F%BA%E4%BA%8E%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E7%9A%84%E7%89%A9%E8%81%94%E7%BD%91%E6%81%B6%E6%84%8F%E4%BB%A3%E7%A0%81%E6%A3%80%E6%B5%8B%E7%9A%84%E6%96%87%E7%8C%AE%E7%BB%BC%E8%BF%B0_image.png" alt=""><source media="(max-width:480px)" srcset="/img/optimized/wUeBi-D_4B-500.webp" type="image/webp">
+<source media="(max-width:480px)" srcset="/img/optimized/wUeBi-D_4B-500.jpeg">
+<source media="(max-width:1920px)" srcset="/img/optimized/wUeBi-D_4B-502.webp" type="image/webp"><source media="(max-width:1920px)" srcset="/img/optimized/wUeBi-D_4B-502.jpeg"><img class="" src="/img/user/czc%E7%9F%A5%E8%AF%86%E5%BA%93/%E6%9D%82%E4%B8%83%E6%9D%82%E5%85%AB/9-%E9%99%84%E4%BB%B6/%E9%99%84%E4%BB%B6/%E5%9F%BA%E4%BA%8E%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E7%9A%84%E7%89%A9%E8%81%94%E7%BD%91%E6%81%B6%E6%84%8F%E4%BB%A3%E7%A0%81%E6%A3%80%E6%B5%8B%E7%9A%84%E6%96%87%E7%8C%AE%E7%BB%BC%E8%BF%B0_image.png" alt="" width=""></picture></p>
+<p>物联网设备：硬件层、系统层、用户层</p>
+<p><picture src="/img/user/czc%E7%9F%A5%E8%AF%86%E5%BA%93/%E6%9D%82%E4%B8%83%E6%9D%82%E5%85%AB/9-%E9%99%84%E4%BB%B6/%E9%99%84%E4%BB%B6/%E5%9F%BA%E4%BA%8E%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E7%9A%84%E7%89%A9%E8%81%94%E7%BD%91%E6%81%B6%E6%84%8F%E4%BB%A3%E7%A0%81%E6%A3%80%E6%B5%8B%E7%9A%84%E6%96%87%E7%8C%AE%E7%BB%BC%E8%BF%B0_image-1.png" alt=""><source media="(max-width:480px)" srcset="/img/optimized/lk4IeJ9LCA-492.webp" type="image/webp">
+<source media="(max-width:480px)" srcset="/img/optimized/lk4IeJ9LCA-492.jpeg">
+<img class="" src="/img/user/czc%E7%9F%A5%E8%AF%86%E5%BA%93/%E6%9D%82%E4%B8%83%E6%9D%82%E5%85%AB/9-%E9%99%84%E4%BB%B6/%E9%99%84%E4%BB%B6/%E5%9F%BA%E4%BA%8E%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E7%9A%84%E7%89%A9%E8%81%94%E7%BD%91%E6%81%B6%E6%84%8F%E4%BB%A3%E7%A0%81%E6%A3%80%E6%B5%8B%E7%9A%84%E6%96%87%E7%8C%AE%E7%BB%BC%E8%BF%B0_image-1.png" alt="" width=""></picture></p>
+<ul>
+<li>硬件层：常见cpu架构：ARM、MIPS、PowerPC（PPC）、SPARC、SuperH</li>
+</ul>
+<p>这些架构均采用精简指令集，具有低能耗的特点，x86架构的高能耗与复杂性使其很少出现在物联网设备上</p>
+<ul>
+<li>系统层：操作系统、应用程序</li>
+<li>用户层面向用户提供交互界面并 接受用户控制.</li>
+</ul>
+<p>物联网设备区别于传统台式机等设备的2个特性：</p>
+<p>1、根据物联网设备的独特功能需求使用不同的 CPU架构，不同CPU架构所使用的指令集、寄存器 等也存在差异.<br>
+2、物联网设备结构上的局限性导致大多数物联 网设备的内存容量较小，可分配的计算资源也相对 较少.” (刘奇旭 等, 2023, p. 4)</p>
+<h2 id="1-2" tabindex="-1">1.2 物联网恶意代码检测挑战</h2>
+<p>多cpu架构、资源有限</p>
+<h2 id="1-3" tabindex="-1">1.3 物联网恶意代码检测常用数据集</h2>
+<p>论文列出的IoT恶意代码常用数据集 （<font color="#ff0000">什么玩意↓一个找不到</font>）<br>
+<picture src="/img/user/czc%E7%9F%A5%E8%AF%86%E5%BA%93/%E6%9D%82%E4%B8%83%E6%9D%82%E5%85%AB/9-%E9%99%84%E4%BB%B6/%E9%99%84%E4%BB%B6/%E5%9F%BA%E4%BA%8E%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E7%9A%84%E7%89%A9%E8%81%94%E7%BD%91%E6%81%B6%E6%84%8F%E4%BB%A3%E7%A0%81%E6%A3%80%E6%B5%8B%E7%9A%84%E6%96%87%E7%8C%AE%E7%BB%BC%E8%BF%B0_image-3.png" alt=""><source media="(max-width:480px)" srcset="/img/optimized/bIwrCS1J7o-500.webp" type="image/webp">
+<source media="(max-width:480px)" srcset="/img/optimized/bIwrCS1J7o-500.jpeg">
+<source media="(max-width:1920px)" srcset="/img/optimized/bIwrCS1J7o-700.webp" type="image/webp"><source media="(max-width:1920px)" srcset="/img/optimized/bIwrCS1J7o-700.jpeg"><img class="" src="/img/user/czc%E7%9F%A5%E8%AF%86%E5%BA%93/%E6%9D%82%E4%B8%83%E6%9D%82%E5%85%AB/9-%E9%99%84%E4%BB%B6/%E9%99%84%E4%BB%B6/%E5%9F%BA%E4%BA%8E%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E7%9A%84%E7%89%A9%E8%81%94%E7%BD%91%E6%81%B6%E6%84%8F%E4%BB%A3%E7%A0%81%E6%A3%80%E6%B5%8B%E7%9A%84%E6%96%87%E7%8C%AE%E7%BB%BC%E8%BF%B0_image-3.png" alt="" width=""></picture></p>
+<h1 id="2" tabindex="-1">2 现有检测技术分类</h1>
+<p>2.1 现有分类技术</p>
+<p>“2008年，针对物联网设备的恶意代码首次被发 现[41]，之后几年内才开始大规模出现并引起工业界 与研究人员的共同关注[42-43].” (刘奇旭 等, 2023, p. 5)</p>
+<p>2.2 本文分类方法</p>
+<pre class="mermaid">graph TD;
+基于人工智能的物联网恶意代码检测-->面向物联网设备限制缓解的检测
+基于人工智能的物联网恶意代码检测-->面向性能提升的物联网恶意代码检测
+面向物联网设备限制缓解的检测-->跨架构检测
+面向物联网设备限制缓解的检测-->资源限制缓解检测
+面向性能提升的物联网恶意代码检测-->检测可执行文件
+面向性能提升的物联网恶意代码检测-->检测流量数据
+跨架构检测-->操作码特征\n字节序列\n可打印字符串\n其它特征
+资源限制缓解检测-->计算资源限制\n内存资源限制\n电力资源限制
+检测可执行文件-->提高检测性能\n检测混淆恶意代码\n提高检测模型鲁棒性
+检测流量数据-->提高检测模型性能\n及早发现攻击行为</pre><h1 id="3" tabindex="-1">3 面向物联网设备限制缓解的恶意代码检测</h1>
+<p>1-1、跨架构检测对物联网恶意代码检测的当前技术进行的对比。。当前解决物联网恶意软件跨架构问题的方法通过对不同 CPU上编译程序的分析研究，选取字节序列、可打印 字符串、控制流图等特征，并设计基于各种机器学习算法的检测模型，在大规模跨架构恶意样本数据集上得到了高准确率，这些方法存在当前大多数基于静态分析的跨架构检测方法无法应对混淆或加壳的恶意代码的不足，基于动态分析的跨架构检测方法存在着不可以统一部署的虚拟机环境等不足。<br>
+1-2、以解决物联网设备受到<strong>计算资源</strong>、<strong>内存空间</strong>以及<strong>电力资源</strong>等限制为研究动机的物联网恶意代码检测方法，这些技术中，大多侧重于解决资源限制问题，只在来自单一架构的数据集上训练和测试模型，没有在不同架构上编译的恶意程序中验证模型的检测效果，模型的鲁棒性和泛化能力有限。</p>
+<h2 id="3-1" tabindex="-1">3.1　跨架构检测技术</h2>
+<p>3.1.1　结合操作码的融合特征<br>
+3.1.2　字节序列<br>
+3.1.3　可打印字符串<br>
+3.1.4　其他特征<br>
+3.1.5　小　结<br>
+<picture src="/img/user/czc%E7%9F%A5%E8%AF%86%E5%BA%93/%E6%9D%82%E4%B8%83%E6%9D%82%E5%85%AB/9-%E9%99%84%E4%BB%B6/%E9%99%84%E4%BB%B6/%E5%9F%BA%E4%BA%8E%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E7%9A%84%E7%89%A9%E8%81%94%E7%BD%91%E6%81%B6%E6%84%8F%E4%BB%A3%E7%A0%81%E6%A3%80%E6%B5%8B%E7%9A%84%E6%96%87%E7%8C%AE%E7%BB%BC%E8%BF%B0_image-4.png" alt=""><source media="(max-width:480px)" srcset="/img/optimized/ipLVGOxb3w-500.webp" type="image/webp">
+<source media="(max-width:480px)" srcset="/img/optimized/ipLVGOxb3w-500.jpeg">
+<source media="(max-width:1920px)" srcset="/img/optimized/ipLVGOxb3w-700.webp" type="image/webp"><source media="(max-width:1920px)" srcset="/img/optimized/ipLVGOxb3w-700.jpeg"><img class="" src="/img/user/czc%E7%9F%A5%E8%AF%86%E5%BA%93/%E6%9D%82%E4%B8%83%E6%9D%82%E5%85%AB/9-%E9%99%84%E4%BB%B6/%E9%99%84%E4%BB%B6/%E5%9F%BA%E4%BA%8E%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E7%9A%84%E7%89%A9%E8%81%94%E7%BD%91%E6%81%B6%E6%84%8F%E4%BB%A3%E7%A0%81%E6%A3%80%E6%B5%8B%E7%9A%84%E6%96%87%E7%8C%AE%E7%BB%BC%E8%BF%B0_image-4.png" alt="" width=""></picture></p>
+<h2 id="3-2" tabindex="-1">3.2　面向资源限制的检测技术</h2>
+<p>3.2.1　面向计算资源限制的检测技术<br>
+3.2.2　面向内存限制的检测技术<br>
+3.2.3　面向电力限制的检测技术<br>
+3.2.4　小　结<br>
+<picture src="/img/user/czc%E7%9F%A5%E8%AF%86%E5%BA%93/%E6%9D%82%E4%B8%83%E6%9D%82%E5%85%AB/9-%E9%99%84%E4%BB%B6/%E9%99%84%E4%BB%B6/%E5%9F%BA%E4%BA%8E%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E7%9A%84%E7%89%A9%E8%81%94%E7%BD%91%E6%81%B6%E6%84%8F%E4%BB%A3%E7%A0%81%E6%A3%80%E6%B5%8B%E7%9A%84%E6%96%87%E7%8C%AE%E7%BB%BC%E8%BF%B0_image-5.png" alt=""><source media="(max-width:480px)" srcset="/img/optimized/XskJ3y7LAm-500.webp" type="image/webp">
+<source media="(max-width:480px)" srcset="/img/optimized/XskJ3y7LAm-500.jpeg">
+<source media="(max-width:1920px)" srcset="/img/optimized/XskJ3y7LAm-700.webp" type="image/webp"><source media="(max-width:1920px)" srcset="/img/optimized/XskJ3y7LAm-700.jpeg"><img class="" src="/img/user/czc%E7%9F%A5%E8%AF%86%E5%BA%93/%E6%9D%82%E4%B8%83%E6%9D%82%E5%85%AB/9-%E9%99%84%E4%BB%B6/%E9%99%84%E4%BB%B6/%E5%9F%BA%E4%BA%8E%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E7%9A%84%E7%89%A9%E8%81%94%E7%BD%91%E6%81%B6%E6%84%8F%E4%BB%A3%E7%A0%81%E6%A3%80%E6%B5%8B%E7%9A%84%E6%96%87%E7%8C%AE%E7%BB%BC%E8%BF%B0_image-5.png" alt="" width=""></picture></p>
+<h1 id="4" tabindex="-1">4 面向性能提升的物联网恶意代码检测</h1>
+<p>面向性能提升的物联网恶意代码检测技术对比，这些技术中的检测对象有二进制文件和流量数据，其技术重心放在提高准确率、检测混淆代码、提高鲁棒性、及时发现攻击行为上。<br>
+2-1、基于<strong>可执行文件分析</strong>的检测性能提升方法通过 利用深度学习方法自动提取特征，减少对专家知识 的依赖，提高检测模型的性能，但是当前的很多检测 研究没有考虑对抗样本等攻击对机器学习和深度学 习模型的安全威胁.<br>
+2-2、使用基于流量分析的方法可以提高在物联网恶意代码的攻击早期阶段的检测性能。然而，由于攻击流量数据庞大，用于训练检测系统的数据集无法实时更新，这可能导致基于流量的检测系统的准确率随着时间的推移而下降。<br>
+4.1　基于可执行文件分析的检测性能提升<br>
+4.2　基于流量分析的检测性能提升<br>
+4.3　小　结<br>
+<picture src="/img/user/czc%E7%9F%A5%E8%AF%86%E5%BA%93/%E6%9D%82%E4%B8%83%E6%9D%82%E5%85%AB/9-%E9%99%84%E4%BB%B6/%E9%99%84%E4%BB%B6/%E5%9F%BA%E4%BA%8E%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E7%9A%84%E7%89%A9%E8%81%94%E7%BD%91%E6%81%B6%E6%84%8F%E4%BB%A3%E7%A0%81%E6%A3%80%E6%B5%8B%E7%9A%84%E6%96%87%E7%8C%AE%E7%BB%BC%E8%BF%B0_image-6.png" alt=""><source media="(max-width:480px)" srcset="/img/optimized/gWq0Z3jzmV-500.webp" type="image/webp">
+<source media="(max-width:480px)" srcset="/img/optimized/gWq0Z3jzmV-500.jpeg">
+<source media="(max-width:1920px)" srcset="/img/optimized/gWq0Z3jzmV-700.webp" type="image/webp"><source media="(max-width:1920px)" srcset="/img/optimized/gWq0Z3jzmV-700.jpeg"><img class="" src="/img/user/czc%E7%9F%A5%E8%AF%86%E5%BA%93/%E6%9D%82%E4%B8%83%E6%9D%82%E5%85%AB/9-%E9%99%84%E4%BB%B6/%E9%99%84%E4%BB%B6/%E5%9F%BA%E4%BA%8E%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E7%9A%84%E7%89%A9%E8%81%94%E7%BD%91%E6%81%B6%E6%84%8F%E4%BB%A3%E7%A0%81%E6%A3%80%E6%B5%8B%E7%9A%84%E6%96%87%E7%8C%AE%E7%BB%BC%E8%BF%B0_image-6.png" alt="" width=""></picture></p>
+<h1 id="5" tabindex="-1">5 挑战与机遇</h1>
+<h2 id="5-1" tabindex="-1">5.1 挑战</h2>
+<p><picture src="/img/user/czc%E7%9F%A5%E8%AF%86%E5%BA%93/%E6%9D%82%E4%B8%83%E6%9D%82%E5%85%AB/9-%E9%99%84%E4%BB%B6/%E9%99%84%E4%BB%B6/%E5%9F%BA%E4%BA%8E%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E7%9A%84%E7%89%A9%E8%81%94%E7%BD%91%E6%81%B6%E6%84%8F%E4%BB%A3%E7%A0%81%E6%A3%80%E6%B5%8B%E7%9A%84%E6%96%87%E7%8C%AE%E7%BB%BC%E8%BF%B0_image-2.png" alt="300"><source media="(max-width:480px)" srcset="/img/optimized/9r610wTsYr-474.webp" type="image/webp">
+<source media="(max-width:480px)" srcset="/img/optimized/9r610wTsYr-474.jpeg">
+<img class="" src="/img/user/czc%E7%9F%A5%E8%AF%86%E5%BA%93/%E6%9D%82%E4%B8%83%E6%9D%82%E5%85%AB/9-%E9%99%84%E4%BB%B6/%E9%99%84%E4%BB%B6/%E5%9F%BA%E4%BA%8E%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E7%9A%84%E7%89%A9%E8%81%94%E7%BD%91%E6%81%B6%E6%84%8F%E4%BB%A3%E7%A0%81%E6%A3%80%E6%B5%8B%E7%9A%84%E6%96%87%E7%8C%AE%E7%BB%BC%E8%BF%B0_image-2.png" alt="300" width=""></picture></p>
+<h2 id="5-2" tabindex="-1">5.2 未来研究方向</h2>
+<ul>
+<li>引入AI大模型辅助物联网恶意代码检测</li>
+<li>提高模型检测安全性（AI安全）</li>
+<li>结合零信任架构实现检测（不信任任何设备或用户，实时认证和授权）</li>
+</ul>
+<h1 id="参考文献里挑几篇来看" tabindex="-1">参考文献里挑几篇来看</h1>
+<p>hello</p>
+</main>
+<aside>
+<div class="sidebar">
+<div class="sidebar-container">
+<div class="toc">
+<div class="toc-title-container">
+<div class="toc-title">
+On this page
+</div>
+</div>
+<div class="toc-container">
+<nav class="toc">
+<ol>
+<li><a href="#abstract">Abstract</a>
+</li>
+<li><a href="#0">0 介绍</a>
+<ol>
+<li><a href="#strong-strong">本文的物联网领域恶意代码检测分类：</a>
+</li>
+<li><a href="#strong-strong-1">物联网设备安全问题：</a>
+</li>
+<li><a href="#传统和现代物联网恶意代码检测技术方法区别">传统和现代物联网恶意代码检测技术方法区别</a>
+</li>
+<li><a href="#strong-strong-2">物联网设备恶意代码检测面临的问题：</a>
+</li>
+</ol>
+</li>
+<li><a href="#1">1 研究背景</a>
+<ol>
+<li><a href="#1-1">1.1 物联网相关概念及特性</a>
+</li>
+<li><a href="#1-2">1.2 物联网恶意代码检测挑战</a>
+</li>
+<li><a href="#1-3">1.3 物联网恶意代码检测常用数据集</a>
+</li>
+</ol>
+</li>
+<li><a href="#2">2 现有检测技术分类</a>
+</li>
+<li><a href="#3">3 面向物联网设备限制缓解的恶意代码检测</a>
+<ol>
+<li><a href="#3-1">3.1　跨架构检测技术</a>
+</li>
+<li><a href="#3-2">3.2　面向资源限制的检测技术</a>
+</li>
+</ol>
+</li>
+<li><a href="#4">4 面向性能提升的物联网恶意代码检测</a>
+</li>
+<li><a href="#5">5 挑战与机遇</a>
+<ol>
+<li><a href="#5-1">5.1 挑战</a>
+</li>
+<li><a href="#5-2">5.2 未来研究方向</a>
+</li>
+</ol>
+</li>
+<li><a href="#参考文献里挑几篇来看">参考文献里挑几篇来看</a>
+</li>
+</ol>
+</nav>
+</div>
+</div>
+<div class="backlinks">
+<div class="backlink-title" style="margin:4px 0!important">Pages mentioning this page</div>
+<div class="backlink-list"><div class="backlink-card"><i icon-name="link"></i><a href="/硕士研究生/科研/恶意软件检测文献阅读/恶意软件检测文献阅读/" data-note-icon="" class="backlink">恶意软件检测文献阅读</a>
+</div></div>
+</div>
+</div>
+</div>
+</aside>
+<style>#tooltip-wrapper{background:var(--background-primary);padding:1em;border-radius:4px;overflow:hidden;position:fixed;width:80%;max-width:400px;height:auto;max-height:300px;font-size:.8em;box-shadow:0 5px 10px rgba(0,0,0,.1);opacity:0;transition:opacity .1s;unicode-bidi:plaintext;overflow-y:scroll;z-index:10}#tooltip-wrapper:after{content:"";position:absolute;z-index:1;bottom:0;left:0;pointer-events:none;width:100%;unicode-bidi:plaintext;height:75px}</style>
+<div style="opacity:0;display:none" id="tooltip-wrapper">
+<div id="tooltip-content">
+</div>
+</div>
+<iframe style="display:none;height:0;width:0" id="link-preview-iframe" src="">
+</iframe>
+<script>var opacityTimeout,contentTimeout,transitionDurationMs=100,iframe=document.getElementById("link-preview-iframe"),tooltipWrapper=document.getElementById("tooltip-wrapper"),tooltipContent=document.getElementById("tooltip-content"),linkHistories={};function hideTooltip(){opacityTimeout=setTimeout((function(){tooltipWrapper.style.opacity=0,contentTimeout=setTimeout((function(){tooltipContent.innerHTML="",tooltipWrapper.style.display="none"}),transitionDurationMs+1)}),transitionDurationMs)}function showTooltip(t){var e=t.target,o=e.getClientRects()[e.getClientRects().length-1],i=window.pageYOffset||document.documentElement.scrollTop,n=t.target.getAttribute("href");if(-1===n.indexOf("http")||-1!==n.indexOf(window.location.host)){let t=n.split("#")[0];linkHistories[t]?(tooltipContent.innerHTML=linkHistories[t],tooltipWrapper.style.display="block",setTimeout((function(){if(tooltipWrapper.style.opacity=1,-1!=n.indexOf("#")){let t=n.split("#")[1];const e=tooltipWrapper.querySelector(`[id='${t}']`);e.classList.add("referred"),e.scrollIntoView({behavior:"smooth"},!0)}else tooltipWrapper.scroll(0,0)}),1)):(iframe.src=t,iframe.onload=function(){tooltipContentHtml="",tooltipContentHtml+='<div style="font-weight: bold; unicode-bidi: plaintext;">'+iframe.contentWindow.document.querySelector("h1").innerHTML+"</div>",tooltipContentHtml+=iframe.contentWindow.document.querySelector(".content").innerHTML,tooltipContent.innerHTML=tooltipContentHtml,linkHistories[t]=tooltipContentHtml,tooltipWrapper.style.display="block",tooltipWrapper.scrollTop=0,setTimeout((function(){if(tooltipWrapper.style.opacity=1,-1!=n.indexOf("#")){let t=n.split("#")[1];const e=tooltipWrapper.querySelector(`[id='${t}']`);e.classList.add("referred"),console.log(e),e.scrollIntoView({behavior:"smooth"},!0)}else tooltipWrapper.scroll(0,0)}),1)}),tooltipWrapper.style.left=o.left-tooltipWrapper.offsetWidth/2+o.width/2+"px",window.innerHeight-o.top<tooltipWrapper.offsetHeight?tooltipWrapper.style.top=o.top+i-tooltipWrapper.offsetHeight-10+"px":window.innerHeight-o.top>tooltipWrapper.offsetHeight&&(tooltipWrapper.style.top=o.top+i+35+"px"),o.left+o.width/2<tooltipWrapper.offsetWidth/2?tooltipWrapper.style.left="10px":document.body.clientWidth-o.left-o.width/2<tooltipWrapper.offsetWidth/2&&(tooltipWrapper.style.left=document.body.clientWidth-tooltipWrapper.offsetWidth-20+"px")}}function setupListeners(t){t.addEventListener("mouseleave",(function(t){hideTooltip()})),tooltipWrapper.addEventListener("mouseleave",(function(t){hideTooltip()})),t.addEventListener("mouseenter",(function(t){clearTimeout(opacityTimeout),clearTimeout(contentTimeout),showTooltip(t)})),tooltipWrapper.addEventListener("mouseenter",(function(t){clearTimeout(opacityTimeout),clearTimeout(contentTimeout)}))}window.addEventListener("load",(function(t){document.querySelectorAll(".internal-link").forEach(setupListeners),document.querySelectorAll(".backlink-card a").forEach(setupListeners)}))</script>
+<script>window.location.hash&&document.getElementById(window.location.hash.slice(1)).classList.add("referred"),window.addEventListener("hashchange",(e=>{const t=e.oldURL.split("#");t[1]&&document.getElementById(t[1]).classList.remove("referred");const n=e.newURL.split("#");n[1]&&document.getElementById(n[1]).classList.add("referred")}),!1);const url_parts=window.location.href.split("#"),url=url_parts[0],referrence=url_parts[1];document.querySelectorAll(".cm-s-obsidian > *[id]").forEach((function(e){e.ondblclick=function(e){const t=url+"#"+e.target.id;navigator.clipboard.writeText(t)}}))</script>
+<script src="https://fastly.jsdelivr.net/npm/luxon@3.2.1/build/global/luxon.min.js"></script>
+<script defer="defer">TIMESTAMP_FORMAT="MMM dd, yyyy h:mm a",document.querySelectorAll(".human-date").forEach((function(e){date=e.getAttribute("data-date")||e.innerText,parsed_date=luxon.DateTime.fromISO(date),null!=parsed_date.invalid&&(parsed_date=luxon.DateTime.fromSQL(date)),null!=parsed_date.invalid&&(parsed_date=luxon.DateTime.fromHTML(date)),e.innerHTML=parsed_date.toFormat(TIMESTAMP_FORMAT)}))</script>
+<script>lucide.createIcons({attrs:{class:["svg-icon"]}})</script>
+</body>
+</html>
