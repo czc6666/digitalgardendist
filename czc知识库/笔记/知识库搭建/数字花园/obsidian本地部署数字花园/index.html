@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="zh-CN">
 <head>
-<title>云服务器部署数字花园</title>
+<title>obsidian本地部署数字花园</title>
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <script async type="module">import mermaid from"https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"</script>
 <script async src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js" integrity="sha512-hpZ5pDCF2bRCweL5WoA0/N1elet1KYL5mx3LP555Eg/0ZguaHawxNvEjF6O3rufAChs16HVNhEc6blF/rZoowQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -63,24 +63,15 @@ CTRL + K
 </div>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/flexsearch@0.7.21/dist/flexsearch.bundle.js"></script>
-<script>document.addEventListener("DOMContentLoaded",init,!1),document.addEventListener("DOMContentLoaded",setCorrectShortcut,!1),window.toggleSearch=function(){document.getElementById("globalsearch").classList.contains("active")?document.getElementById("globalsearch").classList.remove("active"):(document.getElementById("globalsearch").classList.add("active"),document.getElementById("term").focus())},window.toggleTagSearch=function(e){console.log(e.textContent);const t=e.textContent;t&&(window.document.getElementById("term").value=t.trim(),window.toggleSearch(),window.search())};const loadingSvg='\n    <svg width="100" height="100" viewBox="0 0 45 45" xmlns="http://www.w3.org/2000/svg" stroke="#fff">\n      <g fill="none" fill-rule="evenodd" transform="translate(1 1)" stroke-width="2">\n          <circle cx="22" cy="22" r="6" stroke-opacity="0">\n              <animate attributeName="r"\n                   begin="1.5s" dur="3s"\n                   values="6;22"\n                   calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-opacity"\n                   begin="1.5s" dur="3s"\n                   values="1;0" calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-width"\n                   begin="1.5s" dur="3s"\n                   values="2;0" calcMode="linear"\n                   repeatCount="indefinite" />\n          </circle>\n          <circle cx="22" cy="22" r="6" stroke-opacity="0">\n              <animate attributeName="r"\n                   begin="3s" dur="3s"\n                   values="6;22"\n                   calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-opacity"\n                   begin="3s" dur="3s"\n                   values="1;0" calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-width"\n                   begin="3s" dur="3s"\n                   values="2;0" calcMode="linear"\n                   repeatCount="indefinite" />\n          </circle>\n          <circle cx="22" cy="22" r="8">\n              <animate attributeName="r"\n                   begin="0s" dur="1.5s"\n                   values="6;1;2;3;4;5;6"\n                   calcMode="linear"\n                   repeatCount="indefinite" />\n          </circle>\n      </g>\n  </svg>';function debounce(e,t,n){var a;return function(){var r=this,i=arguments,c=n&&!a;clearTimeout(a),a=setTimeout((function(){a=null,n||e.apply(r,i)}),t),c&&e.apply(r,i)}}function setCorrectShortcut(){navigator.platform.toUpperCase().indexOf("MAC")>=0&&document.querySelectorAll(".search-keys").forEach((e=>e.innerHTML="⌘ + K"))}function createIndex(e){const t=e=>e.toLowerCase().split(/([^a-z]|[^\x00-\x7F])/),n=new FlexSearch.Document({cache:!0,charset:"latin:extra",optimize:!0,index:[{field:"content",tokenize:"reverse",encode:t},{field:"title",tokenize:"forward",encode:t},{field:"tags",tokenize:"forward",encode:t}]});return e.forEach(((e,t)=>{n.add({id:t,title:e.title,content:e.content,tags:e.tags})})),n}async function init(){let e=!0;if(localStorage.getItem("searchIndex")){let{date:t,docs:n}=JSON.parse(localStorage.getItem("searchIndex"));if("2025-06-12T11:35:09.518Z"===t){e=!1;let t=createIndex(n);window.docs=n,window.index=t}}if(e){let e=await(await fetch("/searchIndex.json?v=2025-06-12T11:35:09.518Z")).json(),t=createIndex(e);localStorage.setItem("searchIndex",JSON.stringify({date:"2025-06-12T11:35:09.518Z",docs:e})),window.docs=e,window.index=t}document.addEventListener("keydown",(e=>{if((e.ctrlKey||e.metaKey)&&"k"===e.key&&(e.preventDefault(),toggleSearch()),"Escape"===e.key&&document.getElementById("globalsearch").classList.remove("active"),document.getElementById("globalsearch").classList.contains("active")){if("ArrowDown"===e.key){e.preventDefault();let t=document.querySelector(".searchresult.active");t?(t.classList.remove("active"),t.nextElementSibling?t.nextElementSibling.classList.add("active"):document.querySelector(".searchresult").classList.add("active")):document.querySelector(".searchresult").classList.add("active");let n=document.querySelector(".searchresult.active");n&&n.scrollIntoView({behavior:"smooth",block:"nearest",inline:"start"})}if("ArrowUp"===e.key){e.preventDefault();let t=document.querySelector(".searchresult.active");t?(t.classList.remove("active"),t.previousElementSibling?t.previousElementSibling.classList.add("active"):document.querySelectorAll(".searchresult").forEach((e=>{e.nextElementSibling||e.classList.add("active")}))):document.querySelectorAll(".searchresult").forEach((e=>{e.nextElementSibling&&e.classList.add("active")}));let n=document.querySelector(".searchresult.active");n&&n.scrollIntoView({behavior:"smooth",block:"nearest",inline:"start"})}if("Enter"===e.key){e.preventDefault();let t=document.querySelector(".searchresult.active");t&&(window.location.href=t.querySelector("a").href)}}}));const t=debounce(search,200,!1);field=document.querySelector("#term"),field.addEventListener("keydown",(e=>{"ArrowDown"!==e.key&&"ArrowUp"!==e.key&&t()})),resultsDiv=document.querySelector("#search-results");const n=new URL(location.href).searchParams;n.get("q")&&(field.setAttribute("value",n.get("q")),toggleSearch(),search())}async function search(){let e=field.value.trim();if(!e)return;if(e==lastSearch)return;console.log(`search for ${e}`),window.lastSearch=e,resultsDiv.innerHTML=loadingSvg;let t=offlineSearch(e),n="";if(!t.length){let t=document.createElement("p");return t.innerText=`No results for "${e}"`,resultsDiv.innerHTML="",void resultsDiv.appendChild(t)}n+='<div style="max-width:100%;">',t.forEach((e=>{e.tags&&e.tags.length>0?n+=`<div class="searchresult">\n                    <a class="search-link" href="${e.url}">${e.title}</a>\n                    <div onclick="window.location='${e.url}'">\n                        <div class="header-meta">\n                            <div class="header-tags">\n                                ${e.tags.map((e=>'<a class="tag" href="JavaScript:Void(0);">#'+e+"</a>")).join("")}\n                            </div>\n                        </div>\n                        ${e.content}\n                    </div>\n                </div>`:n+=`<div class="searchresult">\n                    <a class="search-link" href="${e.url}">${e.title}</a>\n                    <div onclick="window.location='${e.url}'">\n                        ${e.content}\n                    </div>\n                </div>`})),n+="</div>",resultsDiv.innerHTML=n}function truncate(e,t){return(e=e.replaceAll(/<[^>]*>/g,"")).length<t?e:e.substring(0,t-3)+"..."}function offlineSearch(e){let t=window.docs,n="#"===e[0]&&e.length>1?index.search(e.substring(1),[{field:"tags"}]):index.search(e,[{field:"title",limit:5},{field:"content",weight:10}]);const a=e=>{const t=n.filter((t=>t.field===e));return 0===t.length?[]:[...t[0].result]};return[...new Set([...a("title"),...a("content"),...a("tags")])].map((e=>{let n=t[e];return n.content=truncate(n.content,400),n.tags=n.tags.filter((e=>"gardenEntry"!=e&&"note"!=e)),n}))}window.lastSearch=""</script>
+<script>document.addEventListener("DOMContentLoaded",init,!1),document.addEventListener("DOMContentLoaded",setCorrectShortcut,!1),window.toggleSearch=function(){document.getElementById("globalsearch").classList.contains("active")?document.getElementById("globalsearch").classList.remove("active"):(document.getElementById("globalsearch").classList.add("active"),document.getElementById("term").focus())},window.toggleTagSearch=function(e){console.log(e.textContent);const t=e.textContent;t&&(window.document.getElementById("term").value=t.trim(),window.toggleSearch(),window.search())};const loadingSvg='\n    <svg width="100" height="100" viewBox="0 0 45 45" xmlns="http://www.w3.org/2000/svg" stroke="#fff">\n      <g fill="none" fill-rule="evenodd" transform="translate(1 1)" stroke-width="2">\n          <circle cx="22" cy="22" r="6" stroke-opacity="0">\n              <animate attributeName="r"\n                   begin="1.5s" dur="3s"\n                   values="6;22"\n                   calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-opacity"\n                   begin="1.5s" dur="3s"\n                   values="1;0" calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-width"\n                   begin="1.5s" dur="3s"\n                   values="2;0" calcMode="linear"\n                   repeatCount="indefinite" />\n          </circle>\n          <circle cx="22" cy="22" r="6" stroke-opacity="0">\n              <animate attributeName="r"\n                   begin="3s" dur="3s"\n                   values="6;22"\n                   calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-opacity"\n                   begin="3s" dur="3s"\n                   values="1;0" calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-width"\n                   begin="3s" dur="3s"\n                   values="2;0" calcMode="linear"\n                   repeatCount="indefinite" />\n          </circle>\n          <circle cx="22" cy="22" r="8">\n              <animate attributeName="r"\n                   begin="0s" dur="1.5s"\n                   values="6;1;2;3;4;5;6"\n                   calcMode="linear"\n                   repeatCount="indefinite" />\n          </circle>\n      </g>\n  </svg>';function debounce(e,t,n){var a;return function(){var r=this,i=arguments,c=n&&!a;clearTimeout(a),a=setTimeout((function(){a=null,n||e.apply(r,i)}),t),c&&e.apply(r,i)}}function setCorrectShortcut(){navigator.platform.toUpperCase().indexOf("MAC")>=0&&document.querySelectorAll(".search-keys").forEach((e=>e.innerHTML="⌘ + K"))}function createIndex(e){const t=e=>e.toLowerCase().split(/([^a-z]|[^\x00-\x7F])/),n=new FlexSearch.Document({cache:!0,charset:"latin:extra",optimize:!0,index:[{field:"content",tokenize:"reverse",encode:t},{field:"title",tokenize:"forward",encode:t},{field:"tags",tokenize:"forward",encode:t}]});return e.forEach(((e,t)=>{n.add({id:t,title:e.title,content:e.content,tags:e.tags})})),n}async function init(){let e=!0;if(localStorage.getItem("searchIndex")){let{date:t,docs:n}=JSON.parse(localStorage.getItem("searchIndex"));if("2025-06-15T15:04:52.026Z"===t){e=!1;let t=createIndex(n);window.docs=n,window.index=t}}if(e){let e=await(await fetch("/searchIndex.json?v=2025-06-15T15:04:52.026Z")).json(),t=createIndex(e);localStorage.setItem("searchIndex",JSON.stringify({date:"2025-06-15T15:04:52.026Z",docs:e})),window.docs=e,window.index=t}document.addEventListener("keydown",(e=>{if((e.ctrlKey||e.metaKey)&&"k"===e.key&&(e.preventDefault(),toggleSearch()),"Escape"===e.key&&document.getElementById("globalsearch").classList.remove("active"),document.getElementById("globalsearch").classList.contains("active")){if("ArrowDown"===e.key){e.preventDefault();let t=document.querySelector(".searchresult.active");t?(t.classList.remove("active"),t.nextElementSibling?t.nextElementSibling.classList.add("active"):document.querySelector(".searchresult").classList.add("active")):document.querySelector(".searchresult").classList.add("active");let n=document.querySelector(".searchresult.active");n&&n.scrollIntoView({behavior:"smooth",block:"nearest",inline:"start"})}if("ArrowUp"===e.key){e.preventDefault();let t=document.querySelector(".searchresult.active");t?(t.classList.remove("active"),t.previousElementSibling?t.previousElementSibling.classList.add("active"):document.querySelectorAll(".searchresult").forEach((e=>{e.nextElementSibling||e.classList.add("active")}))):document.querySelectorAll(".searchresult").forEach((e=>{e.nextElementSibling&&e.classList.add("active")}));let n=document.querySelector(".searchresult.active");n&&n.scrollIntoView({behavior:"smooth",block:"nearest",inline:"start"})}if("Enter"===e.key){e.preventDefault();let t=document.querySelector(".searchresult.active");t&&(window.location.href=t.querySelector("a").href)}}}));const t=debounce(search,200,!1);field=document.querySelector("#term"),field.addEventListener("keydown",(e=>{"ArrowDown"!==e.key&&"ArrowUp"!==e.key&&t()})),resultsDiv=document.querySelector("#search-results");const n=new URL(location.href).searchParams;n.get("q")&&(field.setAttribute("value",n.get("q")),toggleSearch(),search())}async function search(){let e=field.value.trim();if(!e)return;if(e==lastSearch)return;console.log(`search for ${e}`),window.lastSearch=e,resultsDiv.innerHTML=loadingSvg;let t=offlineSearch(e),n="";if(!t.length){let t=document.createElement("p");return t.innerText=`No results for "${e}"`,resultsDiv.innerHTML="",void resultsDiv.appendChild(t)}n+='<div style="max-width:100%;">',t.forEach((e=>{e.tags&&e.tags.length>0?n+=`<div class="searchresult">\n                    <a class="search-link" href="${e.url}">${e.title}</a>\n                    <div onclick="window.location='${e.url}'">\n                        <div class="header-meta">\n                            <div class="header-tags">\n                                ${e.tags.map((e=>'<a class="tag" href="JavaScript:Void(0);">#'+e+"</a>")).join("")}\n                            </div>\n                        </div>\n                        ${e.content}\n                    </div>\n                </div>`:n+=`<div class="searchresult">\n                    <a class="search-link" href="${e.url}">${e.title}</a>\n                    <div onclick="window.location='${e.url}'">\n                        ${e.content}\n                    </div>\n                </div>`})),n+="</div>",resultsDiv.innerHTML=n}function truncate(e,t){return(e=e.replaceAll(/<[^>]*>/g,"")).length<t?e:e.substring(0,t-3)+"..."}function offlineSearch(e){let t=window.docs,n="#"===e[0]&&e.length>1?index.search(e.substring(1),[{field:"tags"}]):index.search(e,[{field:"title",limit:5},{field:"content",weight:10}]);const a=e=>{const t=n.filter((t=>t.field===e));return 0===t.length?[]:[...t[0].result]};return[...new Set([...a("title"),...a("content"),...a("tags")])].map((e=>{let n=t[e];return n.content=truncate(n.content,400),n.tags=n.tags.filter((e=>"gardenEntry"!=e&&"note"!=e)),n}))}window.lastSearch=""</script>
 <main class="content cm-s-obsidian">
 <header>
-<h1 data-note-icon="">云服务器部署数字花园</h1>
+<h1 data-note-icon="">obsidian本地部署数字花园</h1>
 <div class="header-meta">
 <div class="header-tags">
 </div>
-<div class="timestamps"><div><i icon-name="calendar-plus"></i> <span class="human-date" data-date="2025-06-09T10:30:39.761+08:00"></span></div><div><i icon-name="calendar-clock"></i> <span class="human-date" data-date="2024-12-11T17:38:16.000+08:00"></span></div></div></div>
+<div class="timestamps"><div><i icon-name="calendar-plus"></i> <span class="human-date" data-date="2025-06-08T20:17:24.379+08:00"></span></div><div><i icon-name="calendar-clock"></i> <span class="human-date" data-date="2024-12-12T14:39:32.000+08:00"></span></div></div></div>
 </header>
-<h1 id="1" tabindex="-1">1 云服务器获取</h1>
-<p>阿里云买，现在有活动，99一年，或者免费试用三个月<br>
-好像学生认真有300块钱的优惠券</p>
-<h1 id="2" tabindex="-1">2 云服务器配置</h1>
-<p>云服务器一般会有ssh连接方式，连接上以后就可以用这篇文章的方法<br>
-记得要先去安全组里新建规则把连接端口放开</p>
-<h1 id="3" tabindex="-1">3 数字花园部署</h1>
-<p>把云服务器当本地机器来部署：<a class="internal-link" target="" data-note-icon="" href="/czc知识库/笔记/知识库搭建/数字花园/本地部署数字花园/">本地部署数字花园</a></p>
-<div class="transclusion internal-embed is-loaded"><a class="markdown-embed-link" href="/czc/////" aria-label="Open link"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a><div class="markdown-embed">
 <p>数字花园网站的本地部署方案</p>
 <p>为什么要本地部署：因为netlify的免费部署方案是有限制的，我不想这么快把限制用完<br>
 另外我可以把网站部署到学校的服务器里，这样校内的我或者同学都可以访问</p>
@@ -90,7 +81,7 @@ CTRL + K
 ...a few moment later...<br>
 不过现在开始正式将数字花园部署到阿里云了</p>
 <h1 id="数字花园网站本地手动部署方案" tabindex="-1">数字花园网站本地手动部署方案</h1>
-<h2 id="1-1" tabindex="-1">1. 获取网站源码</h2>
+<h2 id="1" tabindex="-1">1. 获取网站源码</h2>
 <p>有两种方法：</p>
 <ol>
 <li>通过 Obsidian 的 obsidian-publish 插件将笔记发布到本地（目前没有尝试这个方法）</li>
@@ -124,8 +115,8 @@ source ~/.bashrc
 nvm install --lts
 nvm use --lts
 </code></pre>
-<h2 id="3-1" tabindex="-1">3. 项目部署</h2>
-<h3 id="3-1-1" tabindex="-1">3.1 安装项目依赖</h3>
+<h2 id="3" tabindex="-1">3. 项目部署</h2>
+<h3 id="3-1" tabindex="-1">3.1 安装项目依赖</h3>
 <pre><code class="language-bash"># 切换到源码目录
 cd digitalgarden/
 
@@ -195,148 +186,6 @@ http-server dist
 <p>会卡住一段时间<br>
 因为<code>npm install</code>需要较长时间<br>
 建议npm换源，会快很多</p>
-</div></div>
-<p>把下面的3.4插入<a class="internal-link" target="" data-note-icon="" href="/czc知识库/笔记/知识库搭建/数字花园/本地部署数字花园/">本地部署数字花园</a>，就构成云服务器源码的部署方案<br>
-所以笔记到这，默认已经部署好基本的http服务器并能在8080端口访问</p>
-<h3 id="3-4-nginx-pm2" tabindex="-1">3.4 设置本地反向代理（Nginx、pm2）</h3>
-<p>http服务器默认启动后使用8080端口<br>
-但是这样要访问服务器只能通过 ip:8080 才能访问，如果只输入ip或者域名，默认是访问80端口，但是80端口啥都没有，所以，，要设置个代理，把ip或者域名的80端口的访问转到 127.0.0.1:8080 去</p>
-<p>当然，如果怕麻烦也可以不做这步，这只是锦上添花</p>
-<h4 id="3-4-1" tabindex="-1">3.4.1 安装必要软件</h4>
-<pre><code class="language-bash"># 更新系统包
-sudo apt update
-
-# 安装 nginx
-sudo apt install nginx
-
-# 安装 pm2 (如果还没安装)
-npm install -g pm2
-</code></pre>
-<h4 id="启动网站服务" tabindex="-1">启动网站服务</h4>
-<pre><code class="language-bash"># 进入项目目录
-cd ~/digitalgarden
-
-# 使用 pm2 启动服务（8080端口）
-pm2 start http-server -- dist -p 8080 --name &quot;digitalgarden&quot;
-
-# 检查服务是否正常运行
-pm2 status
-
-# 设置开机自启
-pm2 startup
-pm2 save
-</code></pre>
-<h4 id="nginx" tabindex="-1">配置 Nginx</h4>
-<p>创建 Nginx 配置文件：</p>
-<pre><code class="language-bash">sudo vim /etc/nginx/sites-available/digitalgarden
-</code></pre>
-<p>关于vim编辑器的使用：<a class="internal-link" target="" data-note-icon="" href="/czc知识库/计算机/Linux/折腾笔记ubuntu/vim编辑器/">vim编辑器</a></p>
-<p>添加以下配置：</p>
-<pre><code>server {
-    listen 80;
-    server_name czchd.us.kg;  # 替换成你的域名
-
-    access_log /var/log/nginx/digitalgarden.access.log;
-    error_log /var/log/nginx/digitalgarden.error.log;
-
-    location / {
-        proxy_pass http://localhost:8080;
-        proxy_http_version 1.1;
-        proxy_set_header Upgrade $http_upgrade;
-        proxy_set_header Connection 'upgrade';
-        proxy_set_header Host $host;
-        proxy_cache_bypass $http_upgrade;
-        proxy_set_header X-Real-IP $remote_addr;
-        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-        proxy_set_header X-Forwarded-Proto $scheme;
-    }
-}
-</code></pre>
-<p>启用配置：</p>
-<pre><code class="language-bash"># 创建符号链接
-sudo ln -s /etc/nginx/sites-available/digitalgarden /etc/nginx/sites-enabled/
-
-# 删除默认配置（可选）
-sudo rm /etc/nginx/sites-enabled/default
-
-# 测试配置是否正确
-sudo nginx -t
-
-# 如果测试通过，重启 nginx
-sudo systemctl restart nginx
-</code></pre>
-<p>检查服务状态</p>
-<pre><code class="language-bash"># 检查 nginx 状态
-sudo systemctl status nginx
-
-# 检查 pm2 状态
-pm2 status
-
-# 查看 nginx 错误日志
-sudo tail -f /var/log/nginx/error.log
-
-# 查看应用日志
-pm2 logs digitalgarden
-</code></pre>
-<p>常用维护命令</p>
-<pre><code class="language-bash"># Nginx 相关命令
-sudo systemctl start nginx    # 启动 nginx
-sudo systemctl stop nginx     # 停止 nginx
-sudo systemctl restart nginx  # 重启 nginx
-sudo systemctl reload nginx   # 重新加载配置
-
-# PM2 相关命令
-pm2 restart digitalgarden     # 重启应用
-pm2 stop digitalgarden       # 停止应用
-pm2 delete digitalgarden     # 删除应用
-pm2 logs digitalgarden       # 查看日志
-</code></pre>
-<p>可选（我没选）：配置SSL（HTTPS）</p>
-<pre><code class="language-bash"># 安装 certbot
-sudo apt install certbot python3-certbot-nginx
-
-# 获取证书并自动配置 nginx
-sudo certbot --nginx -d czchd.us.kg
-</code></pre>
-<h1 id="4-1" tabindex="-1">4 知识库更新后的数字花园更新流程</h1>
-<pre><code class="language-bash"># 查看当前运行的服务
-pm2 list
-
-# 停止服务
-# 方式一：通过名称停止
-pm2 stop digitalgarden    # 如果你之前用这个名称启动了服务
-# 方式二：通过 id 停止
-pm2 stop 0    # 0 是服务的 id 号
-# 方式三：停止所有服务
-pm2 stop all
-
-# 更新代码并重启服务
-# 1. 停止服务
-pm2 stop digitalgarden
-# 2. git 更新
-cd ~/digitalgarden
-git pull
-# 3. 重新构建（如果需要）
-npm run build
-# 4. 重启服务
-pm2 restart digitalgarden
-# 或者重新启动服务
-pm2 start http-server -- dist -p 8080 --name &quot;digitalgarden&quot;
-
-查看日志（确认服务正常）
-pm2 logs digitalgarden
-
-如果想完全删除服务（不仅是停止），可以使用：
-pm2 delete digitalgarden
-</code></pre>
-<h1 id="5-1" tabindex="-1">5 域名申请</h1>
-<p>阿里云买域名<br>
-选择喜欢的域名，购买，如果没有模板实名认证过，不能支付<br>
-创建模板实名认证，等几分钟通过后<br>
-支付后就拥有这个域名了，可以配置DNS解析</p>
-<p>注意，购买到域名后还要去实名备案，备案后通过域名访问网站才能正常打开，否则会是被拦截的警告</p>
-<h1 id="6-dns" tabindex="-1">6 配置DNS解析</h1>
-<p>在<a href="https://dns.console.aliyun.com/#/dns/domainList" target="_blank" class="external-link">阿里云控制台</a>添加权威域名解析，将你的域名和云服务器的公网ip填进去</p>
 </main>
 <aside>
 <div class="sidebar">
@@ -350,23 +199,17 @@ On this page
 <div class="toc-container">
 <nav class="toc">
 <ol>
-<li><a href="#1">1 云服务器获取</a>
-</li>
-<li><a href="#2">2 云服务器配置</a>
-</li>
-<li><a href="#3">3 数字花园部署</a>
-</li>
 <li><a href="#数字花园网站本地手动部署方案">数字花园网站本地手动部署方案</a>
 <ol>
-<li><a href="#1-1">1. 获取网站源码</a>
+<li><a href="#1">1. 获取网站源码</a>
 <ol>
 <li><a href="#2-2-node-js">2.2 安装 Node.js</a>
 </li>
 </ol>
 </li>
-<li><a href="#3-1">3. 项目部署</a>
+<li><a href="#3">3. 项目部署</a>
 <ol>
-<li><a href="#3-1-1">3.1 安装项目依赖</a>
+<li><a href="#3-1">3.1 安装项目依赖</a>
 </li>
 <li><a href="#3-2">3.2 构建项目</a>
 </li>
@@ -381,24 +224,6 @@ On this page
 </ol>
 </li>
 <li><a href="#程序自动化实现">程序自动化实现</a>
-<ol>
-<li><a href="#3-4-nginx-pm2">3.4 设置本地反向代理（Nginx、pm2）</a>
-<ol>
-<li><a href="#3-4-1">3.4.1 安装必要软件</a>
-</li>
-<li><a href="#启动网站服务">启动网站服务</a>
-</li>
-<li><a href="#nginx">配置 Nginx</a>
-</li>
-</ol>
-</li>
-</ol>
-</li>
-<li><a href="#4-1">4 知识库更新后的数字花园更新流程</a>
-</li>
-<li><a href="#5-1">5 域名申请</a>
-</li>
-<li><a href="#6-dns">6 配置DNS解析</a>
 </li>
 </ol>
 </nav>
@@ -406,9 +231,10 @@ On this page
 </div>
 <div class="backlinks">
 <div class="backlink-title" style="margin:4px 0!important">Pages mentioning this page</div>
-<div class="backlink-list"><div class="backlink-card"><i icon-name="link"></i><a href="/czc知识库/笔记/知识库搭建/数字花园/我的数字花园搭建笔记/" data-note-icon="" class="backlink">我的数字花园搭建笔记</a>
+<div class="backlink-list"><div class="backlink-card"><i icon-name="link"></i><a href="/czc知识库/笔记/知识库搭建/数字花园/obsidian云服务器部署数字花园/" data-note-icon="" class="backlink">obsidian云服务器部署数字花园</a>
+</div><div class="backlink-card"><i icon-name="link"></i><a href="/czc知识库/笔记/知识库搭建/数字花园/obsidian云服务器部署数字花园plus/" data-note-icon="" class="backlink">obsidian云服务器部署数字花园plus</a>
+</div><div class="backlink-card"><i icon-name="link"></i><a href="/czc知识库/笔记/知识库搭建/数字花园/obsidian我的数字花园搭建笔记/" data-note-icon="" class="backlink">obsidian我的数字花园搭建笔记</a>
 </div><div class="backlink-card"><i icon-name="link"></i><a href="/czc知识库/笔记/知识库搭建/数字花园/数字花园/" data-note-icon="" class="backlink">数字花园</a>
-</div><div class="backlink-card"><i icon-name="link"></i><a href="/czc知识库/笔记/知识库搭建/数字花园/本地构建 云服务器部署数字花园plus/" data-note-icon="" class="backlink">本地构建 云服务器部署数字花园plus</a>
 </div><div class="backlink-card"><i icon-name="link"></i><a href="/czc知识库/笔记/知识库搭建/知识库搭建/" data-note-icon="" class="backlink">知识库搭建</a>
 </div></div>
 </div>
