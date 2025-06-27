@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<title>家教经验</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<script async type="module">import mermaid from"https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"</script>
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js" integrity="sha512-hpZ5pDCF2bRCweL5WoA0/N1elet1KYL5mx3LP555Eg/0ZguaHawxNvEjF6O3rufAChs16HVNhEc6blF/rZoowQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/plugins/autoloader/prism-autoloader.min.js" integrity="sha512-sv0slik/5O0JIPdLBCR2A3XDg/1U3WuDEheZfI/DI5n8Yqc3h5kjrnr46FGBNiUAJF7rE4LHKwQ/SoSLRKAxEA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script async src="https://cdn.jsdelivr.net/npm/lucide@0.115.0/dist/umd/lucide.min.js"></script>
+<script>window.addEventListener("load",(()=>{document.querySelectorAll(".callout").forEach((e=>{const t=getComputedStyle(e).getPropertyValue("--callout-icon"),l=t&&t.trim().replace(/^lucide-/,"");if(l){const t=e.querySelector(".callout-title");if(t){const e=document.createElement("div"),c=document.createElement("i");e.appendChild(c),c.setAttribute("icon-name",l),e.setAttribute("class","callout-icon"),t.insertBefore(e,t.firstChild)}}})),lucide.createIcons(),Array.from(document.querySelectorAll(".callout.is-collapsible")).forEach((e=>{e.querySelector(".callout-title").addEventListener("click",(t=>{e.classList.contains("is-collapsed")?e.classList.remove("is-collapsed"):e.classList.add("is-collapsed")}))}))}))</script>
+<script async src="https://fastly.jsdelivr.net/npm/force-graph@1.43.0/dist/force-graph.min.js"></script>
+<script async src="https://fastly.jsdelivr.net/npm/@alpinejs/persist@3.11.1/dist/cdn.min.js"></script>
+<script src="https://fastly.jsdelivr.net/npm/alpinejs@3.11.1/dist/cdn.min.js" async></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-okaidia.min.css" integrity="sha512-mIs9kKbaw6JZFfSuo+MovjU+Ntggfoj8RwAmJbVXQ5mkAX5LlgETQEweFPI18humSPHymTb5iikEOKWF7I8ncQ==" crossorigin="anonymous" referrerpolicy="no-referrer" async>
+<script src="https://fastly.jsdelivr.net/npm/whatwg-fetch@3.6.2/dist/fetch.umd.min.js" crossorigin="anonymous" referrerpolicy="no-referrer" async></script>
+<link href="/styles/digital-garden-base.css" rel="stylesheet">
+<link href="/styles/obsidian-base.css" rel="stylesheet">
+<link href="/styles/_theme.74516f71.css" rel="stylesheet">
+<link href="/styles/custom-style.css" rel="stylesheet">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<style></style>
+<style></style>
+</head>
+<body class="theme-light markdown-preview-view markdown-rendered markdown-preview-section css-settings-manager mod-windows is-frameless is-maximized is-hidden-frameless is-focused obsidian-app theme-light show-inline-title show-ribbon show-view-header css-settings-manager theme-default line-style-solid folder-default blockquote-normal callout-normal checkbox-default tag-default link-default heading-default responsive-tile-height oz-show-all-num">
+<nav class="navbar">
+<div class="navbar-inner">
+<a href="/" style="text-decoration:none">
+<h1 style="margin:15px!important">czc&#39;s digital garden</h1>
+</a>
+</div>
+<div class="search-button align-icon" onclick="toggleSearch()">
+<span class="search-icon">
+<i icon-name="search"></i>
+</span>
+<span class="search-text">
+<span>Search</span>
+<span style="font-size:.6rem;padding:2px 2px 0 6px;text-align:center;transform:translateY(4px)" class="search-keys">
+CTRL + K
+</span>
+</span>
+</div>
+</nav>
+<div class="search-container" id="globalsearch" onclick="toggleSearch()">
+<div class="search-box">
+<input type="search" id="term" placeholder="Start typing...">
+<div id="search-results"></div>
+<footer class="search-box-footer">
+<div class="navigation-hint">
+<span>Enter to select</span>
+</div>
+<div class="navigation-hint align-icon">
+<i icon-name="arrow-up" aria-hidden="true"></i>
+<i icon-name="arrow-down" aria-hidden="true"></i>
+<span>to navigate</span>
+</div>
+<div class="navigation-hint">
+<span>ESC to close</span>
+</div>
+</footer>
+</div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/flexsearch@0.7.21/dist/flexsearch.bundle.js"></script>
+<script>document.addEventListener("DOMContentLoaded",init,!1),document.addEventListener("DOMContentLoaded",setCorrectShortcut,!1),window.toggleSearch=function(){document.getElementById("globalsearch").classList.contains("active")?document.getElementById("globalsearch").classList.remove("active"):(document.getElementById("globalsearch").classList.add("active"),document.getElementById("term").focus())},window.toggleTagSearch=function(e){console.log(e.textContent);const t=e.textContent;t&&(window.document.getElementById("term").value=t.trim(),window.toggleSearch(),window.search())};const loadingSvg='\n    <svg width="100" height="100" viewBox="0 0 45 45" xmlns="http://www.w3.org/2000/svg" stroke="#fff">\n      <g fill="none" fill-rule="evenodd" transform="translate(1 1)" stroke-width="2">\n          <circle cx="22" cy="22" r="6" stroke-opacity="0">\n              <animate attributeName="r"\n                   begin="1.5s" dur="3s"\n                   values="6;22"\n                   calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-opacity"\n                   begin="1.5s" dur="3s"\n                   values="1;0" calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-width"\n                   begin="1.5s" dur="3s"\n                   values="2;0" calcMode="linear"\n                   repeatCount="indefinite" />\n          </circle>\n          <circle cx="22" cy="22" r="6" stroke-opacity="0">\n              <animate attributeName="r"\n                   begin="3s" dur="3s"\n                   values="6;22"\n                   calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-opacity"\n                   begin="3s" dur="3s"\n                   values="1;0" calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-width"\n                   begin="3s" dur="3s"\n                   values="2;0" calcMode="linear"\n                   repeatCount="indefinite" />\n          </circle>\n          <circle cx="22" cy="22" r="8">\n              <animate attributeName="r"\n                   begin="0s" dur="1.5s"\n                   values="6;1;2;3;4;5;6"\n                   calcMode="linear"\n                   repeatCount="indefinite" />\n          </circle>\n      </g>\n  </svg>';function debounce(e,t,n){var a;return function(){var r=this,i=arguments,c=n&&!a;clearTimeout(a),a=setTimeout((function(){a=null,n||e.apply(r,i)}),t),c&&e.apply(r,i)}}function setCorrectShortcut(){navigator.platform.toUpperCase().indexOf("MAC")>=0&&document.querySelectorAll(".search-keys").forEach((e=>e.innerHTML="⌘ + K"))}function createIndex(e){const t=e=>e.toLowerCase().split(/([^a-z]|[^\x00-\x7F])/),n=new FlexSearch.Document({cache:!0,charset:"latin:extra",optimize:!0,index:[{field:"content",tokenize:"reverse",encode:t},{field:"title",tokenize:"forward",encode:t},{field:"tags",tokenize:"forward",encode:t}]});return e.forEach(((e,t)=>{n.add({id:t,title:e.title,content:e.content,tags:e.tags})})),n}async function init(){let e=!0;if(localStorage.getItem("searchIndex")){let{date:t,docs:n}=JSON.parse(localStorage.getItem("searchIndex"));if("2025-06-27T07:27:44.549Z"===t){e=!1;let t=createIndex(n);window.docs=n,window.index=t}}if(e){let e=await(await fetch("/searchIndex.json?v=2025-06-27T07:27:44.549Z")).json(),t=createIndex(e);localStorage.setItem("searchIndex",JSON.stringify({date:"2025-06-27T07:27:44.549Z",docs:e})),window.docs=e,window.index=t}document.addEventListener("keydown",(e=>{if((e.ctrlKey||e.metaKey)&&"k"===e.key&&(e.preventDefault(),toggleSearch()),"Escape"===e.key&&document.getElementById("globalsearch").classList.remove("active"),document.getElementById("globalsearch").classList.contains("active")){if("ArrowDown"===e.key){e.preventDefault();let t=document.querySelector(".searchresult.active");t?(t.classList.remove("active"),t.nextElementSibling?t.nextElementSibling.classList.add("active"):document.querySelector(".searchresult").classList.add("active")):document.querySelector(".searchresult").classList.add("active");let n=document.querySelector(".searchresult.active");n&&n.scrollIntoView({behavior:"smooth",block:"nearest",inline:"start"})}if("ArrowUp"===e.key){e.preventDefault();let t=document.querySelector(".searchresult.active");t?(t.classList.remove("active"),t.previousElementSibling?t.previousElementSibling.classList.add("active"):document.querySelectorAll(".searchresult").forEach((e=>{e.nextElementSibling||e.classList.add("active")}))):document.querySelectorAll(".searchresult").forEach((e=>{e.nextElementSibling&&e.classList.add("active")}));let n=document.querySelector(".searchresult.active");n&&n.scrollIntoView({behavior:"smooth",block:"nearest",inline:"start"})}if("Enter"===e.key){e.preventDefault();let t=document.querySelector(".searchresult.active");t&&(window.location.href=t.querySelector("a").href)}}}));const t=debounce(search,200,!1);field=document.querySelector("#term"),field.addEventListener("keydown",(e=>{"ArrowDown"!==e.key&&"ArrowUp"!==e.key&&t()})),resultsDiv=document.querySelector("#search-results");const n=new URL(location.href).searchParams;n.get("q")&&(field.setAttribute("value",n.get("q")),toggleSearch(),search())}async function search(){let e=field.value.trim();if(!e)return;if(e==lastSearch)return;console.log(`search for ${e}`),window.lastSearch=e,resultsDiv.innerHTML=loadingSvg;let t=offlineSearch(e),n="";if(!t.length){let t=document.createElement("p");return t.innerText=`No results for "${e}"`,resultsDiv.innerHTML="",void resultsDiv.appendChild(t)}n+='<div style="max-width:100%;">',t.forEach((e=>{e.tags&&e.tags.length>0?n+=`<div class="searchresult">\n                    <a class="search-link" href="${e.url}">${e.title}</a>\n                    <div onclick="window.location='${e.url}'">\n                        <div class="header-meta">\n                            <div class="header-tags">\n                                ${e.tags.map((e=>'<a class="tag" href="JavaScript:Void(0);">#'+e+"</a>")).join("")}\n                            </div>\n                        </div>\n                        ${e.content}\n                    </div>\n                </div>`:n+=`<div class="searchresult">\n                    <a class="search-link" href="${e.url}">${e.title}</a>\n                    <div onclick="window.location='${e.url}'">\n                        ${e.content}\n                    </div>\n                </div>`})),n+="</div>",resultsDiv.innerHTML=n}function truncate(e,t){return(e=e.replaceAll(/<[^>]*>/g,"")).length<t?e:e.substring(0,t-3)+"..."}function offlineSearch(e){let t=window.docs,n="#"===e[0]&&e.length>1?index.search(e.substring(1),[{field:"tags"}]):index.search(e,[{field:"title",limit:5},{field:"content",weight:10}]);const a=e=>{const t=n.filter((t=>t.field===e));return 0===t.length?[]:[...t[0].result]};return[...new Set([...a("title"),...a("content"),...a("tags")])].map((e=>{let n=t[e];return n.content=truncate(n.content,400),n.tags=n.tags.filter((e=>"gardenEntry"!=e&&"note"!=e)),n}))}window.lastSearch=""</script>
+<main class="content cm-s-obsidian">
+<header>
+<h1 data-note-icon="">家教经验</h1>
+<div class="header-meta">
+<div class="header-tags">
+</div>
+<div class="timestamps"><div><i icon-name="calendar-plus"></i> <span class="human-date" data-date="2025-06-09T10:30:40.098+08:00"></span></div><div><i icon-name="calendar-clock"></i> <span class="human-date" data-date="2025-03-17T16:07:12.000+08:00"></span></div></div></div>
+</header>
+<div class="callout is-collapsible" data-callout="note"><div class="callout-title"><div class="callout-title-inner"> # 百度文库：当家教的经验总结4篇<br></div><div class="callout-fold"><i icon-name="chevron-down"></i></div></div>
+<div class="callout-content">
+<p>
+<a href="https://eduai.baidu.com/view/18411c117fd184254b35eefdc8d376eeaeaa1724" target="_blank" class="external-link">百度文库资源库</a></p>
+<p>家教首先是帮助学生发现问题，家教必须把适合学生的学习方法和端正的态度传达给学生的。下面是店铺为大家整理的当家教的经验总结，希望对你有所帮助!</p>
+<h2 id="当家教的经验总结篇一" tabindex="-1">当家教的经验总结篇一</h2>
+<p>1、基础相对薄弱，知识构架不完整的学生。对于这部分学生，他们的知识掌握程度是混乱的，首先要做的是给他自信，相信一切知识都是有规律可循的，前后知识点是有相互联系的。建立好这样的联系才能建立完整构架的知识体系;其次，实打实的和学生一块列知识框图，明了这一节这一章的知识点结构;在做好知识网的构建后，下一步就是巩固这些基础知识，做到基础的完全明白。</p>
+<p>2、初中基础还算可以，做题不该错的错了很多。对于这样的学生，根本原因在他的知识点之间的区别没注意。比如说，两个可以相互推导的公式运用的前提不一样，学生在做题时看着题干熟悉就不假思索的用了一个公式可能就会用错(因为出题老师就想让你混淆)。总结的来说，还是基础知识网构建的“不严实”。对于这样的学生，首先要做的就是放弃自己基础还可以的想法，基础不扎实，只是相对好一些，然而做不对题一样是不成功的;其次，抓住这些容易忽略混淆的点，多练，巩固知识构架的同时解决了混淆问题。</p>
+<p>3、基础还行，态度有些“飘忽”。这中类型的学生也很多，特别是考上“小重点”的学生中，感觉自己从千军万马中突围也算很不错了，典型“小富”心态。但是，高中知识相对初中又复杂很多，知识点也变多，而且中考没考好的学生在高中耐下性子学，很有可能超过这些人。对于这些同学，可能觉得自己还挺聪明，其实对于高考来说，拼的并不是智商，而是态度和方法。所以，态度端正，正视高中的困难，在这一点多上家长要多提醒。用心寻求适合自己的方法，坚持下去。</p>
+<p>以上三点是我教了十来个学生的一个简单总结，可能不仅全面，因为每个学生的问题和“状态”不太相同。总之，对于每个学生要发现他的问题，才能“对症下药”。</p>
+<p>最后说一下找家教的意义：家教首先是帮助学生发现问题。</p>
+<p>寻找方法的：其次，家教必须把适合学生的学习方法和端正的态度传达给学生的;再者，家教需要把知识点构建成知识网，把做题方法和审题思维交给学生，让学生成为中学阶段的“应试高手”。</p>
+<h2 id="当家教的经验总结篇二" tabindex="-1">当家教的经验总结篇二</h2>
+<p>孩子是一个家庭的希望和所在，让孩子健康、快乐地成长，将来有出息是每一位家长的理想和愿望。孩子的健康成长受着学校、家庭、社会等多方面的影响与制约，其中家庭教育尤为重要，因为孩子从出生起在家中，与家里亲人接触的时间和机会最多，父母是孩子的第一任老师。下面我就家教的几个方面谈一下自己的一些做法与体会。</p>
+<p>体会：</p>
+<p>除外，要培养孩子良好的行为习惯，如按时成作业、上课认真听讲、有规律生活休息，一开始的时候孩子可能会因为年龄小不愿意配合，但要耐心的说服绝大多数的孩子还是可以做到的。最后要说的一个问题是要鼓励孩子培养广泛的爱好，多多参与户外活动，开发孩子对学习的兴趣。</p>
+<p>俗话说：“兴趣就是孩子最好的老师。”孩子做任何事情，只能有了兴趣才能使孩子愿意去做，孩子才能做得好，做事也就不会唯唯诺诺。</p>
+<p>还有一点也是十分重要的，在教育孩子的过程中要培养孩子的自信心，不要让孩子产生唯唯诺诺、怕自己做不好事情的心理，告诉孩子要相信自己，尽最大的努力去做，不要太看重结果。</p>
+<p>小孩子就是要家长的细心与耐心的教导，试着和孩子成为朋友，多去倾听孩子的心声，以合理的要求去教育孩子，让孩子在一个良好的环境中全面发展。</p>
+<h2 id="当家教的经验总结篇三" tabindex="-1">当家教的经验总结篇三</h2>
+<p>我们每个做父母的都希望孩子将来能成才。也许从小孩子的一出生，就想着他(她)在每个方面都出类拔萃，父母的希望总是好的，然而，由于不同年龄、不同年级小孩的心理特征不同，可采取教育的方法也要因时因人而异，方式不尽相同。下面，结合自己的经历和及同事的经验，谈一点粗浅的认识：</p>
+<p>一是学习家教经验。俗话说：“教育者必先受教育”。我们不能套用父母教育我们的老方法，我平时通过看书、上网以及向家教成功的同事请教，学到了一些方法，我感到，当今时代有很多育儿方式让我们选择，但不管是看到国外的蒙特梭利教育，还是看到远古孟母三迁的故事，我们也只能从中得到一点启示和在自己育儿教育上有一点借鉴，因为每个孩子的个体是有差异的。</p>
+<p>二是保持健康心态。要想让孩子拥有健康的心理，我们做父母的，要克服心浮气躁、急功近利的现象，努力保持一颗平常心，既关注孩子的分数，又不能以偏盖全，要关心孩子的内心，“蹲下身子”，和孩子做朋友，遇到不如意的事，家长的冷静、耐心、毅力等品质往往会潜移默化地感染孩子，其实，我们许多家长早体会到这些因素对于一个人走向成功之路，也很需要，甚至非常关键。</p>
+<p>三是注重培养习惯。我觉得要让孩子从小养成良好的学习习惯与生活习惯。英国有句谚语：“行动养成习惯，习惯形成性格，性格决定命运。”可见习惯对人的一生有着举足轻重的作用。我主要在时间安排、书写整洁、独立思考、自我检查等方面给予引导和督促。同时，利用各种机会，教孩子学习知识要灵活运用，不要死记硬背，学会举一反三。</p>
+<p>四是坚持鼓励为主。我曾扪心自问，孩子的心智犹如一张白纸,如何才能在上面画出最美的图画?面对家长的呵斥与责罚，孩子茫然的目光与呆滞的动作，不仅让我们感到无助，有时还会有一丝无能掠过心头。专家说得好“孩子是夸出来的!”孩子的每一点进步都需要鼓励，我感到，每次父母赞许的眼神都是小孩进步的助推器，父母的真诚夸奖是增添他自信的砖石。</p>
+<h2 id="当家教的经验总结篇四" tabindex="-1">当家教的经验总结篇四</h2>
+<p>家教是每个在校期间的大学生都期待的兼职，下面是我在家教过程中的体会： 要想做家教必须自己亲自去找，凡事必定要自己去争取，自己可以去外面找，但不要随便相信那些贴在路上的广告，最好找一个知名，有诚信的家教网，他们有良好的社会形象，还有在家教过程终于家长的一些意外，他们也会帮你处理，给你一个好的答复。 和家长联系，通话中要礼貌谦虚但又不失自信，涉及到薪酬的问题，你心里早就应该有个数，家长问你时，你就按自己的干脆的回答，当然不是叫你高喊价，自己有个分寸，我觉得在家教过程中这个不是主要的问题，能争取就争取但不要在这个问题上花太多的时间，你应该更关心如何把这份家教做好，相信薪酬不会太差。</p>
+<p>面试，面试也就是试讲，最好在家长联系中了解一些学生的学习情况，有了解之后，一定要做一些准备，试讲时要保持平常心态，自信不夸大，衣着整洁，言行礼貌。一般家长问你一些问题或一些资料考考你，最好是家长问你(不要怕)你就如实回答，只要你能接手，一般都能解决，表达自己对学习的看法，看学生考过的试卷指出主要问题在哪(从一份考卷中一般都可看出)，要如何才能解决，从易到难的讲下去。 若在家教过程中有意外的事情发生(不是你的原因)，家长说某原因家教停止，这是你应该微笑干脆地回答：不要紧。因为只要你有能力家长不会无理由中止家教，还有家教过程中确实也有一些意外原因是家教不能进行下去的。你可以和中介说说，不应该感到不好甚至闹出矛盾，这样就算进行下去也没有意义。</p>
+<p>关于教学方法，教学方法当然是因材施教最好咯。几乎任何一个学生都处在 基础知识薄弱到扎实，学习方法从抽象繁杂到具体简便，解题思路从混乱到精简，解题技巧从稀少到丰富的过程中。从中找出学生处在的位置后，这下就好办啦。还有在了解学生所处的位置即学生情况后，不要忘了一点，要结合教材或资料上的知识点和习题。在讲知识点时：要强调该内容的主要的知识和方法，主要的就是经常考的也是后面习题或其他试卷常考的，还要把各个知识点联系起来;要从后面习题中找出一些较难的理解的语句出来讲解，学生听后对你讲的印像会特别深，在做题时学生马上想到你说的，能做下去，这样主要的就会得到巩固，以后遇到相关问题时他们也就马上想到;次要的也不要漏，也就是说讲的知识不要漏，突出重点之外，还要讲解次要的，做题时只要学生用主要的方法不行，那他们自然会想到次要的。</p>
+<p>关于学习方法。因为每一份家教不太可能长期进行下去，短期效果不易明显，但只要你教的方法符合学生，那肯定有效果。这样就要你教会学生的学习方法，让他们自主学习能力提高，这个很重要，教会学生学习方法，自主学习能力提高后，你才是尽心尽责，因为后面的学习还很漫长，若没有学习方法，面对新的内容还是无从下手。 关于解题思路。学习主要是理解牢记知识与解题方法技巧并灵活运用。记住知识不会运用是痛苦的事。如何把这么多年来所学的知识准确的搬到这道题上呢?这就涉及解题思路的问题，在评讲尤其是学生错题时，那就要用解题思路一步一步给学生讲，这样解题思路不仅可以得到巩固，他们会相信解题思路的普遍性，遇到某类问题时有技巧的就讲技巧，但不要忘啦普通的方法。 你与学生和家长之间就像一小团队，要互相沟通，讲课时要站在学生的角度去想如何才能让学生明白你的意思。 “售后服务”呵呵类似商业的售后服务，在家教完成后不要认为就完事啦，你应该给学生一些新建议，帮学生解答以后出现的学习问题等等。</p>
+<p>总之你要诚实信用，负责任，有耐心，我们接到一份家教后应该把心思放在如何把学生教好上。学生的进步是我最大的快乐与收获。相信大家都做得好。</p>
+</div></div>
+</main>
+<aside>
+<div class="sidebar">
+<div class="sidebar-container">
+<div class="toc">
+<div class="toc-title-container">
+<div class="toc-title">
+On this page
+</div>
+</div>
+<div class="toc-container">
+<nav class="toc">
+<ol>
+<li><a href="#当家教的经验总结篇一">当家教的经验总结篇一</a>
+</li>
+<li><a href="#当家教的经验总结篇二">当家教的经验总结篇二</a>
+</li>
+<li><a href="#当家教的经验总结篇三">当家教的经验总结篇三</a>
+</li>
+<li><a href="#当家教的经验总结篇四">当家教的经验总结篇四</a>
+</li>
+</ol>
+</nav>
+</div>
+</div>
+<div class="backlinks">
+<div class="backlink-title" style="margin:4px 0!important">Pages mentioning this page</div>
+<div class="backlink-list"><div class="backlink-card"><i icon-name="link"></i><a href="/搞钱/2-项目/9-已死项目/家教创业项目/家教创业项目/" data-note-icon="" class="backlink">家教创业项目</a>
+</div></div>
+</div>
+</div>
+</div>
+</aside>
+<style>#tooltip-wrapper{background:var(--background-primary);padding:1em;border-radius:4px;overflow:hidden;position:fixed;width:80%;max-width:400px;height:auto;max-height:300px;font-size:.8em;box-shadow:0 5px 10px rgba(0,0,0,.1);opacity:0;transition:opacity .1s;unicode-bidi:plaintext;overflow-y:scroll;z-index:10}#tooltip-wrapper:after{content:"";position:absolute;z-index:1;bottom:0;left:0;pointer-events:none;width:100%;unicode-bidi:plaintext;height:75px}</style>
+<div style="opacity:0;display:none" id="tooltip-wrapper">
+<div id="tooltip-content">
+</div>
+</div>
+<iframe style="display:none;height:0;width:0" id="link-preview-iframe" src="">
+</iframe>
+<script>var opacityTimeout,contentTimeout,transitionDurationMs=100,iframe=document.getElementById("link-preview-iframe"),tooltipWrapper=document.getElementById("tooltip-wrapper"),tooltipContent=document.getElementById("tooltip-content"),linkHistories={};function hideTooltip(){opacityTimeout=setTimeout((function(){tooltipWrapper.style.opacity=0,contentTimeout=setTimeout((function(){tooltipContent.innerHTML="",tooltipWrapper.style.display="none"}),transitionDurationMs+1)}),transitionDurationMs)}function showTooltip(t){var e=t.target,o=e.getClientRects()[e.getClientRects().length-1],i=window.pageYOffset||document.documentElement.scrollTop,n=t.target.getAttribute("href");if(-1===n.indexOf("http")||-1!==n.indexOf(window.location.host)){let t=n.split("#")[0];linkHistories[t]?(tooltipContent.innerHTML=linkHistories[t],tooltipWrapper.style.display="block",setTimeout((function(){if(tooltipWrapper.style.opacity=1,-1!=n.indexOf("#")){let t=n.split("#")[1];const e=tooltipWrapper.querySelector(`[id='${t}']`);e.classList.add("referred"),e.scrollIntoView({behavior:"smooth"},!0)}else tooltipWrapper.scroll(0,0)}),1)):(iframe.src=t,iframe.onload=function(){tooltipContentHtml="",tooltipContentHtml+='<div style="font-weight: bold; unicode-bidi: plaintext;">'+iframe.contentWindow.document.querySelector("h1").innerHTML+"</div>",tooltipContentHtml+=iframe.contentWindow.document.querySelector(".content").innerHTML,tooltipContent.innerHTML=tooltipContentHtml,linkHistories[t]=tooltipContentHtml,tooltipWrapper.style.display="block",tooltipWrapper.scrollTop=0,setTimeout((function(){if(tooltipWrapper.style.opacity=1,-1!=n.indexOf("#")){let t=n.split("#")[1];const e=tooltipWrapper.querySelector(`[id='${t}']`);e.classList.add("referred"),console.log(e),e.scrollIntoView({behavior:"smooth"},!0)}else tooltipWrapper.scroll(0,0)}),1)}),tooltipWrapper.style.left=o.left-tooltipWrapper.offsetWidth/2+o.width/2+"px",window.innerHeight-o.top<tooltipWrapper.offsetHeight?tooltipWrapper.style.top=o.top+i-tooltipWrapper.offsetHeight-10+"px":window.innerHeight-o.top>tooltipWrapper.offsetHeight&&(tooltipWrapper.style.top=o.top+i+35+"px"),o.left+o.width/2<tooltipWrapper.offsetWidth/2?tooltipWrapper.style.left="10px":document.body.clientWidth-o.left-o.width/2<tooltipWrapper.offsetWidth/2&&(tooltipWrapper.style.left=document.body.clientWidth-tooltipWrapper.offsetWidth-20+"px")}}function setupListeners(t){t.addEventListener("mouseleave",(function(t){hideTooltip()})),tooltipWrapper.addEventListener("mouseleave",(function(t){hideTooltip()})),t.addEventListener("mouseenter",(function(t){clearTimeout(opacityTimeout),clearTimeout(contentTimeout),showTooltip(t)})),tooltipWrapper.addEventListener("mouseenter",(function(t){clearTimeout(opacityTimeout),clearTimeout(contentTimeout)}))}window.addEventListener("load",(function(t){document.querySelectorAll(".internal-link").forEach(setupListeners),document.querySelectorAll(".backlink-card a").forEach(setupListeners)}))</script>
+<script>window.location.hash&&document.getElementById(window.location.hash.slice(1)).classList.add("referred"),window.addEventListener("hashchange",(e=>{const t=e.oldURL.split("#");t[1]&&document.getElementById(t[1]).classList.remove("referred");const n=e.newURL.split("#");n[1]&&document.getElementById(n[1]).classList.add("referred")}),!1);const url_parts=window.location.href.split("#"),url=url_parts[0],referrence=url_parts[1];document.querySelectorAll(".cm-s-obsidian > *[id]").forEach((function(e){e.ondblclick=function(e){const t=url+"#"+e.target.id;navigator.clipboard.writeText(t)}}))</script>
+<script src="https://fastly.jsdelivr.net/npm/luxon@3.2.1/build/global/luxon.min.js"></script>
+<script defer="defer">TIMESTAMP_FORMAT="MMM dd, yyyy h:mm a",document.querySelectorAll(".human-date").forEach((function(e){date=e.getAttribute("data-date")||e.innerText,parsed_date=luxon.DateTime.fromISO(date),null!=parsed_date.invalid&&(parsed_date=luxon.DateTime.fromSQL(date)),null!=parsed_date.invalid&&(parsed_date=luxon.DateTime.fromHTML(date)),e.innerHTML=parsed_date.toFormat(TIMESTAMP_FORMAT)}))</script>
+<script>lucide.createIcons({attrs:{class:["svg-icon"]}})</script>
+</body>
+</html>

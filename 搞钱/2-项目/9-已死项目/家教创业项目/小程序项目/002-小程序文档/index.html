@@ -1,0 +1,1101 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<title>002-小程序文档</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<script async type="module">import mermaid from"https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"</script>
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js" integrity="sha512-hpZ5pDCF2bRCweL5WoA0/N1elet1KYL5mx3LP555Eg/0ZguaHawxNvEjF6O3rufAChs16HVNhEc6blF/rZoowQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/plugins/autoloader/prism-autoloader.min.js" integrity="sha512-sv0slik/5O0JIPdLBCR2A3XDg/1U3WuDEheZfI/DI5n8Yqc3h5kjrnr46FGBNiUAJF7rE4LHKwQ/SoSLRKAxEA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script async src="https://cdn.jsdelivr.net/npm/lucide@0.115.0/dist/umd/lucide.min.js"></script>
+<script>window.addEventListener("load",(()=>{document.querySelectorAll(".callout").forEach((e=>{const t=getComputedStyle(e).getPropertyValue("--callout-icon"),l=t&&t.trim().replace(/^lucide-/,"");if(l){const t=e.querySelector(".callout-title");if(t){const e=document.createElement("div"),c=document.createElement("i");e.appendChild(c),c.setAttribute("icon-name",l),e.setAttribute("class","callout-icon"),t.insertBefore(e,t.firstChild)}}})),lucide.createIcons(),Array.from(document.querySelectorAll(".callout.is-collapsible")).forEach((e=>{e.querySelector(".callout-title").addEventListener("click",(t=>{e.classList.contains("is-collapsed")?e.classList.remove("is-collapsed"):e.classList.add("is-collapsed")}))}))}))</script>
+<script async src="https://fastly.jsdelivr.net/npm/force-graph@1.43.0/dist/force-graph.min.js"></script>
+<script async src="https://fastly.jsdelivr.net/npm/@alpinejs/persist@3.11.1/dist/cdn.min.js"></script>
+<script src="https://fastly.jsdelivr.net/npm/alpinejs@3.11.1/dist/cdn.min.js" async></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-okaidia.min.css" integrity="sha512-mIs9kKbaw6JZFfSuo+MovjU+Ntggfoj8RwAmJbVXQ5mkAX5LlgETQEweFPI18humSPHymTb5iikEOKWF7I8ncQ==" crossorigin="anonymous" referrerpolicy="no-referrer" async>
+<script src="https://fastly.jsdelivr.net/npm/whatwg-fetch@3.6.2/dist/fetch.umd.min.js" crossorigin="anonymous" referrerpolicy="no-referrer" async></script>
+<link href="/styles/digital-garden-base.css" rel="stylesheet">
+<link href="/styles/obsidian-base.css" rel="stylesheet">
+<link href="/styles/_theme.74516f71.css" rel="stylesheet">
+<link href="/styles/custom-style.css" rel="stylesheet">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<style></style>
+<style></style>
+</head>
+<body class="theme-light markdown-preview-view markdown-rendered markdown-preview-section css-settings-manager mod-windows is-frameless is-maximized is-hidden-frameless is-focused obsidian-app theme-light show-inline-title show-ribbon show-view-header css-settings-manager theme-default line-style-solid folder-default blockquote-normal callout-normal checkbox-default tag-default link-default heading-default responsive-tile-height oz-show-all-num">
+<nav class="navbar">
+<div class="navbar-inner">
+<a href="/" style="text-decoration:none">
+<h1 style="margin:15px!important">czc&#39;s digital garden</h1>
+</a>
+</div>
+<div class="search-button align-icon" onclick="toggleSearch()">
+<span class="search-icon">
+<i icon-name="search"></i>
+</span>
+<span class="search-text">
+<span>Search</span>
+<span style="font-size:.6rem;padding:2px 2px 0 6px;text-align:center;transform:translateY(4px)" class="search-keys">
+CTRL + K
+</span>
+</span>
+</div>
+</nav>
+<div class="search-container" id="globalsearch" onclick="toggleSearch()">
+<div class="search-box">
+<input type="search" id="term" placeholder="Start typing...">
+<div id="search-results"></div>
+<footer class="search-box-footer">
+<div class="navigation-hint">
+<span>Enter to select</span>
+</div>
+<div class="navigation-hint align-icon">
+<i icon-name="arrow-up" aria-hidden="true"></i>
+<i icon-name="arrow-down" aria-hidden="true"></i>
+<span>to navigate</span>
+</div>
+<div class="navigation-hint">
+<span>ESC to close</span>
+</div>
+</footer>
+</div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/flexsearch@0.7.21/dist/flexsearch.bundle.js"></script>
+<script>document.addEventListener("DOMContentLoaded",init,!1),document.addEventListener("DOMContentLoaded",setCorrectShortcut,!1),window.toggleSearch=function(){document.getElementById("globalsearch").classList.contains("active")?document.getElementById("globalsearch").classList.remove("active"):(document.getElementById("globalsearch").classList.add("active"),document.getElementById("term").focus())},window.toggleTagSearch=function(e){console.log(e.textContent);const t=e.textContent;t&&(window.document.getElementById("term").value=t.trim(),window.toggleSearch(),window.search())};const loadingSvg='\n    <svg width="100" height="100" viewBox="0 0 45 45" xmlns="http://www.w3.org/2000/svg" stroke="#fff">\n      <g fill="none" fill-rule="evenodd" transform="translate(1 1)" stroke-width="2">\n          <circle cx="22" cy="22" r="6" stroke-opacity="0">\n              <animate attributeName="r"\n                   begin="1.5s" dur="3s"\n                   values="6;22"\n                   calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-opacity"\n                   begin="1.5s" dur="3s"\n                   values="1;0" calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-width"\n                   begin="1.5s" dur="3s"\n                   values="2;0" calcMode="linear"\n                   repeatCount="indefinite" />\n          </circle>\n          <circle cx="22" cy="22" r="6" stroke-opacity="0">\n              <animate attributeName="r"\n                   begin="3s" dur="3s"\n                   values="6;22"\n                   calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-opacity"\n                   begin="3s" dur="3s"\n                   values="1;0" calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-width"\n                   begin="3s" dur="3s"\n                   values="2;0" calcMode="linear"\n                   repeatCount="indefinite" />\n          </circle>\n          <circle cx="22" cy="22" r="8">\n              <animate attributeName="r"\n                   begin="0s" dur="1.5s"\n                   values="6;1;2;3;4;5;6"\n                   calcMode="linear"\n                   repeatCount="indefinite" />\n          </circle>\n      </g>\n  </svg>';function debounce(e,t,n){var a;return function(){var r=this,i=arguments,c=n&&!a;clearTimeout(a),a=setTimeout((function(){a=null,n||e.apply(r,i)}),t),c&&e.apply(r,i)}}function setCorrectShortcut(){navigator.platform.toUpperCase().indexOf("MAC")>=0&&document.querySelectorAll(".search-keys").forEach((e=>e.innerHTML="⌘ + K"))}function createIndex(e){const t=e=>e.toLowerCase().split(/([^a-z]|[^\x00-\x7F])/),n=new FlexSearch.Document({cache:!0,charset:"latin:extra",optimize:!0,index:[{field:"content",tokenize:"reverse",encode:t},{field:"title",tokenize:"forward",encode:t},{field:"tags",tokenize:"forward",encode:t}]});return e.forEach(((e,t)=>{n.add({id:t,title:e.title,content:e.content,tags:e.tags})})),n}async function init(){let e=!0;if(localStorage.getItem("searchIndex")){let{date:t,docs:n}=JSON.parse(localStorage.getItem("searchIndex"));if("2025-06-27T07:27:44.549Z"===t){e=!1;let t=createIndex(n);window.docs=n,window.index=t}}if(e){let e=await(await fetch("/searchIndex.json?v=2025-06-27T07:27:44.549Z")).json(),t=createIndex(e);localStorage.setItem("searchIndex",JSON.stringify({date:"2025-06-27T07:27:44.549Z",docs:e})),window.docs=e,window.index=t}document.addEventListener("keydown",(e=>{if((e.ctrlKey||e.metaKey)&&"k"===e.key&&(e.preventDefault(),toggleSearch()),"Escape"===e.key&&document.getElementById("globalsearch").classList.remove("active"),document.getElementById("globalsearch").classList.contains("active")){if("ArrowDown"===e.key){e.preventDefault();let t=document.querySelector(".searchresult.active");t?(t.classList.remove("active"),t.nextElementSibling?t.nextElementSibling.classList.add("active"):document.querySelector(".searchresult").classList.add("active")):document.querySelector(".searchresult").classList.add("active");let n=document.querySelector(".searchresult.active");n&&n.scrollIntoView({behavior:"smooth",block:"nearest",inline:"start"})}if("ArrowUp"===e.key){e.preventDefault();let t=document.querySelector(".searchresult.active");t?(t.classList.remove("active"),t.previousElementSibling?t.previousElementSibling.classList.add("active"):document.querySelectorAll(".searchresult").forEach((e=>{e.nextElementSibling||e.classList.add("active")}))):document.querySelectorAll(".searchresult").forEach((e=>{e.nextElementSibling&&e.classList.add("active")}));let n=document.querySelector(".searchresult.active");n&&n.scrollIntoView({behavior:"smooth",block:"nearest",inline:"start"})}if("Enter"===e.key){e.preventDefault();let t=document.querySelector(".searchresult.active");t&&(window.location.href=t.querySelector("a").href)}}}));const t=debounce(search,200,!1);field=document.querySelector("#term"),field.addEventListener("keydown",(e=>{"ArrowDown"!==e.key&&"ArrowUp"!==e.key&&t()})),resultsDiv=document.querySelector("#search-results");const n=new URL(location.href).searchParams;n.get("q")&&(field.setAttribute("value",n.get("q")),toggleSearch(),search())}async function search(){let e=field.value.trim();if(!e)return;if(e==lastSearch)return;console.log(`search for ${e}`),window.lastSearch=e,resultsDiv.innerHTML=loadingSvg;let t=offlineSearch(e),n="";if(!t.length){let t=document.createElement("p");return t.innerText=`No results for "${e}"`,resultsDiv.innerHTML="",void resultsDiv.appendChild(t)}n+='<div style="max-width:100%;">',t.forEach((e=>{e.tags&&e.tags.length>0?n+=`<div class="searchresult">\n                    <a class="search-link" href="${e.url}">${e.title}</a>\n                    <div onclick="window.location='${e.url}'">\n                        <div class="header-meta">\n                            <div class="header-tags">\n                                ${e.tags.map((e=>'<a class="tag" href="JavaScript:Void(0);">#'+e+"</a>")).join("")}\n                            </div>\n                        </div>\n                        ${e.content}\n                    </div>\n                </div>`:n+=`<div class="searchresult">\n                    <a class="search-link" href="${e.url}">${e.title}</a>\n                    <div onclick="window.location='${e.url}'">\n                        ${e.content}\n                    </div>\n                </div>`})),n+="</div>",resultsDiv.innerHTML=n}function truncate(e,t){return(e=e.replaceAll(/<[^>]*>/g,"")).length<t?e:e.substring(0,t-3)+"..."}function offlineSearch(e){let t=window.docs,n="#"===e[0]&&e.length>1?index.search(e.substring(1),[{field:"tags"}]):index.search(e,[{field:"title",limit:5},{field:"content",weight:10}]);const a=e=>{const t=n.filter((t=>t.field===e));return 0===t.length?[]:[...t[0].result]};return[...new Set([...a("title"),...a("content"),...a("tags")])].map((e=>{let n=t[e];return n.content=truncate(n.content,400),n.tags=n.tags.filter((e=>"gardenEntry"!=e&&"note"!=e)),n}))}window.lastSearch=""</script>
+<main class="content cm-s-obsidian">
+<header>
+<h1 data-note-icon="">002-小程序文档</h1>
+<div class="header-meta">
+<div class="header-tags">
+</div>
+<div class="timestamps"><div><i icon-name="calendar-plus"></i> <span class="human-date" data-date="2025-06-09T10:30:40.078+08:00"></span></div><div><i icon-name="calendar-clock"></i> <span class="human-date" data-date="2025-03-26T14:06:55.000+08:00"></span></div></div></div>
+</header>
+<p>腾讯文档链接：<a href="https://docs.qq.com/desktop/mydoc/folder/HgQPbVAGMFNS" target="_blank" class="external-link">腾讯文档</a></p>
+<p><picture src="/img/user/czc%E7%9F%A5%E8%AF%86%E5%BA%93/%E6%9D%82%E4%B8%83%E6%9D%82%E5%85%AB/9-%E9%99%84%E4%BB%B6/%E9%99%84%E4%BB%B6/002-%E5%B0%8F%E7%A8%8B%E5%BA%8F%E6%96%87%E6%A1%A3_image.png" alt="002-小程序文档_image.png"><source media="(max-width:480px)" srcset="/img/optimized/QCZILkoGB9-500.webp" type="image/webp">
+<source media="(max-width:480px)" srcset="/img/optimized/QCZILkoGB9-500.jpeg">
+<source media="(max-width:1920px)" srcset="/img/optimized/QCZILkoGB9-700.webp" type="image/webp"><source media="(max-width:1920px)" srcset="/img/optimized/QCZILkoGB9-700.jpeg"><img class="" src="/img/user/czc%E7%9F%A5%E8%AF%86%E5%BA%93/%E6%9D%82%E4%B8%83%E6%9D%82%E5%85%AB/9-%E9%99%84%E4%BB%B6/%E9%99%84%E4%BB%B6/002-%E5%B0%8F%E7%A8%8B%E5%BA%8F%E6%96%87%E6%A1%A3_image.png" alt="002-小程序文档_image.png" width=""></picture></p>
+<h2 id="微信小程序" tabindex="-1">微信小程序</h2>
+<h4 id="家长发布订单页面" tabindex="-1">家长发布订单页面</h4>
+<ul>
+<li>学员订单：信息填写页面（订单编号自动生成）
+<ul>
+<li>联系电话</li>
+<li>地址：所在区域（<strong>如何调用地图位置选择接口</strong>选择位置到区，<a class="internal-link" target="" data-note-icon="" href="/搞钱/2-项目/9-已死项目/家教创业项目/小程序项目/杂/地图接口调用方法/">地图接口调用方法</a>）</li>
+<li>地址：填写小区或街道名</li>
+<li>---- 分割线 ----</li>
+<li>家教方式：线下上门、线上、不限</li>
+<li>家教科目：<a class="internal-link" target="" data-note-icon="" href="/搞钱/2-项目/9-已死项目/家教创业项目/小程序项目/杂/科目列表/">科目列表</a></li>
+<li>家教薪酬：选择意向出价，附加<a class="internal-link" target="" data-note-icon="" href="/搞钱/2-项目/9-已死项目/家教创业项目/小程序项目/杂/薪酬参考信息/">薪酬参考信息</a></li>
+<li>家教时间：如周一到周五晚上7-9点.</li>
+<li>学院概况：如性别,年级,科目,成绩等..（文本框）</li>
+<li>教员要求：如性别,性格,资历,经验等..（文本框）</li>
+</ul>
+</li>
+<li>订单详情页面：信息填写完毕后的订单详情页面
+<ul>
+<li>发布订单后弹出长按二维码关注家教公众号获取后续教员简历投递信息
+<ul>
+<li>弹出公众号二维码</li>
+<li>后续订单相关信息通过公众号向学员发送通知</li>
+</ul>
+</li>
+<li>订单审核 [[文档_image-1.png]]</li>
+<li>提供订单修改功能</li>
+<li>提供订单删除功能
+<ul>
+<li>删除后订单显示已失效，</li>
+<li>提供重新提交订单功能（保留用户原信息）</li>
+<li>删除订单后，保留历史记录至“已失效订单”列表，支持一键复制重新发布。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="教员入驻认证" tabindex="-1">教员入驻认证</h4>
+<ul>
+<li>基本信息
+<ul>
+<li>姓名、性别、电话、现居区域</li>
+<li>我的教龄</li>
+<li>任教科目：表格多选：<a class="internal-link" target="" data-note-icon="" href="/搞钱/2-项目/9-已死项目/家教创业项目/小程序项目/杂/科目列表/">科目列表</a></li>
+<li>任教方式</li>
+<li>期望薪酬</li>
+<li>期望任教时间：表格多选</li>
+</ul>
+</li>
+<li>简历信息描述
+<ul>
+<li>个人介绍</li>
+<li>任教经验</li>
+<li>证书描述</li>
+</ul>
+</li>
+<li>教员信息认证
+<ul>
+<li>身份认证：身份证人像面、国徽面（<a class="internal-link" target="" data-note-icon="" href="/搞钱/2-项目/9-已死项目/家教创业项目/小程序项目/杂/身份证自动认证/">身份证自动认证</a>）</li>
+<li>资历认证
+<ul>
+<li>学生证/学历证：封面、内页</li>
+<li>教师证：选填</li>
+<li>教员头像</li>
+</ul>
+</li>
+<li>认证声明 ：折叠区块<br>
+注：上传的图片不要大于25M<br>
+1:平台仅接受在读大学生、研究生、毕业生等兼职教员入驻，以及拥有教师资格证、但非在校在职在岗的专职教员入驻。<br>
+2:为保障学员权益、教员资历问题、相关责任向题，平台中间方需审核您的相关证件信息。<br>
+3:教员入驻完全自愿原则，入驻即同意上传相关证件，并保证证件真实性，否则请勿入驻。<br>
+4:平台对证件及姓名作隐私保护，仅展示头像。从学员角度和醒目角度考虑，建议上传真人头像，如不想上传展示真人头像，则选择平台预制的卡通头像即可，请勿上传风景等非人物形象图。通过认证后，教员还将拥有简历是否展示的自主操作权。<br>
+5:<strong>上传学生证即定格大学生教员</strong>，以此类推，因部分证件内页无法鉴别院校，故统一需提交一份证件封面图，专职教员需上传教师证并有一定教龄。<br>
+6:身份信息一经提交不可更改更换;认证显示未通过时，资历证书和头像可调整补充；认证显示已通过时无法作任何更改。如您认为有修改的必要性，可联系客服驳回认证。如您有取消入驻需求，可联系客服注销，注销前需核对您是否有过接单行为或遗留问题，时间为1-15工作日。</li>
+<li>提交入驻 按钮</li>
+</ul>
+</li>
+</ul>
+<h4 id="找老师功能" tabindex="-1">找老师功能</h4>
+<p>家长在此页面找意向老师</p>
+<ul>
+<li>页面呈现符合筛选条件的所有教员
+<ul>
+<li>默认排序：评分 &gt; 距离 &gt; 价格（符合家长决策习惯）</li>
+<li>教员显示基本信息：头像、姓名、性别、身份、学校、家教区域、科目 [[002-文档_image.png]] 例如：</li>
+</ul>
+</li>
+</ul>
+<div class="callout is-collapsible is-collapsed" data-callout="teacher"><div class="callout-title"><div class="callout-title-inner"> 甘教员<br></div><div class="callout-fold"><i icon-name="chevron-down"></i></div></div>
+<div class="callout-content">
+<p>
+<strong>性别</strong>: 女 | <strong>身份</strong>: 大学生教员<br>
+<strong>学校</strong>: 南昌师范学院 | <strong>区域</strong>: 章贡区<br>
+<strong>科目</strong>:</p>
+<ul>
+<li>初中英语</li>
+<li>小学全科<br>
+<strong>最近登录</strong>: 今天</li>
+</ul>
+</div></div>
+<ul>
+<li>教员页面
+<ul>
+<li>显示教员详细信息：家教方式、区域、科目、家教时间、期望薪资、自我介绍、任教经验、所获证书 [[002-文档_image-1.png]]</li>
+<li>页面下面提供
+<ul>
+<li>预约该教员：
+<ul>
+<li>同<strong>发布订单页面</strong>，</li>
+<li>填写完信息后，提交审核，</li>
+<li>审核后订单直接指定发送给教员公众号和小程序</li>
+<li>等待教员响应（现时1天？）</li>
+</ul>
+</li>
+<li>咨询专员（客服）：弹出客服（x老师）微信</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="找学员功能" tabindex="-1">找学员功能</h4>
+<ul>
+<li>页面呈现所有学生基本信息：科目、薪酬、学生简介、位置
+<ul>
+<li>教员点击后进入学生信息详情页面 <a class="internal-link is-unresolved" href="/404" target=""> 100</a></li>
+<li>接单功能
+<ul>
+<li>如果不是教员显示请先注册教员</li>
+<li>是教员可点击接单</li>
+<li><mark>接单后的逻辑是怎么样？？？</mark></li>
+</ul>
+</li>
+<li>咨询专员</li>
+</ul>
+</li>
+</ul>
+<h4 id="个人主页" tabindex="-1">个人主页</h4>
+<ul>
+<li>创建订单</li>
+<li>我的订单</li>
+<li>收藏教员</li>
+<li>家教说明：<br>
+<strong>发布家教需求</strong><br>
+发布方式：微信搜索或收藏小程序<br>
+免费发布：首页点免费发布订单，随后专员电话或微信回访您核对，确认后，订单对所有教员展示<br>
+<strong>开始家教流程</strong><br>
+1.指定教员：教员查看订单后，提交任教意愿，专员筛选更符合您要求的教员。您也可以指定教员，并发送其简历给您查看，您表达认可后，通知该教员主动与您联系、教员开始与您对接。<br>
+2.家教开始：教员与您联系时会沟通学员情况、时间及费用等，双方达成一致后，准备第一次上课。<br>
+3.关于试课：家长对教员不了解希望试课的，首次上课上满2小时，其中免费试课1小时，另需支付1小时薪<br>
+酬。满意的后续按正常课时继续；不满意则后续不再去，不满意的可联系专员重新指派新教员。<br>
+4.关于薪酬：薪酬代表教员每小时收费,次数代表一周去几次。一般去一次不低于2小时起不同星级教<br>
+员课时费不同。没有另行约定的话都是当天结算，您只需当天当面支付给教员课时费，无其他费用。<br>
+5.教员星级：<br>
+大学生教员 === [在校本科生-有一定经验]<br>
+研究生教员 === [在校研究生-有一定经验]<br>
+普通教员 ==== [已毕业教员-有一定经验]<br>
+专职教员 ==== [教师资格证-有丰富经验，非在职在岗]<br>
+教员通过了实名和学历院校一致性认证,为尊重教员<br>
+个人意愿和隐私，头像不强制上传真人头像</li>
+</ul>
+<h2 id="常见问题（来源于小先生家教）" tabindex="-1">常见问题（来源于小先生家教）</h2>
+<div class="callout is-collapsible is-collapsed" data-callout="note"><div class="callout-title"><div class="callout-title-inner"> 接单必读</div><div class="callout-fold"><i icon-name="chevron-down"></i></div></div>
+<div class="callout-content">
+<p>
+</p><p>出于对所有老师的信任与善意<br>
+本平台采用信息费后付模式，试课前无需预付任何费<br>
+用本文对接单流程/信息费细则/逃单问题进行了详细说明请务必仔细阅读！</p>
+<p><picture src="/img/user/czc%E7%9F%A5%E8%AF%86%E5%BA%93/%E6%9D%82%E4%B8%83%E6%9D%82%E5%85%AB/9-%E9%99%84%E4%BB%B6/%E9%99%84%E4%BB%B6/002-%E6%96%87%E6%A1%A3_image-3.png" alt="002-文档_image-3.png"><source media="(max-width:480px)" srcset="/img/optimized/0JSm1LsGHk-500.webp" type="image/webp">
+<source media="(max-width:480px)" srcset="/img/optimized/0JSm1LsGHk-500.jpeg">
+<source media="(max-width:1920px)" srcset="/img/optimized/0JSm1LsGHk-590.webp" type="image/webp"><source media="(max-width:1920px)" srcset="/img/optimized/0JSm1LsGHk-590.jpeg"><img class="" src="/img/user/czc%E7%9F%A5%E8%AF%86%E5%BA%93/%E6%9D%82%E4%B8%83%E6%9D%82%E5%85%AB/9-%E9%99%84%E4%BB%B6/%E9%99%84%E4%BB%B6/002-%E6%96%87%E6%A1%A3_image-3.png" alt="002-文档_image-3.png" width=""></picture></p>
+<p><picture src="/img/user/czc%E7%9F%A5%E8%AF%86%E5%BA%93/%E6%9D%82%E4%B8%83%E6%9D%82%E5%85%AB/9-%E9%99%84%E4%BB%B6/%E9%99%84%E4%BB%B6/002-%E6%96%87%E6%A1%A3_image-4.png" alt="002-文档_image-4.png"><source media="(max-width:480px)" srcset="/img/optimized/No07qMysNG-500.webp" type="image/webp">
+<source media="(max-width:480px)" srcset="/img/optimized/No07qMysNG-500.jpeg">
+<source media="(max-width:1920px)" srcset="/img/optimized/No07qMysNG-598.webp" type="image/webp"><source media="(max-width:1920px)" srcset="/img/optimized/No07qMysNG-598.jpeg"><img class="" src="/img/user/czc%E7%9F%A5%E8%AF%86%E5%BA%93/%E6%9D%82%E4%B8%83%E6%9D%82%E5%85%AB/9-%E9%99%84%E4%BB%B6/%E9%99%84%E4%BB%B6/002-%E6%96%87%E6%A1%A3_image-4.png" alt="002-文档_image-4.png" width=""></picture></p>
+<p><picture src="/img/user/czc%E7%9F%A5%E8%AF%86%E5%BA%93/%E6%9D%82%E4%B8%83%E6%9D%82%E5%85%AB/9-%E9%99%84%E4%BB%B6/%E9%99%84%E4%BB%B6/002-%E6%96%87%E6%A1%A3_image-5.png" alt="002-文档_image-5.png"><source media="(max-width:480px)" srcset="/img/optimized/yq5NO0v-M8-500.webp" type="image/webp">
+<source media="(max-width:480px)" srcset="/img/optimized/yq5NO0v-M8-500.jpeg">
+<source media="(max-width:1920px)" srcset="/img/optimized/yq5NO0v-M8-587.webp" type="image/webp"><source media="(max-width:1920px)" srcset="/img/optimized/yq5NO0v-M8-587.jpeg"><img class="" src="/img/user/czc%E7%9F%A5%E8%AF%86%E5%BA%93/%E6%9D%82%E4%B8%83%E6%9D%82%E5%85%AB/9-%E9%99%84%E4%BB%B6/%E9%99%84%E4%BB%B6/002-%E6%96%87%E6%A1%A3_image-5.png" alt="002-文档_image-5.png" width=""></picture></p>
+</div></div>
+<div class="callout is-collapsible is-collapsed" data-callout="note"><div class="callout-title"><div class="callout-title-inner"> 用户必读<br></div><div class="callout-fold"><i icon-name="chevron-down"></i></div></div>
+<div class="callout-content">
+<p>
+<picture src="/img/user/czc%E7%9F%A5%E8%AF%86%E5%BA%93/%E6%9D%82%E4%B8%83%E6%9D%82%E5%85%AB/9-%E9%99%84%E4%BB%B6/%E9%99%84%E4%BB%B6/%E7%94%A8%E6%88%B7%E5%BF%85%E8%AF%BB_image.png" alt="用户必读_image.png"><source media="(max-width:480px)" srcset="/img/optimized/Jxt35jIFcb-500.webp" type="image/webp">
+<source media="(max-width:480px)" srcset="/img/optimized/Jxt35jIFcb-500.jpeg">
+<source media="(max-width:1920px)" srcset="/img/optimized/Jxt35jIFcb-587.webp" type="image/webp"><source media="(max-width:1920px)" srcset="/img/optimized/Jxt35jIFcb-587.jpeg"><img class="" src="/img/user/czc%E7%9F%A5%E8%AF%86%E5%BA%93/%E6%9D%82%E4%B8%83%E6%9D%82%E5%85%AB/9-%E9%99%84%E4%BB%B6/%E9%99%84%E4%BB%B6/%E7%94%A8%E6%88%B7%E5%BF%85%E8%AF%BB_image.png" alt="用户必读_image.png" width=""></picture></p>
+</div></div>
+<div class="callout is-collapsible is-collapsed" data-callout="note"><div class="callout-title"><div class="callout-title-inner"> 注意事项<br></div><div class="callout-fold"><i icon-name="chevron-down"></i></div></div>
+<div class="callout-content">
+<p>
+<picture src="/img/user/czc%E7%9F%A5%E8%AF%86%E5%BA%93/%E6%9D%82%E4%B8%83%E6%9D%82%E5%85%AB/9-%E9%99%84%E4%BB%B6/%E9%99%84%E4%BB%B6/%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9_image.png" alt="注意事项_image.png"><source media="(max-width:480px)" srcset="/img/optimized/nnZqEBvnOK-500.webp" type="image/webp">
+<source media="(max-width:480px)" srcset="/img/optimized/nnZqEBvnOK-500.jpeg">
+<source media="(max-width:1920px)" srcset="/img/optimized/nnZqEBvnOK-595.webp" type="image/webp"><source media="(max-width:1920px)" srcset="/img/optimized/nnZqEBvnOK-595.jpeg"><img class="" src="/img/user/czc%E7%9F%A5%E8%AF%86%E5%BA%93/%E6%9D%82%E4%B8%83%E6%9D%82%E5%85%AB/9-%E9%99%84%E4%BB%B6/%E9%99%84%E4%BB%B6/%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9_image.png" alt="注意事项_image.png" width=""></picture></p>
+</div></div>
+<div class="callout is-collapsible is-collapsed" data-callout="note"><div class="callout-title"><div class="callout-title-inner"> 家长吐槽</div><div class="callout-fold"><i icon-name="chevron-down"></i></div></div>
+<div class="callout-content">
+<p>
+</p><h3 id="分享一些来自家长的吐槽点" tabindex="-1">分享一些来自家长的吐槽点</h3>
+<p></p><p>在过往的交流中，来自家长的怨言最集中的有以下几点:<br>
+1、迟到或卡着点到（包括在线辅导也存在迟到现象）。<br>
+2、辅导作业有错误。<br>
+3、辅导期间，辅导老师玩手机以及电子产品（如电子书或平板）。<br>
+4、辅导没有条理和控制力，容易被孩子带着走。<br>
+5、上门辅导空着手，让人感觉没有准备。<br>
+6、口气严重。虽然讲课讲得很好，但是口气太重,多次辅导后，学生由于无法忍受，要求换辅导老师。<br>
+7、辅导小学生多数是要辅导全科的，数学、英语的辅导，对很多辅导老师来讲，通常没有障碍。最有问题的是语文阅读理解和作文。一部分辅导老师在遇到情况之后，回去会有意识地准备，一部分每次都含糊过去，最终导致家长要换人。建议辅导老师在这方面多注意。<br>
+8、辅导过程中只顾赶作业，没有注意学习习惯的培养。家长找家教除了检查作业，解答错题之外，还希望能注重学习习惯的培养。<br>
+9、辅导没有计划，未能充分利用时间。如果遇到学生作业少的时候，早早写完作业，老师就不知道该做什么了。<br>
+10、有些家长，会在辅导间隙给辅导老师一些水果点心之类的吃。但是能不能要，辅导老师要自己拿捏。我们曾经接到投诉，对方的理由之一就是给辅导老师东西，辅导老师就吃了，还吃完了一盘。这是真事。我们不便有什么评价，只能陈述事实。<br>
+11、着装问题：脏辫，浓妆，着装暴露等。偶尔一次还能理解，可能课后有别的活动，多次这样的话，容易被辞退。对于来自学生家长的这些吐槽之处，我们与其有情绪来争辩，不如想一想怎样避免这样的事情发生在自己身上。在穿着与化妆这一方面，抛开对学生的影响,女辅导老师更多要考虑的其实是对自己的保护。<br>
+12、最难的，莫过于人事，诸多点点滴滴，错综复杂，是与非往往没有明确的界限，要是较真起来，似乎各方都可以有理有据。每个人都会觉得自己是委屈的一方。有时候你会发现，并不存在吃亏以及占便宜的说法。付出一定有回报，好与坏，都是人，终究还是自己与自己的纠缠。不妨开阔一点,多审视自己。我们见过太多无助的家长，苦于孩子总不进步，觉得没有遇到有责任心的老师。也见过太多辛苦的辅导老师，用心地做着每一件事，即使不再辅导，家长都会感叹难再找到这样的老师。其实大家都是过了高考这一关的人，能力都在，区别就是态度，如同备课、刷题、不迟到等等这些细节。</p>
+<p>有的人一个学生能带三年，家长还介绍辅导朋友家的孩子。有的人则很快就被换掉。</p>
+<p>我们都不易，无论怎样的天气，都有辅导老师有坐一个小时甚至半小时的车去做家教。有的人整个寒暑假都少有闲暇。然而社会就是社会，仅仅是汗水，并不一定就能获得尊重。抛开运气的成分，尊重往往是赢得的。只有真的用心，才能赢得尊重。</p>
+<p>愿我们的每一份付出，都能得到善待。愿我们不辜负每一颗怀有期望的心。愿我们能尊重辅导这项兼职工作，也为自己赢得尊重。</p>
+<p>前路漫漫，道阻且长，与君共勉!</p>
+</div></div>
+<div class="callout is-collapsible is-collapsed" data-callout="note"><div class="callout-title"><div class="callout-title-inner"> 优秀老师心得</div><div class="callout-fold"><i icon-name="chevron-down"></i></div></div>
+<div class="callout-content">
+<p>
+</p><h3 id="分享优秀辅导老师的一些细节" tabindex="-1">分享优秀辅导老师的一些细节</h3>
+<p></p><p>1、有备课<br>
+2、有买课本以及辅导书的习惯。有很多人每接单一份家教后，就迅速买了课本和书籍。这样确实能让以后的家教过程更节省时间。<br>
+3、有刷题的习惯，准备充足，辅导的时候更得心应手。<br>
+4、每次家教结束之后都会跟家长当面，或短信，微信等交流一下，说一下学生当天的情况。</p>
+<p>无论是准备教材或辅导书，还是备课，以及刷题，其实占用不了多少时间和精力，但是有准备和没有准备，差别还是很明显的。</p>
+<p>这是一份兼职，即工作，在大学生所有的兼职工作中，家教这份工作，相对来说还是比较体面，且回报也比较可观的一种。</p>
+<p>希望大家能珍惜。</p>
+</div></div>
+<hr>
+<hr>
+<h1 id="下面是乱七八糟的东西" tabindex="-1">下面是乱七八糟的东西</h1>
+<div class="callout is-collapsible is-collapsed" data-callout="note"><div class="callout-title"><div class="callout-title-inner"> AI生成的/，。，/，。，/。，/。，</div><div class="callout-fold"><i icon-name="chevron-down"></i></div></div>
+<div class="callout-content">
+<p>
+</p><h3 id="strong-strong" tabindex="-1"><strong>一、平台定位与核心功能设计</strong></h3>
+<h4 id="strong-1-strong" tabindex="-1"><strong>1. 平台定位</strong></h4>
+<ul>
+<li>
+<p><strong>核心价值</strong>：透明低佣、试课无忧、教学可控</p>
+</li>
+<li>
+<p><strong>用户角色</strong>：</p>
+<ul>
+<li>
+<p><strong>家长</strong>：快速匹配靠谱老师，试课不满意可退款</p>
+</li>
+<li>
+<p><strong>教师</strong>：灵活接单，积累教学履历，获得平台背书</p>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="strong-2-mvp-strong" tabindex="-1"><strong>2. 微信小程序核心功能（MVP版本）</strong></h4>
+<table>
+<thead>
+<tr>
+<th><strong>模块</strong></th>
+<th><strong>功能点</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>用户端（家长）</strong></td>
+<td>1. 教师信息展示（学历/评分/试课价格） <br>2. 试课预约（时间、科目、学生年级） <br>3. 试课担保支付（微信支付接口） <br>4. 评价体系（试课后打分+文字反馈） <br>5. 订单跟踪（上课进度、教师更换申请）</td>
+</tr>
+<tr>
+<td><strong>教师端</strong></td>
+<td>1. 资料认证（学生证/教师资格证上传） <br>2. 接单管理（试课预约确认/拒绝） <br>3. 课时记录（手动填写或小程序打卡） <br>4. 提现功能（绑定微信支付）</td>
+</tr>
+<tr>
+<td><strong>平台管理端</strong></td>
+<td>1. 教师审核（后台人工审核） <br>2. 投诉处理（家长/教师纠纷介入） <br>3. 数据看板（成交单数、退款率）</td>
+</tr>
+</tbody>
+</table>
+<h4 id="strong-3-strong" tabindex="-1"><strong>3. 微信公众号配套功能</strong></h4>
+<ul>
+<li>
+<p><strong>内容运营</strong>：推送《如何判断家教质量》《小学生学习方法》等干货，吸引家长关注</p>
+</li>
+<li>
+<p><strong>服务入口</strong>：菜单栏直链小程序，提供“紧急投诉”人工客服通道</p>
+</li>
+<li>
+<p><strong>社群引流</strong>：通过公众号引导家长加入区域互助群（如“北京海淀区小学家长群”）</p>
+</li>
+</ul>
+<p></p></div></div>
+<div class="callout is-collapsible is-collapsed" data-callout="note"><div class="callout-title"><div class="callout-title-inner"> DeepSeek给的项目方案思路 deepseek方案</div><div class="callout-fold"><i icon-name="chevron-down"></i></div></div>
+<div class="callout-content">
+<p>
+</p><h3 id="strong-strong-1" tabindex="-1"><strong>一、平台定位与核心功能设计</strong></h3>
+<h4 id="strong-1-strong-1" tabindex="-1"><strong>1. 平台定位</strong></h4>
+<ul>
+<li>
+<p><strong>核心价值</strong>：透明低佣、试课无忧、教学可控</p>
+</li>
+<li>
+<p><strong>用户角色</strong>：</p>
+<ul>
+<li>
+<p><strong>家长</strong>：快速匹配靠谱老师，试课不满意可退款</p>
+</li>
+<li>
+<p><strong>教师</strong>：灵活接单，积累教学履历，获得平台背书</p>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="strong-2-mvp-strong-1" tabindex="-1"><strong>2. 微信小程序核心功能（MVP版本）</strong></h4>
+<table>
+<thead>
+<tr>
+<th><strong>模块</strong></th>
+<th><strong>功能点</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>用户端（家长）</strong></td>
+<td>1. 教师信息展示（学历/评分/试课价格） <br>2. 试课预约（时间、科目、学生年级） <br>3. 试课担保支付（微信支付接口） <br>4. 评价体系（试课后打分+文字反馈） <br>5. 订单跟踪（上课进度、教师更换申请）</td>
+</tr>
+<tr>
+<td><strong>教师端</strong></td>
+<td>1. 资料认证（学生证/教师资格证上传） <br>2. 接单管理（试课预约确认/拒绝） <br>3. 课时记录（手动填写或小程序打卡） <br>4. 提现功能（绑定微信支付）</td>
+</tr>
+<tr>
+<td><strong>平台管理端</strong></td>
+<td>1. 教师审核（后台人工审核） <br>2. 投诉处理（家长/教师纠纷介入） <br>3. 数据看板（成交单数、退款率）</td>
+</tr>
+</tbody>
+</table>
+<h4 id="strong-3-strong-1" tabindex="-1"><strong>3. 微信公众号配套功能</strong></h4>
+<ul>
+<li>
+<p><strong>内容运营</strong>：推送《如何判断家教质量》《小学生学习方法》等干货，吸引家长关注</p>
+</li>
+<li>
+<p><strong>服务入口</strong>：菜单栏直链小程序，提供“紧急投诉”人工客服通道</p>
+</li>
+<li>
+<p><strong>社群引流</strong>：通过公众号引导家长加入区域互助群（如“北京海淀区小学家长群”）</p>
+</li>
+</ul>
+<hr>
+<h3 id="strong-strong-2" tabindex="-1"><strong>二、防跳单与信任机制落地</strong></h3>
+<h4 id="strong-1-strong-2" tabindex="-1"><strong>1. 试课担保流程（关键！）</strong></h4>
+<ol>
+<li>
+<p>家长在小程序支付试课费（例如100元） → 平台冻结款项</p>
+</li>
+<li>
+<p>教师接单并完成试课 → 家长24小时内确认试课结果</p>
+</li>
+<li>
+<p><strong>若满意</strong>：试课费转为正式课时费（教师可提现，平台抽成10%）</p>
+</li>
+<li>
+<p><strong>若不满意</strong>：平台全额退款，并免费重新匹配教师</p>
+</li>
+</ol>
+<h4 id="strong-2-strong" tabindex="-1"><strong>2. 跳单预防设计</strong></h4>
+<ul>
+<li>
+<p><strong>隐性约束</strong>：</p>
+<ul>
+<li>
+<p>教师接单需缴纳100元信用保证金（可退），若被发现跳单则扣除；</p>
+</li>
+<li>
+<p>家长端显示“通过平台续费可享受投诉优先处理权益”。</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>显性约束</strong>：<br>
+用户注册时勾选协议：“私下交易需赔偿平台3倍佣金”（法律威慑为主，实际执行成本高）。</p>
+</li>
+</ul>
+<h4 id="strong-3-strong-2" tabindex="-1"><strong>3. 信任背书</strong></h4>
+<ul>
+<li>
+<p><strong>教师认证</strong>：<br>
+大学生需上传学生证+成绩单，在职教师需教师资格证</p>
+</li>
+<li>
+<p><strong>学习报告</strong>：<br>
+教师每5次课需提交简要教学总结（小程序端30字+图片），家长可随时查看</p>
+</li>
+</ul>
+<hr>
+<h3 id="strong-strong-3" tabindex="-1"><strong>三、冷启动执行策略（低成本获客）</strong></h3>
+<h4 id="strong-1-strong-3" tabindex="-1"><strong>1. 教师端招募</strong></h4>
+<ul>
+<li>
+<p><strong>目标渠道</strong>：</p>
+<ul>
+<li>
+<p>大学学生会/社团合作（提供“实习证明”吸引大学生）</p>
+</li>
+<li>
+<p>豆瓣小组/闲鱼“家教接单”帖评论区定向私信</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>认证激励</strong>：<br>
+完成资料认证的教师可获“平台优先推荐”，前100名教师免信用保证金</p>
+</li>
+</ul>
+<h4 id="strong-2-strong-1" tabindex="-1"><strong>2. 家长端获客</strong></h4>
+<ul>
+<li>
+<p><strong>精准地推</strong>：<br>
+在小学周边发放“免费试课券”（扫码跳转小程序领取，每张券平台补贴30元）</p>
+</li>
+<li>
+<p><strong>社群裂变</strong>：<br>
+家长邀请3人注册小程序可得“1次教师更换特权”</p>
+</li>
+<li>
+<p><strong>KOL合作</strong>：<br>
+联系本地育儿博主，免费提供家教测评服务换取推广</p>
+</li>
+</ul>
+<h4 id="strong-3-strong-3" tabindex="-1"><strong>3. 数据闭环验证</strong></h4>
+<ul>
+<li>
+<p><strong>关键指标</strong>：<br>
+1周内招募50名教师、100名家长，试课转化率&gt;30%</p>
+</li>
+<li>
+<p><strong>失败预案</strong>：<br>
+若转化率&lt;10%，调整为“家长推荐教师返现金”模式</p>
+</li>
+</ul>
+<hr>
+<h3 id="strong-strong-4" tabindex="-1"><strong>四、开发成本与执行步骤</strong></h3>
+<h4 id="strong-1-1-3-strong" tabindex="-1"><strong>1. 开发成本控制（总预算约1-3万元）</strong></h4>
+<ul>
+<li>
+<p><strong>小程序开发</strong>：<br>
+使用模板（如微盟、有赞）或找兼职开发者（推荐！），费用约0.5-2万</p>
+</li>
+<li>
+<p><strong>公众号</strong>：<br>
+认证费300元+基础内容排版（自行操作）</p>
+</li>
+<li>
+<p><strong>服务器与支付接口</strong>：<br>
+微信支付费率0.6%，云服务器首年约500元（学生认证优惠）</p>
+</li>
+</ul>
+<h4 id="strong-2-strong-2" tabindex="-1"><strong>2. 执行步骤</strong></h4>
+<ol>
+<li>
+<p><strong>Day 1-7</strong>：注册微信公众平台+小程序账号，确定UI设计原型（可用墨刀/Figma画草图）</p>
+</li>
+<li>
+<p><strong>Day 8-14</strong>：开发MVP小程序（仅核心功能：教师展示、试课支付、评价）</p>
+</li>
+<li>
+<p><strong>Day 15-21</strong>：冷启动招募种子教师（重点突破1-2所大学）</p>
+</li>
+<li>
+<p><strong>Day 22-30</strong>：地推+社群裂变获取首批家长用户</p>
+</li>
+</ol>
+<h4 id="strong-3-strong-4" tabindex="-1"><strong>3. 迭代计划</strong></h4>
+<ul>
+<li>
+<p><strong>V1.1版本</strong>：增加教师课时打卡功能（手动填写，避免强制定位）</p>
+</li>
+<li>
+<p><strong>V1.2版本</strong>：上线“在线签约”模板（通过腾讯电子签接口）</p>
+</li>
+<li>
+<p><strong>V1.3版本</strong>：接入学习报告自动生成工具（基于教师输入的关键词）</p>
+</li>
+</ul>
+<hr>
+<h3 id="strong-strong-5" tabindex="-1"><strong>五、风险与应对</strong></h3>
+<ul>
+<li>
+<p><strong>教师质量不稳定</strong>：<br>
+设立“教师考试”（例如上传5分钟试讲视频，由平台审核）</p>
+</li>
+<li>
+<p><strong>家长过度退款</strong>：<br>
+设定“每位家长仅限2次免费退款”，后续退款扣10%手续费</p>
+</li>
+<li>
+<p><strong>竞品模仿</strong>：<br>
+快速建立区域化壁垒（例如专注海淀区，与本地托管机构合作）</p>
+</li>
+</ul>
+<hr>
+<h3 id="strong-strong-6" tabindex="-1"><strong>最后建议</strong></h3>
+<ol>
+<li>
+<p><strong>先做小程序，暂不做APP</strong>：微信生态足以支撑初期用户</p>
+</li>
+<li>
+<p><strong>严格把控教师审核</strong>：前100名教师亲自电话面试，确保口碑</p>
+</li>
+<li>
+<p><strong>坚持“单点突破”</strong>：初期只做小学语数外，拒绝过早扩张科目</p>
+</li>
+</ol>
+<p></p><p>如果需要更详细的功能原型图或推广话术模板，可以告诉我！</p>
+</div></div>
+<div class="callout is-collapsible is-collapsed" data-callout="note"><div class="callout-title"><div class="callout-title-inner"> <strong>一、UI设计稿（关键页面说明）</strong></div><div class="callout-fold"><i icon-name="chevron-down"></i></div></div>
+<div class="callout-content">
+<p>
+</p><h4 id="strong-1-strong-4" tabindex="-1"><strong>1. 首页设计（绿色主题）</strong></h4>
+<p></p><p><strong>配色方案</strong>：主色#4CAF50（活力绿），辅色#FFFFFF（纯白）+ <a class="tag" onclick="toggleTagSearch(this)" data-content="#333333（深灰）">#333333（深灰）</a><br>
+<strong>元素布局</strong>：</p>
+<ul>
+<li>
+<p><strong>顶部Banner</strong>：<br>
+![Banner图] 大树图标+标语“让学习自然成长”</p>
+</li>
+<li>
+<p><strong>双入口按钮</strong>：</p>
+<ul>
+<li>
+<p>学生/家长入口：蓝色按钮（#2196F3），文案“找老师，立即试课”</p>
+</li>
+<li>
+<p>教师入口：绿色按钮（#4CAF50），文案“注册接单，轻松赚钱”</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>功能导航</strong>：</p>
+<ul>
+<li>
+<p>滚动公告：“新用户送2次免费试课！”</p>
+</li>
+<li>
+<p>快捷入口图标：试课流程说明、教师排行榜</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>![首页原型图示意]</p>
+<pre><code class="language-plaintext">+-----------------------------------+  
+|            🌳 让学习自然成长       |  
+|           [Banner图片]           |  
++-----------------------------------+  
+| [找老师，立即试课]  [注册接单，轻松赚钱] |  
+|                                   |  
+| 🔔 新用户送2次免费试课！            |  
+| 📖 试课流程   🏆 教师排行榜          |  
++-----------------------------------+  
+</code></pre>
+<hr>
+<h4 id="strong-2-strong-3" tabindex="-1"><strong>2. 学生/家长注册页</strong></h4>
+<p><strong>核心字段</strong>：</p>
+<ul>
+<li>
+<p>身份选择（学生/家长）</p>
+</li>
+<li>
+<p>学生年级（下拉选择：小学1-6年级）</p>
+</li>
+<li>
+<p>科目需求（多选框：语文、数学、英语、科学）</p>
+</li>
+<li>
+<p>联系方式（自动读取微信绑定手机号）</p>
+</li>
+</ul>
+<p><strong>交互设计</strong>：</p>
+<ul>
+<li>
+<p>步骤进度条显示（1/3步）</p>
+</li>
+<li>
+<p>“下一步”按钮高亮（#4CAF50），未填写完成时置灰</p>
+</li>
+</ul>
+<p>![注册页原型图示意]</p>
+<pre><code class="language-plaintext">+-----------------------------------+  
+|           学生/家长注册 (1/3)       |  
++-----------------------------------+  
+| 身份：○ 学生   ○ 家长               |  
+| 年级：[请选择年级 ▼]                |  
+| 科目：□ 语文  □ 数学  □ 英语  □ 科学 |  
+|                                   |  
+|        [下一步]                    |  
++-----------------------------------+  
+
+</code></pre>
+<hr>
+<h4 id="strong-3-strong-5" tabindex="-1"><strong>3. 教师资料审核页</strong></h4>
+<p><strong>核心功能</strong>：</p>
+<ul>
+<li>
+<p>证件上传区（学生证/教师资格证，支持拍照或相册选择）</p>
+</li>
+<li>
+<p>教学信息填写：可授科目、空闲时间、试课价格（参考平台建议价）</p>
+</li>
+<li>
+<p>个人简介文本框（限制200字）</p>
+</li>
+</ul>
+<p><strong>视觉提示</strong>：</p>
+<ul>
+<li>
+<p>未通过审核时显示“审核中，预计24小时内完成”</p>
+</li>
+<li>
+<p>审核通过后显示“恭喜！您可以开始接单了”</p>
+</li>
+</ul>
+<p>![教师资料页原型图示意]</p>
+<pre><code class="language-plaintext">+-----------------------------------+  
+|           教师资料认证             |  
++-----------------------------------+  
+| 上传证件：📷 [点击拍照]              |  
+| 可授科目：[数学 ▼]                 |  
+| 空闲时间：[周六下午 ▼]              |  
+| 试课价格：80元/小时（建议价70-100）  |  
+| 个人简介：[请输入您的教学优势...]     |  
+|                                   |  
+|        [提交审核]                  |  
++-----------------------------------+  
+</code></pre>
+<hr>
+<h4 id="strong-4-strong" tabindex="-1"><strong>4. 双向匹配结果页</strong></h4>
+<p><strong>信息展示</strong>：</p>
+<ul>
+<li>
+<p>教师卡片：头像、姓名、标签（如“985数学系｜3年经验”）、评分、试课价格</p>
+</li>
+<li>
+<p>筛选排序：默认“评分优先”，可选“价格从低到高”“距离最近”</p>
+</li>
+<li>
+<p>操作按钮：“立即预约”或“查看详情”</p>
+</li>
+</ul>
+<p><strong>交互细节</strong>：</p>
+<ul>
+<li>
+<p>点击教师卡片跳转详情页（包含试讲视频、过往评价）</p>
+</li>
+<li>
+<p>长按卡片可收藏教师</p>
+</li>
+</ul>
+<p>![匹配页原型图示意]</p>
+<pre><code class="language-plaintext">+-----------------------------------+  
+|           匹配结果                |  
++-----------------------------------+  
+| 排序：评分优先 ▼                   |  
+|                                   |  
+| 🧑🏫 李老师                        |  
+| 标签：985数学系｜100+课时           |  
+| 评分：⭐️⭐️⭐️⭐️⭐️ (4.9)            |  
+| 试课价：80元/小时                 |  
+| [立即预约]                        |  
++-----------------------------------+  
+</code></pre>
+</div></div>
+<div class="callout is-collapsible is-collapsed" data-callout="note"><div class="callout-title"><div class="callout-title-inner"> <strong>二、开发文档（核心模块）</strong></div><div class="callout-fold"><i icon-name="chevron-down"></i></div></div>
+<div class="callout-content">
+<p>
+</p><h4 id="strong-1-strong-5" tabindex="-1"><strong>1. 技术选型</strong></h4>
+<table>
+<thead>
+<tr>
+<th><strong>模块</strong></th>
+<th><strong>技术方案</strong></th>
+<th><strong>说明</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>前端开发</td>
+<td>Uni-App + Vue3</td>
+<td>跨平台兼容，节省开发成本</td>
+</tr>
+<tr>
+<td>后端服务</td>
+<td>腾讯云开发（CloudBase）</td>
+<td>无需自建服务器，集成数据库、云函数</td>
+</tr>
+<tr>
+<td>支付接口</td>
+<td>微信支付Native API</td>
+<td>需企业资质，费率0.6%</td>
+</tr>
+<tr>
+<td>即时通信</td>
+<td>小程序内置客服消息</td>
+<td>避免跳转微信私聊，保留平台沟通记录</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h4 id="strong-2-strong-4" tabindex="-1"><strong>2. 数据库设计（核心表结构）</strong></h4>
+<p></p><p><strong>表1：用户表（<code>user</code>）</strong></p>
+<table>
+<thead>
+<tr>
+<th>字段名</th>
+<th>类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>_id</td>
+<td>string</td>
+<td>用户ID（自动生成）</td>
+</tr>
+<tr>
+<td>role</td>
+<td>string</td>
+<td>角色（student/teacher）</td>
+</tr>
+<tr>
+<td>phone</td>
+<td>string</td>
+<td>绑定手机号</td>
+</tr>
+<tr>
+<td>audit_status</td>
+<td>int</td>
+<td>审核状态（0未审/1通过/2驳回）</td>
+</tr>
+</tbody>
+</table>
+<p><strong>表2：教师表（<code>teacher</code>）</strong></p>
+<table>
+<thead>
+<tr>
+<th>字段名</th>
+<th>类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>user_id</td>
+<td>string</td>
+<td>关联user._id</td>
+</tr>
+<tr>
+<td>certificate</td>
+<td>array</td>
+<td>证件图片URL列表</td>
+</tr>
+<tr>
+<td>subjects</td>
+<td>array</td>
+<td>可授科目（[&quot;数学&quot;,&quot;英语&quot;]）</td>
+</tr>
+<tr>
+<td>score</td>
+<td>float</td>
+<td>评分（默认5.0）</td>
+</tr>
+</tbody>
+</table>
+<p><strong>表3：订单表（<code>order</code>）</strong></p>
+<table>
+<thead>
+<tr>
+<th>字段名</th>
+<th>类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>student_id</td>
+<td>string</td>
+<td>学生用户ID</td>
+</tr>
+<tr>
+<td>teacher_id</td>
+<td>string</td>
+<td>教师用户ID</td>
+</tr>
+<tr>
+<td>status</td>
+<td>string</td>
+<td>状态（pending/success/failed）</td>
+</tr>
+<tr>
+<td>deposit</td>
+<td>float</td>
+<td>试课押金金额</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h4 id="strong-3-strong-6" tabindex="-1"><strong>3. 接口定义（示例）</strong></h4>
+<p><strong>接口1：提交教师审核</strong></p>
+<ul>
+<li>
+<p>路径：<code>/api/teacher/audit</code></p>
+</li>
+<li>
+<p>方法：POST</p>
+</li>
+<li>
+<p>参数：</p>
+</li>
+</ul>
+<pre><code class="language-json">    {  
+      &quot;userId&quot;: &quot;123&quot;,  
+      &quot;certificateUrls&quot;: [&quot;url1&quot;, &quot;url2&quot;],  
+      &quot;subjects&quot;: [&quot;数学&quot;],  
+      &quot;price&quot;: 80  
+    }  
+</code></pre>
+<ul>
+<li>响应：</li>
+</ul>
+<pre><code class="language-json">    { &quot;code&quot;: 200, &quot;msg&quot;: &quot;提交成功，预计24小时内审核&quot; }  
+</code></pre>
+<p><strong>接口2：试课押金支付</strong></p>
+<ul>
+<li>
+<p>路径：<code>/api/order/create</code></p>
+</li>
+<li>
+<p>方法：POST</p>
+</li>
+<li>
+<p>参数：</p>
+</li>
+</ul>
+<pre><code class="language-json">    {  
+      &quot;studentId&quot;: &quot;456&quot;,  
+      &quot;teacherId&quot;: &quot;123&quot;,  
+      &quot;amount&quot;: 100  
+    }  
+</code></pre>
+<ul>
+<li>响应：</li>
+</ul>
+<pre><code class="language-json">    { &quot;code&quot;: 200, &quot;data&quot;: { &quot;paymentId&quot;: &quot;TX20240324123456&quot; } }  
+</code></pre>
+<hr>
+<h4 id="strong-4-strong-1" tabindex="-1"><strong>4. 关键功能实现逻辑</strong></h4>
+<p><strong>试课担保流程</strong>：</p>
+<ol>
+<li>
+<p>家长支付押金 → 生成预订单（状态<code>pending</code>）</p>
+</li>
+<li>
+<p>教师接单 → 平台推送微信服务通知</p>
+</li>
+<li>
+<p>试课完成 → 家长确认 → 平台释放款项（教师可提现）</p>
+</li>
+<li>
+<p>若超时未确认 → 自动退款至家长账户</p>
+</li>
+</ol>
+<p><strong>防跳单逻辑</strong>：</p>
+<ul>
+<li>教师提现时校验订单状态，若存在跳单记录（如同一家长多次线下交易），冻结账户</li>
+</ul>
+<hr>
+<h3 id="strong-strong-7" tabindex="-1"><strong>三、交付资源清单</strong></h3>
+<ol>
+<li>
+<p><strong>UI设计源文件</strong>：提供Figma链接（含页面交互逻辑）</p>
+</li>
+<li>
+<p><strong>接口文档</strong>：Postman集合（包含全部API示例）</p>
+</li>
+<li>
+<p><strong>数据库初始化脚本</strong>：SQL文件（支持腾讯云开发环境）</p>
+</li>
+<li>
+<p><strong>部署指南</strong>：详细说明云函数配置、支付接口申请步骤</p>
+</li>
+</ol>
+</div></div>
+</main>
+<aside>
+<div class="sidebar">
+<div class="sidebar-container">
+<div class="toc">
+<div class="toc-title-container">
+<div class="toc-title">
+On this page
+</div>
+</div>
+<div class="toc-container">
+<nav class="toc">
+<ol>
+<li><a href="#微信小程序">微信小程序</a>
+<ol>
+<li><a href="#家长发布订单页面">家长发布订单页面</a>
+</li>
+<li><a href="#教员入驻认证">教员入驻认证</a>
+</li>
+<li><a href="#找老师功能">找老师功能</a>
+</li>
+<li><a href="#找学员功能">找学员功能</a>
+</li>
+<li><a href="#个人主页">个人主页</a>
+</li>
+</ol>
+</li>
+<li><a href="#常见问题（来源于小先生家教）">常见问题（来源于小先生家教）</a>
+<ol>
+<li><a href="#分享一些来自家长的吐槽点">分享一些来自家长的吐槽点</a>
+</li>
+<li><a href="#分享优秀辅导老师的一些细节">分享优秀辅导老师的一些细节</a>
+</li>
+</ol>
+</li>
+<li><a href="#下面是乱七八糟的东西">下面是乱七八糟的东西</a>
+<ol>
+<li><a href="#strong-strong">一、平台定位与核心功能设计</a>
+<ol>
+<li><a href="#strong-1-strong">1. 平台定位</a>
+</li>
+<li><a href="#strong-2-mvp-strong">2. 微信小程序核心功能（MVP版本）</a>
+</li>
+<li><a href="#strong-3-strong">3. 微信公众号配套功能</a>
+</li>
+</ol>
+</li>
+<li><a href="#strong-strong-1">一、平台定位与核心功能设计</a>
+<ol>
+<li><a href="#strong-1-strong-1">1. 平台定位</a>
+</li>
+<li><a href="#strong-2-mvp-strong-1">2. 微信小程序核心功能（MVP版本）</a>
+</li>
+<li><a href="#strong-3-strong-1">3. 微信公众号配套功能</a>
+</li>
+</ol>
+</li>
+<li><a href="#strong-strong-2">二、防跳单与信任机制落地</a>
+<ol>
+<li><a href="#strong-1-strong-2">1. 试课担保流程（关键！）</a>
+</li>
+<li><a href="#strong-2-strong">2. 跳单预防设计</a>
+</li>
+<li><a href="#strong-3-strong-2">3. 信任背书</a>
+</li>
+</ol>
+</li>
+<li><a href="#strong-strong-3">三、冷启动执行策略（低成本获客）</a>
+<ol>
+<li><a href="#strong-1-strong-3">1. 教师端招募</a>
+</li>
+<li><a href="#strong-2-strong-1">2. 家长端获客</a>
+</li>
+<li><a href="#strong-3-strong-3">3. 数据闭环验证</a>
+</li>
+</ol>
+</li>
+<li><a href="#strong-strong-4">四、开发成本与执行步骤</a>
+<ol>
+<li><a href="#strong-1-1-3-strong">1. 开发成本控制（总预算约1-3万元）</a>
+</li>
+<li><a href="#strong-2-strong-2">2. 执行步骤</a>
+</li>
+<li><a href="#strong-3-strong-4">3. 迭代计划</a>
+</li>
+</ol>
+</li>
+<li><a href="#strong-strong-5">五、风险与应对</a>
+</li>
+<li><a href="#strong-strong-6">最后建议</a>
+<ol>
+<li><a href="#strong-1-strong-4">1. 首页设计（绿色主题）</a>
+</li>
+<li><a href="#strong-2-strong-3">2. 学生/家长注册页</a>
+</li>
+<li><a href="#strong-3-strong-5">3. 教师资料审核页</a>
+</li>
+<li><a href="#strong-4-strong">4. 双向匹配结果页</a>
+</li>
+<li><a href="#strong-1-strong-5">1. 技术选型</a>
+</li>
+<li><a href="#strong-2-strong-4">2. 数据库设计（核心表结构）</a>
+</li>
+<li><a href="#strong-3-strong-6">3. 接口定义（示例）</a>
+</li>
+<li><a href="#strong-4-strong-1">4. 关键功能实现逻辑</a>
+</li>
+</ol>
+</li>
+<li><a href="#strong-strong-7">三、交付资源清单</a>
+</li>
+</ol>
+</li>
+</ol>
+</nav>
+</div>
+</div>
+<div class="backlinks">
+<div class="backlink-title" style="margin:4px 0!important">Pages mentioning this page</div>
+<div class="backlink-list"><div class="backlink-card"><i icon-name="link"></i><a href="/搞钱/2-项目/9-已死项目/家教创业项目/家教创业项目/" data-note-icon="" class="backlink">家教创业项目</a>
+</div></div>
+</div>
+</div>
+</div>
+</aside>
+<style>#tooltip-wrapper{background:var(--background-primary);padding:1em;border-radius:4px;overflow:hidden;position:fixed;width:80%;max-width:400px;height:auto;max-height:300px;font-size:.8em;box-shadow:0 5px 10px rgba(0,0,0,.1);opacity:0;transition:opacity .1s;unicode-bidi:plaintext;overflow-y:scroll;z-index:10}#tooltip-wrapper:after{content:"";position:absolute;z-index:1;bottom:0;left:0;pointer-events:none;width:100%;unicode-bidi:plaintext;height:75px}</style>
+<div style="opacity:0;display:none" id="tooltip-wrapper">
+<div id="tooltip-content">
+</div>
+</div>
+<iframe style="display:none;height:0;width:0" id="link-preview-iframe" src="">
+</iframe>
+<script>var opacityTimeout,contentTimeout,transitionDurationMs=100,iframe=document.getElementById("link-preview-iframe"),tooltipWrapper=document.getElementById("tooltip-wrapper"),tooltipContent=document.getElementById("tooltip-content"),linkHistories={};function hideTooltip(){opacityTimeout=setTimeout((function(){tooltipWrapper.style.opacity=0,contentTimeout=setTimeout((function(){tooltipContent.innerHTML="",tooltipWrapper.style.display="none"}),transitionDurationMs+1)}),transitionDurationMs)}function showTooltip(t){var e=t.target,o=e.getClientRects()[e.getClientRects().length-1],i=window.pageYOffset||document.documentElement.scrollTop,n=t.target.getAttribute("href");if(-1===n.indexOf("http")||-1!==n.indexOf(window.location.host)){let t=n.split("#")[0];linkHistories[t]?(tooltipContent.innerHTML=linkHistories[t],tooltipWrapper.style.display="block",setTimeout((function(){if(tooltipWrapper.style.opacity=1,-1!=n.indexOf("#")){let t=n.split("#")[1];const e=tooltipWrapper.querySelector(`[id='${t}']`);e.classList.add("referred"),e.scrollIntoView({behavior:"smooth"},!0)}else tooltipWrapper.scroll(0,0)}),1)):(iframe.src=t,iframe.onload=function(){tooltipContentHtml="",tooltipContentHtml+='<div style="font-weight: bold; unicode-bidi: plaintext;">'+iframe.contentWindow.document.querySelector("h1").innerHTML+"</div>",tooltipContentHtml+=iframe.contentWindow.document.querySelector(".content").innerHTML,tooltipContent.innerHTML=tooltipContentHtml,linkHistories[t]=tooltipContentHtml,tooltipWrapper.style.display="block",tooltipWrapper.scrollTop=0,setTimeout((function(){if(tooltipWrapper.style.opacity=1,-1!=n.indexOf("#")){let t=n.split("#")[1];const e=tooltipWrapper.querySelector(`[id='${t}']`);e.classList.add("referred"),console.log(e),e.scrollIntoView({behavior:"smooth"},!0)}else tooltipWrapper.scroll(0,0)}),1)}),tooltipWrapper.style.left=o.left-tooltipWrapper.offsetWidth/2+o.width/2+"px",window.innerHeight-o.top<tooltipWrapper.offsetHeight?tooltipWrapper.style.top=o.top+i-tooltipWrapper.offsetHeight-10+"px":window.innerHeight-o.top>tooltipWrapper.offsetHeight&&(tooltipWrapper.style.top=o.top+i+35+"px"),o.left+o.width/2<tooltipWrapper.offsetWidth/2?tooltipWrapper.style.left="10px":document.body.clientWidth-o.left-o.width/2<tooltipWrapper.offsetWidth/2&&(tooltipWrapper.style.left=document.body.clientWidth-tooltipWrapper.offsetWidth-20+"px")}}function setupListeners(t){t.addEventListener("mouseleave",(function(t){hideTooltip()})),tooltipWrapper.addEventListener("mouseleave",(function(t){hideTooltip()})),t.addEventListener("mouseenter",(function(t){clearTimeout(opacityTimeout),clearTimeout(contentTimeout),showTooltip(t)})),tooltipWrapper.addEventListener("mouseenter",(function(t){clearTimeout(opacityTimeout),clearTimeout(contentTimeout)}))}window.addEventListener("load",(function(t){document.querySelectorAll(".internal-link").forEach(setupListeners),document.querySelectorAll(".backlink-card a").forEach(setupListeners)}))</script>
+<script>window.location.hash&&document.getElementById(window.location.hash.slice(1)).classList.add("referred"),window.addEventListener("hashchange",(e=>{const t=e.oldURL.split("#");t[1]&&document.getElementById(t[1]).classList.remove("referred");const n=e.newURL.split("#");n[1]&&document.getElementById(n[1]).classList.add("referred")}),!1);const url_parts=window.location.href.split("#"),url=url_parts[0],referrence=url_parts[1];document.querySelectorAll(".cm-s-obsidian > *[id]").forEach((function(e){e.ondblclick=function(e){const t=url+"#"+e.target.id;navigator.clipboard.writeText(t)}}))</script>
+<script src="https://fastly.jsdelivr.net/npm/luxon@3.2.1/build/global/luxon.min.js"></script>
+<script defer="defer">TIMESTAMP_FORMAT="MMM dd, yyyy h:mm a",document.querySelectorAll(".human-date").forEach((function(e){date=e.getAttribute("data-date")||e.innerText,parsed_date=luxon.DateTime.fromISO(date),null!=parsed_date.invalid&&(parsed_date=luxon.DateTime.fromSQL(date)),null!=parsed_date.invalid&&(parsed_date=luxon.DateTime.fromHTML(date)),e.innerHTML=parsed_date.toFormat(TIMESTAMP_FORMAT)}))</script>
+<script>lucide.createIcons({attrs:{class:["svg-icon"]}})</script>
+</body>
+</html>
