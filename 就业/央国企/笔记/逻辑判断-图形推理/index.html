@@ -63,43 +63,30 @@ CTRL + K
 </div>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/flexsearch@0.7.21/dist/flexsearch.bundle.js"></script>
-<script>document.addEventListener("DOMContentLoaded",init,!1),document.addEventListener("DOMContentLoaded",setCorrectShortcut,!1),window.toggleSearch=function(){document.getElementById("globalsearch").classList.contains("active")?document.getElementById("globalsearch").classList.remove("active"):(document.getElementById("globalsearch").classList.add("active"),document.getElementById("term").focus())},window.toggleTagSearch=function(e){console.log(e.textContent);const t=e.textContent;t&&(window.document.getElementById("term").value=t.trim(),window.toggleSearch(),window.search())};const loadingSvg='\n    <svg width="100" height="100" viewBox="0 0 45 45" xmlns="http://www.w3.org/2000/svg" stroke="#fff">\n      <g fill="none" fill-rule="evenodd" transform="translate(1 1)" stroke-width="2">\n          <circle cx="22" cy="22" r="6" stroke-opacity="0">\n              <animate attributeName="r"\n                   begin="1.5s" dur="3s"\n                   values="6;22"\n                   calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-opacity"\n                   begin="1.5s" dur="3s"\n                   values="1;0" calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-width"\n                   begin="1.5s" dur="3s"\n                   values="2;0" calcMode="linear"\n                   repeatCount="indefinite" />\n          </circle>\n          <circle cx="22" cy="22" r="6" stroke-opacity="0">\n              <animate attributeName="r"\n                   begin="3s" dur="3s"\n                   values="6;22"\n                   calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-opacity"\n                   begin="3s" dur="3s"\n                   values="1;0" calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-width"\n                   begin="3s" dur="3s"\n                   values="2;0" calcMode="linear"\n                   repeatCount="indefinite" />\n          </circle>\n          <circle cx="22" cy="22" r="8">\n              <animate attributeName="r"\n                   begin="0s" dur="1.5s"\n                   values="6;1;2;3;4;5;6"\n                   calcMode="linear"\n                   repeatCount="indefinite" />\n          </circle>\n      </g>\n  </svg>';function debounce(e,t,n){var a;return function(){var r=this,i=arguments,c=n&&!a;clearTimeout(a),a=setTimeout((function(){a=null,n||e.apply(r,i)}),t),c&&e.apply(r,i)}}function setCorrectShortcut(){navigator.platform.toUpperCase().indexOf("MAC")>=0&&document.querySelectorAll(".search-keys").forEach((e=>e.innerHTML="⌘ + K"))}function createIndex(e){const t=e=>e.toLowerCase().split(/([^a-z]|[^\x00-\x7F])/),n=new FlexSearch.Document({cache:!0,charset:"latin:extra",optimize:!0,index:[{field:"content",tokenize:"reverse",encode:t},{field:"title",tokenize:"forward",encode:t},{field:"tags",tokenize:"forward",encode:t}]});return e.forEach(((e,t)=>{n.add({id:t,title:e.title,content:e.content,tags:e.tags})})),n}async function init(){let e=!0;if(localStorage.getItem("searchIndex")){let{date:t,docs:n}=JSON.parse(localStorage.getItem("searchIndex"));if("2025-06-27T07:27:44.549Z"===t){e=!1;let t=createIndex(n);window.docs=n,window.index=t}}if(e){let e=await(await fetch("/searchIndex.json?v=2025-06-27T07:27:44.549Z")).json(),t=createIndex(e);localStorage.setItem("searchIndex",JSON.stringify({date:"2025-06-27T07:27:44.549Z",docs:e})),window.docs=e,window.index=t}document.addEventListener("keydown",(e=>{if((e.ctrlKey||e.metaKey)&&"k"===e.key&&(e.preventDefault(),toggleSearch()),"Escape"===e.key&&document.getElementById("globalsearch").classList.remove("active"),document.getElementById("globalsearch").classList.contains("active")){if("ArrowDown"===e.key){e.preventDefault();let t=document.querySelector(".searchresult.active");t?(t.classList.remove("active"),t.nextElementSibling?t.nextElementSibling.classList.add("active"):document.querySelector(".searchresult").classList.add("active")):document.querySelector(".searchresult").classList.add("active");let n=document.querySelector(".searchresult.active");n&&n.scrollIntoView({behavior:"smooth",block:"nearest",inline:"start"})}if("ArrowUp"===e.key){e.preventDefault();let t=document.querySelector(".searchresult.active");t?(t.classList.remove("active"),t.previousElementSibling?t.previousElementSibling.classList.add("active"):document.querySelectorAll(".searchresult").forEach((e=>{e.nextElementSibling||e.classList.add("active")}))):document.querySelectorAll(".searchresult").forEach((e=>{e.nextElementSibling&&e.classList.add("active")}));let n=document.querySelector(".searchresult.active");n&&n.scrollIntoView({behavior:"smooth",block:"nearest",inline:"start"})}if("Enter"===e.key){e.preventDefault();let t=document.querySelector(".searchresult.active");t&&(window.location.href=t.querySelector("a").href)}}}));const t=debounce(search,200,!1);field=document.querySelector("#term"),field.addEventListener("keydown",(e=>{"ArrowDown"!==e.key&&"ArrowUp"!==e.key&&t()})),resultsDiv=document.querySelector("#search-results");const n=new URL(location.href).searchParams;n.get("q")&&(field.setAttribute("value",n.get("q")),toggleSearch(),search())}async function search(){let e=field.value.trim();if(!e)return;if(e==lastSearch)return;console.log(`search for ${e}`),window.lastSearch=e,resultsDiv.innerHTML=loadingSvg;let t=offlineSearch(e),n="";if(!t.length){let t=document.createElement("p");return t.innerText=`No results for "${e}"`,resultsDiv.innerHTML="",void resultsDiv.appendChild(t)}n+='<div style="max-width:100%;">',t.forEach((e=>{e.tags&&e.tags.length>0?n+=`<div class="searchresult">\n                    <a class="search-link" href="${e.url}">${e.title}</a>\n                    <div onclick="window.location='${e.url}'">\n                        <div class="header-meta">\n                            <div class="header-tags">\n                                ${e.tags.map((e=>'<a class="tag" href="JavaScript:Void(0);">#'+e+"</a>")).join("")}\n                            </div>\n                        </div>\n                        ${e.content}\n                    </div>\n                </div>`:n+=`<div class="searchresult">\n                    <a class="search-link" href="${e.url}">${e.title}</a>\n                    <div onclick="window.location='${e.url}'">\n                        ${e.content}\n                    </div>\n                </div>`})),n+="</div>",resultsDiv.innerHTML=n}function truncate(e,t){return(e=e.replaceAll(/<[^>]*>/g,"")).length<t?e:e.substring(0,t-3)+"..."}function offlineSearch(e){let t=window.docs,n="#"===e[0]&&e.length>1?index.search(e.substring(1),[{field:"tags"}]):index.search(e,[{field:"title",limit:5},{field:"content",weight:10}]);const a=e=>{const t=n.filter((t=>t.field===e));return 0===t.length?[]:[...t[0].result]};return[...new Set([...a("title"),...a("content"),...a("tags")])].map((e=>{let n=t[e];return n.content=truncate(n.content,400),n.tags=n.tags.filter((e=>"gardenEntry"!=e&&"note"!=e)),n}))}window.lastSearch=""</script>
+<script>document.addEventListener("DOMContentLoaded",init,!1),document.addEventListener("DOMContentLoaded",setCorrectShortcut,!1),window.toggleSearch=function(){document.getElementById("globalsearch").classList.contains("active")?document.getElementById("globalsearch").classList.remove("active"):(document.getElementById("globalsearch").classList.add("active"),document.getElementById("term").focus())},window.toggleTagSearch=function(e){console.log(e.textContent);const t=e.textContent;t&&(window.document.getElementById("term").value=t.trim(),window.toggleSearch(),window.search())};const loadingSvg='\n    <svg width="100" height="100" viewBox="0 0 45 45" xmlns="http://www.w3.org/2000/svg" stroke="#fff">\n      <g fill="none" fill-rule="evenodd" transform="translate(1 1)" stroke-width="2">\n          <circle cx="22" cy="22" r="6" stroke-opacity="0">\n              <animate attributeName="r"\n                   begin="1.5s" dur="3s"\n                   values="6;22"\n                   calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-opacity"\n                   begin="1.5s" dur="3s"\n                   values="1;0" calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-width"\n                   begin="1.5s" dur="3s"\n                   values="2;0" calcMode="linear"\n                   repeatCount="indefinite" />\n          </circle>\n          <circle cx="22" cy="22" r="6" stroke-opacity="0">\n              <animate attributeName="r"\n                   begin="3s" dur="3s"\n                   values="6;22"\n                   calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-opacity"\n                   begin="3s" dur="3s"\n                   values="1;0" calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-width"\n                   begin="3s" dur="3s"\n                   values="2;0" calcMode="linear"\n                   repeatCount="indefinite" />\n          </circle>\n          <circle cx="22" cy="22" r="8">\n              <animate attributeName="r"\n                   begin="0s" dur="1.5s"\n                   values="6;1;2;3;4;5;6"\n                   calcMode="linear"\n                   repeatCount="indefinite" />\n          </circle>\n      </g>\n  </svg>';function debounce(e,t,n){var a;return function(){var r=this,i=arguments,c=n&&!a;clearTimeout(a),a=setTimeout((function(){a=null,n||e.apply(r,i)}),t),c&&e.apply(r,i)}}function setCorrectShortcut(){navigator.platform.toUpperCase().indexOf("MAC")>=0&&document.querySelectorAll(".search-keys").forEach((e=>e.innerHTML="⌘ + K"))}function createIndex(e){const t=e=>e.toLowerCase().split(/([^a-z]|[^\x00-\x7F])/),n=new FlexSearch.Document({cache:!0,charset:"latin:extra",optimize:!0,index:[{field:"content",tokenize:"reverse",encode:t},{field:"title",tokenize:"forward",encode:t},{field:"tags",tokenize:"forward",encode:t}]});return e.forEach(((e,t)=>{n.add({id:t,title:e.title,content:e.content,tags:e.tags})})),n}async function init(){let e=!0;if(localStorage.getItem("searchIndex")){let{date:t,docs:n}=JSON.parse(localStorage.getItem("searchIndex"));if("2025-06-27T07:33:21.213Z"===t){e=!1;let t=createIndex(n);window.docs=n,window.index=t}}if(e){let e=await(await fetch("/searchIndex.json?v=2025-06-27T07:33:21.213Z")).json(),t=createIndex(e);localStorage.setItem("searchIndex",JSON.stringify({date:"2025-06-27T07:33:21.213Z",docs:e})),window.docs=e,window.index=t}document.addEventListener("keydown",(e=>{if((e.ctrlKey||e.metaKey)&&"k"===e.key&&(e.preventDefault(),toggleSearch()),"Escape"===e.key&&document.getElementById("globalsearch").classList.remove("active"),document.getElementById("globalsearch").classList.contains("active")){if("ArrowDown"===e.key){e.preventDefault();let t=document.querySelector(".searchresult.active");t?(t.classList.remove("active"),t.nextElementSibling?t.nextElementSibling.classList.add("active"):document.querySelector(".searchresult").classList.add("active")):document.querySelector(".searchresult").classList.add("active");let n=document.querySelector(".searchresult.active");n&&n.scrollIntoView({behavior:"smooth",block:"nearest",inline:"start"})}if("ArrowUp"===e.key){e.preventDefault();let t=document.querySelector(".searchresult.active");t?(t.classList.remove("active"),t.previousElementSibling?t.previousElementSibling.classList.add("active"):document.querySelectorAll(".searchresult").forEach((e=>{e.nextElementSibling||e.classList.add("active")}))):document.querySelectorAll(".searchresult").forEach((e=>{e.nextElementSibling&&e.classList.add("active")}));let n=document.querySelector(".searchresult.active");n&&n.scrollIntoView({behavior:"smooth",block:"nearest",inline:"start"})}if("Enter"===e.key){e.preventDefault();let t=document.querySelector(".searchresult.active");t&&(window.location.href=t.querySelector("a").href)}}}));const t=debounce(search,200,!1);field=document.querySelector("#term"),field.addEventListener("keydown",(e=>{"ArrowDown"!==e.key&&"ArrowUp"!==e.key&&t()})),resultsDiv=document.querySelector("#search-results");const n=new URL(location.href).searchParams;n.get("q")&&(field.setAttribute("value",n.get("q")),toggleSearch(),search())}async function search(){let e=field.value.trim();if(!e)return;if(e==lastSearch)return;console.log(`search for ${e}`),window.lastSearch=e,resultsDiv.innerHTML=loadingSvg;let t=offlineSearch(e),n="";if(!t.length){let t=document.createElement("p");return t.innerText=`No results for "${e}"`,resultsDiv.innerHTML="",void resultsDiv.appendChild(t)}n+='<div style="max-width:100%;">',t.forEach((e=>{e.tags&&e.tags.length>0?n+=`<div class="searchresult">\n                    <a class="search-link" href="${e.url}">${e.title}</a>\n                    <div onclick="window.location='${e.url}'">\n                        <div class="header-meta">\n                            <div class="header-tags">\n                                ${e.tags.map((e=>'<a class="tag" href="JavaScript:Void(0);">#'+e+"</a>")).join("")}\n                            </div>\n                        </div>\n                        ${e.content}\n                    </div>\n                </div>`:n+=`<div class="searchresult">\n                    <a class="search-link" href="${e.url}">${e.title}</a>\n                    <div onclick="window.location='${e.url}'">\n                        ${e.content}\n                    </div>\n                </div>`})),n+="</div>",resultsDiv.innerHTML=n}function truncate(e,t){return(e=e.replaceAll(/<[^>]*>/g,"")).length<t?e:e.substring(0,t-3)+"..."}function offlineSearch(e){let t=window.docs,n="#"===e[0]&&e.length>1?index.search(e.substring(1),[{field:"tags"}]):index.search(e,[{field:"title",limit:5},{field:"content",weight:10}]);const a=e=>{const t=n.filter((t=>t.field===e));return 0===t.length?[]:[...t[0].result]};return[...new Set([...a("title"),...a("content"),...a("tags")])].map((e=>{let n=t[e];return n.content=truncate(n.content,400),n.tags=n.tags.filter((e=>"gardenEntry"!=e&&"note"!=e)),n}))}window.lastSearch=""</script>
 <main class="content cm-s-obsidian">
 <header>
 <h1 data-note-icon="">逻辑判断-图形推理</h1>
 <div class="header-meta">
 <div class="header-tags">
 </div>
-<div class="timestamps"><div><i icon-name="calendar-plus"></i> <span class="human-date" data-date="2025-06-27T11:19:49.678+08:00"></span></div><div><i icon-name="calendar-clock"></i> <span class="human-date" data-date="2025-06-27T15:23:27.888+08:00"></span></div></div></div>
+<div class="timestamps"><div><i icon-name="calendar-plus"></i> <span class="human-date" data-date="2025-06-27T11:19:49.678+08:00"></span></div><div><i icon-name="calendar-clock"></i> <span class="human-date" data-date="2025-06-27T15:32:25.383+08:00"></span></div></div></div>
 </header>
 <h1 id="笔记" tabindex="-1">笔记</h1>
 <hr>
-<div class="callout" data-callout="note"><div class="callout-title"><div class="callout-title-inner">Note</div></div>
-<div class="callout-content">
-<p>
-</p><h3 id="strong-strong" tabindex="-1"><strong>图形推理核心笔记 (精简版)</strong></h3>
+<h3 id="strong-strong" tabindex="-1"><strong>图形推理核心笔记 (精简版)</strong></h3>
 <h4 id="strong-strong-1" tabindex="-1"><strong>第一部分：两大核心解题思路</strong></h4>
 <ol>
-<li>
-<p><strong>特征图导向 (看到什么就想什么)</strong></p>
+<li><strong>特征图导向 (看到什么就想什么)</strong>
 <ul>
-<li>
-<p><strong>核心思想</strong>：图形推理并非凭空猜测，而是通过识别题干图形中的显著视觉特征（“特征图”），直接联想到对应的规律考点。这是解题速度和方向感的关键。</p>
-</li>
-<li>
-<p><strong>实践</strong>：后续所有规律的学习，都始于“看到什么特征，就优先考虑哪种规律”。</p>
-</li>
+<li><strong>核心思想</strong>：图形推理并非凭空猜测，而是通过识别题干图形中的显著视觉特征（“特征图”），直接联想到对应的规律考点。这是解题速度和方向感的关键。</li>
+<li><strong>实践</strong>：后续所有规律的学习，都始于“看到什么特征，就优先考虑哪种规律”。</li>
 </ul>
 </li>
-<li>
-<p><strong>解题方法应用 (想到什么就怎么做)</strong></p>
+<li><strong>解题方法应用 (想到什么就怎么做)</strong>
 <ul>
-<li>
-<p><strong>核心思想</strong>：在通过特征图锁定考点后，熟练运用该考点下的具体分析方法、公式或排除技巧，保证解题的准确性。</p>
-</li>
-<li>
-<p><strong>实践</strong>：每个规律都配有标准化的“解题工具箱”。</p>
-</li>
+<li><strong>核心思想</strong>：在通过特征图锁定考点后，熟练运用该考点下的具体分析方法、公式或排除技巧，保证解题的准确性。</li>
+<li><strong>实践</strong>：每个规律都配有标准化的“解题工具箱”。</li>
 </ul>
 </li>
 </ol>
@@ -107,43 +94,26 @@ CTRL + K
 <h4 id="strong-strong-2" tabindex="-1"><strong>第二部分：平面图形五大规律</strong></h4>
 <h5 id="strong-strong-3" tabindex="-1"><strong>规律一：位置规律 (元素组成完全相同)</strong></h5>
 <ul>
-<li>
-<p><strong>识别特征</strong>：每幅图都由一模一样的元素构成。</p>
-</li>
-<li>
-<p><strong>核心考点</strong>：</p>
+<li><strong>识别特征</strong>：每幅图都由一模一样的元素构成。</li>
+<li><strong>核心考点</strong>：
 <ul>
-<li>
-<p><strong>平移</strong>：分析元素移动的<strong>方向</strong>（直线/循环）和<strong>步数</strong>（恒定/递增）。</p>
+<li><strong>平移</strong>：分析元素移动的<strong>方向</strong>（直线/循环）和<strong>步数</strong>（恒定/递增）。
 <ul>
-<li>
-<p><strong>技巧</strong>：</p>
+<li><strong>技巧</strong>：
 <ul>
-<li>
-<p>多个元素要“分开看”。</p>
-</li>
-<li>
-<p>“空格”本身也可视为一个移动的元素。</p>
-</li>
+<li>多个元素要“分开看”。</li>
+<li>“空格”本身也可视为一个移动的元素。</li>
 </ul>
 </li>
 </ul>
 </li>
-<li>
-<p><strong>旋转/翻转</strong>：分析图形整体或局部的方向变化。</p>
+<li><strong>旋转/翻转</strong>：分析图形整体或局部的方向变化。
 <ul>
-<li>
-<p><strong>逻辑区分法 (必记)</strong>：</p>
+<li><strong>逻辑区分法 (必记)</strong>：
 <ul>
-<li>
-<p><strong>左右翻转</strong>：左右互换，上下不变。</p>
-</li>
-<li>
-<p><strong>上下翻转</strong>：上下互换，左右不变。</p>
-</li>
-<li>
-<p><strong>180°旋转</strong>：上下互换，且左右互换 (全都变)。</p>
-</li>
+<li><strong>左右翻转</strong>：左右互换，上下不变。</li>
+<li><strong>上下翻转</strong>：上下互换，左右不变。</li>
+<li><strong>180°旋转</strong>：上下互换，且左右互换 (全都变)。</li>
 </ul>
 </li>
 </ul>
@@ -153,35 +123,20 @@ CTRL + K
 </ul>
 <h5 id="strong-strong-4" tabindex="-1"><strong>规律二：样式规律 (元素组成相似)</strong></h5>
 <ul>
-<li>
-<p><strong>识别特征</strong>：各图形构成不完全相同，但含有大量重复的元素或线条，看起来像“兄弟”。</p>
-</li>
-<li>
-<p><strong>核心考点</strong>：</p>
+<li><strong>识别特征</strong>：各图形构成不完全相同，但含有大量重复的元素或线条，看起来像“兄弟”。</li>
+<li><strong>核心考点</strong>：
 <ul>
-<li>
-<p><strong>加减同异 (线条运算)</strong>：</p>
+<li><strong>加减同异 (线条运算)</strong>：
 <ul>
-<li>
-<p><strong>求同</strong>：保留共同线条，删除独有线条。</p>
-</li>
-<li>
-<p><strong>求异</strong>：保留独有线条，删除共同线条。</p>
-</li>
-<li>
-<p><strong>技巧</strong>：先通过旋转/翻转对齐图形，再进行运算。</p>
-</li>
+<li><strong>求同</strong>：保留共同线条，删除独有线条。</li>
+<li><strong>求异</strong>：保留独有线条，删除共同线条。</li>
+<li><strong>技巧</strong>：先通过旋转/翻转对齐图形，再进行运算。</li>
 </ul>
 </li>
-<li>
-<p><strong>黑白运算</strong>：</p>
+<li><strong>黑白运算</strong>：
 <ul>
-<li>
-<p><strong>特征</strong>：图形轮廓和分割区域相同，但黑白填充不同。</p>
-</li>
-<li>
-<p><strong>技巧 (“要啥找啥”)</strong>：不要试图推导所有规则。直接找选项中的差异点，回到题干中只计算该点的颜色，逐一排除。</p>
-</li>
+<li><strong>特征</strong>：图形轮廓和分割区域相同，但黑白填充不同。</li>
+<li><strong>技巧 (“要啥找啥”)</strong>：不要试图推导所有规则。直接找选项中的差异点，回到题干中只计算该点的颜色，逐一排除。</li>
 </ul>
 </li>
 </ul>
@@ -189,57 +144,32 @@ CTRL + K
 </ul>
 <h5 id="strong-strong-5" tabindex="-1"><strong>规律三：属性规律 (元素组成凌乱)</strong></h5>
 <ul>
-<li>
-<p><strong>识别特征</strong>：图形之间形态各异，毫无关联，像“路人”。</p>
-</li>
-<li>
-<p><strong>核心考点</strong> (按优先级排序)：</p>
+<li><strong>识别特征</strong>：图形之间形态各异，毫无关联，像“路人”。</li>
+<li><strong>核心考点</strong> (按优先级排序)：
 <ol>
-<li>
-<p><strong>对称性 (最高频)</strong>：</p>
+<li><strong>对称性 (最高频)</strong>：
 <ul>
-<li>
-<p><strong>类型</strong>：轴对称、中心对称、同时对称。</p>
-</li>
-<li>
-<p><strong>规律</strong>：对称类型的交替、对称轴方向的旋转、对称轴数量的增减。</p>
-</li>
-<li>
-<p><strong>信号图</strong>：</p>
+<li><strong>类型</strong>：轴对称、中心对称、同时对称。</li>
+<li><strong>规律</strong>：对称类型的交替、对称轴方向的旋转、对称轴数量的增减。</li>
+<li><strong>信号图</strong>：
 <ul>
-<li>
-<p><strong>轴对称</strong> -&gt; 等腰图形。</p>
-</li>
-<li>
-<p><strong>中心对称</strong> -&gt; 平行四边形, S, N, Z。</p>
-</li>
-<li>
-<p><strong>轴数量</strong> -&gt; “三足鼎立”图形 (如正三角形)。</p>
-</li>
+<li><strong>轴对称</strong> -&gt; 等腰图形。</li>
+<li><strong>中心对称</strong> -&gt; 平行四边形, S, N, Z。</li>
+<li><strong>轴数量</strong> -&gt; “三足鼎立”图形 (如正三角形)。</li>
 </ul>
 </li>
 </ul>
 </li>
-<li>
-<p><strong>曲直性</strong>：</p>
+<li><strong>曲直性</strong>：
 <ul>
-<li>
-<p><strong>分类</strong>：全曲线、全直线、曲直结合。</p>
-</li>
-<li>
-<p><strong>规律</strong>：通常是三类图形的交替或分组。</p>
-</li>
+<li><strong>分类</strong>：全曲线、全直线、曲直结合。</li>
+<li><strong>规律</strong>：通常是三类图形的交替或分组。</li>
 </ul>
 </li>
-<li>
-<p><strong>开闭性</strong>：</p>
+<li><strong>开闭性</strong>：
 <ul>
-<li>
-<p><strong>分类</strong>：封闭图形 (无缺口)、开放图形 (有缺口)。</p>
-</li>
-<li>
-<p><strong>信号图</strong>：生活化符号、粗线条图形。</p>
-</li>
+<li><strong>分类</strong>：封闭图形 (无缺口)、开放图形 (有缺口)。</li>
+<li><strong>信号图</strong>：生活化符号、粗线条图形。</li>
 </ul>
 </li>
 </ol>
@@ -247,104 +177,57 @@ CTRL + K
 </ul>
 <h5 id="strong-strong-6" tabindex="-1"><strong>规律四：数量规律 (重中之重)</strong></h5>
 <ul>
-<li>
-<p><strong>识别特征</strong>：元素组成不同且无属性规律，或某数量特征 (点、线、面) 极其明显。</p>
-</li>
-<li>
-<p><strong>核心考点</strong> (按重要性排序)：</p>
+<li><strong>识别特征</strong>：元素组成不同且无属性规律，或某数量特征 (点、线、面) 极其明显。</li>
+<li><strong>核心考点</strong> (按重要性排序)：
 <ol>
-<li>
-<p><strong>面 (封闭的白色区域/小窟窿)</strong>:</p>
+<li><strong>面 (封闭的白色区域/小窟窿)</strong>:
 <ul>
-<li>
-<p><strong>触发器</strong>：图形被分割、粗线条生活化图形。</p>
-</li>
-<li>
-<p><strong>常规考法</strong>：数总面数，找规律。</p>
-</li>
-<li>
-<p><strong>细化考法 (总数无规律时使用)</strong>：</p>
+<li><strong>触发器</strong>：图形被分割、粗线条生活化图形。</li>
+<li><strong>常规考法</strong>：数总面数，找规律。</li>
+<li><strong>细化考法 (总数无规律时使用)</strong>：
 <ul>
-<li>
-<p>① <strong>所有面的形状</strong>是否统一？(如全为三角形)</p>
-</li>
-<li>
-<p>② <strong>特定形状面的数量</strong>是否有规律？</p>
-</li>
-<li>
-<p>③ <strong>分析特殊面 (最大/最小)</strong>：其自身的形状、属性，或与外轮廓的关系是否一致？</p>
-</li>
+<li>① <strong>所有面的形状</strong>是否统一？(如全为三角形)</li>
+<li>② <strong>特定形状面的数量</strong>是否有规律？</li>
+<li>③ <strong>分析特殊面 (最大/最小)</strong>：其自身的形状、属性，或与外轮廓的关系是否一致？</li>
 </ul>
 </li>
 </ul>
 </li>
-<li>
-<p><strong>笔画数 (线的核心)</strong>：</p>
+<li><strong>笔画数 (线的核心)</strong>：
 <ul>
-<li>
-<p><strong>触发器</strong>：五角星、日/田字、圆相交/相切、多端点。</p>
-</li>
-<li>
-<p><strong>一笔画判定 (必须同时满足)</strong>：</p>
+<li><strong>触发器</strong>：五角星、日/田字、圆相交/相切、多端点。</li>
+<li><strong>一笔画判定 (必须同时满足)</strong>：
 <ul>
-<li>
-<p>① 图形连通。</p>
-</li>
-<li>
-<p>② 奇点数 = 0或2。</p>
-</li>
+<li>① 图形连通。</li>
+<li>② 奇点数 = 0或2。</li>
 </ul>
 </li>
-<li>
-<p><strong>多笔画公式</strong>： <strong>笔画数 = 奇点数 / 2</strong></p>
-</li>
-<li>
-<p><strong>关键定义</strong>：</p>
+<li><strong>多笔画公式</strong>： <strong>笔画数 = 奇点数 / 2</strong></li>
+<li><strong>关键定义</strong>：
 <ul>
-<li>
-<p><strong>奇点</strong>：从一个点发出奇数条线。</p>
-</li>
-<li>
-<p><strong>重要规则</strong>：<strong>所有端点都是奇点！</strong></p>
-</li>
-<li>
-<p><strong>多部分图形</strong>：总笔画数 = 各部分笔画数之和。</p>
-</li>
+<li><strong>奇点</strong>：从一个点发出奇数条线。</li>
+<li><strong>重要规则</strong>：<strong>所有端点都是奇点！</strong></li>
+<li><strong>多部分图形</strong>：总笔画数 = 各部分笔画数之和。</li>
 </ul>
 </li>
 </ul>
 </li>
-<li>
-<p><strong>点 (只数交点，不数端点)</strong>:</p>
+<li><strong>点 (只数交点，不数端点)</strong>:
 <ul>
-<li>
-<p><strong>触发器</strong>：“大树杈子”、线条杂乱。</p>
-</li>
-<li>
-<p><strong>常规考法</strong>：数总交点数，找规律。</p>
-</li>
-<li>
-<p><strong>细化考法</strong>：</p>
+<li><strong>触发器</strong>：“大树杈子”、线条杂乱。</li>
+<li><strong>常规考法</strong>：数总交点数，找规律。</li>
+<li><strong>细化考法</strong>：
 <ul>
-<li>
-<p><strong>曲直交点</strong>：当每幅图都含曲、直线时，只数它俩的交点。</p>
-</li>
-<li>
-<p><strong>框上/框内交点</strong>：当每幅图都有外框时，分开数框上或框内的点，择一寻找规律。</p>
-</li>
+<li><strong>曲直交点</strong>：当每幅图都含曲、直线时，只数它俩的交点。</li>
+<li><strong>框上/框内交点</strong>：当每幅图都有外框时，分开数框上或框内的点，择一寻找规律。</li>
 </ul>
 </li>
 </ul>
 </li>
-<li>
-<p><strong>角 (通常考直角)</strong>:</p>
+<li><strong>角 (通常考直角)</strong>:
 <ul>
-<li>
-<p><strong>触发器</strong>：折线图、带缺口的多边形、大量直角。</p>
-</li>
-<li>
-<p><strong>考法</strong>：数直角数量，找规律。</p>
-</li>
+<li><strong>触发器</strong>：折线图、带缺口的多边形、大量直角。</li>
+<li><strong>考法</strong>：数直角数量，找规律。</li>
 </ul>
 </li>
 </ol>
@@ -353,45 +236,28 @@ CTRL + K
 <hr>
 <h4 id="strong-strong-7" tabindex="-1"><strong>第三部分：空间图形规律 (六面体折叠)</strong></h4>
 <ul>
-<li>
-<p><strong>核心策略</strong>：放弃凭空想象，熟练运用<strong>排除法</strong>。</p>
-</li>
-<li>
-<p><strong>排除法一：相对面排除 (最高效)</strong></p>
+<li><strong>核心策略</strong>：放弃凭空想象，熟练运用<strong>排除法</strong>。</li>
+<li><strong>排除法一：相对面排除 (最高效)</strong>
 <ul>
-<li>
-<p><strong>原则</strong>：相对的面永远不能同时被看到。</p>
-</li>
-<li>
-<p><strong>寻找相对面</strong>：</p>
+<li><strong>原则</strong>：相对的面永远不能同时被看到。</li>
+<li><strong>寻找相对面</strong>：
 <ul>
-<li>
-<p>同行/列，相隔一个面。</p>
-</li>
-<li>
-<p>“Z”字形两端的面 (需紧邻中线)。</p>
-</li>
+<li>同行/列，相隔一个面。</li>
+<li>“Z”字形两端的面 (需紧邻中线)。</li>
 </ul>
 </li>
-<li>
-<p><strong>应用</strong>：选项中一旦出现一对相对面，<strong>立即排除</strong>。</p>
-</li>
+<li><strong>应用</strong>：选项中一旦出现一对相对面，<strong>立即排除</strong>。</li>
 </ul>
 </li>
-<li>
-<p><strong>排除法二：相邻面排除 (更精细)</strong></p>
+<li><strong>排除法二：相邻面排除 (更精细)</strong>
 <ul>
-<li>
-<p><strong>原则</strong>：相邻面之间的位置关系在折叠前后固定不变。</p>
-</li>
-<li>
-<p><strong>方法1：公共边法</strong></p>
+<li><strong>原则</strong>：相邻面之间的位置关系在折叠前后固定不变。</li>
+<li><strong>方法1：公共边法</strong>
 <ul>
 <li><strong>应用</strong>：观察图案与公共边的相对位置。如果选项中的图案相对于公共边发生了旋转或位置错误，<strong>立即排除</strong>。</li>
 </ul>
 </li>
-<li>
-<p><strong>方法2：箭头法</strong></p>
+<li><strong>方法2：箭头法</strong>
 <ul>
 <li><strong>应用</strong>：在有方向的图形上画箭头，确定其“上、下、左、右”的邻居。如果选项中的邻居位置与此不符，<strong>立即排除</strong>。</li>
 </ul>
@@ -400,19 +266,12 @@ CTRL + K
 </li>
 </ul>
 <hr>
-<p></p><p><strong>最终建议</strong>：</p>
+<p><strong>最终建议</strong>：</p>
 <ol>
-<li>
-<p><strong>先记特征</strong>：将每种规律对应的“视觉触发器”背熟，做到快速反应。</p>
-</li>
-<li>
-<p><strong>再练方法</strong>：针对每种考点，反复练习其对应的解题方法和公式。</p>
-</li>
-<li>
-<p><strong>多做真题</strong>：将理论知识在实战中融会贯通，形成肌肉记忆。</p>
-</li>
+<li><strong>先记特征</strong>：将每种规律对应的“视觉触发器”背熟，做到快速反应。</li>
+<li><strong>再练方法</strong>：针对每种考点，反复练习其对应的解题方法和公式。</li>
+<li><strong>多做真题</strong>：将理论知识在实战中融会贯通，形成肌肉记忆。</li>
 </ol>
-</div></div>
 <hr>
 <hr>
 <hr>

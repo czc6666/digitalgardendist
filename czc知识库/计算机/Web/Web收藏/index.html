@@ -63,26 +63,59 @@ CTRL + K
 </div>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/flexsearch@0.7.21/dist/flexsearch.bundle.js"></script>
-<script>document.addEventListener("DOMContentLoaded",init,!1),document.addEventListener("DOMContentLoaded",setCorrectShortcut,!1),window.toggleSearch=function(){document.getElementById("globalsearch").classList.contains("active")?document.getElementById("globalsearch").classList.remove("active"):(document.getElementById("globalsearch").classList.add("active"),document.getElementById("term").focus())},window.toggleTagSearch=function(e){console.log(e.textContent);const t=e.textContent;t&&(window.document.getElementById("term").value=t.trim(),window.toggleSearch(),window.search())};const loadingSvg='\n    <svg width="100" height="100" viewBox="0 0 45 45" xmlns="http://www.w3.org/2000/svg" stroke="#fff">\n      <g fill="none" fill-rule="evenodd" transform="translate(1 1)" stroke-width="2">\n          <circle cx="22" cy="22" r="6" stroke-opacity="0">\n              <animate attributeName="r"\n                   begin="1.5s" dur="3s"\n                   values="6;22"\n                   calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-opacity"\n                   begin="1.5s" dur="3s"\n                   values="1;0" calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-width"\n                   begin="1.5s" dur="3s"\n                   values="2;0" calcMode="linear"\n                   repeatCount="indefinite" />\n          </circle>\n          <circle cx="22" cy="22" r="6" stroke-opacity="0">\n              <animate attributeName="r"\n                   begin="3s" dur="3s"\n                   values="6;22"\n                   calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-opacity"\n                   begin="3s" dur="3s"\n                   values="1;0" calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-width"\n                   begin="3s" dur="3s"\n                   values="2;0" calcMode="linear"\n                   repeatCount="indefinite" />\n          </circle>\n          <circle cx="22" cy="22" r="8">\n              <animate attributeName="r"\n                   begin="0s" dur="1.5s"\n                   values="6;1;2;3;4;5;6"\n                   calcMode="linear"\n                   repeatCount="indefinite" />\n          </circle>\n      </g>\n  </svg>';function debounce(e,t,n){var a;return function(){var r=this,i=arguments,c=n&&!a;clearTimeout(a),a=setTimeout((function(){a=null,n||e.apply(r,i)}),t),c&&e.apply(r,i)}}function setCorrectShortcut(){navigator.platform.toUpperCase().indexOf("MAC")>=0&&document.querySelectorAll(".search-keys").forEach((e=>e.innerHTML="⌘ + K"))}function createIndex(e){const t=e=>e.toLowerCase().split(/([^a-z]|[^\x00-\x7F])/),n=new FlexSearch.Document({cache:!0,charset:"latin:extra",optimize:!0,index:[{field:"content",tokenize:"reverse",encode:t},{field:"title",tokenize:"forward",encode:t},{field:"tags",tokenize:"forward",encode:t}]});return e.forEach(((e,t)=>{n.add({id:t,title:e.title,content:e.content,tags:e.tags})})),n}async function init(){let e=!0;if(localStorage.getItem("searchIndex")){let{date:t,docs:n}=JSON.parse(localStorage.getItem("searchIndex"));if("2025-06-27T07:27:44.549Z"===t){e=!1;let t=createIndex(n);window.docs=n,window.index=t}}if(e){let e=await(await fetch("/searchIndex.json?v=2025-06-27T07:27:44.549Z")).json(),t=createIndex(e);localStorage.setItem("searchIndex",JSON.stringify({date:"2025-06-27T07:27:44.549Z",docs:e})),window.docs=e,window.index=t}document.addEventListener("keydown",(e=>{if((e.ctrlKey||e.metaKey)&&"k"===e.key&&(e.preventDefault(),toggleSearch()),"Escape"===e.key&&document.getElementById("globalsearch").classList.remove("active"),document.getElementById("globalsearch").classList.contains("active")){if("ArrowDown"===e.key){e.preventDefault();let t=document.querySelector(".searchresult.active");t?(t.classList.remove("active"),t.nextElementSibling?t.nextElementSibling.classList.add("active"):document.querySelector(".searchresult").classList.add("active")):document.querySelector(".searchresult").classList.add("active");let n=document.querySelector(".searchresult.active");n&&n.scrollIntoView({behavior:"smooth",block:"nearest",inline:"start"})}if("ArrowUp"===e.key){e.preventDefault();let t=document.querySelector(".searchresult.active");t?(t.classList.remove("active"),t.previousElementSibling?t.previousElementSibling.classList.add("active"):document.querySelectorAll(".searchresult").forEach((e=>{e.nextElementSibling||e.classList.add("active")}))):document.querySelectorAll(".searchresult").forEach((e=>{e.nextElementSibling&&e.classList.add("active")}));let n=document.querySelector(".searchresult.active");n&&n.scrollIntoView({behavior:"smooth",block:"nearest",inline:"start"})}if("Enter"===e.key){e.preventDefault();let t=document.querySelector(".searchresult.active");t&&(window.location.href=t.querySelector("a").href)}}}));const t=debounce(search,200,!1);field=document.querySelector("#term"),field.addEventListener("keydown",(e=>{"ArrowDown"!==e.key&&"ArrowUp"!==e.key&&t()})),resultsDiv=document.querySelector("#search-results");const n=new URL(location.href).searchParams;n.get("q")&&(field.setAttribute("value",n.get("q")),toggleSearch(),search())}async function search(){let e=field.value.trim();if(!e)return;if(e==lastSearch)return;console.log(`search for ${e}`),window.lastSearch=e,resultsDiv.innerHTML=loadingSvg;let t=offlineSearch(e),n="";if(!t.length){let t=document.createElement("p");return t.innerText=`No results for "${e}"`,resultsDiv.innerHTML="",void resultsDiv.appendChild(t)}n+='<div style="max-width:100%;">',t.forEach((e=>{e.tags&&e.tags.length>0?n+=`<div class="searchresult">\n                    <a class="search-link" href="${e.url}">${e.title}</a>\n                    <div onclick="window.location='${e.url}'">\n                        <div class="header-meta">\n                            <div class="header-tags">\n                                ${e.tags.map((e=>'<a class="tag" href="JavaScript:Void(0);">#'+e+"</a>")).join("")}\n                            </div>\n                        </div>\n                        ${e.content}\n                    </div>\n                </div>`:n+=`<div class="searchresult">\n                    <a class="search-link" href="${e.url}">${e.title}</a>\n                    <div onclick="window.location='${e.url}'">\n                        ${e.content}\n                    </div>\n                </div>`})),n+="</div>",resultsDiv.innerHTML=n}function truncate(e,t){return(e=e.replaceAll(/<[^>]*>/g,"")).length<t?e:e.substring(0,t-3)+"..."}function offlineSearch(e){let t=window.docs,n="#"===e[0]&&e.length>1?index.search(e.substring(1),[{field:"tags"}]):index.search(e,[{field:"title",limit:5},{field:"content",weight:10}]);const a=e=>{const t=n.filter((t=>t.field===e));return 0===t.length?[]:[...t[0].result]};return[...new Set([...a("title"),...a("content"),...a("tags")])].map((e=>{let n=t[e];return n.content=truncate(n.content,400),n.tags=n.tags.filter((e=>"gardenEntry"!=e&&"note"!=e)),n}))}window.lastSearch=""</script>
+<script>document.addEventListener("DOMContentLoaded",init,!1),document.addEventListener("DOMContentLoaded",setCorrectShortcut,!1),window.toggleSearch=function(){document.getElementById("globalsearch").classList.contains("active")?document.getElementById("globalsearch").classList.remove("active"):(document.getElementById("globalsearch").classList.add("active"),document.getElementById("term").focus())},window.toggleTagSearch=function(e){console.log(e.textContent);const t=e.textContent;t&&(window.document.getElementById("term").value=t.trim(),window.toggleSearch(),window.search())};const loadingSvg='\n    <svg width="100" height="100" viewBox="0 0 45 45" xmlns="http://www.w3.org/2000/svg" stroke="#fff">\n      <g fill="none" fill-rule="evenodd" transform="translate(1 1)" stroke-width="2">\n          <circle cx="22" cy="22" r="6" stroke-opacity="0">\n              <animate attributeName="r"\n                   begin="1.5s" dur="3s"\n                   values="6;22"\n                   calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-opacity"\n                   begin="1.5s" dur="3s"\n                   values="1;0" calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-width"\n                   begin="1.5s" dur="3s"\n                   values="2;0" calcMode="linear"\n                   repeatCount="indefinite" />\n          </circle>\n          <circle cx="22" cy="22" r="6" stroke-opacity="0">\n              <animate attributeName="r"\n                   begin="3s" dur="3s"\n                   values="6;22"\n                   calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-opacity"\n                   begin="3s" dur="3s"\n                   values="1;0" calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-width"\n                   begin="3s" dur="3s"\n                   values="2;0" calcMode="linear"\n                   repeatCount="indefinite" />\n          </circle>\n          <circle cx="22" cy="22" r="8">\n              <animate attributeName="r"\n                   begin="0s" dur="1.5s"\n                   values="6;1;2;3;4;5;6"\n                   calcMode="linear"\n                   repeatCount="indefinite" />\n          </circle>\n      </g>\n  </svg>';function debounce(e,t,n){var a;return function(){var r=this,i=arguments,c=n&&!a;clearTimeout(a),a=setTimeout((function(){a=null,n||e.apply(r,i)}),t),c&&e.apply(r,i)}}function setCorrectShortcut(){navigator.platform.toUpperCase().indexOf("MAC")>=0&&document.querySelectorAll(".search-keys").forEach((e=>e.innerHTML="⌘ + K"))}function createIndex(e){const t=e=>e.toLowerCase().split(/([^a-z]|[^\x00-\x7F])/),n=new FlexSearch.Document({cache:!0,charset:"latin:extra",optimize:!0,index:[{field:"content",tokenize:"reverse",encode:t},{field:"title",tokenize:"forward",encode:t},{field:"tags",tokenize:"forward",encode:t}]});return e.forEach(((e,t)=>{n.add({id:t,title:e.title,content:e.content,tags:e.tags})})),n}async function init(){let e=!0;if(localStorage.getItem("searchIndex")){let{date:t,docs:n}=JSON.parse(localStorage.getItem("searchIndex"));if("2025-06-27T07:33:21.213Z"===t){e=!1;let t=createIndex(n);window.docs=n,window.index=t}}if(e){let e=await(await fetch("/searchIndex.json?v=2025-06-27T07:33:21.213Z")).json(),t=createIndex(e);localStorage.setItem("searchIndex",JSON.stringify({date:"2025-06-27T07:33:21.213Z",docs:e})),window.docs=e,window.index=t}document.addEventListener("keydown",(e=>{if((e.ctrlKey||e.metaKey)&&"k"===e.key&&(e.preventDefault(),toggleSearch()),"Escape"===e.key&&document.getElementById("globalsearch").classList.remove("active"),document.getElementById("globalsearch").classList.contains("active")){if("ArrowDown"===e.key){e.preventDefault();let t=document.querySelector(".searchresult.active");t?(t.classList.remove("active"),t.nextElementSibling?t.nextElementSibling.classList.add("active"):document.querySelector(".searchresult").classList.add("active")):document.querySelector(".searchresult").classList.add("active");let n=document.querySelector(".searchresult.active");n&&n.scrollIntoView({behavior:"smooth",block:"nearest",inline:"start"})}if("ArrowUp"===e.key){e.preventDefault();let t=document.querySelector(".searchresult.active");t?(t.classList.remove("active"),t.previousElementSibling?t.previousElementSibling.classList.add("active"):document.querySelectorAll(".searchresult").forEach((e=>{e.nextElementSibling||e.classList.add("active")}))):document.querySelectorAll(".searchresult").forEach((e=>{e.nextElementSibling&&e.classList.add("active")}));let n=document.querySelector(".searchresult.active");n&&n.scrollIntoView({behavior:"smooth",block:"nearest",inline:"start"})}if("Enter"===e.key){e.preventDefault();let t=document.querySelector(".searchresult.active");t&&(window.location.href=t.querySelector("a").href)}}}));const t=debounce(search,200,!1);field=document.querySelector("#term"),field.addEventListener("keydown",(e=>{"ArrowDown"!==e.key&&"ArrowUp"!==e.key&&t()})),resultsDiv=document.querySelector("#search-results");const n=new URL(location.href).searchParams;n.get("q")&&(field.setAttribute("value",n.get("q")),toggleSearch(),search())}async function search(){let e=field.value.trim();if(!e)return;if(e==lastSearch)return;console.log(`search for ${e}`),window.lastSearch=e,resultsDiv.innerHTML=loadingSvg;let t=offlineSearch(e),n="";if(!t.length){let t=document.createElement("p");return t.innerText=`No results for "${e}"`,resultsDiv.innerHTML="",void resultsDiv.appendChild(t)}n+='<div style="max-width:100%;">',t.forEach((e=>{e.tags&&e.tags.length>0?n+=`<div class="searchresult">\n                    <a class="search-link" href="${e.url}">${e.title}</a>\n                    <div onclick="window.location='${e.url}'">\n                        <div class="header-meta">\n                            <div class="header-tags">\n                                ${e.tags.map((e=>'<a class="tag" href="JavaScript:Void(0);">#'+e+"</a>")).join("")}\n                            </div>\n                        </div>\n                        ${e.content}\n                    </div>\n                </div>`:n+=`<div class="searchresult">\n                    <a class="search-link" href="${e.url}">${e.title}</a>\n                    <div onclick="window.location='${e.url}'">\n                        ${e.content}\n                    </div>\n                </div>`})),n+="</div>",resultsDiv.innerHTML=n}function truncate(e,t){return(e=e.replaceAll(/<[^>]*>/g,"")).length<t?e:e.substring(0,t-3)+"..."}function offlineSearch(e){let t=window.docs,n="#"===e[0]&&e.length>1?index.search(e.substring(1),[{field:"tags"}]):index.search(e,[{field:"title",limit:5},{field:"content",weight:10}]);const a=e=>{const t=n.filter((t=>t.field===e));return 0===t.length?[]:[...t[0].result]};return[...new Set([...a("title"),...a("content"),...a("tags")])].map((e=>{let n=t[e];return n.content=truncate(n.content,400),n.tags=n.tags.filter((e=>"gardenEntry"!=e&&"note"!=e)),n}))}window.lastSearch=""</script>
 <main class="content cm-s-obsidian">
 <header>
 <h1 data-note-icon="">Web收藏</h1>
 <div class="header-meta">
 <div class="header-tags">
 </div>
-<div class="timestamps"><div><i icon-name="calendar-plus"></i> <span class="human-date" data-date="2025-06-08T21:37:15.017+08:00"></span></div><div><i icon-name="calendar-clock"></i> <span class="human-date" data-date="2025-06-14T11:51:16.000+08:00"></span></div></div></div>
+<div class="timestamps"><div><i icon-name="calendar-plus"></i> <span class="human-date" data-date="2025-06-09T10:31:00.686+08:00"></span></div><div><i icon-name="calendar-clock"></i> <span class="human-date" data-date="2025-06-22T16:54:33.016+08:00"></span></div></div></div>
 </header>
-<p>资源集合站<br>
-<a href="https://d1tools.com" target="_blank" class="external-link">第一在线工具 - 一个免费的在线工具网站</a></p>
+<h1 id="信息收集" tabindex="-1">信息收集</h1>
+<ol>
+<li>顶级科技社区：
+<ul>
+<li>Hacker News (<a href="http://news.ycombinator.com" target="_blank" class="external-link">news.ycombinator.com</a>): 全球顶尖开发者的信息集散地。无数新项目、新想法在这里首发。</li>
+<li>Reddit: 关注特定领域的子版块，如 r/technology, r/programming, r/MachineLearning, r/AI 等。</li>
+<li>Product Hunt (<a href="http://producthunt.com" target="_blank" class="external-link">producthunt.com</a>): 每日发布全球最新的科技产品，是发现新工具的绝佳平台。</li>
+</ul>
+</li>
+<li>专业新闻源和资讯：
+<ul>
+<li>TechCrunch, The Verge: 顶级的科技媒体，报道大公司的最新动态。</li>
+<li>AI相关的Newsletter：订阅如 Ben's Bites, TLDR AI 等每日AI资讯简报，它们会把当天最重要的AI新闻和工具送到你的邮箱。</li>
+</ul>
+</li>
+<li>公司和研究机构官网：
+<ul>
+<li>直接关注 NVIDIA, Google AI, Meta AI, OpenAI, Microsoft Research 等巨头的官方博客和新闻发布室。</li>
+<li>关注 <a href="http://arXiv.org" target="_blank" class="external-link">arXiv.org</a> 网站，最新的AI研究论文都会在这里发布，可以让你比媒体更早地了解技术趋势。</li>
+</ul>
+</li>
+<li>关键词趋势工具：
+<ul>
+<li>Google Trends (<a href="http://trends.google.com" target="_blank" class="external-link">trends.google.com</a>): 输入一个关键词，查看其热度变化趋势。对于发现正在快速上升的新热点非常有用。</li>
+<li>使用关键词研究工具: 像 Ahrefs 或 SEMrush (付费) 可以帮你发现人们正在搜索什么，以及相关的关键词有哪些。</li>
+</ul>
+</li>
+</ol>
+<h1 id="资源集合站" tabindex="-1">资源集合站</h1>
+<p><a href="https://d1tools.com" target="_blank" class="external-link">第一在线工具 - 一个免费的在线工具网站</a></p>
 <h1 id="资源" tabindex="-1">资源</h1>
 <p><a href="https://vika.cn/share/shrYmz9zRrpxS20ghlaXq/fod7JzsBci5Q7" target="_blank" class="external-link">vika.cn/share/shrYmz9zRrpxS20ghlaXq/fod7JzsBci5Q7</a></p>
 <h1 id="工具导航站" tabindex="-1">工具导航站</h1>
 <h3 id="需求收集和关键词调研部分" tabindex="-1">需求收集和关键词调研部分</h3>
 <ul>
-<li>Toolify榜单<a href="https://www.toolify.ai/" target="_blank" class="external-link">toolify.ai</a></li>
+<li>查网页关键词、查网站的外链：semrush</li>
 <li>谷歌下拉词<a href="https://www.searchsuggest.tips/?keyword=" target="_blank" class="external-link">Search Suggest</a></li>
-<li>AI导航站的需求列表<a href="https://theresanaiforthat.com/requests" target="_blank" class="external-link">请稍候…</a></li>
-<li>关键词难度<a href="https://ahrefs.com/keyword-difficulty" target="_blank" class="external-link">Free Keyword Difficulty Checker - Ahrefs</a></li>
+<li>AI导航站的需求列表 <a href="https://theresanaiforthat.com/requests" target="_blank" class="external-link">https://theresanaiforthat.com/requests</a></li>
+<li><strong>关键词难度查询</strong> <a href="https://ahrefs.com/keyword-difficulty" target="_blank" class="external-link">Free Keyword Difficulty Checker - Ahrefs</a></li>
+</ul>
+<h3 id="域名" tabindex="-1">域名</h3>
+<ul>
+<li>spaceship：最便宜的域名注册商？（有我阿里云便宜？）</li>
+<li>阿里云</li>
 </ul>
 <h3 id="上站必备" tabindex="-1">上站必备</h3>
 <ul>
@@ -107,9 +140,10 @@ CTRL + K
 </li>
 <li>数据后台
 <ul>
-<li><a href="http://search.google.com/search-console" target="_blank" class="external-link">search.google.com/search-console</a> ：让谷歌知道你的网站存在的工具，同理bing也有</li>
-<li><a href="http://analytics.google.com" target="_blank" class="external-link">analytics.google.com</a> ： 帮你查看多少人访问了你的网站，以及他们做了什么</li>
+<li>GSC，谷歌搜索控制：<a href="http://search.google.com/search-console" target="_blank" class="external-link">search.google.com/search-console</a> ：让谷歌知道你的网站存在的工具，同理bing也有</li>
+<li>GA，Google Analytics：<a href="http://analytics.google.com" target="_blank" class="external-link">analytics.google.com</a> ： 帮你查看多少人访问了你的网站，以及他们做了什么</li>
 <li><a href="https://www.bing.com/webmasters/submiturl" target="_blank" class="external-link">Bing Webmaster Tools</a></li>
+<li><strong>热力图</strong>：<a href="https://clarity.microsoft.com/" target="_blank" class="external-link">Microsoft Clarity - Free Heatmaps &amp; Session Recordings</a></li>
 </ul>
 </li>
 <li>竞品调研
@@ -124,6 +158,63 @@ CTRL + K
 </ul>
 </li>
 </ul>
+<div class="transclusion internal-embed is-loaded"><div class="markdown-embed">
+<ul>
+<li>
+<p>blot.new</p>
+</li>
+<li>
+<p>v0.dev</p>
+</li>
+<li>
+<p>lovable.dev（未来可能超过blot？）</p>
+</li>
+<li>
+<p>前端设计： <a href="http://stitch.withgoogle.com" target="_blank" class="external-link">stitch.withgoogle.com</a></p>
+<ul>
+<li>Slitch并没有完整的代码能力、只能做出界面布局的前端代码。</li>
+<li>当你让Slitch完成原型图后，记得把图片（或者前端代码）给到Bolt/V0等其他可以写代码的工具，给它们参考。</li>
+</ul>
+</li>
+</ul>
+</div></div>
+<div class="transclusion internal-embed is-loaded"><div class="markdown-embed">
+<p>1、<a href="https://openrouter.ai/" target="_blank" class="external-link">https://openrouter.ai/</a> 语言类模型 API 的综合平台</p>
+<p>2、<a href="https://www.together.ai/" target="_blank" class="external-link">https://www.together.ai/</a> 语言类模型 API 的综合平台，同时也提供少量图片和视频处理模型</p>
+<p>3、<a href="https://fal.ai/" target="_blank" class="external-link">https://fal.ai/</a> 更专注提供图片和视频类 API</p>
+<p>4、<a href="https://replicate.com/" target="_blank" class="external-link">https://replicate.com/</a> 最全的 API 平台，缺点是相对其它家比较贵</p>
+<p>5、<a href="https://siliconflow.cn/" target="_blank" class="external-link">https://siliconflow.cn/</a> 国内产品！适合小白，提供的 API 少而精A</p>
+<div class="callout is-collapsible is-collapsed" data-callout="note"><div class="callout-title"><div class="callout-title-inner"> <strong>碎碎念：API 是可以像积木一样玩起来的！</strong><br></div><div class="callout-fold"><i icon-name="chevron-down"></i></div></div>
+<div class="callout-content">
+<p>
+我们举个例子，</p>
+<p>HeyGen 在 2023 年爆火的一个功能是 AI 视频翻译 。用户上传一个原始视频（如英语讲话），HeyGen 自动翻译 成其他语言（如中文、法语、西班牙语等）并且调整口型，让说话人的嘴巴与翻译后语音保持一致，看起来就像原本是用该语言录制的一样。</p>
+<p>我们从“API 积木”的视角来理解，HeyGen 需要串起来的是文字翻译、文字转语音、视频对口型这三类 API。</p>
+<p>所以，不要小看这些 API 哦！</p>
+<p>如果只调用一个 API，那么你的产品往往没什么价值，看起来会比较稀疏平常。</p>
+<p>但是，如果你创造性地把多种 API 串联起来，想象空间是无限的！</p>
+<p>没错，做产品，首先是个创意生意！</p>
+<p>厉害的产品 = 厉害的创意！</p>
+<p>有人会说，市面上所有的产品看起来都千篇一律，似乎没有什么可做的。</p>
+<p>他错了！ 我们假设世界上有 100 种 AI 能力（显然不止）， 如果一个产品串起来其中两种 AI 能力，那么至少 100x100=1 万种产品形态。如果串起来三种 AI 能力，那么将会有 100x100x100 = 100 万种可能的产品形态！ 如果你串起来 4 种呢？5 种呢？</p>
+<p>当你用搭积木的眼光去看待 AI 能力，你会有一种“海阔凭鱼鱼，天高任鸟飞“的爽感！</p>
+<p>快去发挥自己的创造力吧！</p>
+</div></div>
+<p>API 的圈子，你可以从 <a href="https://replicate.com/" target="_blank" class="external-link">https://replicate.com/</a> 开始，养成每天研究它的习惯。<br>
+产品的圈子，你可以从 <a href="https://www.toolify.ai/zh/" target="_blank" class="external-link">https://www.toolify.ai/zh/</a> 开始，养成每天研究它的习惯。</p>
+</div></div>
+<div class="transclusion internal-embed is-loaded"><div class="markdown-embed">
+<ul>
+<li>Toolify榜单<a href="https://www.toolify.ai/" target="_blank" class="external-link">toolify.ai</a><br>
+1、它在源源不断地收集市面上新出现的 AI 产品，无论是国内的还是国外的。<br>
+2、全中文界面，阅读起来更轻松。<br>
+3、每个产品的信息都收录得很完整，包括截图、用户数、用户趋势等等。<br>
+4、它每个月都提供排行榜，可以从总流量、地区流量、流量趋势、预估收入等多个方面进行排行，让你知道世界上正在发生什么、什么 AI 产品有用户、什么国家的用户喜欢什么样的产品、什么 AI 产品赚钱。 <a href="https://www.toolify.ai/zh/Best-trending-AI-Tools" target="_blank" class="external-link">https://www.toolify.ai/zh/Best-trending-AI-Tools</a></li>
+<li>TAAFT：<a href="https://theresanaiforthat.com/" target="_blank" class="external-link">There's An AI For That® - Browse AI Tools For Any Task</a><br>
+1、它是全世界最大的 AI 应用导航产品，收录的产品比 Toolify 更全。<br>
+2、支持自然语言搜索。你不需要知道产品名字，只需要描述功能，就能搜索到提供相关功能的 AI 产品</li>
+</ul>
+</div></div>
 <h1 id="ai" tabindex="-1">牛逼的ai站</h1>
 <p><a href="http://www.perplexity.ai" target="_blank" class="external-link">www.perplexity.ai</a><br>
 <a href="https://character.ai/?utm_source=toolify" target="_blank" class="external-link">character.ai | 为您的每时每刻提供个性化 AI</a></p>
@@ -190,11 +281,17 @@ On this page
 <div class="toc-container">
 <nav class="toc">
 <ol>
+<li><a href="#信息收集">信息收集</a>
+</li>
+<li><a href="#资源集合站">资源集合站</a>
+</li>
 <li><a href="#资源">资源</a>
 </li>
 <li><a href="#工具导航站">工具导航站</a>
 <ol>
 <li><a href="#需求收集和关键词调研部分">需求收集和关键词调研部分</a>
+</li>
+<li><a href="#域名">域名</a>
 </li>
 <li><a href="#上站必备">上站必备</a>
 </li>
@@ -210,8 +307,8 @@ On this page
 </div>
 <div class="backlinks">
 <div class="backlink-title" style="margin:4px 0!important">Pages mentioning this page</div>
-<div class="backlink-list"><div class="backlink-card"><i icon-name="link"></i><a href="/czc知识库/计算机/Web/Web/" data-note-icon="" class="backlink">Web</a>
-</div><div class="backlink-card"><i icon-name="link"></i><a href="/" data-note-icon="" class="backlink">主页</a>
+<div class="backlink-list"><div class="backlink-card"><i icon-name="link"></i><a href="/" data-note-icon="" class="backlink">主页</a>
+</div><div class="backlink-card"><i icon-name="link"></i><a href="/czc知识库/计算机/Web/Web/" data-note-icon="" class="backlink">Web</a>
 </div></div>
 </div>
 </div>
